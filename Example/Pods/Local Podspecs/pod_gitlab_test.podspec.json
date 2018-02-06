@@ -1,0 +1,22 @@
+{
+  "name": "pod_gitlab_test",
+  "version": "0.1.0",
+  "summary": "A short description of pod_gitlab_test.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/wkzkfmxk23@gmail.com/pod_gitlab_test",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "wkzkfmxk23@gmail.com": "wkzkfmxk23@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/wkzkfmxk23@gmail.com/pod_gitlab_test.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "pod_gitlab_test/Classes/**/*"
+}
