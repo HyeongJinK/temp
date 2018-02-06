@@ -1,6 +1,7 @@
 use_frameworks!
 
 target 'pod_gitlab_test_Example' do
+    #pod 'Alamofire', '~> 4.5'
   pod 'pod_gitlab_test', :path => '../'
 
   target 'pod_gitlab_test_Tests' do

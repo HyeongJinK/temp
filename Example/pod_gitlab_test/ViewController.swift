@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import pod_gitlab_test
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        let test = BannerFramework()
+        test.bannerAdd(pview: self.view)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

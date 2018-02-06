@@ -1,11 +1,12 @@
 import UIKit
 import XCTest
-import pod_gitlab_test
+import Pods_pod_gitlab_test_Tests
 
 class Tests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
