@@ -20,22 +20,19 @@ class CheckBox: UIButton {
     let uncheckImage:UIImage
     
     convenience init() {
-        self.init(frame: CGRect.zero, checkedCheckbox: "checked-checkbox-50", uncheckedCheckbox: "unchecked-checkbox-50")
+        self.init(frame: CGRect.zero)
     }
     
     required init?(coder aDecoder: NSCoder) {
         checkImage = UIImage(named: "checked-checkbox-50", in:Bundle(for: CheckBox.self), compatibleWith:nil)!
         uncheckImage = UIImage(named: "unchecked-checkbox-50", in:Bundle(for: CheckBox.self), compatibleWith:nil)!
         super.init(coder: aDecoder)
+        
     }
     
-    convenience init (checkedCheckbox: String = "checked-checkbox-50", uncheckedCheckbox: String = "unchecked-checkbox-50") {
-        self.init(frame: CGRect.zero, checkedCheckbox: checkedCheckbox, uncheckedCheckbox: uncheckedCheckbox)
-    }
-
-    init(frame: CGRect, checkedCheckbox: String, uncheckedCheckbox: String) {
-        checkImage = UIImage(named: checkedCheckbox, in:Bundle(for: CheckBox.self), compatibleWith:nil)!
-        uncheckImage = UIImage(named: uncheckedCheckbox, in:Bundle(for: CheckBox.self), compatibleWith:nil)!
+    override init(frame: CGRect) {
+        checkImage = UIImage(named: "checked-checkbox-50", in:Bundle(for: CheckBox.self), compatibleWith:nil)!
+        uncheckImage = UIImage(named: "unchecked-checkbox-50", in:Bundle(for: CheckBox.self), compatibleWith:nil)!
         
         if (frame == CGRect.zero) {
             super.init(frame: CGRect(x: x, y: y, width: width, height: height))

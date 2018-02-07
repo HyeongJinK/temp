@@ -13,8 +13,9 @@ var views:[UIView] = Array<UIView>()
 
 public class bannerFramework: NSObject {
     var estgamesBanner: EstgamesBanner?
-    var closeBtWidth:CGFloat = 50
-    var closeBtheight:CGFloat = 25
+    let bottomViewHeight:CGFloat = 30
+    let closeBtWidth:CGFloat = 50
+    let closeBtheight:CGFloat = 25
     
     func createMainView(_ pview:UIView) -> UIView {
         //뷰 생성
@@ -22,6 +23,17 @@ public class bannerFramework: NSObject {
         view.frame = CGRect(x: 0, y: 0, width: pview.frame.size.width, height: pview.frame.size.height) //뷰 크기 창크기로
         
         return view
+    }
+    
+    func bottomView() -> UIView {
+        let bottomView = UIView()
+        bottomView.frame = CGRect(x: 0
+            , y: views.last!.frame.size.height - self.bottomViewHeight
+            , width: views.last!.frame.size.width
+            , height: self.bottomViewHeight)
+        bottomView.backgroundColor = UIColor.gray
+        
+        return bottomView
     }
     
     //배너 넣기 사용자가 호출해야 될 함수
@@ -64,12 +76,12 @@ public class bannerFramework: NSObject {
                 views.append(self.createMainView(pview))
                 pview.addSubview(views.last!)
                 
-                //밑에 바 생성
-                let bottomView = bannerBottomView()
-                
-                //이미지 뷰 생성
-                let imageView = BannerImageView(entry, viewWidth: views.last!.frame.size.width, viewHeight: views.last!.frame.size.height ,                bottomViewHeight: bottomView.bottomViewHeight)
+                let imageView = BannerImageView(entry, viewWidth: views.last!.frame.size.width, viewHeight: views.last!.frame.size.height ,                bottomViewHeight: self.bottomViewHeight)
                 views.last!.addSubview(imageView)
+                
+                //밑에 바 생성
+                //임시로 뷰로 생성
+                let bottomView = self.bottomView()
                 
                 //체크박스, 레이블, 닫기 버튼
                 let checkbox:CheckBox = CheckBox()
@@ -82,6 +94,7 @@ public class bannerFramework: NSObject {
                 
                 bottomView.addSubview(oneDayLabel)
                 //닫기 버튼
+                // let closeBT - CGREct=CTll
                 let closeBt = CloseBt(check: checkbox, bannerName: entry.banner.name)
                 closeBt.frame = CGRect(x: bottomView.frame.size.width - self.closeBtWidth
                     , y: 0
@@ -95,4 +108,5 @@ public class bannerFramework: NSObject {
             }
         }
     }
+    
 }

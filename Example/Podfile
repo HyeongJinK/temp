@@ -1,7 +1,8 @@
 use_frameworks!
 
 target 'estgames-common-framework_Example' do
-  pod 'estgames-common-framework', :path => '../'
+    pod 'estgames-common-framework', :path => '../'
+    #pod 'estgames-common-framework', '~> 0.4.0'
 
   target 'estgames-common-framework_Tests' do
     inherit! :search_paths

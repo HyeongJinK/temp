@@ -5,14 +5,25 @@
 [![License](https://img.shields.io/cocoapods/l/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
-## 배너 사용
+## Example
 
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-pod 'estgames-common-framework', '~> 0.4.0'
+## Requirements
 
-```swift
-import estgames_common_framework
+## Installation
 
-var banner = bannerFramework();
-banner.bannerAdd(pview: self.view);
+estgames-common-framework is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'estgames-common-framework'
 ```
+
+## Author
+
+wkzkfmxk23@gmail.com, wkzkfmxk23@gmail.com
+
+## License
+
+estgames-common-framework is available under the MIT license. See the LICENSE file for more info.

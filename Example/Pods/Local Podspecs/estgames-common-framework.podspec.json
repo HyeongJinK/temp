@@ -1,9 +1,9 @@
 {
   "name": "estgames-common-framework",
-  "version": "0.1.0",
-  "summary": "A short description of estgames-common-framework.",
+  "version": "0.4.0",
+  "summary": "Estgames common framework",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/wkzkfmxk23@gmail.com/estgames-common-framework",
+  "homepage": "https://gitlab.com/estmp/banner-ios-sdk.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,16 @@
     "wkzkfmxk23@gmail.com": "wkzkfmxk23@gmail.com"
   },
   "source": {
-    "git": "https://github.com/wkzkfmxk23@gmail.com/estgames-common-framework.git",
-    "tag": "0.1.0"
+    "git": "https://gitlab.com/estmp/banner-ios-sdk.git",
+    "tag": "0.4.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
-  "source_files": "estgames-common-framework/Classes/**/*"
+  "source_files": "estgames-common-framework/Classes/**/*",
+  "resource_bundles": {
+    "estgames-common-framework": [
+      "estgames-common-framework/Assets/*.png"
+    ]
+  }
 }

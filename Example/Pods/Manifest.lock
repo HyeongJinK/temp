@@ -1,5 +1,5 @@
 PODS:
-  - estgames-common-framework (0.1.0)
+  - estgames-common-framework (0.4.0)
 
 DEPENDENCIES:
   - estgames-common-framework (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  estgames-common-framework: 82f4ab8c36258954053692e181e96f5dada0c377
+  estgames-common-framework: 439f87d862889cfb55c6a6149416f979445ec9fb
 
-PODFILE CHECKSUM: 8844c968cf6ea0df38192fad73dcf82a25709d52
+PODFILE CHECKSUM: 671cff1ec218df49df93e3f6b1e68df26711de20
 
 COCOAPODS: 1.3.1
