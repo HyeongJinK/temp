@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'estgames-common-framework_Example' do
+  pod 'estgames-common-framework', :path => '../'
+
+  target 'estgames-common-framework_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
