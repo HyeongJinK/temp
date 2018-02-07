@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import pod_gitlab_test
 
 class ViewController: UIViewController {
