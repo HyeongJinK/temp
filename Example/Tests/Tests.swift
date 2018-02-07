@@ -1,6 +1,5 @@
 import UIKit
 import XCTest
-import estgames-common-framework
 
 class Tests: XCTestCase {
     

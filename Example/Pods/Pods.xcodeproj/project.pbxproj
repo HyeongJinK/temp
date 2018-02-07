@@ -16,6 +16,28 @@
 		7E2E7B3E1F869A04886D09D0D0F09375 /* Pods-estgames-common-framework_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F998FE59E92D0F3CD8D58D157846C49A /* Pods-estgames-common-framework_Example-dummy.m */; };
 		819FA7C336872D1819C33C94D2610A03 /* Pods-estgames-common-framework_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8617E707A5B8D834A11BA031F83FF34 /* Pods-estgames-common-framework_Tests-dummy.m */; };
 		96EF3CC9DB68E14869D558C4FC1CABCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		ED9D596F202AB2AD00EB0BE2 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D595E202AB2AC00EB0BE2 /* SessionManager.swift */; };
+		ED9D5970202AB2AD00EB0BE2 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D595F202AB2AC00EB0BE2 /* TaskDelegate.swift */; };
+		ED9D5971202AB2AD00EB0BE2 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5960202AB2AC00EB0BE2 /* Notifications.swift */; };
+		ED9D5972202AB2AD00EB0BE2 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5961202AB2AD00EB0BE2 /* SessionDelegate.swift */; };
+		ED9D5973202AB2AD00EB0BE2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5962202AB2AD00EB0BE2 /* Validation.swift */; };
+		ED9D5974202AB2AD00EB0BE2 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5963202AB2AD00EB0BE2 /* Response.swift */; };
+		ED9D5975202AB2AE00EB0BE2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5964202AB2AD00EB0BE2 /* Result.swift */; };
+		ED9D5976202AB2AE00EB0BE2 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5965202AB2AD00EB0BE2 /* ParameterEncoding.swift */; };
+		ED9D5977202AB2AE00EB0BE2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5966202AB2AD00EB0BE2 /* Alamofire.swift */; };
+		ED9D5978202AB2AE00EB0BE2 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5967202AB2AD00EB0BE2 /* MultipartFormData.swift */; };
+		ED9D5979202AB2AE00EB0BE2 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5968202AB2AD00EB0BE2 /* DispatchQueue+Alamofire.swift */; };
+		ED9D597A202AB2AE00EB0BE2 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5969202AB2AD00EB0BE2 /* NetworkReachabilityManager.swift */; };
+		ED9D597B202AB2AE00EB0BE2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D596A202AB2AD00EB0BE2 /* Request.swift */; };
+		ED9D597C202AB2AE00EB0BE2 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D596B202AB2AD00EB0BE2 /* ServerTrustPolicy.swift */; };
+		ED9D597D202AB2AE00EB0BE2 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D596C202AB2AD00EB0BE2 /* Timeline.swift */; };
+		ED9D597E202AB2AE00EB0BE2 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D596D202AB2AD00EB0BE2 /* AFError.swift */; };
+		ED9D597F202AB2AE00EB0BE2 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D596E202AB2AD00EB0BE2 /* ResponseSerialization.swift */; };
+		ED9D5986202AB37000EB0BE2 /* BannerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5981202AB36F00EB0BE2 /* BannerImageView.swift */; };
+		ED9D5987202AB37000EB0BE2 /* BannerCloseBt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5982202AB37000EB0BE2 /* BannerCloseBt.swift */; };
+		ED9D5988202AB37000EB0BE2 /* BannerCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5983202AB37000EB0BE2 /* BannerCheckBox.swift */; };
+		ED9D5989202AB37000EB0BE2 /* BannerFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5984202AB37000EB0BE2 /* BannerFramework.swift */; };
+		ED9D598A202AB37000EB0BE2 /* BannerJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D5985202AB37000EB0BE2 /* BannerJson.swift */; };
 		F1FD44BEB90E8EC62EA611818F02F53A /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABD31650AFCD198046FF9C708500CCE /* ReplaceMe.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,11 +54,11 @@
 /* Begin PBXFileReference section */
 		14D44E79330F411C3FC95D96D8E07289 /* Pods-estgames-common-framework_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-estgames-common-framework_Tests-resources.sh"; sourceTree = "<group>"; };
 		179C264796534C56698F2587C366A801 /* estgames-common-framework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "estgames-common-framework-prefix.pch"; sourceTree = "<group>"; };
-		184291D4A9E12214270348CD2F6443CF /* Pods-estgames-common-framework_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-estgames-common-framework_Tests.modulemap"; sourceTree = "<group>"; };
-		186D580A69033CFB32C834EFCE93A0FF /* estgames-common-framework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "estgames-common-framework.modulemap"; sourceTree = "<group>"; };
+		184291D4A9E12214270348CD2F6443CF /* Pods-estgames-common-framework_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-estgames-common-framework_Tests.modulemap"; sourceTree = "<group>"; };
+		186D580A69033CFB32C834EFCE93A0FF /* estgames-common-framework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "estgames-common-framework.modulemap"; sourceTree = "<group>"; };
 		1A7B1D2074C9567A0F581BAA0BB5C068 /* Pods-estgames-common-framework_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-estgames-common-framework_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1BBF237CB10BB53837996A332ACB42B1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22FE0E2D800C07A9886F42A929EF45E5 /* estgames_common_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = estgames_common_framework.framework; path = "estgames-common-framework.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22FE0E2D800C07A9886F42A929EF45E5 /* estgames_common_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = estgames_common_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23438C1C4E9E9E0CBCABAEC8C288C32B /* Pods-estgames-common-framework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-estgames-common-framework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		47B37ECF948B8834B6F748B35DF10E33 /* estgames-common-framework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "estgames-common-framework-umbrella.h"; sourceTree = "<group>"; };
 		4861387EE2290F44E3735CBE3EEDFCFC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,22 +66,46 @@
 		5CC2CE6A9A177FAEDC27972C687C1C90 /* estgames-common-framework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "estgames-common-framework.xcconfig"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6BF233898EA4FDB35B74922BF50BD62B /* Pods-estgames-common-framework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-estgames-common-framework_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		80EBAA62C200D76721FFE74F860ED283 /* Pods-estgames-common-framework_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-estgames-common-framework_Example.modulemap"; sourceTree = "<group>"; };
+		80EBAA62C200D76721FFE74F860ED283 /* Pods-estgames-common-framework_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-estgames-common-framework_Example.modulemap"; sourceTree = "<group>"; };
 		936FD17F9DA305CAE31D4E5D1C7153AA /* Pods-estgames-common-framework_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-estgames-common-framework_Example-frameworks.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		941AABFC6D1C77C9FA0B2C41D02CE4E0 /* Pods-estgames-common-framework_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-estgames-common-framework_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		9A7ACDD8082DCBC89EA538CBCE01EDD1 /* Pods-estgames-common-framework_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-estgames-common-framework_Example-umbrella.h"; sourceTree = "<group>"; };
 		A316D7F4046A821913A2C0A71C7A5C49 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A66D01BB63C14BB50AC9279F4CF9E344 /* Pods-estgames-common-framework_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-estgames-common-framework_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		AA1EFFD0D90BEA1F14B4892EA3121802 /* Pods-estgames-common-framework_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-estgames-common-framework_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B9277ACB7749000C65F084CC8A365286 /* Pods_estgames_common_framework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_estgames_common_framework_Example.framework; path = "Pods-estgames-common-framework_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9277ACB7749000C65F084CC8A365286 /* Pods_estgames_common_framework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_estgames_common_framework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BABD31650AFCD198046FF9C708500CCE /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = "estgames-common-framework/Classes/ReplaceMe.swift"; sourceTree = "<group>"; };
-		BC4413193129BF59134FB264CFABF0A0 /* Pods_estgames_common_framework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_estgames_common_framework_Tests.framework; path = "Pods-estgames-common-framework_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC4413193129BF59134FB264CFABF0A0 /* Pods_estgames_common_framework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_estgames_common_framework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CD5EC05F4D60438C4785938DC39760 /* Pods-estgames-common-framework_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-estgames-common-framework_Tests-umbrella.h"; sourceTree = "<group>"; };
 		D7CD632A44F8BA443216AC12CE49CF52 /* Pods-estgames-common-framework_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-estgames-common-framework_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		E3653DD3B52D5B88944E88BA1FDFA02C /* Pods-estgames-common-framework_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-estgames-common-framework_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E4AD2FA28B41688FC06982A4F8A85923 /* Pods-estgames-common-framework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-estgames-common-framework_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E8A6FC9AB9226C1845486F51F345FF45 /* Pods-estgames-common-framework_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-estgames-common-framework_Example-resources.sh"; sourceTree = "<group>"; };
+		ED9D595B202AB24F00EB0BE2 /* checked-checkbox-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked-checkbox-50.png"; sourceTree = "<group>"; };
+		ED9D595C202AB24F00EB0BE2 /* unchecked-checkbox-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked-checkbox-50.png"; sourceTree = "<group>"; };
+		ED9D595E202AB2AC00EB0BE2 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		ED9D595F202AB2AC00EB0BE2 /* TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
+		ED9D5960202AB2AC00EB0BE2 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		ED9D5961202AB2AD00EB0BE2 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		ED9D5962202AB2AD00EB0BE2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		ED9D5963202AB2AD00EB0BE2 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		ED9D5964202AB2AD00EB0BE2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		ED9D5965202AB2AD00EB0BE2 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		ED9D5966202AB2AD00EB0BE2 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		ED9D5967202AB2AD00EB0BE2 /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		ED9D5968202AB2AD00EB0BE2 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		ED9D5969202AB2AD00EB0BE2 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		ED9D596A202AB2AD00EB0BE2 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		ED9D596B202AB2AD00EB0BE2 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		ED9D596C202AB2AD00EB0BE2 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		ED9D596D202AB2AD00EB0BE2 /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
+		ED9D596E202AB2AD00EB0BE2 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		ED9D5981202AB36F00EB0BE2 /* BannerImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerImageView.swift; sourceTree = "<group>"; };
+		ED9D5982202AB37000EB0BE2 /* BannerCloseBt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCloseBt.swift; sourceTree = "<group>"; };
+		ED9D5983202AB37000EB0BE2 /* BannerCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCheckBox.swift; sourceTree = "<group>"; };
+		ED9D5984202AB37000EB0BE2 /* BannerFramework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerFramework.swift; sourceTree = "<group>"; };
+		ED9D5985202AB37000EB0BE2 /* BannerJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerJson.swift; sourceTree = "<group>"; };
 		F8617E707A5B8D834A11BA031F83FF34 /* Pods-estgames-common-framework_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-estgames-common-framework_Tests-dummy.m"; sourceTree = "<group>"; };
 		F998FE59E92D0F3CD8D58D157846C49A /* Pods-estgames-common-framework_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-estgames-common-framework_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +141,9 @@
 		2FDE129D7A73371E948FCFA75F830EB1 /* estgames-common-framework */ = {
 			isa = PBXGroup;
 			children = (
+				ED9D595D202AB28400EB0BE2 /* alamofire */,
+				ED9D595A202AB19600EB0BE2 /* Resources */,
+				ED9D5959202AB14100EB0BE2 /* banner */,
 				BABD31650AFCD198046FF9C708500CCE /* ReplaceMe.swift */,
 				7884B8A52186EE51E5587A00D425000F /* Support Files */,
 			);
@@ -204,6 +253,54 @@
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		ED9D5959202AB14100EB0BE2 /* banner */ = {
+			isa = PBXGroup;
+			children = (
+				ED9D5983202AB37000EB0BE2 /* BannerCheckBox.swift */,
+				ED9D5982202AB37000EB0BE2 /* BannerCloseBt.swift */,
+				ED9D5984202AB37000EB0BE2 /* BannerFramework.swift */,
+				ED9D5981202AB36F00EB0BE2 /* BannerImageView.swift */,
+				ED9D5985202AB37000EB0BE2 /* BannerJson.swift */,
+			);
+			name = banner;
+			path = "estgames-common-framework/Classes/banner";
+			sourceTree = "<group>";
+		};
+		ED9D595A202AB19600EB0BE2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ED9D595B202AB24F00EB0BE2 /* checked-checkbox-50.png */,
+				ED9D595C202AB24F00EB0BE2 /* unchecked-checkbox-50.png */,
+			);
+			name = Resources;
+			path = "estgames-common-framework/Assets";
+			sourceTree = "<group>";
+		};
+		ED9D595D202AB28400EB0BE2 /* alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				ED9D596D202AB2AD00EB0BE2 /* AFError.swift */,
+				ED9D5966202AB2AD00EB0BE2 /* Alamofire.swift */,
+				ED9D5968202AB2AD00EB0BE2 /* DispatchQueue+Alamofire.swift */,
+				ED9D5967202AB2AD00EB0BE2 /* MultipartFormData.swift */,
+				ED9D5969202AB2AD00EB0BE2 /* NetworkReachabilityManager.swift */,
+				ED9D5960202AB2AC00EB0BE2 /* Notifications.swift */,
+				ED9D5965202AB2AD00EB0BE2 /* ParameterEncoding.swift */,
+				ED9D596A202AB2AD00EB0BE2 /* Request.swift */,
+				ED9D5963202AB2AD00EB0BE2 /* Response.swift */,
+				ED9D596E202AB2AD00EB0BE2 /* ResponseSerialization.swift */,
+				ED9D5964202AB2AD00EB0BE2 /* Result.swift */,
+				ED9D596B202AB2AD00EB0BE2 /* ServerTrustPolicy.swift */,
+				ED9D5961202AB2AD00EB0BE2 /* SessionDelegate.swift */,
+				ED9D595E202AB2AC00EB0BE2 /* SessionManager.swift */,
+				ED9D595F202AB2AC00EB0BE2 /* TaskDelegate.swift */,
+				ED9D596C202AB2AD00EB0BE2 /* Timeline.swift */,
+				ED9D5962202AB2AD00EB0BE2 /* Validation.swift */,
+			);
+			name = alamofire;
+			path = "estgames-common-framework/Classes/alamofire";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,8 +434,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9D5987202AB37000EB0BE2 /* BannerCloseBt.swift in Sources */,
+				ED9D597A202AB2AE00EB0BE2 /* NetworkReachabilityManager.swift in Sources */,
+				ED9D5975202AB2AE00EB0BE2 /* Result.swift in Sources */,
+				ED9D5974202AB2AD00EB0BE2 /* Response.swift in Sources */,
+				ED9D5976202AB2AE00EB0BE2 /* ParameterEncoding.swift in Sources */,
+				ED9D5971202AB2AD00EB0BE2 /* Notifications.swift in Sources */,
+				ED9D5988202AB37000EB0BE2 /* BannerCheckBox.swift in Sources */,
 				257418D8DF60482D427893649606558B /* estgames-common-framework-dummy.m in Sources */,
 				F1FD44BEB90E8EC62EA611818F02F53A /* ReplaceMe.swift in Sources */,
+				ED9D597B202AB2AE00EB0BE2 /* Request.swift in Sources */,
+				ED9D5979202AB2AE00EB0BE2 /* DispatchQueue+Alamofire.swift in Sources */,
+				ED9D5978202AB2AE00EB0BE2 /* MultipartFormData.swift in Sources */,
+				ED9D597D202AB2AE00EB0BE2 /* Timeline.swift in Sources */,
+				ED9D597E202AB2AE00EB0BE2 /* AFError.swift in Sources */,
+				ED9D5972202AB2AD00EB0BE2 /* SessionDelegate.swift in Sources */,
+				ED9D597C202AB2AE00EB0BE2 /* ServerTrustPolicy.swift in Sources */,
+				ED9D596F202AB2AD00EB0BE2 /* SessionManager.swift in Sources */,
+				ED9D5989202AB37000EB0BE2 /* BannerFramework.swift in Sources */,
+				ED9D5977202AB2AE00EB0BE2 /* Alamofire.swift in Sources */,
+				ED9D598A202AB37000EB0BE2 /* BannerJson.swift in Sources */,
+				ED9D5986202AB37000EB0BE2 /* BannerImageView.swift in Sources */,
+				ED9D597F202AB2AE00EB0BE2 /* ResponseSerialization.swift in Sources */,
+				ED9D5970202AB2AD00EB0BE2 /* TaskDelegate.swift in Sources */,
+				ED9D5973202AB2AD00EB0BE2 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +614,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/estgames-common-framework/estgames-common-framework-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/estgames-common-framework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/estgames-common-framework/estgames-common-framework.modulemap";
 				PRODUCT_NAME = estgames_common_framework;
@@ -527,7 +646,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/estgames-common-framework/estgames-common-framework-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/estgames-common-framework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/estgames-common-framework/estgames-common-framework.modulemap";
 				PRODUCT_NAME = estgames_common_framework;

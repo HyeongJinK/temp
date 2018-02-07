@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import estgames_common_framework
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var banner = bannerFramework();
+        banner.bannerAdd(pview: self.view);
         // Do any additional setup after loading the view, typically from a nib.
     }
 
