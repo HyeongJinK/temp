@@ -17,8 +17,8 @@ class bannerBottomView: UIView {
     override init(frame: CGRect) {
         if (frame == CGRect.zero) {
             super.init(frame: CGRect(x: 0
-                , y: views.last!.frame.size.height - self.bottomViewHeight
-                , width: views.last!.frame.size.width
+                , y: bannerView!.frame.size.height - self.bottomViewHeight
+                , width: bannerView!.frame.size.width
                 , height: self.bottomViewHeight))
         } else {
             super.init(frame: frame)

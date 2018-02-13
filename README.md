@@ -14,7 +14,8 @@ pod 'estgames-common-framework', '~> 0.4.0'
 ### 배너 출력
 ```swift
 import estgames_common_framework
-
-var banner = bannerFramework();
-banner.bannerAdd(pview: self.view);
+//배너 생성 : 배너를 띄울 뷰를 매개변수로 보내준다.
+var banner = bannerFramework(pview: self.view);
+//배너 출력
+banner.show();
 ```

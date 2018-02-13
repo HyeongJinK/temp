@@ -54,4 +54,9 @@ class CheckBox: UIButton {
             self.setImage(uncheckImage, for: .normal)
         }
     }
+    
+    public func unCheckInit() {
+        isChecked = false
+        self.setImage(uncheckImage, for: .normal)
+    }
 }

@@ -11,21 +11,19 @@ import Foundation
 //닫기 버튼
 class CloseBt: UIButton {
     let closeBtTitle:String = "닫기"
-    var bannerName:String = ""
     var checkBt: CheckBox?
     
     convenience init() {
-        self.init(check: CheckBox(), bannerName: "")
+        self.init(check: CheckBox())
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    init(check: CheckBox, bannerName: String) {
+    init(check: CheckBox) {
         super.init(frame: CGRect.zero)
         
-        self.bannerName = bannerName
         self.checkBt = check
         self.setTitle(closeBtTitle, for: .normal)
         self.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
@@ -38,9 +36,15 @@ class CloseBt: UIButton {
             dateFormat.dateFormat = "yyyy-MM-dd"
             
             let pList = UserDefaults.standard
-            pList.set(dateFormat.string(from: Date()), forKey: self.bannerName)
+            
+            pList.set(dateFormat.string(from: Date()), forKey: imageViews.last!.bannerEntry!.banner.name)
             pList.synchronize()
         }
-        views.popLast()!.removeFromSuperview()
+        self.checkBt!.unCheckInit()
+        imageViews.popLast()!.removeFromSuperview()
+        
+        if (imageViews.isEmpty) {
+            bannerView?.removeFromSuperview()
+        }
     }
 }

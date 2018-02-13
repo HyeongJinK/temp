@@ -11,6 +11,7 @@ import Foundation
 //이미지 뷰
 class BannerImageView: UIImageView {
     var bannerEntry: Entry?
+    //var bannerName:String
     
     required init?(coder aDecoder: NSCoder) {
         self.bannerEntry = nil
@@ -20,8 +21,6 @@ class BannerImageView: UIImageView {
     init(_ entry: Entry, viewWidth: CGFloat, viewHeight: CGFloat, bottomViewHeight: CGFloat) {
         self.bannerEntry = entry
         super.init(frame: CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight - bottomViewHeight))
-        
-        self.bannerEntry = entry
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self
             , action: #selector(imageViewClick))

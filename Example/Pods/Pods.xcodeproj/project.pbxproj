@@ -36,6 +36,7 @@
 		D95D739C29C7C5431D6C56A8AC3AB99F /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F8ACB74C2C0BEAE7F2755DCDD3F8B /* MultipartFormData.swift */; };
 		DAFD9DB8870A730BCDC6275A0DE84EC3 /* BannerCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF05397B1FA122CB9B910140F776842 /* BannerCheckBox.swift */; };
 		E0F0831F4E907EC9CDBE99A241BC85CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		ED3F31E8202C0A7A007DC509 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F31E7202C0A7A007DC509 /* UserService.swift */; };
 		ED75AC26A5F0CBB0325C0E78E627FF82 /* estgames-common-framework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBFE0F4F67937565B961810CF795E2E /* estgames-common-framework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED9D598B202ABC2800EB0BE2 /* checked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3AC6B59F76A1E17CFDBD2E2AE9FA48 /* checked-checkbox-50.png */; };
 		ED9D598C202ABC2C00EB0BE2 /* unchecked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F52823148E001202D16935307C678FA7 /* unchecked-checkbox-50.png */; };
@@ -114,6 +115,7 @@
 		E4AD2FA28B41688FC06982A4F8A85923 /* Pods-estgames-common-framework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-estgames-common-framework_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E8A6FC9AB9226C1845486F51F345FF45 /* Pods-estgames-common-framework_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-estgames-common-framework_Example-resources.sh"; sourceTree = "<group>"; };
 		EB316AA227D706BAC93CD6C842D6A704 /* estgames_common_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = estgames_common_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED3F31E7202C0A7A007DC509 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBottomView.swift; sourceTree = "<group>"; };
 		F1D18F1D391D56C5D8EB8187B43765AC /* BannerFramework.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerFramework.swift; sourceTree = "<group>"; };
 		F52823148E001202D16935307C678FA7 /* unchecked-checkbox-50.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "unchecked-checkbox-50.png"; path = "estgames-common-framework/Assets/unchecked-checkbox-50.png"; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 		CCC0CCF4BBB0EE23C2E151779ABB3972 /* estgames-common-framework */ = {
 			isa = PBXGroup;
 			children = (
+				ED3F31E6202C0A20007DC509 /* user */,
 				C9F53EA8C5D14583EDC343F9385EC089 /* ReplaceMe.swift */,
 				1591C8221326A78F64474B8839781F1C /* alamofire */,
 				F2ED1A1D4F0C5C014065B020391EBEF5 /* banner */,
@@ -310,6 +313,15 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/estgames-common-framework";
+			sourceTree = "<group>";
+		};
+		ED3F31E6202C0A20007DC509 /* user */ = {
+			isa = PBXGroup;
+			children = (
+				ED3F31E7202C0A7A007DC509 /* UserService.swift */,
+			);
+			name = user;
+			path = "estgames-common-framework/Classes/user";
 			sourceTree = "<group>";
 		};
 		F2ED1A1D4F0C5C014065B020391EBEF5 /* banner */ = {
@@ -487,6 +499,7 @@
 				15483E39C94109C7D31EF01E7D18FDA6 /* BannerCloseBt.swift in Sources */,
 				ABA4541A06EEAEEA7F8CF6C3BC4A5F05 /* BannerFramework.swift in Sources */,
 				70218A52C447DE4BA6457E82A60C224B /* BannerImageView.swift in Sources */,
+				ED3F31E8202C0A7A007DC509 /* UserService.swift in Sources */,
 				7A26DD4F6257BEE3333C6EED8A90C114 /* BannerJson.swift in Sources */,
 				F9A67300D9B427AB8DC3C641269BE94F /* DispatchQueue+Alamofire.swift in Sources */,
 				A109A239D56138211A4946B01AD58D9D /* estgames-common-framework-dummy.m in Sources */,

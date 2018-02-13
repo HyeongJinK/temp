@@ -13,9 +13,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var banner = bannerFramework();
+        var banner = bannerFramework(pview: self.view);
         //banner.bottomViewHeight = 100;
-        banner.bannerAdd(pview: self.view);
+        banner.show();
         // Do any additional setup after loading the view, typically from a nib.
     }
 
