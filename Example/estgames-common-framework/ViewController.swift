@@ -11,14 +11,18 @@ import estgames_common_framework
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        var banner = bannerFramework(pview: self.view);
+    @IBAction func bannerTest(_ sender: Any) {
+        var banner = bannerFramework(pview: self);
         //banner.bottomViewHeight = 100;
         banner.show();
-        // Do any additional setup after loading the view, typically from a nib.
+        //print(UIDevice.current.orientation.rawValue)
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

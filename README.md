@@ -15,7 +15,13 @@ pod 'estgames-common-framework', '~> 0.4.0'
 ```swift
 import estgames_common_framework
 //배너 생성 : 배너를 띄울 뷰를 매개변수로 보내준다.
-var banner = bannerFramework(pview: self.view);
+var banner = bannerFramework(pview: self);
 //배너 출력
 banner.show();
 ```
+
+
+### TODO
+
+해상도 구분 .. 하드코딩된 상태..
+가로모드 세로모드.. 라이브러리 내에서 구분하는 방법 찾아보기
