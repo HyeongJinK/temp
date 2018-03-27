@@ -16,6 +16,8 @@ class bannerBottomView: UIView {
     var closebtTopMargin:CGFloat = 7
     var closebtRightMargin:CGFloat = 9
     
+    var labelFontSize:CGFloat = 12
+    
     
     var closeBtWidth:CGFloat = 50
     var closeBtheight:CGFloat = 25
@@ -53,8 +55,10 @@ class bannerBottomView: UIView {
         //하루보기 레이블
         let oneDayLabel:UILabel = UILabel()
         
-        oneDayLabel.frame = CGRect(x: 40, y: 0, width: 300, height: 25)
-        oneDayLabel.font = oneDayLabel.font.withSize(12)
+        oneDayLabel.frame = CGRect(x: checkboxLeftMargin + checkboxRightMargin + bottomViewHeight - (checkboxTopMargin * 2), y: (bottomViewHeight-labelFontSize)/2, width: 300, height: labelFontSize)
+        
+        oneDayLabel.font = UIFont.boldSystemFont(ofSize: labelFontSize)
+        oneDayLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         oneDayLabel.text = "오늘 다시보지않기"
         //TODO 오토레이아웃 안됨...
 //        isUserInteractionEnabled = false
