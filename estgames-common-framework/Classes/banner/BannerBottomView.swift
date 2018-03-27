@@ -12,15 +12,17 @@ class bannerBottomView: UIView {
     var checkboxLeftMargin:CGFloat = 9.5;
     var checkboxTopMargin:CGFloat = 11
     var checkboxRightMargin:CGFloat = 7.5
-    var closebtLiftMargin:CGFloat = 4.5
-    var closebtTopMargin:CGFloat = 7
-    var closebtRightMargin:CGFloat = 9
     
     var labelFontSize:CGFloat = 12
     
+    var closebtLiftMargin:CGFloat = 4.5
+    var closebtTopMargin:CGFloat = 7
+    var closebtRightMargin:CGFloat = 9
+    var closebtWidth:CGFloat = 38
+    var closebtHeight:CGFloat = 30
     
-    var closeBtWidth:CGFloat = 50
-    var closeBtheight:CGFloat = 25
+    var linkbtWidth:CGFloat = 110
+    var linkbtHeight:CGFloat = 31
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -47,8 +49,7 @@ class bannerBottomView: UIView {
         
         self.backgroundColor = UIColor(red: 62/255, green: 65/255, blue: 71/255, alpha: 1.0)
         
-        //체크박스, 레이블, 닫기 버튼
-        
+        //체크박스
         let checkbox:CheckBox = CheckBox(leftMargin: checkboxLeftMargin, topMargin: checkboxTopMargin, width: bottomViewHeight - (checkboxTopMargin * 2), height: bottomViewHeight - (checkboxTopMargin * 2))
         self.addSubview(checkbox)
         
@@ -65,14 +66,14 @@ class bannerBottomView: UIView {
 //        oneDayLabel.translatesAutoresizingMaskIntoConstraints = false
 //        let yCenterConstraint = NSLayoutConstraint(item: oneDayLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
 //        oneDayLabel.addConstraint(yCenterConstraint)
-        
         self.addSubview(oneDayLabel)
+        
         //닫기 버튼
         let closeBt = CloseBt(check: checkbox)
-        closeBt.frame = CGRect(x: self.frame.size.width - self.closeBtWidth
-            , y: 0
-            , width: self.closeBtWidth
-            , height: self.closeBtheight)
+        closeBt.frame = CGRect(x: self.frame.size.width - self.closebtWidth - self.closebtRightMargin
+            , y: self.closebtTopMargin
+            , width: self.closebtWidth
+            , height: self.closebtHeight)
         
         self.addSubview(closeBt)
         

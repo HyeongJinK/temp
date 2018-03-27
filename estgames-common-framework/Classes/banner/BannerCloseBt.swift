@@ -12,16 +12,22 @@ import Foundation
 class CloseBt: UIButton {
     let closeBtTitle:String = "닫기"
     var checkBt: CheckBox?
+    let closeImage:UIImage
+    
     
     required init?(coder aDecoder: NSCoder) {
+        closeImage = UIImage(named: "btn_bottom_close_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)!
         super.init(coder: aDecoder)
     }
     
     init(check: CheckBox) {
+        closeImage = UIImage(named: "btn_bottom_close_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)!
+        
         super.init(frame: CGRect.zero)
         
         self.checkBt = check
-        self.setTitle(closeBtTitle, for: .normal)
+        self.setImage(closeImage, for: .normal)
+        //self.setTitle(closeBtTitle, for: .normal)
         self.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
     }
     
