@@ -13,10 +13,6 @@ class CloseBt: UIButton {
     let closeBtTitle:String = "닫기"
     var checkBt: CheckBox?
     
-    convenience init() {
-        self.init(check: CheckBox())
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

@@ -26,6 +26,7 @@ public class bannerFramework: NSObject {
         //UIDevice.current.orientation.isLandscape
         self.pview = pview
         bannerView = UIView(frame: CGRect(x: 0, y: 0, width: pview.view.frame.size.width, height: pview.view.frame.size.height))
+        bannerView?.translatesAutoresizingMaskIntoConstraints = false
     }
     
      func dataSet() {
