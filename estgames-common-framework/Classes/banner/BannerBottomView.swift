@@ -36,8 +36,6 @@ class bannerBottomView: UIView {
     }
     
     override init(frame: CGRect) {
-        
-        
         if (frame == CGRect.zero) {
             super.init(frame: CGRect(x: 0
                 , y: bannerView!.frame.size.height - self.bottomViewHeight
@@ -77,5 +75,10 @@ class bannerBottomView: UIView {
         
         self.addSubview(closeBt)
         
+        //자세히 보기 버튼
+        let linkBt = LinkerButton()
+        linkBt.frame = CGRect(x: closeBt.frame.origin.x - closebtLiftMargin - linkbtWidth, y: closebtTopMargin, width: linkbtWidth, height: linkbtHeight)
+        
+        self.addSubview(linkBt)
     }
 }

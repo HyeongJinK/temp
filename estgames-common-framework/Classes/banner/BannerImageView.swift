@@ -10,7 +10,7 @@ import Foundation
 
 //이미지 뷰
 class BannerImageView: UIImageView {
-    var bannerEntry: Entry?
+    public var bannerEntry: Entry?
     //var bannerName:String
     
     required init?(coder aDecoder: NSCoder) {
