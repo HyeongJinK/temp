@@ -63,6 +63,7 @@
 		ED9D598E202AC47C00EB0BE2 /* BannerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */; };
 		EDF00A33206398FF005DC230 /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00A32206398FF005DC230 /* AuthorityViewController.swift */; };
 		EDF00A352064BBBB005DC230 /* PolicyDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00A342064BBBB005DC230 /* PolicyDialog.swift */; };
+		EDF4DAE3206B49E7004A5D47 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */; };
 		F9A67300D9B427AB8DC3C641269BE94F /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E27277884EEA2F57BA7F31DAA3CFC /* DispatchQueue+Alamofire.swift */; };
 		FAF865061235555F934C10AE5C4EA65B /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F53EA8C5D14583EDC343F9385EC089 /* ReplaceMe.swift */; };
 		FB87D43165BE21CE6165E3BE198D9895 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1FAF3A0721DA83748789BBE1B065A3 /* AFError.swift */; };
@@ -161,6 +162,7 @@
 		ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBottomView.swift; sourceTree = "<group>"; };
 		EDF00A32206398FF005DC230 /* AuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
 		EDF00A342064BBBB005DC230 /* PolicyDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDialog.swift; sourceTree = "<group>"; };
+		EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		F1D18F1D391D56C5D8EB8187B43765AC /* BannerFramework.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerFramework.swift; sourceTree = "<group>"; };
 		F52823148E001202D16935307C678FA7 /* unchecked-checkbox-50.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "unchecked-checkbox-50.png"; path = "estgames-common-framework/Assets/unchecked-checkbox-50.png"; sourceTree = "<group>"; };
 		F8617E707A5B8D834A11BA031F83FF34 /* Pods-estgames-common-framework_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-estgames-common-framework_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF00A342064BBBB005DC230 /* PolicyDialog.swift */,
+				EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */,
 			);
 			path = policy;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				1F742D61139B811E4DDF7214111EC335 /* SessionManager.swift in Sources */,
 				5E16D782F32A3050ED23A4880C802C49 /* TaskDelegate.swift in Sources */,
 				EDF00A33206398FF005DC230 /* AuthorityViewController.swift in Sources */,
+				EDF4DAE3206B49E7004A5D47 /* PolicyViewController.swift in Sources */,
 				9E4828CC51FCC13EC11DEEDDB1AC4342 /* Timeline.swift in Sources */,
 				ED426F892033BFC50022B990 /* BannerLinkerButton.swift in Sources */,
 				71C2222F0C99C9B002D1AD9FD6507DA9 /* Validation.swift in Sources */,

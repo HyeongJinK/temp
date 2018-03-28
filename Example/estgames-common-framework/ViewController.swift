@@ -18,6 +18,12 @@ class ViewController: UIViewController {
         //print(UIDevice.current.orientation.rawValue)
     }
     
+    @IBAction func policyTest(_ sender: Any) {
+        var policy = PolicyDialog(pview: self)
+        policy.show()
+       // var policy = UIAlertController(
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

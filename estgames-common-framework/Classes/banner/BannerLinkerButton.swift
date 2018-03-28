@@ -31,7 +31,7 @@ class LinkerButton: UIButton {
         let entry:Entry = imageViews.last!.bannerEntry!
         
         switch entry.banner.action.type {
-        case "WEB_VIEW":    //TODO 이미지 뷰처리..
+        case "WEB_VIEW":
             if let url = URL(string: entry.banner.action.url) {
                 UIApplication.shared.open(url, options: [:])
             }
