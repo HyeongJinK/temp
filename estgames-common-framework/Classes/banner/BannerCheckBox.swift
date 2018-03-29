@@ -26,7 +26,7 @@ class CheckBox: UIButton {
         uncheckImage = UIImage(named: uncheckedCheckbox, in:Bundle(for: CheckBox.self), compatibleWith:nil)!
         
         super.init(frame: CGRect(x: leftMargin, y: topMargin, width: width, height: height))
-        
+    
         self.setImage(uncheckImage, for: .normal)
         self.addTarget(self, action: #selector(checkBoxClick), for: .touchUpInside)
     }
