@@ -33,6 +33,8 @@ class bannerBottomView: UIView {
          높이
          체크박스 왼쪽, 상단, 오른쪽 마진
          */
+        
+        //DeviceNum 5
     }
     
     override init(frame: CGRect) {
