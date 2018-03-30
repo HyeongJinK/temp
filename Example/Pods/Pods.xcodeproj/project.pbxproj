@@ -61,6 +61,7 @@
 		ED9D598B202ABC2800EB0BE2 /* checked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3AC6B59F76A1E17CFDBD2E2AE9FA48 /* checked-checkbox-50.png */; };
 		ED9D598C202ABC2C00EB0BE2 /* unchecked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F52823148E001202D16935307C678FA7 /* unchecked-checkbox-50.png */; };
 		ED9D598E202AC47C00EB0BE2 /* BannerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */; };
+		EDE46E58206DBF7300912C27 /* PolicyCloseBt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE46E57206DBF7300912C27 /* PolicyCloseBt.swift */; };
 		EDF00A33206398FF005DC230 /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00A32206398FF005DC230 /* AuthorityViewController.swift */; };
 		EDF00A352064BBBB005DC230 /* PolicyDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00A342064BBBB005DC230 /* PolicyDialog.swift */; };
 		EDF4DAE3206B49E7004A5D47 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */; };
@@ -160,6 +161,7 @@
 		ED426F862032A0D30022B990 /* BannerWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerWebView.swift; sourceTree = "<group>"; };
 		ED426F882033BFC50022B990 /* BannerLinkerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerLinkerButton.swift; sourceTree = "<group>"; };
 		ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBottomView.swift; sourceTree = "<group>"; };
+		EDE46E57206DBF7300912C27 /* PolicyCloseBt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyCloseBt.swift; sourceTree = "<group>"; };
 		EDF00A32206398FF005DC230 /* AuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
 		EDF00A342064BBBB005DC230 /* PolicyDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDialog.swift; sourceTree = "<group>"; };
 		EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 			children = (
 				EDF00A342064BBBB005DC230 /* PolicyDialog.swift */,
 				EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */,
+				EDE46E57206DBF7300912C27 /* PolicyCloseBt.swift */,
 			);
 			path = policy;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				2A5D60974343C8CFA6D231E313FF2617 /* Request.swift in Sources */,
 				ED9D598E202AC47C00EB0BE2 /* BannerBottomView.swift in Sources */,
 				B007F43C22D90B8089D998DCA8879E7C /* Response.swift in Sources */,
+				EDE46E58206DBF7300912C27 /* PolicyCloseBt.swift in Sources */,
 				CF8889AF52D45ED60A5AA940F9F0D5A3 /* ResponseSerialization.swift in Sources */,
 				35281721DA82F683D92CB7F143F38D91 /* Result.swift in Sources */,
 				2BB37047D78D9262EB7D6A8D5892DBE4 /* ServerTrustPolicy.swift in Sources */,
