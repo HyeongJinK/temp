@@ -58,6 +58,8 @@
 		ED426F872032A0D30022B990 /* BannerWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED426F862032A0D30022B990 /* BannerWebView.swift */; };
 		ED426F892033BFC50022B990 /* BannerLinkerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED426F882033BFC50022B990 /* BannerLinkerButton.swift */; };
 		ED75AC26A5F0CBB0325C0E78E627FF82 /* estgames-common-framework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBFE0F4F67937565B961810CF795E2E /* estgames-common-framework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED8FC2AA206E0B4C004E2F12 /* PolicyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8FC2A9206E0B4C004E2F12 /* PolicyDataSet.swift */; };
+		ED8FC2AC206E1554004E2F12 /* PolicyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8FC2AB206E1554004E2F12 /* PolicyButton.swift */; };
 		ED9D598B202ABC2800EB0BE2 /* checked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3AC6B59F76A1E17CFDBD2E2AE9FA48 /* checked-checkbox-50.png */; };
 		ED9D598C202ABC2C00EB0BE2 /* unchecked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F52823148E001202D16935307C678FA7 /* unchecked-checkbox-50.png */; };
 		ED9D598E202AC47C00EB0BE2 /* BannerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */; };
@@ -160,6 +162,8 @@
 		ED11F0722068D98A00DA5342 /* ResultDataJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDataJson.swift; sourceTree = "<group>"; };
 		ED426F862032A0D30022B990 /* BannerWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerWebView.swift; sourceTree = "<group>"; };
 		ED426F882033BFC50022B990 /* BannerLinkerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerLinkerButton.swift; sourceTree = "<group>"; };
+		ED8FC2A9206E0B4C004E2F12 /* PolicyDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDataSet.swift; sourceTree = "<group>"; };
+		ED8FC2AB206E1554004E2F12 /* PolicyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyButton.swift; sourceTree = "<group>"; };
 		ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBottomView.swift; sourceTree = "<group>"; };
 		EDE46E57206DBF7300912C27 /* PolicyCloseBt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyCloseBt.swift; sourceTree = "<group>"; };
 		EDF00A32206398FF005DC230 /* AuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
@@ -405,6 +409,8 @@
 				EDF00A342064BBBB005DC230 /* PolicyDialog.swift */,
 				EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */,
 				EDE46E57206DBF7300912C27 /* PolicyCloseBt.swift */,
+				ED8FC2A9206E0B4C004E2F12 /* PolicyDataSet.swift */,
+				ED8FC2AB206E1554004E2F12 /* PolicyButton.swift */,
 			);
 			path = policy;
 			sourceTree = "<group>";
@@ -605,6 +611,7 @@
 				70218A52C447DE4BA6457E82A60C224B /* BannerImageView.swift in Sources */,
 				EDF00A352064BBBB005DC230 /* PolicyDialog.swift in Sources */,
 				ED11F0712068D3E600DA5342 /* ApiCallController.swift in Sources */,
+				ED8FC2AC206E1554004E2F12 /* PolicyButton.swift in Sources */,
 				7A26DD4F6257BEE3333C6EED8A90C114 /* BannerJson.swift in Sources */,
 				F9A67300D9B427AB8DC3C641269BE94F /* DispatchQueue+Alamofire.swift in Sources */,
 				A109A239D56138211A4946B01AD58D9D /* estgames-common-framework-dummy.m in Sources */,
@@ -619,6 +626,7 @@
 				ED9D598E202AC47C00EB0BE2 /* BannerBottomView.swift in Sources */,
 				B007F43C22D90B8089D998DCA8879E7C /* Response.swift in Sources */,
 				EDE46E58206DBF7300912C27 /* PolicyCloseBt.swift in Sources */,
+				ED8FC2AA206E0B4C004E2F12 /* PolicyDataSet.swift in Sources */,
 				CF8889AF52D45ED60A5AA940F9F0D5A3 /* ResponseSerialization.swift in Sources */,
 				35281721DA82F683D92CB7F143F38D91 /* Result.swift in Sources */,
 				2BB37047D78D9262EB7D6A8D5892DBE4 /* ServerTrustPolicy.swift in Sources */,

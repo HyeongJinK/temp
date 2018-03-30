@@ -10,7 +10,7 @@ import UIKit
 import estgames_common_framework
 
 class ViewController: UIViewController {
-
+    var policy :PolicyDialog!
     @IBAction func bannerTest(_ sender: Any) {
         var banner = bannerFramework(pview: self);
         //banner.bottomViewHeight = 100;
@@ -19,13 +19,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func policyTest(_ sender: Any) {
-        var policy = PolicyDialog(pview: self)
+        
         policy.show()
+        //policy.dismiss()
        // var policy = UIAlertController(
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        policy = PolicyDialog(pview: self)
     }
     
     
@@ -34,5 +37,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func testttt(_ sender: Any) {
+        print(policy.contract1())
+        print(policy.contract2())
+    }
 }
 
