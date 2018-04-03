@@ -20,7 +20,7 @@ public class PolicyDialog {
     
     //이용약관 다이얼로그
     public func show() {
-        policyViewController.view.frame = CGRect(x: 41.5, y: 71.5, width: 522.5, height: 293.5)
+        //policyViewController.view.frame = CGRect(x: 41.5, y: 71.5, width: 522.5, height: 293.5)
         
         pview.present(policyViewController, animated: false)
     }

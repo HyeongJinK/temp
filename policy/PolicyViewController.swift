@@ -50,7 +50,7 @@ class PolicyViewController: UIViewController {
         label.text = text
         label.textAlignment = .center
         label.textColor = color
-        label.font = UIFont.systemFont(ofSize: size)
+        label.font = UIFont.init(name: "Spoqa Han Sans", size: size)//UIFont.systemFont(ofSize: size)
     }
     
     override func viewDidLoad() {

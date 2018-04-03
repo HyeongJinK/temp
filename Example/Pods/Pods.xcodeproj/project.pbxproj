@@ -64,6 +64,15 @@
 		ED9D598C202ABC2C00EB0BE2 /* unchecked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F52823148E001202D16935307C678FA7 /* unchecked-checkbox-50.png */; };
 		ED9D598E202AC47C00EB0BE2 /* BannerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */; };
 		EDE46E58206DBF7300912C27 /* PolicyCloseBt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE46E57206DBF7300912C27 /* PolicyCloseBt.swift */; };
+		EDEBA6C4207364CB003A211E /* UserDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6C3207364CB003A211E /* UserDialog.swift */; };
+		EDEBA6C62073653A003A211E /* UserLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6C52073653A003A211E /* UserLinkViewController.swift */; };
+		EDEBA6C82073654A003A211E /* UserLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6C72073654A003A211E /* UserLoadViewController.swift */; };
+		EDEBA6CA2073655A003A211E /* UserResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6C92073655A003A211E /* UserResultViewController.swift */; };
+		EDEBA6CC20736716003A211E /* UserDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6CB20736716003A211E /* UserDataSet.swift */; };
+		EDEBA6D12073790B003A211E /* Spoqa Han Sans Light_0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6CD2073790A003A211E /* Spoqa Han Sans Light_0.ttf */; };
+		EDEBA6D22073790B003A211E /* Spoqa Han Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6CE2073790A003A211E /* Spoqa Han Sans Regular.ttf */; };
+		EDEBA6D32073790B003A211E /* Spoqa Han Sans Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6CF2073790A003A211E /* Spoqa Han Sans Thin.ttf */; };
+		EDEBA6D42073790B003A211E /* Spoqa Han Sans Bold_0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6D02073790B003A211E /* Spoqa Han Sans Bold_0.ttf */; };
 		EDF00A33206398FF005DC230 /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00A32206398FF005DC230 /* AuthorityViewController.swift */; };
 		EDF00A352064BBBB005DC230 /* PolicyDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00A342064BBBB005DC230 /* PolicyDialog.swift */; };
 		EDF4DAE3206B49E7004A5D47 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */; };
@@ -166,6 +175,15 @@
 		ED8FC2AB206E1554004E2F12 /* PolicyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyButton.swift; sourceTree = "<group>"; };
 		ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBottomView.swift; sourceTree = "<group>"; };
 		EDE46E57206DBF7300912C27 /* PolicyCloseBt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyCloseBt.swift; sourceTree = "<group>"; };
+		EDEBA6C3207364CB003A211E /* UserDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDialog.swift; sourceTree = "<group>"; };
+		EDEBA6C52073653A003A211E /* UserLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLinkViewController.swift; sourceTree = "<group>"; };
+		EDEBA6C72073654A003A211E /* UserLoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoadViewController.swift; sourceTree = "<group>"; };
+		EDEBA6C92073655A003A211E /* UserResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResultViewController.swift; sourceTree = "<group>"; };
+		EDEBA6CB20736716003A211E /* UserDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSet.swift; sourceTree = "<group>"; };
+		EDEBA6CD2073790A003A211E /* Spoqa Han Sans Light_0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Light_0.ttf"; sourceTree = "<group>"; };
+		EDEBA6CE2073790A003A211E /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
+		EDEBA6CF2073790A003A211E /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
+		EDEBA6D02073790B003A211E /* Spoqa Han Sans Bold_0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Bold_0.ttf"; sourceTree = "<group>"; };
 		EDF00A32206398FF005DC230 /* AuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
 		EDF00A342064BBBB005DC230 /* PolicyDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDialog.swift; sourceTree = "<group>"; };
 		EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +259,10 @@
 		3E732207DA3FDBC6E67AB8D290B30F5B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EDEBA6D02073790B003A211E /* Spoqa Han Sans Bold_0.ttf */,
+				EDEBA6CD2073790A003A211E /* Spoqa Han Sans Light_0.ttf */,
+				EDEBA6CE2073790A003A211E /* Spoqa Han Sans Regular.ttf */,
+				EDEBA6CF2073790A003A211E /* Spoqa Han Sans Thin.ttf */,
 				ED11F067206876E600DA5342 /* btn_stoptoday_check_img@2x.png */,
 				ED11F066206876E600DA5342 /* btn_stoptoday_check_img@3x.png */,
 				ED11F068206876E600DA5342 /* btn_stoptoday_default_img@2x.png */,
@@ -320,6 +342,7 @@
 		CCC0CCF4BBB0EE23C2E151779ABB3972 /* estgames-common-framework */ = {
 			isa = PBXGroup;
 			children = (
+				EDEBA6C22073648F003A211E /* user */,
 				ED11F06D2068C2EC00DA5342 /* common */,
 				EDF00A3120621A21005DC230 /* policy */,
 				EDF00A3020621A11005DC230 /* authority */,
@@ -393,6 +416,18 @@
 				ED11F0722068D98A00DA5342 /* ResultDataJson.swift */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		EDEBA6C22073648F003A211E /* user */ = {
+			isa = PBXGroup;
+			children = (
+				EDEBA6C3207364CB003A211E /* UserDialog.swift */,
+				EDEBA6C52073653A003A211E /* UserLinkViewController.swift */,
+				EDEBA6C72073654A003A211E /* UserLoadViewController.swift */,
+				EDEBA6C92073655A003A211E /* UserResultViewController.swift */,
+				EDEBA6CB20736716003A211E /* UserDataSet.swift */,
+			);
+			path = user;
 			sourceTree = "<group>";
 		};
 		EDF00A3020621A11005DC230 /* authority */ = {
@@ -573,6 +608,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDEBA6D42073790B003A211E /* Spoqa Han Sans Bold_0.ttf in Resources */,
 				ED11F055206876A300DA5342 /* img_provision_bigbox.png in Resources */,
 				ED11F05B206876B400DA5342 /* btn_bottom_close_img@2x.png in Resources */,
 				0B7262D1F9F54179E0E3BB362A3593A1 /* estgames-common-framework.bundle in Resources */,
@@ -581,8 +617,11 @@
 				ED11F06A206876E600DA5342 /* btn_stoptoday_check_img@3x.png in Resources */,
 				ED11F06B206876E600DA5342 /* btn_stoptoday_check_img@2x.png in Resources */,
 				ED9D598B202ABC2800EB0BE2 /* checked-checkbox-50.png in Resources */,
+				EDEBA6D32073790B003A211E /* Spoqa Han Sans Thin.ttf in Resources */,
 				ED11F060206876C200DA5342 /* btn_close_img@3x.png in Resources */,
+				EDEBA6D12073790B003A211E /* Spoqa Han Sans Light_0.ttf in Resources */,
 				ED11F05F206876C200DA5342 /* btn_close_img@2x.png in Resources */,
+				EDEBA6D22073790B003A211E /* Spoqa Han Sans Regular.ttf in Resources */,
 				ED11F069206876E600DA5342 /* btn_stoptoday_default_img@3x.png in Resources */,
 				ED11F06C206876E600DA5342 /* btn_stoptoday_default_img@2x.png in Resources */,
 				ED11F05C206876B400DA5342 /* btn_bottom_close_img@3x.png in Resources */,
@@ -608,6 +647,7 @@
 				DAFD9DB8870A730BCDC6275A0DE84EC3 /* BannerCheckBox.swift in Sources */,
 				15483E39C94109C7D31EF01E7D18FDA6 /* BannerCloseBt.swift in Sources */,
 				ABA4541A06EEAEEA7F8CF6C3BC4A5F05 /* BannerFramework.swift in Sources */,
+				EDEBA6CA2073655A003A211E /* UserResultViewController.swift in Sources */,
 				70218A52C447DE4BA6457E82A60C224B /* BannerImageView.swift in Sources */,
 				EDF00A352064BBBB005DC230 /* PolicyDialog.swift in Sources */,
 				ED11F0712068D3E600DA5342 /* ApiCallController.swift in Sources */,
@@ -631,9 +671,13 @@
 				35281721DA82F683D92CB7F143F38D91 /* Result.swift in Sources */,
 				2BB37047D78D9262EB7D6A8D5892DBE4 /* ServerTrustPolicy.swift in Sources */,
 				082CF6A70E7C79976A7C8E1C07BB095F /* SessionDelegate.swift in Sources */,
+				EDEBA6C82073654A003A211E /* UserLoadViewController.swift in Sources */,
+				EDEBA6C62073653A003A211E /* UserLinkViewController.swift in Sources */,
 				1F742D61139B811E4DDF7214111EC335 /* SessionManager.swift in Sources */,
+				EDEBA6C4207364CB003A211E /* UserDialog.swift in Sources */,
 				5E16D782F32A3050ED23A4880C802C49 /* TaskDelegate.swift in Sources */,
 				EDF00A33206398FF005DC230 /* AuthorityViewController.swift in Sources */,
+				EDEBA6CC20736716003A211E /* UserDataSet.swift in Sources */,
 				EDF4DAE3206B49E7004A5D47 /* PolicyViewController.swift in Sources */,
 				9E4828CC51FCC13EC11DEEDDB1AC4342 /* Timeline.swift in Sources */,
 				ED426F892033BFC50022B990 /* BannerLinkerButton.swift in Sources */,
