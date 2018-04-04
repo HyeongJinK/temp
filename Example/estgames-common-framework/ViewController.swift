@@ -10,27 +10,39 @@ import UIKit
 import estgames_common_framework
 
 class ViewController: UIViewController {
-    var policy :PolicyDialog!
+    var policy: PolicyDialog!
+    var userLink: UserDialog!
     @IBAction func bannerTest(_ sender: Any) {
-        var banner = bannerFramework(pview: self);
+        let banner = bannerFramework(pview: self);
         //banner.bottomViewHeight = 100;
         banner.show();
         //print(UIDevice.current.orientation.rawValue)
     }
     
+    @IBAction func authorityTest(_ sender: Any) {
+    }
+    
     @IBAction func policyTest(_ sender: Any) {
-        
         policy.show()
-        //policy.dismiss()
-       // var policy = UIAlertController(
-        
+    }
+    
+    @IBAction func userLinkTest(_ sender: Any) {
+        userLink.showUserLinkDialog()
+    }
+    
+    @IBAction func UserLoadTest(_ sender: Any) {
+        userLink.showUserLoadDialog()
+    }
+    
+    @IBAction func UserResultTest(_ sender: Any) {
+        userLink.showUserResultDialog()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         policy = PolicyDialog(pview: self)
+        userLink = UserDialog(pview: self)
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

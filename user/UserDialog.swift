@@ -10,11 +10,17 @@ import Foundation
 public class UserDialog {
     let pview: UIViewController
     let userLinkViewController: UserLinkViewController
+    let userLoadViewController: UserLoadViewController
+    let userResultViewController: UserResultViewController
     
     public init(pview: UIViewController) {
         self.pview = pview
         userLinkViewController = UserLinkViewController()
         userLinkViewController.modalPresentationStyle = .overCurrentContext
+        userLoadViewController = UserLoadViewController()
+        userLoadViewController.modalPresentationStyle = .overCurrentContext
+        userResultViewController = UserResultViewController()
+        userResultViewController.modalPresentationStyle = .overCurrentContext
     }
     
     public func showUserLinkDialog() {
@@ -22,10 +28,10 @@ public class UserDialog {
     }
     
     public func showUserLoadDialog() {
-        
+        pview.present(userLoadViewController, animated: false)
     }
     
     public func showUserResultDialog() {
-        
+        pview.present(userResultViewController, animated: false)
     }
 }

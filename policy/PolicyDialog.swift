@@ -22,6 +22,13 @@ public class PolicyDialog {
     public func show() {
         //policyViewController.view.frame = CGRect(x: 41.5, y: 71.5, width: 522.5, height: 293.5)
         
+        for name in UIFont.familyNames {
+            print(name)
+            if let nameString = name as? String
+            {
+                print(UIFont.fontNames(forFamilyName: nameString))
+            }
+        }
         pview.present(policyViewController, animated: false)
     }
     
