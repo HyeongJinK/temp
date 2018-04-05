@@ -17,27 +17,25 @@ class UserLoadViewController: UIViewController {
     var inputButton: UIButton!
     var confirmButton: UIButton!
     
+    func dataSet(_ data:UserDataSet) {
+        backgroundView = UIView(frame: data.userLoadbackgroundView!)
+        userLoadTitle = UILabel(frame: data.titleLabel!)
+        closeButton = UserCloseButton(self, frame: data.closeButton!)
+        lineView = UIButton(frame: data.lineView!)
+        middleLabel = UILabel(frame: data.userLoadMiddleLabel!)
+        confirmLabel = UILabel(frame: data.userLoadConfirmLabel!)
+        inputButton = UIButton(frame: data.userLoadInputButton!)
+        confirmButton = UIButton(frame: data.userLoadConfirmButton!)
+    }
+    
     override func viewDidLoad() {
-        backgroundView = UIView(frame: CGRect(x: 23.5, y: 262.5, width: 328, height: 187))
-        userLoadTitle = UILabel(frame: CGRect(x: 21.5, y: 15, width: 60, height: 12))
-        closeButton = UIButton(frame: CGRect(x: 297.5, y: 12, width: 14, height: 14))
-        lineView = UIButton(frame: CGRect(x: 0, y: 39, width: 328, height: 0.5))
-        middleLabel = UILabel(frame: CGRect(x: 22, y: 50.5, width: 270, height: 66))
-        confirmLabel = UILabel(frame: .zero)
-        inputButton = UIButton(frame: CGRect(x: 19, y: 124, width: 209.5, height: 35))
-        confirmButton = UIButton(frame: CGRect(x: 233.5, y: 124, width: 70, height: 35))
-        
-        
+        self.view.backgroundColor = UIColor(red: 53/255, green: 59/255, blue: 72/255, alpha: 0.8)
         
         backgroundView.backgroundColor = UIColor.white
         
         userLoadTitle.text = "기존 계정 불러오기"
         userLoadTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         userLoadTitle.font = UIFont.systemFont(ofSize: 12)
-        
-        
-        let closeButtonImg:UIImage = UIImage(named: "btn_close_img_user", in:Bundle(for: UserLoadViewController.self), compatibleWith:nil)!
-        closeButton.setImage(closeButtonImg, for: .normal)
         
         
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
@@ -51,16 +49,31 @@ class UserLoadViewController: UIViewController {
         middleLabel.attributedText = attrString
         
         
-        let inputButtonImg = UIImage(named: "img_inputbox_user", in: Bundle(for: UserLoadViewController.self), compatibleWith: nil)
-        inputButton.setImage(inputButtonImg, for: .normal)
+        confirmLabel.text="확인 문자 : confirm"
+        confirmLabel.font = UIFont.systemFont(ofSize: 10)
+        confirmLabel.textColor = UIColor(red: 48/255, green: 127/255, blue: 1, alpha: 1)
+        
+        
+        let inputButtonImg = UIImage(named: "img_inputbox_user", in: Bundle(for: UserLoadViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
+        inputButton.setBackgroundImage(inputButtonImg, for: .normal)
         inputButton.setTitleColor(UIColor(red: 126/255, green: 125/255, blue: 125/255, alpha: 1), for: .normal)
         inputButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         inputButton.setTitle("입력하기", for: .normal)
         
-        let confirmButtonImg = UIImage(named: "btn_confirm_user", in: Bundle(for: UserLoadViewController.self), compatibleWith: nil)
-        confirmButton.setImage(confirmButtonImg, for: .normal)
+        let confirmButtonImg = UIImage(named: "btn_confirm_user", in: Bundle(for: UserLoadViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
+        confirmButton.setBackgroundImage(confirmButtonImg, for: .normal)
         confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         confirmButton.setTitle("확인", for: .normal)
+        
+        
+        self.view.addSubview(backgroundView)
+        backgroundView.addSubview(userLoadTitle)
+        backgroundView.addSubview(closeButton)
+        backgroundView.addSubview(lineView)
+        backgroundView.addSubview(middleLabel)
+        backgroundView.addSubview(confirmLabel)
+        backgroundView.addSubview(inputButton)
+        backgroundView.addSubview(confirmButton)
     }
 }

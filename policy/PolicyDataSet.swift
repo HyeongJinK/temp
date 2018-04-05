@@ -20,7 +20,12 @@ class PolicyDataSet {
     public var closeBtFrame: CGRect
     
     init(deviceNum: Int) {
-        if (deviceNum == 5) {
+        switch(deviceNum) {
+//        case 320480 :
+//            break;
+//        case 320568 :
+//            break;
+        case 375667 :
             backgroudViewFrame = CGRect(x: 41.5, y: 71.5, width: 293.5, height: 522.5)
             backgroudImageFrame = CGRect(x: 0, y: 0, width: 293.5, height: 522.5)
             titleLabel1Frame = CGRect(x: 0 , y: 39, width: backgroudViewFrame.width, height: 13)
@@ -31,7 +36,16 @@ class PolicyDataSet {
             submitBt1Frame = CGRect(x: 26.5, y: 221.5, width: 241, height: 37.5)
             submitBt2Frame = CGRect(x: 26.5, y: 454, width: 241, height: 37.5)
             closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
-        } else if (deviceNum == 6) {
+            break;
+//        case 414736 :
+//            break;
+//        case 375812 :
+//            break;
+//        case 480320 :
+//            break;
+//        case 568320 :
+//            break;
+        case 667375 :
             backgroudViewFrame = CGRect(x: 84, y: 43.5, width: 499, height: 286.5)
             backgroudImageFrame = CGRect(x: 0, y: 0, width: 499, height: 286.5)
             titleLabel1Frame = CGRect(x: 0 , y: 29.5, width: backgroudViewFrame.width, height: 14)
@@ -42,7 +56,12 @@ class PolicyDataSet {
             submitBt1Frame = CGRect(x: 26, y: 216.5, width: 220.5, height: 37.5)
             submitBt2Frame = CGRect(x: 253.5, y: 216.5, width: 220.5, height: 37.5)
             closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
-        } else {
+            break;
+//        case 736412 :
+//            break;
+//        case 812375 :
+//            break;
+        default:
             backgroudViewFrame = CGRect(x: 41.5, y: 71.5, width: 293.5, height: 522.5)
             backgroudImageFrame = CGRect(x: 0, y: 0, width: 293.5, height: 522.5)
             titleLabel1Frame = CGRect(x: 0 , y: 39, width: backgroudViewFrame.width, height: 13)
@@ -53,6 +72,7 @@ class PolicyDataSet {
             submitBt1Frame = CGRect(x: 26.5, y: 221.5, width: 241, height: 37.5)
             submitBt2Frame = CGRect(x: 26.5, y: 454, width: 241, height: 37.5)
             closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
+            break;
         }
     }
 }

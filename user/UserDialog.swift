@@ -12,14 +12,19 @@ public class UserDialog {
     let userLinkViewController: UserLinkViewController
     let userLoadViewController: UserLoadViewController
     let userResultViewController: UserResultViewController
+    var userDataSet: UserDataSet
     
     public init(pview: UIViewController) {
         self.pview = pview
+        userDataSet = UserDataSet(deviceNum: DeviceClassification.deviceResolution(pview.view.frame.width, pview.view.frame.height))
         userLinkViewController = UserLinkViewController()
+        userLinkViewController.dataSet(userDataSet)
         userLinkViewController.modalPresentationStyle = .overCurrentContext
         userLoadViewController = UserLoadViewController()
+        userLoadViewController.dataSet(userDataSet)
         userLoadViewController.modalPresentationStyle = .overCurrentContext
         userResultViewController = UserResultViewController()
+        userResultViewController.dataSet(userDataSet)
         userResultViewController.modalPresentationStyle = .overCurrentContext
     }
     

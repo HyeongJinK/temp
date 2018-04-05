@@ -79,6 +79,7 @@
 		EDEBA6DE2074738B003A211E /* btn_close_img_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6D82074738A003A211E /* btn_close_img_user@2x.png */; };
 		EDEBA6DF2074738B003A211E /* btn_close_img_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6D92074738A003A211E /* btn_close_img_user@3x.png */; };
 		EDEBA6E02074738B003A211E /* btn_confirm_user.png in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6DA2074738A003A211E /* btn_confirm_user.png */; };
+		EDEBA6E22075DC9D003A211E /* UserCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6E12075DC9D003A211E /* UserCloseButton.swift */; };
 		EDF00A33206398FF005DC230 /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00A32206398FF005DC230 /* AuthorityViewController.swift */; };
 		EDF00A352064BBBB005DC230 /* PolicyDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00A342064BBBB005DC230 /* PolicyDialog.swift */; };
 		EDF4DAE3206B49E7004A5D47 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */; };
@@ -196,6 +197,7 @@
 		EDEBA6D82074738A003A211E /* btn_close_img_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img_user@2x.png"; sourceTree = "<group>"; };
 		EDEBA6D92074738A003A211E /* btn_close_img_user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img_user@3x.png"; sourceTree = "<group>"; };
 		EDEBA6DA2074738A003A211E /* btn_confirm_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_confirm_user.png; sourceTree = "<group>"; };
+		EDEBA6E12075DC9D003A211E /* UserCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCloseButton.swift; sourceTree = "<group>"; };
 		EDF00A32206398FF005DC230 /* AuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
 		EDF00A342064BBBB005DC230 /* PolicyDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDialog.swift; sourceTree = "<group>"; };
 		EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				EDEBA6C72073654A003A211E /* UserLoadViewController.swift */,
 				EDEBA6C92073655A003A211E /* UserResultViewController.swift */,
 				EDEBA6CB20736716003A211E /* UserDataSet.swift */,
+				EDEBA6E12075DC9D003A211E /* UserCloseButton.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				EDE46E58206DBF7300912C27 /* PolicyCloseBt.swift in Sources */,
 				ED8FC2AA206E0B4C004E2F12 /* PolicyDataSet.swift in Sources */,
 				CF8889AF52D45ED60A5AA940F9F0D5A3 /* ResponseSerialization.swift in Sources */,
+				EDEBA6E22075DC9D003A211E /* UserCloseButton.swift in Sources */,
 				35281721DA82F683D92CB7F143F38D91 /* Result.swift in Sources */,
 				2BB37047D78D9262EB7D6A8D5892DBE4 /* ServerTrustPolicy.swift in Sources */,
 				082CF6A70E7C79976A7C8E1C07BB095F /* SessionDelegate.swift in Sources */,

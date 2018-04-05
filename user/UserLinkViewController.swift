@@ -18,19 +18,20 @@ class UserLinkViewController: UIViewController {
     var confirmButton: UIButton!
     var cancelButton: UIButton!
     
+    func dataSet(_ data:UserDataSet) {
+        backgroudView = UIView(frame: data.userLinkBackgroudView!)
+        userLinkTitle = UILabel(frame: data.titleLabel!)
+        closeButton = UserCloseButton(self, frame: data.closeButton!)//x: backgroudView.frame.width - 16.5 - 14
+        lineView = UIView(frame: data.lineView!)  //width: backgroundView.frame.width
+        middleLabel = UILabel(frame: data.userLinkMiddleLabel!)
+        bottomLabel = UILabel(frame: data.userLinkBottomLabel!)
+        lineView2 = UIView(frame: data.userLinkLineView2!)
+        confirmButton = UIButton(frame: data.userLinkConfirmButton!)
+        cancelButton = UIButton(frame: data.userLinkCancelButton!)
+    }
     
     override func viewDidLoad() {
-        backgroudView = UIView(frame: CGRect(x: 23.5, y: 226, width: 328, height: 214))
-        userLinkTitle = UILabel(frame: CGRect(x: 21.5, y: 15, width: 60, height: 12))
-        closeButton = UIButton(frame: CGRect(x: 297.5, y: 12, width: 14, height: 14)) //x: backgroudView.frame.width - 16.5 - 14
-        lineView = UIView(frame: CGRect(x: 0, y: 39, width: 328, height: 0.5))  //width: backgroundView.frame.width
-        middleLabel = UILabel(frame: CGRect(x: 22, y: 50.5, width: 270, height: 66))
-        bottomLabel = UILabel(frame: CGRect(x: 22, y: 132, width: 270, height: 10))
-        lineView2 = UIView(frame: CGRect(x: 0, y: 158, width: 328, height: 0.5))
-        confirmButton = UIButton(frame: CGRect(x: 18, y: 167, width: 142, height: 37))
-        cancelButton = UIButton(frame: CGRect(x: 168, y: 167, width: 142, height: 37))
-        
-        self.view.backgroundColor = UIColor(red: 53/255, green: 59/255, blue: 72/255, alpha: 0.6)
+        self.view.backgroundColor = UIColor(red: 53/255, green: 59/255, blue: 72/255, alpha: 0.8)
         
         backgroudView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
@@ -38,10 +39,6 @@ class UserLinkViewController: UIViewController {
         userLinkTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         userLinkTitle.font = UIFont.systemFont(ofSize: 12)
         //userLinkTitle.font = UIFont.init(name: "SqoqaHanSans", size: 12)
-        
-        
-        let closeButtonImg:UIImage = UIImage(named: "btn_close_img_user", in:Bundle(for: UserLinkViewController.self), compatibleWith:nil)!
-        closeButton.setImage(closeButtonImg, for: .normal)
         
         
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
