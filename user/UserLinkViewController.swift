@@ -21,8 +21,8 @@ class UserLinkViewController: UIViewController {
     func dataSet(_ data:UserDataSet) {
         backgroudView = UIView(frame: data.userLinkBackgroudView!)
         userLinkTitle = UILabel(frame: data.titleLabel!)
-        closeButton = UserCloseButton(self, frame: data.closeButton!)//x: backgroudView.frame.width - 16.5 - 14
-        lineView = UIView(frame: data.lineView!)  //width: backgroundView.frame.width
+        closeButton = UserCloseButton(self, frame: data.userLinkCloseButton!)//x: backgroudView.frame.width - 16.5 - 14
+        lineView = UIView(frame: data.userLinkLineView!)  //width: backgroundView.frame.width
         middleLabel = UILabel(frame: data.userLinkMiddleLabel!)
         bottomLabel = UILabel(frame: data.userLinkBottomLabel!)
         lineView2 = UIView(frame: data.userLinkLineView2!)
