@@ -57,6 +57,10 @@
 		ED11F0732068D98A00DA5342 /* ResultDataJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11F0722068D98A00DA5342 /* ResultDataJson.swift */; };
 		ED426F872032A0D30022B990 /* BannerWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED426F862032A0D30022B990 /* BannerWebView.swift */; };
 		ED426F892033BFC50022B990 /* BannerLinkerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED426F882033BFC50022B990 /* BannerLinkerButton.swift */; };
+		ED5D8F6A2077482000E95449 /* AuthorityDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D8F692077482000E95449 /* AuthorityDialog.swift */; };
+		ED5D8F6D2077485200E95449 /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D8F6C2077485200E95449 /* AuthorityViewController.swift */; };
+		ED5D8F6F2077487600E95449 /* AuthorityStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5D8F6E2077487600E95449 /* AuthorityStoryboard.storyboard */; };
+		ED5D8F712077623E00E95449 /* AuthorityDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D8F702077623E00E95449 /* AuthorityDataSet.swift */; };
 		ED75AC26A5F0CBB0325C0E78E627FF82 /* estgames-common-framework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBFE0F4F67937565B961810CF795E2E /* estgames-common-framework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED8FC2AA206E0B4C004E2F12 /* PolicyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8FC2A9206E0B4C004E2F12 /* PolicyDataSet.swift */; };
 		ED8FC2AC206E1554004E2F12 /* PolicyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8FC2AB206E1554004E2F12 /* PolicyButton.swift */; };
@@ -80,7 +84,6 @@
 		EDEBA6DF2074738B003A211E /* btn_close_img_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6D92074738A003A211E /* btn_close_img_user@3x.png */; };
 		EDEBA6E02074738B003A211E /* btn_confirm_user.png in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6DA2074738A003A211E /* btn_confirm_user.png */; };
 		EDEBA6E22075DC9D003A211E /* UserCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6E12075DC9D003A211E /* UserCloseButton.swift */; };
-		EDF00A33206398FF005DC230 /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00A32206398FF005DC230 /* AuthorityViewController.swift */; };
 		EDF00A352064BBBB005DC230 /* PolicyDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00A342064BBBB005DC230 /* PolicyDialog.swift */; };
 		EDF4DAE3206B49E7004A5D47 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */; };
 		F9A67300D9B427AB8DC3C641269BE94F /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E27277884EEA2F57BA7F31DAA3CFC /* DispatchQueue+Alamofire.swift */; };
@@ -178,6 +181,10 @@
 		ED11F0722068D98A00DA5342 /* ResultDataJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDataJson.swift; sourceTree = "<group>"; };
 		ED426F862032A0D30022B990 /* BannerWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerWebView.swift; sourceTree = "<group>"; };
 		ED426F882033BFC50022B990 /* BannerLinkerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerLinkerButton.swift; sourceTree = "<group>"; };
+		ED5D8F692077482000E95449 /* AuthorityDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityDialog.swift; sourceTree = "<group>"; };
+		ED5D8F6C2077485200E95449 /* AuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
+		ED5D8F6E2077487600E95449 /* AuthorityStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthorityStoryboard.storyboard; sourceTree = "<group>"; };
+		ED5D8F702077623E00E95449 /* AuthorityDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityDataSet.swift; sourceTree = "<group>"; };
 		ED8FC2A9206E0B4C004E2F12 /* PolicyDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDataSet.swift; sourceTree = "<group>"; };
 		ED8FC2AB206E1554004E2F12 /* PolicyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyButton.swift; sourceTree = "<group>"; };
 		ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBottomView.swift; sourceTree = "<group>"; };
@@ -198,7 +205,6 @@
 		EDEBA6D92074738A003A211E /* btn_close_img_user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img_user@3x.png"; sourceTree = "<group>"; };
 		EDEBA6DA2074738A003A211E /* btn_confirm_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_confirm_user.png; sourceTree = "<group>"; };
 		EDEBA6E12075DC9D003A211E /* UserCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCloseButton.swift; sourceTree = "<group>"; };
-		EDF00A32206398FF005DC230 /* AuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
 		EDF00A342064BBBB005DC230 /* PolicyDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDialog.swift; sourceTree = "<group>"; };
 		EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		F1D18F1D391D56C5D8EB8187B43765AC /* BannerFramework.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerFramework.swift; sourceTree = "<group>"; };
@@ -454,7 +460,10 @@
 		EDF00A3020621A11005DC230 /* authority */ = {
 			isa = PBXGroup;
 			children = (
-				EDF00A32206398FF005DC230 /* AuthorityViewController.swift */,
+				ED5D8F692077482000E95449 /* AuthorityDialog.swift */,
+				ED5D8F6C2077485200E95449 /* AuthorityViewController.swift */,
+				ED5D8F6E2077487600E95449 /* AuthorityStoryboard.storyboard */,
+				ED5D8F702077623E00E95449 /* AuthorityDataSet.swift */,
 			);
 			path = authority;
 			sourceTree = "<group>";
@@ -630,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDEBA6D42073790B003A211E /* SpoqaHanSansBold.ttf in Resources */,
+				ED5D8F6F2077487600E95449 /* AuthorityStoryboard.storyboard in Resources */,
 				EDEBA6DC2074738B003A211E /* btn_cancel_user.png in Resources */,
 				EDEBA6DF2074738B003A211E /* btn_close_img_user@3x.png in Resources */,
 				ED11F055206876A300DA5342 /* img_provision_bigbox.png in Resources */,
@@ -696,6 +706,8 @@
 				ED8FC2AA206E0B4C004E2F12 /* PolicyDataSet.swift in Sources */,
 				CF8889AF52D45ED60A5AA940F9F0D5A3 /* ResponseSerialization.swift in Sources */,
 				EDEBA6E22075DC9D003A211E /* UserCloseButton.swift in Sources */,
+				ED5D8F712077623E00E95449 /* AuthorityDataSet.swift in Sources */,
+				ED5D8F6D2077485200E95449 /* AuthorityViewController.swift in Sources */,
 				35281721DA82F683D92CB7F143F38D91 /* Result.swift in Sources */,
 				2BB37047D78D9262EB7D6A8D5892DBE4 /* ServerTrustPolicy.swift in Sources */,
 				082CF6A70E7C79976A7C8E1C07BB095F /* SessionDelegate.swift in Sources */,
@@ -704,7 +716,7 @@
 				1F742D61139B811E4DDF7214111EC335 /* SessionManager.swift in Sources */,
 				EDEBA6C4207364CB003A211E /* UserDialog.swift in Sources */,
 				5E16D782F32A3050ED23A4880C802C49 /* TaskDelegate.swift in Sources */,
-				EDF00A33206398FF005DC230 /* AuthorityViewController.swift in Sources */,
+				ED5D8F6A2077482000E95449 /* AuthorityDialog.swift in Sources */,
 				EDEBA6CC20736716003A211E /* UserDataSet.swift in Sources */,
 				EDF4DAE3206B49E7004A5D47 /* PolicyViewController.swift in Sources */,
 				9E4828CC51FCC13EC11DEEDDB1AC4342 /* Timeline.swift in Sources */,

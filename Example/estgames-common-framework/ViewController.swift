@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func authorityTest(_ sender: Any) {
+        let authDialog: AuthorityDialog = AuthorityDialog(pview: self)
+        
+        authDialog.show()
     }
     
     @IBAction func policyTest(_ sender: Any) {

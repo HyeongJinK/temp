@@ -2,33 +2,57 @@
 //  AuthorityViewController.swift
 //  estgames-common-framework
 //
-//  Created by estgames on 2018. 3. 22..
+//  Created by estgames on 2018. 4. 6..
 //
 
 import UIKit
 
 class AuthorityViewController: UIViewController {
+    var backgroundView: UIView!
+    var titleLabel: UILabel!
+    var webView: UIWebView!
+    var confirmButton: UIButton!
+    var authorityDataSet: AuthorityDataSet!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        authorityDataSet = AuthorityDataSet(deviceNum: DeviceClassification.deviceResolution(self.view.frame.width, self.view.frame.height))
+        
+        backgroundView = UIView(frame: self.view.frame)
+        titleLabel = UILabel(frame: authorityDataSet.titleLabel)
+        webView = UIWebView(frame: authorityDataSet.webView)
+        confirmButton = UIButton(frame: authorityDataSet.confirmButton)
+        
+        
+        backgroundView.backgroundColor = UIColor(red: 53/255, green: 59/255, blue: 72/255, alpha: 1)
+        
+        
+        titleLabel.text = "원활한 게임플레이를 위해 아래 권한을 필요로 합니다."
+        titleLabel.center.x = backgroundView.center.x
+        titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 0
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 19)
+        titleLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        
+        let confirmButtonImage = UIImage(named: "btn_confirm", in: Bundle(for: AuthorityViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
+        confirmButton.setBackgroundImage(confirmButtonImage, for: .normal)
+        confirmButton.setTitle("확인", for: .normal)
+        confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        confirmButton.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
+        
+        self.view.addSubview(backgroundView)
+        backgroundView.addSubview(titleLabel)
+        backgroundView.addSubview(webView)
+        backgroundView.addSubview(confirmButton)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc func closeBtAction(_ sender:UIButton) {
+        self.dismiss(animated: false, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
-    */
-
 }
