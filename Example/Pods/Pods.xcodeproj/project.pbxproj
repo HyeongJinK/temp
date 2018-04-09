@@ -7,224 +7,208 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		082CF6A70E7C79976A7C8E1C07BB095F /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA329B450B4C6CD183498B405133B82E /* SessionDelegate.swift */; };
-		0B7262D1F9F54179E0E3BB362A3593A1 /* estgames-common-framework.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8358E26028878E197540CC253D673B73 /* estgames-common-framework.bundle */; };
-		0DBCEDF3B8CF7BD43C6876E0D73E9A8F /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E1E38897750652EBD04B49345C07D /* ParameterEncoding.swift */; };
-		15483E39C94109C7D31EF01E7D18FDA6 /* BannerCloseBt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03B16BB2EEA0F982D1F4855C799A53 /* BannerCloseBt.swift */; };
-		1A4B6B0D2994EC31087C6D67DC24D050 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15F782977CCA2EF13A40F6983E9EB6 /* Notifications.swift */; };
+		002B9784652A44CDFBE2459712762AC2 /* img_provision_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 059D42DC0D05E76276210E73FB73AE53 /* img_provision_box.png */; };
+		0411EF88C5DEA8B04513D06AB1414391 /* btn_confirm_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D77C7DCE13BF0A0A0C04D64B6E866B8 /* btn_confirm_user.png */; };
+		0499D669F913EBAC55C912D8BFAEDBD5 /* BannerFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A5A10E4D8D8DEE3B5AB467CFDE228 /* BannerFramework.swift */; };
+		068041669496656CEA4827B7EBF0D5E7 /* UserLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9ECE9820616FCB36B39D8B05D6B29 /* UserLinkViewController.swift */; };
+		0B49E39D4492B3E1C1E5F1ED50516F5D /* btn_close_img_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AEBDCE10D3258018492A88C6403CCDB /* btn_close_img_user@2x.png */; };
+		0E426E8155C883CFC112B5C53BF4D78A /* btn_detail_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 190414277D343211914E63BA07F82AAF /* btn_detail_img@2x.png */; };
+		1723C90EA04391C4181FE5CC32FD42BD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54768F72A4D55FE0E807E63EF22F8BC9 /* Response.swift */; };
+		179E7C0C821700860D833B2A59DEF0E4 /* BannerCloseBt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C60B1867EF645D9C8272CE4369AB6D9 /* BannerCloseBt.swift */; };
 		1C3B01229A0DD03F9A42CEB8387F8AEF /* Pods-estgames-common-framework_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D5CD5EC05F4D60438C4785938DC39760 /* Pods-estgames-common-framework_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1F742D61139B811E4DDF7214111EC335 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263DF5E384779F6B0375ABC91DBF88C7 /* SessionManager.swift */; };
-		2A5D60974343C8CFA6D231E313FF2617 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595076B34803A4D4F64CC3943902863 /* Request.swift */; };
-		2BB37047D78D9262EB7D6A8D5892DBE4 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11DA1B24FD2F067AD29F000D1191AFC /* ServerTrustPolicy.swift */; };
+		235E39626BE115F80BC621C51655B4F8 /* PolicyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D998E2C6407292FEE5B9EB3225A801 /* PolicyDataSet.swift */; };
+		26052FD55135359D78232AA821CDF9D0 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D1EE9F8A903266F080F547630794C /* AFError.swift */; };
+		274950F69892B2022D66843AB4B53309 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4239CE1F584D2089D4E7378648FA0 /* Request.swift */; };
+		2762BB3F544A92B974B26E94B139C9FB /* estgames-common-framework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 362E4E7FC2050B398C14DF1851FEFE12 /* estgames-common-framework-dummy.m */; };
+		28A586C7A403F5AD4910CBB92644BA1E /* estgames-common-framework.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8358E26028878E197540CC253D673B73 /* estgames-common-framework.bundle */; };
+		2B78C0CE8BC814C573B6444A80BCF589 /* btn_stoptoday_default_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA79F2CE4AC6A53913FB6308AE0F4B5C /* btn_stoptoday_default_img@3x.png */; };
+		2FBB0CE3FECAA8EBF7A6F93B14766FD5 /* btn_provision_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3A83124959FCFF407DD8F0A612ED9F /* btn_provision_on.png */; };
 		305BE267A54E28F903E291E547085B2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		35281721DA82F683D92CB7F143F38D91 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1843DDF31B8C76CC793FF882BB2C63 /* Result.swift */; };
+		3E4864620D1BDAC3BE72420BA380FC31 /* BannerJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D46147323F1FF6F49AF396A6A5CB21 /* BannerJson.swift */; };
+		3FA767470DA28E004A81C670526A384B /* btn_cancel_user.png in Resources */ = {isa = PBXBuildFile; fileRef = AB9537AB1A20B785DEA6C3167CCE5599 /* btn_cancel_user.png */; };
 		43B8803407A4E2FA7697F0D99487A3C1 /* Pods-estgames-common-framework_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A7ACDD8082DCBC89EA538CBCE01EDD1 /* Pods-estgames-common-framework_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E16D782F32A3050ED23A4880C802C49 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE21DB36C6E974F583ACF55B0D3764A /* TaskDelegate.swift */; };
+		4B0980D46C846C7E350A36F6D8147F6C /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E12490596530C9E081E7C04B8717E2 /* NetworkReachabilityManager.swift */; };
+		4C1D8FAB2B5AC7BF01E16B3372E83A7E /* PolicyDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23822CCE6067938291A72E2D017829 /* PolicyDialog.swift */; };
+		56D062D699020288812E511077B5FDAB /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142162333809615E75226CC2DC090EF5 /* ResponseSerialization.swift */; };
+		58BE69C31844AE2B37C0F4D5AA011811 /* img_popup_box_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 5241D3441FA55ED0D8671705832E5C0B /* img_popup_box_user.png */; };
 		5F4347C52C45DBB46667DF5EA68CE30B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		70218A52C447DE4BA6457E82A60C224B /* BannerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F937009F181FE309810D7A8A2C767B /* BannerImageView.swift */; };
-		71C2222F0C99C9B002D1AD9FD6507DA9 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE2DC3D610EFBA92BB582A8F5ACCC5 /* Validation.swift */; };
-		77CCF4FC7A945D0F7E7025D2F6F2B529 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C073FB70EF4CCA769C4759F63DA0DD01 /* Alamofire.swift */; };
-		7A26DD4F6257BEE3333C6EED8A90C114 /* BannerJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCF17AA1A2639A9FD4ADCCDF4BA6D48 /* BannerJson.swift */; };
+		620A527771020BB62C23F4806B4ABE00 /* DeviceClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC60FA03100AD3F335EF78D2E358B40 /* DeviceClassification.swift */; };
+		6B50021460DFDBBE9DB25CD65872B467 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3AA72BB24902F0206FAA2EE7716DF /* DispatchQueue+Alamofire.swift */; };
+		6C38104243E681A581E18F22BBABF1F3 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CB832EAF7831CE82BC21E88E3691F /* TaskDelegate.swift */; };
+		6C9A04605EA84D3E5C7451C3A48828B6 /* UserDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEA1AFC3BCB74805363CBC2A2DEC89 /* UserDialog.swift */; };
+		754BEE6408EB5A6F9FE39FD0E1D77DC3 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922EF75F7FB66C5E52F6A223493DF4D /* ParameterEncoding.swift */; };
+		770CD5039265B1577C16F40675A181BC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6C0B0E143CCFD2CA0F8688A2FB86B6 /* Result.swift */; };
+		771439D39082B0DAEE744F1EBFE7D78A /* UserResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53128D1E51DE388B97911C32768ECBAE /* UserResultViewController.swift */; };
+		781B4F28403E5C72650037662BDED511 /* btn_stoptoday_default_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A619B4CAA3592FF589063B1758172289 /* btn_stoptoday_default_img@2x.png */; };
+		7A26018FF200941F7A7DDFA4E0D89FB3 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723FB365A7EA55C0D3891B15295355A /* SessionDelegate.swift */; };
+		7AFE2EEAB35305D1B550FA651AE40FAC /* btn_bottom_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1487F6594128BF5A34C11A613DF599FE /* btn_bottom_close_img@2x.png */; };
 		7E2E7B3E1F869A04886D09D0D0F09375 /* Pods-estgames-common-framework_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F998FE59E92D0F3CD8D58D157846C49A /* Pods-estgames-common-framework_Example-dummy.m */; };
+		7EA0F7FCD4A67640AD05E3930E9591D7 /* img_authority_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 520E7D83FC277E26703163AC30FC5A80 /* img_authority_box.png */; };
 		819FA7C336872D1819C33C94D2610A03 /* Pods-estgames-common-framework_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8617E707A5B8D834A11BA031F83FF34 /* Pods-estgames-common-framework_Tests-dummy.m */; };
-		915050183B33CEDB31D1DF515B79644A /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE3FF8B4398DDF2D2A9C605D31E97AE /* NetworkReachabilityManager.swift */; };
-		9E4828CC51FCC13EC11DEEDDB1AC4342 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E373E4E4540A9840C8833D21ACE150C8 /* Timeline.swift */; };
-		A109A239D56138211A4946B01AD58D9D /* estgames-common-framework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A220AF32E6ED293750EADED589055 /* estgames-common-framework-dummy.m */; };
-		ABA4541A06EEAEEA7F8CF6C3BC4A5F05 /* BannerFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D18F1D391D56C5D8EB8187B43765AC /* BannerFramework.swift */; };
-		B007F43C22D90B8089D998DCA8879E7C /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD206C1D0D89A1E5F17C05292664A2D /* Response.swift */; };
-		CF8889AF52D45ED60A5AA940F9F0D5A3 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF213D37EC888391D0CC03657F173EC /* ResponseSerialization.swift */; };
-		D95D739C29C7C5431D6C56A8AC3AB99F /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F8ACB74C2C0BEAE7F2755DCDD3F8B /* MultipartFormData.swift */; };
-		DAFD9DB8870A730BCDC6275A0DE84EC3 /* BannerCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF05397B1FA122CB9B910140F776842 /* BannerCheckBox.swift */; };
-		E0F0831F4E907EC9CDBE99A241BC85CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		ED11F053206876A300DA5342 /* img_provision_box.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F04D206876A200DA5342 /* img_provision_box.png */; };
-		ED11F054206876A300DA5342 /* btn_provision_on.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F04E206876A200DA5342 /* btn_provision_on.png */; };
-		ED11F055206876A300DA5342 /* img_provision_bigbox.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F04F206876A300DA5342 /* img_provision_bigbox.png */; };
-		ED11F056206876A300DA5342 /* btn_provision_off.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F050206876A300DA5342 /* btn_provision_off.png */; };
-		ED11F057206876A300DA5342 /* img_authority_box.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F051206876A300DA5342 /* img_authority_box.png */; };
-		ED11F058206876A300DA5342 /* btn_confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F052206876A300DA5342 /* btn_confirm.png */; };
-		ED11F05B206876B400DA5342 /* btn_bottom_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F059206876B300DA5342 /* btn_bottom_close_img@2x.png */; };
-		ED11F05C206876B400DA5342 /* btn_bottom_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F05A206876B300DA5342 /* btn_bottom_close_img@3x.png */; };
-		ED11F05F206876C200DA5342 /* btn_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F05D206876C200DA5342 /* btn_close_img@2x.png */; };
-		ED11F060206876C200DA5342 /* btn_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F05E206876C200DA5342 /* btn_close_img@3x.png */; };
-		ED11F063206876D500DA5342 /* btn_detail_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F061206876D400DA5342 /* btn_detail_img@2x.png */; };
-		ED11F064206876D500DA5342 /* btn_detail_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F062206876D500DA5342 /* btn_detail_img@3x.png */; };
-		ED11F069206876E600DA5342 /* btn_stoptoday_default_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F065206876E600DA5342 /* btn_stoptoday_default_img@3x.png */; };
-		ED11F06A206876E600DA5342 /* btn_stoptoday_check_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F066206876E600DA5342 /* btn_stoptoday_check_img@3x.png */; };
-		ED11F06B206876E600DA5342 /* btn_stoptoday_check_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F067206876E600DA5342 /* btn_stoptoday_check_img@2x.png */; };
-		ED11F06C206876E600DA5342 /* btn_stoptoday_default_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED11F068206876E600DA5342 /* btn_stoptoday_default_img@2x.png */; };
-		ED11F06F2068C34900DA5342 /* DeviceClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11F06E2068C34900DA5342 /* DeviceClassification.swift */; };
-		ED11F0712068D3E600DA5342 /* ApiCallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11F0702068D3E600DA5342 /* ApiCallController.swift */; };
-		ED11F0732068D98A00DA5342 /* ResultDataJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11F0722068D98A00DA5342 /* ResultDataJson.swift */; };
-		ED426F872032A0D30022B990 /* BannerWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED426F862032A0D30022B990 /* BannerWebView.swift */; };
-		ED426F892033BFC50022B990 /* BannerLinkerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED426F882033BFC50022B990 /* BannerLinkerButton.swift */; };
-		ED5D8F6A2077482000E95449 /* AuthorityDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D8F692077482000E95449 /* AuthorityDialog.swift */; };
-		ED5D8F6D2077485200E95449 /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D8F6C2077485200E95449 /* AuthorityViewController.swift */; };
-		ED5D8F6F2077487600E95449 /* AuthorityStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5D8F6E2077487600E95449 /* AuthorityStoryboard.storyboard */; };
-		ED5D8F712077623E00E95449 /* AuthorityDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D8F702077623E00E95449 /* AuthorityDataSet.swift */; };
-		ED75AC26A5F0CBB0325C0E78E627FF82 /* estgames-common-framework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBFE0F4F67937565B961810CF795E2E /* estgames-common-framework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED8FC2AA206E0B4C004E2F12 /* PolicyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8FC2A9206E0B4C004E2F12 /* PolicyDataSet.swift */; };
-		ED8FC2AC206E1554004E2F12 /* PolicyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8FC2AB206E1554004E2F12 /* PolicyButton.swift */; };
-		ED9D598B202ABC2800EB0BE2 /* checked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3AC6B59F76A1E17CFDBD2E2AE9FA48 /* checked-checkbox-50.png */; };
-		ED9D598C202ABC2C00EB0BE2 /* unchecked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F52823148E001202D16935307C678FA7 /* unchecked-checkbox-50.png */; };
-		ED9D598E202AC47C00EB0BE2 /* BannerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */; };
-		EDE46E58206DBF7300912C27 /* PolicyCloseBt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE46E57206DBF7300912C27 /* PolicyCloseBt.swift */; };
-		EDEBA6C4207364CB003A211E /* UserDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6C3207364CB003A211E /* UserDialog.swift */; };
-		EDEBA6C62073653A003A211E /* UserLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6C52073653A003A211E /* UserLinkViewController.swift */; };
-		EDEBA6C82073654A003A211E /* UserLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6C72073654A003A211E /* UserLoadViewController.swift */; };
-		EDEBA6CA2073655A003A211E /* UserResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6C92073655A003A211E /* UserResultViewController.swift */; };
-		EDEBA6CC20736716003A211E /* UserDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6CB20736716003A211E /* UserDataSet.swift */; };
-		EDEBA6D12073790B003A211E /* SpoqaHanSansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6CD2073790A003A211E /* SpoqaHanSansLight.ttf */; };
-		EDEBA6D22073790B003A211E /* SpoqaHanSansRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6CE2073790A003A211E /* SpoqaHanSansRegular.ttf */; };
-		EDEBA6D32073790B003A211E /* SpoqaHanSansThin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6CF2073790A003A211E /* SpoqaHanSansThin.ttf */; };
-		EDEBA6D42073790B003A211E /* SpoqaHanSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6D02073790B003A211E /* SpoqaHanSansBold.ttf */; };
-		EDEBA6DB2074738B003A211E /* img_inputbox_user.png in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6D520747389003A211E /* img_inputbox_user.png */; };
-		EDEBA6DC2074738B003A211E /* btn_cancel_user.png in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6D62074738A003A211E /* btn_cancel_user.png */; };
-		EDEBA6DD2074738B003A211E /* img_popup_box_user.png in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6D72074738A003A211E /* img_popup_box_user.png */; };
-		EDEBA6DE2074738B003A211E /* btn_close_img_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6D82074738A003A211E /* btn_close_img_user@2x.png */; };
-		EDEBA6DF2074738B003A211E /* btn_close_img_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6D92074738A003A211E /* btn_close_img_user@3x.png */; };
-		EDEBA6E02074738B003A211E /* btn_confirm_user.png in Resources */ = {isa = PBXBuildFile; fileRef = EDEBA6DA2074738A003A211E /* btn_confirm_user.png */; };
-		EDEBA6E22075DC9D003A211E /* UserCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEBA6E12075DC9D003A211E /* UserCloseButton.swift */; };
-		EDF00A352064BBBB005DC230 /* PolicyDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF00A342064BBBB005DC230 /* PolicyDialog.swift */; };
-		EDF4DAE3206B49E7004A5D47 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */; };
-		F9A67300D9B427AB8DC3C641269BE94F /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E27277884EEA2F57BA7F31DAA3CFC /* DispatchQueue+Alamofire.swift */; };
-		FAF865061235555F934C10AE5C4EA65B /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F53EA8C5D14583EDC343F9385EC089 /* ReplaceMe.swift */; };
-		FB87D43165BE21CE6165E3BE198D9895 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1FAF3A0721DA83748789BBE1B065A3 /* AFError.swift */; };
+		85319C986F764C0B202F2D2EDABA1D03 /* BannerWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AED4313B7E82B5A038A9D88ED4132B /* BannerWebView.swift */; };
+		8E254E9EC8E1F81645584F0B5B85F157 /* btn_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C61FE2C62135E731DA862D312A251A29 /* btn_close_img@2x.png */; };
+		8F24B2F281FE71151A07CF00D6174945 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D51F716948F8472208373AB5503D91 /* ReplaceMe.swift */; };
+		93E8459CDC4EEBD760D03E1A60902606 /* unchecked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 558B75A98AA2ECAF35EF457ED4E31BFF /* unchecked-checkbox-50.png */; };
+		95C7268BD5CCAD0E92CAD11ACEC4BD6A /* btn_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDA716B69AACA5CDD0E35DACBB5C5BFB /* btn_close_img@3x.png */; };
+		95DC0209824A6D919899668A4C6A610E /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CD7066973864873832062297B91929 /* Notifications.swift */; };
+		9B75E6C1A32B6C27CF9559A717A3DCB6 /* AuthorityDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64B0F5B8F0A73882D7E6CB388A1455 /* AuthorityDataSet.swift */; };
+		9E8BFE1F80BA8084E32A595786D57BF0 /* btn_stoptoday_check_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FDBE096E9D3764A0D8DA8692351081 /* btn_stoptoday_check_img@2x.png */; };
+		9EA473564D17527B0344460913EE2B71 /* img_inputbox_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 30F83B6571B3169B0F42BEDABD715CEE /* img_inputbox_user.png */; };
+		A5971392F6D9BFCB9213D74E59D7CAF5 /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CC80B4CAD42BAB920E54245164F058 /* AuthorityViewController.swift */; };
+		A737B63B1C7F586A1BFD0D11EEC14F56 /* btn_bottom_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD65C0775F26F110F51DAEBF5F866E6 /* btn_bottom_close_img@3x.png */; };
+		A921D576A069AB2EF1F232B3890494A8 /* PolicyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AEBE909902D1A901A9CB7D94D127FF /* PolicyButton.swift */; };
+		ABAC866DEA46B59D06BF4920D154979E /* ResultDataJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2531BD25B7C33B1E9B9870D213308E /* ResultDataJson.swift */; };
+		AF363914DFFCFCAFFC09A224EDC67A27 /* img_provision_bigbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C5BD47C7F31A2799E67F5AF476BE7A /* img_provision_bigbox.png */; };
+		AF5373E76B07068D55D24375AB66AA01 /* UserCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEECF3B842C45EC4F21367255BA441 /* UserCloseButton.swift */; };
+		B584C5410DC80CA2A1D62ACD686F5503 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1E0FE084BE99BFD84E16D2048E3295 /* Validation.swift */; };
+		B9195F4D4EC5A73777E8937414B1A381 /* UserLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332C83A7F3265267E3BADD324DE015D4 /* UserLoadViewController.swift */; };
+		BC2264601B9F6B6D3C9E52CC47CA0F9A /* checked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E8E55567FFCC82F239D0D849FA6D837A /* checked-checkbox-50.png */; };
+		BC303C463944B918506B8ECDC5D736DC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471D3748ADB06A99676CDA2C03C9D5A /* MultipartFormData.swift */; };
+		BCF12DCB5C0854965FA542169668A6BC /* btn_close_img_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F7A691613BC3AD477F81483F136BE46 /* btn_close_img_user@3x.png */; };
+		C18E453CBE1314A573B52B63185C9043 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0C262D423FACF8BD65FC4F2091465E /* Timeline.swift */; };
+		C2AD44AF85CE26337DCD57BAF7F46861 /* btn_stoptoday_check_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 500D3212712BDC240023A8FE37C7540F /* btn_stoptoday_check_img@3x.png */; };
+		C75303980631751632DEA0BFA6B3D719 /* AuthorityDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42D3A868A062A4FB0123C27104FF3EC /* AuthorityDialog.swift */; };
+		C8B37718E4DEC1F2C7CDA7FAAB3F543F /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390733AD42184AAA7D68E624A239F5A8 /* ServerTrustPolicy.swift */; };
+		CA13AEF99519BBB7C0CA3B52A72929D8 /* BannerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507FCA425C0B898C97FFC5FB08B26B54 /* BannerImageView.swift */; };
+		CA75CA24916BBAC0C8EA29962CB695D2 /* BannerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02D727B5A761AECEE389B0121A53F2 /* BannerBottomView.swift */; };
+		CCE66D30072F915A2179CBFF90071C58 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F23A178F787BFADF2EC0EBAF4E59F /* Alamofire.swift */; };
+		D022CB5D0C10A81853C44525BCF40341 /* PolicyCloseBt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE83E9A83A9D7084F13F5DD2E48B01DB /* PolicyCloseBt.swift */; };
+		D4D8E30F4CEABD81C0385564BE6FABBB /* AuthorityStoryboard.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 7C3820B086E02FB83320820339CA5BA1 /* AuthorityStoryboard.storyboard */; };
+		D5C782F7A9B79BBE02FE0516C84BDD2D /* btn_detail_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C3695F17C67B97BBFCAC9757A1AFC89 /* btn_detail_img@3x.png */; };
+		D8847058A7B210C4F31F3066387E78F7 /* btn_confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = C59B581B4A5E67721D64AF9E065A01D2 /* btn_confirm.png */; };
+		DC6BF4254703B6953C1E5DB53887AAD3 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2559A86E960401751D26D0919E084C3C /* SessionManager.swift */; };
+		DD170B4B22A8A36E88942CA67099DB1F /* btn_provision_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C958FC59BEF60FB0D96E98D884CEC0C /* btn_provision_off.png */; };
+		E5BDD22592322F6D74DD023D2D231DA4 /* estgames-common-framework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 711DC255064DAE0FDCA43D5FA766D42E /* estgames-common-framework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB49BFE627A255323F9A9C48E77C33AD /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD75CF210772598DE4E73A12BF27EC /* PolicyViewController.swift */; };
+		EB7A98000EBEFC13EACCA6012D48A2DC /* UserDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4E9B13160A61BDB2DA47F934374CE /* UserDataSet.swift */; };
+		F5375765C84C40196EAB9295F2694081 /* ApiCallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CAA34D531A30665E75C0316D89E3A2 /* ApiCallController.swift */; };
+		F65CB4FD7B86E8032A36B418052AA964 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		F7309F5BB57B0A29C70F5BCB918A9CB3 /* BannerLinkerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA975F151DD98B517E82E8B5C2A3845 /* BannerLinkerButton.swift */; };
+		FA63BE51C12B6B2C0815F78BB3C0490A /* BannerCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CACFA2A4D485AE33FC365F9FEF99E /* BannerCheckBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0EED1A5BE6C0DC1C2970DB0189716763 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CA6D4C769C7C346F8A457D14CB78E62;
+			remoteInfo = "estgames-common-framework-estgames-common-framework";
+		};
 		1E42C8D6BE9AD9714DC93601350B871A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2BC84A176277B057C4C946D4D981B41C;
+			remoteGlobalIDString = 7C016EE50B5E4C799CCBD141E71F4932;
 			remoteInfo = "estgames-common-framework";
-		};
-		B3EE0317FDA17945B6910434EEFCF57C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D8CA3B232995ED2702A00B947230077D;
-			remoteInfo = "estgames-common-framework-estgames-common-framework";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		027022526236CD56CE495AD4CAB7FC7A /* Pods_estgames_common_framework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_estgames_common_framework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04730931DB720663E9982C89683B0123 /* estgames-common-framework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "estgames-common-framework.modulemap"; sourceTree = "<group>"; };
+		048CACFA2A4D485AE33FC365F9FEF99E /* BannerCheckBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerCheckBox.swift; sourceTree = "<group>"; };
+		059D17A86640DCDAABF5C8E47EEDA894 /* estgames-common-framework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "estgames-common-framework-prefix.pch"; sourceTree = "<group>"; };
+		059D42DC0D05E76276210E73FB73AE53 /* img_provision_box.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = img_provision_box.png; path = "estgames-common-framework/Assets/img_provision_box.png"; sourceTree = "<group>"; };
+		06D51F716948F8472208373AB5503D91 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = "estgames-common-framework/Classes/ReplaceMe.swift"; sourceTree = "<group>"; };
+		07C5BD47C7F31A2799E67F5AF476BE7A /* img_provision_bigbox.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = img_provision_bigbox.png; path = "estgames-common-framework/Assets/img_provision_bigbox.png"; sourceTree = "<group>"; };
+		08EEECF3B842C45EC4F21367255BA441 /* UserCloseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserCloseButton.swift; sourceTree = "<group>"; };
+		0C60B1867EF645D9C8272CE4369AB6D9 /* BannerCloseBt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerCloseBt.swift; sourceTree = "<group>"; };
+		10FDBE096E9D3764A0D8DA8692351081 /* btn_stoptoday_check_img@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_stoptoday_check_img@2x.png"; path = "estgames-common-framework/Assets/btn_stoptoday_check_img@2x.png"; sourceTree = "<group>"; };
+		142162333809615E75226CC2DC090EF5 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		1487F6594128BF5A34C11A613DF599FE /* btn_bottom_close_img@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_bottom_close_img@2x.png"; path = "estgames-common-framework/Assets/btn_bottom_close_img@2x.png"; sourceTree = "<group>"; };
 		14D44E79330F411C3FC95D96D8E07289 /* Pods-estgames-common-framework_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-estgames-common-framework_Tests-resources.sh"; sourceTree = "<group>"; };
-		14DE3D8ADD1661442742FBBBF9E05861 /* estgames-common-framework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "estgames-common-framework-prefix.pch"; sourceTree = "<group>"; };
 		184291D4A9E12214270348CD2F6443CF /* Pods-estgames-common-framework_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-estgames-common-framework_Tests.modulemap"; sourceTree = "<group>"; };
+		190414277D343211914E63BA07F82AAF /* btn_detail_img@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_detail_img@2x.png"; path = "estgames-common-framework/Assets/btn_detail_img@2x.png"; sourceTree = "<group>"; };
 		1A7B1D2074C9567A0F581BAA0BB5C068 /* Pods-estgames-common-framework_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-estgames-common-framework_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1BBF237CB10BB53837996A332ACB42B1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1BE3FF8B4398DDF2D2A9C605D31E97AE /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		1C1A220AF32E6ED293750EADED589055 /* estgames-common-framework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "estgames-common-framework-dummy.m"; sourceTree = "<group>"; };
-		223E1E38897750652EBD04B49345C07D /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		21EEA1AFC3BCB74805363CBC2A2DEC89 /* UserDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserDialog.swift; sourceTree = "<group>"; };
 		23438C1C4E9E9E0CBCABAEC8C288C32B /* Pods-estgames-common-framework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-estgames-common-framework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		254E27277884EEA2F57BA7F31DAA3CFC /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		263DF5E384779F6B0375ABC91DBF88C7 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		291E7A945BBC3B40A0FE3EB7D4B9F5D8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2471D3748ADB06A99676CDA2C03C9D5A /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		2559A86E960401751D26D0919E084C3C /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		267F23A178F787BFADF2EC0EBAF4E59F /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		2DD65C0775F26F110F51DAEBF5F866E6 /* btn_bottom_close_img@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_bottom_close_img@3x.png"; path = "estgames-common-framework/Assets/btn_bottom_close_img@3x.png"; sourceTree = "<group>"; };
+		2E02D727B5A761AECEE389B0121A53F2 /* BannerBottomView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerBottomView.swift; sourceTree = "<group>"; };
+		2F7A691613BC3AD477F81483F136BE46 /* btn_close_img_user@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_close_img_user@3x.png"; path = "estgames-common-framework/Assets/btn_close_img_user@3x.png"; sourceTree = "<group>"; };
+		30F83B6571B3169B0F42BEDABD715CEE /* img_inputbox_user.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = img_inputbox_user.png; path = "estgames-common-framework/Assets/img_inputbox_user.png"; sourceTree = "<group>"; };
 		310242082A5B6B0A39906846B56634AE /* Pods_estgames_common_framework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_estgames_common_framework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		332C83A7F3265267E3BADD324DE015D4 /* UserLoadViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserLoadViewController.swift; sourceTree = "<group>"; };
+		362E4E7FC2050B398C14DF1851FEFE12 /* estgames-common-framework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "estgames-common-framework-dummy.m"; sourceTree = "<group>"; };
+		390733AD42184AAA7D68E624A239F5A8 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		3D77C7DCE13BF0A0A0C04D64B6E866B8 /* btn_confirm_user.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = btn_confirm_user.png; path = "estgames-common-framework/Assets/btn_confirm_user.png"; sourceTree = "<group>"; };
+		470D1EE9F8A903266F080F547630794C /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
 		4861387EE2290F44E3735CBE3EEDFCFC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49955912B928B225DEFC659571F50E6A /* ResourceBundle-estgames-common-framework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-estgames-common-framework-Info.plist"; sourceTree = "<group>"; };
-		4B3F8ACB74C2C0BEAE7F2755DCDD3F8B /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
-		4CF05397B1FA122CB9B910140F776842 /* BannerCheckBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerCheckBox.swift; sourceTree = "<group>"; };
-		4EBFE0F4F67937565B961810CF795E2E /* estgames-common-framework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "estgames-common-framework-umbrella.h"; sourceTree = "<group>"; };
-		555B89214FB76C45716BA2D7412510EC /* estgames-common-framework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "estgames-common-framework.modulemap"; sourceTree = "<group>"; };
-		56F937009F181FE309810D7A8A2C767B /* BannerImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerImageView.swift; sourceTree = "<group>"; };
-		6595076B34803A4D4F64CC3943902863 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		48E12490596530C9E081E7C04B8717E2 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		4922EF75F7FB66C5E52F6A223493DF4D /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		4AEBDCE10D3258018492A88C6403CCDB /* btn_close_img_user@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_close_img_user@2x.png"; path = "estgames-common-framework/Assets/btn_close_img_user@2x.png"; sourceTree = "<group>"; };
+		4F6C0B0E143CCFD2CA0F8688A2FB86B6 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		500D3212712BDC240023A8FE37C7540F /* btn_stoptoday_check_img@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_stoptoday_check_img@3x.png"; path = "estgames-common-framework/Assets/btn_stoptoday_check_img@3x.png"; sourceTree = "<group>"; };
+		507FCA425C0B898C97FFC5FB08B26B54 /* BannerImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerImageView.swift; sourceTree = "<group>"; };
+		520E7D83FC277E26703163AC30FC5A80 /* img_authority_box.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = img_authority_box.png; path = "estgames-common-framework/Assets/img_authority_box.png"; sourceTree = "<group>"; };
+		5241D3441FA55ED0D8671705832E5C0B /* img_popup_box_user.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = img_popup_box_user.png; path = "estgames-common-framework/Assets/img_popup_box_user.png"; sourceTree = "<group>"; };
+		52D998E2C6407292FEE5B9EB3225A801 /* PolicyDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PolicyDataSet.swift; sourceTree = "<group>"; };
+		53128D1E51DE388B97911C32768ECBAE /* UserResultViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserResultViewController.swift; sourceTree = "<group>"; };
+		536CB832EAF7831CE82BC21E88E3691F /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
+		54768F72A4D55FE0E807E63EF22F8BC9 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		558B75A98AA2ECAF35EF457ED4E31BFF /* unchecked-checkbox-50.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "unchecked-checkbox-50.png"; path = "estgames-common-framework/Assets/unchecked-checkbox-50.png"; sourceTree = "<group>"; };
+		5723FB365A7EA55C0D3891B15295355A /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		5C958FC59BEF60FB0D96E98D884CEC0C /* btn_provision_off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = btn_provision_off.png; path = "estgames-common-framework/Assets/btn_provision_off.png"; sourceTree = "<group>"; };
+		5FA4239CE1F584D2089D4E7378648FA0 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6B3A83124959FCFF407DD8F0A612ED9F /* btn_provision_on.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = btn_provision_on.png; path = "estgames-common-framework/Assets/btn_provision_on.png"; sourceTree = "<group>"; };
 		6BF233898EA4FDB35B74922BF50BD62B /* Pods-estgames-common-framework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-estgames-common-framework_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6D1FAF3A0721DA83748789BBE1B065A3 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
+		711DC255064DAE0FDCA43D5FA766D42E /* estgames-common-framework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "estgames-common-framework-umbrella.h"; sourceTree = "<group>"; };
+		72B4E9B13160A61BDB2DA47F934374CE /* UserDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserDataSet.swift; sourceTree = "<group>"; };
+		77A3AA72BB24902F0206FAA2EE7716DF /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		7C3695F17C67B97BBFCAC9757A1AFC89 /* btn_detail_img@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_detail_img@3x.png"; path = "estgames-common-framework/Assets/btn_detail_img@3x.png"; sourceTree = "<group>"; };
+		7C3820B086E02FB83320820339CA5BA1 /* AuthorityStoryboard.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = AuthorityStoryboard.storyboard; sourceTree = "<group>"; };
 		80EBAA62C200D76721FFE74F860ED283 /* Pods-estgames-common-framework_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-estgames-common-framework_Example.modulemap"; sourceTree = "<group>"; };
 		8358E26028878E197540CC253D673B73 /* estgames-common-framework.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "estgames-common-framework.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A4EFC4375FBF1DF0E08A3D86F073DD5 /* estgames-common-framework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "estgames-common-framework.xcconfig"; sourceTree = "<group>"; };
 		936FD17F9DA305CAE31D4E5D1C7153AA /* Pods-estgames-common-framework_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-estgames-common-framework_Example-frameworks.sh"; sourceTree = "<group>"; };
+		93981F683DF39B46AA3D6F3B9C4C254B /* ResourceBundle-estgames-common-framework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-estgames-common-framework-Info.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		941AABFC6D1C77C9FA0B2C41D02CE4E0 /* Pods-estgames-common-framework_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-estgames-common-framework_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		9A1843DDF31B8C76CC793FF882BB2C63 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9A7ACDD8082DCBC89EA538CBCE01EDD1 /* Pods-estgames-common-framework_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-estgames-common-framework_Example-umbrella.h"; sourceTree = "<group>"; };
+		9FC60FA03100AD3F335EF78D2E358B40 /* DeviceClassification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeviceClassification.swift; sourceTree = "<group>"; };
+		A2DD75CF210772598DE4E73A12BF27EC /* PolicyViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
+		A5AEBE909902D1A901A9CB7D94D127FF /* PolicyButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PolicyButton.swift; sourceTree = "<group>"; };
+		A619B4CAA3592FF589063B1758172289 /* btn_stoptoday_default_img@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_stoptoday_default_img@2x.png"; path = "estgames-common-framework/Assets/btn_stoptoday_default_img@2x.png"; sourceTree = "<group>"; };
 		A66D01BB63C14BB50AC9279F4CF9E344 /* Pods-estgames-common-framework_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-estgames-common-framework_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		AA1EFFD0D90BEA1F14B4892EA3121802 /* Pods-estgames-common-framework_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-estgames-common-framework_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		AB3AC6B59F76A1E17CFDBD2E2AE9FA48 /* checked-checkbox-50.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "checked-checkbox-50.png"; path = "estgames-common-framework/Assets/checked-checkbox-50.png"; sourceTree = "<group>"; };
-		AF15F782977CCA2EF13A40F6983E9EB6 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		B11DA1B24FD2F067AD29F000D1191AFC /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		BBCF17AA1A2639A9FD4ADCCDF4BA6D48 /* BannerJson.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerJson.swift; sourceTree = "<group>"; };
-		C073FB70EF4CCA769C4759F63DA0DD01 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
-		C9F53EA8C5D14583EDC343F9385EC089 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = "estgames-common-framework/Classes/ReplaceMe.swift"; sourceTree = "<group>"; };
-		D5AE2DC3D610EFBA92BB582A8F5ACCC5 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		AB9537AB1A20B785DEA6C3167CCE5599 /* btn_cancel_user.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = btn_cancel_user.png; path = "estgames-common-framework/Assets/btn_cancel_user.png"; sourceTree = "<group>"; };
+		AF23822CCE6067938291A72E2D017829 /* PolicyDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PolicyDialog.swift; sourceTree = "<group>"; };
+		B1D46147323F1FF6F49AF396A6A5CB21 /* BannerJson.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerJson.swift; sourceTree = "<group>"; };
+		B313BA27473F1D4E6FD171304FD43477 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B38A5A10E4D8D8DEE3B5AB467CFDE228 /* BannerFramework.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerFramework.swift; sourceTree = "<group>"; };
+		B42D3A868A062A4FB0123C27104FF3EC /* AuthorityDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthorityDialog.swift; sourceTree = "<group>"; };
+		BBF9ECE9820616FCB36B39D8B05D6B29 /* UserLinkViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserLinkViewController.swift; sourceTree = "<group>"; };
+		BE83E9A83A9D7084F13F5DD2E48B01DB /* PolicyCloseBt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PolicyCloseBt.swift; sourceTree = "<group>"; };
+		C59B581B4A5E67721D64AF9E065A01D2 /* btn_confirm.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = btn_confirm.png; path = "estgames-common-framework/Assets/btn_confirm.png"; sourceTree = "<group>"; };
+		C61FE2C62135E731DA862D312A251A29 /* btn_close_img@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_close_img@2x.png"; path = "estgames-common-framework/Assets/btn_close_img@2x.png"; sourceTree = "<group>"; };
+		C8CC80B4CAD42BAB920E54245164F058 /* AuthorityViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
+		C8CD7066973864873832062297B91929 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		CB64B0F5B8F0A73882D7E6CB388A1455 /* AuthorityDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthorityDataSet.swift; sourceTree = "<group>"; };
+		CDA716B69AACA5CDD0E35DACBB5C5BFB /* btn_close_img@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_close_img@3x.png"; path = "estgames-common-framework/Assets/btn_close_img@3x.png"; sourceTree = "<group>"; };
 		D5CD5EC05F4D60438C4785938DC39760 /* Pods-estgames-common-framework_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-estgames-common-framework_Tests-umbrella.h"; sourceTree = "<group>"; };
 		D7CD632A44F8BA443216AC12CE49CF52 /* Pods-estgames-common-framework_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-estgames-common-framework_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		DD03B16BB2EEA0F982D1F4855C799A53 /* BannerCloseBt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerCloseBt.swift; sourceTree = "<group>"; };
-		DFE21DB36C6E974F583ACF55B0D3764A /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
 		E3653DD3B52D5B88944E88BA1FDFA02C /* Pods-estgames-common-framework_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-estgames-common-framework_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E373E4E4540A9840C8833D21ACE150C8 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		E4AD2FA28B41688FC06982A4F8A85923 /* Pods-estgames-common-framework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-estgames-common-framework_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E7CAA34D531A30665E75C0316D89E3A2 /* ApiCallController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ApiCallController.swift; sourceTree = "<group>"; };
 		E8A6FC9AB9226C1845486F51F345FF45 /* Pods-estgames-common-framework_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-estgames-common-framework_Example-resources.sh"; sourceTree = "<group>"; };
+		E8E55567FFCC82F239D0D849FA6D837A /* checked-checkbox-50.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "checked-checkbox-50.png"; path = "estgames-common-framework/Assets/checked-checkbox-50.png"; sourceTree = "<group>"; };
+		EB0C262D423FACF8BD65FC4F2091465E /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		EB1E0FE084BE99BFD84E16D2048E3295 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		EB316AA227D706BAC93CD6C842D6A704 /* estgames_common_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = estgames_common_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED11F04D206876A200DA5342 /* img_provision_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_provision_box.png; sourceTree = "<group>"; };
-		ED11F04E206876A200DA5342 /* btn_provision_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_provision_on.png; sourceTree = "<group>"; };
-		ED11F04F206876A300DA5342 /* img_provision_bigbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_provision_bigbox.png; sourceTree = "<group>"; };
-		ED11F050206876A300DA5342 /* btn_provision_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_provision_off.png; sourceTree = "<group>"; };
-		ED11F051206876A300DA5342 /* img_authority_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_authority_box.png; sourceTree = "<group>"; };
-		ED11F052206876A300DA5342 /* btn_confirm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_confirm.png; sourceTree = "<group>"; };
-		ED11F059206876B300DA5342 /* btn_bottom_close_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_bottom_close_img@2x.png"; sourceTree = "<group>"; };
-		ED11F05A206876B300DA5342 /* btn_bottom_close_img@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_bottom_close_img@3x.png"; sourceTree = "<group>"; };
-		ED11F05D206876C200DA5342 /* btn_close_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img@2x.png"; sourceTree = "<group>"; };
-		ED11F05E206876C200DA5342 /* btn_close_img@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img@3x.png"; sourceTree = "<group>"; };
-		ED11F061206876D400DA5342 /* btn_detail_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_detail_img@2x.png"; sourceTree = "<group>"; };
-		ED11F062206876D500DA5342 /* btn_detail_img@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_detail_img@3x.png"; sourceTree = "<group>"; };
-		ED11F065206876E600DA5342 /* btn_stoptoday_default_img@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_stoptoday_default_img@3x.png"; sourceTree = "<group>"; };
-		ED11F066206876E600DA5342 /* btn_stoptoday_check_img@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_stoptoday_check_img@3x.png"; sourceTree = "<group>"; };
-		ED11F067206876E600DA5342 /* btn_stoptoday_check_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_stoptoday_check_img@2x.png"; sourceTree = "<group>"; };
-		ED11F068206876E600DA5342 /* btn_stoptoday_default_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_stoptoday_default_img@2x.png"; sourceTree = "<group>"; };
-		ED11F06E2068C34900DA5342 /* DeviceClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceClassification.swift; sourceTree = "<group>"; };
-		ED11F0702068D3E600DA5342 /* ApiCallController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCallController.swift; sourceTree = "<group>"; };
-		ED11F0722068D98A00DA5342 /* ResultDataJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDataJson.swift; sourceTree = "<group>"; };
-		ED426F862032A0D30022B990 /* BannerWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerWebView.swift; sourceTree = "<group>"; };
-		ED426F882033BFC50022B990 /* BannerLinkerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerLinkerButton.swift; sourceTree = "<group>"; };
-		ED5D8F692077482000E95449 /* AuthorityDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityDialog.swift; sourceTree = "<group>"; };
-		ED5D8F6C2077485200E95449 /* AuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityViewController.swift; sourceTree = "<group>"; };
-		ED5D8F6E2077487600E95449 /* AuthorityStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthorityStoryboard.storyboard; sourceTree = "<group>"; };
-		ED5D8F702077623E00E95449 /* AuthorityDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityDataSet.swift; sourceTree = "<group>"; };
-		ED8FC2A9206E0B4C004E2F12 /* PolicyDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDataSet.swift; sourceTree = "<group>"; };
-		ED8FC2AB206E1554004E2F12 /* PolicyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyButton.swift; sourceTree = "<group>"; };
-		ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBottomView.swift; sourceTree = "<group>"; };
-		EDE46E57206DBF7300912C27 /* PolicyCloseBt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyCloseBt.swift; sourceTree = "<group>"; };
-		EDEBA6C3207364CB003A211E /* UserDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDialog.swift; sourceTree = "<group>"; };
-		EDEBA6C52073653A003A211E /* UserLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLinkViewController.swift; sourceTree = "<group>"; };
-		EDEBA6C72073654A003A211E /* UserLoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoadViewController.swift; sourceTree = "<group>"; };
-		EDEBA6C92073655A003A211E /* UserResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResultViewController.swift; sourceTree = "<group>"; };
-		EDEBA6CB20736716003A211E /* UserDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSet.swift; sourceTree = "<group>"; };
-		EDEBA6CD2073790A003A211E /* SpoqaHanSansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansLight.ttf; sourceTree = "<group>"; };
-		EDEBA6CE2073790A003A211E /* SpoqaHanSansRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansRegular.ttf; sourceTree = "<group>"; };
-		EDEBA6CF2073790A003A211E /* SpoqaHanSansThin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansThin.ttf; sourceTree = "<group>"; };
-		EDEBA6D02073790B003A211E /* SpoqaHanSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansBold.ttf; sourceTree = "<group>"; };
-		EDEBA6D520747389003A211E /* img_inputbox_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_inputbox_user.png; sourceTree = "<group>"; };
-		EDEBA6D62074738A003A211E /* btn_cancel_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_cancel_user.png; sourceTree = "<group>"; };
-		EDEBA6D72074738A003A211E /* img_popup_box_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_popup_box_user.png; sourceTree = "<group>"; };
-		EDEBA6D82074738A003A211E /* btn_close_img_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img_user@2x.png"; sourceTree = "<group>"; };
-		EDEBA6D92074738A003A211E /* btn_close_img_user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img_user@3x.png"; sourceTree = "<group>"; };
-		EDEBA6DA2074738A003A211E /* btn_confirm_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_confirm_user.png; sourceTree = "<group>"; };
-		EDEBA6E12075DC9D003A211E /* UserCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCloseButton.swift; sourceTree = "<group>"; };
-		EDF00A342064BBBB005DC230 /* PolicyDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDialog.swift; sourceTree = "<group>"; };
-		EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
-		F1D18F1D391D56C5D8EB8187B43765AC /* BannerFramework.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerFramework.swift; sourceTree = "<group>"; };
-		F52823148E001202D16935307C678FA7 /* unchecked-checkbox-50.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "unchecked-checkbox-50.png"; path = "estgames-common-framework/Assets/unchecked-checkbox-50.png"; sourceTree = "<group>"; };
+		EF2531BD25B7C33B1E9B9870D213308E /* ResultDataJson.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResultDataJson.swift; sourceTree = "<group>"; };
+		F66FC9FB1B4DC6355B64667DEDF20416 /* estgames-common-framework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "estgames-common-framework.xcconfig"; sourceTree = "<group>"; };
+		F6AED4313B7E82B5A038A9D88ED4132B /* BannerWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerWebView.swift; sourceTree = "<group>"; };
 		F8617E707A5B8D834A11BA031F83FF34 /* Pods-estgames-common-framework_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-estgames-common-framework_Tests-dummy.m"; sourceTree = "<group>"; };
 		F998FE59E92D0F3CD8D58D157846C49A /* Pods-estgames-common-framework_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-estgames-common-framework_Example-dummy.m"; sourceTree = "<group>"; };
-		FA329B450B4C6CD183498B405133B82E /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
-		FAD206C1D0D89A1E5F17C05292664A2D /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		FFF213D37EC888391D0CC03657F173EC /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		FA79F2CE4AC6A53913FB6308AE0F4B5C /* btn_stoptoday_default_img@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_stoptoday_default_img@3x.png"; path = "estgames-common-framework/Assets/btn_stoptoday_default_img@3x.png"; sourceTree = "<group>"; };
+		FDA975F151DD98B517E82E8B5C2A3845 /* BannerLinkerButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerLinkerButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2387760CAF527414068DA6049C7F41A4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E0F0831F4E907EC9CDBE99A241BC85CE /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		462A3CE9349FB3D3ACA7F19F6B51A1AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,93 +225,122 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D291738E12A9F31F1719F0F5BDF4B023 /* Frameworks */ = {
+		7F167A17D53819E2B3399467C6A08E2C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED17FD03390E117A2AC2207A46088AF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F65CB4FD7B86E8032A36B418052AA964 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1591C8221326A78F64474B8839781F1C /* alamofire */ = {
+		2BE6CCC32617A2E443C18B4A032ACD91 /* policy */ = {
 			isa = PBXGroup;
 			children = (
-				6D1FAF3A0721DA83748789BBE1B065A3 /* AFError.swift */,
-				C073FB70EF4CCA769C4759F63DA0DD01 /* Alamofire.swift */,
-				254E27277884EEA2F57BA7F31DAA3CFC /* DispatchQueue+Alamofire.swift */,
-				4B3F8ACB74C2C0BEAE7F2755DCDD3F8B /* MultipartFormData.swift */,
-				1BE3FF8B4398DDF2D2A9C605D31E97AE /* NetworkReachabilityManager.swift */,
-				AF15F782977CCA2EF13A40F6983E9EB6 /* Notifications.swift */,
-				223E1E38897750652EBD04B49345C07D /* ParameterEncoding.swift */,
-				6595076B34803A4D4F64CC3943902863 /* Request.swift */,
-				FAD206C1D0D89A1E5F17C05292664A2D /* Response.swift */,
-				FFF213D37EC888391D0CC03657F173EC /* ResponseSerialization.swift */,
-				9A1843DDF31B8C76CC793FF882BB2C63 /* Result.swift */,
-				B11DA1B24FD2F067AD29F000D1191AFC /* ServerTrustPolicy.swift */,
-				FA329B450B4C6CD183498B405133B82E /* SessionDelegate.swift */,
-				263DF5E384779F6B0375ABC91DBF88C7 /* SessionManager.swift */,
-				DFE21DB36C6E974F583ACF55B0D3764A /* TaskDelegate.swift */,
-				E373E4E4540A9840C8833D21ACE150C8 /* Timeline.swift */,
-				D5AE2DC3D610EFBA92BB582A8F5ACCC5 /* Validation.swift */,
+				A5AEBE909902D1A901A9CB7D94D127FF /* PolicyButton.swift */,
+				BE83E9A83A9D7084F13F5DD2E48B01DB /* PolicyCloseBt.swift */,
+				52D998E2C6407292FEE5B9EB3225A801 /* PolicyDataSet.swift */,
+				AF23822CCE6067938291A72E2D017829 /* PolicyDialog.swift */,
+				A2DD75CF210772598DE4E73A12BF27EC /* PolicyViewController.swift */,
 			);
-			name = alamofire;
-			path = "estgames-common-framework/Classes/alamofire";
+			name = policy;
+			path = "estgames-common-framework/Classes/policy";
 			sourceTree = "<group>";
 		};
-		3E732207DA3FDBC6E67AB8D290B30F5B /* Resources */ = {
+		33640BE3DBB4A0D004626A7D281B00E5 /* estgames-common-framework */ = {
 			isa = PBXGroup;
 			children = (
-				EDEBA6D62074738A003A211E /* btn_cancel_user.png */,
-				EDEBA6D82074738A003A211E /* btn_close_img_user@2x.png */,
-				EDEBA6D92074738A003A211E /* btn_close_img_user@3x.png */,
-				EDEBA6DA2074738A003A211E /* btn_confirm_user.png */,
-				EDEBA6D520747389003A211E /* img_inputbox_user.png */,
-				EDEBA6D72074738A003A211E /* img_popup_box_user.png */,
-				EDEBA6D02073790B003A211E /* SpoqaHanSansBold.ttf */,
-				EDEBA6CD2073790A003A211E /* SpoqaHanSansLight.ttf */,
-				EDEBA6CE2073790A003A211E /* SpoqaHanSansRegular.ttf */,
-				EDEBA6CF2073790A003A211E /* SpoqaHanSansThin.ttf */,
-				ED11F067206876E600DA5342 /* btn_stoptoday_check_img@2x.png */,
-				ED11F066206876E600DA5342 /* btn_stoptoday_check_img@3x.png */,
-				ED11F068206876E600DA5342 /* btn_stoptoday_default_img@2x.png */,
-				ED11F065206876E600DA5342 /* btn_stoptoday_default_img@3x.png */,
-				ED11F061206876D400DA5342 /* btn_detail_img@2x.png */,
-				ED11F062206876D500DA5342 /* btn_detail_img@3x.png */,
-				ED11F05D206876C200DA5342 /* btn_close_img@2x.png */,
-				ED11F05E206876C200DA5342 /* btn_close_img@3x.png */,
-				ED11F059206876B300DA5342 /* btn_bottom_close_img@2x.png */,
-				ED11F05A206876B300DA5342 /* btn_bottom_close_img@3x.png */,
-				ED11F052206876A300DA5342 /* btn_confirm.png */,
-				ED11F050206876A300DA5342 /* btn_provision_off.png */,
-				ED11F04E206876A200DA5342 /* btn_provision_on.png */,
-				ED11F051206876A300DA5342 /* img_authority_box.png */,
-				ED11F04F206876A300DA5342 /* img_provision_bigbox.png */,
-				ED11F04D206876A200DA5342 /* img_provision_box.png */,
-				AB3AC6B59F76A1E17CFDBD2E2AE9FA48 /* checked-checkbox-50.png */,
-				F52823148E001202D16935307C678FA7 /* unchecked-checkbox-50.png */,
+				06D51F716948F8472208373AB5503D91 /* ReplaceMe.swift */,
+				8667FB9428C43CDFA55267E032926167 /* alamofire */,
+				BC2F7E940D146DAE07829261919BB7F7 /* authority */,
+				F586D29FBFA2409D693BE135F2978F97 /* banner */,
+				7584D03A3F03BC7DEF9ACD8A2F3D8E1C /* common */,
+				2BE6CCC32617A2E443C18B4A032ACD91 /* policy */,
+				9FB87DAED9EF270A46B352F5713CFBFE /* Resources */,
+				62B189020BB8332C641BED35063C1CAE /* Support Files */,
+				A0ED28F2A217995EB534E60B84A39DA1 /* user */,
 			);
-			name = Resources;
+			name = "estgames-common-framework";
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		55E84499F301FBB7A4D6A0ABB1C72259 /* Development Pods */ = {
+		4B79868E088611D4B349171A0DA67367 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CCC0CCF4BBB0EE23C2E151779ABB3972 /* estgames-common-framework */,
+				33640BE3DBB4A0D004626A7D281B00E5 /* estgames-common-framework */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		62B189020BB8332C641BED35063C1CAE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				04730931DB720663E9982C89683B0123 /* estgames-common-framework.modulemap */,
+				F66FC9FB1B4DC6355B64667DEDF20416 /* estgames-common-framework.xcconfig */,
+				362E4E7FC2050B398C14DF1851FEFE12 /* estgames-common-framework-dummy.m */,
+				059D17A86640DCDAABF5C8E47EEDA894 /* estgames-common-framework-prefix.pch */,
+				711DC255064DAE0FDCA43D5FA766D42E /* estgames-common-framework-umbrella.h */,
+				B313BA27473F1D4E6FD171304FD43477 /* Info.plist */,
+				93981F683DF39B46AA3D6F3B9C4C254B /* ResourceBundle-estgames-common-framework-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/estgames-common-framework";
+			sourceTree = "<group>";
+		};
+		7584D03A3F03BC7DEF9ACD8A2F3D8E1C /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E7CAA34D531A30665E75C0316D89E3A2 /* ApiCallController.swift */,
+				9FC60FA03100AD3F335EF78D2E358B40 /* DeviceClassification.swift */,
+				EF2531BD25B7C33B1E9B9870D213308E /* ResultDataJson.swift */,
+			);
+			name = common;
+			path = "estgames-common-framework/Classes/common";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				55E84499F301FBB7A4D6A0ABB1C72259 /* Development Pods */,
+				4B79868E088611D4B349171A0DA67367 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				E025D261272A61A40D65B2E47C250B7A /* Products */,
 				8E1376B28259B285FE38656046182984 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8667FB9428C43CDFA55267E032926167 /* alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				470D1EE9F8A903266F080F547630794C /* AFError.swift */,
+				267F23A178F787BFADF2EC0EBAF4E59F /* Alamofire.swift */,
+				77A3AA72BB24902F0206FAA2EE7716DF /* DispatchQueue+Alamofire.swift */,
+				2471D3748ADB06A99676CDA2C03C9D5A /* MultipartFormData.swift */,
+				48E12490596530C9E081E7C04B8717E2 /* NetworkReachabilityManager.swift */,
+				C8CD7066973864873832062297B91929 /* Notifications.swift */,
+				4922EF75F7FB66C5E52F6A223493DF4D /* ParameterEncoding.swift */,
+				5FA4239CE1F584D2089D4E7378648FA0 /* Request.swift */,
+				54768F72A4D55FE0E807E63EF22F8BC9 /* Response.swift */,
+				142162333809615E75226CC2DC090EF5 /* ResponseSerialization.swift */,
+				4F6C0B0E143CCFD2CA0F8688A2FB86B6 /* Result.swift */,
+				390733AD42184AAA7D68E624A239F5A8 /* ServerTrustPolicy.swift */,
+				5723FB365A7EA55C0D3891B15295355A /* SessionDelegate.swift */,
+				2559A86E960401751D26D0919E084C3C /* SessionManager.swift */,
+				536CB832EAF7831CE82BC21E88E3691F /* TaskDelegate.swift */,
+				EB0C262D423FACF8BD65FC4F2091465E /* Timeline.swift */,
+				EB1E0FE084BE99BFD84E16D2048E3295 /* Validation.swift */,
+			);
+			name = alamofire;
+			path = "estgames-common-framework/Classes/alamofire";
 			sourceTree = "<group>";
 		};
 		8E1376B28259B285FE38656046182984 /* Targets Support Files */ = {
@@ -357,29 +370,69 @@
 			path = "Target Support Files/Pods-estgames-common-framework_Tests";
 			sourceTree = "<group>";
 		};
+		9FB87DAED9EF270A46B352F5713CFBFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1487F6594128BF5A34C11A613DF599FE /* btn_bottom_close_img@2x.png */,
+				2DD65C0775F26F110F51DAEBF5F866E6 /* btn_bottom_close_img@3x.png */,
+				AB9537AB1A20B785DEA6C3167CCE5599 /* btn_cancel_user.png */,
+				C61FE2C62135E731DA862D312A251A29 /* btn_close_img@2x.png */,
+				CDA716B69AACA5CDD0E35DACBB5C5BFB /* btn_close_img@3x.png */,
+				4AEBDCE10D3258018492A88C6403CCDB /* btn_close_img_user@2x.png */,
+				2F7A691613BC3AD477F81483F136BE46 /* btn_close_img_user@3x.png */,
+				C59B581B4A5E67721D64AF9E065A01D2 /* btn_confirm.png */,
+				3D77C7DCE13BF0A0A0C04D64B6E866B8 /* btn_confirm_user.png */,
+				190414277D343211914E63BA07F82AAF /* btn_detail_img@2x.png */,
+				7C3695F17C67B97BBFCAC9757A1AFC89 /* btn_detail_img@3x.png */,
+				5C958FC59BEF60FB0D96E98D884CEC0C /* btn_provision_off.png */,
+				6B3A83124959FCFF407DD8F0A612ED9F /* btn_provision_on.png */,
+				10FDBE096E9D3764A0D8DA8692351081 /* btn_stoptoday_check_img@2x.png */,
+				500D3212712BDC240023A8FE37C7540F /* btn_stoptoday_check_img@3x.png */,
+				A619B4CAA3592FF589063B1758172289 /* btn_stoptoday_default_img@2x.png */,
+				FA79F2CE4AC6A53913FB6308AE0F4B5C /* btn_stoptoday_default_img@3x.png */,
+				E8E55567FFCC82F239D0D849FA6D837A /* checked-checkbox-50.png */,
+				520E7D83FC277E26703163AC30FC5A80 /* img_authority_box.png */,
+				30F83B6571B3169B0F42BEDABD715CEE /* img_inputbox_user.png */,
+				5241D3441FA55ED0D8671705832E5C0B /* img_popup_box_user.png */,
+				07C5BD47C7F31A2799E67F5AF476BE7A /* img_provision_bigbox.png */,
+				059D42DC0D05E76276210E73FB73AE53 /* img_provision_box.png */,
+				558B75A98AA2ECAF35EF457ED4E31BFF /* unchecked-checkbox-50.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A0ED28F2A217995EB534E60B84A39DA1 /* user */ = {
+			isa = PBXGroup;
+			children = (
+				08EEECF3B842C45EC4F21367255BA441 /* UserCloseButton.swift */,
+				72B4E9B13160A61BDB2DA47F934374CE /* UserDataSet.swift */,
+				21EEA1AFC3BCB74805363CBC2A2DEC89 /* UserDialog.swift */,
+				BBF9ECE9820616FCB36B39D8B05D6B29 /* UserLinkViewController.swift */,
+				332C83A7F3265267E3BADD324DE015D4 /* UserLoadViewController.swift */,
+				53128D1E51DE388B97911C32768ECBAE /* UserResultViewController.swift */,
+			);
+			name = user;
+			path = "estgames-common-framework/Classes/user";
+			sourceTree = "<group>";
+		};
+		BC2F7E940D146DAE07829261919BB7F7 /* authority */ = {
+			isa = PBXGroup;
+			children = (
+				CB64B0F5B8F0A73882D7E6CB388A1455 /* AuthorityDataSet.swift */,
+				B42D3A868A062A4FB0123C27104FF3EC /* AuthorityDialog.swift */,
+				7C3820B086E02FB83320820339CA5BA1 /* AuthorityStoryboard.storyboard */,
+				C8CC80B4CAD42BAB920E54245164F058 /* AuthorityViewController.swift */,
+			);
+			name = authority;
+			path = "estgames-common-framework/Classes/authority";
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CCC0CCF4BBB0EE23C2E151779ABB3972 /* estgames-common-framework */ = {
-			isa = PBXGroup;
-			children = (
-				EDEBA6C22073648F003A211E /* user */,
-				ED11F06D2068C2EC00DA5342 /* common */,
-				EDF00A3120621A21005DC230 /* policy */,
-				EDF00A3020621A11005DC230 /* authority */,
-				C9F53EA8C5D14583EDC343F9385EC089 /* ReplaceMe.swift */,
-				1591C8221326A78F64474B8839781F1C /* alamofire */,
-				F2ED1A1D4F0C5C014065B020391EBEF5 /* banner */,
-				3E732207DA3FDBC6E67AB8D290B30F5B /* Resources */,
-				E5879B02B6589E65D759CC4777703C07 /* Support Files */,
-			);
-			name = "estgames-common-framework";
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		CF881BEF17647FBED75D1D07BDDB26D5 /* Pods-estgames-common-framework_Example */ = {
@@ -419,78 +472,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E5879B02B6589E65D759CC4777703C07 /* Support Files */ = {
+		F586D29FBFA2409D693BE135F2978F97 /* banner */ = {
 			isa = PBXGroup;
 			children = (
-				555B89214FB76C45716BA2D7412510EC /* estgames-common-framework.modulemap */,
-				8A4EFC4375FBF1DF0E08A3D86F073DD5 /* estgames-common-framework.xcconfig */,
-				1C1A220AF32E6ED293750EADED589055 /* estgames-common-framework-dummy.m */,
-				14DE3D8ADD1661442742FBBBF9E05861 /* estgames-common-framework-prefix.pch */,
-				4EBFE0F4F67937565B961810CF795E2E /* estgames-common-framework-umbrella.h */,
-				291E7A945BBC3B40A0FE3EB7D4B9F5D8 /* Info.plist */,
-				49955912B928B225DEFC659571F50E6A /* ResourceBundle-estgames-common-framework-Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/estgames-common-framework";
-			sourceTree = "<group>";
-		};
-		ED11F06D2068C2EC00DA5342 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				ED11F06E2068C34900DA5342 /* DeviceClassification.swift */,
-				ED11F0702068D3E600DA5342 /* ApiCallController.swift */,
-				ED11F0722068D98A00DA5342 /* ResultDataJson.swift */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		EDEBA6C22073648F003A211E /* user */ = {
-			isa = PBXGroup;
-			children = (
-				EDEBA6C3207364CB003A211E /* UserDialog.swift */,
-				EDEBA6C52073653A003A211E /* UserLinkViewController.swift */,
-				EDEBA6C72073654A003A211E /* UserLoadViewController.swift */,
-				EDEBA6C92073655A003A211E /* UserResultViewController.swift */,
-				EDEBA6CB20736716003A211E /* UserDataSet.swift */,
-				EDEBA6E12075DC9D003A211E /* UserCloseButton.swift */,
-			);
-			path = user;
-			sourceTree = "<group>";
-		};
-		EDF00A3020621A11005DC230 /* authority */ = {
-			isa = PBXGroup;
-			children = (
-				ED5D8F692077482000E95449 /* AuthorityDialog.swift */,
-				ED5D8F6C2077485200E95449 /* AuthorityViewController.swift */,
-				ED5D8F6E2077487600E95449 /* AuthorityStoryboard.storyboard */,
-				ED5D8F702077623E00E95449 /* AuthorityDataSet.swift */,
-			);
-			path = authority;
-			sourceTree = "<group>";
-		};
-		EDF00A3120621A21005DC230 /* policy */ = {
-			isa = PBXGroup;
-			children = (
-				EDF00A342064BBBB005DC230 /* PolicyDialog.swift */,
-				EDF4DAE2206B49E7004A5D47 /* PolicyViewController.swift */,
-				EDE46E57206DBF7300912C27 /* PolicyCloseBt.swift */,
-				ED8FC2A9206E0B4C004E2F12 /* PolicyDataSet.swift */,
-				ED8FC2AB206E1554004E2F12 /* PolicyButton.swift */,
-			);
-			path = policy;
-			sourceTree = "<group>";
-		};
-		F2ED1A1D4F0C5C014065B020391EBEF5 /* banner */ = {
-			isa = PBXGroup;
-			children = (
-				4CF05397B1FA122CB9B910140F776842 /* BannerCheckBox.swift */,
-				DD03B16BB2EEA0F982D1F4855C799A53 /* BannerCloseBt.swift */,
-				F1D18F1D391D56C5D8EB8187B43765AC /* BannerFramework.swift */,
-				56F937009F181FE309810D7A8A2C767B /* BannerImageView.swift */,
-				BBCF17AA1A2639A9FD4ADCCDF4BA6D48 /* BannerJson.swift */,
-				ED9D598D202AC47C00EB0BE2 /* BannerBottomView.swift */,
-				ED426F862032A0D30022B990 /* BannerWebView.swift */,
-				ED426F882033BFC50022B990 /* BannerLinkerButton.swift */,
+				2E02D727B5A761AECEE389B0121A53F2 /* BannerBottomView.swift */,
+				048CACFA2A4D485AE33FC365F9FEF99E /* BannerCheckBox.swift */,
+				0C60B1867EF645D9C8272CE4369AB6D9 /* BannerCloseBt.swift */,
+				B38A5A10E4D8D8DEE3B5AB467CFDE228 /* BannerFramework.swift */,
+				507FCA425C0B898C97FFC5FB08B26B54 /* BannerImageView.swift */,
+				B1D46147323F1FF6F49AF396A6A5CB21 /* BannerJson.swift */,
+				FDA975F151DD98B517E82E8B5C2A3845 /* BannerLinkerButton.swift */,
+				F6AED4313B7E82B5A038A9D88ED4132B /* BannerWebView.swift */,
 			);
 			name = banner;
 			path = "estgames-common-framework/Classes/banner";
@@ -499,6 +491,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		233BBF48E0B294596EE0EAAE80A44DF5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5BDD22592322F6D74DD023D2D231DA4 /* estgames-common-framework-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		690F2D2F768DA588DC306BA120DDADF1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,35 +515,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB2D8948CEFDFD2BBB84949F0EC6FAE9 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ED75AC26A5F0CBB0325C0E78E627FF82 /* estgames-common-framework-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2BC84A176277B057C4C946D4D981B41C /* estgames-common-framework */ = {
+		5CA6D4C769C7C346F8A457D14CB78E62 /* estgames-common-framework-estgames-common-framework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8FDE1A916FBC1FE254F9D91A4B8D9FE7 /* Build configuration list for PBXNativeTarget "estgames-common-framework" */;
+			buildConfigurationList = EE569F1FF179B706FB84FB95E6F44041 /* Build configuration list for PBXNativeTarget "estgames-common-framework-estgames-common-framework" */;
 			buildPhases = (
-				4B2316365040C1500A1C04B8007AAC95 /* Sources */,
-				2387760CAF527414068DA6049C7F41A4 /* Frameworks */,
-				F26ECE81CB4081D7B3E7958879C6AD74 /* Resources */,
-				EB2D8948CEFDFD2BBB84949F0EC6FAE9 /* Headers */,
+				1609FFE8EA859CBE8EAA328937514DC2 /* Sources */,
+				7F167A17D53819E2B3399467C6A08E2C /* Frameworks */,
+				3C5DA9CBF7C24860328481198E4CC8AC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C8A24F39185202593944127F754EB795 /* PBXTargetDependency */,
 			);
-			name = "estgames-common-framework";
-			productName = "estgames-common-framework";
-			productReference = EB316AA227D706BAC93CD6C842D6A704 /* estgames_common_framework.framework */;
-			productType = "com.apple.product-type.framework";
+			name = "estgames-common-framework-estgames-common-framework";
+			productName = "estgames-common-framework-estgames-common-framework";
+			productReference = 8358E26028878E197540CC253D673B73 /* estgames-common-framework.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 		65253F2A20F3968EA672BBAAF42A17A7 /* Pods-estgames-common-framework_Example */ = {
 			isa = PBXNativeTarget;
@@ -563,22 +553,24 @@
 			productReference = 027022526236CD56CE495AD4CAB7FC7A /* Pods_estgames_common_framework_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D8CA3B232995ED2702A00B947230077D /* estgames-common-framework-estgames-common-framework */ = {
+		7C016EE50B5E4C799CCBD141E71F4932 /* estgames-common-framework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E51180009EF4C528D8F732D4203C6F0 /* Build configuration list for PBXNativeTarget "estgames-common-framework-estgames-common-framework" */;
+			buildConfigurationList = 1795693F2F23A486268F8322133E91BA /* Build configuration list for PBXNativeTarget "estgames-common-framework" */;
 			buildPhases = (
-				5D1F5FDA894F9A2B30415F9E6878B612 /* Sources */,
-				D291738E12A9F31F1719F0F5BDF4B023 /* Frameworks */,
-				B03470BC5C9498DF41B1A9CEB12237E0 /* Resources */,
+				609B86306FA6ED40DCDC8595A43F89DE /* Sources */,
+				ED17FD03390E117A2AC2207A46088AF8 /* Frameworks */,
+				0676F8F3A89CAC4B4B483F0E5C1F0F89 /* Resources */,
+				233BBF48E0B294596EE0EAAE80A44DF5 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DC452E217C0A4B3EC9F361DCE9CD3AFE /* PBXTargetDependency */,
 			);
-			name = "estgames-common-framework-estgames-common-framework";
-			productName = "estgames-common-framework-estgames-common-framework";
-			productReference = 8358E26028878E197540CC253D673B73 /* estgames-common-framework.bundle */;
-			productType = "com.apple.product-type.bundle";
+			name = "estgames-common-framework";
+			productName = "estgames-common-framework";
+			productReference = EB316AA227D706BAC93CD6C842D6A704 /* estgames_common_framework.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		E2B1ED12219636EB9CB2BBE37CF0C431 /* Pods-estgames-common-framework_Tests */ = {
 			isa = PBXNativeTarget;
@@ -618,8 +610,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2BC84A176277B057C4C946D4D981B41C /* estgames-common-framework */,
-				D8CA3B232995ED2702A00B947230077D /* estgames-common-framework-estgames-common-framework */,
+				7C016EE50B5E4C799CCBD141E71F4932 /* estgames-common-framework */,
+				5CA6D4C769C7C346F8A457D14CB78E62 /* estgames-common-framework-estgames-common-framework */,
 				65253F2A20F3968EA672BBAAF42A17A7 /* Pods-estgames-common-framework_Example */,
 				E2B1ED12219636EB9CB2BBE37CF0C431 /* Pods-estgames-common-framework_Tests */,
 			);
@@ -627,108 +619,104 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B03470BC5C9498DF41B1A9CEB12237E0 /* Resources */ = {
+		0676F8F3A89CAC4B4B483F0E5C1F0F89 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A586C7A403F5AD4910CBB92644BA1E /* estgames-common-framework.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F26ECE81CB4081D7B3E7958879C6AD74 /* Resources */ = {
+		3C5DA9CBF7C24860328481198E4CC8AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDEBA6D42073790B003A211E /* SpoqaHanSansBold.ttf in Resources */,
-				ED5D8F6F2077487600E95449 /* AuthorityStoryboard.storyboard in Resources */,
-				EDEBA6DC2074738B003A211E /* btn_cancel_user.png in Resources */,
-				EDEBA6DF2074738B003A211E /* btn_close_img_user@3x.png in Resources */,
-				ED11F055206876A300DA5342 /* img_provision_bigbox.png in Resources */,
-				ED11F05B206876B400DA5342 /* btn_bottom_close_img@2x.png in Resources */,
-				0B7262D1F9F54179E0E3BB362A3593A1 /* estgames-common-framework.bundle in Resources */,
-				ED11F053206876A300DA5342 /* img_provision_box.png in Resources */,
-				ED11F058206876A300DA5342 /* btn_confirm.png in Resources */,
-				ED11F06A206876E600DA5342 /* btn_stoptoday_check_img@3x.png in Resources */,
-				ED11F06B206876E600DA5342 /* btn_stoptoday_check_img@2x.png in Resources */,
-				ED9D598B202ABC2800EB0BE2 /* checked-checkbox-50.png in Resources */,
-				EDEBA6D32073790B003A211E /* SpoqaHanSansThin.ttf in Resources */,
-				ED11F060206876C200DA5342 /* btn_close_img@3x.png in Resources */,
-				EDEBA6DB2074738B003A211E /* img_inputbox_user.png in Resources */,
-				EDEBA6D12073790B003A211E /* SpoqaHanSansLight.ttf in Resources */,
-				ED11F05F206876C200DA5342 /* btn_close_img@2x.png in Resources */,
-				EDEBA6DD2074738B003A211E /* img_popup_box_user.png in Resources */,
-				EDEBA6E02074738B003A211E /* btn_confirm_user.png in Resources */,
-				EDEBA6D22073790B003A211E /* SpoqaHanSansRegular.ttf in Resources */,
-				ED11F069206876E600DA5342 /* btn_stoptoday_default_img@3x.png in Resources */,
-				ED11F06C206876E600DA5342 /* btn_stoptoday_default_img@2x.png in Resources */,
-				ED11F05C206876B400DA5342 /* btn_bottom_close_img@3x.png in Resources */,
-				ED11F064206876D500DA5342 /* btn_detail_img@3x.png in Resources */,
-				EDEBA6DE2074738B003A211E /* btn_close_img_user@2x.png in Resources */,
-				ED9D598C202ABC2C00EB0BE2 /* unchecked-checkbox-50.png in Resources */,
-				ED11F057206876A300DA5342 /* img_authority_box.png in Resources */,
-				ED11F054206876A300DA5342 /* btn_provision_on.png in Resources */,
-				ED11F063206876D500DA5342 /* btn_detail_img@2x.png in Resources */,
-				ED11F056206876A300DA5342 /* btn_provision_off.png in Resources */,
+				7AFE2EEAB35305D1B550FA651AE40FAC /* btn_bottom_close_img@2x.png in Resources */,
+				A737B63B1C7F586A1BFD0D11EEC14F56 /* btn_bottom_close_img@3x.png in Resources */,
+				3FA767470DA28E004A81C670526A384B /* btn_cancel_user.png in Resources */,
+				8E254E9EC8E1F81645584F0B5B85F157 /* btn_close_img@2x.png in Resources */,
+				95C7268BD5CCAD0E92CAD11ACEC4BD6A /* btn_close_img@3x.png in Resources */,
+				0B49E39D4492B3E1C1E5F1ED50516F5D /* btn_close_img_user@2x.png in Resources */,
+				BCF12DCB5C0854965FA542169668A6BC /* btn_close_img_user@3x.png in Resources */,
+				D8847058A7B210C4F31F3066387E78F7 /* btn_confirm.png in Resources */,
+				0411EF88C5DEA8B04513D06AB1414391 /* btn_confirm_user.png in Resources */,
+				0E426E8155C883CFC112B5C53BF4D78A /* btn_detail_img@2x.png in Resources */,
+				D5C782F7A9B79BBE02FE0516C84BDD2D /* btn_detail_img@3x.png in Resources */,
+				DD170B4B22A8A36E88942CA67099DB1F /* btn_provision_off.png in Resources */,
+				2FBB0CE3FECAA8EBF7A6F93B14766FD5 /* btn_provision_on.png in Resources */,
+				9E8BFE1F80BA8084E32A595786D57BF0 /* btn_stoptoday_check_img@2x.png in Resources */,
+				C2AD44AF85CE26337DCD57BAF7F46861 /* btn_stoptoday_check_img@3x.png in Resources */,
+				781B4F28403E5C72650037662BDED511 /* btn_stoptoday_default_img@2x.png in Resources */,
+				2B78C0CE8BC814C573B6444A80BCF589 /* btn_stoptoday_default_img@3x.png in Resources */,
+				BC2264601B9F6B6D3C9E52CC47CA0F9A /* checked-checkbox-50.png in Resources */,
+				7EA0F7FCD4A67640AD05E3930E9591D7 /* img_authority_box.png in Resources */,
+				9EA473564D17527B0344460913EE2B71 /* img_inputbox_user.png in Resources */,
+				58BE69C31844AE2B37C0F4D5AA011811 /* img_popup_box_user.png in Resources */,
+				AF363914DFFCFCAFFC09A224EDC67A27 /* img_provision_bigbox.png in Resources */,
+				002B9784652A44CDFBE2459712762AC2 /* img_provision_box.png in Resources */,
+				93E8459CDC4EEBD760D03E1A60902606 /* unchecked-checkbox-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4B2316365040C1500A1C04B8007AAC95 /* Sources */ = {
+		1609FFE8EA859CBE8EAA328937514DC2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB87D43165BE21CE6165E3BE198D9895 /* AFError.swift in Sources */,
-				77CCF4FC7A945D0F7E7025D2F6F2B529 /* Alamofire.swift in Sources */,
-				ED11F0732068D98A00DA5342 /* ResultDataJson.swift in Sources */,
-				DAFD9DB8870A730BCDC6275A0DE84EC3 /* BannerCheckBox.swift in Sources */,
-				15483E39C94109C7D31EF01E7D18FDA6 /* BannerCloseBt.swift in Sources */,
-				ABA4541A06EEAEEA7F8CF6C3BC4A5F05 /* BannerFramework.swift in Sources */,
-				EDEBA6CA2073655A003A211E /* UserResultViewController.swift in Sources */,
-				70218A52C447DE4BA6457E82A60C224B /* BannerImageView.swift in Sources */,
-				EDF00A352064BBBB005DC230 /* PolicyDialog.swift in Sources */,
-				ED11F0712068D3E600DA5342 /* ApiCallController.swift in Sources */,
-				ED8FC2AC206E1554004E2F12 /* PolicyButton.swift in Sources */,
-				7A26DD4F6257BEE3333C6EED8A90C114 /* BannerJson.swift in Sources */,
-				F9A67300D9B427AB8DC3C641269BE94F /* DispatchQueue+Alamofire.swift in Sources */,
-				A109A239D56138211A4946B01AD58D9D /* estgames-common-framework-dummy.m in Sources */,
-				D95D739C29C7C5431D6C56A8AC3AB99F /* MultipartFormData.swift in Sources */,
-				915050183B33CEDB31D1DF515B79644A /* NetworkReachabilityManager.swift in Sources */,
-				ED426F872032A0D30022B990 /* BannerWebView.swift in Sources */,
-				1A4B6B0D2994EC31087C6D67DC24D050 /* Notifications.swift in Sources */,
-				0DBCEDF3B8CF7BD43C6876E0D73E9A8F /* ParameterEncoding.swift in Sources */,
-				ED11F06F2068C34900DA5342 /* DeviceClassification.swift in Sources */,
-				FAF865061235555F934C10AE5C4EA65B /* ReplaceMe.swift in Sources */,
-				2A5D60974343C8CFA6D231E313FF2617 /* Request.swift in Sources */,
-				ED9D598E202AC47C00EB0BE2 /* BannerBottomView.swift in Sources */,
-				B007F43C22D90B8089D998DCA8879E7C /* Response.swift in Sources */,
-				EDE46E58206DBF7300912C27 /* PolicyCloseBt.swift in Sources */,
-				ED8FC2AA206E0B4C004E2F12 /* PolicyDataSet.swift in Sources */,
-				CF8889AF52D45ED60A5AA940F9F0D5A3 /* ResponseSerialization.swift in Sources */,
-				EDEBA6E22075DC9D003A211E /* UserCloseButton.swift in Sources */,
-				ED5D8F712077623E00E95449 /* AuthorityDataSet.swift in Sources */,
-				ED5D8F6D2077485200E95449 /* AuthorityViewController.swift in Sources */,
-				35281721DA82F683D92CB7F143F38D91 /* Result.swift in Sources */,
-				2BB37047D78D9262EB7D6A8D5892DBE4 /* ServerTrustPolicy.swift in Sources */,
-				082CF6A70E7C79976A7C8E1C07BB095F /* SessionDelegate.swift in Sources */,
-				EDEBA6C82073654A003A211E /* UserLoadViewController.swift in Sources */,
-				EDEBA6C62073653A003A211E /* UserLinkViewController.swift in Sources */,
-				1F742D61139B811E4DDF7214111EC335 /* SessionManager.swift in Sources */,
-				EDEBA6C4207364CB003A211E /* UserDialog.swift in Sources */,
-				5E16D782F32A3050ED23A4880C802C49 /* TaskDelegate.swift in Sources */,
-				ED5D8F6A2077482000E95449 /* AuthorityDialog.swift in Sources */,
-				EDEBA6CC20736716003A211E /* UserDataSet.swift in Sources */,
-				EDF4DAE3206B49E7004A5D47 /* PolicyViewController.swift in Sources */,
-				9E4828CC51FCC13EC11DEEDDB1AC4342 /* Timeline.swift in Sources */,
-				ED426F892033BFC50022B990 /* BannerLinkerButton.swift in Sources */,
-				71C2222F0C99C9B002D1AD9FD6507DA9 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D1F5FDA894F9A2B30415F9E6878B612 /* Sources */ = {
+		609B86306FA6ED40DCDC8595A43F89DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26052FD55135359D78232AA821CDF9D0 /* AFError.swift in Sources */,
+				CCE66D30072F915A2179CBFF90071C58 /* Alamofire.swift in Sources */,
+				F5375765C84C40196EAB9295F2694081 /* ApiCallController.swift in Sources */,
+				9B75E6C1A32B6C27CF9559A717A3DCB6 /* AuthorityDataSet.swift in Sources */,
+				C75303980631751632DEA0BFA6B3D719 /* AuthorityDialog.swift in Sources */,
+				D4D8E30F4CEABD81C0385564BE6FABBB /* AuthorityStoryboard.storyboard in Sources */,
+				A5971392F6D9BFCB9213D74E59D7CAF5 /* AuthorityViewController.swift in Sources */,
+				CA75CA24916BBAC0C8EA29962CB695D2 /* BannerBottomView.swift in Sources */,
+				FA63BE51C12B6B2C0815F78BB3C0490A /* BannerCheckBox.swift in Sources */,
+				179E7C0C821700860D833B2A59DEF0E4 /* BannerCloseBt.swift in Sources */,
+				0499D669F913EBAC55C912D8BFAEDBD5 /* BannerFramework.swift in Sources */,
+				CA13AEF99519BBB7C0CA3B52A72929D8 /* BannerImageView.swift in Sources */,
+				3E4864620D1BDAC3BE72420BA380FC31 /* BannerJson.swift in Sources */,
+				F7309F5BB57B0A29C70F5BCB918A9CB3 /* BannerLinkerButton.swift in Sources */,
+				85319C986F764C0B202F2D2EDABA1D03 /* BannerWebView.swift in Sources */,
+				620A527771020BB62C23F4806B4ABE00 /* DeviceClassification.swift in Sources */,
+				6B50021460DFDBBE9DB25CD65872B467 /* DispatchQueue+Alamofire.swift in Sources */,
+				2762BB3F544A92B974B26E94B139C9FB /* estgames-common-framework-dummy.m in Sources */,
+				BC303C463944B918506B8ECDC5D736DC /* MultipartFormData.swift in Sources */,
+				4B0980D46C846C7E350A36F6D8147F6C /* NetworkReachabilityManager.swift in Sources */,
+				95DC0209824A6D919899668A4C6A610E /* Notifications.swift in Sources */,
+				754BEE6408EB5A6F9FE39FD0E1D77DC3 /* ParameterEncoding.swift in Sources */,
+				A921D576A069AB2EF1F232B3890494A8 /* PolicyButton.swift in Sources */,
+				D022CB5D0C10A81853C44525BCF40341 /* PolicyCloseBt.swift in Sources */,
+				235E39626BE115F80BC621C51655B4F8 /* PolicyDataSet.swift in Sources */,
+				4C1D8FAB2B5AC7BF01E16B3372E83A7E /* PolicyDialog.swift in Sources */,
+				EB49BFE627A255323F9A9C48E77C33AD /* PolicyViewController.swift in Sources */,
+				8F24B2F281FE71151A07CF00D6174945 /* ReplaceMe.swift in Sources */,
+				274950F69892B2022D66843AB4B53309 /* Request.swift in Sources */,
+				1723C90EA04391C4181FE5CC32FD42BD /* Response.swift in Sources */,
+				56D062D699020288812E511077B5FDAB /* ResponseSerialization.swift in Sources */,
+				770CD5039265B1577C16F40675A181BC /* Result.swift in Sources */,
+				ABAC866DEA46B59D06BF4920D154979E /* ResultDataJson.swift in Sources */,
+				C8B37718E4DEC1F2C7CDA7FAAB3F543F /* ServerTrustPolicy.swift in Sources */,
+				7A26018FF200941F7A7DDFA4E0D89FB3 /* SessionDelegate.swift in Sources */,
+				DC6BF4254703B6953C1E5DB53887AAD3 /* SessionManager.swift in Sources */,
+				6C38104243E681A581E18F22BBABF1F3 /* TaskDelegate.swift in Sources */,
+				C18E453CBE1314A573B52B63185C9043 /* Timeline.swift in Sources */,
+				AF5373E76B07068D55D24375AB66AA01 /* UserCloseButton.swift in Sources */,
+				EB7A98000EBEFC13EACCA6012D48A2DC /* UserDataSet.swift in Sources */,
+				6C9A04605EA84D3E5C7451C3A48828B6 /* UserDialog.swift in Sources */,
+				068041669496656CEA4827B7EBF0D5E7 /* UserLinkViewController.swift in Sources */,
+				B9195F4D4EC5A73777E8937414B1A381 /* UserLoadViewController.swift in Sources */,
+				771439D39082B0DAEE744F1EBFE7D78A /* UserResultViewController.swift in Sources */,
+				B584C5410DC80CA2A1D62ACD686F5503 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,18 +742,34 @@
 		2EBEC0D25C94F4A7CA037CD3EE66A2EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "estgames-common-framework";
-			target = 2BC84A176277B057C4C946D4D981B41C /* estgames-common-framework */;
+			target = 7C016EE50B5E4C799CCBD141E71F4932 /* estgames-common-framework */;
 			targetProxy = 1E42C8D6BE9AD9714DC93601350B871A /* PBXContainerItemProxy */;
 		};
-		C8A24F39185202593944127F754EB795 /* PBXTargetDependency */ = {
+		DC452E217C0A4B3EC9F361DCE9CD3AFE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "estgames-common-framework-estgames-common-framework";
-			target = D8CA3B232995ED2702A00B947230077D /* estgames-common-framework-estgames-common-framework */;
-			targetProxy = B3EE0317FDA17945B6910434EEFCF57C /* PBXContainerItemProxy */;
+			target = 5CA6D4C769C7C346F8A457D14CB78E62 /* estgames-common-framework-estgames-common-framework */;
+			targetProxy = 0EED1A5BE6C0DC1C2970DB0189716763 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		03B77397A7662940C0C4FF5D39F05E71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F66FC9FB1B4DC6355B64667DEDF20416 /* estgames-common-framework.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/estgames-common-framework";
+				INFOPLIST_FILE = "Target Support Files/estgames-common-framework/ResourceBundle-estgames-common-framework-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = "estgames-common-framework";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		12C4B864767C59600DBFA238F1E2F8BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -821,9 +825,9 @@
 			};
 			name = Release;
 		};
-		3AE98F641F9DEC930A301CB41F7BC6A1 /* Release */ = {
+		2D577323C557D60EFAD65596D59DEEC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A4EFC4375FBF1DF0E08A3D86F073DD5 /* estgames-common-framework.xcconfig */;
+			baseConfigurationReference = F66FC9FB1B4DC6355B64667DEDF20416 /* estgames-common-framework.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/estgames-common-framework";
@@ -835,7 +839,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
 		};
 		3E6D1A2BCDB5448F30EA4CB6E57A4F76 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -931,19 +935,34 @@
 			};
 			name = Debug;
 		};
-		5BA46324259D2F127C06C3BBEFB08887 /* Debug */ = {
+		5DD8CF06752451197C2D63BC4145D9B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A4EFC4375FBF1DF0E08A3D86F073DD5 /* estgames-common-framework.xcconfig */;
+			baseConfigurationReference = F66FC9FB1B4DC6355B64667DEDF20416 /* estgames-common-framework.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/estgames-common-framework";
-				INFOPLIST_FILE = "Target Support Files/estgames-common-framework/ResourceBundle-estgames-common-framework-Info.plist";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/estgames-common-framework/estgames-common-framework-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/estgames-common-framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = "estgames-common-framework";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/estgames-common-framework/estgames-common-framework.modulemap";
+				PRODUCT_NAME = estgames_common_framework;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -1014,69 +1033,6 @@
 			};
 			name = Release;
 		};
-		8BD9F30B1A556AB74CC54EF3C61A31A0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A4EFC4375FBF1DF0E08A3D86F073DD5 /* estgames-common-framework.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/estgames-common-framework/estgames-common-framework-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/estgames-common-framework/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/estgames-common-framework/estgames-common-framework.modulemap";
-				PRODUCT_NAME = estgames_common_framework;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		97A94594D6B5AD048AF4241172E2D48B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A4EFC4375FBF1DF0E08A3D86F073DD5 /* estgames-common-framework.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/estgames-common-framework/estgames-common-framework-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/estgames-common-framework/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/estgames-common-framework/estgames-common-framework.modulemap";
-				PRODUCT_NAME = estgames_common_framework;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		BAB5921B9D6F7E51AA39CD33876F3B9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA1EFFD0D90BEA1F14B4892EA3121802 /* Pods-estgames-common-framework_Tests.debug.xcconfig */;
@@ -1109,23 +1065,55 @@
 			};
 			name = Debug;
 		};
+		F30D0DB85801B3A5AD10838BC9130639 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F66FC9FB1B4DC6355B64667DEDF20416 /* estgames-common-framework.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/estgames-common-framework/estgames-common-framework-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/estgames-common-framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/estgames-common-framework/estgames-common-framework.modulemap";
+				PRODUCT_NAME = estgames_common_framework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1795693F2F23A486268F8322133E91BA /* Build configuration list for PBXNativeTarget "estgames-common-framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DD8CF06752451197C2D63BC4145D9B6 /* Debug */,
+				F30D0DB85801B3A5AD10838BC9130639 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59F0302F2371FCC6B73EF0A418D40734 /* Debug */,
 				12C4B864767C59600DBFA238F1E2F8BC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2E51180009EF4C528D8F732D4203C6F0 /* Build configuration list for PBXNativeTarget "estgames-common-framework-estgames-common-framework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5BA46324259D2F127C06C3BBEFB08887 /* Debug */,
-				3AE98F641F9DEC930A301CB41F7BC6A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1148,11 +1136,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8FDE1A916FBC1FE254F9D91A4B8D9FE7 /* Build configuration list for PBXNativeTarget "estgames-common-framework" */ = {
+		EE569F1FF179B706FB84FB95E6F44041 /* Build configuration list for PBXNativeTarget "estgames-common-framework-estgames-common-framework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8BD9F30B1A556AB74CC54EF3C61A31A0 /* Debug */,
-				97A94594D6B5AD048AF4241172E2D48B /* Release */,
+				2D577323C557D60EFAD65596D59DEEC5 /* Debug */,
+				03B77397A7662940C0C4FF5D39F05E71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

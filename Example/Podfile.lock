@@ -1,5 +1,5 @@
 PODS:
-  - estgames-common-framework (0.4.0)
+  - estgames-common-framework (0.5.0)
 
 DEPENDENCIES:
   - estgames-common-framework (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  estgames-common-framework: 439f87d862889cfb55c6a6149416f979445ec9fb
+  estgames-common-framework: a8a0841a28bba65da750103570e849e01632398c
 
 PODFILE CHECKSUM: 671cff1ec218df49df93e3f6b1e68df26711de20
 
