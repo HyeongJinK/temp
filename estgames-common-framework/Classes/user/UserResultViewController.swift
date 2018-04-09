@@ -31,18 +31,18 @@ class UserResultViewController: UIViewController {
         
         backgroundView.backgroundColor = UIColor(red: 9, green: 9, blue: 9, alpha: 1)
         
-        userResultTitle.text = "알림"
+        userResultTitle.text = NSLocalizedString("estcommon_userResult_title", comment: "")
         userResultTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         userResultTitle.font = UIFont.systemFont(ofSize: 12)
         
         
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
         
-        subLabel.text = "불러오기 성공"
+        subLabel.text = NSLocalizedString("estcommon_userResult_subTitle", comment: "")
         subLabel.font = UIFont.systemFont(ofSize: 12)
         subLabel.textColor = UIColor(red: 48/255, green: 122/255, blue: 245/255, alpha: 1)
         
-        contentLabel.text = "게임 재 구동을 위해 타이틀 화면으로 이동합니다."
+        contentLabel.text = NSLocalizedString("estcommon_userResult_titleMove", comment: "")
         contentLabel.font = UIFont.systemFont(ofSize: 10)
         contentLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         
@@ -50,7 +50,7 @@ class UserResultViewController: UIViewController {
         confirmButton.setBackgroundImage(confirmButtonImg, for: .normal)
         confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        confirmButton.setTitle("확인", for: .normal)
+        confirmButton.setTitle(NSLocalizedString("estcommon_userResult_confirm", comment: ""), for: .normal)
         
         backgroundView.addSubview(userResultTitle)
         backgroundView.addSubview(closeButton)

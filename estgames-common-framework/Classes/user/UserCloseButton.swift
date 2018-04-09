@@ -8,11 +8,11 @@
 import Foundation
 
 class UserCloseButton : UIButton {
-    var closeButtonImage: UIImage!
+    var closeButtonImage: UIImage?
     var view: UIViewController?
     
     init(_ pview: UIViewController, frame: CGRect) {
-        closeButtonImage = UIImage(named: "btn_close_img_user", in:Bundle(for: UserCloseButton.self), compatibleWith:nil)!
+        closeButtonImage = UIImage(named: "btn_close_img_user", in:Bundle(for: UserCloseButton.self), compatibleWith:nil)
         view = pview
         super.init(frame: frame)
         

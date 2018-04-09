@@ -67,10 +67,10 @@ class PolicyViewController: UIViewController {
         //backgroudView.backgroundColor = UIColor(patternImage: resizeImg)
     
         titleLabel1 = UILabel(frame: dataSet.titleLabel1Frame)
-        labelSet(titleLabel1, "이용약관", UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+        labelSet(titleLabel1, NSLocalizedString("estcommon_policy_title", comment: ""), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
         
         subTitleLabel = UILabel(frame: dataSet.subTitleLabelFrame)
-        labelSet(subTitleLabel, "광고성 정보 수신 동의포함", UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), 10)
+        labelSet(subTitleLabel, NSLocalizedString("estcommon_policy_subTitle", comment: ""), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), 10)
         
         webView1 = UIWebView(frame: dataSet.webView1Frame)
         webView1.loadRequest(URLRequest(url: URL(string: "https://s3.ap-northeast-2.amazonaws.com/m-static.estgames.co.kr/mpsdk/ffg.global.ls/contract/agreement.html")!))
@@ -78,7 +78,7 @@ class PolicyViewController: UIViewController {
         submitBt1 = PolicyButton(dataSet.submitBt1Frame)
 
         titleLabel2 = UILabel(frame: dataSet.titleLabel2Frame)
-        labelSet(titleLabel2, "개인정보 취급방침", UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+        labelSet(titleLabel2, NSLocalizedString("estcommon_policy_privacy", comment: ""), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
         
         webView2 = UIWebView(frame: dataSet.webView2Frame)
         webView2.loadRequest(URLRequest(url: URL(string: "https://s3.ap-northeast-2.amazonaws.com/m-static.estgames.co.kr/mpsdk/ffg.global.ls/contract/privacy.html")!))

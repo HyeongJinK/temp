@@ -27,7 +27,7 @@ class AuthorityViewController: UIViewController {
         backgroundView.backgroundColor = UIColor(red: 53/255, green: 59/255, blue: 72/255, alpha: 1)
         
         
-        titleLabel.text = "원활한 게임플레이를 위해 아래 권한을 필요로 합니다."
+        titleLabel.text = NSLocalizedString("estcommon_authority_title", comment: "")
         titleLabel.center.x = backgroundView.center.x
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
@@ -35,7 +35,7 @@ class AuthorityViewController: UIViewController {
         titleLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
         
-        let confirmButtonImage = UIImage(named: "btn_confirm", in: Bundle(for: AuthorityViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
+        let confirmButtonImage = UIImage(named: NSLocalizedString("estcommon_authority_confirm", comment: ""), in: Bundle(for: AuthorityViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
         confirmButton.setBackgroundImage(confirmButtonImage, for: .normal)
         confirmButton.setTitle("확인", for: .normal)
         confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)

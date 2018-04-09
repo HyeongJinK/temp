@@ -27,6 +27,8 @@ class ViewController: UIViewController {
     
     @IBAction func policyTest(_ sender: Any) {
         policy.show()
+        print(NSLocalizedString("policy_title", comment: ""))
+        print(NSLocalizedString("est_policy_title", comment: ""))
     }
     
     @IBAction func userLinkTest(_ sender: Any) {

@@ -35,7 +35,7 @@ class UserLinkViewController: UIViewController {
         
         backgroudView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
-        userLinkTitle.text = "계정 연동"
+        userLinkTitle.text = NSLocalizedString("estcommon_userLink_title", comment: "")
         userLinkTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         userLinkTitle.font = UIFont.systemFont(ofSize: 12)
         //userLinkTitle.font = UIFont.init(name: "SqoqaHanSans", size: 12)
@@ -46,14 +46,14 @@ class UserLinkViewController: UIViewController {
         
         middleLabel.font = UIFont.systemFont(ofSize: 10)
         middleLabel.numberOfLines = 0
-        let attrString = NSMutableAttributedString(string: "입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebookAccount: 기존게임닉네임, Lv._xx\n위의 데이터를 불러오시겠습니까?")
+        let attrString = NSMutableAttributedString(string: NSLocalizedString("estcommon_userLink_middelLabel", comment: ""))
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
         middleLabel.attributedText = attrString
         
         
-        bottomLabel.text = "!현재 플레이 중인 게임데이터(현재게임닉네임, Lv.xx)는 삭제됩니다"
+        bottomLabel.text = NSLocalizedString("estcommon_userLink_bottomLabel", comment: "")
         bottomLabel.font = UIFont.systemFont(ofSize: 10)
         
         
@@ -64,14 +64,14 @@ class UserLinkViewController: UIViewController {
         confirmButton.setBackgroundImage(confirmButtonImg, for: .normal)
         confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        confirmButton.setTitle("네, 불러오겠습니다", for: .normal)
+        confirmButton.setTitle(NSLocalizedString("estcommon_userLink_confirm", comment: ""), for: .normal)
         
         
         let cancelButtonImg = UIImage(named: "btn_cancel_user", in: Bundle(for: UserLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
         cancelButton.setBackgroundImage(cancelButtonImg, for: .normal)
         cancelButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        cancelButton.setTitle("아니오, 새로 연동하기", for: .normal)
+        cancelButton.setTitle(NSLocalizedString("estcommon_userLink_cancel", comment: ""), for: .normal)
         
         
         self.view.addSubview(backgroudView)
