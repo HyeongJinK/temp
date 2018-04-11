@@ -1,16 +1,89 @@
 PODS:
-  - estgames-common-framework (0.5.0)
+  - Alamofire (4.7.1)
+  - AWSAuthCore (2.6.15):
+    - AWSCore (= 2.6.15)
+  - AWSAuthUI (2.6.15):
+    - AWSAuthCore (= 2.6.15)
+    - AWSCore (= 2.6.15)
+  - AWSCognito (2.6.15):
+    - AWSCore (= 2.6.15)
+  - AWSCore (2.6.15)
+  - AWSFacebookSignIn (2.6.15):
+    - AWSAuthCore (= 2.6.15)
+    - FBSDKCoreKit (~> 4.0)
+    - FBSDKLoginKit (~> 4.0)
+  - AWSGoogleSignIn (2.6.15):
+    - AWSAuthCore (= 2.6.15)
+  - AWSPinpoint (2.6.15):
+    - AWSCore (= 2.6.15)
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - estgames-common-framework (0.7.0)
+  - FBSDKCoreKit (4.31.1):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.31.1):
+    - FBSDKCoreKit
+  - GoogleSignIn (4.0.2):
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.3)
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
+  - GTMOAuth2 (1.1.6):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.15):
+    - GTMSessionFetcher/Full (= 1.1.15)
+  - GTMSessionFetcher/Core (1.1.15)
+  - GTMSessionFetcher/Full (1.1.15):
+    - GTMSessionFetcher/Core (= 1.1.15)
+  - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - AWSAuthCore (~> 2.6.1)
+  - AWSAuthUI (~> 2.6.1)
+  - AWSCognito (~> 2.6.1)
+  - AWSFacebookSignIn (~> 2.6.1)
+  - AWSGoogleSignIn (~> 2.6.1)
+  - AWSPinpoint (~> 2.6.1)
   - estgames-common-framework (from `../`)
+  - GoogleSignIn (~> 4.0.0)
+  - SwiftKeychainWrapper
 
 EXTERNAL SOURCES:
   estgames-common-framework:
     :path: ../
 
 SPEC CHECKSUMS:
-  estgames-common-framework: a8a0841a28bba65da750103570e849e01632398c
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  AWSAuthCore: 4918701499eca2e4591ede38ac71c96f5a3c855a
+  AWSAuthUI: 600090532495995db8ec0470a59af9c1f3694665
+  AWSCognito: 5aab600f32961d6a69598a14dab1312cbab7228d
+  AWSCore: 4a19c5635b3b9dcacec4d8dab835c2f6375a6fdb
+  AWSFacebookSignIn: 9dbbd197cbb26c417c4eab148a8b0d6652fa67fa
+  AWSGoogleSignIn: e2b728215f6bc5f664f0490f696f9ef6d3059ca9
+  AWSPinpoint: a843ea0421e09a6db4d5cdda41608b7668f6cbc8
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  estgames-common-framework: eee7b24523af6a4fb8a6398cedb0d3c62a9c9ab0
+  FBSDKCoreKit: e08ccfcefa7bc1347a07c276dac9bf6c7fe57024
+  FBSDKLoginKit: 99797ac39252fef6f72600b886f6ee60b4b29cab
+  GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
+  GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 671cff1ec218df49df93e3f6b1e68df26711de20
+PODFILE CHECKSUM: b7504354db9b4555c03003091000260d4fad1735
 
 COCOAPODS: 1.3.1

@@ -19,7 +19,7 @@ class PolicyViewController: UIViewController {
     var submitBt2: PolicyButton!
     var closeBt: PolicyCloseBt!
     var dataSet: PolicyDataSet!
-
+    
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
         

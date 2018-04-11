@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:estgames-common-framework.xcodeproj">
+      location = "group:/Users/mp/Desktop/estgames_common_framework/estgames-common-framework/Example/estgames-common-framework.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:estgames-common-framework.xcodeproj">
    </FileRef>
 </Workspace>

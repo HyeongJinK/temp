@@ -23,6 +23,7 @@ public class bannerFramework: NSObject {
     
     
     public init(pview:UIViewController) {
+        
         //UIDevice.current.orientation.isLandscape
         self.pview = pview
         bannerView = UIView(frame: CGRect(x: 0, y: 0, width: pview.view.frame.size.width, height: pview.view.frame.size.height))
@@ -59,7 +60,7 @@ public class bannerFramework: NSObject {
     
     //배너 넣기 사용자가 호출해야 될 함수
     public func show() {
-        dataSet()
+        
         // view 생성 , 창 크기에 맞게 조절
         //이미지 뷰 생성 , 창 크기에 맞게 조절
         //아래 바 생성

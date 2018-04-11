@@ -5,11 +5,26 @@
 [![License](https://img.shields.io/cocoapods/l/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
-## 이스트 게임즈 아이폰 공통 라이브러리
+# 이스트 게임즈 아이폰 공통 라이브러리
 
+## 개발방법
 
 ### cocoapods 라이브러리 등록
-pod 'estgames-common-framework', '~> 0.4.0'
+
+* 이스트 공통 모듈
+pod 'estgames-common-framework', '~> 0.7.0' 
+
+* 계정연동에 필요한 AWS  모듈들
+pod 'AWSAuthCore', '~> 2.6.1'
+pod 'AWSPinpoint', '~> 2.6.1'
+pod 'AWSGoogleSignIn', '~> 2.6.1'
+pod 'GoogleSignIn', '~> 4.0.0'
+pod 'AWSFacebookSignIn', '~> 2.6.1'
+pod 'AWSCognito', '~> 2.6.1'
+pod 'AWSAuthUI', '~> 2.6.1'
+pod 'Alamofire', '~> 4.7'
+pod 'SwiftKeychainWrapper'
+
 
 ### 배너 출력
 ```swift
@@ -20,6 +35,13 @@ var banner = bannerFramework(pview: self);
 banner.show();
 ```
 
+### 이용약관 출력
+
+### 이용약관 동의한 내용 가져오기
+
+### 권한 출력
+
+### 유저연동
 
 ### TODO
 
