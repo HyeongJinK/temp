@@ -10,7 +10,7 @@ import Foundation
 
 //닫기 버튼
 class CloseBt: UIButton {
-    let closeBtTitle:String = "닫기"
+    let closeBtTitle:String = NSLocalizedString("banner_closeButton", comment: "")
     var checkBt: CheckBox?
     let closeBtImage:UIImage
     

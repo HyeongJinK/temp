@@ -28,3 +28,6 @@
 "estcommon_userLink_bottomLabel" = "!현재 플레이 중인 게임데이터(현재게임닉네임, Lv.xx)는 삭제됩니다";
 "estcommon_userLink_confirm" = "네, 불러오겠습니다";
 "estcommon_userLink_cancel" = "아니오, 새로 연동하기";
+
+"banner_closeButton" = "닫기"
+"banner_linkButton" = "자세히 보기"
