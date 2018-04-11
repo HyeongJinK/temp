@@ -16,6 +16,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9D1E2ED0D5237BFC2C6CFA2F /* Pods_estgames_common_framework_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 763683AF4F482222C2A6C891 /* Pods_estgames_common_framework_Example.framework */; };
 		ED1B2A5A207B317900C1ADE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A5C207B317900C1ADE7 /* Localizable.strings */; };
+		ED1B2A60207DF3B600C1ADE7 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A5F207DF3B600C1ADE7 /* awsconfiguration.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D09752123A85A843D3CCD4B5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		ED1B2A5B207B317900C1ADE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED1B2A5D207B318800C1ADE7 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED1B2A5F207DF3B600C1ADE7 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		F5DB2CE400DA3E50D17DA991 /* estgames-common-framework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "estgames-common-framework.podspec"; path = "../estgames-common-framework.podspec"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ED1B2A5F207DF3B600C1ADE7 /* awsconfiguration.json */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -253,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED1B2A60207DF3B600C1ADE7 /* awsconfiguration.json in Resources */,
 				ED1B2A5A207B317900C1ADE7 /* Localizable.strings in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
