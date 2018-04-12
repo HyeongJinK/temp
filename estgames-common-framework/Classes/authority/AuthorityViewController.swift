@@ -13,7 +13,12 @@ class AuthorityViewController: UIViewController {
     var webView: UIWebView!
     var confirmButton: UIButton!
     var authorityDataSet: AuthorityDataSet!
+    var webViewUrl: String = ""
 
+    public func setWebUrl (url: String) {
+        self.webViewUrl = url
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         authorityDataSet = AuthorityDataSet(deviceNum: DeviceClassification.deviceResolution(self.view.frame.width, self.view.frame.height))
@@ -33,6 +38,8 @@ class AuthorityViewController: UIViewController {
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.boldSystemFont(ofSize: 19)
         titleLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        webView.loadRequest(URLRequest(url: URL(string: self.webViewUrl)!))
         
         
         let confirmButtonImage = UIImage(named: NSLocalizedString("estcommon_authority_confirm", comment: ""), in: Bundle(for: AuthorityViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)

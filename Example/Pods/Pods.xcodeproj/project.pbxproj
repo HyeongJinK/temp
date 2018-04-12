@@ -83,7 +83,6 @@
 		1BE49FF6BAD860F723DC86442934D310 /* AWSDDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA59367A88DF1AC30179A675D9B571F /* AWSDDASLLogger.m */; };
 		1BF8C72601D9176EE523891CFA0B8136 /* AWSMTLManagedObjectAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C3672693BC5B948985E3FCFA2BD311 /* AWSMTLManagedObjectAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C3B01229A0DD03F9A42CEB8387F8AEF /* Pods-estgames-common-framework_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D5CD5EC05F4D60438C4785938DC39760 /* Pods-estgames-common-framework_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C98326E1A53BF4B36B5751F9FBD996E /* btn_close_img_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2065BE68A034F9581600DA46BB350F4 /* btn_close_img_user@2x.png */; };
 		1CAD2D19B6043B494770E9DC585D276D /* GTMMIMEDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 33326B0840A645E4D5374A053E81E758 /* GTMMIMEDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CC75C9182DC3938D9845F1C4FAEF75C /* FBSDKGraphRequestMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 39DF8139100F6F96427A71832494892C /* FBSDKGraphRequestMetadata.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1CD36C840DE297B9107B32D9FE43D24F /* UserDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D0304B6DC20D2E9EB95CB3EF5EA684 /* UserDialog.swift */; };
@@ -126,14 +125,12 @@
 		291071FB9D448A77F2FE9AF7810AC463 /* PolicyCloseBt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5832CB9E427520535C7E839B89B5D5 /* PolicyCloseBt.swift */; };
 		2941E17BDBED7F2548ED8798748BE405 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109D717828079CACB0AEFD9A3E770AF3 /* AWSCore.framework */; };
 		298F1B760FE419A60F975767A32AC78B /* AWSDDLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D9489EF63B809CB539B99BAF2D43686 /* AWSDDLogMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A7EBBC76E30EB5B12A489F3925A6690 /* btn_stoptoday_default_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82684C84BE541ADC619A9FFA3D70969E /* btn_stoptoday_default_img@3x.png */; };
 		2A99B3B9120D3F4296BAD908A4C26A3E /* AWSTableInputCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E9C3AE37C8BDD5E6654FC59A45E89A9 /* AWSTableInputCell.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		2AFFFB9E2BFB0272EF6582A0ECF71F57 /* AWSCognitoIdentity+Fabric.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F4FA90253AB249331C1D6C3031D6B0 /* AWSCognitoIdentity+Fabric.m */; };
 		2B8CBCDD1E95F7DAF33E810EFACA6BB0 /* NSObject+AWSMTLComparisonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8388728FD1BE322615446E272D416F6B /* NSObject+AWSMTLComparisonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C4FF62F864DB705F319E25A58CB8765 /* AWSTask.h in Headers */ = {isa = PBXBuildFile; fileRef = D5904C05D6EA1C9EDCB9F541C597353F /* AWSTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C9A901B233FC345426D27093D98D921 /* AWSPinpointTargeting.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B4225A206B0023EA6947B4E59131999 /* AWSPinpointTargeting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CF7CC4954AE29531D84EDC2F7145C49 /* UserDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069CE9123A1DC968DD63F8621AAEC211 /* UserDataSet.swift */; };
-		2DD3A968F0ACDF0BD49617304A2AEEC3 /* img_popup_box_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 765C50281C1A5032F0B1661EACBE03AC /* img_popup_box_user.png */; };
 		2DEA98AA54F4D62EEB952189658BD89C /* GTMSessionFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CB57470DC694D1CEB1EE2A07361B97 /* GTMSessionFetcher.m */; };
 		30F46BD604AECC7F1159470A74794366 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA035CF9E159C7034F2EFC930D10E69F /* Foundation.framework */; };
 		31554874A56723EC8538840F6ED5350D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA035CF9E159C7034F2EFC930D10E69F /* Foundation.framework */; };
@@ -148,7 +145,6 @@
 		33791A3FBD2429040AB875C1EA0AC62F /* AWSPinpointDateUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2266BD47AC8389F901158F3E1B908BDD /* AWSPinpointDateUtils.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		337F322F226BFE1B7458CCAA7D7AAB1D /* AWSSTSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0681AE69CE0BEC733378507ED7338D69 /* AWSSTSModel.m */; };
 		33F129005064175FFB8583C0F1D116D0 /* FBSDKWebDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = B86DE55F614FAD757EA9270FDE1A5C6D /* FBSDKWebDialogView.m */; };
-		347E606A8EB3365DCC610ABBC2D8F468 /* img_provision_box.png in Resources */ = {isa = PBXBuildFile; fileRef = C8C02DB3509AE9656C612E6E6AA5BCEB /* img_provision_box.png */; };
 		34878293AE358EFF0940A4F1D8F0443A /* AWSSynchronizedMutableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = C465AE40AA0A929F3C0E5D7483250EE8 /* AWSSynchronizedMutableDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		348A486668CA84891EE106A5D6AAB131 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9476FEB76F817605F36AFB656D2964BD /* Bolts.framework */; };
 		349705107CBF23F9F19079272260CA9F /* BFAppLinkNavigation.h in Headers */ = {isa = PBXBuildFile; fileRef = 75D9D60709E53D5AA57D518EC46E6993 /* BFAppLinkNavigation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -165,7 +161,6 @@
 		39617D208502F74FB28BDC44D6DE06BD /* AWSBolts.h in Headers */ = {isa = PBXBuildFile; fileRef = 10697362ED746AEA12B3B0E3B0C2BB79 /* AWSBolts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A248404CFBDA3D210F7739EA6A34C21 /* FBSDKBoltsMeasurementEventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5240970A65B59B34E9A9D3D093FB7A /* FBSDKBoltsMeasurementEventListener.m */; };
 		3A2E76AB9C7F78C4763C0EF9A4D15BBE /* AWSCognitoRecord_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F2ADE3ED9C0477C4147240F2B934DB /* AWSCognitoRecord_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		3AFB11786E32C0B817A0C09CEEA59B38 /* btn_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EF2D3DB0332FF87CD5B2C48B656ED6 /* btn_close_img@2x.png */; };
 		3B63EF97B5A31FD9E4412C1E78D0E690 /* AWSDDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A7712D175F7C6EE2047873E3097617 /* AWSDDASLLogCapture.m */; };
 		3B82E7627903D893F22A135B6F13766D /* BannerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7402E81FE83B335D1D317C4D2133DD05 /* BannerImageView.swift */; };
 		3BB4F17576C9F9D4DDDFC91CED3179C5 /* AWSAuthCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BC0BD470FC7433CCCE25F178637492A /* AWSAuthCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -185,7 +180,6 @@
 		416D4BE7423309DAC75A1F38FC72BBD6 /* FBSDKDynamicFrameworkLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E45B67B3576F966E040B6D1CEB28F80 /* FBSDKDynamicFrameworkLoader.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		41D42BC943AB66F532651A23BE46597E /* PolicyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2321395970945977FDDCB2D4414ACF /* PolicyButton.swift */; };
 		41E03B930BEAF733A681734585BD8330 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76B6D06542A2118C5A4868AC66EA34FD /* Images.xcassets */; };
-		42407EB4DB3F966EB26707B9F876E4C4 /* unchecked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 10F774584FDF86A63F08BD195F4A7C69 /* unchecked-checkbox-50.png */; };
 		428F08917E965A8A5906C049199B81C7 /* Fabric.h in Headers */ = {isa = PBXBuildFile; fileRef = 46BBE151BBF8820A2DBC352311BCD6F4 /* Fabric.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		42FF8AD369FC46CFFA570F1D5EC1B649 /* FBSDKGraphRequestDataAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = F9A62FACD5E7984FFD583C0D0B66C05E /* FBSDKGraphRequestDataAttachment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		434546FFF6DB94D8EA324AC509D34CA9 /* FBSDKLoginButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AEC78B53A3176AB0E3CC2490DA5FA9E4 /* FBSDKLoginButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -201,7 +195,6 @@
 		48630FA095ED391B1A97DC86C74EBBA1 /* NSDictionary+AWSMTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ED2ED35A3E37F38E8353D3F4C017DD /* NSDictionary+AWSMTLManipulationAdditions.m */; };
 		4905FAB08AE41BB9C94F10772472AB1F /* GTMSessionFetcherLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 08AFD1284E9157606CB36E5D69731423 /* GTMSessionFetcherLogging.m */; };
 		493DFA6BF88DF789DE7EC791AD0FA406 /* AWSEXTRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = B3DE3385B24EE645D8DAC78ABE763EEC /* AWSEXTRuntimeExtensions.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		498083B7BF6CD911674E7258E8747309 /* btn_close_img_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7681694CCDCD0FB11DEAC925334D06A3 /* btn_close_img_user@3x.png */; };
 		49DD2421CE33D47CD672361762D773E3 /* FBSDKCoreKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F36A29C01633D01677CBD6D3FFF62CD /* FBSDKCoreKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49FB4C32E8DEB43F1976FFD4A5606468 /* AWSNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D74BC0DEE41D35542387C0D1C69B2B /* AWSNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A2E01647898D468A849E721B7451D5A /* AWSPinpointTargetingResources.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFA87D77F97047239EEFA4F765152B6 /* AWSPinpointTargetingResources.m */; };
@@ -209,7 +202,6 @@
 		4B4C40FF91E3826A1E88183E05614E35 /* AWSPinpointService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E93B5A6D0AEA54894474A10F36A23C0 /* AWSPinpointService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B9AE03706DFA598AF47BFCB23AB551B /* AWSCocoaLumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = 931A7211761344CFD7E2C82149E6926A /* AWSCocoaLumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BA262A5B0E51523B71A926AB5B2333F /* GTMOAuth2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 84BD3982E99F8BFBD6F40C564FCE2AE1 /* GTMOAuth2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4C2CD4AB18398D1A886F47E1BFDE6985 /* btn_detail_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC157423AFFDAEA0393AD8DA7BE83F1 /* btn_detail_img@2x.png */; };
 		4C5485D597C54A82A9B13C9948025184 /* BFCancellationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2A36854538FE2782794B9F37E984B9 /* BFCancellationToken.m */; };
 		4C55945CFD6A552A5E5181D726067703 /* AWSGoogleSignInProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 97516BA17E5AF5A6E3F506DE061C7C8B /* AWSGoogleSignInProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C982E4C0E71E6B6E1D7A6DDADE269E0 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BCB70D7B0B2C53C04A70AF701DC9E0 /* KeychainItemAccessibility.swift */; };
@@ -255,7 +247,6 @@
 		5BAB56D71C48808C7E2E537124758330 /* AWSCognito-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A779103300AB1212B2A1D621ED652E /* AWSCognito-dummy.m */; };
 		5BC485BEDA21731E04452DBE0B6C3351 /* estgames-common-framework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F6438B2F185BC77D7FEE4A85B2EBF7 /* estgames-common-framework-dummy.m */; };
 		5BDAA93463D17BAD01EE2706042E10D1 /* FBSDKGraphRequestDataAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBFA12C5DBEB8A832B4D4E95D390A51 /* FBSDKGraphRequestDataAttachment.m */; };
-		5C1A58DEF9C562E71DC22D413245FC6E /* btn_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 017C29AC4A5535E40ECFF20F456C11D0 /* btn_close_img@3x.png */; };
 		5C32F7BBDC0464AF2B2CBF73C8229576 /* AWSGoogleSignInProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3353286BF969ADFD0F46B92F55E619 /* AWSGoogleSignInProvider.m */; };
 		5C5F3EF48D4D4D21F894EE7DD4406828 /* BFCancellationTokenRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB80986839D94E19A4F7D1CE0B8382C /* BFCancellationTokenRegistration.m */; };
 		5C788CE16885DBE53C632DF9DD0AB891 /* AWSCognitoDataset.h in Headers */ = {isa = PBXBuildFile; fileRef = 298D27D47CAEF398D752B31F963662BB /* AWSCognitoDataset.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -265,14 +256,13 @@
 		5D356A8B8831636B79855A809A771E2D /* AWSMTLModel+NSCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 5837B0822570164C382B646BBA2F819D /* AWSMTLModel+NSCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D57E7549763FD4DDA31BD56DAEBCF88 /* BFCancellationTokenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D53B629FB809E6A5956295043D3512 /* BFCancellationTokenSource.m */; };
 		5E31E3D0A131BAC51E771A1C39269D44 /* FBSDKLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E91F4EB34B766F75694779001C4DFD1 /* FBSDKLoginButton.m */; };
-		5E4A0EC82CAAFB7A833A36F547A6241E /* ApiCallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFDB9E46AAB9D6C63960CE9AB8A649 /* ApiCallController.swift */; };
+		5E4A0EC82CAAFB7A833A36F547A6241E /* EstCommonFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFDB9E46AAB9D6C63960CE9AB8A649 /* EstCommonFramework.swift */; };
 		5EDEECB4CBC2BE653F67373DE52EE8FD /* AWSClientContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5042E5A23A150F7FAE9760F87CF345 /* AWSClientContext.m */; };
 		5F03F8F638F462F950B75B78C6728F08 /* AWSKSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1727920536BF58E45FAC47586ED047D1 /* AWSKSReachability.m */; };
 		5F4347C52C45DBB46667DF5EA68CE30B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA035CF9E159C7034F2EFC930D10E69F /* Foundation.framework */; };
 		5F6618F93645515D53534C8CA67CD322 /* AWSDDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 968CD4C576662915ED1AC270B6812E22 /* AWSDDMultiFormatter.m */; };
 		5F724F77D3897F2C60741685B2530F17 /* FBSDKViewImpressionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = B227FD7F4AB0316302A6E9AC8C3CF6FE /* FBSDKViewImpressionTracker.m */; };
 		5F9A49AD615918FCD78F5D90AB0A2A18 /* FBSDKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 243B23F0B3B1067AECC9371FC5B0A489 /* FBSDKButton.m */; };
-		5FCC04BCC561DBBEFB9477C356709BA2 /* checked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E61EDDDC4C478703C67CEF1585912353 /* checked-checkbox-50.png */; };
 		5FED521AAEC67E5461638196D767B073 /* AWSPinpointContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E561EED1E9116104101739B137FD2E /* AWSPinpointContext.m */; };
 		60A4C0FF771D4CB2C92DB53E596B0FD2 /* BFAppLinkTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BCBBF60EC08C1A866AA03BD1A61117 /* BFAppLinkTarget.m */; };
 		61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EF1AA05AB18ABE87055CA85AD1065E /* DispatchQueue+Alamofire.swift */; };
@@ -282,7 +272,6 @@
 		62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E0771069DC8486E6A5527678B26E7 /* ServerTrustPolicy.swift */; };
 		63B9F6E36E0785734C8382AFB11F1731 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D045EA25F4DA6C18265E9724F6AAEC /* TaskDelegate.swift */; };
 		64894883A8C7B8E0011F2B927DD85C70 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109D717828079CACB0AEFD9A3E770AF3 /* AWSCore.framework */; };
-		648F69961E0931FECB76C520D43F8CB7 /* btn_bottom_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA748D8272B299D3527B648CEE0EDCEC /* btn_bottom_close_img@2x.png */; };
 		64CA6611777142EABE767FCB12B2D55B /* AWSCognitoService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B68CF93A18686899C2EE49AD20F6F0B /* AWSCognitoService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64E7A7F425F305F8D7207F7378EE9CB2 /* AWSMTLModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1145AC5ED8F629AD05159833F4E5622F /* AWSMTLModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		658773114243D9151B13A21C87ADA67A /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 655D41F608A997029D8C429CD08F51FC /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -318,7 +307,6 @@
 		7318A50943F035C6E77310021074955D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA035CF9E159C7034F2EFC930D10E69F /* Foundation.framework */; };
 		73224AAA7C9DAC8E9E6A3D0C4EC33E6C /* FBSDKAccessToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 8363376585D77B03822C0BD9D010D1DD /* FBSDKAccessToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73B9C996AED49ED7CF8EC2A6F1738059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA035CF9E159C7034F2EFC930D10E69F /* Foundation.framework */; };
-		740FB4E0418E210B8BAF73167F942F3A /* btn_provision_off.png in Resources */ = {isa = PBXBuildFile; fileRef = BC917FD9C71802EEF10FF083D933BE46 /* btn_provision_off.png */; };
 		741C7EF7CB09028A6C14145A105E82F6 /* GTMSessionUploadFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 51DA772979A6FB90BBB1A3765A006A66 /* GTMSessionUploadFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7513F740960C18A7029B11D80C9D92EC /* FBSDKKeychainStore.h in Headers */ = {isa = PBXBuildFile; fileRef = D4ABF735E65EEEB4A192D5B9366F8EE7 /* FBSDKKeychainStore.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		758C373999F069EAE9FA0936B8ADEC3E /* NSValueTransformer+AWSMTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D48FEB6078E2CA48515C94ECCAE0E51 /* NSValueTransformer+AWSMTLInversionAdditions.m */; };
@@ -358,10 +346,8 @@
 		823CB3AA03330D50179DB95C0A1EC9A7 /* AWSPinpoint.h in Headers */ = {isa = PBXBuildFile; fileRef = E7DC1CBDB2CE12C52113562675613E5C /* AWSPinpoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82659DF2522C301CA682F23BA67FCB51 /* NSError+AWSMTLModelException.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF78126974174C4C91570E82744599 /* NSError+AWSMTLModelException.m */; };
 		82AB50A1037F4B475A7D5AFCCCF52C81 /* FBSDKColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 197A56DD962F635094A6A80E52AFB6E8 /* FBSDKColor.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		83A16AC039D48408B539A98AF351E336 /* img_authority_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB51FDFB2E05833BB17C3B93676335 /* img_authority_box.png */; };
 		83DEF278100036AAFF5AB5FC9EEEC18E /* FBSDKProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = E839FDE2819C60E5D7D49A3F719BC153 /* FBSDKProfile.m */; };
 		83E5DBB54F7A7C7DCF65F7B9793E2B56 /* FBSDKBridgeAPIProtocolNativeV1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8B02978D77D7AB5002CCAB20F3BCB /* FBSDKBridgeAPIProtocolNativeV1.m */; };
-		84532A8C19E2994619D3F8103F106E73 /* img_inputbox_user.png in Resources */ = {isa = PBXBuildFile; fileRef = B69358B4494B3A6C685FD67B365A75C1 /* img_inputbox_user.png */; };
 		8510AE9888BB7306251F22202F435EB0 /* BFURL.h in Headers */ = {isa = PBXBuildFile; fileRef = F3AEA30B6CAC87CDDB64FAA87B8DE2AE /* BFURL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		853FC275368AB595689DDE52BD0EDDAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA035CF9E159C7034F2EFC930D10E69F /* Foundation.framework */; };
 		85EC44BC00B7825A83DA26F846DBB8CD /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC174F38A04D94B230654767B45B7BE /* DispatchQueue+Alamofire.swift */; };
@@ -446,7 +432,6 @@
 		A35CB93F01DE230888C8E02122FFC0D0 /* AWSTMMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 365209487F65A79DEAEF04D5353C60B2 /* AWSTMMemoryCache.m */; };
 		A37E9A8B1B313EF37E69BBACBC660785 /* FBSDKBridgeAPIProtocolWebV1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F47BC414C35D7C91CD07248E3F6EC9E /* FBSDKBridgeAPIProtocolWebV1.m */; };
 		A3E915EFD2F3FF7476E6710E61DC3A06 /* AWSAuthCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5617BD6D251030735656A664CF8F11F2 /* AWSAuthCore.framework */; };
-		A3FC9B451700C5C0CBAF3D4EDC40D98E /* btn_stoptoday_check_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9311B2C300991D9036D0A5A3E6B1620C /* btn_stoptoday_check_img@2x.png */; };
 		A48EE7570BD266BA6C141EB275918561 /* AWSCognitoConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = AF37D842118758669737119B3E81D982 /* AWSCognitoConflict.m */; };
 		A502064CDCCE921D6756F77934ECDB6C /* AWSSTSModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C0D2044720078FD4E937AA47AD4C9556 /* AWSSTSModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5BE63DDB46C8A5AC5CD16C9F7F4951B /* FBSDKTimeSpentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A14F10ED03AF3C3EA396B14DCA5F150 /* FBSDKTimeSpentData.m */; };
@@ -459,7 +444,6 @@
 		A84530D64A0C5683513E2EB14B1995E7 /* FBSDKBridgeAPIProtocolWebV1.h in Headers */ = {isa = PBXBuildFile; fileRef = 83B533F1BFB9FC4B8537C78901FE7143 /* FBSDKBridgeAPIProtocolWebV1.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A85C4890DC2A3ADB6358EAA01D229532 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B91467C021B2F93AC82A55C4744A /* ServerTrustPolicy.swift */; };
 		A9EEEA7477981DEEBC72432DE9990A4B /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C1550F0FD8E8D9A0D5282232F328E /* Alamofire-dummy.m */; };
-		AA6D37FE9638054793850F6EDA7C9D27 /* btn_bottom_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A1F0B831E3EAF9A9C03219AA8DCAD4 /* btn_bottom_close_img@3x.png */; };
 		AADE42A36FC3F14606604A793B1F9585 /* AWSSignInManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 34F76776403349D101A28B5D7D8B3CF9 /* AWSSignInManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAE3BEC27A1FD0F7FD8DF7515A6E87A3 /* Fabric+FABKits.h in Headers */ = {isa = PBXBuildFile; fileRef = 639B202769C0621427A0B1D142840F84 /* Fabric+FABKits.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		AB2B0CB4DB154F0FC2867A39AA0C303E /* FBSDKAccessTokenCacheV3_21.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C99D7B5A444BA7FF8DB2618B8C50ECB /* FBSDKAccessTokenCacheV3_21.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -510,7 +494,6 @@
 		BBAC07978DBD0B6CD6A92EAD3D4AD98E /* AWSCognitoConflict_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = CCF69D372F35025E9483775F63866F68 /* AWSCognitoConflict_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B068641E8794A9E34C9F5474E58A40 /* Validation.swift */; };
 		BBFE597C3EA7500BADA93292033533ED /* AWSLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = FC8CA1E9FAD170108ED0A0772A6ECE52 /* AWSLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BC74356A36E89043BF42B51231D42823 /* img_provision_bigbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 02B0F60E0042C72B3E53969B4B90E403 /* img_provision_bigbox.png */; };
 		BCA79CC4A52D316CBC166F6C75F1D75E /* AWSFacebookSignIn.h in Headers */ = {isa = PBXBuildFile; fileRef = D76822C041F8B3C6507CF90E1061137B /* AWSFacebookSignIn.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCFD2142B8E8508DED5D13544319828D /* AWSUICKeyChainStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 37E852C9D713BC41B1AE38D396FB5C7C /* AWSUICKeyChainStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD005CD9E76144FF744700BD268E0800 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059CDE0EADAD1976CA4B945BD1AAD3F /* Result.swift */; };
@@ -535,7 +518,6 @@
 		C370412B614AD4C7DF8923220010A9B8 /* FBSDKLoginManagerLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A154B026E8B89AC357AA4696B2ADEF /* FBSDKLoginManagerLogger.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C41EA9FD5FDD8698D88AC13E17BE01EA /* FBSDKApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFD8AC7D2D602BFF40CFAD826175E92 /* FBSDKApplicationDelegate.m */; };
 		C47D6418F6BA41EE414A6112407E69CE /* FBSDKLoginManager+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F8FC285F2096737BE3FE96C43D7BC1F1 /* FBSDKLoginManager+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C4AF32D85B25F4CF9874784AB2275C4A /* btn_stoptoday_check_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8529E16E1D60AD41B62ACDB28864713 /* btn_stoptoday_check_img@3x.png */; };
 		C4B97BCE6167D28BF5025EEC70093A39 /* FBSDKAppLinkUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A59F2463CBBAC9FFA2C72CAB5B2FA7E /* FBSDKAppLinkUtility.m */; };
 		C5B7EDACE11CE3460EFDE23256B97C63 /* _FBSDKTemporaryErrorRecoveryAttempter.m in Sources */ = {isa = PBXBuildFile; fileRef = B79D19EAEED577C36577A65F4655D8DB /* _FBSDKTemporaryErrorRecoveryAttempter.m */; };
 		C65EA4315EFC78F3E88985167D2D951E /* BFAppLinkResolving.h in Headers */ = {isa = PBXBuildFile; fileRef = 451221D75641721D10D9D896DD7D1F7B /* BFAppLinkResolving.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -547,7 +529,6 @@
 		C80FE56DF3B7C2FCA9BEC569272C108F /* FBSDKAppEventsStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7D29B7C7ACE6181227787238B0726A /* FBSDKAppEventsStateManager.m */; };
 		C86564580314D8BCD0CCFB162D78CFF9 /* FBSDKCloseIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF59C9E9CDD5BFF94DD526BD2F6B2E /* FBSDKCloseIcon.m */; };
 		C8750DB37C37F37AF673F4B91AAA388D /* AWSPinpointSessionClient.h in Headers */ = {isa = PBXBuildFile; fileRef = DDEEBDCF9D66DC06E4EF462F0799B12D /* AWSPinpointSessionClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C88153D38877FEBC53FA61D84D0AF888 /* btn_detail_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC1A48DBAF75F25E6449BAA53292C /* btn_detail_img@3x.png */; };
 		C88DA7AAD4C35465F7C7498A43886F15 /* AWSValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 306FD71D5BF4F3BB9AFD24EEE40CFB80 /* AWSValidation.m */; };
 		C89B5CAF711A7576355CE55263954724 /* FBSDKWebDialogView.h in Headers */ = {isa = PBXBuildFile; fileRef = A1F8F1FA2D33A9C2115E8EB08EC6F3F4 /* FBSDKWebDialogView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C8B65E802B64F02A18335FE3D84D7FCD /* FBSDKErrorConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = B121D35530B8CBF675F80E11231B4AA1 /* FBSDKErrorConfiguration.m */; };
@@ -576,7 +557,6 @@
 		CF64D64FAA25D9615C87CE93E41CCE58 /* AWSFMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B950A33E7DE88531BEDFF9D8131723 /* AWSFMResultSet.m */; };
 		CFA62BF4A08574D60EDEEB2BD77D21AA /* FBSDKTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD21CB3106880E032B4C973BBB6995 /* FBSDKTooltipView.m */; };
 		CFD23DFBEEED28382B5EFAFDBC105595 /* AWSCancellationTokenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E622991D862C6C3623D93F8E1A0062 /* AWSCancellationTokenSource.m */; };
-		D02EEC2E45FAB658609EC24163A0375C /* btn_stoptoday_default_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25CBA6DA5E7EBF777430E069015C227C /* btn_stoptoday_default_img@2x.png */; };
 		D0F0F0BC1F66B8955DFA63CB0764B99C /* BFTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CF46D298B353A906D3B609DEF28A2C38 /* BFTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1675AFF465B2381D6CA053BBF81115B /* AWSFacebookSignInProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = E3189B429A28C2A2996F8304ED571D9D /* AWSFacebookSignInProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1A91F675D08295E014D44D13C956950 /* AWSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DED5F776B74AA63F83A59E07DBC55B /* AWSNetworking.m */; };
@@ -609,7 +589,6 @@
 		DDA75B13389869B3809D5385295EA4C0 /* AWSCognitoUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = C42890A0C3A25618D9470CB15DD4B975 /* AWSCognitoUtil.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DEF8A3E19F7D3F903BDB5AFCAA908916 /* FBSDKProfile.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A0CB8539CCB6144D9E220EB63BE4FAD /* FBSDKProfile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF6A5F2839CD4A213F1FF785AF4106E7 /* FBSDKServerConfigurationManager+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 105B08F4925988D1224210BD7E840365 /* FBSDKServerConfigurationManager+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DF98D2CA8C05C254A6CAB14EEB489505 /* btn_confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = 5963F424163B96C64793EDE7B1486934 /* btn_confirm.png */; };
 		E003959B6CD1F722D32F027FF1AFE79D /* AWSAuthUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD16FF391EB0252A2367522731AF7D9 /* AWSAuthUI-dummy.m */; };
 		E0CEC5E0AB1EDAD0C23EFD99FDF42A1D /* AWSXMLWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F0E34F7BADE340B7755DE25EBA254F8 /* AWSXMLWriter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E12395432C5FDD215AF283B2C4B812CB /* AWSSTSService.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DE76E438D014277733411011E20645 /* AWSSTSService.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -636,9 +615,36 @@
 		EB8EB337D0E922447DD665A46628A578 /* FBSDKImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B156EDC82962C13B87F0A2D5B16F843 /* FBSDKImageDownloader.m */; };
 		EBA2264381A86773B13A216760E4C21B /* FBSDKGraphErrorRecoveryProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 441B9736A4451C19AAA703AFCD01B9FC /* FBSDKGraphErrorRecoveryProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC11163B98E1823A6B99811A3DC54A59 /* AWSMTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB54E8687B93B61B38E65CF77543D4 /* AWSMTLModel.m */; };
+		ED1B2A77207EFDCF00C1ADE7 /* btn_bottom_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A76207EFDCF00C1ADE7 /* btn_bottom_close_img@2x.png */; };
+		ED1B2A78207EFDD900C1ADE7 /* btn_bottom_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A1F0B831E3EAF9A9C03219AA8DCAD4 /* btn_bottom_close_img@3x.png */; };
+		ED1B2A93207EFE0D00C1ADE7 /* btn_provision_on.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A79207EFE0900C1ADE7 /* btn_provision_on.png */; };
+		ED1B2A94207EFE0D00C1ADE7 /* btn_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A7A207EFE0900C1ADE7 /* btn_close_img@3x.png */; };
+		ED1B2A95207EFE0D00C1ADE7 /* btn_confirm_user.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A7B207EFE0900C1ADE7 /* btn_confirm_user.png */; };
+		ED1B2A96207EFE0D00C1ADE7 /* SpoqaHanSansRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A7C207EFE0900C1ADE7 /* SpoqaHanSansRegular.ttf */; };
+		ED1B2A97207EFE0D00C1ADE7 /* btn_close_img_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A7D207EFE0900C1ADE7 /* btn_close_img_user@3x.png */; };
+		ED1B2A98207EFE0D00C1ADE7 /* btn_cancel_user.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A7E207EFE0900C1ADE7 /* btn_cancel_user.png */; };
+		ED1B2A99207EFE0D00C1ADE7 /* btn_confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A7F207EFE0A00C1ADE7 /* btn_confirm.png */; };
+		ED1B2A9A207EFE0D00C1ADE7 /* img_authority_box.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A80207EFE0A00C1ADE7 /* img_authority_box.png */; };
+		ED1B2A9B207EFE0D00C1ADE7 /* btn_detail_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A81207EFE0A00C1ADE7 /* btn_detail_img@3x.png */; };
+		ED1B2A9C207EFE0D00C1ADE7 /* img_inputbox_user.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A82207EFE0A00C1ADE7 /* img_inputbox_user.png */; };
+		ED1B2A9D207EFE0D00C1ADE7 /* btn_close_img_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A83207EFE0A00C1ADE7 /* btn_close_img_user@2x.png */; };
+		ED1B2A9E207EFE0D00C1ADE7 /* btn_stoptoday_default_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A84207EFE0A00C1ADE7 /* btn_stoptoday_default_img@3x.png */; };
+		ED1B2A9F207EFE0D00C1ADE7 /* SpoqaHanSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A85207EFE0A00C1ADE7 /* SpoqaHanSansBold.ttf */; };
+		ED1B2AA0207EFE0D00C1ADE7 /* img_popup_box_user.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A86207EFE0A00C1ADE7 /* img_popup_box_user.png */; };
+		ED1B2AA1207EFE0D00C1ADE7 /* btn_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A87207EFE0B00C1ADE7 /* btn_close_img@2x.png */; };
+		ED1B2AA2207EFE0D00C1ADE7 /* SpoqaHanSansThin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A88207EFE0B00C1ADE7 /* SpoqaHanSansThin.ttf */; };
+		ED1B2AA3207EFE0D00C1ADE7 /* checked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A89207EFE0B00C1ADE7 /* checked-checkbox-50.png */; };
+		ED1B2AA4207EFE0D00C1ADE7 /* btn_detail_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A8A207EFE0B00C1ADE7 /* btn_detail_img@2x.png */; };
+		ED1B2AA5207EFE0D00C1ADE7 /* btn_stoptoday_check_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A8B207EFE0B00C1ADE7 /* btn_stoptoday_check_img@3x.png */; };
+		ED1B2AA6207EFE0D00C1ADE7 /* btn_stoptoday_check_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A8C207EFE0B00C1ADE7 /* btn_stoptoday_check_img@2x.png */; };
+		ED1B2AA7207EFE0D00C1ADE7 /* img_provision_bigbox.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A8D207EFE0B00C1ADE7 /* img_provision_bigbox.png */; };
+		ED1B2AA8207EFE0D00C1ADE7 /* SpoqaHanSansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A8E207EFE0B00C1ADE7 /* SpoqaHanSansLight.ttf */; };
+		ED1B2AA9207EFE0D00C1ADE7 /* btn_provision_off.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A8F207EFE0C00C1ADE7 /* btn_provision_off.png */; };
+		ED1B2AAA207EFE0D00C1ADE7 /* img_provision_box.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A90207EFE0C00C1ADE7 /* img_provision_box.png */; };
+		ED1B2AAB207EFE0D00C1ADE7 /* btn_stoptoday_default_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A91207EFE0C00C1ADE7 /* btn_stoptoday_default_img@2x.png */; };
+		ED1B2AAC207EFE0D00C1ADE7 /* unchecked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A92207EFE0C00C1ADE7 /* unchecked-checkbox-50.png */; };
 		ED60333243D4D6389EA926E6C6DA63CC /* AWSDDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = BD8A37848743FD83DF02E8037C46997E /* AWSDDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDE1B4B554EF1A47AE3CFD27CA4D4F12 /* AWSCancellationTokenSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A412852B5A172590143DA455562D2EC /* AWSCancellationTokenSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE7049A361815ADD89DEE666B7391BFC /* btn_confirm_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 76469341B642F75C47A03DB5E1C0ED5B /* btn_confirm_user.png */; };
 		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5F407EBE2D3A3A6637ABED4413ACEA /* Notifications.swift */; };
 		EFF3D258F211336DD9DD558E1688D9E1 /* FBSDKGraphErrorRecoveryProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E20A5E44C043321EAC98650E19907220 /* FBSDKGraphErrorRecoveryProcessor.m */; };
 		F0134FB453008814ED7ACB7975DAA5B7 /* FBSDKAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 2303F7700882A134703FE67BFC00599A /* FBSDKAccessToken.m */; };
@@ -674,7 +680,6 @@
 		F8F9BD4FFAE1835E21ABB023F9E61256 /* AWSCognitoIdentityService.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4736514A394C23BA8334EA22DBC4F7 /* AWSCognitoIdentityService.m */; };
 		F96C1A8D70239D23E9EC97EAAE07A087 /* NSValueTransformer+AWSMTLInversionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 82F1B4AEDB8F7E3FED5BFEC85D17A4FF /* NSValueTransformer+AWSMTLInversionAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FACA163A62BEF4BA942C7F83BCB47163 /* AWSSynchronizedMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E594AF6A852571C514FE54D84A1A16 /* AWSSynchronizedMutableDictionary.m */; };
-		FBED221F70FD1381150B69F05AC6DEB3 /* btn_cancel_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F447A53637630CAD00CA92EFB68CF7 /* btn_cancel_user.png */; };
 		FD46635C28588B4D740925CF0A9E0A7C /* BannerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DB1C4E8290B3E722BC49A6A6A5FCF /* BannerBottomView.swift */; };
 		FD70583F050506606161B35844B9523A /* FBSDKButton+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C940E40569B5EEE4D3489D3FE1FFCA1 /* FBSDKButton+Subclass.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FD798322EE973A757635B846BCC2F06F /* AWSSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E52ACF22E8944D5CC61E26F65D6FB19E /* AWSSerialization.m */; };
@@ -684,7 +689,6 @@
 		FE620FDD0147EBC93D9227554626F5C8 /* FBSDKLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD656471FBEEC090DD7D9F78775DDDB9 /* FBSDKLoginManager.m */; };
 		FEA586380BED8911975EB8BBA47DB173 /* AWSGZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = AFDDD934178B87B78F7A42839B029CCB /* AWSGZIP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEAFD2C0155EBCE380E90A42A4D7863D /* AWSPinpointAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 8233645E6D4671240E24F6CF6555CB97 /* AWSPinpointAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF2FB7EC6FD27592632CBDD68A6ACCA7 /* btn_provision_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C74EF83F8BA52D308E0AB914F90BEEA /* btn_provision_on.png */; };
 		FF6DDB0CDF18FDB3DC2D39CD2CFA7442 /* SwiftKeychainWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B1CE4C6500A25478C5263F8A25A48A8 /* SwiftKeychainWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF876E43D522EADB4E3AE1395A6242CB /* AWSFacebookSignInButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E16C4208E20F81EFDE5AE22ADE71EFD /* AWSFacebookSignInButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -953,10 +957,8 @@
 		00BCB70D7B0B2C53C04A70AF701DC9E0 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainItemAccessibility.swift; path = SwiftKeychainWrapper/KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		011DAABA9785455CF2DD310C298A51D4 /* AWSMTLJSONAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLJSONAdapter.m; path = AWSCore/Mantle/AWSMTLJSONAdapter.m; sourceTree = "<group>"; };
 		0148DD7EC61894FD69344DB1180370A8 /* GTMReadMonitorInputStream.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMReadMonitorInputStream.h; path = Source/GTMReadMonitorInputStream.h; sourceTree = "<group>"; };
-		017C29AC4A5535E40ECFF20F456C11D0 /* btn_close_img@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_close_img@3x.png"; path = "estgames-common-framework/Assets/btn_close_img@3x.png"; sourceTree = "<group>"; };
 		01899676A2B40EF96DC564E45D7F1955 /* FBSDKLoginKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSDKLoginKit.xcconfig; sourceTree = "<group>"; };
 		01DE76E438D014277733411011E20645 /* AWSSTSService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSTSService.h; path = AWSCore/STS/AWSSTSService.h; sourceTree = "<group>"; };
-		02B0F60E0042C72B3E53969B4B90E403 /* img_provision_bigbox.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = img_provision_bigbox.png; path = "estgames-common-framework/Assets/img_provision_bigbox.png"; sourceTree = "<group>"; };
 		02FA53BD277D9A6A606444F527447BA7 /* GTMOAuth2Authentication.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMOAuth2Authentication.m; path = Source/GTMOAuth2Authentication.m; sourceTree = "<group>"; };
 		032ABA8D7E2FA2F00AFBEC112FA0613E /* FBSDKLoginTooltipView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginTooltipView.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginTooltipView.m; sourceTree = "<group>"; };
 		03903B79BEAD6E55AAC0CB9CC0E4560B /* Bolts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Bolts.h; path = Bolts/Common/Bolts.h; sourceTree = "<group>"; };
@@ -989,12 +991,12 @@
 		0C7E8B506C51CB82A835A2F4FEBCAD08 /* FBSDKMonotonicTime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKMonotonicTime.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKMonotonicTime.h; sourceTree = "<group>"; };
 		0CBFA12C5DBEB8A832B4D4E95D390A51 /* FBSDKGraphRequestDataAttachment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestDataAttachment.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestDataAttachment.m; sourceTree = "<group>"; };
 		0D97F421C061E4516383738093989FD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		0E0A79308F229C453E592C1362E345E1 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		0E0A79308F229C453E592C1362E345E1 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		0E774166FD6BE6A5F3DE268DBA2D858D /* AWSURLRequestRetryHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSURLRequestRetryHandler.h; path = AWSCore/Serialization/AWSURLRequestRetryHandler.h; sourceTree = "<group>"; };
 		0E7D29B7C7ACE6181227787238B0726A /* FBSDKAppEventsStateManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppEventsStateManager.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsStateManager.m; sourceTree = "<group>"; };
 		0E9C3AE37C8BDD5E6654FC59A45E89A9 /* AWSTableInputCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTableInputCell.h; path = AWSAuthSDK/Sources/AWSUserPoolsSignIn/UserPoolsUI/AWSTableInputCell.h; sourceTree = "<group>"; };
 		0F120ECF5CD338A2DA4E43B88F3BF0FB /* AWSGoogleSignInButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSGoogleSignInButton.m; path = AWSAuthSDK/Sources/AWSGoogleSignIn/AWSGoogleSignInButton.m; sourceTree = "<group>"; };
-		0F9BE9317F651850E074921F895D6716 /* estgames-common-framework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "estgames-common-framework.modulemap"; sourceTree = "<group>"; };
+		0F9BE9317F651850E074921F895D6716 /* estgames-common-framework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "estgames-common-framework.modulemap"; sourceTree = "<group>"; };
 		0FDB8A43D263F8EB5963743390E017F3 /* AWSInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSInfo.m; path = AWSCore/Service/AWSInfo.m; sourceTree = "<group>"; };
 		0FEA8AFF6CEA75FA74A93C1C2184BA85 /* AWSTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTask.m; path = AWSCore/Bolts/AWSTask.m; sourceTree = "<group>"; };
 		105B08F4925988D1224210BD7E840365 /* FBSDKServerConfigurationManager+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKServerConfigurationManager+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfigurationManager+Internal.h"; sourceTree = "<group>"; };
@@ -1002,7 +1004,6 @@
 		1083DDF4BC99010EDC423DA54FF3C569 /* AWSDDOSLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDOSLogger.m; path = AWSCore/Logging/AWSDDOSLogger.m; sourceTree = "<group>"; };
 		109D717828079CACB0AEFD9A3E770AF3 /* AWSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D50E07BE9FCD3E3802AFF294BF2CAD /* GTMMIMEDocument.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMMIMEDocument.m; path = Source/GTMMIMEDocument.m; sourceTree = "<group>"; };
-		10F774584FDF86A63F08BD195F4A7C69 /* unchecked-checkbox-50.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "unchecked-checkbox-50.png"; path = "estgames-common-framework/Assets/unchecked-checkbox-50.png"; sourceTree = "<group>"; };
 		1145AC5ED8F629AD05159833F4E5622F /* AWSMTLModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLModel.h; path = AWSCore/Mantle/AWSMTLModel.h; sourceTree = "<group>"; };
 		11FC307D6A2B5E57E314E0608F65BA1B /* AWSDDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDDispatchQueueLogFormatter.m; path = AWSCore/Logging/Extensions/AWSDDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		1242F5F14A5DFD1E78E43C2F03AF7212 /* AWSSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSerialization.h; path = AWSCore/Serialization/AWSSerialization.h; sourceTree = "<group>"; };
@@ -1024,7 +1025,7 @@
 		17C4CA115F5E894BB80F2EB7FDB90294 /* AWSTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSTaskCompletionSource.m; path = AWSCore/Bolts/AWSTaskCompletionSource.m; sourceTree = "<group>"; };
 		17F5513D1E3ECF3FDE3871FCF5A0BB03 /* AWSFacebookSignIn-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSFacebookSignIn-prefix.pch"; sourceTree = "<group>"; };
 		181783444A2536A07784BE7D8B0C0DEF /* BFAppLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFAppLink.m; path = Bolts/iOS/BFAppLink.m; sourceTree = "<group>"; };
-		184291D4A9E12214270348CD2F6443CF /* Pods-estgames-common-framework_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-estgames-common-framework_Tests.modulemap"; sourceTree = "<group>"; };
+		184291D4A9E12214270348CD2F6443CF /* Pods-estgames-common-framework_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-estgames-common-framework_Tests.modulemap"; sourceTree = "<group>"; };
 		1869BECC53FB1C367623248AFC597E9E /* Bolts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bolts.xcconfig; sourceTree = "<group>"; };
 		18CF78126974174C4C91570E82744599 /* NSError+AWSMTLModelException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+AWSMTLModelException.m"; path = "AWSCore/Mantle/NSError+AWSMTLModelException.m"; sourceTree = "<group>"; };
 		194784EF03B5D70C60B9DCF8F340F3F9 /* BFMeasurementEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFMeasurementEvent.m; path = Bolts/iOS/BFMeasurementEvent.m; sourceTree = "<group>"; };
@@ -1051,7 +1052,7 @@
 		21E622991D862C6C3623D93F8E1A0062 /* AWSCancellationTokenSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCancellationTokenSource.m; path = AWSCore/Bolts/AWSCancellationTokenSource.m; sourceTree = "<group>"; };
 		2266BD47AC8389F901158F3E1B908BDD /* AWSPinpointDateUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointDateUtils.h; path = AWSPinpoint/Internal/AWSPinpointDateUtils.h; sourceTree = "<group>"; };
 		229A876A6CF973424FD082FE3263CB48 /* GTMDebugThreadValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMDebugThreadValidation.h; path = DebugUtils/GTMDebugThreadValidation.h; sourceTree = "<group>"; };
-		22CFDB9E46AAB9D6C63960CE9AB8A649 /* ApiCallController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ApiCallController.swift; sourceTree = "<group>"; };
+		22CFDB9E46AAB9D6C63960CE9AB8A649 /* EstCommonFramework.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EstCommonFramework.swift; sourceTree = "<group>"; };
 		2303F7700882A134703FE67BFC00599A /* FBSDKAccessToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAccessToken.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAccessToken.m; sourceTree = "<group>"; };
 		234133EC4E94D2F2DF59037D4951BB7A /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		23438C1C4E9E9E0CBCABAEC8C288C32B /* Pods-estgames-common-framework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-estgames-common-framework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -1060,7 +1061,6 @@
 		243B23F0B3B1067AECC9371FC5B0A489 /* FBSDKButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKButton.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKButton.m; sourceTree = "<group>"; };
 		246902077B38F49B24A9CB36C82F593E /* AWSPinpoint-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSPinpoint-prefix.pch"; sourceTree = "<group>"; };
 		2551024B43DF246DBBA937C420354D93 /* AuthorityDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthorityDialog.swift; sourceTree = "<group>"; };
-		25CBA6DA5E7EBF777430E069015C227C /* btn_stoptoday_default_img@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_stoptoday_default_img@2x.png"; path = "estgames-common-framework/Assets/btn_stoptoday_default_img@2x.png"; sourceTree = "<group>"; };
 		25CF9CCFC71057EACAD10593D87E6721 /* AWSGoogleSignIn-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSGoogleSignIn-prefix.pch"; sourceTree = "<group>"; };
 		264F12826E70267B7D60F800E6C22C19 /* FBSDKErrorConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKErrorConfiguration.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKErrorConfiguration.h; sourceTree = "<group>"; };
 		26C3672693BC5B948985E3FCFA2BD311 /* AWSMTLManagedObjectAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLManagedObjectAdapter.h; path = AWSCore/Mantle/AWSMTLManagedObjectAdapter.h; sourceTree = "<group>"; };
@@ -1071,17 +1071,16 @@
 		27D51C332E8008F9B0DE744023906EA7 /* AWSFacebookSignIn-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AWSFacebookSignIn-dummy.m"; sourceTree = "<group>"; };
 		298D27D47CAEF398D752B31F963662BB /* AWSCognitoDataset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoDataset.h; path = AWSCognito/AWSCognitoDataset.h; sourceTree = "<group>"; };
 		2B4225A206B0023EA6947B4E59131999 /* AWSPinpointTargeting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointTargeting.h; path = AWSPinpoint/AWSPinpointTargeting/AWSPinpointTargeting.h; sourceTree = "<group>"; };
-		2B7E46C8B554756E7F4649205C5A2A4A /* AWSCognito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AWSCognito.framework; path = AWSCognito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B7E46C8B554756E7F4649205C5A2A4A /* AWSCognito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSCognito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B9C705A430AAB30FBE92FD4639A3DC1 /* AWSURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSURLSessionManager.h; path = AWSCore/Networking/AWSURLSessionManager.h; sourceTree = "<group>"; };
 		2BCE268D47E27865612FC9187016FC9B /* AWSPinpointAnalyticsModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointAnalyticsModel.h; path = AWSPinpoint/AWSPinpointAnalytics/AWSPinpointAnalyticsModel.h; sourceTree = "<group>"; };
-		2BD25D7A28E8119D7E145E7F8E74674D /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftKeychainWrapper.framework; path = SwiftKeychainWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BD25D7A28E8119D7E145E7F8E74674D /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftKeychainWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3DD89CB0E947F1E02C0B173A630EDA /* AWSDDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDDispatchQueueLogFormatter.h; path = AWSCore/Logging/Extensions/AWSDDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
-		2CEB51FDFB2E05833BB17C3B93676335 /* img_authority_box.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = img_authority_box.png; path = "estgames-common-framework/Assets/img_authority_box.png"; sourceTree = "<group>"; };
-		2D1E9E6E508643D2033C4553372B8B9A /* AWSFacebookSignIn.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AWSFacebookSignIn.bundle; path = AWSFacebookSignIn.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D1E9E6E508643D2033C4553372B8B9A /* AWSFacebookSignIn.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AWSFacebookSignIn.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5916232DD06DEC4C6DBEB5F241C388 /* GTMSessionFetcherService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionFetcherService.h; path = Source/GTMSessionFetcherService.h; sourceTree = "<group>"; };
-		2D5B682CF606932A3DC4DFB57648DAB0 /* AWSPinpoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AWSPinpoint.framework; path = AWSPinpoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D5B682CF606932A3DC4DFB57648DAB0 /* AWSPinpoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSPinpoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D9113BFB8A77F48221F0B5F1378372F /* FBSDKAppEvents.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppEvents.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppEvents.m; sourceTree = "<group>"; };
-		2D93AFBBA5E0C9C2BF4CE9EEA98C48AB /* GTMSessionFetcher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GTMSessionFetcher.modulemap; sourceTree = "<group>"; };
+		2D93AFBBA5E0C9C2BF4CE9EEA98C48AB /* GTMSessionFetcher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GTMSessionFetcher.modulemap; sourceTree = "<group>"; };
 		2DA6A373B5E0898A260FD3AC641C614F /* _FBSDKTemporaryErrorRecoveryAttempter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _FBSDKTemporaryErrorRecoveryAttempter.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ErrorRecovery/_FBSDKTemporaryErrorRecoveryAttempter.h; sourceTree = "<group>"; };
 		2EF2CC4C1CAC814A35A579DD3D805193 /* GTMOAuth2Authentication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMOAuth2Authentication.h; path = Source/GTMOAuth2Authentication.h; sourceTree = "<group>"; };
 		2F8DA843C3705D72C93F59F57BAA3092 /* AWSEXTKeyPathCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSEXTKeyPathCoding.h; path = AWSCore/Mantle/extobjc/AWSEXTKeyPathCoding.h; sourceTree = "<group>"; };
@@ -1097,8 +1096,8 @@
 		33326B0840A645E4D5374A053E81E758 /* GTMMIMEDocument.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMMIMEDocument.h; path = Source/GTMMIMEDocument.h; sourceTree = "<group>"; };
 		33380269E4682F271F305A8C31B4A0B2 /* GTMOAuth2ViewControllerTouch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMOAuth2ViewControllerTouch.m; path = Source/Touch/GTMOAuth2ViewControllerTouch.m; sourceTree = "<group>"; };
 		33393D3DC7E6F29026A1C3CC88518219 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33D179BF72821439BF3ADD21AC462B7E /* AWSGoogleSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AWSGoogleSignIn.framework; path = AWSGoogleSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		33D212A3A379A79D5286C026B548A20A /* AWSGoogleSignIn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AWSGoogleSignIn.modulemap; sourceTree = "<group>"; };
+		33D179BF72821439BF3ADD21AC462B7E /* AWSGoogleSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSGoogleSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33D212A3A379A79D5286C026B548A20A /* AWSGoogleSignIn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AWSGoogleSignIn.modulemap; sourceTree = "<group>"; };
 		33D4483EE7B1912797B917C5487DBDD5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		341F4C89035B2A7CFABFD8C0BB5B6F52 /* AWSClientContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSClientContext.h; path = AWSCore/Service/AWSClientContext.h; sourceTree = "<group>"; };
 		34867127477053EA14AE27186728E577 /* DeviceClassification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeviceClassification.swift; sourceTree = "<group>"; };
@@ -1114,7 +1113,6 @@
 		370CB1FE2608BB3C36A27D9B7981B36A /* AWSXMLDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSXMLDictionary.h; path = AWSCore/XMLDictionary/AWSXMLDictionary.h; sourceTree = "<group>"; };
 		37671C5A82B73DA58D36CB5AE5A7C4E3 /* GTMNSDictionary+URLArguments.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSDictionary+URLArguments.m"; path = "Foundation/GTMNSDictionary+URLArguments.m"; sourceTree = "<group>"; };
 		37E852C9D713BC41B1AE38D396FB5C7C /* AWSUICKeyChainStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSUICKeyChainStore.h; path = AWSCore/UICKeyChainStore/AWSUICKeyChainStore.h; sourceTree = "<group>"; };
-		37F447A53637630CAD00CA92EFB68CF7 /* btn_cancel_user.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = btn_cancel_user.png; path = "estgames-common-framework/Assets/btn_cancel_user.png"; sourceTree = "<group>"; };
 		382CF4766FE3EEB3983128EDC02568C9 /* FBSDKLoginCompletion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginCompletion.m; path = FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginCompletion.m; sourceTree = "<group>"; };
 		384E084336976A3DE82D41B9AB12AC91 /* GTMOAuth2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GTMOAuth2-dummy.m"; sourceTree = "<group>"; };
 		387CB6D2586DF0E2B97038B6302A0837 /* FBSDKURLOpening.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKURLOpening.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKURLOpening.h; sourceTree = "<group>"; };
@@ -1122,7 +1120,7 @@
 		396DA5F4D6731BFD962D2CFD6B584EB9 /* BFAppLinkReturnToRefererController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkReturnToRefererController.h; path = Bolts/iOS/BFAppLinkReturnToRefererController.h; sourceTree = "<group>"; };
 		397B2DA1FA3008B7BEB5F3DC3FD1B4CC /* FBSDKCopying.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKCopying.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKCopying.h; sourceTree = "<group>"; };
 		397FEBCB97DDCB42940E8E19903DAC9B /* AWSPinpointStringUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointStringUtils.h; path = AWSPinpoint/Internal/AWSPinpointStringUtils.h; sourceTree = "<group>"; };
-		399108442906A47F8961F8576629F831 /* estgames_common_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = estgames_common_framework.framework; path = "estgames-common-framework.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		399108442906A47F8961F8576629F831 /* estgames_common_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = estgames_common_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DF8139100F6F96427A71832494892C /* FBSDKGraphRequestMetadata.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestMetadata.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestMetadata.h; sourceTree = "<group>"; };
 		39E594AF6A852571C514FE54D84A1A16 /* AWSSynchronizedMutableDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSynchronizedMutableDictionary.m; path = AWSCore/Utility/AWSSynchronizedMutableDictionary.m; sourceTree = "<group>"; };
 		3A0707A23CA720FBE568537D6C5F06B1 /* FBSDKButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKButton.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKButton.h; sourceTree = "<group>"; };
@@ -1138,7 +1136,7 @@
 		3DBB8E5EF58180AF93E756D16D433604 /* FBSDKServerConfiguration+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKServerConfiguration+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfiguration+Internal.h"; sourceTree = "<group>"; };
 		3E96493FB3C3B9FD1E7F4E7A6335CF40 /* FBSDKInternalUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKInternalUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKInternalUtility.h; sourceTree = "<group>"; };
 		3ECF59C9E9CDD5BFF94DD526BD2F6B2E /* FBSDKCloseIcon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKCloseIcon.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKCloseIcon.m; sourceTree = "<group>"; };
-		3EE514C1DFBC57831B713FF2A1AF9064 /* AWSPinpoint.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AWSPinpoint.modulemap; sourceTree = "<group>"; };
+		3EE514C1DFBC57831B713FF2A1AF9064 /* AWSPinpoint.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AWSPinpoint.modulemap; sourceTree = "<group>"; };
 		3F40BEB1D82AD63762B3EAE6CDAAD9BD /* NSError+AWSMTLModelException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+AWSMTLModelException.h"; path = "AWSCore/Mantle/NSError+AWSMTLModelException.h"; sourceTree = "<group>"; };
 		3F47BC414C35D7C91CD07248E3F6EC9E /* FBSDKBridgeAPIProtocolWebV1.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPIProtocolWebV1.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolWebV1.m; sourceTree = "<group>"; };
 		3FCD0F658D0F59BDCCA66EEC81084909 /* AWSCognitoSyncResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoSyncResources.m; path = AWSCognito/CognitoSync/AWSCognitoSyncResources.m; sourceTree = "<group>"; };
@@ -1148,7 +1146,7 @@
 		41F3DD645B3B515D5CF774E630F2987A /* AWSFMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFMDatabaseAdditions.m; path = AWSCore/FMDB/AWSFMDatabaseAdditions.m; sourceTree = "<group>"; };
 		41FC7C21A598E7AC8FAA1091814C2966 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F01A63D0837BB4B2088FAAA85E3E39 /* AWSAuthUIViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSAuthUIViewController.m; path = AWSAuthSDK/Sources/AWSAuthUI/AWSAuthUIViewController.m; sourceTree = "<group>"; };
-		44074227A887A64A14B85DCEC61FC268 /* FBSDKCoreKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FBSDKCoreKit.modulemap; sourceTree = "<group>"; };
+		44074227A887A64A14B85DCEC61FC268 /* FBSDKCoreKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FBSDKCoreKit.modulemap; sourceTree = "<group>"; };
 		441B9736A4451C19AAA703AFCD01B9FC /* FBSDKGraphErrorRecoveryProcessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphErrorRecoveryProcessor.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphErrorRecoveryProcessor.h; sourceTree = "<group>"; };
 		444EED05A971070AEBF8A902F90B8677 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		446DEAE7B74E9B85C37BE4CEAD57C71E /* FBSDKAppLinkResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppLinkResolver.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkResolver.h; sourceTree = "<group>"; };
@@ -1160,14 +1158,14 @@
 		46BBE151BBF8820A2DBC352311BCD6F4 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = AWSCore/Fabric/Fabric.h; sourceTree = "<group>"; };
 		46EC0475E5917F31D1FB905F27D60FA9 /* FBSDKBridgeAPICrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPICrypto.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPICrypto.m; sourceTree = "<group>"; };
 		474038EBD75684CB39801CDEB37ED826 /* FBSDKMutableCopying.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKMutableCopying.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKMutableCopying.h; sourceTree = "<group>"; };
-		47D3CC6B0ABFEF43AA906F61DA79741B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSDKCoreKit.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47D3CC6B0ABFEF43AA906F61DA79741B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48383C1F4F5E211C588AE7E04A8B78E0 /* FBSDKLoginUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLoginUtility.h; path = FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginUtility.h; sourceTree = "<group>"; };
 		4845EF44028FE7E82581E12EF8336333 /* FBSDKKeychainStoreViaBundleID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKKeychainStoreViaBundleID.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKKeychainStoreViaBundleID.h; sourceTree = "<group>"; };
 		485F4D0DE36DD598272ED54FC77A3D75 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4861387EE2290F44E3735CBE3EEDFCFC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		491380920E114B03E7AA0EB416344EC9 /* FBSDKURLSessionTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKURLSessionTask.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKURLSessionTask.m; sourceTree = "<group>"; };
 		49259AA90BC0B0DAA17C7B35696C9781 /* BannerFramework.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerFramework.swift; sourceTree = "<group>"; };
-		49887DF090A20DFEDD1ED39A65F3FE10 /* AWSFacebookSignIn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AWSFacebookSignIn.modulemap; sourceTree = "<group>"; };
+		49887DF090A20DFEDD1ED39A65F3FE10 /* AWSFacebookSignIn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AWSFacebookSignIn.modulemap; sourceTree = "<group>"; };
 		49BACBC2230E8ED66FF5C3E0656B5AED /* FBSDKLoginManagerLoginResult+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKLoginManagerLoginResult+Internal.h"; path = "FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginManagerLoginResult+Internal.h"; sourceTree = "<group>"; };
 		4A480A6667DF21C68A2552C6CBF7A388 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AA35C2BAEA3DC594181B653D5595AA0 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
@@ -1179,7 +1177,6 @@
 		4D626DCA2AAB938358229FF02083CC73 /* AWSFMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDatabasePool.h; path = AWSCore/FMDB/AWSFMDatabasePool.h; sourceTree = "<group>"; };
 		4DBEECCF48E2F03F764B335529E5BC65 /* AWSCognito.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognito.h; path = AWSCognito/AWSCognito.h; sourceTree = "<group>"; };
 		4DD4737972FA6CB8317161033CA19A7D /* AWSCognitoIdentityService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoIdentityService.h; path = AWSCore/CognitoIdentity/AWSCognitoIdentityService.h; sourceTree = "<group>"; };
-		4E3CC1A48DBAF75F25E6449BAA53292C /* btn_detail_img@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_detail_img@3x.png"; path = "estgames-common-framework/Assets/btn_detail_img@3x.png"; sourceTree = "<group>"; };
 		4F1A133A3DBE8EE4C1912878FC2C46C9 /* BFAppLinkReturnToRefererView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFAppLinkReturnToRefererView.m; path = Bolts/iOS/BFAppLinkReturnToRefererView.m; sourceTree = "<group>"; };
 		500D738223985F53466435DE4B30A930 /* FBSDKLoginKit+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKLoginKit+Internal.h"; path = "FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginKit+Internal.h"; sourceTree = "<group>"; };
 		505421B77CFF48605C53BBDA5AB2EA91 /* FBSDKIcon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKIcon.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKIcon.m; sourceTree = "<group>"; };
@@ -1206,7 +1203,6 @@
 		5837B0822570164C382B646BBA2F819D /* AWSMTLModel+NSCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AWSMTLModel+NSCoding.h"; path = "AWSCore/Mantle/AWSMTLModel+NSCoding.h"; sourceTree = "<group>"; };
 		585CF65886074197763E6EAC05AF61BD /* AWSCognitoSyncService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoSyncService.h; path = AWSCognito/CognitoSync/AWSCognitoSyncService.h; sourceTree = "<group>"; };
 		58B7712105DB1BB59426DEC7A56B47FC /* GTMNSString+URLArguments.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+URLArguments.h"; path = "Foundation/GTMNSString+URLArguments.h"; sourceTree = "<group>"; };
-		5963F424163B96C64793EDE7B1486934 /* btn_confirm.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = btn_confirm.png; path = "estgames-common-framework/Assets/btn_confirm.png"; sourceTree = "<group>"; };
 		59F57D54D4702CF3E186705DA9CA7A3E /* AWSFacebookSignIn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AWSFacebookSignIn.xcconfig; sourceTree = "<group>"; };
 		5A0CB8539CCB6144D9E220EB63BE4FAD /* FBSDKProfile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKProfile.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKProfile.h; sourceTree = "<group>"; };
 		5A3A1C87E638DC81BE5AADFA8B84F5C2 /* AWSMTLManagedObjectAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLManagedObjectAdapter.m; path = AWSCore/Mantle/AWSMTLManagedObjectAdapter.m; sourceTree = "<group>"; };
@@ -1224,14 +1220,14 @@
 		5CF0E6DC4F87FC82761FAE72E2841C21 /* AWSIdentityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSIdentityManager.h; path = AWSAuthSDK/Sources/AWSAuthCore/AWSIdentityManager.h; sourceTree = "<group>"; };
 		5D1EBB7C8B519C6708A55AF8BE05476B /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		5D80BD26BA4C66843F3EB5F0692F54CA /* BFTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTask.m; path = Bolts/Common/BFTask.m; sourceTree = "<group>"; };
-		5DF7DA0DB89060E35B4ABCE004E4EA06 /* AWSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AWSCore.framework; path = AWSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF7DA0DB89060E35B4ABCE004E4EA06 /* AWSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E12663F0BBDFF6609B0E1DBF7FB4A0E /* FBSDKBridgeAPIProtocolType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIProtocolType.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIProtocolType.h; sourceTree = "<group>"; };
-		5E411E8917B29EF6BB6DA0DC996FE20C /* AWSAuthUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AWSAuthUI.framework; path = AWSAuthUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E411E8917B29EF6BB6DA0DC996FE20C /* AWSAuthUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSAuthUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E93B5A6D0AEA54894474A10F36A23C0 /* AWSPinpointService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointService.h; path = AWSPinpoint/AWSPinpointService.h; sourceTree = "<group>"; };
 		5EC174F38A04D94B230654767B45B7BE /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		5F0E34F7BADE340B7755DE25EBA254F8 /* AWSXMLWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSXMLWriter.h; path = AWSCore/XMLWriter/AWSXMLWriter.h; sourceTree = "<group>"; };
 		5F78F1EAA00B80EC42D7B66BCF0051C4 /* BFWebViewAppLinkResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFWebViewAppLinkResolver.h; path = Bolts/iOS/BFWebViewAppLinkResolver.h; sourceTree = "<group>"; };
-		5FFC4CE62A19C2103BF6F006E35C77DC /* AWSGoogleSignIn.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AWSGoogleSignIn.bundle; path = AWSGoogleSignIn.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FFC4CE62A19C2103BF6F006E35C77DC /* AWSGoogleSignIn.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AWSGoogleSignIn.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		601A43144CAC1CD9CC01252EB2252CA6 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = Source/Touch/GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
 		601A9C213EEF46FC27DD281380DD41FB /* AWSService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSService.m; path = AWSCore/Service/AWSService.m; sourceTree = "<group>"; };
 		604BA5C46A7FD7F80D404F5AF0AC6106 /* AWSFMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFMDatabasePool.m; path = AWSCore/FMDB/AWSFMDatabasePool.m; sourceTree = "<group>"; };
@@ -1261,13 +1257,12 @@
 		690B015DA286799330AB6CCADEED9CA0 /* AWSCancellationToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCancellationToken.h; path = AWSCore/Bolts/AWSCancellationToken.h; sourceTree = "<group>"; };
 		696760A6253440062B503E97F7D8BAD4 /* FBSDKSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKSettings.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKSettings.h; sourceTree = "<group>"; };
 		69BCBBF60EC08C1A866AA03BD1A61117 /* BFAppLinkTarget.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFAppLinkTarget.m; path = Bolts/iOS/BFAppLinkTarget.m; sourceTree = "<group>"; };
-		69D56B91521EB84D13A6B5F21E90C896 /* AWSCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AWSCore.modulemap; sourceTree = "<group>"; };
+		69D56B91521EB84D13A6B5F21E90C896 /* AWSCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AWSCore.modulemap; sourceTree = "<group>"; };
 		6ADAC3F52DDAABB566676593BF0E7BEC /* FBSDKLogo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLogo.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKLogo.m; sourceTree = "<group>"; };
 		6AE839DB2058937EF362E21A33078395 /* AuthorityDataSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthorityDataSet.swift; sourceTree = "<group>"; };
 		6B156EDC82962C13B87F0A2D5B16F843 /* FBSDKImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKImageDownloader.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKImageDownloader.m; sourceTree = "<group>"; };
 		6BF233898EA4FDB35B74922BF50BD62B /* Pods-estgames-common-framework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-estgames-common-framework_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6C6D246BE3134D7FA820DB8C86355741 /* AWSPinpointAnalyticsService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointAnalyticsService.h; path = AWSPinpoint/AWSPinpointAnalytics/AWSPinpointAnalyticsService.h; sourceTree = "<group>"; };
-		6C74EF83F8BA52D308E0AB914F90BEEA /* btn_provision_on.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = btn_provision_on.png; path = "estgames-common-framework/Assets/btn_provision_on.png"; sourceTree = "<group>"; };
 		6CF6DB84C37C7D74412F185495244C29 /* AWSCognito-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSCognito-umbrella.h"; sourceTree = "<group>"; };
 		6DA48CEB22F944B3D190D17BF35FFDA8 /* GTMOAuth2-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTMOAuth2-prefix.pch"; sourceTree = "<group>"; };
 		6E155AA931FD08B27B720CEEAD8ACB0B /* AWSGoogleSignIn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSGoogleSignIn.h; path = AWSAuthSDK/Sources/AWSGoogleSignIn/AWSGoogleSignIn.h; sourceTree = "<group>"; };
@@ -1276,11 +1271,10 @@
 		6F3A3FB409950B02A01B4D33938BCDFB /* GTMSessionFetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionFetcher.h; path = Source/GTMSessionFetcher.h; sourceTree = "<group>"; };
 		6FBC7C3472EEC20CE2500297E6636C5E /* AWSBolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSBolts.m; path = AWSCore/Bolts/AWSBolts.m; sourceTree = "<group>"; };
 		7004FB49DA4F56D710C179A19FAAD5E1 /* FBSDKIcon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKIcon.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKIcon.h; sourceTree = "<group>"; };
-		704365A8266EC0F2315EB8B668C61383 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSDKLoginKit.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		704365A8266EC0F2315EB8B668C61383 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7046A384227949F3358D8DC6F25ED8B3 /* AWSTMCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTMCache.h; path = AWSCore/TMCache/AWSTMCache.h; sourceTree = "<group>"; };
 		7046E4F9835EA922226A6E8E4A7002FD /* GTMOAuth2ViewControllerTouch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMOAuth2ViewControllerTouch.h; path = Source/Touch/GTMOAuth2ViewControllerTouch.h; sourceTree = "<group>"; };
 		706C840279E11C504492E5B80DD17928 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
-		70EF2D3DB0332FF87CD5B2C48B656ED6 /* btn_close_img@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_close_img@2x.png"; path = "estgames-common-framework/Assets/btn_close_img@2x.png"; sourceTree = "<group>"; };
 		710A9CF96D9B86EF5BDF186E4B9D47E6 /* GTMOAuth2.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GTMOAuth2.xcconfig; sourceTree = "<group>"; };
 		717603FF6D0F58865617FB4A82C2CB1D /* AWSFormTableCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFormTableCell.h; path = AWSAuthSDK/Sources/AWSUserPoolsSignIn/UserPoolsUI/AWSFormTableCell.h; sourceTree = "<group>"; };
 		71D045EA25F4DA6C18265E9724F6AAEC /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
@@ -1288,19 +1282,16 @@
 		72F5072BA97B05C11FDE63B33DA220C1 /* AWSFMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFMDatabaseQueue.m; path = AWSCore/FMDB/AWSFMDatabaseQueue.m; sourceTree = "<group>"; };
 		73670009A3F7CE7809EEE47D651BA5EE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7402E81FE83B335D1D317C4D2133DD05 /* BannerImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerImageView.swift; sourceTree = "<group>"; };
-		7414005944BC8C14841987A56FE65785 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
+		7414005944BC8C14841987A56FE65785 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
 		74DB31E7F611A0842935D14433477343 /* FBSDKGraphRequestBody.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestBody.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestBody.m; sourceTree = "<group>"; };
 		74DEDDDA640631D58F07F1067638F278 /* AWSAuthUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSAuthUI.h; path = AWSAuthSDK/Sources/AWSAuthUI/AWSAuthUI.h; sourceTree = "<group>"; };
 		756413789C1609D11B4B65F229102FFE /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		7579E177C2FFAE2AA29C3FE366BB59C4 /* AWSPinpointContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointContext.h; path = AWSPinpoint/Internal/AWSPinpointContext.h; sourceTree = "<group>"; };
 		75D9D60709E53D5AA57D518EC46E6993 /* BFAppLinkNavigation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkNavigation.h; path = Bolts/iOS/BFAppLinkNavigation.h; sourceTree = "<group>"; };
-		76469341B642F75C47A03DB5E1C0ED5B /* btn_confirm_user.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = btn_confirm_user.png; path = "estgames-common-framework/Assets/btn_confirm_user.png"; sourceTree = "<group>"; };
-		765C50281C1A5032F0B1661EACBE03AC /* img_popup_box_user.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = img_popup_box_user.png; path = "estgames-common-framework/Assets/img_popup_box_user.png"; sourceTree = "<group>"; };
 		7679DE5A39AB01AFA67091B66F6AA2B1 /* BannerJson.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerJson.swift; sourceTree = "<group>"; };
-		7681694CCDCD0FB11DEAC925334D06A3 /* btn_close_img_user@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_close_img_user@3x.png"; path = "estgames-common-framework/Assets/btn_close_img_user@3x.png"; sourceTree = "<group>"; };
 		76B6D06542A2118C5A4868AC66EA34FD /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AWSAuthSDK/Sources/AWSFacebookSignIn/Images.xcassets; sourceTree = "<group>"; };
 		77533E723754D3EBFEABCB519EBEEB10 /* AWSURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSURLResponseSerialization.h; path = AWSCore/Serialization/AWSURLResponseSerialization.h; sourceTree = "<group>"; };
-		78EDB15998764464CED1899B4858D1AE /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Bolts.framework; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EDB15998764464CED1899B4858D1AE /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		798DB1C4E8290B3E722BC49A6A6A5FCF /* BannerBottomView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerBottomView.swift; sourceTree = "<group>"; };
 		7A2ED103A8A52428435B96217E724A42 /* FBSDKUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKUtility.h; sourceTree = "<group>"; };
 		7A8BFB9621012E3234846F58D1030275 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -1317,7 +1308,7 @@
 		801224404F6ED28CAB05F7AA051EFCA2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		806747568079F18DF515A47E19742D80 /* AWSSignature.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSignature.m; path = AWSCore/Authentication/AWSSignature.m; sourceTree = "<group>"; };
 		806B4EFA408E73F5569D0CAB6F785C5C /* AWSAuthCore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AWSAuthCore.xcconfig; sourceTree = "<group>"; };
-		80EBAA62C200D76721FFE74F860ED283 /* Pods-estgames-common-framework_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-estgames-common-framework_Example.modulemap"; sourceTree = "<group>"; };
+		80EBAA62C200D76721FFE74F860ED283 /* Pods-estgames-common-framework_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-estgames-common-framework_Example.modulemap"; sourceTree = "<group>"; };
 		811A043B89CEB66BA77C78DAF2F11683 /* FBSDKTypeUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTypeUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKTypeUtility.h; sourceTree = "<group>"; };
 		8145B82A1561A4A4AD56780C36303400 /* AWSPinpointNotificationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointNotificationManager.h; path = AWSPinpoint/AWSPinpointNotificationManager.h; sourceTree = "<group>"; };
 		815B007AD20FB3709C9DD8DD96C5AFF3 /* AWSInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSInfo.h; path = AWSCore/Service/AWSInfo.h; sourceTree = "<group>"; };
@@ -1325,9 +1316,8 @@
 		81C1CFCC9E40918C9CEDD705DDB63ADD /* BFAppLinkTarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkTarget.h; path = Bolts/iOS/BFAppLinkTarget.h; sourceTree = "<group>"; };
 		8220D861D870FF72A8417F33AF5EF0B5 /* AWSDDMultiFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDMultiFormatter.h; path = AWSCore/Logging/Extensions/AWSDDMultiFormatter.h; sourceTree = "<group>"; };
 		8233645E6D4671240E24F6CF6555CB97 /* AWSPinpointAnalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointAnalytics.h; path = AWSPinpoint/AWSPinpointAnalytics/AWSPinpointAnalytics.h; sourceTree = "<group>"; };
-		82684C84BE541ADC619A9FFA3D70969E /* btn_stoptoday_default_img@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_stoptoday_default_img@3x.png"; path = "estgames-common-framework/Assets/btn_stoptoday_default_img@3x.png"; sourceTree = "<group>"; };
 		826B0EEB88375AA375F6D62BA0C6B662 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m"; path = "AWSCore/Mantle/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
-		8277B88ADE1C2234B0F7C2A86D0832C0 /* AWSAuthUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AWSAuthUI.modulemap; sourceTree = "<group>"; };
+		8277B88ADE1C2234B0F7C2A86D0832C0 /* AWSAuthUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AWSAuthUI.modulemap; sourceTree = "<group>"; };
 		829DF8574F52178B9ED398726827201A /* FBSDKBase64.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBase64.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Base64/FBSDKBase64.m; sourceTree = "<group>"; };
 		82D93A0DA4030FBF8A4236EBE2BE3A4B /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		82F1B4AEDB8F7E3FED5BFEC85D17A4FF /* NSValueTransformer+AWSMTLInversionAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValueTransformer+AWSMTLInversionAdditions.h"; path = "AWSCore/Mantle/NSValueTransformer+AWSMTLInversionAdditions.h"; sourceTree = "<group>"; };
@@ -1335,7 +1325,7 @@
 		8388728FD1BE322615446E272D416F6B /* NSObject+AWSMTLComparisonAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+AWSMTLComparisonAdditions.h"; path = "AWSCore/Mantle/NSObject+AWSMTLComparisonAdditions.h"; sourceTree = "<group>"; };
 		83B533F1BFB9FC4B8537C78901FE7143 /* FBSDKBridgeAPIProtocolWebV1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIProtocolWebV1.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolWebV1.h; sourceTree = "<group>"; };
 		84BD3982E99F8BFBD6F40C564FCE2AE1 /* GTMOAuth2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTMOAuth2-umbrella.h"; sourceTree = "<group>"; };
-		8519E666119C052509F943BA25E1D668 /* AWSAuthCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AWSAuthCore.framework; path = AWSAuthCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8519E666119C052509F943BA25E1D668 /* AWSAuthCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSAuthCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A3B876D16F1C073F094ABF6063DADD /* FBSDKLogo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLogo.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKLogo.h; sourceTree = "<group>"; };
 		85A3CE2D934B298648F29771282AC2ED /* BFTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTaskCompletionSource.m; path = Bolts/Common/BFTaskCompletionSource.m; sourceTree = "<group>"; };
 		85E227ACCC4AED258905D8F003FB136E /* AWSCognitoRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoRecord.m; path = AWSCognito/AWSCognitoRecord.m; sourceTree = "<group>"; };
@@ -1347,7 +1337,7 @@
 		8983A34DE94A3A121BB92AEFFA64C609 /* SignIn.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = SignIn.storyboard; path = AWSAuthSDK/Sources/AWSAuthUI/SignIn.storyboard; sourceTree = "<group>"; };
 		89F29CA7D84FC4C0CA8FE968D027D315 /* AWSPinpointEventRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointEventRecorder.h; path = AWSPinpoint/AWSPinpointEventRecorder.h; sourceTree = "<group>"; };
 		8A2321395970945977FDDCB2D4414ACF /* PolicyButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PolicyButton.swift; sourceTree = "<group>"; };
-		8A2AE21CE35BE12A32407C54D7D82D91 /* estgames-common-framework.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "estgames-common-framework.bundle"; path = "estgames-common-framework.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A2AE21CE35BE12A32407C54D7D82D91 /* estgames-common-framework.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "estgames-common-framework.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7C2E8A42B20AC74C6270C031A46100 /* AWSCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCore.h; path = AWSCore/AWSCore.h; sourceTree = "<group>"; };
 		8B82AAB8CD8557C685C71323D862AE4C /* AWSPinpoint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AWSPinpoint.xcconfig; sourceTree = "<group>"; };
 		8BC0BD470FC7433CCCE25F178637492A /* AWSAuthCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSAuthCore.h; path = AWSAuthSDK/Sources/AWSAuthCore/AWSAuthCore.h; sourceTree = "<group>"; };
@@ -1358,7 +1348,7 @@
 		8D1145B1EB5F05F626D3B50819964296 /* AWSFMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDatabase.h; path = AWSCore/FMDB/AWSFMDatabase.h; sourceTree = "<group>"; };
 		8D25D393CFDEE88267E7A6C7C9130131 /* AWSMTLReflection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLReflection.h; path = AWSCore/Mantle/AWSMTLReflection.h; sourceTree = "<group>"; };
 		8D2FFD50062DBD2357F2F7DB6A658ABD /* FBSDKViewImpressionTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKViewImpressionTracker.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKViewImpressionTracker.h; sourceTree = "<group>"; };
-		8DC1758DC82BC421A1CC64E8FFB2BF6C /* AWSFacebookSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AWSFacebookSignIn.framework; path = AWSFacebookSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC1758DC82BC421A1CC64E8FFB2BF6C /* AWSFacebookSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AWSFacebookSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E45B67B3576F966E040B6D1CEB28F80 /* FBSDKDynamicFrameworkLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKDynamicFrameworkLoader.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKDynamicFrameworkLoader.h; sourceTree = "<group>"; };
 		8E91F4EB34B766F75694779001C4DFD1 /* FBSDKLoginButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginButton.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginButton.m; sourceTree = "<group>"; };
 		8EB4B7D972A09DEEA6444FAF909EE6A7 /* GIDGoogleUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GIDGoogleUser.h; path = AWSAuthSDK/Dependencies/GoogleHeaders/GIDGoogleUser.h; sourceTree = "<group>"; };
@@ -1373,13 +1363,12 @@
 		91D02A069BFC77A06D46FE79BA31F5F5 /* PolicyViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		92E62622267A16E11237E76ECD112E57 /* AWSMTLValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLValueTransformer.m; path = AWSCore/Mantle/AWSMTLValueTransformer.m; sourceTree = "<group>"; };
 		93094B8866BAA2B2B13A8DC28011EB3B /* FBSDKServerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKServerConfiguration.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfiguration.h; sourceTree = "<group>"; };
-		9311B2C300991D9036D0A5A3E6B1620C /* btn_stoptoday_check_img@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_stoptoday_check_img@2x.png"; path = "estgames-common-framework/Assets/btn_stoptoday_check_img@2x.png"; sourceTree = "<group>"; };
 		931A7211761344CFD7E2C82149E6926A /* AWSCocoaLumberjack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCocoaLumberjack.h; path = AWSCore/Logging/AWSCocoaLumberjack.h; sourceTree = "<group>"; };
 		936FD17F9DA305CAE31D4E5D1C7153AA /* Pods-estgames-common-framework_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-estgames-common-framework_Example-frameworks.sh"; sourceTree = "<group>"; };
 		937EF54C2A1B9462F7C004375C86CCD7 /* FBSDKAppEventsStateManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppEventsStateManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsStateManager.h; sourceTree = "<group>"; };
 		938E32F6B048CE6F01A549702A1898B5 /* FBSDKGraphRequestPiggybackManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestPiggybackManager.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestPiggybackManager.m; sourceTree = "<group>"; };
 		93A394CB8C0EE78D3536ACF2B21B2E29 /* FBSDKGraphRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequest.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequest.m; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93BCFA9BFAA4EBFFB93F372DFFF6677A /* AWSURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSURLRequestSerialization.m; path = AWSCore/Serialization/AWSURLRequestSerialization.m; sourceTree = "<group>"; };
 		93EC987BE07AFCC8ECA65FE4173959CF /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		9418C9644D8FE466F893DCEFF7FA250C /* FBSDKKeychainStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKKeychainStore.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKKeychainStore.m; sourceTree = "<group>"; };
@@ -1391,7 +1380,7 @@
 		9476FEB76F817605F36AFB656D2964BD /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954AB1D5FDE56FA6A6E7E74CD6963DC1 /* _FBSDKLoginRecoveryAttempter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _FBSDKLoginRecoveryAttempter.m; path = FBSDKLoginKit/FBSDKLoginKit/Internal/_FBSDKLoginRecoveryAttempter.m; sourceTree = "<group>"; };
 		968CD4C576662915ED1AC270B6812E22 /* AWSDDMultiFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDMultiFormatter.m; path = AWSCore/Logging/AWSDDMultiFormatter.m; sourceTree = "<group>"; };
-		96A1F0B831E3EAF9A9C03219AA8DCAD4 /* btn_bottom_close_img@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_bottom_close_img@3x.png"; path = "estgames-common-framework/Assets/btn_bottom_close_img@3x.png"; sourceTree = "<group>"; };
+		96A1F0B831E3EAF9A9C03219AA8DCAD4 /* btn_bottom_close_img@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "btn_bottom_close_img@3x.png"; sourceTree = "<group>"; };
 		96AC8A7A6F77EF31E71AC7277DF2CA95 /* AWSFacebookSignInButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFacebookSignInButton.m; path = AWSAuthSDK/Sources/AWSFacebookSignIn/AWSFacebookSignInButton.m; sourceTree = "<group>"; };
 		96C41238E8BEDF08C7D7BA2D52D9D4FA /* AWSURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSURLSessionManager.m; path = AWSCore/Networking/AWSURLSessionManager.m; sourceTree = "<group>"; };
 		96DDB0786C59416C96F981BC0845BFA9 /* ResourceBundle-AWSGoogleSignIn-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-AWSGoogleSignIn-Info.plist"; sourceTree = "<group>"; };
@@ -1476,7 +1465,6 @@
 		B606C1C8A9022E094471FF6F770F7489 /* AWSIdentityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSIdentityManager.m; path = AWSAuthSDK/Sources/AWSAuthCore/AWSIdentityManager.m; sourceTree = "<group>"; };
 		B61512FFC3B21E4521320923191329EE /* estgames-common-framework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "estgames-common-framework.xcconfig"; sourceTree = "<group>"; };
 		B65E06EDEA5C6ACDB6FD121381DD67DB /* AWSPinpointTargetingClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointTargetingClient.h; path = AWSPinpoint/AWSPinpointTargetingClient.h; sourceTree = "<group>"; };
-		B69358B4494B3A6C685FD67B365A75C1 /* img_inputbox_user.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = img_inputbox_user.png; path = "estgames-common-framework/Assets/img_inputbox_user.png"; sourceTree = "<group>"; };
 		B79D19EAEED577C36577A65F4655D8DB /* _FBSDKTemporaryErrorRecoveryAttempter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _FBSDKTemporaryErrorRecoveryAttempter.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ErrorRecovery/_FBSDKTemporaryErrorRecoveryAttempter.m; sourceTree = "<group>"; };
 		B85E3B6F4E926109E9A48D3B54C3536B /* AWSUserPoolsUIHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSUserPoolsUIHelper.h; path = AWSAuthSDK/Sources/AWSUserPoolsSignIn/UserPoolsUI/AWSUserPoolsUIHelper.h; sourceTree = "<group>"; };
 		B86DE55F614FAD757EA9270FDE1A5C6D /* FBSDKWebDialogView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKWebDialogView.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/WebDialog/FBSDKWebDialogView.m; sourceTree = "<group>"; };
@@ -1493,7 +1481,6 @@
 		BB0F33EDFC47B042B51B8998218B5CB1 /* BFMeasurementEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFMeasurementEvent.h; path = Bolts/iOS/BFMeasurementEvent.h; sourceTree = "<group>"; };
 		BB3F55C7545540B3098DBA3271BFBB57 /* FBSDKTimeSpentData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTimeSpentData.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKTimeSpentData.h; sourceTree = "<group>"; };
 		BC100F874742FFF30979FF82BC63E6B3 /* AWSSTSResources.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSTSResources.h; path = AWSCore/STS/AWSSTSResources.h; sourceTree = "<group>"; };
-		BC917FD9C71802EEF10FF083D933BE46 /* btn_provision_off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = btn_provision_off.png; path = "estgames-common-framework/Assets/btn_provision_off.png"; sourceTree = "<group>"; };
 		BCB30471531E55B56246CD48B49E4C8F /* AWSMTLJSONAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLJSONAdapter.h; path = AWSCore/Mantle/AWSMTLJSONAdapter.h; sourceTree = "<group>"; };
 		BD143F2E72FBE23FB6115BF4CBDC67AD /* AWSCognitoUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoUtil.m; path = AWSCognito/Internal/AWSCognitoUtil.m; sourceTree = "<group>"; };
 		BD3353286BF969ADFD0F46B92F55E619 /* AWSGoogleSignInProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSGoogleSignInProvider.m; path = AWSAuthSDK/Sources/AWSGoogleSignIn/AWSGoogleSignInProvider.m; sourceTree = "<group>"; };
@@ -1508,13 +1495,13 @@
 		C0D2044720078FD4E937AA47AD4C9556 /* AWSSTSModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSTSModel.h; path = AWSCore/STS/AWSSTSModel.h; sourceTree = "<group>"; };
 		C152A966029AD65B13E73774D293D150 /* AWSDDTTYLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDTTYLogger.h; path = AWSCore/Logging/AWSDDTTYLogger.h; sourceTree = "<group>"; };
 		C262D0709E0F3CAECD4A5B275B8C36F4 /* FBSDKLoginConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginConstants.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginConstants.m; sourceTree = "<group>"; };
-		C2F7A3FB756186EE0F66567445373F51 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2F7A3FB756186EE0F66567445373F51 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DED5F776B74AA63F83A59E07DBC55B /* AWSNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSNetworking.m; path = AWSCore/Networking/AWSNetworking.m; sourceTree = "<group>"; };
 		C42890A0C3A25618D9470CB15DD4B975 /* AWSCognitoUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoUtil.h; path = AWSCognito/Internal/AWSCognitoUtil.h; sourceTree = "<group>"; };
 		C43DE58C4477A68258EC00B6DA0329DC /* FBSDKCoreKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSDKCoreKit-prefix.pch"; sourceTree = "<group>"; };
 		C465AE40AA0A929F3C0E5D7483250EE8 /* AWSSynchronizedMutableDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSynchronizedMutableDictionary.h; path = AWSCore/Utility/AWSSynchronizedMutableDictionary.h; sourceTree = "<group>"; };
 		C4CF45648F13E7473D25CE79A75309BC /* FBSDKTestUsersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTestUsersManager.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKTestUsersManager.h; sourceTree = "<group>"; };
-		C4E88AC691F509360DED1254644AE8F4 /* AWSAuthCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AWSAuthCore.modulemap; sourceTree = "<group>"; };
+		C4E88AC691F509360DED1254644AE8F4 /* AWSAuthCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AWSAuthCore.modulemap; sourceTree = "<group>"; };
 		C51DB2EED71D282D4DDB5172CBF9E698 /* GTMReadMonitorInputStream.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMReadMonitorInputStream.m; path = Source/GTMReadMonitorInputStream.m; sourceTree = "<group>"; };
 		C568FB8B141A8045FBF11FB3E3ED704C /* FBSDKAccessTokenCaching.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessTokenCaching.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCaching.h; sourceTree = "<group>"; };
 		C661E7730E216D868E240C4A2362B83E /* AWSFMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMResultSet.h; path = AWSCore/FMDB/AWSFMResultSet.h; sourceTree = "<group>"; };
@@ -1525,8 +1512,6 @@
 		C795AA4D3ADC0F9699AFDAFFF37C9B0E /* NSArray+AWSMTLManipulationAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+AWSMTLManipulationAdditions.h"; path = "AWSCore/Mantle/NSArray+AWSMTLManipulationAdditions.h"; sourceTree = "<group>"; };
 		C7D4586E00A10E7835D740AB036EA0F6 /* AWSDDOSLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDOSLogger.h; path = AWSCore/Logging/AWSDDOSLogger.h; sourceTree = "<group>"; };
 		C84BE0249675E48AB0A318F59621C4FB /* AWSAuthUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSAuthUI-prefix.pch"; sourceTree = "<group>"; };
-		C8529E16E1D60AD41B62ACDB28864713 /* btn_stoptoday_check_img@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_stoptoday_check_img@3x.png"; path = "estgames-common-framework/Assets/btn_stoptoday_check_img@3x.png"; sourceTree = "<group>"; };
-		C8C02DB3509AE9656C612E6E6AA5BCEB /* img_provision_box.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = img_provision_box.png; path = "estgames-common-framework/Assets/img_provision_box.png"; sourceTree = "<group>"; };
 		C97EB416F40C2793B27D805B8658EE33 /* FBSDKLoginKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSDKLoginKit-umbrella.h"; sourceTree = "<group>"; };
 		C9F87EDE6B27496DD91916D419EBAF3D /* AWSGoogleSignIn-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSGoogleSignIn-umbrella.h"; sourceTree = "<group>"; };
 		CA466FE8969E27FDA84D42507BC38EC2 /* AWSmetamacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSmetamacros.h; path = AWSCore/Mantle/extobjc/AWSmetamacros.h; sourceTree = "<group>"; };
@@ -1540,7 +1525,7 @@
 		CD656471FBEEC090DD7D9F78775DDDB9 /* FBSDKLoginManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginManager.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginManager.m; sourceTree = "<group>"; };
 		CD6A9EBEC4D1C4CD51052AB05D27F56B /* BannerLinkerButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerLinkerButton.swift; sourceTree = "<group>"; };
 		CDA91A2F29F2B3DE351053224F0E7B39 /* GTMOAuth2SignIn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMOAuth2SignIn.h; path = Source/GTMOAuth2SignIn.h; sourceTree = "<group>"; };
-		CDB69ACBB4D74C03C9BD0F28460516A4 /* Bolts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Bolts.modulemap; sourceTree = "<group>"; };
+		CDB69ACBB4D74C03C9BD0F28460516A4 /* Bolts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Bolts.modulemap; sourceTree = "<group>"; };
 		CDCF12B66926912F0469F2F8A601F11F /* FBSDKURLConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKURLConnection.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKURLConnection.m; sourceTree = "<group>"; };
 		CEB80986839D94E19A4F7D1CE0B8382C /* BFCancellationTokenRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenRegistration.m; path = Bolts/Common/BFCancellationTokenRegistration.m; sourceTree = "<group>"; };
 		CEBFE482AAD1C766C404159696FD5F53 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AWSAuthSDK/Sources/AWSGoogleSignIn/Images.xcassets; sourceTree = "<group>"; };
@@ -1554,7 +1539,7 @@
 		D2E0E80D12B034F9E6714174B3037D85 /* AWSDDLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDLog.m; path = AWSCore/Logging/AWSDDLog.m; sourceTree = "<group>"; };
 		D34ECEAA300076E95CDDF18E316269A3 /* AWSPinpointEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSPinpointEvent.m; path = AWSPinpoint/AWSPinpointEvent.m; sourceTree = "<group>"; };
 		D39ABC9CF759203A136C1CCE93887C30 /* AWSSignInViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSignInViewController.h; path = AWSAuthSDK/Sources/AWSAuthUI/AWSSignInViewController.h; sourceTree = "<group>"; };
-		D461DCD4F7E6AC067ECD1ABF7C1C36B9 /* Pods_estgames_common_framework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_estgames_common_framework_Example.framework; path = "Pods-estgames-common-framework_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D461DCD4F7E6AC067ECD1ABF7C1C36B9 /* Pods_estgames_common_framework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_estgames_common_framework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4ABF735E65EEEB4A192D5B9366F8EE7 /* FBSDKKeychainStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKKeychainStore.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKKeychainStore.h; sourceTree = "<group>"; };
 		D4DCB55732081374F93345EE005B69E0 /* AWSPinpointEndpointProfile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointEndpointProfile.h; path = AWSPinpoint/AWSPinpointEndpointProfile.h; sourceTree = "<group>"; };
 		D501769A3612F92F4787BF0609693962 /* FBSDKCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKCrypto.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Cryptography/FBSDKCrypto.m; sourceTree = "<group>"; };
@@ -1581,30 +1566,27 @@
 		D97866DF0588A79E1039FE4BFB4ECB62 /* AWSCognitoIdentityResources.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoIdentityResources.h; path = AWSCore/CognitoIdentity/AWSCognitoIdentityResources.h; sourceTree = "<group>"; };
 		D9D0304B6DC20D2E9EB95CB3EF5EA684 /* UserDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserDialog.swift; sourceTree = "<group>"; };
 		D9ED2ED35A3E37F38E8353D3F4C017DD /* NSDictionary+AWSMTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+AWSMTLManipulationAdditions.m"; path = "AWSCore/Mantle/NSDictionary+AWSMTLManipulationAdditions.m"; sourceTree = "<group>"; };
-		DA748D8272B299D3527B648CEE0EDCEC /* btn_bottom_close_img@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_bottom_close_img@2x.png"; path = "estgames-common-framework/Assets/btn_bottom_close_img@2x.png"; sourceTree = "<group>"; };
 		DAA8045971C7776F0BD89339D663C52E /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		DAACD576E47D837E3B650DB732934460 /* AWSCognito.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AWSCognito.modulemap; sourceTree = "<group>"; };
+		DAACD576E47D837E3B650DB732934460 /* AWSCognito.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AWSCognito.modulemap; sourceTree = "<group>"; };
 		DAF1E025A1ADB58DC8AEE2B0E9DE86CD /* FBSDKAudioResourceLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAudioResourceLoader.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKAudioResourceLoader.h; sourceTree = "<group>"; };
 		DB582D48C89B5A8ABE718BA654AD2CE3 /* FBSDKConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKConstants.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKConstants.m; sourceTree = "<group>"; };
-		DBC534116DD87025020FFEC92B94CB1F /* AWSAuthUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AWSAuthUI.bundle; path = AWSAuthUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBC534116DD87025020FFEC92B94CB1F /* AWSAuthUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AWSAuthUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC092B6761CD7EF70C12EEAB71482A71 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		DCA6428115AD16590EF6FE93AFBDD767 /* AWSIdentityProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSIdentityProvider.m; path = AWSCore/Authentication/AWSIdentityProvider.m; sourceTree = "<group>"; };
 		DD0D6B9F4F2433B2D7DCF77203F998A9 /* FBSDKGraphRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequest.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequest.h; sourceTree = "<group>"; };
 		DD318823C5AC5FA021B4A349CD7B362C /* AWSSignInProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSignInProvider.h; path = AWSAuthSDK/Sources/AWSAuthCore/AWSSignInProvider.h; sourceTree = "<group>"; };
 		DD5042E5A23A150F7FAE9760F87CF345 /* AWSClientContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSClientContext.m; path = AWSCore/Service/AWSClientContext.m; sourceTree = "<group>"; };
 		DDA2D55A4FF22F9B9AB432BC16FA2F12 /* AWSCognitoConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoConstants.m; path = AWSCognito/Internal/AWSCognitoConstants.m; sourceTree = "<group>"; };
-		DDC157423AFFDAEA0393AD8DA7BE83F1 /* btn_detail_img@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_detail_img@2x.png"; path = "estgames-common-framework/Assets/btn_detail_img@2x.png"; sourceTree = "<group>"; };
 		DDE5DCCFB544ECB32536B961B275B991 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
 		DDEEBDCF9D66DC06E4EF462F0799B12D /* AWSPinpointSessionClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointSessionClient.h; path = AWSPinpoint/AWSPinpointSessionClient.h; sourceTree = "<group>"; };
 		DEB1869A5BBD1C666B3EDA3A86D0B699 /* GoogleSignIn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GoogleSignIn.h; path = AWSAuthSDK/Dependencies/GoogleHeaders/GoogleSignIn.h; sourceTree = "<group>"; };
 		DEBC9CDE0EA5838801F574D063C4FD58 /* AWSDDContextFilterLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDContextFilterLogFormatter.h; path = AWSCore/Logging/Extensions/AWSDDContextFilterLogFormatter.h; sourceTree = "<group>"; };
-		DF43E5CCFF778AEEBA0EB17300037E46 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF43E5CCFF778AEEBA0EB17300037E46 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB7CC11E05966B0280C73FF92292A12 /* FBSDKBridgeAPIRequest+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKBridgeAPIRequest+Private.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIRequest+Private.h"; sourceTree = "<group>"; };
 		DFDEA8D8A068C9EF1F2A7E5B7E883F8E /* AWSService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSService.h; path = AWSCore/Service/AWSService.h; sourceTree = "<group>"; };
 		E00B713B3383F2E336D6634411728B3D /* AWSCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCancellationToken.m; path = AWSCore/Bolts/AWSCancellationToken.m; sourceTree = "<group>"; };
 		E04E6C5C3E8066829691493FE2723D3F /* FBSDKAccessTokenCacheV3_17.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAccessTokenCacheV3_17.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV3_17.m; sourceTree = "<group>"; };
 		E0D49C7764F637679DDFBF0D20521605 /* AWSTMCacheBackgroundTaskManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTMCacheBackgroundTaskManager.h; path = AWSCore/TMCache/AWSTMCacheBackgroundTaskManager.h; sourceTree = "<group>"; };
-		E2065BE68A034F9581600DA46BB350F4 /* btn_close_img_user@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_close_img_user@2x.png"; path = "estgames-common-framework/Assets/btn_close_img_user@2x.png"; sourceTree = "<group>"; };
 		E20A5E44C043321EAC98650E19907220 /* FBSDKGraphErrorRecoveryProcessor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphErrorRecoveryProcessor.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphErrorRecoveryProcessor.m; sourceTree = "<group>"; };
 		E250D0B48F870B0524C3FB49CD334EE5 /* AWSCognitoIdentityModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoIdentityModel.m; path = AWSCore/CognitoIdentity/AWSCognitoIdentityModel.m; sourceTree = "<group>"; };
 		E26DE65DD1DD38179FC2D51B60870373 /* AWSCognitoIdentityResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoIdentityResources.m; path = AWSCore/CognitoIdentity/AWSCognitoIdentityResources.m; sourceTree = "<group>"; };
@@ -1619,7 +1601,6 @@
 		E52ACF22E8944D5CC61E26F65D6FB19E /* AWSSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSerialization.m; path = AWSCore/Serialization/AWSSerialization.m; sourceTree = "<group>"; };
 		E597F6A5FCEE1B3F576E7A535B84BBF9 /* AWSAuthCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSAuthCore-umbrella.h"; sourceTree = "<group>"; };
 		E5CD21CB3106880E032B4C973BBB6995 /* FBSDKTooltipView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKTooltipView.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKTooltipView.m; sourceTree = "<group>"; };
-		E61EDDDC4C478703C67CEF1585912353 /* checked-checkbox-50.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "checked-checkbox-50.png"; path = "estgames-common-framework/Assets/checked-checkbox-50.png"; sourceTree = "<group>"; };
 		E62D03B7038C7FEB8CAB1C737AAE94D2 /* FBSDKGraphRequest+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKGraphRequest+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequest+Internal.h"; sourceTree = "<group>"; };
 		E6901F7AAA8AA123D2EF5593D0FD2F22 /* AWSDDFileLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDFileLogger.m; path = AWSCore/Logging/AWSDDFileLogger.m; sourceTree = "<group>"; };
 		E6AA32EBC8EE3191E094EC058E2F3815 /* AWSModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSModel.m; path = AWSCore/Utility/AWSModel.m; sourceTree = "<group>"; };
@@ -1631,7 +1612,7 @@
 		E872A88019B43DE0B937945E910E3713 /* AWSFMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFMDatabaseQueue.h; path = AWSCore/FMDB/AWSFMDatabaseQueue.h; sourceTree = "<group>"; };
 		E8A6FC9AB9226C1845486F51F345FF45 /* Pods-estgames-common-framework_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-estgames-common-framework_Example-resources.sh"; sourceTree = "<group>"; };
 		E993F026067C51FCFBA4624536D4650C /* AWSSTSResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSTSResources.m; path = AWSCore/STS/AWSSTSResources.m; sourceTree = "<group>"; };
-		E9A7880BFADBD9A757EBA5A6DD09E70E /* SwiftKeychainWrapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftKeychainWrapper.modulemap; sourceTree = "<group>"; };
+		E9A7880BFADBD9A757EBA5A6DD09E70E /* SwiftKeychainWrapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftKeychainWrapper.modulemap; sourceTree = "<group>"; };
 		EA035CF9E159C7034F2EFC930D10E69F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EA5F407EBE2D3A3A6637ABED4413ACEA /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		EA8122B635E852C348F4B208E6D8FEB4 /* FBSDKPaymentObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKPaymentObserver.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKPaymentObserver.m; sourceTree = "<group>"; };
@@ -1640,8 +1621,35 @@
 		EC81AECFF816CD6C706A4F720517C719 /* AWSGeneric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSGeneric.h; path = AWSCore/Bolts/AWSGeneric.h; sourceTree = "<group>"; };
 		ECB7E81237BE6F64281EED75B10A6B59 /* FBSDKGraphRequestConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestConnection.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestConnection.m; sourceTree = "<group>"; };
 		ECFA87D77F97047239EEFA4F765152B6 /* AWSPinpointTargetingResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSPinpointTargetingResources.m; path = AWSPinpoint/AWSPinpointTargeting/AWSPinpointTargetingResources.m; sourceTree = "<group>"; };
+		ED1B2A76207EFDCF00C1ADE7 /* btn_bottom_close_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_bottom_close_img@2x.png"; sourceTree = "<group>"; };
+		ED1B2A79207EFE0900C1ADE7 /* btn_provision_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_provision_on.png; sourceTree = "<group>"; };
+		ED1B2A7A207EFE0900C1ADE7 /* btn_close_img@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img@3x.png"; sourceTree = "<group>"; };
+		ED1B2A7B207EFE0900C1ADE7 /* btn_confirm_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_confirm_user.png; sourceTree = "<group>"; };
+		ED1B2A7C207EFE0900C1ADE7 /* SpoqaHanSansRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansRegular.ttf; sourceTree = "<group>"; };
+		ED1B2A7D207EFE0900C1ADE7 /* btn_close_img_user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img_user@3x.png"; sourceTree = "<group>"; };
+		ED1B2A7E207EFE0900C1ADE7 /* btn_cancel_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_cancel_user.png; sourceTree = "<group>"; };
+		ED1B2A7F207EFE0A00C1ADE7 /* btn_confirm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_confirm.png; sourceTree = "<group>"; };
+		ED1B2A80207EFE0A00C1ADE7 /* img_authority_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_authority_box.png; sourceTree = "<group>"; };
+		ED1B2A81207EFE0A00C1ADE7 /* btn_detail_img@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_detail_img@3x.png"; sourceTree = "<group>"; };
+		ED1B2A82207EFE0A00C1ADE7 /* img_inputbox_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_inputbox_user.png; sourceTree = "<group>"; };
+		ED1B2A83207EFE0A00C1ADE7 /* btn_close_img_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img_user@2x.png"; sourceTree = "<group>"; };
+		ED1B2A84207EFE0A00C1ADE7 /* btn_stoptoday_default_img@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_stoptoday_default_img@3x.png"; sourceTree = "<group>"; };
+		ED1B2A85207EFE0A00C1ADE7 /* SpoqaHanSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansBold.ttf; sourceTree = "<group>"; };
+		ED1B2A86207EFE0A00C1ADE7 /* img_popup_box_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_popup_box_user.png; sourceTree = "<group>"; };
+		ED1B2A87207EFE0B00C1ADE7 /* btn_close_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img@2x.png"; sourceTree = "<group>"; };
+		ED1B2A88207EFE0B00C1ADE7 /* SpoqaHanSansThin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansThin.ttf; sourceTree = "<group>"; };
+		ED1B2A89207EFE0B00C1ADE7 /* checked-checkbox-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked-checkbox-50.png"; sourceTree = "<group>"; };
+		ED1B2A8A207EFE0B00C1ADE7 /* btn_detail_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_detail_img@2x.png"; sourceTree = "<group>"; };
+		ED1B2A8B207EFE0B00C1ADE7 /* btn_stoptoday_check_img@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_stoptoday_check_img@3x.png"; sourceTree = "<group>"; };
+		ED1B2A8C207EFE0B00C1ADE7 /* btn_stoptoday_check_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_stoptoday_check_img@2x.png"; sourceTree = "<group>"; };
+		ED1B2A8D207EFE0B00C1ADE7 /* img_provision_bigbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_provision_bigbox.png; sourceTree = "<group>"; };
+		ED1B2A8E207EFE0B00C1ADE7 /* SpoqaHanSansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansLight.ttf; sourceTree = "<group>"; };
+		ED1B2A8F207EFE0C00C1ADE7 /* btn_provision_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_provision_off.png; sourceTree = "<group>"; };
+		ED1B2A90207EFE0C00C1ADE7 /* img_provision_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_provision_box.png; sourceTree = "<group>"; };
+		ED1B2A91207EFE0C00C1ADE7 /* btn_stoptoday_default_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_stoptoday_default_img@2x.png"; sourceTree = "<group>"; };
+		ED1B2A92207EFE0C00C1ADE7 /* unchecked-checkbox-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked-checkbox-50.png"; sourceTree = "<group>"; };
 		ED3C8D3AAF4FFE7AEEC992E4361594E7 /* FBSDKImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKImageDownloader.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKImageDownloader.h; sourceTree = "<group>"; };
-		EDFECCD05153816F51A4F08C22C22167 /* Pods_estgames_common_framework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_estgames_common_framework_Tests.framework; path = "Pods-estgames-common-framework_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDFECCD05153816F51A4F08C22C22167 /* Pods_estgames_common_framework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_estgames_common_framework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE43CF2127BF7017B92AA0496F6C978B /* UserLinkViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserLinkViewController.swift; sourceTree = "<group>"; };
 		EEA08E524AE2A3D3043B804478AD3E9A /* FBSDKPaymentObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKPaymentObserver.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKPaymentObserver.h; sourceTree = "<group>"; };
 		EEF199509B919E18201C47415A0D34EB /* GTMSessionFetcher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTMSessionFetcher-prefix.pch"; sourceTree = "<group>"; };
@@ -1653,17 +1661,17 @@
 		F369EE5594360F8E0DADFB4D83AA7FAC /* AWSCognitoIdentityModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoIdentityModel.h; path = AWSCore/CognitoIdentity/AWSCognitoIdentityModel.h; sourceTree = "<group>"; };
 		F3AEA30B6CAC87CDDB64FAA87B8DE2AE /* BFURL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFURL.h; path = Bolts/iOS/BFURL.h; sourceTree = "<group>"; };
 		F3F2FDC2D4744BA1D6FC2FBF3025F003 /* AWSCognitoSyncService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoSyncService.m; path = AWSCognito/CognitoSync/AWSCognitoSyncService.m; sourceTree = "<group>"; };
-		F3F9044C2BA4DDDF1007C80A4405290B /* GTMOAuth2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GTMOAuth2.modulemap; sourceTree = "<group>"; };
+		F3F9044C2BA4DDDF1007C80A4405290B /* GTMOAuth2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GTMOAuth2.modulemap; sourceTree = "<group>"; };
 		F42C45CB265ED7745DD66F041B185973 /* ResourceBundle-AWSAuthUI-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-AWSAuthUI-Info.plist"; sourceTree = "<group>"; };
 		F439F6BAEA76BBB62CF7ED7467A48657 /* AWSCognitoDataset.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSCognitoDataset.m; path = AWSCognito/AWSCognitoDataset.m; sourceTree = "<group>"; };
-		F4757E545234100BA39CE8819DA5D3D9 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GTMSessionFetcher.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4757E545234100BA39CE8819DA5D3D9 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47A408E344210DB95B6CBCDEBD383D8 /* FBSDKCloseIcon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKCloseIcon.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKCloseIcon.h; sourceTree = "<group>"; };
 		F4A78F031DE2CA82D5D3335D025FB87D /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
 		F4F822F4EF9E8238C1585FACFE40322F /* AWSMTLReflection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMTLReflection.m; path = AWSCore/Mantle/AWSMTLReflection.m; sourceTree = "<group>"; };
 		F586A0E70C0040F16ABB5239DDEC6145 /* FBSDKSettings+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKSettings+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKSettings+Internal.h"; sourceTree = "<group>"; };
 		F5A81993B919328D9C680664FF6C40D7 /* AWSGoogleSignIn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AWSGoogleSignIn.xcconfig; sourceTree = "<group>"; };
 		F5C5CD78D5D315A1640F607809159E59 /* FBSDKTriStateBOOL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTriStateBOOL.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKTriStateBOOL.h; sourceTree = "<group>"; };
-		F5EAE4B3FDF7F198E0B1C7433DAA5F3E /* GTMOAuth2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GTMOAuth2.framework; path = GTMOAuth2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5EAE4B3FDF7F198E0B1C7433DAA5F3E /* GTMOAuth2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GTMOAuth2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68AB6D2DDBD3A195C5CE8095A67E60C /* SwiftKeychainWrapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftKeychainWrapper-dummy.m"; sourceTree = "<group>"; };
 		F6917E1EE93A0827BB78B28C6419340D /* AWSCognitoSQLiteManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoSQLiteManager.h; path = AWSCognito/Internal/AWSCognitoSQLiteManager.h; sourceTree = "<group>"; };
 		F6AC29EB6B278FDD9FCCEE750B6DF1B2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1685,7 +1693,7 @@
 		F9D74BC0DEE41D35542387C0D1C69B2B /* AWSNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSNetworking.h; path = AWSCore/Networking/AWSNetworking.h; sourceTree = "<group>"; };
 		F9F4FA90253AB249331C1D6C3031D6B0 /* AWSCognitoIdentity+Fabric.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "AWSCognitoIdentity+Fabric.m"; path = "AWSCore/CognitoIdentity/AWSCognitoIdentity+Fabric.m"; sourceTree = "<group>"; };
 		FA111022E8AFCDD61FD78A66D6C91412 /* AWSDDFileLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDFileLogger.h; path = AWSCore/Logging/AWSDDFileLogger.h; sourceTree = "<group>"; };
-		FAF73667A7B23B6042397AD6E23F198A /* FBSDKLoginKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FBSDKLoginKit.modulemap; sourceTree = "<group>"; };
+		FAF73667A7B23B6042397AD6E23F198A /* FBSDKLoginKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FBSDKLoginKit.modulemap; sourceTree = "<group>"; };
 		FB2F1C04276DCA4593A879EB251FB47D /* NSArray+AWSMTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+AWSMTLManipulationAdditions.m"; path = "AWSCore/Mantle/NSArray+AWSMTLManipulationAdditions.m"; sourceTree = "<group>"; };
 		FB385F63AE3DBE40D852337EE51C2190 /* AWSPinpointTargetingService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSPinpointTargetingService.m; path = AWSPinpoint/AWSPinpointTargeting/AWSPinpointTargetingService.m; sourceTree = "<group>"; };
 		FB5EC526150D8BFE98AFE64B9A42E833 /* AWSSTS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSTS.h; path = AWSCore/STS/AWSSTS.h; sourceTree = "<group>"; };
@@ -1923,7 +1931,6 @@
 				9155AD3CD446C6F0E5F80C95AFB8B09F /* AWSUIConfiguration.h */,
 				197A48D9E3AEF36618CAD744D0DEBD4C /* Support Files */,
 			);
-			name = AWSAuthCore;
 			path = AWSAuthCore;
 			sourceTree = "<group>";
 		};
@@ -1989,7 +1996,6 @@
 				6E385A735250B7DAAA90049B89DBCDEE /* Resources */,
 				CBC179CFFED35B8EDB30BFD6CBDAF486 /* Support Files */,
 			);
-			name = AWSFacebookSignIn;
 			path = AWSFacebookSignIn;
 			sourceTree = "<group>";
 		};
@@ -2001,7 +2007,6 @@
 				9B1CE4C6500A25478C5263F8A25A48A8 /* SwiftKeychainWrapper.h */,
 				D83BEA39F85D035CA53580183CAC5869 /* Support Files */,
 			);
-			name = SwiftKeychainWrapper;
 			path = SwiftKeychainWrapper;
 			sourceTree = "<group>";
 		};
@@ -2201,7 +2206,6 @@
 				FB385F63AE3DBE40D852337EE51C2190 /* AWSPinpointTargetingService.m */,
 				C7A0FAC74AEE3F69ED401B921711F551 /* Support Files */,
 			);
-			name = AWSPinpoint;
 			path = AWSPinpoint;
 			sourceTree = "<group>";
 		};
@@ -2234,7 +2238,6 @@
 				F2A58E52237C4824577AB2C1AEB29878 /* Resources */,
 				B32DCBDD1605424E409721E4179E84DB /* Support Files */,
 			);
-			name = AWSAuthUI;
 			path = AWSAuthUI;
 			sourceTree = "<group>";
 		};
@@ -2332,7 +2335,6 @@
 				0EE938A5340DA7A5B2E5C2972A7609CC /* NSString+URLArguments */,
 				626AF22ADC26B4330082193F9200918D /* Support Files */,
 			);
-			name = GoogleToolboxForMac;
 			path = GoogleToolboxForMac;
 			sourceTree = "<group>";
 		};
@@ -2382,7 +2384,6 @@
 				E5CD21CB3106880E032B4C973BBB6995 /* FBSDKTooltipView.m */,
 				F9B8C10136CC44AA06D5367F0C6F0290 /* Support Files */,
 			);
-			name = FBSDKLoginKit;
 			path = FBSDKLoginKit;
 			sourceTree = "<group>";
 		};
@@ -2393,7 +2394,6 @@
 				149C07506B231E51271A97F8DEFE428A /* Full */,
 				85547F2FA72FF9E3171CCC23E6ED26F8 /* Support Files */,
 			);
-			name = GTMSessionFetcher;
 			path = GTMSessionFetcher;
 			sourceTree = "<group>";
 		};
@@ -2558,7 +2558,6 @@
 				826B0EEB88375AA375F6D62BA0C6B662 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m */,
 				824F200E216E14F31F9486B557C2661E /* Support Files */,
 			);
-			name = AWSCore;
 			path = AWSCore;
 			sourceTree = "<group>";
 		};
@@ -2579,32 +2578,37 @@
 		A25AF3A827C3A8AE8D8C72554D864E05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DA748D8272B299D3527B648CEE0EDCEC /* btn_bottom_close_img@2x.png */,
+				ED1B2A7E207EFE0900C1ADE7 /* btn_cancel_user.png */,
+				ED1B2A83207EFE0A00C1ADE7 /* btn_close_img_user@2x.png */,
+				ED1B2A7D207EFE0900C1ADE7 /* btn_close_img_user@3x.png */,
+				ED1B2A87207EFE0B00C1ADE7 /* btn_close_img@2x.png */,
+				ED1B2A7A207EFE0900C1ADE7 /* btn_close_img@3x.png */,
+				ED1B2A7B207EFE0900C1ADE7 /* btn_confirm_user.png */,
+				ED1B2A7F207EFE0A00C1ADE7 /* btn_confirm.png */,
+				ED1B2A8A207EFE0B00C1ADE7 /* btn_detail_img@2x.png */,
+				ED1B2A81207EFE0A00C1ADE7 /* btn_detail_img@3x.png */,
+				ED1B2A8F207EFE0C00C1ADE7 /* btn_provision_off.png */,
+				ED1B2A79207EFE0900C1ADE7 /* btn_provision_on.png */,
+				ED1B2A8C207EFE0B00C1ADE7 /* btn_stoptoday_check_img@2x.png */,
+				ED1B2A8B207EFE0B00C1ADE7 /* btn_stoptoday_check_img@3x.png */,
+				ED1B2A91207EFE0C00C1ADE7 /* btn_stoptoday_default_img@2x.png */,
+				ED1B2A84207EFE0A00C1ADE7 /* btn_stoptoday_default_img@3x.png */,
+				ED1B2A89207EFE0B00C1ADE7 /* checked-checkbox-50.png */,
+				ED1B2A80207EFE0A00C1ADE7 /* img_authority_box.png */,
+				ED1B2A82207EFE0A00C1ADE7 /* img_inputbox_user.png */,
+				ED1B2A86207EFE0A00C1ADE7 /* img_popup_box_user.png */,
+				ED1B2A8D207EFE0B00C1ADE7 /* img_provision_bigbox.png */,
+				ED1B2A90207EFE0C00C1ADE7 /* img_provision_box.png */,
+				ED1B2A85207EFE0A00C1ADE7 /* SpoqaHanSansBold.ttf */,
+				ED1B2A8E207EFE0B00C1ADE7 /* SpoqaHanSansLight.ttf */,
+				ED1B2A7C207EFE0900C1ADE7 /* SpoqaHanSansRegular.ttf */,
+				ED1B2A88207EFE0B00C1ADE7 /* SpoqaHanSansThin.ttf */,
+				ED1B2A92207EFE0C00C1ADE7 /* unchecked-checkbox-50.png */,
+				ED1B2A76207EFDCF00C1ADE7 /* btn_bottom_close_img@2x.png */,
 				96A1F0B831E3EAF9A9C03219AA8DCAD4 /* btn_bottom_close_img@3x.png */,
-				37F447A53637630CAD00CA92EFB68CF7 /* btn_cancel_user.png */,
-				70EF2D3DB0332FF87CD5B2C48B656ED6 /* btn_close_img@2x.png */,
-				017C29AC4A5535E40ECFF20F456C11D0 /* btn_close_img@3x.png */,
-				E2065BE68A034F9581600DA46BB350F4 /* btn_close_img_user@2x.png */,
-				7681694CCDCD0FB11DEAC925334D06A3 /* btn_close_img_user@3x.png */,
-				5963F424163B96C64793EDE7B1486934 /* btn_confirm.png */,
-				76469341B642F75C47A03DB5E1C0ED5B /* btn_confirm_user.png */,
-				DDC157423AFFDAEA0393AD8DA7BE83F1 /* btn_detail_img@2x.png */,
-				4E3CC1A48DBAF75F25E6449BAA53292C /* btn_detail_img@3x.png */,
-				BC917FD9C71802EEF10FF083D933BE46 /* btn_provision_off.png */,
-				6C74EF83F8BA52D308E0AB914F90BEEA /* btn_provision_on.png */,
-				9311B2C300991D9036D0A5A3E6B1620C /* btn_stoptoday_check_img@2x.png */,
-				C8529E16E1D60AD41B62ACDB28864713 /* btn_stoptoday_check_img@3x.png */,
-				25CBA6DA5E7EBF777430E069015C227C /* btn_stoptoday_default_img@2x.png */,
-				82684C84BE541ADC619A9FFA3D70969E /* btn_stoptoday_default_img@3x.png */,
-				E61EDDDC4C478703C67CEF1585912353 /* checked-checkbox-50.png */,
-				2CEB51FDFB2E05833BB17C3B93676335 /* img_authority_box.png */,
-				B69358B4494B3A6C685FD67B365A75C1 /* img_inputbox_user.png */,
-				765C50281C1A5032F0B1661EACBE03AC /* img_popup_box_user.png */,
-				02B0F60E0042C72B3E53969B4B90E403 /* img_provision_bigbox.png */,
-				C8C02DB3509AE9656C612E6E6AA5BCEB /* img_provision_box.png */,
-				10F774584FDF86A63F08BD195F4A7C69 /* unchecked-checkbox-50.png */,
 			);
 			name = Resources;
+			path = "estgames-common-framework/Assets";
 			sourceTree = "<group>";
 		};
 		A91B83C31379A3BD6F75940D9F9C924B /* FBSDKCoreKit */ = {
@@ -2775,7 +2779,6 @@
 				5C564BB5876F6C08DD0B7E57A97EA7E8 /* Resources */,
 				7533F12540AA2410F42D17B8F3B20048 /* Support Files */,
 			);
-			name = FBSDKCoreKit;
 			path = FBSDKCoreKit;
 			sourceTree = "<group>";
 		};
@@ -2791,7 +2794,6 @@
 				8DBBDC748B7BF3D7DBD4220C4B1C6E0A /* Resources */,
 				6A393EEB0A315418CA49A5D65E904E6D /* Support Files */,
 			);
-			name = GTMOAuth2;
 			path = GTMOAuth2;
 			sourceTree = "<group>";
 		};
@@ -2801,7 +2803,6 @@
 				BF57BB1586B8F9097C0568DCEA7632CE /* Frameworks */,
 				E79B43E6D7C21CC51DADD0DE98178AEC /* Resources */,
 			);
-			name = GoogleSignIn;
 			path = GoogleSignIn;
 			sourceTree = "<group>";
 		};
@@ -2940,7 +2941,6 @@
 				90B068641E8794A9E34C9F5474E58A40 /* Validation.swift */,
 				73CAB123393925CFF7DFC789106B6790 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -3084,14 +3084,13 @@
 				BD143F2E72FBE23FB6115BF4CBDC67AD /* AWSCognitoUtil.m */,
 				A11A6519DDC9172B222E39BC00F7C5CF /* Support Files */,
 			);
-			name = AWSCognito;
 			path = AWSCognito;
 			sourceTree = "<group>";
 		};
 		D03FE21B447305ABB63DBD887CE18C7C /* common */ = {
 			isa = PBXGroup;
 			children = (
-				22CFDB9E46AAB9D6C63960CE9AB8A649 /* ApiCallController.swift */,
+				22CFDB9E46AAB9D6C63960CE9AB8A649 /* EstCommonFramework.swift */,
 				34867127477053EA14AE27186728E577 /* DeviceClassification.swift */,
 				1378BD649D3EA3E020AAFE2870B035B6 /* ResultDataJson.swift */,
 			);
@@ -3120,7 +3119,6 @@
 				B008B1FE6CB547197A6FE8458F71F738 /* Support Files */,
 				87E54DD8597B1CE62934CC0341089DE2 /* Tasks */,
 			);
-			name = Bolts;
 			path = Bolts;
 			sourceTree = "<group>";
 		};
@@ -3181,7 +3179,6 @@
 				E7A5AC11710E18D0EDD17B8878D83397 /* Resources */,
 				E28021D32A0A3DB9CEA79EEEBE87FE07 /* Support Files */,
 			);
-			name = AWSGoogleSignIn;
 			path = AWSGoogleSignIn;
 			sourceTree = "<group>";
 		};
@@ -4138,30 +4135,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				648F69961E0931FECB76C520D43F8CB7 /* btn_bottom_close_img@2x.png in Resources */,
-				AA6D37FE9638054793850F6EDA7C9D27 /* btn_bottom_close_img@3x.png in Resources */,
-				FBED221F70FD1381150B69F05AC6DEB3 /* btn_cancel_user.png in Resources */,
-				3AFB11786E32C0B817A0C09CEEA59B38 /* btn_close_img@2x.png in Resources */,
-				5C1A58DEF9C562E71DC22D413245FC6E /* btn_close_img@3x.png in Resources */,
-				1C98326E1A53BF4B36B5751F9FBD996E /* btn_close_img_user@2x.png in Resources */,
-				498083B7BF6CD911674E7258E8747309 /* btn_close_img_user@3x.png in Resources */,
-				DF98D2CA8C05C254A6CAB14EEB489505 /* btn_confirm.png in Resources */,
-				EE7049A361815ADD89DEE666B7391BFC /* btn_confirm_user.png in Resources */,
-				4C2CD4AB18398D1A886F47E1BFDE6985 /* btn_detail_img@2x.png in Resources */,
-				C88153D38877FEBC53FA61D84D0AF888 /* btn_detail_img@3x.png in Resources */,
-				740FB4E0418E210B8BAF73167F942F3A /* btn_provision_off.png in Resources */,
-				FF2FB7EC6FD27592632CBDD68A6ACCA7 /* btn_provision_on.png in Resources */,
-				A3FC9B451700C5C0CBAF3D4EDC40D98E /* btn_stoptoday_check_img@2x.png in Resources */,
-				C4AF32D85B25F4CF9874784AB2275C4A /* btn_stoptoday_check_img@3x.png in Resources */,
-				D02EEC2E45FAB658609EC24163A0375C /* btn_stoptoday_default_img@2x.png in Resources */,
-				2A7EBBC76E30EB5B12A489F3925A6690 /* btn_stoptoday_default_img@3x.png in Resources */,
-				5FCC04BCC561DBBEFB9477C356709BA2 /* checked-checkbox-50.png in Resources */,
-				83A16AC039D48408B539A98AF351E336 /* img_authority_box.png in Resources */,
-				84532A8C19E2994619D3F8103F106E73 /* img_inputbox_user.png in Resources */,
-				2DD3A968F0ACDF0BD49617304A2AEEC3 /* img_popup_box_user.png in Resources */,
-				BC74356A36E89043BF42B51231D42823 /* img_provision_bigbox.png in Resources */,
-				347E606A8EB3365DCC610ABBC2D8F468 /* img_provision_box.png in Resources */,
-				42407EB4DB3F966EB26707B9F876E4C4 /* unchecked-checkbox-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4169,7 +4142,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED1B2AA1207EFE0D00C1ADE7 /* btn_close_img@2x.png in Resources */,
+				ED1B2AA8207EFE0D00C1ADE7 /* SpoqaHanSansLight.ttf in Resources */,
+				ED1B2A9A207EFE0D00C1ADE7 /* img_authority_box.png in Resources */,
+				ED1B2A9F207EFE0D00C1ADE7 /* SpoqaHanSansBold.ttf in Resources */,
+				ED1B2AA9207EFE0D00C1ADE7 /* btn_provision_off.png in Resources */,
+				ED1B2A98207EFE0D00C1ADE7 /* btn_cancel_user.png in Resources */,
+				ED1B2A9C207EFE0D00C1ADE7 /* img_inputbox_user.png in Resources */,
+				ED1B2A99207EFE0D00C1ADE7 /* btn_confirm.png in Resources */,
+				ED1B2A95207EFE0D00C1ADE7 /* btn_confirm_user.png in Resources */,
+				ED1B2AA3207EFE0D00C1ADE7 /* checked-checkbox-50.png in Resources */,
+				ED1B2AAA207EFE0D00C1ADE7 /* img_provision_box.png in Resources */,
+				ED1B2AAC207EFE0D00C1ADE7 /* unchecked-checkbox-50.png in Resources */,
+				ED1B2A96207EFE0D00C1ADE7 /* SpoqaHanSansRegular.ttf in Resources */,
+				ED1B2AA5207EFE0D00C1ADE7 /* btn_stoptoday_check_img@3x.png in Resources */,
+				ED1B2A97207EFE0D00C1ADE7 /* btn_close_img_user@3x.png in Resources */,
 				CCDBC44B55987F4EDDE253BDF01E1F44 /* estgames-common-framework.bundle in Resources */,
+				ED1B2AA2207EFE0D00C1ADE7 /* SpoqaHanSansThin.ttf in Resources */,
+				ED1B2AA4207EFE0D00C1ADE7 /* btn_detail_img@2x.png in Resources */,
+				ED1B2A77207EFDCF00C1ADE7 /* btn_bottom_close_img@2x.png in Resources */,
+				ED1B2AAB207EFE0D00C1ADE7 /* btn_stoptoday_default_img@2x.png in Resources */,
+				ED1B2AA0207EFE0D00C1ADE7 /* img_popup_box_user.png in Resources */,
+				ED1B2A94207EFE0D00C1ADE7 /* btn_close_img@3x.png in Resources */,
+				ED1B2AA6207EFE0D00C1ADE7 /* btn_stoptoday_check_img@2x.png in Resources */,
+				ED1B2AA7207EFE0D00C1ADE7 /* img_provision_bigbox.png in Resources */,
+				ED1B2A9B207EFE0D00C1ADE7 /* btn_detail_img@3x.png in Resources */,
+				ED1B2A9D207EFE0D00C1ADE7 /* btn_close_img_user@2x.png in Resources */,
+				ED1B2A78207EFDD900C1ADE7 /* btn_bottom_close_img@3x.png in Resources */,
+				ED1B2A93207EFE0D00C1ADE7 /* btn_provision_on.png in Resources */,
+				ED1B2A9E207EFE0D00C1ADE7 /* btn_stoptoday_default_img@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4616,7 +4617,7 @@
 			files = (
 				B35F7BDD659E7A73C6989031675799B0 /* AFError.swift in Sources */,
 				46BEF9055828EA33432F3D780C2F72D5 /* Alamofire.swift in Sources */,
-				5E4A0EC82CAAFB7A833A36F547A6241E /* ApiCallController.swift in Sources */,
+				5E4A0EC82CAAFB7A833A36F547A6241E /* EstCommonFramework.swift in Sources */,
 				0837F517444C713DB1ABC5BFF65CE549 /* AuthorityDataSet.swift in Sources */,
 				B35842708E9E3AD30D90754FF412F3FB /* AuthorityDialog.swift in Sources */,
 				32BB18A69E802AFDC4CE8BACAF336A0C /* AuthorityViewController.swift in Sources */,

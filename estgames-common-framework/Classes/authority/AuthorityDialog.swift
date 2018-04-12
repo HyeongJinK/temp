@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class AuthorityDialog {
+class AuthorityDialog {
     var pview: UIViewController
     var authority: AuthorityViewController
     

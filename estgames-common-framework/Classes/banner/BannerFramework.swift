@@ -16,38 +16,37 @@ import Foundation
 var bannerView:UIView?
 var imageViews:[BannerImageView] = Array<BannerImageView>()
 
-public class bannerFramework: NSObject {
-    var estgamesBanner: EstgamesBanner?
+public class bannerFramework {
+    var estgamesBanner: ResultDataJson?
     var pview:UIViewController
     let myGroup = DispatchGroup()
     
     
-    public init(pview:UIViewController) {
-        
-        //UIDevice.current.orientation.isLandscape
+    public init(pview:UIViewController, result:ResultDataJson) {
         self.pview = pview
+        self.estgamesBanner = result
         bannerView = UIView(frame: CGRect(x: 0, y: 0, width: pview.view.frame.size.width, height: pview.view.frame.size.height))
         bannerView?.translatesAutoresizingMaskIntoConstraints = false
     }
     
      func dataSet() {
-        let url = "https://8726wj937l.execute-api.ap-northeast-2.amazonaws.com/live?region=catcafe.kr.ls&lang=ko&placement=LANDING"
-        
-        let alamo = request(url)
-        
-        self.myGroup.enter()
-        
-        alamo.responseJSON() {
-            response in
-            if let result = response.result.value {
-                let bannerJson = result as! NSDictionary
-                
-                self.estgamesBanner = EstgamesBanner(jsonData:bannerJson)   //배너 파싱
-                self.myGroup.leave()
-            } else {
-                bannerView?.removeFromSuperview()
-            }
-        }
+//        let url = "https://8726wj937l.execute-api.ap-northeast-2.amazonaws.com/live?region=catcafe.kr.ls&lang=ko&placement=LANDING"
+//
+//        let alamo = request(url)
+//
+//        self.myGroup.enter()
+//
+//        alamo.responseJSON() {
+//            response in
+//            if let result = response.result.value {
+//                let bannerJson = result as! NSDictionary
+//
+//                self.estgamesBanner = EstgamesBanner(jsonData:bannerJson)   //배너 파싱
+//                self.myGroup.leave()
+//            } else {
+//                bannerView?.removeFromSuperview()
+//            }
+//        }
     }
     
     func createMainView(_ pview:UIView) -> UIView {
@@ -60,7 +59,7 @@ public class bannerFramework: NSObject {
     
     //배너 넣기 사용자가 호출해야 될 함수
     public func show() {
-        
+        //dataSet()
         // view 생성 , 창 크기에 맞게 조절
         //이미지 뷰 생성 , 창 크기에 맞게 조절
         //아래 바 생성
@@ -79,7 +78,7 @@ public class bannerFramework: NSObject {
         let pList = UserDefaults.standard   //오늘만 보기 데이터
         
         self.myGroup.notify(queue: .main) {
-            for entry in self.estgamesBanner!.entries {
+            for entry in self.estgamesBanner!.events {
                 if pList.string(forKey: entry.banner.name) != nil && today == pList.string(forKey: entry.banner.name)!{
                     continue
                 }

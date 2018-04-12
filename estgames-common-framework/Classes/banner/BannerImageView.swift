@@ -10,7 +10,7 @@ import Foundation
 
 //이미지 뷰
 class BannerImageView: UIImageView {
-    public var bannerEntry: Entry?
+    public var bannerEntry: EventData?
     //var bannerName:String
     
     required init?(coder aDecoder: NSCoder) {
@@ -18,7 +18,7 @@ class BannerImageView: UIImageView {
         super.init(coder: aDecoder)
     }
     
-    init(_ entry: Entry, viewWidth: CGFloat, viewHeight: CGFloat, bottomViewHeight: CGFloat) {
+    init(_ entry: EventData, viewWidth: CGFloat, viewHeight: CGFloat, bottomViewHeight: CGFloat) {
         self.bannerEntry = entry
         super.init(frame: CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight - bottomViewHeight))
         

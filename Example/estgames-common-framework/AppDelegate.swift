@@ -7,18 +7,50 @@
 //
 
 import UIKit
+import AWSAuthCore
+import AWSPinpoint
+import AWSGoogleSignIn
+import AWSFacebookSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var pinpoint: AWSPinpoint?
+    //Used for checking whether Push Notification is enabled in Amazon Pinpoint
+    static let remoteNotificationKey = "RemoteNotification"
+    var isInitialized: Bool = false
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+        AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile"])
+        AWSSignInManager.sharedInstance().register(signInProvider: AWSFacebookSignInProvider.sharedInstance())
+        AWSGoogleSignInProvider.sharedInstance().setScopes(["profile", "openid"])
+        AWSSignInManager.sharedInstance().register(signInProvider: AWSGoogleSignInProvider.sharedInstance())
+        
+        let didFinishLaunching = AWSSignInManager.sharedInstance().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        pinpoint = AWSPinpoint(configuration:AWSPinpointConfiguration.defaultPinpointConfiguration(launchOptions: launchOptions))
+        if (!isInitialized) {
+            AWSSignInManager.sharedInstance().resumeSession(completionHandler: { (result: Any?, error: Error?) in
+                print("Result: \(String(describing: result)) \n Error:\(String(describing: error))")
+            })
+            isInitialized = true
+        }
+        return didFinishLaunching
     }
 
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~88888")
+        // print("application application: \(application.description), openURL: \(url.absoluteURL), sourceApplication: \(sourceApplication)")
+        AWSSignInManager.sharedInstance().interceptApplication(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        isInitialized = true
+        
+        return true
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
