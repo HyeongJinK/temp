@@ -20,8 +20,7 @@
 		ED1B2A6F207EF05F00C1ADE7 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B2A69207EF05F00C1ADE7 /* AccountService.swift */; };
 		ED1B2A70207EF05F00C1ADE7 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B2A6A207EF05F00C1ADE7 /* GameService.swift */; };
 		ED1B2A71207EF05F00C1ADE7 /* AccountApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B2A6C207EF05F00C1ADE7 /* AccountApi.swift */; };
-		ED1B2A72207EF05F00C1ADE7 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B2A6D207EF05F00C1ADE7 /* Animator.swift */; };
-		ED1B2A73207EF05F00C1ADE7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B2A6E207EF05F00C1ADE7 /* Settings.swift */; };
+		ED1B2AB22080A6C400C1ADE7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B2AB12080A6C400C1ADE7 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +58,7 @@
 		ED1B2A69207EF05F00C1ADE7 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		ED1B2A6A207EF05F00C1ADE7 /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		ED1B2A6C207EF05F00C1ADE7 /* AccountApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountApi.swift; sourceTree = "<group>"; };
-		ED1B2A6D207EF05F00C1ADE7 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		ED1B2A6E207EF05F00C1ADE7 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		ED1B2AB12080A6C400C1ADE7 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F5DB2CE400DA3E50D17DA991 /* estgames-common-framework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "estgames-common-framework.podspec"; path = "../estgames-common-framework.podspec"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,9 +177,8 @@
 		ED1B2A6B207EF05F00C1ADE7 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				ED1B2AB12080A6C400C1ADE7 /* Settings.swift */,
 				ED1B2A6C207EF05F00C1ADE7 /* AccountApi.swift */,
-				ED1B2A6D207EF05F00C1ADE7 /* Animator.swift */,
-				ED1B2A6E207EF05F00C1ADE7 /* Settings.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -444,11 +441,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED1B2A72207EF05F00C1ADE7 /* Animator.swift in Sources */,
+				ED1B2AB22080A6C400C1ADE7 /* Settings.swift in Sources */,
 				ED1B2A6F207EF05F00C1ADE7 /* AccountService.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				ED1B2A73207EF05F00C1ADE7 /* Settings.swift in Sources */,
 				ED1B2A71207EF05F00C1ADE7 /* AccountApi.swift in Sources */,
 				ED1B2A70207EF05F00C1ADE7 /* GameService.swift in Sources */,
 			);

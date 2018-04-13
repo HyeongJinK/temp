@@ -91,5 +91,20 @@
 	<string>1641813522553524</string>
 	<key>FacebookDisplayName</key>
 	<string>FFG-facebook</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.amazon.MySampleApp</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.915170168211-65if7jlchf26id1vp2d2n975caau82ik</string>
+				<string>fb1641813522553524</string>
+				<string>com.amazon.mysampleapp</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

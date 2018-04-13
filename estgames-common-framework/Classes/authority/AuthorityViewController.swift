@@ -42,9 +42,9 @@ class AuthorityViewController: UIViewController {
         webView.loadRequest(URLRequest(url: URL(string: self.webViewUrl)!))
         
         
-        let confirmButtonImage = UIImage(named: NSLocalizedString("estcommon_authority_confirm", comment: ""), in: Bundle(for: AuthorityViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
+        let confirmButtonImage = UIImage(named: "btn_confirm", in: Bundle(for: AuthorityViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
         confirmButton.setBackgroundImage(confirmButtonImage, for: .normal)
-        confirmButton.setTitle("확인", for: .normal)
+        confirmButton.setTitle(NSLocalizedString("estcommon_authority_confirm", comment: ""), for: .normal)
         confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         confirmButton.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)

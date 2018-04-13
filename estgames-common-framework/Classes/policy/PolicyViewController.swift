@@ -15,10 +15,17 @@ class PolicyViewController: UIViewController {
     var subTitleLabel: UILabel!
     var webView1:UIWebView!
     var webView2:UIWebView!
+    var webUrl1:String  = ""
+    var webUrl2: String  = ""
     var submitBt1: PolicyButton!
     var submitBt2: PolicyButton!
     var closeBt: PolicyCloseBt!
     var dataSet: PolicyDataSet!
+    
+    public func setWebUrl (webUrl1: String, webUrl2: String) {
+        self.webUrl1 = webUrl1
+        self.webUrl2 = webUrl2
+    }
     
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
@@ -73,7 +80,7 @@ class PolicyViewController: UIViewController {
         labelSet(subTitleLabel, NSLocalizedString("estcommon_policy_subTitle", comment: ""), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), 10)
         
         webView1 = UIWebView(frame: dataSet.webView1Frame)
-        webView1.loadRequest(URLRequest(url: URL(string: "https://s3.ap-northeast-2.amazonaws.com/m-static.estgames.co.kr/mpsdk/ffg.global.ls/contract/agreement.html")!))
+        webView1.loadRequest(URLRequest(url: URL(string: self.webUrl1)!))
         
         submitBt1 = PolicyButton(dataSet.submitBt1Frame)
 
@@ -81,7 +88,7 @@ class PolicyViewController: UIViewController {
         labelSet(titleLabel2, NSLocalizedString("estcommon_policy_privacy", comment: ""), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
         
         webView2 = UIWebView(frame: dataSet.webView2Frame)
-        webView2.loadRequest(URLRequest(url: URL(string: "https://s3.ap-northeast-2.amazonaws.com/m-static.estgames.co.kr/mpsdk/ffg.global.ls/contract/privacy.html")!))
+        webView2.loadRequest(URLRequest(url: URL(string: self.webUrl2)!))
         
         submitBt2 = PolicyButton(dataSet.submitBt2Frame)
         

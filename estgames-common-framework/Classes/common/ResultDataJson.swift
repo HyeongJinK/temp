@@ -9,34 +9,42 @@ import Foundation
 
 
 public class ResultDataJson {
+    public var errorMessage:String?
     var nation: String = ""
     var events : [EventData]
     //var process: [ProcessData]
     var url: UrlData
     
     public init(resultDataJson: NSDictionary) {
-        self.nation = resultDataJson["nation"] as! String
-        self.events = Array<EventData>()
-        
-        let eventJson: Array<NSDictionary> = resultDataJson["event"] as! Array<NSDictionary>
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        let now:Date = Date()
-        
-        for event in eventJson {
-            if event["begin"] as? String != nil && now < dateFormat.date(from: event["begin"] as! String)! {
-                continue
+        self.errorMessage = resultDataJson["errorMessage"] as? String
+        if (self.errorMessage == nil) {
+            self.nation = resultDataJson["nation"] as! String
+            self.events = Array<EventData>()
+            
+            let eventJson: Array<NSDictionary> = resultDataJson["event"] as! Array<NSDictionary>
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            
+            let now:Date = Date()
+            
+            for event in eventJson {
+                if event["begin"] as? String != nil && now < dateFormat.date(from: event["begin"] as! String)! {
+                    continue
+                }
+                
+                if event["end"] as? String != nil && now > dateFormat.date(from: event["end"] as! String)! {
+                    continue
+                }
+                events.append(EventData(event))
             }
             
-            if event["end"] as? String != nil && now > dateFormat.date(from: event["end"] as! String)! {
-                continue
-            }
-            events.append(EventData(event))
+            //self.process
+            self.url = UrlData(resultDataJson["url"] as! NSDictionary)
+        } else {
+            self.nation = ""
+            self.events = Array<EventData>()
+            self.url = UrlData(resultDataJson["url"] as! NSDictionary)
         }
-        
-        //self.process
-        self.url = UrlData(resultDataJson["url"] as! NSDictionary)
     }
 }
 

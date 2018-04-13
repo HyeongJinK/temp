@@ -31,8 +31,6 @@ public class AccountApi {
     //            .validate(statusCode: 200..<300)
     
     public static func getPrincipal() -> String {
-        print(AWSIdentityManager.default())
-        print(AWSIdentityManager.default().identityId)
         return AWSIdentityManager.default().identityId!
     }
 

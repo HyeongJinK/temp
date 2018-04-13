@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class PolicyDialog {
+class PolicyDialog {
     var pview: UIViewController
     var policyViewController:PolicyViewController
     

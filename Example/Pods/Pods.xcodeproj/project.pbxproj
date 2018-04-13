@@ -1431,7 +1431,7 @@
 		AA8D4275453EC8A6150CAE457FC7FE70 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA97FEE3BEA52852BBE8A246724D0270 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		AAA0C2B2297C1460FD4F65792CE478ED /* GTMSessionFetcher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GTMSessionFetcher-dummy.m"; sourceTree = "<group>"; };
-		AABE43C9FBB313866F88D262B926F9A8 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = "estgames-common-framework/Classes/ReplaceMe.swift"; sourceTree = "<group>"; };
+		AABE43C9FBB313866F88D262B926F9A8 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		ABB2BAC48691160ABC0CFC963E27702A /* AWSCore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSCore-prefix.pch"; sourceTree = "<group>"; };
 		ABC2DDC44D722E2C33F659D928054381 /* AWSPinpointEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSPinpointEvent.h; path = AWSPinpoint/AWSPinpointEvent.h; sourceTree = "<group>"; };
 		ABD4A6B0E1393B024B201822C02DB1CF /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
@@ -2021,8 +2021,7 @@
 				7679DE5A39AB01AFA67091B66F6AA2B1 /* BannerJson.swift */,
 				CD6A9EBEC4D1C4CD51052AB05D27F56B /* BannerLinkerButton.swift */,
 			);
-			name = banner;
-			path = "estgames-common-framework/Classes/banner";
+			path = banner;
 			sourceTree = "<group>";
 		};
 		4B79868E088611D4B349171A0DA67367 /* Development Pods */ = {
@@ -2093,8 +2092,7 @@
 				F81A82BAC5603B640469BBD67AA8E58A /* PolicyDialog.swift */,
 				91D02A069BFC77A06D46FE79BA31F5F5 /* PolicyViewController.swift */,
 			);
-			name = policy;
-			path = "estgames-common-framework/Classes/policy";
+			path = policy;
 			sourceTree = "<group>";
 		};
 		6A393EEB0A315418CA49A5D65E904E6D /* Support Files */ = {
@@ -2123,7 +2121,7 @@
 				23CED4B506B254E04670FF88F36636CE /* ResourceBundle-estgames-common-framework-Info.plist */,
 			);
 			name = "Support Files";
-			path = "Example/Pods/Target Support Files/estgames-common-framework";
+			path = "../../Example/Pods/Target Support Files/estgames-common-framework";
 			sourceTree = "<group>";
 		};
 		6E385A735250B7DAAA90049B89DBCDEE /* Resources */ = {
@@ -2608,7 +2606,7 @@
 				96A1F0B831E3EAF9A9C03219AA8DCAD4 /* btn_bottom_close_img@3x.png */,
 			);
 			name = Resources;
-			path = "estgames-common-framework/Assets";
+			path = ../Assets;
 			sourceTree = "<group>";
 		};
 		A91B83C31379A3BD6F75940D9F9C924B /* FBSDKCoreKit */ = {
@@ -2860,7 +2858,7 @@
 				BEE07F64D44882AE34E6646DAFDC32E8 /* user */,
 			);
 			name = "estgames-common-framework";
-			path = ../..;
+			path = "../../estgames-common-framework/Classes";
 			sourceTree = "<group>";
 		};
 		BEE07F64D44882AE34E6646DAFDC32E8 /* user */ = {
@@ -2873,8 +2871,7 @@
 				A8E4DF5E21A7BCE02B54CED42508AA36 /* UserLoadViewController.swift */,
 				5CC395DD3176400B957CD59807A0706C /* UserResultViewController.swift */,
 			);
-			name = user;
-			path = "estgames-common-framework/Classes/user";
+			path = user;
 			sourceTree = "<group>";
 		};
 		BF57BB1586B8F9097C0568DCEA7632CE /* Frameworks */ = {
@@ -2915,8 +2912,7 @@
 				2551024B43DF246DBBA937C420354D93 /* AuthorityDialog.swift */,
 				FC2677263ECCC83D1866C7405983725C /* AuthorityViewController.swift */,
 			);
-			name = authority;
-			path = "estgames-common-framework/Classes/authority";
+			path = authority;
 			sourceTree = "<group>";
 		};
 		C76CBF5E7FD02D54150BB6035BA09210 /* Alamofire */ = {
@@ -3032,8 +3028,7 @@
 				C6F3B975B70B5977B13C98489E1A3C47 /* Timeline.swift */,
 				F99E9E9E09DA52C503621DC2E4542044 /* Validation.swift */,
 			);
-			name = alamofire;
-			path = "estgames-common-framework/Classes/alamofire";
+			path = alamofire;
 			sourceTree = "<group>";
 		};
 		CF881BEF17647FBED75D1D07BDDB26D5 /* Pods-estgames-common-framework_Example */ = {
@@ -3094,8 +3089,7 @@
 				34867127477053EA14AE27186728E577 /* DeviceClassification.swift */,
 				1378BD649D3EA3E020AAFE2870B035B6 /* ResultDataJson.swift */,
 			);
-			name = common;
-			path = "estgames-common-framework/Classes/common";
+			path = common;
 			sourceTree = "<group>";
 		};
 		D83BEA39F85D035CA53580183CAC5869 /* Support Files */ = {
