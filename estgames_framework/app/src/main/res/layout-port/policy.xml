@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="282dp"
+    android:layout_height="501dp"
+    android:background="#353B48">
+
+    <ImageButton
+        android:id="@+id/policyClosebt"
+        android:layout_width="17.5dp"
+        android:layout_height="17.5dp"
+        android:src="@drawable/btn_close"
+        android:background="@android:color/transparent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10.5dp"
+        android:layout_marginTop="10.5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35.5dp"
+        android:textSize="13sp"
+        android:textColor="#D6D6D6"
+        android:text="@string/policy_title"/>
+
+    <TextView
+        android:id="@+id/policySubTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54.5dp"
+        android:textSize="9sp"
+        android:textColor="#FF5F5F"
+        android:text="@string/policy_subTitle"/>
+
+    <WebView
+        android:id="@+id/policyWebView1"
+        android:layout_width="231dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="26.5dp"
+        android:layout_marginTop="74dp">
+    </WebView>
+
+    <Button
+        android:id="@+id/policybt1"
+        android:layout_width="232dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/policybutton"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:text="@string/policy_buttonText"
+        android:layout_below="@id/policyWebView1"/>
+
+    <TextView
+        android:id="@+id/policySubTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26.5dp"
+        android:textSize="13sp"
+        android:textColor="#D6D6D6"
+        android:text="@string/policy_subTitle2"
+        android:layout_below="@id/policybt1"/>
+
+    <WebView
+        android:id="@+id/policyWebView2"
+        android:layout_width="231dp"
+        android:layout_height="129.5dp"
+        android:layout_marginLeft="25.5dp"
+        android:layout_marginTop="49.5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@id/policybt1">
+    </WebView>
+
+    <Button
+        android:id="@+id/policybt2"
+        android:layout_width="232dp"
+        android:layout_height="36dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/policybutton"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:text="@string/policy_buttonText"
+        android:layout_below="@id/policyWebView2"/>
+</RelativeLayout>

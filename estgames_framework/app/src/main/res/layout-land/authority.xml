@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#353B48"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/authority_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:text="원활한 게임플레이를 위해 아래 권한을 필요로 합니다."
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <WebView
+        android:id="@+id/authority_webView"
+        android:layout_width="436dp"
+        android:layout_height="225dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15.5dp">
+    </WebView>
+    <!--<TextView-->
+        <!--android:layout_width="436dp"-->
+        <!--android:layout_height="225dp"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:text="1. 기기, 사진, 미디어 파일 액세스 (필수적 접근 권한)-->
+<!--게임을 설치하거나 게임 데이터를 저장하기 위해 필요한 권한입니다."-->
+        <!--android:textColor="#ffffff"-->
+        <!--android:textSize="11sp"-->
+        <!--android:textStyle="bold" />-->
+
+    <Button
+        android:id="@+id/authority_bt"
+        android:layout_width="161dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16.5dp"
+        android:background="@drawable/btn_confirm"
+        android:text="확인"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+</LinearLayout>

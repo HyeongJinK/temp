@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3E4147"
+        android:layout_alignParentBottom="true">
+
+        <CheckBox
+            android:id="@+id/bannerOneDayCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="7.5dp"
+            android:button="@drawable/checkbox"/>
+
+        <TextView
+            android:id="@+id/bannerOneDayText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/bannerOneDayCheck"
+            android:text="@string/banner_todayText"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            />
+
+        <Button
+            android:id="@+id/bannerCloseBt"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="4.5dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="9dp"
+            android:background="@drawable/btn_bottom_close" />
+
+        <Button
+            android:id="@+id/bannerLinkBt"
+            android:layout_width="106dp"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@id/bannerCloseBt"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/btn_detail"
+            android:text="@string/banner_linkBt"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+             />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/bannerImgView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomBar"/>
+
+</RelativeLayout>

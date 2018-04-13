@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">estgames_framework</string>
+    <string name="policy_title">이용약관</string>
+    <string name="policy_subTitle">광고성 정보 수신 동의포함</string>
+    <string name="policy_subTitle2">개인정보 취급방침</string>
+    <string name="policy_buttonText">동의합니다</string>
+
+    <string name="banner_todayText">오늘 다시보지 않기</string>
+    <string name="banner_linkBt">자세히 보기</string>
+
+    <string name="userlink_title">계정 연동</string>
+    <string name="userlink_text">입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebook Account: 기존게임닉네임 Lv.xx\n위의 데이터를 불러오시겠습니까?</string>
+    <string name="userlink_bottomText">!현재 플레이 중인 게임데이터현재게임닉네임 Lv.xx)는 삭제됩니다.</string>
+    <string name="userlink_confirmBt">네 불러오겠습니다</string>
+    <string name="userlink_cancelBt">아니오 새로 연동하기</string>
+
+    <string name="userload_title">기존 계정 불러오기</string>
+    <string name="userload_submit">확인</string>
+    <string name="userload_input">입력하기</string>
+    <string name="userload_text">현재 게스트 모드로 플레이 중인 데이터 (현재게임닉네임 Lv.xx)를\n삭제하고 기존 데이터를 불러오시려면 아래 문자를 입력해주세요.</string>
+    <string name="userload_confirm">확인 문자 : confirm</string>
+
+    <string name="userresult_title">알림</string>
+    <string name="userresult_subtitle">불러오기 성공!</string>
+    <string name="userresult_text">게임 재 구동을 위해 타이틀 화면으로 이동합니다.</string>
+    <string name="userresult_confirm">확인</string>
+</resources>

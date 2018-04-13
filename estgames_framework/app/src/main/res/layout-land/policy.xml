@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="479dp"
+    android:layout_height="275.5dp"
+    android:background="#353B48">
+
+    <ImageButton
+        android:id="@+id/policyClosebt"
+        android:layout_width="17.5dp"
+        android:layout_height="17.5dp"
+        android:src="@drawable/btn_close"
+        android:background="@android:color/transparent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10.5dp"
+        android:layout_marginTop="10.5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:textSize="13sp"
+        android:textColor="#D6D6D6"
+        android:text="@string/policy_title"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:textSize="9sp"
+        android:textColor="#FF5F5F"
+        android:text="@string/policy_subTitle"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="70dp"
+        tools:ignore="WebViewLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="25.5dp"
+            android:layout_marginRight="8dp">
+            <WebView
+                android:id="@+id/policyWebView1"
+                android:layout_width="210dp"
+                android:layout_height="130dp"
+                android:layout_marginBottom="8dp">
+            </WebView>
+            <!--<ImageButton-->
+                <!--android:layout_width="211dp"-->
+                <!--android:layout_height="36dp"-->
+                <!--android:src="@drawable/Btn_Provision_on"-->
+                <!--/>-->
+            <Button
+                android:id="@+id/policybt1"
+                android:layout_width="211dp"
+                android:layout_height="36dp"
+                android:background="@drawable/policybutton"
+                android:textSize="15sp"
+                android:textColor="#ffffff"
+                android:text="@string/policy_buttonText"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <WebView
+                android:id="@+id/policyWebView2"
+                android:layout_width="210dp"
+                android:layout_height="130dp"
+                android:layout_marginBottom="8dp">
+            </WebView>
+
+            <Button
+                android:id="@+id/policybt2"
+                android:layout_width="211dp"
+                android:layout_height="36dp"
+                android:background="@drawable/policybutton"
+                android:textSize="15sp"
+                android:textColor="#ffffff"
+                android:text="@string/policy_buttonText"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

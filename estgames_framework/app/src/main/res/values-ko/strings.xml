@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">estgames_framework</string>
+    <string name="policy_title">이용약관</string>
+    <string name="policy_subTitle">광고성 정보 수신 동의포함</string>
+    <string name="policy_buttonText">동의합니다</string>
+</resources>
