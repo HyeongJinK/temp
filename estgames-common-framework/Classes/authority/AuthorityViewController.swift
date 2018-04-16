@@ -14,7 +14,8 @@ class AuthorityViewController: UIViewController {
     var confirmButton: UIButton!
     var authorityDataSet: AuthorityDataSet!
     var webViewUrl: String = ""
-
+    var callbackFunc:() -> Void = {() -> Void in}
+    
     public func setWebUrl (url: String) {
         self.webViewUrl = url
     }
@@ -56,6 +57,7 @@ class AuthorityViewController: UIViewController {
     }
 
     @objc func closeBtAction(_ sender:UIButton) {
+        callbackFunc()
         self.dismiss(animated: false, completion: nil)
     }
     

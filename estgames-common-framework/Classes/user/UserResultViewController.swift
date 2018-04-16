@@ -10,11 +10,13 @@ import Foundation
 class UserResultViewController: UIViewController {
     var backgroundView: UIView!
     var userResultTitle: UILabel! //알림
-    var closeButton: UIButton!//닫기
+    var closeButton: UserCloseButton!//닫기
     var lineView: UIView!
     var subLabel: UILabel!
     var contentLabel: UILabel!
-    var confirmButton: UIButton!
+    var confirmButton: UserConfirmButton!
+    var closeActon: () -> Void = {() -> Void in}
+    var confirmAction: () -> Void = {() -> Void in}
     
     func dataSet(_ data:UserDataSet) {
         backgroundView = UIView(frame: data.userResultBackgroundView!)
@@ -23,7 +25,7 @@ class UserResultViewController: UIViewController {
         lineView = UIView(frame: data.lineView!)
         subLabel = UILabel(frame: data.userResultSubLabel!)
         contentLabel = UILabel(frame: data.userResultContentLabel!)
-        confirmButton = UIButton(frame: data.userResultConfirmButton!)
+        confirmButton = UserConfirmButton(self, frame: data.userResultConfirmButton!)
     }
     
     override func viewDidLoad() {
@@ -36,6 +38,9 @@ class UserResultViewController: UIViewController {
         userResultTitle.font = UIFont.systemFont(ofSize: 12)
         
         
+        closeButton.closeBtAction = closeActon
+        
+        
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
         
         subLabel.text = NSLocalizedString("estcommon_userResult_subTitle", comment: "")
@@ -46,11 +51,10 @@ class UserResultViewController: UIViewController {
         contentLabel.font = UIFont.systemFont(ofSize: 10)
         contentLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         
-        let confirmButtonImg = UIImage(named: "btn_confirm_user", in: Bundle(for: UserLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
-        confirmButton.setBackgroundImage(confirmButtonImg, for: .normal)
-        confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        
         confirmButton.setTitle(NSLocalizedString("estcommon_userResult_confirm", comment: ""), for: .normal)
+        confirmButton.confirmBtAction = confirmAction
+        
         
         backgroundView.addSubview(userResultTitle)
         backgroundView.addSubview(closeButton)

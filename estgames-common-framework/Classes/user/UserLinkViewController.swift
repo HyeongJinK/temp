@@ -10,13 +10,19 @@ import Foundation
 class UserLinkViewController: UIViewController {
     var backgroudView: UIView!
     var userLinkTitle: UILabel!
-    var closeButton: UIButton!
+    var closeButton: UserCloseButton!
     var lineView: UIView!
     var middleLabel: UILabel!
     var bottomLabel: UILabel!
     var lineView2: UIView!
-    var confirmButton: UIButton!
+    var confirmButton: UserConfirmButton!
     var cancelButton: UIButton!
+    var closeActon: () -> Void = {() -> Void in}
+    var confirmAction: () -> Void = {() -> Void in}
+    var cancelAction: () -> Void = {() -> Void in}
+    var replaceStrSns: String = ""
+    var replaceStrGuest: String = ""
+    
     
     func dataSet(_ data:UserDataSet) {
         backgroudView = UIView(frame: data.userLinkBackgroudView!)
@@ -26,7 +32,7 @@ class UserLinkViewController: UIViewController {
         middleLabel = UILabel(frame: data.userLinkMiddleLabel!)
         bottomLabel = UILabel(frame: data.userLinkBottomLabel!)
         lineView2 = UIView(frame: data.userLinkLineView2!)
-        confirmButton = UIButton(frame: data.userLinkConfirmButton!)
+        confirmButton = UserConfirmButton(self, frame: data.userLinkConfirmButton!)
         cancelButton = UIButton(frame: data.userLinkCancelButton!)
     }
     
@@ -41,30 +47,30 @@ class UserLinkViewController: UIViewController {
         //userLinkTitle.font = UIFont.init(name: "SqoqaHanSans", size: 12)
         
         
+        closeButton.closeBtAction = closeActon
+        
+        
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
         
         
         middleLabel.font = UIFont.systemFont(ofSize: 10)
         middleLabel.numberOfLines = 0
-        let attrString = NSMutableAttributedString(string: NSLocalizedString("estcommon_userLink_middelLabel", comment: ""))
+        let attrString = NSMutableAttributedString(string: NSLocalizedString("estcommon_userLink_middelLabel", comment: "").replacingOccurrences(of: "[]", with: replaceStrSns))
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
         middleLabel.attributedText = attrString
         
         
-        bottomLabel.text = NSLocalizedString("estcommon_userLink_bottomLabel", comment: "")
+        bottomLabel.text = NSLocalizedString("estcommon_userLink_bottomLabel", comment: "").replacingOccurrences(of: "[]", with: replaceStrGuest)
         bottomLabel.font = UIFont.systemFont(ofSize: 10)
         
         
         lineView2.backgroundColor = UIColor(red: 231/255, green: 230/255, blue: 230/255, alpha: 1)
         
         
-        let confirmButtonImg = UIImage(named: "btn_confirm_user", in: Bundle(for: UserLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
-        confirmButton.setBackgroundImage(confirmButtonImg, for: .normal)
-        confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         confirmButton.setTitle(NSLocalizedString("estcommon_userLink_confirm", comment: ""), for: .normal)
+        confirmButton.confirmBtAction = confirmAction
         
         
         let cancelButtonImg = UIImage(named: "btn_cancel_user", in: Bundle(for: UserLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
@@ -72,6 +78,7 @@ class UserLinkViewController: UIViewController {
         cancelButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         cancelButton.setTitle(NSLocalizedString("estcommon_userLink_cancel", comment: ""), for: .normal)
+        cancelButton.addTarget(self, action: #selector(cancelBtAction(_:)), for: .touchUpInside)
         
         
         self.view.addSubview(backgroudView)
@@ -84,18 +91,10 @@ class UserLinkViewController: UIViewController {
         backgroudView.addSubview(confirmButton)
         backgroudView.addSubview(cancelButton)
     }
+    
+    @objc func cancelBtAction(_ sender:UIButton) {
+        self.dismiss(animated: false, completion: nil)
+        cancelAction()
+    }
+    
 }
-
-
-
-/**
- backgroudView = UIView(frame: CGRect(x: 159, y: 78, width: 370, height: 209.5))
- titleText = UILabel(frame: CGRect(x: 21.5, y: 15, width: 100, height: 12))
- closeButton = UIButton(frame: CGRect(x: 339.5, y: 12, width: 14, height: 14)) //x: backgroudView.frame.width - 16.5 - 14
- lineView = UIView(frame: CGRect(x: 0, y: 39, width: 370, height: 0.5))  //width: backgroundView.frame.width
- middleTextView = UILabel(frame: CGRect(x: 22, y: 59.5, width: 250, height: 66))
- bottomTextView = UILabel(frame: CGRect(x: 22, y: 142, width: 250, height: 10))
- lineView2 = UIView(frame: CGRect(x: 0, y: 152.5, width: 370, height: 0.5))
- confirmButton = UIButton(frame: CGRect(x: 18.5, y: 163.5, width: 163, height: 37))
- cancelButton = UIButton(frame: CGRect(x: 189.5, y: 163.5, width: 163, height: 37))
- */

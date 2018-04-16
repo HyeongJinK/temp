@@ -10,6 +10,7 @@ import Foundation
 class UserCloseButton : UIButton {
     var closeButtonImage: UIImage?
     var view: UIViewController?
+    var closeBtAction: () -> Void = {() -> Void in}
     
     init(_ pview: UIViewController, frame: CGRect) {
         closeButtonImage = UIImage(named: "btn_close_img_user", in:Bundle(for: UserCloseButton.self), compatibleWith:nil)
@@ -26,5 +27,6 @@ class UserCloseButton : UIButton {
     
     @objc func closeBtAction(_ sender:UIButton) {
         view!.dismiss(animated: false, completion: nil)
+        closeBtAction()
     }
 }

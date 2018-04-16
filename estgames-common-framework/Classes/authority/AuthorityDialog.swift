@@ -11,11 +11,19 @@ class AuthorityDialog {
     var pview: UIViewController
     var authority: AuthorityViewController
     
-    public init(pview: UIViewController) {
+    public init(pview: UIViewController, callback: @escaping () -> Void ) {
         self.pview = pview
         
 //        let storyboard: UIStoryboard = UIStoryboard(name: "authorityStoryboard", bundle: nil)
 //        authority = storyboard.instantiateInitialViewController()!
+        
+        authority = AuthorityViewController()
+        authority.callbackFunc = callback
+        authority.modalPresentationStyle = .overCurrentContext
+    }
+    
+    public init(pview: UIViewController) {
+        self.pview = pview
         
         authority = AuthorityViewController()
         authority.modalPresentationStyle = .overCurrentContext

@@ -17,10 +17,15 @@ import AWSCore
 
 class ViewController: UIViewController {
     var estgamesCommon:EstgamesCommon!
+    var userDialog: UserDialog!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         estgamesCommon = EstgamesCommon(pview: self)
+        userDialog = UserDialog(pview: self)
+        userDialog.setUserLinkAction(closeAction: {() -> Void in print("closeAction")}, confirmAction: {() -> Void in print("confirmAction")}, cancelAction: {() -> Void in print("cancelAction")})
+        userDialog.setUserLinkCharacterLabel(guest: "adfads", sns: "bzcxvczxv")
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,7 +36,12 @@ class ViewController: UIViewController {
         estgamesCommon.bannerShow()
     }
     
+    func authCallBack() {
+        print("authority Call Back")
+    }
+    
     @IBAction func authorityTest(_ sender: Any) {
+        estgamesCommon.authorityCallBack = authCallBack
         estgamesCommon.authorityShow()
     }
     
@@ -40,18 +50,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userLinkTest(_ sender: Any) {
-        estgamesCommon.showUserLinkDialog()
+        
+        userDialog.showUserLinkDialog()
     }
     
     @IBAction func UserLoadTest(_ sender: Any) {
-        estgamesCommon.showUserLoadDialog()
+        userDialog.showUserLoadDialog()
     }
     
     @IBAction func UserResultTest(_ sender: Any) {
-        estgamesCommon.showUserResultDialog()
+        userDialog.showUserResultDialog()
     }
 
     @IBAction func testttt(_ sender: Any) {
+        print(userDialog.getInputText())
         print(estgamesCommon.contractService())
         print(estgamesCommon.contractPrivate())
     }
@@ -113,6 +125,13 @@ class ViewController: UIViewController {
     }
     
     func clearKey() {
+        if (AWSSignInManager.sharedInstance().isLoggedIn) {
+            AWSSignInManager.sharedInstance().logout(completionHandler: {(result: Any?, error: Error?) in
+                //                MpInfo.Account.principal = self.accountService.getPrincipal()
+            })
+        } else {
+            assert(false)
+        }
         self.accountService.clearKeychain()
         
         self.alert("keychain이 삭제되었습니다.")
@@ -151,7 +170,7 @@ class ViewController: UIViewController {
         let egToken = MpInfo.Account.egToken
         let principal = AccountService().getPrincipal()
         // 이미 cognito의 principal은 업데이트 된 상태
-        MpInfo.Account.principal = principal
+        
         
         self.accountService.syncSns(
             egToken: egToken, principal: principal, profile: profile,
@@ -160,23 +179,19 @@ class ViewController: UIViewController {
                 if let status = datas["status"] {
                     let result = String(describing: status)
                     if result == "COMPLETE"{
-                        
+                        MpInfo.Account.principal = principal
                         MpInfo.Account.provider = provider
                         MpInfo.Account.email = email
                         
-                        self.alert("sns sync가 성공되었습니다.")
+                        self.alert("계정연동이 성공되었습니다.")
                     } else if result == "FAILURE" {
-                        //TODO 계정 연동 부분
-                        self.alert("사용중인 sns 계정이 있습니다.")
-                        /**
                          self.visibleSyncView(
                          snsEgId: String(describing: datas["duplicated"]!),
                          egToken: egToken,
                          profile: profile,
                          principal: principal,
                          provider: provider,
-                         email: email
-                         */
+                         email: email)
                     } else {
                         self.alert("알 수 없는 에러가 발생했습니다.")
                     }
@@ -185,6 +200,20 @@ class ViewController: UIViewController {
         },
             fail: {error in self.alert(String(describing: error))}
         )
+    }
+    
+    func visibleSyncView(snsEgId: String, egToken: String, profile: String, principal: String, provider: String, email: String ){
+        let vc : UserService = UserService(p: self)
+        
+        // 로그인된 sns계정 정보를 sync 담당 뷰에 전달.
+        vc.crashSnsSyncIno.snsEgId = snsEgId
+        vc.crashSnsSyncIno.egToken = egToken
+        vc.crashSnsSyncIno.principal = principal
+        vc.crashSnsSyncIno.profile = profile
+        vc.crashSnsSyncIno.provider = provider
+        vc.crashSnsSyncIno.email = email
+        
+        vc.show()
     }
     
     func onSignIn (_ success: Bool, _ provider: AWSSignInProvider) {

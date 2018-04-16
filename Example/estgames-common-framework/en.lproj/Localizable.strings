@@ -11,14 +11,14 @@
 'estcommon_userResult_confirm' = "확인";
 
 'estcommon_userLoad_title' = "기존 계정 불러오기";
-'estcommon_userLoad_content' = "현재 게스트 모드로 플레이 중인 데이터(현재게임닉네임, Lv.xx)를\n삭제하고 기존 데이터를 불러오시려면 아래 문자를 입력해주세요.";
+'estcommon_userLoad_content' = "현재 게스트 모드로 플레이 중인 데이터([])를\n삭제하고 기존 데이터를 불러오시려면 아래 문자를 입력해주세요.";
 'estcommon_userLoad_confirmText' = "확인 문자 : confirm";
 'estcommon_userLoad_input' = "입력하기";
 'estcommon_userLoad_confirmButton' = "확인";
 
 'estcommon_userLink_title' = "계정 연동";
-'estcommon_userLink_middelLabel' = "입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebookAccount: 기존게임닉네임, Lv._xx\n위의 데이터를 불러오시겠습니까?";
-'estcommon_userLink_bottomLabel' = "!현재 플레이 중인 게임데이터(현재게임닉네임, Lv.xx)는 삭제됩니다";
+'estcommon_userLink_middelLabel' = "입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebookAccount: []\n위의 데이터를 불러오시겠습니까?";
+'estcommon_userLink_bottomLabel' = "!현재 플레이 중인 게임데이터([])는 삭제됩니다";
 'estcommon_userLink_confirm' = "네, 불러오겠습니다";
 'estcommon_userLink_cancel' = "아니오, 새로 연동하기";
 

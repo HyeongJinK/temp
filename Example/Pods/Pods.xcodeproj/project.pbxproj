@@ -615,6 +615,7 @@
 		EB8EB337D0E922447DD665A46628A578 /* FBSDKImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B156EDC82962C13B87F0A2D5B16F843 /* FBSDKImageDownloader.m */; };
 		EBA2264381A86773B13A216760E4C21B /* FBSDKGraphErrorRecoveryProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 441B9736A4451C19AAA703AFCD01B9FC /* FBSDKGraphErrorRecoveryProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC11163B98E1823A6B99811A3DC54A59 /* AWSMTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB54E8687B93B61B38E65CF77543D4 /* AWSMTLModel.m */; };
+		ED1118BB208476E60059CB26 /* UserConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1118BA208476E60059CB26 /* UserConfirmButton.swift */; };
 		ED1B2A77207EFDCF00C1ADE7 /* btn_bottom_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A76207EFDCF00C1ADE7 /* btn_bottom_close_img@2x.png */; };
 		ED1B2A78207EFDD900C1ADE7 /* btn_bottom_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A1F0B831E3EAF9A9C03219AA8DCAD4 /* btn_bottom_close_img@3x.png */; };
 		ED1B2A93207EFE0D00C1ADE7 /* btn_provision_on.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A79207EFE0900C1ADE7 /* btn_provision_on.png */; };
@@ -1621,6 +1622,7 @@
 		EC81AECFF816CD6C706A4F720517C719 /* AWSGeneric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSGeneric.h; path = AWSCore/Bolts/AWSGeneric.h; sourceTree = "<group>"; };
 		ECB7E81237BE6F64281EED75B10A6B59 /* FBSDKGraphRequestConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestConnection.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestConnection.m; sourceTree = "<group>"; };
 		ECFA87D77F97047239EEFA4F765152B6 /* AWSPinpointTargetingResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSPinpointTargetingResources.m; path = AWSPinpoint/AWSPinpointTargeting/AWSPinpointTargetingResources.m; sourceTree = "<group>"; };
+		ED1118BA208476E60059CB26 /* UserConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfirmButton.swift; sourceTree = "<group>"; };
 		ED1B2A76207EFDCF00C1ADE7 /* btn_bottom_close_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_bottom_close_img@2x.png"; sourceTree = "<group>"; };
 		ED1B2A79207EFE0900C1ADE7 /* btn_provision_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_provision_on.png; sourceTree = "<group>"; };
 		ED1B2A7A207EFE0900C1ADE7 /* btn_close_img@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_img@3x.png"; sourceTree = "<group>"; };
@@ -2870,6 +2872,7 @@
 				EE43CF2127BF7017B92AA0496F6C978B /* UserLinkViewController.swift */,
 				A8E4DF5E21A7BCE02B54CED42508AA36 /* UserLoadViewController.swift */,
 				5CC395DD3176400B957CD59807A0706C /* UserResultViewController.swift */,
+				ED1118BA208476E60059CB26 /* UserConfirmButton.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -4612,6 +4615,7 @@
 				B35F7BDD659E7A73C6989031675799B0 /* AFError.swift in Sources */,
 				46BEF9055828EA33432F3D780C2F72D5 /* Alamofire.swift in Sources */,
 				5E4A0EC82CAAFB7A833A36F547A6241E /* EstCommonFramework.swift in Sources */,
+				ED1118BB208476E60059CB26 /* UserConfirmButton.swift in Sources */,
 				0837F517444C713DB1ABC5BFF65CE549 /* AuthorityDataSet.swift in Sources */,
 				B35842708E9E3AD30D90754FF412F3FB /* AuthorityDialog.swift in Sources */,
 				32BB18A69E802AFDC4CE8BACAF336A0C /* AuthorityViewController.swift in Sources */,
