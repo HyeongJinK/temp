@@ -239,6 +239,10 @@ class ViewController: UIViewController {
             config.addSignInButtonView(class: AWSGoogleSignInButton.self)
             config.addSignInButtonView(class: AWSFacebookSignInButton.self)
             config.canCancel = true
+            config.backgroundColor = UIColor.blue
+            //config.isBackgroundColorFullScreen = true
+            config.logoImage = UIImage(named: "btn_close_img_user", in:Bundle(for: ViewController.self), compatibleWith:nil)
+            
             //with: self.navigationController!,
             AWSAuthUIViewController.presentViewController(
                 with: self.navigationController!,
