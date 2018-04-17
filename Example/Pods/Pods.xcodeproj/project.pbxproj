@@ -2991,7 +2991,7 @@
 		CBC41235999E29CD44FBDC518273612D /* estgames-common-framework */ = {
 			isa = PBXGroup;
 			children = (
-				ED7B173F2085EB8300CF3BF6 /* Service */,
+				ED7B17422085F23100CF3BF6 /* Service */,
 				6F9BF39787611CC3F1436386242A10DD /* ReplaceMe.swift */,
 				4109BBA3C046891A86E032B18BB89B79 /* alamofire */,
 				E4E7BCC60B86A1F2AFC6223F706522D7 /* authority */,
@@ -3121,7 +3121,7 @@
 			path = "estgames-common-framework/Classes/authority";
 			sourceTree = "<group>";
 		};
-		ED7B173F2085EB8300CF3BF6 /* Service */ = {
+		ED7B17422085F23100CF3BF6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				ED7B17402085EBA000CF3BF6 /* AccountService.swift */,
