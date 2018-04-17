@@ -18,10 +18,7 @@
 		ED1118BD208482150059CB26 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1118BC208482150059CB26 /* UserService.swift */; };
 		ED1B2A60207DF3B600C1ADE7 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A5F207DF3B600C1ADE7 /* awsconfiguration.json */; };
 		ED1B2A64207DF71300C1ADE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A66207DF71300C1ADE7 /* Localizable.strings */; };
-		ED1B2A6F207EF05F00C1ADE7 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B2A69207EF05F00C1ADE7 /* AccountService.swift */; };
 		ED1B2A70207EF05F00C1ADE7 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B2A6A207EF05F00C1ADE7 /* GameService.swift */; };
-		ED1B2A71207EF05F00C1ADE7 /* AccountApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B2A6C207EF05F00C1ADE7 /* AccountApi.swift */; };
-		ED1B2AB22080A6C400C1ADE7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B2AB12080A6C400C1ADE7 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,10 +54,7 @@
 		ED1B2A5F207DF3B600C1ADE7 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		ED1B2A65207DF71300C1ADE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED1B2A67207DF71400C1ADE7 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		ED1B2A69207EF05F00C1ADE7 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		ED1B2A6A207EF05F00C1ADE7 /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
-		ED1B2A6C207EF05F00C1ADE7 /* AccountApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountApi.swift; sourceTree = "<group>"; };
-		ED1B2AB12080A6C400C1ADE7 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F5DB2CE400DA3E50D17DA991 /* estgames-common-framework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "estgames-common-framework.podspec"; path = "../estgames-common-framework.podspec"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +102,6 @@
 		607FACD21AFB9204008FA782 /* Example for estgames-common-framework */ = {
 			isa = PBXGroup;
 			children = (
-				ED1B2A6B207EF05F00C1ADE7 /* Lib */,
 				ED1B2A68207EF05F00C1ADE7 /* Service */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
@@ -170,20 +163,10 @@
 		ED1B2A68207EF05F00C1ADE7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				ED1B2A69207EF05F00C1ADE7 /* AccountService.swift */,
 				ED1B2A6A207EF05F00C1ADE7 /* GameService.swift */,
 				ED1118BC208482150059CB26 /* UserService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		ED1B2A6B207EF05F00C1ADE7 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				ED1B2AB12080A6C400C1ADE7 /* Settings.swift */,
-				ED1B2A6C207EF05F00C1ADE7 /* AccountApi.swift */,
-			);
-			path = Lib;
 			sourceTree = "<group>";
 		};
 		EEF358D41F9558158EBBD42C /* Pods */ = {
@@ -410,7 +393,6 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/estgames-common-framework/estgames_common_framework.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -429,7 +411,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/estgames_common_framework.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,11 +426,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED1118BD208482150059CB26 /* UserService.swift in Sources */,
-				ED1B2AB22080A6C400C1ADE7 /* Settings.swift in Sources */,
-				ED1B2A6F207EF05F00C1ADE7 /* AccountService.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				ED1B2A71207EF05F00C1ADE7 /* AccountApi.swift in Sources */,
 				ED1B2A70207EF05F00C1ADE7 /* GameService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,7 +525,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -594,7 +572,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

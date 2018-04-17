@@ -23,6 +23,25 @@ class UserService {
         userDialog = UserDialog(pview: pview)
     }
     
+    func isCognitoSnsLoggedIn() -> Bool {
+        if AWSIdentityManager.default().logins().result == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func getPrincipal() -> String? {
+        return AWSIdentityManager.default().identityId
+    }
+    
+    public  func refreshToken(
+        egToken: String, refreshToken: String, device: String, profile: Any?,
+        success: @escaping(_ data: Dictionary<String, Any>)-> Void,
+        fail: @escaping(_ error: Error?)-> Void) {
+        accountService.refreshToken(egToken: egToken, refreshToken: refreshToken, device: device, profile: profile, success: success, fail: fail)
+    }
+    
     private func linkConfirmAction() {  //sns계정 연동으로
         userLoadShow()
     }
@@ -63,7 +82,7 @@ class UserService {
     }
     
     func LoginBySnsAccount() {
-        let principal = accountService.getPrincipal()
+        let principal = getPrincipal()
         
         if let pi = principal {
             let device:String = "device_val@facdebook"

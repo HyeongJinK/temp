@@ -9,7 +9,7 @@ target 'estgames-common-framework_Example' do
     pod 'AWSCognito', '~> 2.6.1'
     pod 'AWSAuthUI', '~> 2.6.1'
     pod 'Alamofire', '~> 4.7'
-    pod 'SwiftKeychainWrapper'
+    #pod 'SwiftKeychainWrapper'
     
     pod 'estgames-common-framework', :path => '../'
     #pod 'estgames-common-framework', '~> 0.7.0'

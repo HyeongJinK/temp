@@ -20,6 +20,7 @@ import GoogleSignIn
 class ViewController: UIViewController {
     var estgamesCommon:EstgamesCommon!
     var userDialog: UserDialog!
+    var vc : UserService!
     
     @IBOutlet var lblIdentityId: UILabel!
     @IBOutlet var lblPrincipal: UILabel!
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
+        vc = UserService(p: self)
         estgamesCommon = EstgamesCommon(pview: self)
         userDialog = UserDialog(pview: self)
         userDialog.setUserLinkAction(closeAction: {() -> Void in print("closeAction")}, confirmAction: {() -> Void in print("confirmAction")}, cancelAction: {() -> Void in print("cancelAction")})
@@ -44,7 +46,7 @@ class ViewController: UIViewController {
         dataPrint()
     }
     func dataPrint() {
-        self.lblIdentityId.text = AccountService().getPrincipal()
+        self.lblIdentityId.text = vc.getPrincipal()
         self.lblPrincipal.text = MpInfo.Account.principal
         self.lblProviderName.text = MpInfo.Account.provider
         self.lblEgId.text = MpInfo.Account.egId
@@ -120,7 +122,7 @@ class ViewController: UIViewController {
     func startGame() {
         // 게임클라이언트가 켜지면 첫째 egToken이 존재 하는지 체크
         if MpInfo.Account.isAuthedUser() == false {
-            let principal = self.accountService.getPrincipal()
+            let principal = self.vc.getPrincipal()
             let device:String = "device_val@facdebook"
             
             if let pi = principal {
@@ -142,7 +144,7 @@ class ViewController: UIViewController {
             let refreshToken = MpInfo.Account.refreshToken
             let device = MpInfo.Account.device
             
-            self.accountService.refreshToken(
+            vc.refreshToken(
                 egToken: egToken, refreshToken: refreshToken, device: device, profile: nil,
                 success: { data in
                     self.alert("기존 유저로서 게임을 진행합니다. \n\n(토큰이 갱신되었습니다.) \n\n게임을 이어갑니다.\n\n \(MpInfo.Account.egToken)")
@@ -180,7 +182,7 @@ class ViewController: UIViewController {
         }
         let profile: String = self.makeProfile(provider, email)
         let egToken = MpInfo.Account.egToken
-        let principal = AccountService().getPrincipal()
+        let principal = vc.getPrincipal()
         // 이미 cognito의 principal은 업데이트 된 상태
         
         if let pi = principal {
@@ -217,7 +219,7 @@ class ViewController: UIViewController {
     }
     
     func visibleSyncView(snsEgId: String, egToken: String, profile: String, principal: String, provider: String, email: String ){
-        let vc : UserService = UserService(p: self)
+        
         
         // 로그인된 sns계정 정보를 sync 담당 뷰에 전달.
         vc.crashSnsSyncIno.snsEgId = snsEgId
