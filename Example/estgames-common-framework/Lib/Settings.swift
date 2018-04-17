@@ -82,15 +82,6 @@ class MpInfo {
             }
         }
         
-        static var isSyncCrack: Bool {
-            get {
-                return KeychainWrapper.standard.bool(forKey: "mp.is_sync_crack") ?? false
-            }
-            set(newval) {
-                KeychainWrapper.standard.set(newval, forKey: "mp.is_sync_crack")
-            }
-        }
-        
         static var principal: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.principal") ?? ""

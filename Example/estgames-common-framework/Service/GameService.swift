@@ -5,6 +5,8 @@
 //  Created by itempang on 2018. 4. 5..
 //
 
+import Foundation
+
 class GameService {
     
     func getCharacterInfo(

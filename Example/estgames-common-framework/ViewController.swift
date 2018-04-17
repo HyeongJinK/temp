@@ -14,6 +14,8 @@ import AWSAuthUI
 import AWSFacebookSignIn
 import AWSGoogleSignIn
 import AWSCore
+import FBSDKLoginKit
+import GoogleSignIn
 
 class ViewController: UIViewController {
     var estgamesCommon:EstgamesCommon!
@@ -50,7 +52,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userLinkTest(_ sender: Any) {
-        
         userDialog.showUserLinkDialog()
     }
     
@@ -96,13 +97,12 @@ class ViewController: UIViewController {
     func startGame() {
         // 게임클라이언트가 켜지면 첫째 egToken이 존재 하는지 체크
         if MpInfo.Account.isAuthedUser() == false {
-            
             let principal = self.accountService.getPrincipal()
             let device:String = "device_val@facdebook"
             
             if let pi = principal {
                 self.accountService.createToken(
-                    principal: pi, device: device, profile: nil,
+                    principal: pi, device: device, profile: nil, email:"",
                     success: { data in
                         self.alert("게임을 처음 시작합니다.\n\n 새로운 토큰을 발급 받았습니다. \n\n \(String(describing:data["eg_token"]!))")
                 },
@@ -139,22 +139,7 @@ class ViewController: UIViewController {
             assert(false)
         }
         self.accountService.clearKeychain()
-        
         self.alert("keychain이 삭제되었습니다.")
-    }
-    
-    func getProfile(identityProviderName: String) -> (provider: String, email: String)  {
-        var provider:String = ""
-        let email:String = ""
-        if identityProviderName == "graph.facebook.com" {
-            provider = "facebook"
-        } else if identityProviderName == "google" {
-            provider = "google"
-        } else {
-            provider = "google"
-        }
-        
-        return (provider, email)
     }
     
     private func makeProfile(_ provider: String, _ email: String) -> String {
@@ -181,11 +166,10 @@ class ViewController: UIViewController {
             self.accountService.syncSns(
                 egToken: egToken, principal: pi, profile: profile,
                 success: {datas in
-                    print(datas)
                     if let status = datas["status"] {
                         let result = String(describing: status)
                         if result == "COMPLETE"{
-                            MpInfo.Account.principal = principal
+                            MpInfo.Account.principal = pi
                             MpInfo.Account.provider = provider
                             MpInfo.Account.email = email
                             
@@ -195,14 +179,13 @@ class ViewController: UIViewController {
                                 snsEgId: String(describing: datas["duplicated"]!),
                                 egToken: egToken,
                                 profile: profile,
-                                principal: principal,
+                                principal: pi,
                                 provider: provider,
                                 email: email)
                         } else {
                             self.alert("알 수 없는 에러가 발생했습니다.")
                         }
                     }
-                    //self.setupRightBarButtonItem()
             },
                 fail: {error in self.alert(String(describing: error))}
             )
@@ -227,13 +210,35 @@ class ViewController: UIViewController {
     }
     
     func onSignIn (_ success: Bool, _ provider: AWSSignInProvider) {
-        // handle successful sign in
+        
+        // 비동기 호출로 인해서 이메일정보를 비동기로 얻고 나서 계정연동 UI를 시작한다. 실패시에 이메일 빈값으로 등록.
         if (success) {
-            let profile = self.getProfile(identityProviderName: provider.identityProviderName)
-            self.snsSyncProcess(profile.provider, profile.email)
             
-        } else {
-            // handle cancel operation from user
+            let identityProviderName:String = provider.identityProviderName
+            if identityProviderName == "graph.facebook.com" {
+                if((FBSDKAccessToken.current()) != nil)
+                {
+                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+                        if (error == nil)
+                        {
+                            var dict = result as! [String : String]
+                            FBSDKLoginManager().logOut() // 한번만 사용함.
+                            self.snsSyncProcess("facebook", dict["email"] ?? "")
+                        } else {
+                            self.snsSyncProcess("facebook", "")
+                        }
+                        
+                    })
+                } else {
+                    self.snsSyncProcess("facebook", "")
+                }
+            } else if identityProviderName == "accounts.google.com" {
+                if let user = GIDSignIn.sharedInstance().currentUser {
+                    self.snsSyncProcess("google", user.profile.email)
+                } else {
+                    self.snsSyncProcess("google", "")
+                }
+            }
         }
     }
     
@@ -242,32 +247,34 @@ class ViewController: UIViewController {
             self.alert("게스트로 로그인이 먼저 필요합니다. \n\n게임시작을 먼저 해주세요.")
             return
         }
-        print("Handling optional sign-in.")
-        if !AWSSignInManager.sharedInstance().isLoggedIn {
-            let config = AWSAuthUIConfiguration()
-            config.enableUserPoolsUI = false
-            config.addSignInButtonView(class: AWSGoogleSignInButton.self)
-            config.addSignInButtonView(class: AWSFacebookSignInButton.self)
-            config.canCancel = true
-            config.backgroundColor = UIColor.blue
-            //config.isBackgroundColorFullScreen = true
-            config.logoImage = UIImage(named: "btn_close_img_user", in:Bundle(for: ViewController.self), compatibleWith:nil)
-            
-            //with: self.navigationController!,
-            AWSAuthUIViewController.presentViewController(
-                with: self.navigationController!,
-                configuration: config,
-                completionHandler: { (provider: AWSSignInProvider, error: Error?) in
-                    if error != nil {
-                        print("Error occurred: \(String(describing:error))")
-                    } else {
-                        self.onSignIn(true, provider)
-                    }
-            }
-            )
-        } else {
-            self.alert("로그아웃 하시고 게스트 상태에서 다시 시도해주세요")
+        
+        if MpInfo.Account.provider != "guest" {
+            self.alert("계정연동은 게스트 상태에서만 가능합니다.")
+            return
         }
+        
+        let config = AWSAuthUIConfiguration()
+        
+        config.enableUserPoolsUI = false
+        config.addSignInButtonView(class: AWSGoogleSignInButton.self)
+        config.addSignInButtonView(class: AWSFacebookSignInButton.self)
+        config.canCancel = true
+        config.isBackgroundColorFullScreen = false
+        config.backgroundColor = UIColor.orange
+        config.logoImage = UIImage(named: "UserIcon")
+        //config.logoImage = UIImage(named: "btn_close_img_user", in:Bundle(for: ViewController.self), compatibleWith:nil)
+        
+        
+        AWSAuthUIViewController.presentViewController(
+            with: self.navigationController!,
+            configuration: config,
+            completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+                if error != nil {
+                    print("Error occurred: \(String(describing:error))")
+                } else {
+                    self.onSignIn(true, provider)
+                }
+        })
     }
 }
 

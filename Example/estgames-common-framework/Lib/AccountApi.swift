@@ -30,11 +30,9 @@ public class AccountApi {
     ]
     //            .validate(statusCode: 200..<300)
     
-    public static func getPrincipal() -> String? {
-        return AWSIdentityManager.default().identityId
-    }
-
-    private static func makeCreateTokenParameters(approval_type: String, principal: String, device: String, profile: Any?) -> Parameters {
+    
+    
+    private static func makeCreateTokenParameters(approval_type: String, principal: String, device: String, profile: String?) -> Parameters {
         let parameters: Parameters = [
             "client_id": AppInfo.clientId,
             "secret": AppInfo.secret,
@@ -42,11 +40,11 @@ public class AccountApi {
             "device": device,
             "approval_type": approval_type,
             "principal": principal,
-//            "profile": profile!
+            "profile": ""
         ]
         return parameters
     }
-
+    
     private static func makeRefreshTokenParameters(approval_type: String, egToken: String, refreshToken: String,  device: String, profile: Any?) -> Parameters {
         let parameters: Parameters = [
             "client_id": AppInfo.clientId,
@@ -61,11 +59,11 @@ public class AccountApi {
         ]
         return parameters
     }
-
-    static func getAccountMe(egToken:String,
-                              success: @escaping(_ data: Dictionary<String, Any>)-> Void,
-                              fail: @escaping(_ error: Error?)-> Void) {
     
+    static func getAccountMe(egToken:String,
+                             success: @escaping(_ data: Dictionary<String, Any>)-> Void,
+                             fail: @escaping(_ error: Error?)-> Void) {
+        
         let method: HTTPMethod = .get
         let url = "https://api-account-stage.estgames.co.kr/v2/account/me?eg_token=" + egToken
         Alamofire.request(url, method: method, encoding: JSONEncoding.default)
@@ -80,12 +78,13 @@ public class AccountApi {
         }
     }
     
-    static func createToken(principal: String, device: String, profile: Any?,
+    static func createToken(principal: String, device: String, profile: String?,
                             success: @escaping (_ data: Dictionary<String, Any>) -> Void,
                             fail: @escaping(_ error: Error?)-> Void) {
         
         let method: HTTPMethod = .post
         let url = "https://api-account-stage.estgames.co.kr/v2/account/token"
+        
         let params: Parameters = self.makeCreateTokenParameters(approval_type: "principal", principal: principal, device: device, profile: profile)
         
         Alamofire.request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader )
@@ -97,14 +96,14 @@ public class AccountApi {
                 } else {
                     fail(response.result.error)
                 }
-        
+                
         }
     }
     
     static func refreshToken(egToken: String, refreshToken: String, device: String, profile: Any?,
-                              success: @escaping(_ data: Dictionary<String, Any>)-> Void,
-                              fail: @escaping(_ error: Error?)-> Void) {
-    
+                             success: @escaping(_ data: Dictionary<String, Any>)-> Void,
+                             fail: @escaping(_ error: Error?)-> Void) {
+        
         let method: HTTPMethod = .post
         let url = "https://api-account-stage.estgames.co.kr/v2/account/token"
         let params: Parameters = self.makeRefreshTokenParameters(approval_type: "refresh_token", egToken: egToken, refreshToken: refreshToken, device: device, profile: profile)
@@ -122,8 +121,8 @@ public class AccountApi {
     }
     
     static func syncSns(egToken: String, principal: String, profile: String?,
-                         success: @escaping (_ data: Dictionary<String, Any>)-> Void,
-                         fail: @escaping (_ error: Error?)-> Void) {
+                        success: @escaping (_ data: Dictionary<String, Any>)-> Void,
+                        fail: @escaping (_ error: Error?)-> Void) {
         let method: HTTPMethod = .post
         let url = "https://api-account-stage.estgames.co.kr/v2/account/synchronize"
         var params: Parameters = ["eg_token": egToken, "principal": principal]
@@ -145,8 +144,8 @@ public class AccountApi {
     }
     
     static func syncSnsByForce(egToken: String, principal: String, data: String?,
-                                success: @escaping(_ data: Dictionary<String, Any>)-> Void,
-                                fail: @escaping (_ error: Error?)-> Void) {
+                               success: @escaping(_ data: Dictionary<String, Any>)-> Void,
+                               fail: @escaping (_ error: Error?)-> Void) {
         
         let method: HTTPMethod = .post
         let url = "https://api-account-stage.estgames.co.kr/v2/account/synchronize"
@@ -155,16 +154,19 @@ public class AccountApi {
             params["data"] = data
         }
         
+        print("\(egToken), \(principal), \(data!)")
+        
         Alamofire.request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader)
             .validate(contentType: ["application/json"])
             .validate(statusCode: 200..<300)
             .responseJSON {
-            response in
-            if response.result.isSuccess {
-                success(response.result.value as! Dictionary)
-            } else {
-                fail(response.result.error)
-            }
+                response in
+                if response.result.isSuccess {
+                    success(response.result.value as! Dictionary)
+                } else {
+                    print(response.result.error.debugDescription)
+                    fail(response.result.error)
+                }
         }
     }
 }

@@ -7,13 +7,12 @@
 
 import Foundation
 import SwiftKeychainWrapper
+import AWSAuthCore
 
 class AccountService {
     init() {}
     
-    
-    
-    private func saveKeychainData(provider: String, egToken:String, principal:String, refreshToken:String, egId:String, device:String, isSyncCrack:Bool=false, email: String) {
+    private func saveKeychainData(provider: String, egToken:String, principal:String, refreshToken:String, egId:String, device:String, email: String) {
         
         MpInfo.Account.provider = provider
         MpInfo.Account.egToken = egToken
@@ -21,12 +20,19 @@ class AccountService {
         MpInfo.Account.refreshToken = refreshToken
         MpInfo.Account.egId = egId
         MpInfo.Account.device = device
-        MpInfo.Account.isSyncCrack = isSyncCrack
         MpInfo.Account.email = email
     }
     
+    func isCognitoSnsLoggedIn() -> Bool {
+        if AWSIdentityManager.default().logins().result == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     func getPrincipal() -> String? {
-        return AccountApi.getPrincipal()
+        return AWSIdentityManager.default().identityId
     }
     
     func getAccountMe(
@@ -45,12 +51,12 @@ class AccountService {
     }
     
     func createToken(
-        principal: String, device: String, profile: Any?,
+        principal: String, device: String, profile: String?, email: String,
         success: @escaping (_ data: Dictionary<String, Any>) -> Void,
         fail: @escaping(_ error: Error?)-> Void) {
         
         AccountApi.createToken(
-            principal: principal, device: device, profile: nil,
+            principal: principal, device: device, profile: profile,
             success: {(tokenData: Dictionary) in
                 let egToken:String = tokenData["eg_token"] as! String
                 AccountApi.getAccountMe(
@@ -60,19 +66,20 @@ class AccountService {
                         let refreshToken: String = tokenData["refresh_token"] as! String
                         let egId: String = String(describing: data["eg_id"]!)
                         
+                        // 토큰 발행은 항상 provider가 guest인 경우다. sync를 통해서만 provider를 sns로 변경가능하다.
                         self.saveKeychainData(
                             provider: "guest", egToken: egToken, principal: principal, refreshToken: refreshToken,
-                            egId: egId, device: device, email: "")
+                            egId: egId, device: device, email: email)
                         
                         success(tokenData)
-                    },
+                },
                     fail: {(error: Error?) in
                         fail(error)
-                    }
+                }
                 )
-            },
+        },
             fail: {(error: Error?) in
-            }
+        }
         )
     }
     
@@ -85,17 +92,16 @@ class AccountService {
             success: { data in
                 MpInfo.Account.egToken = String(describing: data["eg_token"]!)
                 success(data)
-            },
+        },
             fail: { error in
                 fail(error)
-            }
+        }
         )
     }
     
-    
     func syncSns(egToken: String, principal: String, profile: String?,
-        success: @escaping (_ data: Dictionary<String, Any>)-> Void,
-        fail: @escaping (_ error: Error?)-> Void) {
+                 success: @escaping (_ data: Dictionary<String, Any>)-> Void,
+                 fail: @escaping (_ error: Error?)-> Void) {
         AccountApi.syncSns(
             egToken: egToken, principal: principal, profile: profile,
             success: {data in success(data)},
@@ -104,11 +110,11 @@ class AccountService {
     }
     
     func syncSnsByForce(
-        egToken: String, principal: String, data: String?,
+        egToken: String, principal: String, profile: String?,
         success: @escaping(_ data: Dictionary<String, Any>)-> Void,
         fail: @escaping (_ error: Error?)-> Void) {
         AccountApi.syncSnsByForce(
-            egToken: egToken, principal: principal, data: data,
+            egToken: egToken, principal: principal, data: profile,
             success: {data in success(data)},
             fail: {error in fail(error)}
         )
@@ -118,7 +124,6 @@ class AccountService {
         KeychainWrapper.standard.removeObject(forKey: "mp.eg_id")
         KeychainWrapper.standard.removeObject(forKey: "mp.eg_token")
         KeychainWrapper.standard.removeObject(forKey: "mp.refresh_token")
-        KeychainWrapper.standard.removeObject(forKey: "mp.is_sync_crack")
         KeychainWrapper.standard.removeObject(forKey: "mp.principal")
         KeychainWrapper.standard.removeObject(forKey: "mp.provider")
         KeychainWrapper.standard.removeObject(forKey: "mp.email")

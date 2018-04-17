@@ -11,6 +11,7 @@ import AWSAuthCore
 import AWSPinpoint
 import AWSGoogleSignIn
 import AWSFacebookSignIn
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,16 +25,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
-        AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile"])
+        
+        AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile", "email"])
         AWSSignInManager.sharedInstance().register(signInProvider: AWSFacebookSignInProvider.sharedInstance())
-        AWSGoogleSignInProvider.sharedInstance().setScopes(["profile", "openid"])
+        AWSGoogleSignInProvider.sharedInstance().setScopes(["profile", "openid", "email"])
         AWSSignInManager.sharedInstance().register(signInProvider: AWSGoogleSignInProvider.sharedInstance())
+        
+        
         
         let didFinishLaunching = AWSSignInManager.sharedInstance().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
         
         pinpoint = AWSPinpoint(configuration:AWSPinpointConfiguration.defaultPinpointConfiguration(launchOptions: launchOptions))
         if (!isInitialized) {
+            
             AWSSignInManager.sharedInstance().resumeSession(completionHandler: { (result: Any?, error: Error?) in
                 print("Result: \(String(describing: result)) \n Error:\(String(describing: error))")
             })
@@ -41,14 +47,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return didFinishLaunching
     }
-
+    
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~88888")
         // print("application application: \(application.description), openURL: \(url.absoluteURL), sourceApplication: \(sourceApplication)")
         AWSSignInManager.sharedInstance().interceptApplication(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
         isInitialized = true
         
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print("google: application")
+        
+        return GIDSignIn.sharedInstance().handle(url,
+                                                 sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

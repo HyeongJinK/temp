@@ -9,7 +9,7 @@ import Foundation
 
 public class EstgamesCommon {
     let pview: UIViewController
-    var estgamesData: ResultDataJson!
+    var estgamesData: ResultDataJson?
     var banner:bannerFramework!
     let authority: AuthorityViewController
     public var authorityCallBack : () -> Void = { () -> Void in}
@@ -39,24 +39,20 @@ public class EstgamesCommon {
                 
                 if ((bannerJson["errorMessage"] as? String) != nil){
                         print(bannerJson)
+                } else {
+                    self.estgamesData = ResultDataJson(resultDataJson:bannerJson["ffg.global.ls"] as! NSDictionary)   //배너 파싱
+                    self.authority.setWebUrl(url: self.estgamesData!.url.system_contract)
+                    self.banner = bannerFramework(pview: pview, result: self.estgamesData!)
+                    self.policy.setWebUrl(webUrl1: self.estgamesData!.url.contract_service, webUrl2: self.estgamesData!.url.contract_private)
                 }
-//                {
-//                    errorMessage = "2018-04-16T02:17:50.400Z 596b8bef-411c-11e8-8e49-b397ce4345d3 Task timed out after 5.00 seconds";
-//                }
-                self.estgamesData = ResultDataJson(resultDataJson:bannerJson["ffg.global.ls"] as! NSDictionary)   //배너 파싱
-                
-                if(self.estgamesData.errorMessage == nil) {
-                    
-                }
-                self.authority.setWebUrl(url: self.estgamesData.url.system_contract)
-                self.banner = bannerFramework(pview: pview, result: self.estgamesData)
-                self.policy.setWebUrl(webUrl1: self.estgamesData.url.contract_service, webUrl2: self.estgamesData.url.contract_private)
                 self.myGroup.leave()
             } else {
                 print("error")
             }
         }
     }
+    
+    //private func
     
     //이용약관 다이얼로그
     public func authorityShow() {
@@ -85,6 +81,11 @@ public class EstgamesCommon {
     }
     
     public func bannerShow() {
-        banner.show()
+        if let data = estgamesData {
+            banner.show()
+        } else {
+            
+        }
+        
     }
 }
