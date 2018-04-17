@@ -3126,7 +3126,8 @@
 			children = (
 				ED7B17402085EBA000CF3BF6 /* AccountService.swift */,
 			);
-			path = Service;
+			name = Service;
+			path = "estgames-common-framework/Classes/Service";
 			sourceTree = "<group>";
 		};
 		EE9E9928CA526F2E1D6312D96806043C /* Defines */ = {
