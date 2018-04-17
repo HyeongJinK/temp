@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import Alamofire
-import AWSAuthCore
 
 class AppInfo {
     // 설정파일에서 불러올 수 있도록 하자
@@ -66,7 +64,7 @@ public class AccountApi {
         
         let method: HTTPMethod = .get
         let url = "https://api-account-stage.estgames.co.kr/v2/account/me?eg_token=" + egToken
-        Alamofire.request(url, method: method, encoding: JSONEncoding.default)
+        request(url, method: method, encoding: JSONEncoding.default)
             .validate(contentType: ["application/json"])
             .validate(statusCode: 200..<300)
             .responseJSON { response in
@@ -87,7 +85,7 @@ public class AccountApi {
         
         let params: Parameters = self.makeCreateTokenParameters(approval_type: "principal", principal: principal, device: device, profile: profile)
         
-        Alamofire.request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader )
+        request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader )
             .validate(contentType: ["application/json"])
             .validate(statusCode: 200..<300)
             .responseJSON { response in
@@ -108,7 +106,7 @@ public class AccountApi {
         let url = "https://api-account-stage.estgames.co.kr/v2/account/token"
         let params: Parameters = self.makeRefreshTokenParameters(approval_type: "refresh_token", egToken: egToken, refreshToken: refreshToken, device: device, profile: profile)
         
-        Alamofire.request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader)
+        request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader)
             .validate(contentType: ["application/json"])
             .validate(statusCode: 200..<300)
             .responseJSON { response in
@@ -131,7 +129,7 @@ public class AccountApi {
             params["data"] = profile
         }
         
-        Alamofire.request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader )
+        request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader )
             .validate(contentType: ["application/json"])
             .validate(statusCode: 200..<300)
             .responseJSON { response in
@@ -156,7 +154,7 @@ public class AccountApi {
         
         print("\(egToken), \(principal), \(data!)")
         
-        Alamofire.request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader)
+        request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader)
             .validate(contentType: ["application/json"])
             .validate(statusCode: 200..<300)
             .responseJSON {

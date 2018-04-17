@@ -6,47 +6,46 @@
 //
 
 import Foundation
-import SwiftKeychainWrapper
 
-class MpInfo {
+public class MpInfo {
     
     static var mpDict = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "Info", ofType: "plist")!)?.object(forKey: "MP") as! Dictionary<String, String>
     
-    class App {
-        static var appId: String {
+    public class App {
+        public static var appId: String {
             get {
                 return MpInfo.mpDict["app_name"]!
             }
         }
         
-        static var region: String {
+        public static var region: String {
             get {
                 return MpInfo.mpDict["region"]!
             }
         }
         
-        static var appName: String {
+        public static var appName: String {
             get {
                 return MpInfo.mpDict["app_name"]!
             }
         }
         
-        static var clientId: String {
+        public static var clientId: String {
             get {
                 return MpInfo.mpDict["client_id"]!
             }
         }
         
-        static var secret: String {
+        public static var secret: String {
             get {
                 return MpInfo.mpDict["secret"]!
             }
         }
     }
     
-    class Account {
+    public class Account {
         
-        static func isAuthedUser() -> Bool {
+        public static func isAuthedUser() -> Bool {
             let egToken = MpInfo.Account.egToken
             if String(egToken).count > 5 {
                 return true
@@ -55,7 +54,7 @@ class MpInfo {
             }
         }
         
-        static var egId: String {
+        public static var egId: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.eg_id") ?? ""
             }
@@ -64,7 +63,7 @@ class MpInfo {
             }
         }
         
-        static var egToken: String {
+        public static var egToken: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.eg_token") ?? ""
             }
@@ -73,7 +72,7 @@ class MpInfo {
             }
         }
         
-        static var refreshToken: String {
+        public static var refreshToken: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.refresh_token") ?? ""
             }
@@ -82,7 +81,7 @@ class MpInfo {
             }
         }
         
-        static var principal: String {
+        public static var principal: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.principal") ?? ""
             }
@@ -91,7 +90,7 @@ class MpInfo {
             }
         }
         
-        static var provider: String {
+        public static var provider: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.provider") ?? ""
             }
@@ -100,7 +99,7 @@ class MpInfo {
             }
         }
         
-        static var email: String {
+        public static var email: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.email") ?? ""
             }
@@ -109,7 +108,7 @@ class MpInfo {
             }
         }
         
-        static var device: String {
+        public static var device: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.device") ?? ""
             }
