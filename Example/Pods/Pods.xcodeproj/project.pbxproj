@@ -2437,6 +2437,7 @@
 		5D535994EF2C4A29237C5C76CDC573EF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				ED7B17402085EBA000CF3BF6 /* AccountService.swift */,
 				9DE56ED363894AE119B7FD94BA99F84B /* AccountApi.swift */,
 				59CE8E53BFFAD1F5181D05421C338A45 /* Animator.swift */,
 				86DEDE437617C628CB93978E9DE6A8EF /* Settings.swift */,
@@ -3124,7 +3125,6 @@
 		ED7B17422085F23100CF3BF6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				ED7B17402085EBA000CF3BF6 /* AccountService.swift */,
 			);
 			name = Service;
 			path = "estgames-common-framework/Classes/Service";
