@@ -21,13 +21,36 @@ class ViewController: UIViewController {
     var estgamesCommon:EstgamesCommon!
     var userDialog: UserDialog!
     
+    @IBOutlet var lblIdentityId: UILabel!
+    @IBOutlet var lblPrincipal: UILabel!
+    @IBOutlet var lblProviderName: UILabel!
+    @IBOutlet var lblEgId: UILabel!
+    @IBOutlet var lblEgToken: UILabel!
+    @IBOutlet var lblRefreshToken: UILabel!
+    @IBOutlet var lblEmail: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         
         estgamesCommon = EstgamesCommon(pview: self)
         userDialog = UserDialog(pview: self)
         userDialog.setUserLinkAction(closeAction: {() -> Void in print("closeAction")}, confirmAction: {() -> Void in print("confirmAction")}, cancelAction: {() -> Void in print("cancelAction")})
         userDialog.setUserLinkCharacterLabel(guest: "adfads", sns: "bzcxvczxv")
+        dataPrint()
+    }
+    
+    @IBAction func rePrint(_ sender: Any) {
+        dataPrint()
+    }
+    func dataPrint() {
+        self.lblIdentityId.text = AccountService().getPrincipal()
+        self.lblPrincipal.text = MpInfo.Account.principal
+        self.lblProviderName.text = MpInfo.Account.provider
+        self.lblEgId.text = MpInfo.Account.egId
+        self.lblEgToken.text = MpInfo.Account.egToken
+        self.lblRefreshToken.text = MpInfo.Account.refreshToken
+        self.lblEmail.text = String(describing:MpInfo.Account.email)
     }
     
     override func didReceiveMemoryWarning() {
@@ -135,8 +158,6 @@ class ViewController: UIViewController {
             AWSSignInManager.sharedInstance().logout(completionHandler: {(result: Any?, error: Error?) in
                 
             })
-        } else {
-            assert(false)
         }
         self.accountService.clearKeychain()
         self.alert("keychain이 삭제되었습니다.")
