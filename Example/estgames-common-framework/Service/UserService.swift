@@ -63,19 +63,26 @@ class UserService {
     
     func LoginBySnsAccount() {
         let principal = accountService.getPrincipal()
-        let device:String = "device_val@facdebook"
-        self.accountService.createToken(
-            principal: principal, device: device, profile: self.crashSnsSyncIno.profile,
-            success: { data in
-                MpInfo.Account.provider = self.crashSnsSyncIno.provider
-                // sns 로 keychain이 모두 변경된 상태입니다.
-                //self.visibleView(view: self.viewSnsSuccess)
-                
-        },
-            fail: { error in
-                self.alert(String(describing: error))
+        
+        if let pi = principal {
+            let device:String = "device_val@facdebook"
+            self.accountService.createToken(
+                principal: pi, device: device, profile: self.crashSnsSyncIno.profile,
+                success: { data in
+                    MpInfo.Account.provider = self.crashSnsSyncIno.provider
+                    // sns 로 keychain이 모두 변경된 상태입니다.
+                    //self.visibleView(view: self.viewSnsSuccess)
+                    
+            },
+                fail: { error in
+                    self.alert(String(describing: error))
+            }
+            )
+        } else {
+            //TODO 계정정보를 못 불러올 때
         }
-        )
+        
+        
     }
     
     private func characterInfo(_ egId: String) -> String {

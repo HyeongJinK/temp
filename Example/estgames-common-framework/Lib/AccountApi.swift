@@ -30,8 +30,8 @@ public class AccountApi {
     ]
     //            .validate(statusCode: 200..<300)
     
-    public static func getPrincipal() -> String {
-        return AWSIdentityManager.default().identityId!
+    public static func getPrincipal() -> String? {
+        return AWSIdentityManager.default().identityId
     }
 
     private static func makeCreateTokenParameters(approval_type: String, principal: String, device: String, profile: Any?) -> Parameters {

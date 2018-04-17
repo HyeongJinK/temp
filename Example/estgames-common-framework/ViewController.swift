@@ -99,15 +99,21 @@ class ViewController: UIViewController {
             
             let principal = self.accountService.getPrincipal()
             let device:String = "device_val@facdebook"
-            self.accountService.createToken(
-                principal: principal, device: device, profile: nil,
-                success: { data in
-                    self.alert("게임을 처음 시작합니다.\n\n 새로운 토큰을 발급 받았습니다. \n\n \(String(describing:data["eg_token"]!))")
-            },
-                fail: { error in
-                    self.alert(String(describing: error))
+            
+            if let pi = principal {
+                self.accountService.createToken(
+                    principal: pi, device: device, profile: nil,
+                    success: { data in
+                        self.alert("게임을 처음 시작합니다.\n\n 새로운 토큰을 발급 받았습니다. \n\n \(String(describing:data["eg_token"]!))")
+                },
+                    fail: { error in
+                        self.alert(String(describing: error))
+                }
+                )
+            } else {
+                //TODO 토큰 미생성시 처리
+                self.alert("토큰 생성 오류)")
             }
-            )
         } else {
             let egToken = MpInfo.Account.egToken
             let refreshToken = MpInfo.Account.refreshToken
@@ -127,7 +133,7 @@ class ViewController: UIViewController {
     func clearKey() {
         if (AWSSignInManager.sharedInstance().isLoggedIn) {
             AWSSignInManager.sharedInstance().logout(completionHandler: {(result: Any?, error: Error?) in
-                //                MpInfo.Account.principal = self.accountService.getPrincipal()
+                
             })
         } else {
             assert(false)
@@ -171,35 +177,39 @@ class ViewController: UIViewController {
         let principal = AccountService().getPrincipal()
         // 이미 cognito의 principal은 업데이트 된 상태
         
-        
-        self.accountService.syncSns(
-            egToken: egToken, principal: principal, profile: profile,
-            success: {datas in
-                print(datas)
-                if let status = datas["status"] {
-                    let result = String(describing: status)
-                    if result == "COMPLETE"{
-                        MpInfo.Account.principal = principal
-                        MpInfo.Account.provider = provider
-                        MpInfo.Account.email = email
-                        
-                        self.alert("계정연동이 성공되었습니다.")
-                    } else if result == "FAILURE" {
-                         self.visibleSyncView(
-                         snsEgId: String(describing: datas["duplicated"]!),
-                         egToken: egToken,
-                         profile: profile,
-                         principal: principal,
-                         provider: provider,
-                         email: email)
-                    } else {
-                        self.alert("알 수 없는 에러가 발생했습니다.")
+        if let pi = principal {
+            self.accountService.syncSns(
+                egToken: egToken, principal: pi, profile: profile,
+                success: {datas in
+                    print(datas)
+                    if let status = datas["status"] {
+                        let result = String(describing: status)
+                        if result == "COMPLETE"{
+                            MpInfo.Account.principal = principal
+                            MpInfo.Account.provider = provider
+                            MpInfo.Account.email = email
+                            
+                            self.alert("계정연동이 성공되었습니다.")
+                        } else if result == "FAILURE" {
+                            self.visibleSyncView(
+                                snsEgId: String(describing: datas["duplicated"]!),
+                                egToken: egToken,
+                                profile: profile,
+                                principal: principal,
+                                provider: provider,
+                                email: email)
+                        } else {
+                            self.alert("알 수 없는 에러가 발생했습니다.")
+                        }
                     }
-                }
-                //self.setupRightBarButtonItem()
-        },
-            fail: {error in self.alert(String(describing: error))}
-        )
+                    //self.setupRightBarButtonItem()
+            },
+                fail: {error in self.alert(String(describing: error))}
+            )
+        } else {
+            //TODO 개인 정보를 못 불러 올 때 처리
+        }
+        
     }
     
     func visibleSyncView(snsEgId: String, egToken: String, profile: String, principal: String, provider: String, email: String ){

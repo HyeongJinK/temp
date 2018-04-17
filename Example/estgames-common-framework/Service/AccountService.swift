@@ -25,7 +25,7 @@ class AccountService {
         MpInfo.Account.email = email
     }
     
-    func getPrincipal() -> String {
+    func getPrincipal() -> String? {
         return AccountApi.getPrincipal()
     }
     
