@@ -15,6 +15,7 @@ import Foundation
 //var views:[UIView] = Array<UIView>()
 var bannerView:UIView?
 var imageViews:[BannerImageView] = Array<BannerImageView>()
+var imageViewsTemps:[BannerImageView] = Array<BannerImageView>()
 
 public class bannerFramework {
     var estgamesBanner: ResultDataJson?
@@ -27,6 +28,25 @@ public class bannerFramework {
         self.estgamesBanner = result
         bannerView = UIView(frame: CGRect(x: 0, y: 0, width: pview.view.frame.size.width, height: pview.view.frame.size.height))
         bannerView?.translatesAutoresizingMaskIntoConstraints = false
+        
+        let bottomView = bannerBottomView() //아래바 생성
+        bannerView!.addSubview(bottomView)
+        
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "yyyy-MM-dd"
+        let today = dateFormat.string(from: Date())
+        
+        let pList = UserDefaults.standard   //오늘만 보기 데이터
+        
+        for entry in self.estgamesBanner!.events {
+            if pList.string(forKey: entry.banner.name) != nil && today == pList.string(forKey: entry.banner.name)!{
+                continue
+            }
+            
+            //이미지 뷰 생성
+            let imageView = BannerImageView(entry, viewWidth: bannerView!.frame.size.width, viewHeight: bannerView!.frame.size.height ,                bottomViewHeight: bottomView.bottomViewHeight)
+            imageViewsTemps.append(imageView)
+        }
     }
     
      func dataSet() {
@@ -64,30 +84,12 @@ public class bannerFramework {
         //이미지 뷰 생성 , 창 크기에 맞게 조절
         //아래 바 생성
         //아래 바에 버튼 두 개 하루보기, 닫기
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "yyyy-MM-dd"
-        let today = dateFormat.string(from: Date())
-        
-        let bottomView = bannerBottomView() //아래바 생성
-        
-        bannerView!.addSubview(bottomView)
         self.pview.view.addSubview(bannerView!)
         
-        
-        
-        let pList = UserDefaults.standard   //오늘만 보기 데이터
-        
-        self.myGroup.notify(queue: .main) {
-            for entry in self.estgamesBanner!.events {
-                if pList.string(forKey: entry.banner.name) != nil && today == pList.string(forKey: entry.banner.name)!{
-                    continue
-                }
-
-                //이미지 뷰 생성
-                let imageView = BannerImageView(entry, viewWidth: bannerView!.frame.size.width, viewHeight: bannerView!.frame.size.height ,                bottomViewHeight: bottomView.bottomViewHeight)
-                imageViews.append(imageView)
-                bannerView!.addSubview(imageView)
-            }
+        for img in imageViewsTemps {
+            imageViews.append(img)
+            bannerView!.addSubview(img)
         }
+        
     }
 }

@@ -36,18 +36,10 @@
                                     <action selector="policyTest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Zr9-9y-pfl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2X-dg-A5m">
-                                <rect key="frame" x="150" y="221" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="계정연동"/>
-                                <connections>
-                                    <action selector="userLinkTest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3lA-j7-2Lj"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsB-ul-iSJ">
-                                <rect key="frame" x="229" y="183" width="69" height="30"/>
+                                <rect key="frame" x="214" y="183" width="99" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="약관 데이터"/>
+                                <state key="normal" title="약관 데이터 출력"/>
                                 <connections>
                                     <action selector="testttt:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sqN-B0-s1U"/>
                                 </connections>
@@ -60,13 +52,8 @@
                                     <action selector="authorityTest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mig-6h-vze"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcD-T5-k7Y">
-                                <rect key="frame" x="120" y="268" width="112" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="기존 계정 불러오기"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uua-nC-HZF">
-                                <rect key="frame" x="142" y="318" width="69" height="30"/>
+                                <rect key="frame" x="16" y="537" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="계정연동 끝"/>
                                 <connections>
@@ -74,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qP0-Zr-dGP">
-                                <rect key="frame" x="120" y="268" width="112" height="30"/>
+                                <rect key="frame" x="16" y="499" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="기존 계정 불러오기"/>
                                 <connections>
@@ -100,9 +87,17 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIC-tx-OsB">
                                 <rect key="frame" x="9" y="101" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="토큰생성"/>
+                                <state key="normal" title="게임시작"/>
                                 <connections>
                                     <action selector="crateToken:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="itE-Z2-6z1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2X-dg-A5m">
+                                <rect key="frame" x="16" y="461" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="계정연동UI"/>
+                                <connections>
+                                    <action selector="userLinkTest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3lA-j7-2Lj"/>
                                 </connections>
                             </button>
                         </subviews>

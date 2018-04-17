@@ -29,6 +29,7 @@ public class EstgamesCommon {
         let url = "https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/ffg.global.ls"
         
         self.myGroup.enter()
+        
         let manager = SessionManager.default
         manager.session.configuration.timeoutIntervalForRequest = 10
         manager.request(url)
@@ -50,6 +51,7 @@ public class EstgamesCommon {
                 print("error")
             }
         }
+        
     }
     
     //private func

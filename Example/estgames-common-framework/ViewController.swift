@@ -260,10 +260,13 @@ class ViewController: UIViewController {
         config.addSignInButtonView(class: AWSFacebookSignInButton.self)
         config.canCancel = true
         config.isBackgroundColorFullScreen = false
-        config.backgroundColor = UIColor.orange
-        config.logoImage = UIImage(named: "UserIcon")
+//        let imgUrl = URL(string: entry.banner.resource)
+//        let dtinternet = try? Data(contentsOf: imgUrl!)
+//        self.image = UIImage(data: dtinternet!)
+       // config.backgroundColor = UIColor.init(patternImage: UIImage(named: "btn_bottom_close_img", in:Bundle(for: ViewController.self), compatibleWith:nil)!)
+        config.logoImage = nil//UIImage(named: "UserIcon")
         //config.logoImage = UIImage(named: "btn_close_img_user", in:Bundle(for: ViewController.self), compatibleWith:nil)
-        
+        //UIColor.orange
         
         AWSAuthUIViewController.presentViewController(
             with: self.navigationController!,
