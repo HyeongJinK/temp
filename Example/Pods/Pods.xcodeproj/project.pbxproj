@@ -620,6 +620,7 @@
 		EBA2264381A86773B13A216760E4C21B /* FBSDKGraphErrorRecoveryProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 117F5ED20FF186AE40CBB89AD5AAA6DA /* FBSDKGraphErrorRecoveryProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC11163B98E1823A6B99811A3DC54A59 /* AWSMTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF7BE0A00048C25B6514F1838DBE128 /* AWSMTLModel.m */; };
 		ED60333243D4D6389EA926E6C6DA63CC /* AWSDDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 560BD27B44ED5C65623412FEF4E27EB1 /* AWSDDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED77D40920874044006230A7 /* WebViewUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED77D40820874044006230A7 /* WebViewUIController.swift */; };
 		ED7B17412085EBA000CF3BF6 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7B17402085EBA000CF3BF6 /* AccountService.swift */; };
 		EDC827442086DF3F0083C36E /* btn_bottom_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545DB7DB1834B21BF31CC4B50A9E050A /* btn_bottom_close_img@2x.png */; };
 		EDC827452086DF3F0083C36E /* btn_bottom_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A85FB6715E2D4E65321F6D4414A7BE /* btn_bottom_close_img@3x.png */; };
@@ -1644,6 +1645,7 @@
 		EC2D7B9D867F0FC5A82A0B7138EDD2BA /* FBSDKKeychainStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKKeychainStore.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKKeychainStore.h; sourceTree = "<group>"; };
 		EC5B82427DF032101B3FAD73D2C33837 /* AWSFacebookSignInProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFacebookSignInProvider.h; path = AWSAuthSDK/Sources/AWSFacebookSignIn/AWSFacebookSignInProvider.h; sourceTree = "<group>"; };
 		ED43EDA7E36D88842EFA27CF4AA00EE6 /* FBSDKAppLinkResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppLinkResolver.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkResolver.h; sourceTree = "<group>"; };
+		ED77D40820874044006230A7 /* WebViewUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewUIController.swift; sourceTree = "<group>"; };
 		ED7B17402085EBA000CF3BF6 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		EDB92B659E5B23C47D5E8865C950E878 /* FBSDKGraphRequestPiggybackManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestPiggybackManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestPiggybackManager.h; sourceTree = "<group>"; };
 		EDC8277420870FDD0083C36E /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
@@ -2995,6 +2997,7 @@
 		CBC41235999E29CD44FBDC518273612D /* estgames-common-framework */ = {
 			isa = PBXGroup;
 			children = (
+				ED77D40720873FD7006230A7 /* webview */,
 				ED7B17422085F23100CF3BF6 /* Service */,
 				6F9BF39787611CC3F1436386242A10DD /* ReplaceMe.swift */,
 				4109BBA3C046891A86E032B18BB89B79 /* alamofire */,
@@ -3123,6 +3126,15 @@
 			);
 			name = authority;
 			path = "estgames-common-framework/Classes/authority";
+			sourceTree = "<group>";
+		};
+		ED77D40720873FD7006230A7 /* webview */ = {
+			isa = PBXGroup;
+			children = (
+				ED77D40820874044006230A7 /* WebViewUIController.swift */,
+			);
+			name = webview;
+			path = "estgames-common-framework/Classes/webview";
 			sourceTree = "<group>";
 		};
 		ED7B17422085F23100CF3BF6 /* Service */ = {
@@ -4198,6 +4210,7 @@
 				61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */,
 				B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */,
 				A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */,
+				ED77D40920874044006230A7 /* WebViewUIController.swift in Sources */,
 				EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */,
 				BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */,
 				5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */,

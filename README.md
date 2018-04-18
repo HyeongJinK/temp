@@ -13,33 +13,46 @@
 
 * 이스트 공통 모듈
 
-pod 'estgames-common-framework', '~> 0.7.0' 
+pod 'estgames-common-framework', '~> 0.8.0' 
 
 * 계정연동에 필요한 AWS  모듈들
 
-pod 'AWSAuthCore', '~> 2.6.1'
-pod 'AWSPinpoint', '~> 2.6.1'
-pod 'AWSGoogleSignIn', '~> 2.6.1'
-pod 'GoogleSignIn', '~> 4.0.0'
-pod 'AWSFacebookSignIn', '~> 2.6.1'
-pod 'AWSCognito', '~> 2.6.1'
-pod 'AWSAuthUI', '~> 2.6.1'
-pod 'Alamofire', '~> 4.7'
-pod 'SwiftKeychainWrapper'
+* pod 'AWSAuthCore', '~> 2.6.1'
+* pod 'AWSPinpoint', '~> 2.6.1'
+* pod 'AWSGoogleSignIn', '~> 2.6.1'
+* pod 'GoogleSignIn', '~> 4.0.0'
+* pod 'AWSFacebookSignIn', '~> 2.6.1'
+* pod 'AWSCognito', '~> 2.6.1'
+* pod 'AWSAuthUI', '~> 2.6.1'
+* pod 'Alamofire', '~> 4.7'
 
 
-### 배너 출력
+### 설정 (배너, 이용약관, 권한)관련 창
 
 ```swift
 import estgames_common_framework    // 프레임워크 추가
 //프레임 워크 선언
 var estgamesCommon:EstgamesCommon!
 
-override func viewDidLoad() {   //프레임 워크 초기화
-super.viewDidLoad()
-estgamesCommon = EstgamesCommon(pview: self) //배너, 이용약관, 권한..등을 띄울 뷰
+    override func viewDidLoad() {   //프레임 워크 초기화
+    super.viewDidLoad()
+    estgamesCommon = EstgamesCommon(pview: self) //배너, 이용약관, 권한..등을 띄울 뷰
 }
 
+```
+
+
+### 설정된 순서대로 (배너, 이용약관, 권한) 출력
+
+```swift
+//api 에서 제공하는 설정 순서대로 출력
+estgamesCommon.processShow()
+```
+
+
+### 배너 출력
+
+```swift
 //배너 출력
 estgamesCommon.bannerShow()
 ```
@@ -67,4 +80,23 @@ estgamesCommon.authorityShow()
 ### 유저연동
 
 ```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    vc = UserService(pview: self)
+}
+```
+
+### 게임시작(토큰 만들기)
+
+```swift
+    vc.startGame()
+}
+```
+
+### sns 계정연동(토큰이 있어야 합니다.)
+
+```swift
+    vc.goToLogin()
+}
 ```
