@@ -7,9 +7,10 @@
 
 import Foundation
 
-class GameService {
+public class GameService {
+    public init() {}
     
-    func getCharacterInfo(
+    public func getCharacterInfo(
         region: String,
         egId: String,
         success: @escaping(_ data: Array<Dictionary<String, Any>>)-> Void,

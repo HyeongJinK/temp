@@ -63,6 +63,19 @@ public class EstgamesCommon {
     public func processShow() {
         print(self.process.count)
         print(self.process[0])
+        
+        switch self.process[0] {
+        case "event":
+            break
+        case "system_contract":
+            break
+        case "use_contract" :
+            break
+        case "login" :
+            break
+        default:
+            break
+        }
     }
     
     private func checkEstgamesData(){

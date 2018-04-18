@@ -645,6 +645,7 @@
 		EDC827592086DF3F0083C36E /* img_provision_bigbox.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B16D1810F043D6E3EC28D9FABA816E /* img_provision_bigbox.png */; };
 		EDC8275A2086DF3F0083C36E /* img_provision_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B40DEEED955641F72BDF9A27D386ACF /* img_provision_box.png */; };
 		EDC8275B2086DF3F0083C36E /* unchecked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A5C668BDADC32B640D8E976CA87CAC /* unchecked-checkbox-50.png */; };
+		EDC8277520870FDE0083C36E /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8277420870FDD0083C36E /* GameService.swift */; };
 		EDE1B4B554EF1A47AE3CFD27CA4D4F12 /* AWSCancellationTokenSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0965DD104B404E1740C37D1D107B6A4B /* AWSCancellationTokenSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE3430BEB1C87EFB9B40DCE4CE01EC40 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD0ACACEB08309A873653A09BC49522 /* Timeline.swift */; };
 		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB718941F9629226ABFC51A54AED7945 /* Notifications.swift */; };
@@ -1645,6 +1646,7 @@
 		ED43EDA7E36D88842EFA27CF4AA00EE6 /* FBSDKAppLinkResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppLinkResolver.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkResolver.h; sourceTree = "<group>"; };
 		ED7B17402085EBA000CF3BF6 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		EDB92B659E5B23C47D5E8865C950E878 /* FBSDKGraphRequestPiggybackManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestPiggybackManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestPiggybackManager.h; sourceTree = "<group>"; };
+		EDC8277420870FDD0083C36E /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		EE47096057BDB02AC80C8A2CE4AD03DE /* AWSDDLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSDDLog.m; path = AWSCore/Logging/AWSDDLog.m; sourceTree = "<group>"; };
 		EF627478AD0F2E0A13BD20B19B44FF8C /* AWSAuthUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AWSAuthUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6B7AAB5AD3A59DDBD448D19ADC462E /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
@@ -2437,6 +2439,7 @@
 		5D535994EF2C4A29237C5C76CDC573EF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				EDC8277420870FDD0083C36E /* GameService.swift */,
 				ED7B17402085EBA000CF3BF6 /* AccountService.swift */,
 				9DE56ED363894AE119B7FD94BA99F84B /* AccountApi.swift */,
 				59CE8E53BFFAD1F5181D05421C338A45 /* Animator.swift */,
@@ -4556,6 +4559,7 @@
 				709C5EE5CBCFF1B92CC77BC4F3E3410A /* NetworkReachabilityManager.swift in Sources */,
 				2E928773836DF2DE82B5DBB70008E361 /* Notifications.swift in Sources */,
 				ED7B17412085EBA000CF3BF6 /* AccountService.swift in Sources */,
+				EDC8277520870FDE0083C36E /* GameService.swift in Sources */,
 				75D76213E53E177EBF51894B81657FF2 /* ParameterEncoding.swift in Sources */,
 				820CAC26D0C897EF1F98A01B3374067D /* PolicyButton.swift in Sources */,
 				DA0C4E98BA67E63DC903536A5DA3450E /* PolicyCloseBt.swift in Sources */,

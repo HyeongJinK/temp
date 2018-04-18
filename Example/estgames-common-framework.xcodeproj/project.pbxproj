@@ -18,7 +18,7 @@
 		ED1118BD208482150059CB26 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1118BC208482150059CB26 /* UserService.swift */; };
 		ED1B2A60207DF3B600C1ADE7 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A5F207DF3B600C1ADE7 /* awsconfiguration.json */; };
 		ED1B2A64207DF71300C1ADE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED1B2A66207DF71300C1ADE7 /* Localizable.strings */; };
-		ED1B2A70207EF05F00C1ADE7 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B2A6A207EF05F00C1ADE7 /* GameService.swift */; };
+		EDC827772087105E0083C36E /* EstCommonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC827762087105E0083C36E /* EstCommonService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		ED1B2A5F207DF3B600C1ADE7 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		ED1B2A65207DF71300C1ADE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED1B2A67207DF71400C1ADE7 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		ED1B2A6A207EF05F00C1ADE7 /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		EDC827762087105E0083C36E /* EstCommonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstCommonService.swift; sourceTree = "<group>"; };
 		F5DB2CE400DA3E50D17DA991 /* estgames-common-framework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "estgames-common-framework.podspec"; path = "../estgames-common-framework.podspec"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,8 +163,8 @@
 		ED1B2A68207EF05F00C1ADE7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				ED1B2A6A207EF05F00C1ADE7 /* GameService.swift */,
 				ED1118BC208482150059CB26 /* UserService.swift */,
+				EDC827762087105E0083C36E /* EstCommonService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -428,7 +428,7 @@
 				ED1118BD208482150059CB26 /* UserService.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				ED1B2A70207EF05F00C1ADE7 /* GameService.swift in Sources */,
+				EDC827772087105E0083C36E /* EstCommonService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
