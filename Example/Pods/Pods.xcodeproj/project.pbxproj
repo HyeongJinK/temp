@@ -35,7 +35,6 @@
 		0B9C1040D1D9A573A142CB68A7340F4F /* FBSDKURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = AB30A1A2B253743A187BF7B447A9D3B3 /* FBSDKURLConnection.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0BAD0237F281000A7FE434253D02D494 /* AWSFacebookSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 581DFE65D8AAB084DD8871373D6DC118 /* AWSFacebookSignIn.bundle */; };
 		0C0D22DBC202B91C435152045A90F40A /* AWSMTLReflection.h in Headers */ = {isa = PBXBuildFile; fileRef = E7D7AD35FEBC504E7D45EA1F0D7814D4 /* AWSMTLReflection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C269D1388E707E9928AA267B33827BE /* btn_confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EC6E7132B69DFB573FBDF63198E3B24 /* btn_confirm.png */; };
 		0C793A98D2C131F482809A81A56E2915 /* FBSDKCoreKit+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = DD16857B79A3862C733817D2A841018B /* FBSDKCoreKit+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0CAA81A1830395B5E76FACE26171ED6A /* FBSDKMaleSilhouetteIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486588D08AE98AD1A9AE51CC7B3E713 /* FBSDKMaleSilhouetteIcon.m */; };
 		0CD3D40F27C292CF711AE9891781B7FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43760735ADAF46A75401D9C3844274BA /* Images.xcassets */; };
@@ -72,7 +71,6 @@
 		18941DF921379AA0447263861E55C092 /* AWSGoogleSignIn-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17B9137A66EA8A026FF250E77C1E7C15 /* AWSGoogleSignIn-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1962746E588E48229057841DFA9307EF /* FBSDKBridgeAPIProtocolWebV2.h in Headers */ = {isa = PBXBuildFile; fileRef = C8288A480E128CEFDE1D7B1D7A4608D5 /* FBSDKBridgeAPIProtocolWebV2.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		199C83B5622A0377871672B694546AB0 /* FBSDKAppLinkResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = CF54DDAD97F747A71763D031FCCAE323 /* FBSDKAppLinkResolver.m */; };
-		19B551BFE3339AA295475FA6FC6EA1E4 /* unchecked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A5C668BDADC32B640D8E976CA87CAC /* unchecked-checkbox-50.png */; };
 		19BCA9D997B9DB94A4606985EFE052DF /* AWSKSReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D79544DC30729A93E90821523D55436 /* AWSKSReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19C5560749D3B08A687881C42947838A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E4C234E3C7C6F8A998AB1A9F70630 /* Result.swift */; };
 		1A6F72E7301495C95B80B28DDD1492BC /* BFTaskCompletionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F48F8C02F295AB2D6C0CC0C1E03E28C /* BFTaskCompletionSource.m */; };
@@ -82,7 +80,6 @@
 		1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B4C6BB0AC6823AD17651FA1D686743 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BE49FF6BAD860F723DC86442934D310 /* AWSDDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0BD22D098AD117F6DEFCB25109600 /* AWSDDASLLogger.m */; };
 		1BF8C72601D9176EE523891CFA0B8136 /* AWSMTLManagedObjectAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = B3E1D66DAB06A73E14B3D40E747E169E /* AWSMTLManagedObjectAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C29DEC0F06494AC645732DA991291FE /* btn_provision_off.png in Resources */ = {isa = PBXBuildFile; fileRef = A17F7E8E7C2CA48036FFE6D4909A2B43 /* btn_provision_off.png */; };
 		1C3B01229A0DD03F9A42CEB8387F8AEF /* Pods-estgames-common-framework_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D5CD5EC05F4D60438C4785938DC39760 /* Pods-estgames-common-framework_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CAD2D19B6043B494770E9DC585D276D /* GTMMIMEDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = E6F00EFF3BC4C8495677520F2522334A /* GTMMIMEDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CC75C9182DC3938D9845F1C4FAEF75C /* FBSDKGraphRequestMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 36584C669D03D07F3A3201FE6E424965 /* FBSDKGraphRequestMetadata.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -101,17 +98,14 @@
 		1FC0636631161F17CC5913D5D0389FD6 /* GTMDebugThreadValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = DA8B6C30F379F3B2485307D39D5351AD /* GTMDebugThreadValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2066BF63BDFAE212B53EFD7BE70E5873 /* FBSDKDynamicFrameworkLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BA7EF1B3B21CF5BB372E8AD367656D /* FBSDKDynamicFrameworkLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		20DB2D465D5E80AC011BAECA059D88C5 /* FBSDKErrorRecoveryConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CCCBACD9194C03FB7F86FEBC350884 /* FBSDKErrorRecoveryConfiguration.m */; };
-		20EDDA0CB338630906153BEB0446471A /* checked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFD7D84B02EE81601BFFFB03A08DDF3 /* checked-checkbox-50.png */; };
 		21288EDF48BA23F00321A9FB81570EE1 /* NSObject+AWSMTLComparisonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C74011C3582E8D4A2905B13C353E15C4 /* NSObject+AWSMTLComparisonAdditions.m */; };
 		216FD026B6CF3F6C3477A41C7F805FA4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC5779BF12D0902F5CEF51644367EB9 /* Security.framework */; };
-		218EB1FA3AAD1340206AE3AEEA106990 /* img_popup_box_user.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9F493ADBB1C07D6F7671101F51C3CC /* img_popup_box_user.png */; };
 		226C5A323252A32967CE5D01F67DBC9B /* FBSDKAppEvents+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C9D4E54F456FF47AF8F03D90BB80368 /* FBSDKAppEvents+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2295DB5823538DD6A663C664218CCFAB /* FBSDKMaleSilhouetteIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = BD1DB8BDC4035E40F38B03D82ACDFD51 /* FBSDKMaleSilhouetteIcon.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2386F288FB488865D0168681AC96659F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DEDE437617C628CB93978E9DE6A8EF /* Settings.swift */; };
 		23CB4122B4E9C68B3378F6CE245F70F5 /* FBSDKBridgeAPIRequest+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3C7069034BCCE3A1E4EF562488A000 /* FBSDKBridgeAPIRequest+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		248512789A771582A3F160850273B32E /* AWSIdentityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D21546BCBC6936823D927FD429F5F92A /* AWSIdentityManager.m */; };
 		24DB914D9B8A86D35C8739B8F255433B /* FBSDKAppEventsUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A09650595BB647129251FF88421A2C68 /* FBSDKAppEventsUtility.m */; };
-		25712011E91AD77C2D586A08004895D8 /* img_authority_box.png in Resources */ = {isa = PBXBuildFile; fileRef = FA17C309793EBA85B9D8F2A1757273AE /* img_authority_box.png */; };
 		25B537D69D41CB3B9C2528D30A9BBF61 /* FBSDKIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCBEE3328ED13BE329340A018E80909 /* FBSDKIcon.m */; };
 		25D6DFD2C1835966AA813EE0392B2304 /* AWSAuthCore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 49653FCF4589F3104E738753EFD0B59E /* AWSAuthCore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		267029FCA6F72E595A71D451F37B16DD /* AWSPinpointEndpointProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4E57C741DB1C49444FAA5E791294B5 /* AWSPinpointEndpointProfile.m */; };
@@ -138,7 +132,6 @@
 		31554874A56723EC8538840F6ED5350D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA035CF9E159C7034F2EFC930D10E69F /* Foundation.framework */; };
 		317CDF15DD891A412E0297A1078B88BA /* AWSDDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = AF27395007B22837515C2AEE71F891F1 /* AWSDDLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31A17D8E7663090166267CB950E5DB45 /* GTMOAuth2Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 89474DD726AB095970EF5C590568563A /* GTMOAuth2Authentication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		31D2DD00DBC412814304DEAE64E897B4 /* btn_stoptoday_check_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DD22484B878F21BF6C0EE8D770C7351 /* btn_stoptoday_check_img@2x.png */; };
 		323950CB3EADC537C4831355D594F876 /* FBSDKInternalUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = D99AC22AFE5AD146A6C79BF862715C25 /* FBSDKInternalUtility.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		32C488C99F8E78CD10D22DE48017A93E /* AWSTaskCompletionSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CB7DE89ED0238AA3A6F00F337AA88E0 /* AWSTaskCompletionSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32FE0B4C814C06FA252CD2A0E196BC9E /* AWSCancellationTokenRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C3B04D1344B69979673682F3F0005 /* AWSCancellationTokenRegistration.m */; };
@@ -209,10 +202,8 @@
 		4DDEE7E66E34A15776C0416C95D816E6 /* AWSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40513846C83234088C7F286D3FA11 /* AWSLogging.m */; };
 		4DF376B326BD0F8E43A44ED4C5170950 /* AWSSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C959097801F2D58418B6344F402C08 /* AWSSignature.m */; };
 		4F0AE86823739C1E02F08DD08DF8BD79 /* FBSDKBridgeAPICrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 794349958869A528EFF3569EC9513643 /* FBSDKBridgeAPICrypto.m */; };
-		4F6A3A6563FAD3F0A932D0F07D37E5A4 /* img_inputbox_user.png in Resources */ = {isa = PBXBuildFile; fileRef = A0F2C61744B23E9462B524F6E0AB30C7 /* img_inputbox_user.png */; };
 		4F9C1B09D4FB1A9A4CB8BD5343B00BAD /* FBSDKAccessTokenCacheV4.h in Headers */ = {isa = PBXBuildFile; fileRef = FF18F33666D5C6292E4C59A4CF5C39BA /* FBSDKAccessTokenCacheV4.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4FF31B24B2A8E7D0CF8EC8AEDC109197 /* AWSPinpointAnalyticsModel.h in Headers */ = {isa = PBXBuildFile; fileRef = A598CD2FEF895D3FBF048E8B636267EB /* AWSPinpointAnalyticsModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		500ACE699E67BF61C55FCF67FFA1BC10 /* btn_detail_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A25F373DC9B199BF1FFCCC978FA65D71 /* btn_detail_img@2x.png */; };
 		5088861729589FE59160D20DC38A12D2 /* FBSDKAppEventsState.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F9E401CD1AF2C7619981555C6BFEB5 /* FBSDKAppEventsState.m */; };
 		51393562CBC0F90B151E50AA10A03481 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B841359C38411C169D1BA6F69E7662E /* Validation.swift */; };
 		5213FBB7E42F74B958C6274ADE223A36 /* BFURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F94A522B127D9E4E71275235D77877C /* BFURL.m */; };
@@ -265,7 +256,6 @@
 		5FB8A6CAB5D3E9411F11933E412FBD4E /* estgames-common-framework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2045FE0CCF5F57D25E7299C159FE31D6 /* estgames-common-framework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FED521AAEC67E5461638196D767B073 /* AWSPinpointContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BAE69AEDACD7EA2CB16A7075EDA5799 /* AWSPinpointContext.m */; };
 		60A117AA203163CC5C6853E87ACCBABC /* AuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC717F2CA3B43311D6A694EB58B0BFD /* AuthorityViewController.swift */; };
-		60A23ADB274DE05940DB52FF556351C5 /* btn_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49244D5E1016211B1D24ADFD7D5A5049 /* btn_close_img@2x.png */; };
 		60A4C0FF771D4CB2C92DB53E596B0FD2 /* BFAppLinkTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = EABB826A0B4A12515E423153FB4AF168 /* BFAppLinkTarget.m */; };
 		61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24E3751AB41FD251800B1A17957F7 /* DispatchQueue+Alamofire.swift */; };
 		61E7439DF926BA4CD6B4344B34A42A96 /* AWSPinpointAnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 009ACDE76A5AB13B1C3EE4C278A736A1 /* AWSPinpointAnalyticsService.m */; };
@@ -278,7 +268,6 @@
 		64E7A7F425F305F8D7207F7378EE9CB2 /* AWSMTLModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3240941A8BCE5B43A5CD01DA495B28B1 /* AWSMTLModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		658773114243D9151B13A21C87ADA67A /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 55C4775887822AC6D52B412E05CB58EE /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65EFF310D9295F0A5F870D24121B177C /* BFExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EC6C4CA59EC2C49EABE052B8A6EA0B5 /* BFExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		663C147D6B7016AC185ADCF53BBCB649 /* img_provision_bigbox.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B16D1810F043D6E3EC28D9FABA816E /* img_provision_bigbox.png */; };
 		665BF9B2807BBF0DC82CFDB1270FA92A /* FBSDKImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D925F2684B1428482EB05433BFFA5283 /* FBSDKImageDownloader.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6689FE662CC22675FD26A98FF5B83262 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F06A422F9B8806E6E5F954A967360E3 /* Response.swift */; };
 		6697AAC7CD4F9193D14EF995A8735047 /* GTMNSString+URLArguments.h in Headers */ = {isa = PBXBuildFile; fileRef = 9064C8D7BD0F4CBA4B9C11E269481642 /* GTMNSString+URLArguments.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -301,7 +290,6 @@
 		6F23863C438744CB5F66DEFE2DC5646C /* AWSSignature.h in Headers */ = {isa = PBXBuildFile; fileRef = 4639D19EBF472AD39B110430C7535B5E /* AWSSignature.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7029717B8FC64138FEC0B0A2E543D193 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA035CF9E159C7034F2EFC930D10E69F /* Foundation.framework */; };
 		702F27D03EDE2DCEBDFB8841E5CBF852 /* AWSAuthCore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FF83277C4D5D528E02D4083BFD54FE49 /* AWSAuthCore-dummy.m */; };
-		70532ACF17C52E7D3B61C25BEA45ABD0 /* btn_stoptoday_check_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3C2FE285A2822012B623F50C905D0AF /* btn_stoptoday_check_img@3x.png */; };
 		709C5EE5CBCFF1B92CC77BC4F3E3410A /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2758B0EF6C815057415078EA4A2BB9 /* NetworkReachabilityManager.swift */; };
 		7124B43E6BF63356DA072457F7B9590F /* AWSDDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EA00B331D66A4C29BA768E7D5A4F01A /* AWSDDAbstractDatabaseLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7144DB5813E0E5F3B2315E696EA09371 /* AWSFMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 40BE23E2D395D9F5BEE78F159DF2091B /* AWSFMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -343,14 +331,12 @@
 		7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E419FA62107287F3F0A8182C72567 /* Result.swift */; };
 		7DE49FFDF8D28ACA8167051D42CE7DC9 /* FBSDKGraphRequestPiggybackManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB92B659E5B23C47D5E8865C950E878 /* FBSDKGraphRequestPiggybackManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7E3FD76C1B7370C351FC8C2B99051A97 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D21A79793791682082F0B4E9C3C112 /* Request.swift */; };
-		7E569E859A4AF1CEE5AC7E0856A473B8 /* btn_close_img_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4DF66439773D21D56FBD2E89C623438 /* btn_close_img_user@2x.png */; };
 		7EC74F9AD3A1375E1107CBB5BB4C8812 /* FBSDKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D1E2A9C76A9F7E8A141C9002DE9447 /* FBSDKBase64.m */; };
 		7EC7F3F35DD167F4D69BD4A3417F4FEE /* FBSDKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CC1D09069AD139983A45B0E032D69C /* FBSDKConstants.m */; };
 		7EF86BFCF3291F1AE3AD8D36850BD889 /* FBSDKMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B696D4D98CDB79C6128C71004283CA /* FBSDKMath.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7F2472C251866D10E44AB44738225E3E /* FBSDKContainerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F2910719BF0852C7147B7B3560F3208E /* FBSDKContainerViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7F44B48A0E805CCAAF850F7909FBE526 /* AWSDDDispatchQueueLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F67F2997925A657C61B9B0176FFD788 /* AWSDDDispatchQueueLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		80954D5FBA50CA415AFF0CD04085070C /* AWSCognitoDataset.m in Sources */ = {isa = PBXBuildFile; fileRef = F919808D51C9E0511FF0B107C01658F3 /* AWSCognitoDataset.m */; };
-		80F583837BE8BD80E87D50D6041E2FF0 /* btn_stoptoday_default_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A18194E41F067B81B12CC72221B3A27F /* btn_stoptoday_default_img@2x.png */; };
 		812571742DD6620519D9BA16C291594C /* FBSDKGraphRequestPiggybackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBC442C757DE6BDBAE8BA8BB7B15B58 /* FBSDKGraphRequestPiggybackManager.m */; };
 		819FA7C336872D1819C33C94D2610A03 /* Pods-estgames-common-framework_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8617E707A5B8D834A11BA031F83FF34 /* Pods-estgames-common-framework_Tests-dummy.m */; };
 		81A36C0A02C55A0B670550B9D3A415A2 /* AWSDDASLLogCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = BBFE5F3B8036CCE1E903B45972F9B9F3 /* AWSDDASLLogCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -405,16 +391,13 @@
 		946E00E677BBFEC0FF345FC3660A7796 /* AWSSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F39ABB14CC748DE4145B476F968E7B /* AWSSignInViewController.m */; };
 		94782C1BBC17EE8624510C5F12A684E5 /* FBSDKApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D7E730D7BE6CEDEF49405CD4B2045D6 /* FBSDKApplicationDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94A914EF8209F6AC13FB73CC90F76838 /* FBSDKTriStateBOOL.h in Headers */ = {isa = PBXBuildFile; fileRef = AB4417DF2A362BCC3C65C3006818E676 /* FBSDKTriStateBOOL.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		94CFEDEC9CA843F1C0DF81C02C5AE0DB /* btn_confirm_user.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB3FEA18508C1CC76C5141073B96A7D /* btn_confirm_user.png */; };
 		956022CB0FC4F56D7A62987D5CFCCC84 /* AWSGeneric.h in Headers */ = {isa = PBXBuildFile; fileRef = 09EFA21A0097910ACBDBA492465895DF /* AWSGeneric.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95F95230B8D982667E7989C9FA0F576F /* btn_stoptoday_default_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F075E56A05238C2D2E6B72521D8418 /* btn_stoptoday_default_img@3x.png */; };
 		9643EE2E9BA542B4B457DB5906818750 /* Bolts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D19C7F2620D9C1EB28288D7D83D8100 /* Bolts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		967A3FB5B7918B4C947335AB2E2F5D37 /* AWSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472A4B0A3F30C3716D51FCAEDA1E2BB /* AWSService.m */; };
 		9697D87AC9A60150B3453C9B28DCF184 /* FBSDKLoginManagerLoginResult.h in Headers */ = {isa = PBXBuildFile; fileRef = CDBC86006E4129AAD9DADEA45068E1D8 /* FBSDKLoginManagerLoginResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96ACDA4D360DF9B9C30420A889E4416C /* GTMOAuth2ViewControllerTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = D8816F07D6FB6F18A610D53DBF5A391F /* GTMOAuth2ViewControllerTouch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		972201FCF3E63DD13C8CA8F86EB939EA /* AWSFMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E30D4FCE71940DEEC26B602B7B996387 /* AWSFMDatabaseQueue.m */; };
 		97229134C6FFA93868A4DEFEF8E5FD5B /* AWSCognitoIdentityResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5257D687FCCCAF3B2295DF1F816A72 /* AWSCognitoIdentityResources.m */; };
-		986097708B777B669094757D54382732 /* btn_bottom_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545DB7DB1834B21BF31CC4B50A9E050A /* btn_bottom_close_img@2x.png */; };
 		98714C893E8D07613970FF200FF873CB /* GTMGatherInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = F1067EC753F4F2A73997CA92D7545519 /* GTMGatherInputStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9893FBD436E53F3347150DA7BF456CDB /* AWSValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 81E3780E113520748988731AC0B3E5AB /* AWSValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98CABAA5EC37560A504D2D0336A0CA6F /* AWSPinpointStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F76EFB8D1116D3999191F1CD7E70E8FD /* AWSPinpointStringUtils.m */; };
@@ -432,7 +415,6 @@
 		9EB312526378141B227B16445C3A0847 /* AWSPinpointConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E9BE1FE3FF5CFB17789575E850D2158 /* AWSPinpointConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9ED2BB2981896E0A39EFA365503F58CE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6B7AAB5AD3A59DDBD448D19ADC462E /* AFError.swift */; };
 		9F193F83EDEB244BC7AE38C6734432C9 /* FBSDKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DD236050BBD24DF2067E3C7A02C9373E /* FBSDKMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9FE34C69B783D715B5B0717C9A002A93 /* btn_detail_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B2C6A0D7D09C598D6ADC2E101EAE07F /* btn_detail_img@3x.png */; };
 		9FE3B594D720401CE7423AA51940AE2E /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BAC0DD8EEAC7E5B9942C254B14D8C1 /* DispatchQueue+Alamofire.swift */; };
 		9FE7B426DCB711A471EAF1AD5019DBF7 /* GTMSessionFetcher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 628C1317499F16CED489B0F77DB3D341 /* GTMSessionFetcher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FFACFE50F924C7F9CB07C5F2B8C3472 /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9CB17F6682C90073694B9E79B9A0CB /* GoogleToolboxForMac-dummy.m */; };
@@ -472,7 +454,6 @@
 		AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F7C011724ACA051A3227379B7A8D4 /* SessionManager.swift */; };
 		AE9A00F7F14BAE06F6B900F969C64772 /* AWSPinpointTargetingService.m in Sources */ = {isa = PBXBuildFile; fileRef = AFEC840D6A2F2A7C7BB732CD035DA89E /* AWSPinpointTargetingService.m */; };
 		AEAED1CCB2B223D6F8AF12326D1F55DF /* AWSSignInManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D551349F6CB9E9FE642B7578E6444877 /* AWSSignInManager.m */; };
-		AF0B1088F15FBE10437ED82A5D4AA912 /* btn_close_img_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F39A3248415BC523ACD9F4A89161BC /* btn_close_img_user@3x.png */; };
 		AF295797C68A0A7ECE4226A1351AE57F /* FBSDKGraphRequestBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 1955DED16E65B7C43B1ABD1F459FD754 /* FBSDKGraphRequestBody.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		AF7D83A0139B4E7B974713E7C6B7BD30 /* BannerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DDB6C8A246EF1A514C5D73589E9457 /* BannerBottomView.swift */; };
 		AF82F560BE8CBCDB380062D85180112E /* FBSDKLoginCompletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B6EC9059050D7804F930E0E401F9C /* FBSDKLoginCompletion.m */; };
@@ -489,7 +470,6 @@
 		B3904DA570A7B28AA4D222ED0CBB69ED /* AWSFMDatabase+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = FDBA028B9B007B95BE50438A7EA392AC /* AWSFMDatabase+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B40A6278574345548F16B611FDDD3ED5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6A378E9BA48A17DF4A407CAA2D0BC1 /* FBSDKCoreKit.framework */; };
 		B46B89C007023B9634CA1B2A116FE43A /* FBSDKAccessTokenCacheV3.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FACF6E43E611942EE8E2952C9C344 /* FBSDKAccessTokenCacheV3.m */; };
-		B4FD9B88CF0549C42F1E23272BC53CC8 /* btn_provision_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 245DA7F50CA3A886BA3E8C8D91850737 /* btn_provision_on.png */; };
 		B51297816273A889840222016D6B1750 /* FBSDKAppEventsDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A72084D3CC3ACE7D11570805B059C3B /* FBSDKAppEventsDeviceInfo.m */; };
 		B514B1CDC2D3BC2C65692BC00A45D68C /* FBSDKButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E46612B669048E4F43FC331671E989C /* FBSDKButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B57083097FBBE0E5A7325435BC5DC011 /* FBSDKSystemAccountStoreAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C93CBD28BAC359E210025BD488AC7BA /* FBSDKSystemAccountStoreAdapter.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -514,7 +494,6 @@
 		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3791151AACB7DD641D1A5586031837A6 /* Validation.swift */; };
 		BBFE597C3EA7500BADA93292033533ED /* AWSLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = AA313AC48897FC685E2AA2223776ECC9 /* AWSLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC719B9FDB1EC310A6F55462F8BCB69E /* ResultDataJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA930F4A658186AE92515302E04959D /* ResultDataJson.swift */; };
-		BC96A951CF7168D6997C12B318C0DA30 /* img_provision_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B40DEEED955641F72BDF9A27D386ACF /* img_provision_box.png */; };
 		BCA79CC4A52D316CBC166F6C75F1D75E /* AWSFacebookSignIn.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C4D5EB8FAD16225CB11B4EF213DE771 /* AWSFacebookSignIn.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCFD2142B8E8508DED5D13544319828D /* AWSUICKeyChainStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E3D4E3D84F1764442218298937727DAA /* AWSUICKeyChainStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD9FF0855A225CF8558E85495789BCF4 /* FBSDKBridgeAPIProtocolWebV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 02092DAEDC9F1520F8C688ECBA73C6E0 /* FBSDKBridgeAPIProtocolWebV2.m */; };
@@ -534,7 +513,6 @@
 		C32FA0B1568291DD5E5C9ABF8C32FEED /* AWSAuthUI.h in Headers */ = {isa = PBXBuildFile; fileRef = F9760AA4C050CF0CC9EE563FCD38837C /* AWSAuthUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C370412B614AD4C7DF8923220010A9B8 /* FBSDKLoginManagerLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 0374345527B42C796F568D934329D063 /* FBSDKLoginManagerLogger.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C41EA9FD5FDD8698D88AC13E17BE01EA /* FBSDKApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E41CAE9590BD1CF8727FABD38CB5E /* FBSDKApplicationDelegate.m */; };
-		C42ED07E53D850FCEB1EE7DD17701B48 /* btn_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DAE5985FF4255023CF93720AB67F880 /* btn_close_img@3x.png */; };
 		C47D6418F6BA41EE414A6112407E69CE /* FBSDKLoginManager+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E211020E9DBE32AA98CF009A49CE5EC /* FBSDKLoginManager+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C4B97BCE6167D28BF5025EEC70093A39 /* FBSDKAppLinkUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 634A3D2937A8914F2652ECEDA4B1FE70 /* FBSDKAppLinkUtility.m */; };
 		C5B7EDACE11CE3460EFDE23256B97C63 /* _FBSDKTemporaryErrorRecoveryAttempter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6BFA74D3E8C34E3879F1E5EE5BF130 /* _FBSDKTemporaryErrorRecoveryAttempter.m */; };
@@ -643,6 +621,30 @@
 		EC11163B98E1823A6B99811A3DC54A59 /* AWSMTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF7BE0A00048C25B6514F1838DBE128 /* AWSMTLModel.m */; };
 		ED60333243D4D6389EA926E6C6DA63CC /* AWSDDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 560BD27B44ED5C65623412FEF4E27EB1 /* AWSDDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED7B17412085EBA000CF3BF6 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7B17402085EBA000CF3BF6 /* AccountService.swift */; };
+		EDC827442086DF3F0083C36E /* btn_bottom_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545DB7DB1834B21BF31CC4B50A9E050A /* btn_bottom_close_img@2x.png */; };
+		EDC827452086DF3F0083C36E /* btn_bottom_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A85FB6715E2D4E65321F6D4414A7BE /* btn_bottom_close_img@3x.png */; };
+		EDC827462086DF3F0083C36E /* btn_cancel_user.png in Resources */ = {isa = PBXBuildFile; fileRef = B0ACE66D1043F9689EE5639E92AE78CB /* btn_cancel_user.png */; };
+		EDC827472086DF3F0083C36E /* btn_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49244D5E1016211B1D24ADFD7D5A5049 /* btn_close_img@2x.png */; };
+		EDC827482086DF3F0083C36E /* btn_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DAE5985FF4255023CF93720AB67F880 /* btn_close_img@3x.png */; };
+		EDC827492086DF3F0083C36E /* btn_close_img_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4DF66439773D21D56FBD2E89C623438 /* btn_close_img_user@2x.png */; };
+		EDC8274A2086DF3F0083C36E /* btn_close_img_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F39A3248415BC523ACD9F4A89161BC /* btn_close_img_user@3x.png */; };
+		EDC8274B2086DF3F0083C36E /* btn_confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EC6E7132B69DFB573FBDF63198E3B24 /* btn_confirm.png */; };
+		EDC8274C2086DF3F0083C36E /* btn_confirm_user.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB3FEA18508C1CC76C5141073B96A7D /* btn_confirm_user.png */; };
+		EDC8274D2086DF3F0083C36E /* btn_detail_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A25F373DC9B199BF1FFCCC978FA65D71 /* btn_detail_img@2x.png */; };
+		EDC8274E2086DF3F0083C36E /* btn_detail_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B2C6A0D7D09C598D6ADC2E101EAE07F /* btn_detail_img@3x.png */; };
+		EDC8274F2086DF3F0083C36E /* btn_provision_off.png in Resources */ = {isa = PBXBuildFile; fileRef = A17F7E8E7C2CA48036FFE6D4909A2B43 /* btn_provision_off.png */; };
+		EDC827502086DF3F0083C36E /* btn_provision_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 245DA7F50CA3A886BA3E8C8D91850737 /* btn_provision_on.png */; };
+		EDC827512086DF3F0083C36E /* btn_stoptoday_check_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DD22484B878F21BF6C0EE8D770C7351 /* btn_stoptoday_check_img@2x.png */; };
+		EDC827522086DF3F0083C36E /* btn_stoptoday_check_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3C2FE285A2822012B623F50C905D0AF /* btn_stoptoday_check_img@3x.png */; };
+		EDC827532086DF3F0083C36E /* btn_stoptoday_default_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A18194E41F067B81B12CC72221B3A27F /* btn_stoptoday_default_img@2x.png */; };
+		EDC827542086DF3F0083C36E /* btn_stoptoday_default_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F075E56A05238C2D2E6B72521D8418 /* btn_stoptoday_default_img@3x.png */; };
+		EDC827552086DF3F0083C36E /* checked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFD7D84B02EE81601BFFFB03A08DDF3 /* checked-checkbox-50.png */; };
+		EDC827562086DF3F0083C36E /* img_authority_box.png in Resources */ = {isa = PBXBuildFile; fileRef = FA17C309793EBA85B9D8F2A1757273AE /* img_authority_box.png */; };
+		EDC827572086DF3F0083C36E /* img_inputbox_user.png in Resources */ = {isa = PBXBuildFile; fileRef = A0F2C61744B23E9462B524F6E0AB30C7 /* img_inputbox_user.png */; };
+		EDC827582086DF3F0083C36E /* img_popup_box_user.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9F493ADBB1C07D6F7671101F51C3CC /* img_popup_box_user.png */; };
+		EDC827592086DF3F0083C36E /* img_provision_bigbox.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B16D1810F043D6E3EC28D9FABA816E /* img_provision_bigbox.png */; };
+		EDC8275A2086DF3F0083C36E /* img_provision_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B40DEEED955641F72BDF9A27D386ACF /* img_provision_box.png */; };
+		EDC8275B2086DF3F0083C36E /* unchecked-checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A5C668BDADC32B640D8E976CA87CAC /* unchecked-checkbox-50.png */; };
 		EDE1B4B554EF1A47AE3CFD27CA4D4F12 /* AWSCancellationTokenSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0965DD104B404E1740C37D1D107B6A4B /* AWSCancellationTokenSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE3430BEB1C87EFB9B40DCE4CE01EC40 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD0ACACEB08309A873653A09BC49522 /* Timeline.swift */; };
 		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB718941F9629226ABFC51A54AED7945 /* Notifications.swift */; };
@@ -651,11 +653,9 @@
 		F01D0D5250D70C3ACDF81A8F9FB80138 /* AWSBolts.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEDE8DEAE0007407E6FFF4151C7B166 /* AWSBolts.m */; };
 		F0DB617A1A9EC494E1E4FDCE56877078 /* AWSCognitoIdentityResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 148FCBF5DFB4ED1AA23166482E0096B4 /* AWSCognitoIdentityResources.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1774244EA023AA36FB0A6424A021901 /* FBSDKServerConfigurationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD4E969FE43A3CD294111D8F4C1B01C /* FBSDKServerConfigurationManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F248169BB1517C085C5C09BC0A1EB1A1 /* btn_cancel_user.png in Resources */ = {isa = PBXBuildFile; fileRef = B0ACE66D1043F9689EE5639E92AE78CB /* btn_cancel_user.png */; };
 		F24B2EE691EC520296124AE31F972381 /* FBSDKTriStateBOOL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC50C5B965424E1EAAE03A6DB8E76CF /* FBSDKTriStateBOOL.m */; };
 		F28819DA2E68BCEBCBEEF8AC2B2707DB /* AWSDDOSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D8C734FEBC0782ED2E73266977C17 /* AWSDDOSLogger.m */; };
 		F2C9D1D49C468E39011D7B39DC5745A8 /* FBSDKLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D8D9F53B2D9AB59FB1514227A7724E /* FBSDKLogger.m */; };
-		F2D915740DE1B60142D5BD6FE6E15758 /* btn_bottom_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A85FB6715E2D4E65321F6D4414A7BE /* btn_bottom_close_img@3x.png */; };
 		F2E995935E6648CDABF189371C360192 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109D717828079CACB0AEFD9A3E770AF3 /* AWSCore.framework */; };
 		F35582F09059EA0388A5B4A61D7C9A90 /* BFCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CE1D3D7D2B407FCFB1D3DAD083287F4 /* BFCancellationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3A8930E4BAE4D518C1A1C2FAD9B222C /* FBSDKAppEventsState.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D14C7B1B19BAA18826F5F3E858CD173 /* FBSDKAppEventsState.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -4089,6 +4089,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				386F688CB1B2D301807F2ECBA3942AB7 /* estgames-common-framework.bundle in Resources */,
+				EDC827592086DF3F0083C36E /* img_provision_bigbox.png in Resources */,
+				EDC827462086DF3F0083C36E /* btn_cancel_user.png in Resources */,
+				EDC8274A2086DF3F0083C36E /* btn_close_img_user@3x.png in Resources */,
+				EDC827512086DF3F0083C36E /* btn_stoptoday_check_img@2x.png in Resources */,
+				EDC8274B2086DF3F0083C36E /* btn_confirm.png in Resources */,
+				EDC8274F2086DF3F0083C36E /* btn_provision_off.png in Resources */,
+				EDC8274C2086DF3F0083C36E /* btn_confirm_user.png in Resources */,
+				EDC827472086DF3F0083C36E /* btn_close_img@2x.png in Resources */,
+				EDC827542086DF3F0083C36E /* btn_stoptoday_default_img@3x.png in Resources */,
+				EDC827532086DF3F0083C36E /* btn_stoptoday_default_img@2x.png in Resources */,
+				EDC827482086DF3F0083C36E /* btn_close_img@3x.png in Resources */,
+				EDC827582086DF3F0083C36E /* img_popup_box_user.png in Resources */,
+				EDC8275A2086DF3F0083C36E /* img_provision_box.png in Resources */,
+				EDC8274D2086DF3F0083C36E /* btn_detail_img@2x.png in Resources */,
+				EDC827552086DF3F0083C36E /* checked-checkbox-50.png in Resources */,
+				EDC827502086DF3F0083C36E /* btn_provision_on.png in Resources */,
+				EDC827572086DF3F0083C36E /* img_inputbox_user.png in Resources */,
+				EDC827492086DF3F0083C36E /* btn_close_img_user@2x.png in Resources */,
+				EDC8274E2086DF3F0083C36E /* btn_detail_img@3x.png in Resources */,
+				EDC8275B2086DF3F0083C36E /* unchecked-checkbox-50.png in Resources */,
+				EDC827442086DF3F0083C36E /* btn_bottom_close_img@2x.png in Resources */,
+				EDC827562086DF3F0083C36E /* img_authority_box.png in Resources */,
+				EDC827452086DF3F0083C36E /* btn_bottom_close_img@3x.png in Resources */,
+				EDC827522086DF3F0083C36E /* btn_stoptoday_check_img@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4120,30 +4144,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				986097708B777B669094757D54382732 /* btn_bottom_close_img@2x.png in Resources */,
-				F2D915740DE1B60142D5BD6FE6E15758 /* btn_bottom_close_img@3x.png in Resources */,
-				F248169BB1517C085C5C09BC0A1EB1A1 /* btn_cancel_user.png in Resources */,
-				60A23ADB274DE05940DB52FF556351C5 /* btn_close_img@2x.png in Resources */,
-				C42ED07E53D850FCEB1EE7DD17701B48 /* btn_close_img@3x.png in Resources */,
-				7E569E859A4AF1CEE5AC7E0856A473B8 /* btn_close_img_user@2x.png in Resources */,
-				AF0B1088F15FBE10437ED82A5D4AA912 /* btn_close_img_user@3x.png in Resources */,
-				0C269D1388E707E9928AA267B33827BE /* btn_confirm.png in Resources */,
-				94CFEDEC9CA843F1C0DF81C02C5AE0DB /* btn_confirm_user.png in Resources */,
-				500ACE699E67BF61C55FCF67FFA1BC10 /* btn_detail_img@2x.png in Resources */,
-				9FE34C69B783D715B5B0717C9A002A93 /* btn_detail_img@3x.png in Resources */,
-				1C29DEC0F06494AC645732DA991291FE /* btn_provision_off.png in Resources */,
-				B4FD9B88CF0549C42F1E23272BC53CC8 /* btn_provision_on.png in Resources */,
-				31D2DD00DBC412814304DEAE64E897B4 /* btn_stoptoday_check_img@2x.png in Resources */,
-				70532ACF17C52E7D3B61C25BEA45ABD0 /* btn_stoptoday_check_img@3x.png in Resources */,
-				80F583837BE8BD80E87D50D6041E2FF0 /* btn_stoptoday_default_img@2x.png in Resources */,
-				95F95230B8D982667E7989C9FA0F576F /* btn_stoptoday_default_img@3x.png in Resources */,
-				20EDDA0CB338630906153BEB0446471A /* checked-checkbox-50.png in Resources */,
-				25712011E91AD77C2D586A08004895D8 /* img_authority_box.png in Resources */,
-				4F6A3A6563FAD3F0A932D0F07D37E5A4 /* img_inputbox_user.png in Resources */,
-				218EB1FA3AAD1340206AE3AEEA106990 /* img_popup_box_user.png in Resources */,
-				663C147D6B7016AC185ADCF53BBCB649 /* img_provision_bigbox.png in Resources */,
-				BC96A951CF7168D6997C12B318C0DA30 /* img_provision_box.png in Resources */,
-				19B551BFE3339AA295475FA6FC6EA1E4 /* unchecked-checkbox-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

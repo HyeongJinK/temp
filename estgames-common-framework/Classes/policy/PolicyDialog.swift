@@ -11,9 +11,17 @@ class PolicyDialog {
     var pview: UIViewController
     var policyViewController:PolicyViewController
     
-    public init(pview: UIViewController) {
+    public init(pview: UIViewController, callback: @escaping () -> Void) {
         self.pview = pview
 
+        policyViewController = PolicyViewController()
+        policyViewController.callbackFunc = callback
+        policyViewController.modalPresentationStyle = .overCurrentContext
+    }
+    
+    public init(pview: UIViewController) {
+        self.pview = pview
+        
         policyViewController = PolicyViewController()
         policyViewController.modalPresentationStyle = .overCurrentContext
     }

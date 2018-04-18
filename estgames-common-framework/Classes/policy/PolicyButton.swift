@@ -12,6 +12,7 @@ class PolicyButton : UIButton {
     
     let checkImage:UIImage
     let uncheckImage:UIImage
+    var checkBtCallBack: () -> Void = {() -> Void in }
     
     init(_ frames: CGRect) {
         uncheckImage = UIImage(named: "btn_provision_off", in:Bundle(for: PolicyViewController.self), compatibleWith:nil)!.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
@@ -36,5 +37,6 @@ class PolicyButton : UIButton {
         } else {
             self.setBackgroundImage(uncheckImage, for: .normal)
         }
+        checkBtCallBack()
     }
 }

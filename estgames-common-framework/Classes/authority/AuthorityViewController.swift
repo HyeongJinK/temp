@@ -57,8 +57,7 @@ class AuthorityViewController: UIViewController {
     }
 
     @objc func closeBtAction(_ sender:UIButton) {
-        callbackFunc()
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: false, completion: callbackFunc)
     }
     
     override func didReceiveMemoryWarning() {

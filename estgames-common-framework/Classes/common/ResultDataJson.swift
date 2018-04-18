@@ -12,7 +12,7 @@ public class ResultDataJson {
     public var errorMessage:String?
     var nation: String = ""
     var events : [EventData]
-    //var process: [ProcessData]
+    var process: NSDictionary
     var url: UrlData
     
     public init(resultDataJson: NSDictionary) {
@@ -38,11 +38,12 @@ public class ResultDataJson {
                 events.append(EventData(event))
             }
             
-            //self.process
+            self.process = resultDataJson["process"] as! NSDictionary
             self.url = UrlData(resultDataJson["url"] as! NSDictionary)
         } else {
             self.nation = ""
             self.events = Array<EventData>()
+            self.process = resultDataJson["process"] as! NSDictionary
             self.url = UrlData(resultDataJson["url"] as! NSDictionary)
         }
     }

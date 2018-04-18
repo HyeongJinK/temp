@@ -28,7 +28,6 @@ class UserConfirmButton : UIButton {
     }
     
     @objc func confirmBtAction(_ sender:UIButton) {
-        view!.dismiss(animated: false, completion: nil)
-        confirmBtAction()
+        view!.dismiss(animated: false, completion: confirmBtAction)
     }
 }

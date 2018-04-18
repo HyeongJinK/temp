@@ -21,6 +21,7 @@ class PolicyViewController: UIViewController {
     var submitBt2: PolicyButton!
     var closeBt: PolicyCloseBt!
     var dataSet: PolicyDataSet!
+    var callbackFunc:() -> Void = {() -> Void in}
     
     public func setWebUrl (webUrl1: String, webUrl2: String) {
         self.webUrl1 = webUrl1
@@ -83,6 +84,7 @@ class PolicyViewController: UIViewController {
         webView1.loadRequest(URLRequest(url: URL(string: self.webUrl1)!))
         
         submitBt1 = PolicyButton(dataSet.submitBt1Frame)
+        submitBt1.checkBtCallBack = checkBoxTrueClose
 
         titleLabel2 = UILabel(frame: dataSet.titleLabel2Frame)
         labelSet(titleLabel2, NSLocalizedString("estcommon_policy_privacy", comment: ""), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
@@ -91,9 +93,11 @@ class PolicyViewController: UIViewController {
         webView2.loadRequest(URLRequest(url: URL(string: self.webUrl2)!))
         
         submitBt2 = PolicyButton(dataSet.submitBt2Frame)
+        submitBt2.checkBtCallBack = checkBoxTrueClose
         
         closeBt = PolicyCloseBt(self)
         closeBt.frame = dataSet.closeBtFrame
+        closeBt.closeBtAction = callbackFunc
 
         self.view.addSubview(backgroudView)
         backgroudView.insertSubview(backImageView, at: 0)
@@ -105,5 +109,11 @@ class PolicyViewController: UIViewController {
         backgroudView.addSubview(submitBt1)
         backgroudView.addSubview(submitBt2)
         backgroudView.addSubview(closeBt)
+    }
+    
+    private func checkBoxTrueClose() {
+        if (submitBt1.isChecked && submitBt2.isChecked) {
+            self.dismiss(animated: false, completion: callbackFunc)
+        }
     }
 }

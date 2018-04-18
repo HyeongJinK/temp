@@ -49,26 +49,6 @@ public class bannerFramework {
         }
     }
     
-     func dataSet() {
-//        let url = "https://8726wj937l.execute-api.ap-northeast-2.amazonaws.com/live?region=catcafe.kr.ls&lang=ko&placement=LANDING"
-//
-//        let alamo = request(url)
-//
-//        self.myGroup.enter()
-//
-//        alamo.responseJSON() {
-//            response in
-//            if let result = response.result.value {
-//                let bannerJson = result as! NSDictionary
-//
-//                self.estgamesBanner = EstgamesBanner(jsonData:bannerJson)   //배너 파싱
-//                self.myGroup.leave()
-//            } else {
-//                bannerView?.removeFromSuperview()
-//            }
-//        }
-    }
-    
     func createMainView(_ pview:UIView) -> UIView {
         //뷰 생성
         let view = UIView()

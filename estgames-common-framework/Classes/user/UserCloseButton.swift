@@ -26,7 +26,6 @@ class UserCloseButton : UIButton {
     }
     
     @objc func closeBtAction(_ sender:UIButton) {
-        view!.dismiss(animated: false, completion: nil)
-        closeBtAction()
+        view!.dismiss(animated: false, completion: closeBtAction)
     }
 }
