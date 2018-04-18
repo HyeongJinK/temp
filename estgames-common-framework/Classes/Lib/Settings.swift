@@ -41,6 +41,12 @@ public class MpInfo {
                 return MpInfo.mpDict["secret"]!
             }
         }
+        
+        public static var estapi: String {
+            get {
+                return MpInfo.mpDict["estapi"]!
+            }
+        }
     }
     
     public class Account {

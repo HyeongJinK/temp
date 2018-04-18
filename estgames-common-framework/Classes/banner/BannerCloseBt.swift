@@ -13,7 +13,7 @@ class CloseBt: UIButton {
     let closeBtTitle:String = NSLocalizedString("banner_closeButton", comment: "")
     var checkBt: CheckBox?
     let closeBtImage:UIImage
-    
+    var closeBtCallBack: () -> Void = {() -> Void in }
     
     required init?(coder aDecoder: NSCoder) {
         closeBtImage = UIImage(named: "btn_bottom_close_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)!
@@ -46,6 +46,7 @@ class CloseBt: UIButton {
         imageViews.popLast()!.removeFromSuperview()
         
         if (imageViews.isEmpty) {
+            closeBtCallBack()
             bannerView?.removeFromSuperview()
         }
     }

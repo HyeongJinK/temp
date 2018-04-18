@@ -20,7 +20,9 @@ var imageViewsTemps:[BannerImageView] = Array<BannerImageView>()
 public class bannerFramework {
     var estgamesBanner: ResultDataJson?
     var pview:UIViewController
+    var closeBtCallBack: () -> Void = {() -> Void in print("FAFD")}
     let myGroup = DispatchGroup()
+    let bottomView:bannerBottomView
     
     
     public init(pview:UIViewController, result:ResultDataJson) {
@@ -29,7 +31,7 @@ public class bannerFramework {
         bannerView = UIView(frame: CGRect(x: 0, y: 0, width: pview.view.frame.size.width, height: pview.view.frame.size.height))
         bannerView?.translatesAutoresizingMaskIntoConstraints = false
         
-        let bottomView = bannerBottomView() //아래바 생성
+        bottomView = bannerBottomView() //아래바 생성
         bannerView!.addSubview(bottomView)
         
         let dateFormat = DateFormatter()
@@ -64,6 +66,8 @@ public class bannerFramework {
         //이미지 뷰 생성 , 창 크기에 맞게 조절
         //아래 바 생성
         //아래 바에 버튼 두 개 하루보기, 닫기
+        bottomView.closeBt.closeBtCallBack = closeBtCallBack
+        
         self.pview.view.addSubview(bannerView!)
         
         for img in imageViewsTemps {

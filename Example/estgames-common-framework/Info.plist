@@ -47,6 +47,8 @@
 		<string>b9b2b750-ea07-3808-a7b1-9f9ca4a9ffab.mp.estgames.com</string>
 		<key>secret</key>
 		<string>15624467fd9b22c7f592de53ca92c0ed49a3ba1945a40116926c4edf1209f75c</string>
+		<key>estapi</key>
+		<string>https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/ffg.global.ls</string>
 	</dict>
 	<key>AWS</key>
 	<dict>

@@ -21,11 +21,11 @@ class UserService {
     var crashSnsSyncIno = (snsEgId: "", egToken:"", profile:"", principal:"", provider: "", email: "")
     let accountService:AccountService = AccountService()
     let gameService:GameService = GameService()
-    var pview: UIViewController
+    var pView: UIViewController
     
-    init (p: UIViewController) {
-        pview = p
-        userDialog = UserDialog(pview: pview)
+    init (pview: UIViewController) {
+        self.pView = pview
+        userDialog = UserDialog(pview: pView)
     }
     
     func isCognitoSnsLoggedIn() -> Bool {
@@ -177,7 +177,7 @@ class UserService {
     func alert(_ message:String) -> Void{
         let alert = UIAlertController(title: "confirm", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-        pview.present(alert, animated: true)
+        pView.present(alert, animated: true)
     }
     
     func startGame() {
@@ -351,7 +351,7 @@ class UserService {
         //UIColor.orange
         
         AWSAuthUIViewController.presentViewController(
-            with: pview.navigationController!,
+            with: pView.navigationController!,
             configuration: config,
             completionHandler: { (provider: AWSSignInProvider, error: Error?) in
                 if error != nil {
