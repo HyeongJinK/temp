@@ -16,6 +16,8 @@ public class EstgamesCommon {
     let authority: AuthorityViewController
     public var authorityCallBack : () -> Void = { () -> Void in}
     public var policyCallBack : () -> Void = { () -> Void in}
+    public var bannerCallBack : () -> Void = { () -> Void in}
+    public var processCallBack : () -> Void = { () -> Void in}
     let policy: PolicyViewController
     var process: [String] = Array<String>()
     
@@ -95,29 +97,33 @@ public class EstgamesCommon {
             call()
         } else {
             processIndex = 0
+            processCallBack()
         }
     }
     
     func call() {
         switch self.process[processIndex] {
             case "event":
+                processIndex += 1
                 banner.closeBtCallBack = check
                 banner.show()
             break
             case "system_contract":
+                processIndex += 1
                 authority.callbackFunc = check
                 pview.present(authority, animated: false)
                 break
             case "use_contract" :
+                processIndex += 1
                 policy.callbackFunc = check
                 pview.present(policy, animated: false)
                 break
-            case "login" :
-                break
+            //case "login" :
             default:
+                processIndex += 1
+                check()
                 break
         }
-        processIndex += 1
     }
     
     /**
@@ -159,6 +165,7 @@ public class EstgamesCommon {
     public func bannerShow() {
         checkEstgamesData()
         
+        banner.closeBtCallBack = bannerCallBack
         banner.show()
     }
 }

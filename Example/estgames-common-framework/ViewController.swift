@@ -56,11 +56,15 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+    // 순서대로 호출
     @IBAction func processAction(_ sender: Any) {
+        estgamesCommon.processCallBack = {() -> Void in //순서대로 호출이 끝나고 호출하는 콜백함수
+            print(self.estgamesCommon.contractService().description)
+            print(self.estgamesCommon.contractPrivate().description)
+            }
         estgamesCommon.processShow()
     }
-    
+    // 배너만 따로 호출
     @IBAction func bannerTest(_ sender: Any) {
         estgamesCommon.bannerShow()
     }
@@ -68,18 +72,17 @@ class ViewController: UIViewController {
     func authCallBack() {
         print("authority Call Back")
     }
-    
+    // 권한만 따로 호출
     @IBAction func authorityTest(_ sender: Any) {
         estgamesCommon.authorityCallBack = authCallBack
         estgamesCommon.authorityShow()
     }
     
-    
+    // 이용약관만 따로 호출
     @IBAction func policyTest(_ sender: Any) {
         estgamesCommon.policyCallBack = {() -> Void in
-            var ttt:Bool = self.estgamesCommon.contractPrivate()
-            self.estgamesCommon.contractService()
-            print(ttt)
+            print(self.estgamesCommon.contractService())
+            print(self.estgamesCommon.contractPrivate())
             }
         estgamesCommon.policyShow()
     }
