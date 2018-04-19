@@ -27,6 +27,16 @@ pod 'estgames-common-framework', '~> 0.8.0'
 * pod 'Alamofire', '~> 4.7'
 
 
+### info.plist에 설정등록
+
+### awsconfiguration.json 파일 추가
+
+### Localizable.strings에 문자열 추가
+
+### UserService.swift 파일 추가
+
+
+
 ### 설정 (배너, 이용약관, 권한)관련 창
 
 ```swift

@@ -10,6 +10,7 @@ import UIKit
 import estgames_common_framework
 
 class ViewController: UIViewController {
+    var dashboard: WebViewDialog!
     var estgamesCommon:EstgamesCommon!
     var userDialog: UserDialog!
     
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         
         vc = UserService(pview: self)
+        dashboard = WebViewDialog(pview: self, egToken: MpInfo.Account.egToken)
         estgamesCommon = EstgamesCommon(pview: self)
         userDialog = UserDialog(pview: self)
         userDialog.setUserLinkAction(closeAction: {() -> Void in print("closeAction")}, confirmAction: {() -> Void in print("confirmAction")}, cancelAction: {() -> Void in print("cancelAction")})
@@ -39,6 +41,7 @@ class ViewController: UIViewController {
         userDialog.setUserGuestLinkCharacterLabel(guest: "fjkd", sns: "fjkjf")
         dataPrint()
     }
+    
     
     @IBAction func rePrint(_ sender: Any) {
         dataPrint()
@@ -111,6 +114,14 @@ class ViewController: UIViewController {
     @IBAction func UserResultTest(_ sender: Any) {
         userDialog.showUserResultDialog()
     }
+    
+    /**
+     웹뷰창
+     */
+    @IBAction func webViewShowTest(_ sender: Any) {
+        dashboard.show()
+    }
+    
     
     /**
      계정연동 부분

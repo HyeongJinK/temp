@@ -620,8 +620,9 @@
 		EBA2264381A86773B13A216760E4C21B /* FBSDKGraphErrorRecoveryProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 117F5ED20FF186AE40CBB89AD5AAA6DA /* FBSDKGraphErrorRecoveryProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC11163B98E1823A6B99811A3DC54A59 /* AWSMTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF7BE0A00048C25B6514F1838DBE128 /* AWSMTLModel.m */; };
 		ED60333243D4D6389EA926E6C6DA63CC /* AWSDDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 560BD27B44ED5C65623412FEF4E27EB1 /* AWSDDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED77D40920874044006230A7 /* WebViewUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED77D40820874044006230A7 /* WebViewUIController.swift */; };
 		ED77D40C208827C9006230A7 /* UserGuestLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED77D40A20881D9F006230A7 /* UserGuestLinkViewController.swift */; };
+		ED77D40F2088776D006230A7 /* WebViewDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED77D40D2088725F006230A7 /* WebViewDialog.swift */; };
+		ED77D410208877B4006230A7 /* WebViewUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED77D40820874044006230A7 /* WebViewUIController.swift */; };
 		ED7B17412085EBA000CF3BF6 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7B17402085EBA000CF3BF6 /* AccountService.swift */; };
 		EDC827442086DF3F0083C36E /* btn_bottom_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545DB7DB1834B21BF31CC4B50A9E050A /* btn_bottom_close_img@2x.png */; };
 		EDC827452086DF3F0083C36E /* btn_bottom_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A85FB6715E2D4E65321F6D4414A7BE /* btn_bottom_close_img@3x.png */; };
@@ -1648,6 +1649,7 @@
 		ED43EDA7E36D88842EFA27CF4AA00EE6 /* FBSDKAppLinkResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppLinkResolver.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkResolver.h; sourceTree = "<group>"; };
 		ED77D40820874044006230A7 /* WebViewUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewUIController.swift; sourceTree = "<group>"; };
 		ED77D40A20881D9F006230A7 /* UserGuestLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuestLinkViewController.swift; sourceTree = "<group>"; };
+		ED77D40D2088725F006230A7 /* WebViewDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewDialog.swift; sourceTree = "<group>"; };
 		ED7B17402085EBA000CF3BF6 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		EDB92B659E5B23C47D5E8865C950E878 /* FBSDKGraphRequestPiggybackManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestPiggybackManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestPiggybackManager.h; sourceTree = "<group>"; };
 		EDC8277420870FDD0083C36E /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
@@ -3135,6 +3137,7 @@
 			isa = PBXGroup;
 			children = (
 				ED77D40820874044006230A7 /* WebViewUIController.swift */,
+				ED77D40D2088725F006230A7 /* WebViewDialog.swift */,
 			);
 			name = webview;
 			path = "estgames-common-framework/Classes/webview";
@@ -4213,7 +4216,6 @@
 				61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */,
 				B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */,
 				A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */,
-				ED77D40920874044006230A7 /* WebViewUIController.swift in Sources */,
 				EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */,
 				BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */,
 				5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */,
@@ -4557,6 +4559,7 @@
 				2B9223BE5302BF1CBFC0AA261F66B103 /* Animator.swift in Sources */,
 				D53D252AD2782A2C2279B47A5510FD11 /* AuthorityDataSet.swift in Sources */,
 				873A05B4C855965F1314A474AF7BE743 /* AuthorityDialog.swift in Sources */,
+				ED77D40F2088776D006230A7 /* WebViewDialog.swift in Sources */,
 				60A117AA203163CC5C6853E87ACCBABC /* AuthorityViewController.swift in Sources */,
 				AF7D83A0139B4E7B974713E7C6B7BD30 /* BannerBottomView.swift in Sources */,
 				2A8F4CC81034FEC372234A3C854B95C8 /* BannerCheckBox.swift in Sources */,
@@ -4573,6 +4576,7 @@
 				49F0E9C81677D642992E197E856401BE /* KeychainWrapper.swift in Sources */,
 				E0E8A2B992DD14183D9B1B3C24068C71 /* MultipartFormData.swift in Sources */,
 				709C5EE5CBCFF1B92CC77BC4F3E3410A /* NetworkReachabilityManager.swift in Sources */,
+				ED77D410208877B4006230A7 /* WebViewUIController.swift in Sources */,
 				2E928773836DF2DE82B5DBB70008E361 /* Notifications.swift in Sources */,
 				ED7B17412085EBA000CF3BF6 /* AccountService.swift in Sources */,
 				EDC8277520870FDE0083C36E /* GameService.swift in Sources */,
