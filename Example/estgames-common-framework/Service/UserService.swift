@@ -52,8 +52,7 @@ class UserService {
     }
     
     private func linkCancelAction() {   //기존 계정을 사용할 때(guest)
-        syncForce()
-        userResultShow()
+        userGuestLinkShow()
     }
     
     func show() {
@@ -80,6 +79,21 @@ class UserService {
     private func userLoadShow() {
         userDialog.setUserLoadAction(closeAction: logout, confirmCheck: loadConfirmAction, confirmActionCallBack: LoadConfirmCallBack)
         userDialog.showUserLoadDialog()
+    }
+    
+    private func loginAction() {
+        syncForce()
+        userResultShow()
+    }
+    
+    private func beforeAction() {
+        show()
+    }
+    
+    private func userGuestLinkShow() {
+        userDialog.setUserGuestLinkCharacterLabel(guest: characterInfo(MpInfo.Account.egId), sns: characterInfo(self.crashSnsSyncIno.snsEgId))
+        userDialog.setUserGuestLinkAction(closeAction: logout, loginAction: loginAction, beforeAction: beforeAction)
+        userDialog.showUserGuestLinkDialog()
     }
     
     private func userResultShow() {
