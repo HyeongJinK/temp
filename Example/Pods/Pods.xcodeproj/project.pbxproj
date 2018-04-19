@@ -621,6 +621,7 @@
 		EC11163B98E1823A6B99811A3DC54A59 /* AWSMTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF7BE0A00048C25B6514F1838DBE128 /* AWSMTLModel.m */; };
 		ED60333243D4D6389EA926E6C6DA63CC /* AWSDDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 560BD27B44ED5C65623412FEF4E27EB1 /* AWSDDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED77D40920874044006230A7 /* WebViewUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED77D40820874044006230A7 /* WebViewUIController.swift */; };
+		ED77D40C208827C9006230A7 /* UserGuestLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED77D40A20881D9F006230A7 /* UserGuestLinkViewController.swift */; };
 		ED7B17412085EBA000CF3BF6 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7B17402085EBA000CF3BF6 /* AccountService.swift */; };
 		EDC827442086DF3F0083C36E /* btn_bottom_close_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545DB7DB1834B21BF31CC4B50A9E050A /* btn_bottom_close_img@2x.png */; };
 		EDC827452086DF3F0083C36E /* btn_bottom_close_img@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A85FB6715E2D4E65321F6D4414A7BE /* btn_bottom_close_img@3x.png */; };
@@ -1646,6 +1647,7 @@
 		EC5B82427DF032101B3FAD73D2C33837 /* AWSFacebookSignInProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSFacebookSignInProvider.h; path = AWSAuthSDK/Sources/AWSFacebookSignIn/AWSFacebookSignInProvider.h; sourceTree = "<group>"; };
 		ED43EDA7E36D88842EFA27CF4AA00EE6 /* FBSDKAppLinkResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppLinkResolver.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkResolver.h; sourceTree = "<group>"; };
 		ED77D40820874044006230A7 /* WebViewUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewUIController.swift; sourceTree = "<group>"; };
+		ED77D40A20881D9F006230A7 /* UserGuestLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuestLinkViewController.swift; sourceTree = "<group>"; };
 		ED7B17402085EBA000CF3BF6 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		EDB92B659E5B23C47D5E8865C950E878 /* FBSDKGraphRequestPiggybackManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestPiggybackManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestPiggybackManager.h; sourceTree = "<group>"; };
 		EDC8277420870FDD0083C36E /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
@@ -2934,6 +2936,7 @@
 				6594A360BA0ABE3F74B711AF68BD5FAF /* UserLinkViewController.swift */,
 				5B13B71F1F03A2EF28684476B6CE3CAA /* UserLoadViewController.swift */,
 				C38477835051D7FE9F7138585F9E2808 /* UserResultViewController.swift */,
+				ED77D40A20881D9F006230A7 /* UserGuestLinkViewController.swift */,
 			);
 			name = user;
 			path = "estgames-common-framework/Classes/user";
@@ -4576,6 +4579,7 @@
 				75D76213E53E177EBF51894B81657FF2 /* ParameterEncoding.swift in Sources */,
 				820CAC26D0C897EF1F98A01B3374067D /* PolicyButton.swift in Sources */,
 				DA0C4E98BA67E63DC903536A5DA3450E /* PolicyCloseBt.swift in Sources */,
+				ED77D40C208827C9006230A7 /* UserGuestLinkViewController.swift in Sources */,
 				7A27EA94612714F51287396F1F24A28C /* PolicyDataSet.swift in Sources */,
 				52D8F13A696407C0CD41D1D019E036F4 /* PolicyDialog.swift in Sources */,
 				7AEC828698051C1F70588B7F20265D9F /* PolicyViewController.swift in Sources */,

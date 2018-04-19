@@ -12,6 +12,7 @@ public class UserDialog {
     let userLinkViewController: UserLinkViewController
     let userLoadViewController: UserLoadViewController
     let userResultViewController: UserResultViewController
+    let userGuestLinkViewController: UserGuestLinkViewController
     var userDataSet: UserDataSet
     
     // 이전 login controller로 부터 전달 받을 sns 계정 데이터 튜플
@@ -29,6 +30,9 @@ public class UserDialog {
         userResultViewController = UserResultViewController()
         userResultViewController.dataSet(userDataSet)
         userResultViewController.modalPresentationStyle = .overCurrentContext
+        userGuestLinkViewController = UserGuestLinkViewController()
+        userGuestLinkViewController.dataSet(userDataSet)
+        userGuestLinkViewController.modalPresentationStyle = .overCurrentContext
     }
     
     public func setUserLinkAction(closeAction: @escaping () -> Void, confirmAction:@escaping () -> Void, cancelAction: @escaping () -> Void) {
@@ -43,9 +47,15 @@ public class UserDialog {
         self.userLoadViewController.confirmActionCallBack = confirmActionCallBack
     }
     
-    public func setUserResultction(closeAction: @escaping () -> Void, confirmAction:@escaping () -> Void) {
+    public func setUserResultAction(closeAction: @escaping () -> Void, confirmAction:@escaping () -> Void) {
         self.userResultViewController.closeActon = closeAction
         self.userResultViewController.confirmAction = confirmAction
+    }
+    
+    public func setUserGuestLinkAction(closeAction: @escaping () -> Void, loginAction:@escaping () -> Void, beforeAction: @escaping () -> Void) {
+        self.userGuestLinkViewController.closeActon = closeAction
+        self.userGuestLinkViewController.loginAction = loginAction
+        self.userGuestLinkViewController.beforeAction = beforeAction
     }
     
     public func setUserLinkCharacterLabel(guest: String, sns: String) {
@@ -55,6 +65,11 @@ public class UserDialog {
     
     public func setUserLoadCharacterLabel(guest: String) {
         self.userLoadViewController.middleLabel.text = self.userLoadViewController.middleLabel.text!.replacingOccurrences(of: "[]", with: guest)
+    }
+    
+    public func setUserGuestLinkCharacterLabel(guest: String, sns: String) {
+        self.userGuestLinkViewController.replaceStrSns = sns
+        self.userGuestLinkViewController.replaceStrGuest = guest
     }
     
     public func showUserLinkDialog() {
@@ -75,5 +90,9 @@ public class UserDialog {
     
     public func getInputText() -> String? {
         return userLoadViewController.inputText.text
+    }
+    
+    public func showUserGuestLinkDialog() {
+        pview.present(userGuestLinkViewController, animated: false)
     }
 }

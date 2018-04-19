@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         userDialog = UserDialog(pview: self)
         userDialog.setUserLinkAction(closeAction: {() -> Void in print("closeAction")}, confirmAction: {() -> Void in print("confirmAction")}, cancelAction: {() -> Void in print("cancelAction")})
         userDialog.setUserLinkCharacterLabel(guest: "adfads", sns: "bzcxvczxv")
+        userDialog.setUserGuestLinkCharacterLabel(guest: "fjkd", sns: "fjkjf")
         dataPrint()
     }
     
@@ -73,7 +74,13 @@ class ViewController: UIViewController {
         estgamesCommon.authorityShow()
     }
     
+    
     @IBAction func policyTest(_ sender: Any) {
+        estgamesCommon.policyCallBack = {() -> Void in
+            var ttt:Bool = self.estgamesCommon.contractPrivate()
+            self.estgamesCommon.contractService()
+            print(ttt)
+            }
         estgamesCommon.policyShow()
     }
     
@@ -92,6 +99,10 @@ class ViewController: UIViewController {
     
     @IBAction func UserLoadTest(_ sender: Any) {
         userDialog.showUserLoadDialog()
+    }
+    
+    @IBAction func UserGuestLinkTest(_ sender: Any) {
+        userDialog.showUserGuestLinkDialog()
     }
     
     @IBAction func UserResultTest(_ sender: Any) {
