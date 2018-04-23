@@ -1,6 +1,6 @@
 {
   "name": "estgames-common-framework",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "summary": "Estgames common framework",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://gitlab.com/estmp/banner-ios-sdk.git",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://gitlab.com/estmp/banner-ios-sdk.git",
-    "tag": "0.9.0"
+    "tag": "0.9.1"
   },
   "platforms": {
     "ios": "11.0"

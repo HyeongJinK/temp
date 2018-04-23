@@ -38,6 +38,6 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-    s.dependency 'Alamofire', '~> 4.7'
-    s.dependency 'AWSAuthCore', '~> 2.6.1'
+  s.dependency 'Alamofire', '~> 4.7'
+  s.dependency 'AWSAuthCore', '~> 2.6.1'
 end

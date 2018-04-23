@@ -10,8 +10,6 @@
 #endif
 #endif
 
-#import "SwiftKeychainWrapper.h"
-
 FOUNDATION_EXPORT double estgames_common_frameworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char estgames_common_frameworkVersionString[];
 
