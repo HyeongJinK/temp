@@ -32,7 +32,6 @@ public class WebViewUIController: UIViewController {
         
         if (url != nil && egToken != nil) {
             url! += "?eg_token="+egToken!+"&nation=kr"
-            print(url)
             webView.loadRequest(URLRequest(url: URL(string: url!)!))
         }
         
