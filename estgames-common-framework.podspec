@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '11.0'
 
   s.source_files = 'estgames-common-framework/Classes/**/*'
+  s.source_files = 'estgames-common-framework/Classes/**/**/*'
   
   s.resource_bundles = {
     'estgames-common-framework' => ['estgames-common-framework/Assets/*.png']
