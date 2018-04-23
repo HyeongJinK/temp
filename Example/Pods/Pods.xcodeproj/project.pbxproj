@@ -352,16 +352,6 @@
 			path = SwiftKeychainWrapper;
 			sourceTree = "<group>";
 		};
-		81FDE90350F3F2EE1986CD75B25CB9A7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F821C128A65F5E423C0EA29A30F5FFD8 /* alamofire */,
-				7F96F56438D0F60D49851DBF51D2DEC9 /* SwiftKeychainWrapper */,
-			);
-			name = Pods;
-			path = "estgames-common-framework/Classes/Pods";
-			sourceTree = "<group>";
-		};
 		85A30DA7DDB40708B1DA3D8EAAEADC37 /* policy */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,12 +444,13 @@
 		BDA3BECD8B7E63C8BB86E61DBC8F94E8 /* estgames-common-framework */ = {
 			isa = PBXGroup;
 			children = (
+				F821C128A65F5E423C0EA29A30F5FFD8 /* alamofire */,
+				7F96F56438D0F60D49851DBF51D2DEC9 /* SwiftKeychainWrapper */,
 				94F6E0D99F5A6A531D00C921DCE4F10E /* ReplaceMe.swift */,
 				DA50BDAB79E396AE282043EA70D99FAC /* authority */,
 				559FDFD95DBEC9E5B890D2A2A1EFEA87 /* banner */,
 				50ECA037FC75C26BC67AD00008FA3443 /* common */,
 				F9613B92FE0610BC3CB203ADCD7786F8 /* Lib */,
-				81FDE90350F3F2EE1986CD75B25CB9A7 /* Pods */,
 				85A30DA7DDB40708B1DA3D8EAAEADC37 /* policy */,
 				97CCBBD06ED41862878C648C1661F7B6 /* Resources */,
 				2ECE4AE1177284FE2766B6FBEED68B74 /* Support Files */,
