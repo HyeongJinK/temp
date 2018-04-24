@@ -11,8 +11,8 @@ import estgames_common_framework
 import GoogleSignIn
 
 class ViewController: UIViewController {
-    var dashboard: WebViewDialog!
-    var estgamesCommon:EstgamesCommon!
+//    var dashboard: WebViewDialog!
+//    var estgamesCommon:EstgamesCommon!
     var vc : UserService!
     
     var userDialog: UserDialog!
@@ -34,12 +34,12 @@ class ViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
 
         vc = UserService(pview: self, googleEmail: googleEmail)
-        dashboard = WebViewDialog(pview: self, egToken: MpInfo.Account.egToken)
-        estgamesCommon = EstgamesCommon(pview: self)
-        userDialog = UserDialog(pview: self)
-        userDialog.setUserLinkAction(closeAction: {() -> Void in print("closeAction")}, confirmAction: {() -> Void in print("confirmAction")}, cancelAction: {() -> Void in print("cancelAction")})
-        userDialog.setUserLinkCharacterLabel(guest: "adfads", sns: "bzcxvczxv")
-        userDialog.setUserGuestLinkCharacterLabel(guest: "fjkd", sns: "fjkjf")
+//        dashboard = WebViewDialog(pview: self, egToken: MpInfo.Account.egToken)
+//        estgamesCommon = EstgamesCommon(pview: self)
+//        userDialog = UserDialog(pview: self)
+//        userDialog.setUserLinkAction(closeAction: {() -> Void in print("closeAction")}, confirmAction: {() -> Void in print("confirmAction")}, cancelAction: {() -> Void in print("cancelAction")})
+//        userDialog.setUserLinkCharacterLabel(guest: "adfads", sns: "bzcxvczxv")
+//        userDialog.setUserGuestLinkCharacterLabel(guest: "fjkd", sns: "fjkjf")
         dataPrint()
     }
     
@@ -79,6 +79,12 @@ class ViewController: UIViewController {
     @IBAction func snsConnect(_ sender: Any) {
         vc.goToLogin()
     }
+    
+    
+    
+    
+    
+    
     
     
     

@@ -22,6 +22,8 @@
 
 ### Localizable.strings에 문자열 추가
 
+### AppDelegate 설정
+
 
 &nbsp;
 &nbsp;

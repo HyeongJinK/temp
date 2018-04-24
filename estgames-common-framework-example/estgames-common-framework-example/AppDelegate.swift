@@ -7,54 +7,21 @@
 //
 
 import UIKit
-import AWSAuthCore
-import AWSPinpoint
-import AWSGoogleSignIn
-import AWSFacebookSignIn
+import estgames_common_framework
 import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
-
-    var pinpoint: AWSPinpoint?
-    //Used for checking whether Push Notification is enabled in Amazon Pinpoint
     static let remoteNotificationKey = "RemoteNotification"
-    var isInitialized: Bool = false
-    
-    
+    var estAppDelegate: EstAppDelegate = EstAppDelegate()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        // Override point for customization after application launch.
-        
-        AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile", "email"])
-        AWSSignInManager.sharedInstance().register(signInProvider: AWSFacebookSignInProvider.sharedInstance())
-        AWSGoogleSignInProvider.sharedInstance().setScopes(["profile", "openid", "email"])
-        AWSSignInManager.sharedInstance().register(signInProvider: AWSGoogleSignInProvider.sharedInstance())
-        
-        
-        
-        let didFinishLaunching = AWSSignInManager.sharedInstance().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
-        
-        pinpoint = AWSPinpoint(configuration:AWSPinpointConfiguration.defaultPinpointConfiguration(launchOptions: launchOptions))
-        if (!isInitialized) {
-            
-            AWSSignInManager.sharedInstance().resumeSession(completionHandler: { (result: Any?, error: Error?) in
-                print("Result: \(String(describing: result)) \n Error:\(String(describing: error))")
-            })
-            isInitialized = true
-        }
-        return didFinishLaunching
+        return estAppDelegate.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        // print("application application: \(application.description), openURL: \(url.absoluteURL), sourceApplication: \(sourceApplication)")
-        AWSSignInManager.sharedInstance().interceptApplication(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-        isInitialized = true
-        
-        return true
+        return estAppDelegate.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
