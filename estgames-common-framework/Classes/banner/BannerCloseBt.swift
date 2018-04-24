@@ -12,16 +12,16 @@ import Foundation
 class CloseBt: UIButton {
     let closeBtTitle:String = NSLocalizedString("banner_closeButton", comment: "")
     var checkBt: CheckBox?
-    let closeBtImage:UIImage
+    let closeBtImage:UIImage?
     var closeBtCallBack: () -> Void = {() -> Void in }
     
     required init?(coder aDecoder: NSCoder) {
-        closeBtImage = UIImage(named: "btn_bottom_close_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)!
+        closeBtImage = UIImage(named: "btn_bottom_close_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)
         super.init(coder: aDecoder)
     }
     
     init(check: CheckBox) {
-        closeBtImage = UIImage(named: "btn_bottom_close_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)!
+        closeBtImage = UIImage(named: "btn_bottom_close_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)
         
         super.init(frame: CGRect.zero)
         

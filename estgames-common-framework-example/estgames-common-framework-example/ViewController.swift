@@ -8,6 +8,7 @@
 
 import UIKit
 import estgames_common_framework
+import GoogleSignIn
 
 class ViewController: UIViewController {
     var dashboard: WebViewDialog!
@@ -32,7 +33,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
 
-        vc = UserService(pview: self)
+        vc = UserService(pview: self, googleEmail: googleEmail)
         dashboard = WebViewDialog(pview: self, egToken: MpInfo.Account.egToken)
         estgamesCommon = EstgamesCommon(pview: self)
         userDialog = UserDialog(pview: self)
@@ -41,6 +42,15 @@ class ViewController: UIViewController {
         userDialog.setUserGuestLinkCharacterLabel(guest: "fjkd", sns: "fjkjf")
         dataPrint()
     }
+    
+    func googleEmail() -> String {
+        if let user = GIDSignIn.sharedInstance().currentUser {
+            return user.profile.email
+        } else {
+            return ""
+        }
+    }
+    
     func dataPrint() {
         self.lblIdentityId.text = vc.getPrincipal()
         self.lblPrincipal.text = MpInfo.Account.principal
@@ -51,6 +61,9 @@ class ViewController: UIViewController {
         self.lblEmail.text = String(describing:MpInfo.Account.email)
     }
     
+    /**
+     계정연동
+     */
     @IBAction func rePrint(_ sender: Any) {
         dataPrint()
     }
@@ -66,39 +79,10 @@ class ViewController: UIViewController {
     @IBAction func snsConnect(_ sender: Any) {
         vc.goToLogin()
     }
-    //    /**
-    //     계정연동 부분
-    //     ***/
-    //    let accountService = AccountService()
-    //
-    //
-    //    @IBAction func crateToken(_ sender: Any) {
-    //        vc.startGame()
-    //    }
-    //
-    //    @IBAction func clearToken(_ sender: Any) {
-    //        vc.clearKey()
-    //    }
-    //
-    //    @IBAction func snsConnect(_ sender: Any) {
-    //        vc.goToLogin()
-    //    }
-    //    @IBAction func rePrint(_ sender: Any) {
-//        dataPrint()
-//    }
-//    func dataPrint() {
-//        self.lblIdentityId.text = vc.getPrincipal()
-//        self.lblPrincipal.text = MpInfo.Account.principal
-//        self.lblProviderName.text = MpInfo.Account.provider
-//        self.lblEgId.text = MpInfo.Account.egId
-//        self.lblEgToken.text = MpInfo.Account.egToken
-//        self.lblRefreshToken.text = MpInfo.Account.refreshToken
-//        self.lblEmail.text = String(describing:MpInfo.Account.email)
-//    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }
+    
+    
+    
+    
 //    // 순서대로 호출
 //    @IBAction func processAction(_ sender: Any) {
 //        estgamesCommon.processCallBack = {() -> Void in //순서대로 호출이 끝나고 호출하는 콜백함수

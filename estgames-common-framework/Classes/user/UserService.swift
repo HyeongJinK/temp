@@ -13,7 +13,6 @@ import AWSFacebookSignIn
 import AWSGoogleSignIn
 import AWSCore
 import FBSDKLoginKit
-//import GoogleSignIn
 
 public class UserService {
     var userDialog: UserDialog
@@ -21,10 +20,12 @@ public class UserService {
     let accountService:AccountService = AccountService()
     let gameService:GameService = GameService()
     var pView: UIViewController
+    var getGoogleEmail : () -> String = {() -> String in ""}
     
-    public init (pview: UIViewController) {
+    public init (pview: UIViewController, googleEmail: @escaping () -> String) {
         self.pView = pview
         userDialog = UserDialog(pview: pView)
+        self.getGoogleEmail = googleEmail
     }
     
     func isCognitoSnsLoggedIn() -> Bool {
@@ -325,11 +326,7 @@ public class UserService {
                     self.snsSyncProcess("facebook", "")
                 }
             } else if identityProviderName == "accounts.google.com" {
-//                if let user = GIDSignIn.sharedInstance().currentUser {
-//                    self.snsSyncProcess("google", user.profile.email)
-//                } else {
-//                    self.snsSyncProcess("google", "")
-//                }
+                self.snsSyncProcess("google", getGoogleEmail())
             }
         }
     }

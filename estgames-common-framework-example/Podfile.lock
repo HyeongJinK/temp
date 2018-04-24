@@ -22,7 +22,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
-  - estgames-common-framework (0.9.3):
+  - estgames-common-framework (0.9.4):
     - Alamofire (~> 4.7)
     - AWSAuthCore (~> 2.6.1)
     - AWSAuthUI (~> 2.6.1)
@@ -94,7 +94,7 @@ SPEC CHECKSUMS:
   AWSGoogleSignIn: 06c9949828d75a6ccc67390a9bd5dc3577aad5be
   AWSPinpoint: 28140b49212223ee446eef5762fe52fce1512781
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  estgames-common-framework: 08baf69300f75c54191dc4429a21b35ba6ff84a6
+  estgames-common-framework: 064705f1c9e8585adb98ee3fe8ff9d67303df020
   FBSDKCoreKit: 55d7f2ac45d9c4b9b6119f4e43900fe84b9b7b1b
   FBSDKLoginKit: 32ac05c2a59952c363c2e85aafa8f73ba93bcbad
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
@@ -103,6 +103,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 98edba2157704357febd475d54e1f1b65c885e5a
+PODFILE CHECKSUM: a952c5103323087d001422a1e25b260cb8749099
 
 COCOAPODS: 1.5.0

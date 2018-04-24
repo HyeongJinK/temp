@@ -5,6 +5,7 @@ target 'estgames-common-framework-example' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'GoogleSignIn', '~> 4.0.0'
+  #pod 'estgames-common-framework', '~> 0.9.4'
   pod 'estgames-common-framework', :path => '../'
   # Pods for estgames-common-framework-example
 
