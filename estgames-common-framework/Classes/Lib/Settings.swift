@@ -61,7 +61,7 @@ public class MpInfo {
             }
         }
         
-        public static var egId: String {
+        public internal(set) static var egId: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.eg_id") ?? ""
             }
@@ -70,7 +70,7 @@ public class MpInfo {
             }
         }
         
-        public static var egToken: String {
+        public internal(set) static var egToken: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.eg_token") ?? ""
             }
@@ -79,7 +79,7 @@ public class MpInfo {
             }
         }
         
-        public static var refreshToken: String {
+        public internal(set) static var refreshToken: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.refresh_token") ?? ""
             }
@@ -88,7 +88,7 @@ public class MpInfo {
             }
         }
         
-        public static var principal: String {
+        public internal(set) static var principal: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.principal") ?? ""
             }
@@ -97,7 +97,7 @@ public class MpInfo {
             }
         }
         
-        public static var provider: String {
+        public internal(set) static var provider: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.provider") ?? ""
             }
@@ -106,7 +106,7 @@ public class MpInfo {
             }
         }
         
-        public static var email: String {
+        public internal(set) static var email: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.email") ?? ""
             }
@@ -115,7 +115,7 @@ public class MpInfo {
             }
         }
         
-        public static var device: String {
+        public internal(set) static var device: String {
             get {
                 return KeychainWrapper.standard.string(forKey: "mp.device") ?? ""
             }

@@ -28,6 +28,7 @@ public class UserService {
         self.getGoogleEmail = googleEmail
     }
     
+    
     func isCognitoSnsLoggedIn() -> Bool {
         if AWSIdentityManager.default().logins().result == nil {
             return false
@@ -39,6 +40,42 @@ public class UserService {
     public func getPrincipal() -> String? {
         return AWSIdentityManager.default().identityId
     }
+    
+    public func goToLogin() {
+        if MpInfo.Account.isAuthedUser() == false {
+            self.alert("게스트로 로그인이 먼저 필요합니다. \n\n게임시작을 먼저 해주세요.")
+            return
+        }
+        
+        if MpInfo.Account.provider != "guest" {
+            self.alert("계정연동은 게스트 상태에서만 가능합니다.")
+            return
+        }
+        
+        let config = AWSAuthUIConfiguration()
+        
+        config.enableUserPoolsUI = false
+        config.addSignInButtonView(class: AWSGoogleSignInButton.self)
+        config.addSignInButtonView(class: AWSFacebookSignInButton.self)
+        config.canCancel = true
+        config.isBackgroundColorFullScreen = false
+        config.logoImage = nil//UIImage(named: "UserIcon")
+        
+        AWSAuthUIViewController.presentViewController(
+            with: pView.navigationController!,
+            configuration: config,
+            completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+                if error != nil {
+                    print("Error occurred: \(String(describing:error))")
+                } else {
+                    self.onSignIn(true, provider)
+                }
+        })
+    }
+    
+    
+    
+    
     
     func refreshToken(
         egToken: String, refreshToken: String, device: String, profile: Any?,
@@ -331,41 +368,5 @@ public class UserService {
         }
     }
     
-    public func goToLogin() {
-        if MpInfo.Account.isAuthedUser() == false {
-            self.alert("게스트로 로그인이 먼저 필요합니다. \n\n게임시작을 먼저 해주세요.")
-            return
-        }
-        
-        if MpInfo.Account.provider != "guest" {
-            self.alert("계정연동은 게스트 상태에서만 가능합니다.")
-            return
-        }
-        
-        let config = AWSAuthUIConfiguration()
-        
-        config.enableUserPoolsUI = false
-        config.addSignInButtonView(class: AWSGoogleSignInButton.self)
-        config.addSignInButtonView(class: AWSFacebookSignInButton.self)
-        config.canCancel = true
-        config.isBackgroundColorFullScreen = false
-        //        let imgUrl = URL(string: entry.banner.resource)
-        //        let dtinternet = try? Data(contentsOf: imgUrl!)
-        //        self.image = UIImage(data: dtinternet!)
-        // config.backgroundColor = UIColor.init(patternImage: UIImage(named: "btn_bottom_close_img", in:Bundle(for: ViewController.self), compatibleWith:nil)!)
-        config.logoImage = nil//UIImage(named: "UserIcon")
-        //config.logoImage = UIImage(named: "btn_close_img_user", in:Bundle(for: ViewController.self), compatibleWith:nil)
-        //UIColor.orange
-        
-        AWSAuthUIViewController.presentViewController(
-            with: pView.navigationController!,
-            configuration: config,
-            completionHandler: { (provider: AWSSignInProvider, error: Error?) in
-                if error != nil {
-                    print("Error occurred: \(String(describing:error))")
-                } else {
-                    self.onSignIn(true, provider)
-                }
-        })
-    }
+    
 }
