@@ -1,6 +1,0 @@
-framework module Pods_estgames_common_framework_Example {
-  umbrella header "Pods-estgames-common-framework_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}
