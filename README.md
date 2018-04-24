@@ -11,17 +11,10 @@
 ### cocoapods 라이브러리 등록
 
 * 이스트 공통 모듈
-* pod 'estgames-common-framework', '~> 0.8.0' 
+ * pod 'estgames-common-framework', '~> 0.9.5' 
 
-* 계정연동에 필요한 AWS  모듈들
-* pod 'AWSAuthCore', '~> 2.6.1'
-* pod 'AWSPinpoint', '~> 2.6.1'
-* pod 'AWSGoogleSignIn', '~> 2.6.1'
-* pod 'GoogleSignIn', '~> 4.0.0'
-* pod 'AWSFacebookSignIn', '~> 2.6.1'
-* pod 'AWSCognito', '~> 2.6.1'
-* pod 'AWSAuthUI', '~> 2.6.1'
-* pod 'Alamofire', '~> 4.7'
+* 구글 모듈
+ * pod 'GoogleSignIn', '~> 4.0.0'
 
 ### info.plist에 설정등록
 
@@ -29,7 +22,6 @@
 
 ### Localizable.strings에 문자열 추가
 
-### UserService.swift 파일 추가
 
 &nbsp;
 &nbsp;
@@ -102,7 +94,20 @@ estgamesCommon.authorityShow()
 override func viewDidLoad() {
 super.viewDidLoad()
 
-vc = UserService(pview: self)
+vc = UserService(pview: self, googleEmail: googleEmail) //매개변수 : 유저연동 창이 나올 뷰, 구글메일(String)을 리턴하는 함수
+}
+
+/**
+구글 메일주소를 리턴하는 함수
+*/
+import GoogleSignIn
+
+func googleEmail() -> String {
+    if let user = GIDSignIn.sharedInstance().currentUser {
+        return user.profile.email
+    } else {
+        return ""
+    }
 }
 ```
 
