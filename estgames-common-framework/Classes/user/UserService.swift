@@ -15,19 +15,27 @@ import AWSCore
 import FBSDKLoginKit
 
 public class UserService {
-    var userDialog: UserDialog
-    var crashSnsSyncIno = (snsEgId: "", egToken:"", profile:"", principal:"", provider: "", email: "")
     let accountService:AccountService = AccountService()
     let gameService:GameService = GameService()
+    var userDialog: UserDialog
+    
+    var crashSnsSyncIno = (snsEgId: "", egToken:"", profile:"", principal:"", provider: "", email: "")
     var pView: UIViewController
-    var getGoogleEmail : () -> String = {() -> String in ""}
+    
+    var getGoogleEmail : (() -> String)?
+    
+    public var startSuccessCallBack: () -> Void = {() -> Void in }
+    public var startFailCallBack: (String) -> Void = {(message: String) -> Void in }
+    public var goToLoginSuccessCallBack: () -> Void = {() -> Void in }
+    public var goToLoginFailCallBack: (String) -> Void = {(message: String) -> Void in }
+    public var goToLoginConfirmCallBack: () -> Void = {() -> Void in }
+    public var clearSuccessCallBack: () -> Void = {() -> Void in }
     
     public init (pview: UIViewController, googleEmail: @escaping () -> String) {
         self.pView = pview
         userDialog = UserDialog(pview: pView)
         self.getGoogleEmail = googleEmail
     }
-    
     
     func isCognitoSnsLoggedIn() -> Bool {
         if AWSIdentityManager.default().logins().result == nil {
@@ -41,14 +49,51 @@ public class UserService {
         return AWSIdentityManager.default().identityId
     }
     
+    
+    
+    public func startGame() {
+        // 게임클라이언트가 켜지면 첫째 egToken이 존재 하는지 체크
+        if MpInfo.Account.isAuthedUser() == false {
+            let principal = getPrincipal()
+            let device:String = "device_val@facdebook"
+            
+            if let pi = principal {
+                self.accountService.createToken(
+                    principal: pi, device: device, profile: nil, email:"",
+                    success: { data in
+                        self.startSuccessCallBack()
+                },
+                    fail: { error in
+                        self.startFailCallBack("TOKEN_CREATE")
+                }
+                )
+            } else {
+                self.startFailCallBack("PRINCIPAL_APICALL")
+            }
+        } else {
+            let egToken = MpInfo.Account.egToken
+            let refreshToken = MpInfo.Account.refreshToken
+            let device = MpInfo.Account.device
+            
+            self.refreshToken(
+                egToken: egToken, refreshToken: refreshToken, device: device, profile: nil,
+                success: { data in
+                    self.startSuccessCallBack()
+            },
+                fail: { error in
+                    self.startFailCallBack("TOKEN_CREATE")
+            })
+        }
+    }
+    
     public func goToLogin() {
         if MpInfo.Account.isAuthedUser() == false {
-            self.alert("게스트로 로그인이 먼저 필요합니다. \n\n게임시작을 먼저 해주세요.")
+            goToLoginFailCallBack("EMPTY_TOKEN")
             return
         }
         
         if MpInfo.Account.provider != "guest" {
-            self.alert("계정연동은 게스트 상태에서만 가능합니다.")
+            goToLoginFailCallBack("READY_SNSLOGIN")
             return
         }
         
@@ -66,22 +111,101 @@ public class UserService {
             configuration: config,
             completionHandler: { (provider: AWSSignInProvider, error: Error?) in
                 if error != nil {
-                    print("Error occurred: \(String(describing:error))")
+                    self.goToLoginFailCallBack("AWS_LOGINVIEW")
                 } else {
                     self.onSignIn(true, provider)
                 }
         })
     }
     
+    func onSignIn (_ success: Bool, _ provider: AWSSignInProvider) {
+        // 비동기 호출로 인해서 이메일정보를 비동기로 얻고 나서 계정연동 UI를 시작한다. 실패시에 이메일 빈값으로 등록.
+        if (success) {
+            let identityProviderName:String = provider.identityProviderName
+            if identityProviderName == "graph.facebook.com" {
+                if((FBSDKAccessToken.current()) != nil)
+                {
+                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+                        if (error == nil)
+                        {
+                            var dict = result as! [String : String]
+                            FBSDKLoginManager().logOut() // 한번만 사용함.
+                            self.snsSyncProcess("facebook", dict["email"] ?? "")
+                        } else {
+                            self.snsSyncProcess("facebook", "")
+                        }
+                    })
+                } else {
+                    self.snsSyncProcess("facebook", "")
+                }
+            } else if identityProviderName == "accounts.google.com" {
+                if getGoogleEmail == nil {
+                    self.goToLoginFailCallBack("EMPTY_GOOGLECALLBACK")
+                } else {
+                    self.snsSyncProcess("google", getGoogleEmail!())
+                }
+            }
+        }
+    }
     
+    func snsSyncProcess(_ provider:String, _ email:String) {
+        if MpInfo.Account.isAuthedUser() == false {
+            goToLoginFailCallBack("EMPTY_TOKEN")
+            return
+        }
+        let profile: String = self.makeProfile(provider, email)
+        let egToken = MpInfo.Account.egToken
+        let principal = getPrincipal()
+        // 이미 cognito의 principal은 업데이트 된 상태
+        
+        if let pi = principal {
+            self.accountService.syncSns(
+                egToken: egToken, principal: pi, profile: profile,
+                success: {datas in
+                    if let status = datas["status"] {
+                        let result = String(describing: status)
+                        if result == "COMPLETE"{            // 바로 성공
+                            MpInfo.Account.principal = pi
+                            MpInfo.Account.provider = provider
+                            MpInfo.Account.email = email
+                            
+                            self.goToLoginSuccessCallBack()
+                        } else if result == "FAILURE" {     //guest와 sns 계정 충동
+                            self.visibleSyncView(
+                                snsEgId: String(describing: datas["duplicated"]!),
+                                egToken: egToken,
+                                profile: profile,
+                                principal: pi,
+                                provider: provider,
+                                email: email)
+                        } else {
+                            self.goToLoginFailCallBack("SNS_SYNC")
+                        }
+                    }
+            },
+                fail: {error in self.goToLoginFailCallBack("SNS_SYNC_FAIL")}
+            )
+        } else {
+            self.goToLoginFailCallBack("PRINCIPAL_APICALL")
+        }
+    }
     
+    func visibleSyncView(snsEgId: String, egToken: String, profile: String, principal: String, provider: String, email: String ){   //충돌
+        // 로그인된 sns계정 정보를 sync 담당 뷰에 전달.
+        crashSnsSyncIno.snsEgId = snsEgId
+        crashSnsSyncIno.egToken = egToken
+        crashSnsSyncIno.principal = principal
+        crashSnsSyncIno.profile = profile
+        crashSnsSyncIno.provider = provider
+        crashSnsSyncIno.email = email
+        
+        show()
+    }
     
-    
-    func refreshToken(
-        egToken: String, refreshToken: String, device: String, profile: Any?,
-        success: @escaping(_ data: Dictionary<String, Any>)-> Void,
-        fail: @escaping(_ error: Error?)-> Void) {
-        accountService.refreshToken(egToken: egToken, refreshToken: refreshToken, device: device, profile: profile, success: success, fail: fail)
+    func show() {
+        userDialog.setUserLinkCharacterLabel(guest: characterInfo(MpInfo.Account.egId), sns: characterInfo(self.crashSnsSyncIno.snsEgId))
+        userDialog.setUserLinkAction(closeAction: logout, confirmAction: linkConfirmAction, cancelAction: linkCancelAction)
+        userDialog.showUserLinkDialog()
     }
     
     private func linkConfirmAction() {  //sns계정 연동으로
@@ -92,25 +216,37 @@ public class UserService {
         userGuestLinkShow()
     }
     
-    func show() {
-        userDialog.setUserLinkCharacterLabel(guest: characterInfo(MpInfo.Account.egId), sns: characterInfo(self.crashSnsSyncIno.snsEgId))
-        userDialog.setUserLinkAction(closeAction: logout, confirmAction: linkConfirmAction, cancelAction: linkCancelAction)
-        userDialog.showUserLinkDialog()
-    }
-    
     private func loadConfirmAction() -> Bool {
-        if userDialog.getInputText()! == "Confirm" {
+        if userDialog.getInputText()!.lowercased() == "confirm" {
             self.LoginBySnsAccount()
             return true;
         } else {
-            alert("확인문자를 정확히 다시 입력해주세요")
+            goToLoginConfirmCallBack()
             return false;
         }
-        return false
     }
     
-    private func LoadConfirmCallBack() {
-        userResultShow()
+    func LoginBySnsAccount() {
+        let principal = getPrincipal()
+        
+        if let pi = principal {
+            let device:String = "device_val@facdebook"
+            let email:String = self.crashSnsSyncIno.email
+            self.accountService.createToken(
+                principal: pi, device: device, profile: self.crashSnsSyncIno.profile, email: email,
+                success: { data in
+                    MpInfo.Account.provider = self.crashSnsSyncIno.provider
+                    MpInfo.Account.email = email
+                    // sns 로 keychain이 모두 변경된 상태입니다.
+                    //self.visibleView(view: self.viewSnsSuccess)
+            },
+                fail: { error in
+                    self.goToLoginFailCallBack("SNS_LOGIN")
+            }
+            )
+        } else {
+            self.goToLoginFailCallBack("PRINCIPAL_APICALL")
+        }
     }
     
     private func userLoadShow() {
@@ -118,6 +254,10 @@ public class UserService {
         userDialog.showUserLoadDialog()
     }
     
+    private func LoadConfirmCallBack() {
+        userResultShow()
+    }
+
     private func loginAction() {
         syncForce()
         userResultShow()
@@ -135,30 +275,6 @@ public class UserService {
     
     private func userResultShow() {
         userDialog.showUserResultDialog()
-    }
-    
-    func LoginBySnsAccount() {
-        let principal = getPrincipal()
-        
-        if let pi = principal {
-            let device:String = "device_val@facdebook"
-            let email:String = self.crashSnsSyncIno.email
-            self.accountService.createToken(
-                principal: pi, device: device, profile: self.crashSnsSyncIno.profile, email: email,
-                success: { data in
-                    MpInfo.Account.provider = self.crashSnsSyncIno.provider
-                    MpInfo.Account.email = email
-                    // sns 로 keychain이 모두 변경된 상태입니다.
-                    //self.visibleView(view: self.viewSnsSuccess)
-                    
-            },
-                fail: { error in
-                    self.alert(String(describing: error))
-            }
-            )
-        } else {
-            //TODO 계정정보를 못 불러올 때
-        }
     }
     
     func syncForce() {
@@ -183,21 +299,27 @@ public class UserService {
                         
                         // 모달 화면을 닫고 -> guest게이데이터 그대로 이기 때문에 게임이어서 진행.
                         //self.dismiss(animated: true, completion: nil)
-                        self.alert("계정연동이 성공되었습니다.")
+                        self.goToLoginSuccessCallBack()
                     } else if result == "FAILURE" {
                         // 알 수 없는 오류
-                        self.alert("FAILURE")
+                        self.goToLoginFailCallBack("GUEST_LOGIN")
                     } else {
-                        self.alert("알 수 없는 에러가 발생했습니다.")
+                        self.goToLoginFailCallBack("GUEST_LOGIN")
                     }
                 }
         },
             fail: {
                 error in
-                print(String(describing: error))
-                self.alert(String(describing: error))
+                self.goToLoginFailCallBack("GUEST_LOGIN")
         }
         )
+    }
+    
+    func refreshToken(
+        egToken: String, refreshToken: String, device: String, profile: Any?,
+        success: @escaping(_ data: Dictionary<String, Any>)-> Void,
+        fail: @escaping(_ error: Error?)-> Void) {
+        accountService.refreshToken(egToken: egToken, refreshToken: refreshToken, device: device, profile: profile, success: success, fail: fail)
     }
     
     private func characterInfo(_ egId: String) -> String {
@@ -212,7 +334,7 @@ public class UserService {
                 }
         },
             fail: {(error: Error?) in
-                print(error ?? "")
+                self.goToLoginFailCallBack("CHARACTER_INFO")
         })
         
         return characterInfo
@@ -231,47 +353,11 @@ public class UserService {
         pView.present(alert, animated: true)
     }
     
-    public func startGame() {
-        // 게임클라이언트가 켜지면 첫째 egToken이 존재 하는지 체크
-        if MpInfo.Account.isAuthedUser() == false {
-            let principal = getPrincipal()
-            let device:String = "device_val@facdebook"
-            
-            if let pi = principal {
-                self.accountService.createToken(
-                    principal: pi, device: device, profile: nil, email:"",
-                    success: { data in
-                        self.alert("게임을 처음 시작합니다.\n\n 새로운 토큰을 발급 받았습니다. \n\n \(String(describing:data["eg_token"]!))")
-                },
-                    fail: { error in
-                        self.alert(String(describing: error))
-                }
-                )
-            } else {
-                //TODO 토큰 미생성시 처리
-                self.alert("토큰 생성 오류)")
-            }
-        } else {
-            let egToken = MpInfo.Account.egToken
-            let refreshToken = MpInfo.Account.refreshToken
-            let device = MpInfo.Account.device
-            
-            self.refreshToken(
-                egToken: egToken, refreshToken: refreshToken, device: device, profile: nil,
-                success: { data in
-                    self.alert("기존 유저로서 게임을 진행합니다. \n\n(토큰이 갱신되었습니다.) \n\n게임을 이어갑니다.\n\n \(MpInfo.Account.egToken)")
-            },
-                fail: { error in
-                    self.alert(String(describing: error))
-            })
-        }
-    }
-    
     public func clearKey() {
         AWSSignInManager.sharedInstance().logout(completionHandler: {(result: Any?, error: Error?) in
         })
         self.accountService.clearKeychain()
-        self.alert("keychain이 삭제되었습니다.")
+        clearSuccessCallBack()
     }
     
     private func makeProfile(_ provider: String, _ email: String) -> String {
@@ -283,90 +369,4 @@ public class UserService {
         }
         return profile
     }
-    
-    func snsSyncProcess(_ provider:String, _ email:String) {
-        if MpInfo.Account.isAuthedUser() == false {
-            self.alert("게스트로 로그인이 먼저 필요합니다.")
-            return
-        }
-        let profile: String = self.makeProfile(provider, email)
-        let egToken = MpInfo.Account.egToken
-        let principal = getPrincipal()
-        // 이미 cognito의 principal은 업데이트 된 상태
-        
-        if let pi = principal {
-            self.accountService.syncSns(
-                egToken: egToken, principal: pi, profile: profile,
-                success: {datas in
-                    if let status = datas["status"] {
-                        let result = String(describing: status)
-                        if result == "COMPLETE"{
-                            MpInfo.Account.principal = pi
-                            MpInfo.Account.provider = provider
-                            MpInfo.Account.email = email
-                            
-                            self.alert("계정연동이 성공되었습니다.")
-                        } else if result == "FAILURE" {
-                            self.visibleSyncView(
-                                snsEgId: String(describing: datas["duplicated"]!),
-                                egToken: egToken,
-                                profile: profile,
-                                principal: pi,
-                                provider: provider,
-                                email: email)
-                        } else {
-                            self.alert("알 수 없는 에러가 발생했습니다.")
-                        }
-                    }
-            },
-                fail: {error in self.alert(String(describing: error))}
-            )
-        } else {
-            //TODO 개인 정보를 못 불러 올 때 처리
-        }
-        
-    }
-    
-    func visibleSyncView(snsEgId: String, egToken: String, profile: String, principal: String, provider: String, email: String ){
-        // 로그인된 sns계정 정보를 sync 담당 뷰에 전달.
-        crashSnsSyncIno.snsEgId = snsEgId
-        crashSnsSyncIno.egToken = egToken
-        crashSnsSyncIno.principal = principal
-        crashSnsSyncIno.profile = profile
-        crashSnsSyncIno.provider = provider
-        crashSnsSyncIno.email = email
-        
-        show()
-    }
-    
-    func onSignIn (_ success: Bool, _ provider: AWSSignInProvider) {
-        
-        // 비동기 호출로 인해서 이메일정보를 비동기로 얻고 나서 계정연동 UI를 시작한다. 실패시에 이메일 빈값으로 등록.
-        if (success) {
-            
-            let identityProviderName:String = provider.identityProviderName
-            if identityProviderName == "graph.facebook.com" {
-                if((FBSDKAccessToken.current()) != nil)
-                {
-                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
-                        if (error == nil)
-                        {
-                            var dict = result as! [String : String]
-                            FBSDKLoginManager().logOut() // 한번만 사용함.
-                            self.snsSyncProcess("facebook", dict["email"] ?? "")
-                        } else {
-                            self.snsSyncProcess("facebook", "")
-                        }
-                        
-                    })
-                } else {
-                    self.snsSyncProcess("facebook", "")
-                }
-            } else if identityProviderName == "accounts.google.com" {
-                self.snsSyncProcess("google", getGoogleEmail())
-            }
-        }
-    }
-    
-    
 }

@@ -61,7 +61,7 @@ class bannerBottomView: UIView {
         
         oneDayLabel.font = UIFont.boldSystemFont(ofSize: labelFontSize)
         oneDayLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        oneDayLabel.text = "오늘 다시보지않기"
+        oneDayLabel.text = NSLocalizedString("estcommon_banner_oneDay", comment: "")
         //TODO 오토레이아웃 안됨...
 //        isUserInteractionEnabled = false
 //        oneDayLabel.translatesAutoresizingMaskIntoConstraints = false

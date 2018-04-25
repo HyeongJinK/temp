@@ -10,7 +10,7 @@ import Foundation
 
 //닫기 버튼
 class CloseBt: UIButton {
-    let closeBtTitle:String = NSLocalizedString("banner_closeButton", comment: "")
+    let closeBtTitle:String = NSLocalizedString("estcommon_banner_closeButton", comment: "")
     var checkBt: CheckBox?
     let closeBtImage:UIImage?
     var closeBtCallBack: () -> Void = {() -> Void in }
@@ -27,7 +27,6 @@ class CloseBt: UIButton {
         
         self.checkBt = check
         self.setImage(closeBtImage, for: .normal)
-        //self.setTitle(closeBtTitle, for: .normal)
         self.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
     }
     

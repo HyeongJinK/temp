@@ -69,6 +69,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func gameStart(_ sender: Any) {
+        vc.startSuccessCallBack = { () -> Void in print("su")}
         vc.startGame()
     }
 

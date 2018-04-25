@@ -22,8 +22,9 @@
 'estcommon_userLink_confirm' = "네, 불러오겠습니다";
 'estcommon_userLink_cancel' = "아니오, 새로 연동하기";
 
-'banner_closeButton' = "닫기";
-'banner_linkButton' = "자세히 보기";
+'estcommon_banner_closeButton' = "닫기";
+'estcommon_banner_linkButton' = "자세히 보기";
+'estcommon_banner_oneDay' = "오늘 다시보지않기";
 
 'estcommon_userGuest_title' = "현재 계정 연동";
 'estcommon_userGuest_middle' = "기존 연동된 데이터 ([])를 삭제하고 현재 플레이중인 게임 데이터로 계정연동을 진행합니다.";

@@ -9,7 +9,7 @@ import Foundation
 
 class LinkerButton: UIButton {
     let linkBtImage:UIImage
-    let linkBtTitle:String = NSLocalizedString("banner_linkButton", comment: "")
+    let linkBtTitle:String = NSLocalizedString("estcommon_banner_linkButton", comment: "")
     
     required init?(coder aDecoder: NSCoder) {
         linkBtImage = UIImage(named: "btn_detail_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)!
