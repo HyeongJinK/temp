@@ -232,6 +232,9 @@ func googleEmail() -> String {
 &nbsp;
 &nbsp;
 
+#### :bomb: 주의 사항 - 혹시 이미지 리소스 파일을 찾지 못할 경우 이미지를 클릭하고 오른쪽 창에 Target Membershop에서 estgames-common-framework로 선택되어 있는 지 확인 바랍니다.
+
+![](https://gitlab.com/estmp/banner-ios-sdk/raw/master/estgames-common-framework-example/estgames-common-framework-example/sc2.png)
 
 :pencil: 코드 구현
 ===
@@ -324,6 +327,30 @@ estgamesCommon.authorityShow()
 |-|-|
 |authorityShow()|권한확인창 출력|
 |authorityCallBack: () -> Void|권환확인창이 종료된 후 콜백함수|
+
+
+:poop: 웹뷰 관련창
+---
+
+* :grey_exclamation: 현재 웹뷰창 UI가 나오지 않아 적용되지 않았습니다.
+* :grey_exclamation: 테스트용 설정에서는 공지사항 게시판이 없어 에러가 납니다.
+* :grey_exclamation: 게임 시작 후 이지 아이디가 있어야 합니다.
+
+### 공지사항
+
+```swift
+var wd : WebViewDialog!
+wd = WebViewDialog(pview: self, egToken: MpInfo.Account.egId)
+wd.showNotice()
+```
+
+### FAQ
+
+```swift
+var wd : WebViewDialog!
+wd = WebViewDialog(pview: self, egToken: MpInfo.Account.egId)
+wd.showFAQ()
+```
 
 
 :bust_in_silhouette: 계정관련
