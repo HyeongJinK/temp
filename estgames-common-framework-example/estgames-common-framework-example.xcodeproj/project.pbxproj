@@ -15,6 +15,7 @@
 		ED859408208F07EB005C2271 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED859406208F07EB005C2271 /* LaunchScreen.storyboard */; };
 		ED859410208F09F2005C2271 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ED85940F208F09F2005C2271 /* awsconfiguration.json */; };
 		ED859412208F0A42005C2271 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED859411208F0A42005C2271 /* Localizable.strings */; };
+		ED9695D020906B750037BE70 /* sc1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9695CF20906B750037BE70 /* sc1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		ED859409208F07EB005C2271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED85940F208F09F2005C2271 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		ED859411208F0A42005C2271 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		ED9695CF20906B750037BE70 /* sc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sc1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		ED8593FC208F07E9005C2271 /* estgames-common-framework-example */ = {
 			isa = PBXGroup;
 			children = (
+				ED9695CF20906B750037BE70 /* sc1.png */,
 				ED8593FD208F07E9005C2271 /* AppDelegate.swift */,
 				ED8593FF208F07E9005C2271 /* ViewController.swift */,
 				ED859401208F07E9005C2271 /* Main.storyboard */,
@@ -158,6 +161,7 @@
 				ED859412208F0A42005C2271 /* Localizable.strings in Resources */,
 				ED859410208F09F2005C2271 /* awsconfiguration.json in Resources */,
 				ED859408208F07EB005C2271 /* LaunchScreen.storyboard in Resources */,
+				ED9695D020906B750037BE70 /* sc1.png in Resources */,
 				ED859405208F07EB005C2271 /* Assets.xcassets in Resources */,
 				ED859403208F07E9005C2271 /* Main.storyboard in Resources */,
 			);
@@ -405,7 +409,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "estgames-common-framework-example/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.estgames.estgames-common-framework-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -420,7 +427,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "estgames-common-framework-example/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.estgames.estgames-common-framework-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
