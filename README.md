@@ -16,7 +16,7 @@
 * 구글 모듈
 * pod 'GoogleSignIn', '~> 4.0.0'
 
-### :two: info.plist에 설정등록
+### :two: info.plist에 설정등록 : 아래 값은 예시일 뿐이며 정확한 설정 값은 웹플랫폼팀에 문의 부탁드립니다.
 
 ```xml
 <key>MP</key>
@@ -105,7 +105,7 @@
 |secret|String||15624467fd9b22c7f592de53ca92c0ed49a3ba1945a40116926c4edf1209f75c|
 |estapi|String|공통 모듈에서 사용하는 api 주소|https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/ffg.global.ls|
 
-### :three: awsconfiguration.json 파일 추가
+### :three: awsconfiguration.json 파일 추가 : 아래 값은 예시일 뿐이며 정확한 설정 값은 웹플랫폼팀에 문의 부탁드립니다.
 
 ```json
 {
