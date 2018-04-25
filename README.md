@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
 
-:page_with_curl: 개발에 필요한 설정 
+:page_with_curl: 개발에 필요한 프로젝트 설정 
 ===
 
 ### :one: cocoapods 라이브러리 등록 (Podfile에 추가)
@@ -16,7 +16,7 @@
 * 구글 모듈
 * pod 'GoogleSignIn', '~> 4.0.0'
 
-### :two: info.plist에 설정등록 : 아래 값은 예시일 뿐이며 정확한 설정 값은 웹플랫폼팀에 문의 부탁드립니다.
+### :two: info.plist에 설정등록 :warning: 아래 값은 예시일 뿐이며 정확한 설정 값은 웹플랫폼팀에 문의 부탁드립니다.
 
 ```xml
 <key>MP</key>
@@ -105,7 +105,7 @@
 |secret|String||15624467fd9b22c7f592de53ca92c0ed49a3ba1945a40116926c4edf1209f75c|
 |estapi|String|공통 모듈에서 사용하는 api 주소|https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/ffg.global.ls|
 
-### :three: awsconfiguration.json 파일 추가 : 아래 값은 예시일 뿐이며 정확한 설정 값은 웹플랫폼팀에 문의 부탁드립니다.
+### :three: awsconfiguration.json 파일 추가 :warning: 아래 값은 예시일 뿐이며 정확한 설정 값은 웹플랫폼팀에 문의 부탁드립니다.
 
 ```json
 {
@@ -325,10 +325,13 @@ estgamesCommon.authorityShow()
 ### :exclamation:  유저연동 초기 설정
 
 ```swift
+import estgames_common_framework    // 프레임워크 추가
+
 override func viewDidLoad() {
     super.viewDidLoad()
 
-    vc = UserService(pview: self, googleEmail: googleEmail) //매개변수 : 유저연동 창이 나올 뷰, 구글메일(String)을 리턴하는 함수
+    vc = UserService(pview: self, googleEmail: googleEmail) 
+    //매개변수 : 유저연동 창이 나올 뷰, 구글메일(String)을 리턴하는 함수
 }
 
 /**
@@ -348,7 +351,7 @@ func googleEmail() -> String {
 ### :computer: 게임시작(토큰 만들기)
 
 ```swift
-//
+// 게임 시작 시 호출 필요
 vc.startGame()
 
 ```
@@ -372,6 +375,7 @@ vc.startGame()
 ### :computer: sns 계정연동(토큰이 있어야 합니다.)
 
 ```swift
+// 게임 토큰이 필요합니다. 없을 경우 에러 발생
 vc.goToLogin()
 ```
 
