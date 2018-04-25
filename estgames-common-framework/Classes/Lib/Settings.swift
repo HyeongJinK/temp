@@ -123,6 +123,15 @@ public class MpInfo {
                 KeychainWrapper.standard.set(newval, forKey: "mp.device")
             }
         }
+        
+        public internal(set) static var userId: String {
+            get {
+                return KeychainWrapper.standard.string(forKey: "mp.user_id") ?? ""
+            }
+            set(newval) {
+                KeychainWrapper.standard.set(newval, forKey: "mp.user_id")
+            }
+        }
     }
 }
 

@@ -353,7 +353,7 @@ func googleEmail() -> String {
 ```swift
 // 게임 시작 시 호출 필요
 vc.startGame()
-
+Mpinfo.Account.userId
 ```
 
 #### :mag: 관련함수 및 매개 변수 
@@ -364,6 +364,18 @@ vc.startGame()
 |startSuccessCallBack: () -> Void|토큰생성 성공시 콜백 함수|
 |startFailCallBack: () ->(message:String)|토큰 생성 실패시 콜백 함수|
 
+#### :open_file_folder: 토큰 생성 후 유저 정보 불러오기
+
+|호출 코드|설명|
+|-|-|
+|MpInfo.Account.egId|egId|
+|MpInfo.Account.egToken|egToken|
+|MpInfo.Account.refreshToken|refreshToken|
+|MpInfo.Account.principal|principal|
+|MpInfo.Account.provider|[guest,facebook,google]|
+|MpInfo.Account.email|이메일|
+|MpInfo.Account.device|device|
+|MpInfo.Account.userId|유저 아이디|
 
 #### :no_entry: 실패 메시지
 
@@ -403,3 +415,4 @@ vc.goToLogin()
 |PRINCIPAL_APICALL|유저정보 가져오는 API 호출실패(네트워크 확인)|
 |GUEST_LOGIN|게스트 계정으로 싱크 중 에러|
 |CHARACTER_INFO|캐릭터 정보 가져오는 중 에러|
+

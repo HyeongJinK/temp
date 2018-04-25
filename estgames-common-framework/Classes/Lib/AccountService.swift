@@ -12,7 +12,7 @@ import SwiftKeychainWrapper
 public class AccountService {
     public init() {}
     
-    private func saveKeychainData(provider: String, egToken:String, principal:String, refreshToken:String, egId:String, device:String, email: String) {
+    private func saveKeychainData(provider: String, egToken:String, principal:String, refreshToken:String, egId:String, device:String, email: String, userId: String) {
         
         MpInfo.Account.provider = provider
         MpInfo.Account.egToken = egToken
@@ -21,6 +21,7 @@ public class AccountService {
         MpInfo.Account.egId = egId
         MpInfo.Account.device = device
         MpInfo.Account.email = email
+        MpInfo.Account.userId = userId
     }
     
     func getAccountMe(
@@ -53,11 +54,12 @@ public class AccountService {
                         
                         let refreshToken: String = tokenData["refresh_token"] as! String
                         let egId: String = String(describing: data["eg_id"]!)
+                        let userId: String = String(describing: data["user_id"]!)
                         
                         // 토큰 발행은 항상 provider가 guest인 경우다. sync를 통해서만 provider를 sns로 변경가능하다.
                         self.saveKeychainData(
                             provider: "guest", egToken: egToken, principal: principal, refreshToken: refreshToken,
-                            egId: egId, device: device, email: email)
+                            egId: egId, device: device, email: email, userId: userId)
                         
                         success(tokenData)
                 },
@@ -116,5 +118,6 @@ public class AccountService {
         KeychainWrapper.standard.removeObject(forKey: "mp.provider")
         KeychainWrapper.standard.removeObject(forKey: "mp.email")
         KeychainWrapper.standard.removeObject(forKey: "mp.device")
+        KeychainWrapper.standard.removeObject(forKey: "mp.user_id")
     }
 }

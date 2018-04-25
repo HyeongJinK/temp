@@ -55,7 +55,11 @@ public class UserService {
         // 게임클라이언트가 켜지면 첫째 egToken이 존재 하는지 체크
         if MpInfo.Account.isAuthedUser() == false {
             let principal = getPrincipal()
-            let device:String = "device_val@facdebook"
+            var device:String = MpInfo.Account.device;
+            if (device == "") {
+                let uuid = NSUUID().uuidString.lowercased()
+                device = uuid+"@ios"
+            }
             
             if let pi = principal {
                 self.accountService.createToken(
@@ -230,7 +234,12 @@ public class UserService {
         let principal = getPrincipal()
         
         if let pi = principal {
-            let device:String = "device_val@facdebook"
+            var device:String = MpInfo.Account.device;
+            if (device == "") {
+                let uuid = NSUUID().uuidString.lowercased()
+                device = uuid+"@ios"
+            }
+            
             let email:String = self.crashSnsSyncIno.email
             self.accountService.createToken(
                 principal: pi, device: device, profile: self.crashSnsSyncIno.profile, email: email,
