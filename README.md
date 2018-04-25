@@ -226,6 +226,10 @@ func googleEmail() -> String {
 }
 ```
 
+#### :bomb: 주의 사항 - (info.plist, Localizable.strings, awsconfiguration.json) 파일은 같은 레벨안에 있어야 하며 Build Phases - copy Bundle Resources에 추가 되어 있는 지 확인 바랍니다.
+
+![](https://gitlab.com/estmp/banner-ios-sdk/raw/master/estgames-common-framework-example/estgames-common-framework-example/sc1.png)
+
 &nbsp;
 &nbsp;
 
