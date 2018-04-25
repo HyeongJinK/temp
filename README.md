@@ -11,8 +11,7 @@
 ### :one: cocoapods 라이브러리 등록 (Podfile에 추가)
 
 * 이스트 공통 모듈
-* pod 'estgames-common-framework', '~> 0.9.5' 
-
+* pod 'estgames-common-framework', '~> 1.0.0' 
 * 구글 모듈
 * pod 'GoogleSignIn', '~> 4.0.0'
 

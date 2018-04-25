@@ -29,6 +29,18 @@ class ViewController: UIViewController {
     @IBOutlet var con2: UILabel!
     
     
+    @IBAction func noticeAction(_ sender: Any) {
+        var wd : WebViewDialog!
+        wd = WebViewDialog(pview: self, egToken: MpInfo.Account.egId)
+        wd.showNotice()
+    }
+    
+    @IBAction func faqAction(_ sender: Any) {
+        var wd : WebViewDialog!
+        wd = WebViewDialog(pview: self, egToken: MpInfo.Account.egId)
+        wd.showFAQ()
+    }
+    @IBOutlet var faqAction: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true

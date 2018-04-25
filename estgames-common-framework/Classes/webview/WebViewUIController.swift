@@ -28,10 +28,9 @@ public class WebViewUIController: UIViewController {
         closeBt.setTitleColor(UIColor.black, for: .normal)
         closeBt.addTarget(self, action: #selector(closeAction(_:)), for: .touchUpInside)
         
-        url = "https://m-stage.estgames.co.kr/cs/mr/dashboard"
-        
         if (url != nil && egToken != nil) {
-            url! += "?eg_token="+egToken!+"&nation=kr"
+            url! += "?eg_token="+egToken!+"&lang=kr"
+            print(url)
             webView.loadRequest(URLRequest(url: URL(string: url!)!))
         }
         

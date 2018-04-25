@@ -19,7 +19,14 @@ public class WebViewDialog {
     }
     
     //이용약관 다이얼로그
-    public func show() {
+    public func showFAQ() {
+        webViewUIContoller.url = "https://m-stage.estgames.co.kr/cs/mr/dashboard"
+        pview.present(webViewUIContoller, animated: false)
+    }
+    
+    //이용약관 다이얼로그
+    public func showNotice() {
+        webViewUIContoller.url = "https://m-stage.estgames.co.kr/cs/"+MpInfo.App.appId+"/notices"
         pview.present(webViewUIContoller, animated: false)
     }
     

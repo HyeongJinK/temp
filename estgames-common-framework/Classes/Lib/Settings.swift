@@ -15,7 +15,7 @@ public class MpInfo {
     public class App {
         public static var appId: String {
             get {
-                return MpInfo.mpDict["app_name"]!
+                return MpInfo.mpDict["app_id"]!
             }
         }
         
