@@ -16,7 +16,9 @@
 * 구글 모듈
 * pod 'GoogleSignIn', '~> 4.0.0'
 
-### :two: info.plist에 설정등록 :warning: 아래 값은 예시일 뿐이며 정확한 설정 값은 웹플랫폼팀에 문의 부탁드립니다.
+### :two: info.plist에 설정등록
+
+#### :warning: 아래 값은 테스트에 사용되는 값이며 실제 MR설정 값은 웹플랫폼팀에 문의 부탁드립니다.
 
 ```xml
 <key>MP</key>
@@ -105,7 +107,9 @@
 |secret|String||15624467fd9b22c7f592de53ca92c0ed49a3ba1945a40116926c4edf1209f75c|
 |estapi|String|공통 모듈에서 사용하는 api 주소|https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/ffg.global.ls|
 
-### :three: awsconfiguration.json 파일 추가 :warning: 아래 값은 예시일 뿐이며 정확한 설정 값은 웹플랫폼팀에 문의 부탁드립니다.
+### :three: awsconfiguration.json 파일 추가 
+
+#### :warning: 아래 값은 테스트에 사용되는 값이며 실제 MR설정 값은 웹플랫폼팀에 문의 부탁드립니다.
 
 ```json
 {
@@ -327,6 +331,8 @@ estgamesCommon.authorityShow()
 ```swift
 import estgames_common_framework    // 프레임워크 추가
 
+var vc : UserService!   //유저 서비스 선언
+
 override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -420,7 +426,7 @@ vc.goToLogin()
 
 
 
-예제 전체 코드
+예제 ViewController 전체 코드(참고용)
 ===
 
 ```swift
