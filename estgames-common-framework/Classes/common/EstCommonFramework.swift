@@ -63,7 +63,7 @@ public class EstgamesCommon {
                             if ((bannerJson["errorMessage"] as? String) != nil){
                                 self.dataSet(pview: pview)
                             } else {
-                                self.estgamesData = ResultDataJson(resultDataJson:bannerJson["ffg.global.ls"] as! NSDictionary)   //배너 파싱
+                                self.estgamesData = ResultDataJson(resultDataJson:bannerJson[MpInfo.App.region] as! NSDictionary)   //배너 파싱
                                 self.authority.setWebUrl(url: self.estgamesData!.url.system_contract)
                                 self.banner = bannerFramework(pview: pview, result: self.estgamesData!)
                                 self.policy.setWebUrl(webUrl1: self.estgamesData!.url.contract_service, webUrl2: self.estgamesData!.url.contract_private)

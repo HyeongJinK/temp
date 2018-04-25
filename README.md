@@ -416,3 +416,156 @@ vc.goToLogin()
 |GUEST_LOGIN|게스트 계정으로 싱크 중 에러|
 |CHARACTER_INFO|캐릭터 정보 가져오는 중 에러|
 
+
+
+
+
+예제 전체 코드
+===
+
+```swift
+import UIKit
+import estgames_common_framework
+import GoogleSignIn
+
+class ViewController: UIViewController {
+var dashboard: WebViewDialog!
+var estgamesCommon:EstgamesCommon!
+var userDialog: UserDialog!
+
+var vc : UserService!
+
+@IBOutlet var lblIdentityId: UILabel!
+@IBOutlet var lblPrincipal: UILabel!
+@IBOutlet var lblProviderName: UILabel!
+@IBOutlet var lblEgId: UILabel!
+@IBOutlet var lblEgToken: UILabel!
+@IBOutlet var lblRefreshToken: UILabel!
+@IBOutlet var lblEmail: UILabel!
+
+@IBOutlet var con1: UILabel!
+@IBOutlet var con2: UILabel!
+
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    self.navigationController?.isNavigationBarHidden = true
+
+    vc = UserService(pview: self)
+    dashboard = WebViewDialog(pview: self, egToken: MpInfo.Account.egToken)
+    estgamesCommon = EstgamesCommon(pview: self)
+    userDialog = UserDialog(pview: self)
+    userDialog.setUserLinkAction(closeAction: {() -> Void in print("closeAction")}, confirmAction: {() -> Void in print("confirmAction")}, cancelAction: {() -> Void in print("cancelAction")})
+    userDialog.setUserLinkCharacterLabel(guest: "adfads", sns: "bzcxvczxv")
+    userDialog.setUserGuestLinkCharacterLabel(guest: "fjkd", sns: "fjkjf")
+    dataPrint()
+}
+
+func googleEmail() -> String {
+    if let user = GIDSignIn.sharedInstance().currentUser {
+        return user.profile.email
+    } else {
+        return ""
+    }
+}
+
+@IBAction func rePrint(_ sender: Any) {
+dataPrint()
+}
+func dataPrint() {
+    self.lblIdentityId.text = vc.getPrincipal()
+    self.lblPrincipal.text = MpInfo.Account.principal
+    self.lblProviderName.text = MpInfo.Account.provider
+    self.lblEgId.text = MpInfo.Account.egId
+    self.lblEgToken.text = MpInfo.Account.egToken
+    self.lblRefreshToken.text = MpInfo.Account.refreshToken
+    self.lblEmail.text = String(describing:MpInfo.Account.email)
+}
+
+override func didReceiveMemoryWarning() {
+super.didReceiveMemoryWarning()
+}
+// 순서대로 호출
+@IBAction func processAction(_ sender: Any) {
+    estgamesCommon.processCallBack = {() -> Void in //순서대로 호출이 끝나고 호출하는 콜백함수
+    print(self.estgamesCommon.contractService().description)
+    print(self.estgamesCommon.contractPrivate().description)
+}
+estgamesCommon.processShow()
+}
+// 배너만 따로 호출
+@IBAction func bannerTest(_ sender: Any) {
+    estgamesCommon.bannerShow()
+}
+
+func authCallBack() {
+    print("authority Call Back")
+}
+// 권한만 따로 호출
+@IBAction func authorityTest(_ sender: Any) {
+    estgamesCommon.authorityCallBack = authCallBack
+    estgamesCommon.authorityShow()
+}
+
+// 이용약관만 따로 호출
+@IBAction func policyTest(_ sender: Any) {
+    estgamesCommon.policyCallBack = {() -> Void in
+    print(self.estgamesCommon.contractService())
+    print(self.estgamesCommon.contractPrivate())
+}
+estgamesCommon.policyShow()
+}
+
+@IBAction func testttt(_ sender: Any) {
+    con1.text = estgamesCommon.contractService().description
+    con2.text = estgamesCommon.contractPrivate().description
+    //print(userDialog.getInputText())
+}
+
+/**
+계정연동 UI만 띄우기
+*/
+@IBAction func userLinkTest(_ sender: Any) {
+    userDialog.showUserLinkDialog()
+}
+
+@IBAction func UserLoadTest(_ sender: Any) {
+    userDialog.showUserLoadDialog()
+}
+
+@IBAction func UserGuestLinkTest(_ sender: Any) {
+    userDialog.showUserGuestLinkDialog()
+}
+
+@IBAction func UserResultTest(_ sender: Any) {
+    userDialog.showUserResultDialog()
+}
+
+/**
+웹뷰창
+*/
+@IBAction func webViewShowTest(_ sender: Any) {
+    dashboard.show()
+}
+
+
+/**
+계정연동 부분
+***/
+let accountService = AccountService()
+
+
+@IBAction func crateToken(_ sender: Any) {
+    vc.startSuccessCallBack = { () -> Void in print("su")}
+    vc.startGame()
+}
+
+@IBAction func clearToken(_ sender: Any) {
+    vc.clearKey()
+}
+
+@IBAction func snsConnect(_ sender: Any) {
+    vc.goToLogin()
+}
+}
+```
