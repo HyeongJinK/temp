@@ -232,7 +232,7 @@ func googleEmail() -> String {
 :mag: 공통으로 사용되는 창
 ---
 
-### :exclamation: 설정 (배너, 이용약관, 권한)관련 창
+### :exclamation: 초기설정 (배너, 이용약관, 권한)관련 창
 
 ```swift
 import estgames_common_framework    // 프레임워크 추가
@@ -247,7 +247,7 @@ override func viewDidLoad() {   //프레임 워크 초기화
 ```
 
 
-### 설정된 순서대로 (배너, 이용약관, 권한) 출력
+### :computer: 설정된 순서대로 (배너, 이용약관, 권한)
 
 ```swift
 //콜백함수, 모든 로직이 완료된 후 호출하는 함수 구현
@@ -258,7 +258,7 @@ estgamesCommon.processCallBack = {() -> Void in}
 estgamesCommon.processShow()
 ```
 
-#### :computer: 관련함수 및 매개 변수 
+#### :mag: 관련함수 및 매개 변수 
 
 |이름|설명|
 |-|-|
@@ -266,7 +266,7 @@ estgamesCommon.processShow()
 |processCallBack: () -> Void|모든 출력이 끝난 후에 출력되는 콜백 함수|
 
 
-### 배너 출력
+### :computer: 배너
 
 ```swift
 //배너 콜백 함수
@@ -276,7 +276,7 @@ estgamesCommon.bannerCallBack = {() -> Void in}
 estgamesCommon.bannerShow()
 ```
 
-#### :computer: 관련함수 및 매개 변수 
+#### :mag: 관련함수 및 매개 변수 
 
 |이름|설명|
 |-|-|
@@ -285,7 +285,7 @@ estgamesCommon.bannerShow()
 
 
 
-### 이용약관 출력
+### :computer: 이용약관
 
 ```swift
 estgamesCommon.policyCallBack = {() -> Void in}
@@ -294,7 +294,7 @@ estgamesCommon.contractService()    //true or false
 estgamesCommon.contractPrivate()
 ```
 
-#### :computer: 관련함수 및 매개 변수 
+#### :mag: 관련함수 및 매개 변수 
 
 |이름|설명|
 |-|-|
@@ -304,14 +304,14 @@ estgamesCommon.contractPrivate()
 |contractPrivate() -> Bool|개인 이용약관 동의 여부|
 
 
-### 권한 출력
+### :computer: 권한
 
 ```swift
 estgamesCommon.authorityCallBack = {() -> Void in}
 estgamesCommon.authorityShow()
 ```
 
-#### :computer: 관련함수 및 매개 변수 
+#### :mag: 관련함수 및 매개 변수 
 
 |이름|설명|
 |-|-|
@@ -345,7 +345,7 @@ func googleEmail() -> String {
 }
 ```
 
-### 게임시작(토큰 만들기)
+### :computer: 게임시작(토큰 만들기)
 
 ```swift
 //
@@ -353,7 +353,7 @@ vc.startGame()
 
 ```
 
-#### :computer: 관련함수 및 매개 변수 
+#### :mag: 관련함수 및 매개 변수 
 
 |이름|설명|
 |-|-|
@@ -369,13 +369,13 @@ vc.startGame()
 |TOKEN_CREATE|토큰 생성 실패|
 |PRINCIPAL_APICALL|유저정보 가져오는 API 호출실패(네트워크 확인)|
 
-### sns 계정연동(토큰이 있어야 합니다.)
+### :computer: sns 계정연동(토큰이 있어야 합니다.)
 
 ```swift
 vc.goToLogin()
 ```
 
-#### :computer: 관련함수 및 매개 변수 
+#### :mag: 관련함수 및 매개 변수 
 
 |이름|설명|
 |-|-|
