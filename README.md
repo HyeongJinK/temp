@@ -12,6 +12,7 @@
   * EstgamesCommon클래스에 합침
   * egToken 수동으로 안 넣어도 됩니다.
   * showFAQ() -> showCsCenter() 로 변경되었습니다.
+
 * Info.plist 파일
  * MP 에 env 추가, 값으로 [stage|live]가 설정 될 예정이며 해당 설정에 따라 stage, live API를 호출한다.
 
@@ -118,7 +119,7 @@
 |client_id|String||b9b2b750-ea07-3808-a7b1-9f9ca4a9ffab.mp.estgames.com|
 |secret|String||15624467fd9b22c7f592de53ca92c0ed49a3ba1945a40116926c4edf1209f75c|
 |estapi|String|공통 모듈에서 사용하는 api 주소|https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/mr.global.ls|
-|env|String|어떤 레벨에 API를 사용할 지 선택|stage|
+|:new: env|String|어떤 레벨에 API를 사용할 지 선택|stage|
 
 ### :three: awsconfiguration.json 파일 추가 
 
