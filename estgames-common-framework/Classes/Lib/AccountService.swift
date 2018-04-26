@@ -78,7 +78,7 @@ public class AccountService {
         success: @escaping(_ data: Dictionary<String, Any>)-> Void,
         fail: @escaping(_ error: Error?)-> Void) {
         AccountApi.refreshToken(
-            egToken: egToken, refreshToken: refreshToken, device: "device_val@facdebook", profile: nil,
+            egToken: egToken, refreshToken: refreshToken, device: device, profile: nil,
             success: { data in
                 MpInfo.Account.egToken = String(describing: data["eg_token"]!)
                 success(data)

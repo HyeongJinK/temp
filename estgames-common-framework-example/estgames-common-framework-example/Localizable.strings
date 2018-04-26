@@ -1,6 +1,7 @@
 'estcommon_policy_title' = "이용약관";
 'estcommon_policy_subTitle' = "광고성 정보 수신 동의포함";
 'estcommon_policy_privacy' = "개인 정보 취급방침";
+'estcommon_policy_buttonText' = "동의합니다";
 
 'estcommon_authority_title' = "원활한 게임플레이를 위해 아래 권한을 필요로 합니다.";
 'estcommon_authority_confirm' = "확인";

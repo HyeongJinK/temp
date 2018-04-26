@@ -10,6 +10,7 @@ public class WebViewDialog {
     var pview: UIViewController
     var webViewUIContoller: WebViewUIController
     
+    
     public init(pview: UIViewController, egToken: String) {
         self.pview = pview
         

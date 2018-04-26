@@ -11,6 +11,7 @@ import Foundation
 public class ResultDataJson {
     public var errorMessage:String?
     var nation: String = ""
+    var language: String = ""
     var events : [EventData]
     var process: NSDictionary
     var url: UrlData
@@ -19,6 +20,7 @@ public class ResultDataJson {
         self.errorMessage = resultDataJson["errorMessage"] as? String
         if (self.errorMessage == nil) {
             self.nation = resultDataJson["nation"] as! String
+            self.language = resultDataJson["language"] as! String
             self.events = Array<EventData>()
             
             let eventJson: Array<NSDictionary> = resultDataJson["event"] as! Array<NSDictionary>
@@ -41,7 +43,8 @@ public class ResultDataJson {
             self.process = resultDataJson["process"] as! NSDictionary
             self.url = UrlData(resultDataJson["url"] as! NSDictionary)
         } else {
-            self.nation = ""
+            self.nation = "en"
+            self.language = "en"
             self.events = Array<EventData>()
             self.process = resultDataJson["process"] as! NSDictionary
             self.url = UrlData(resultDataJson["url"] as! NSDictionary)

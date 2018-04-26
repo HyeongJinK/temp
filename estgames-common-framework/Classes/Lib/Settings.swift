@@ -48,6 +48,12 @@ public class MpInfo {
                 return MpInfo.mpDict["estapi"]!
             }
         }
+        
+        public static var env: String {
+            get {
+                return MpInfo.mpDict["env"]!
+            }
+        }
     }
     
     public class Account {

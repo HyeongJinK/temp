@@ -23,6 +23,8 @@ public class EstgamesCommon {
     var process: [String] = Array<String>()
     
     
+    var webView: WebViewUIController!
+    
     
     public init(pview:UIViewController) {
         self.pview = pview
@@ -40,7 +42,8 @@ public class EstgamesCommon {
         if estgamesData == nil {
             let myGroup = DispatchGroup.init()
             let queue = DispatchQueue.global()
-            let url = MpInfo.App.estapi
+            let url = MpInfo.App.estapi.replacingOccurrences(of: "env", with: MpInfo.App.env)
+            print(url)
             
             //let manager = SessionManager.default
             //manager.session.configuration.timeoutIntervalForRequest = 10
@@ -168,5 +171,24 @@ public class EstgamesCommon {
         
         banner.closeBtCallBack = bannerCallBack
         banner.show()
+    }
+    
+    public func showCsCenter() {
+        webView = WebViewUIController()
+        webView.egToken = MpInfo.Account.egToken
+        webView.modalPresentationStyle = .overCurrentContext
+        webView.nation = self.estgamesData!.language
+        webView.url = "https://m-stage.estgames.co.kr/cs/mr/dashboard"
+        pview.present(webView, animated: false)
+    }
+    
+    //이용약관 다이얼로그
+    public func showNotice() {
+        webView = WebViewUIController()
+        webView.egToken = MpInfo.Account.egToken
+        webView.modalPresentationStyle = .overCurrentContext
+        webView.nation = self.estgamesData!.language
+        webView.url = "https://m-stage.estgames.co.kr/cs/"+MpInfo.App.appId+"/notices"
+        pview.present(webView, animated: false)
     }
 }

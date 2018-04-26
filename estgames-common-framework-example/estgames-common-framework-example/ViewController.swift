@@ -12,7 +12,7 @@ import GoogleSignIn
 
 class ViewController: UIViewController {
 //    var dashboard: WebViewDialog!
-//    var estgamesCommon:EstgamesCommon!
+    var estgamesCommon:EstgamesCommon!
     var vc : UserService!
     
     var userDialog: UserDialog!
@@ -30,15 +30,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func noticeAction(_ sender: Any) {
-        var wd : WebViewDialog!
-        wd = WebViewDialog(pview: self, egToken: MpInfo.Account.egId)
-        wd.showNotice()
+        estgamesCommon.showNotice()
     }
     
     @IBAction func faqAction(_ sender: Any) {
-        var wd : WebViewDialog!
-        wd = WebViewDialog(pview: self, egToken: MpInfo.Account.egId)
-        wd.showFAQ()
+        estgamesCommon.showCsCenter()
     }
     @IBOutlet var faqAction: UIButton!
     override func viewDidLoad() {
@@ -47,7 +43,7 @@ class ViewController: UIViewController {
 
         vc = UserService(pview: self, googleEmail: googleEmail)
 //        dashboard = WebViewDialog(pview: self, egToken: MpInfo.Account.egToken)
-//        estgamesCommon = EstgamesCommon(pview: self)
+        estgamesCommon = EstgamesCommon(pview: self)
 //        userDialog = UserDialog(pview: self)
 //        userDialog.setUserLinkAction(closeAction: {() -> Void in print("closeAction")}, confirmAction: {() -> Void in print("confirmAction")}, cancelAction: {() -> Void in print("cancelAction")})
 //        userDialog.setUserLinkCharacterLabel(guest: "adfads", sns: "bzcxvczxv")

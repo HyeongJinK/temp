@@ -44,9 +44,9 @@
 	<key>MP</key>
 	<dict>
 		<key>app_id</key>
-		<string>ffarm</string>
+		<string>mr</string>
 		<key>region</key>
-		<string>ffg.global.ls</string>
+		<string>mr.global.ls</string>
 		<key>app_name</key>
 		<string>노바워즈</string>
 		<key>client_id</key>
@@ -54,7 +54,9 @@
 		<key>secret</key>
 		<string>15624467fd9b22c7f592de53ca92c0ed49a3ba1945a40116926c4edf1209f75c</string>
 		<key>estapi</key>
-		<string>https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/ffg.global.ls</string>
+		<string>https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/stage/start/mr</string>
+		<key>env</key>
+		<string>stage</string>
 	</dict>
 	<key>AWS</key>
 	<dict>

@@ -14,9 +14,10 @@ public class WebViewUIController: UIViewController {
     var webView: UIWebView!
     var url: String?
     var egToken: String?
+    var nation: String="en"
     
     public override func viewDidLoad() {
-        print(self.view.frame)
+        //print(self.view.frame)
         backgroundView = UIView(frame: self.view.frame)
         closeBt = UIButton(frame: CGRect(x: 0, y: 30, width: self.view.frame.width, height: 30))
         webView = UIWebView(frame: CGRect(x: 0, y: 61, width: self.view.frame.width, height: self.view.frame.height - 60))
@@ -29,8 +30,7 @@ public class WebViewUIController: UIViewController {
         closeBt.addTarget(self, action: #selector(closeAction(_:)), for: .touchUpInside)
         
         if (url != nil && egToken != nil) {
-            url! += "?eg_token="+egToken!+"&lang=kr"
-            print(url)
+            url! += "?eg_token="+egToken!+"&lang="+nation
             webView.loadRequest(URLRequest(url: URL(string: url!)!))
         }
         

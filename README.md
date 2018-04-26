@@ -5,13 +5,24 @@
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
 
+:new: 업데이트 부분 (1.0.2)
+---
+ * 토큰 리프레쉬 부분 수정
+ * 웹뷰(공지사항, CSCenter(문의사항, FAQ))
+  * EstgamesCommon클래스에 합침
+  * egToken 수동으로 안 넣어도 됩니다.
+  * showFAQ() -> showCsCenter() 로 변경되었습니다.
+* Info.plist 파일
+ * MP 에 env 추가, 값으로 [stage|live]가 설정 될 예정이며 해당 설정에 따라 stage, live API를 호출한다.
+
+
 :page_with_curl: 개발에 필요한 프로젝트 설정 
 ===
 
 ### :one: cocoapods 라이브러리 등록 (Podfile에 추가)
 
 * 이스트 공통 모듈
-* pod 'estgames-common-framework', '~> 1.0.0' 
+* pod 'estgames-common-framework', '~> 1.0.2' 
 * 구글 모듈
 * pod 'GoogleSignIn', '~> 4.0.0'
 
@@ -23,9 +34,9 @@
 <key>MP</key>
 <dict>
     <key>app_id</key>
-    <string>ffarm</string>
+    <string>mr</string>
     <key>region</key>
-    <string>ffg.global.ls</string>
+    <string>mr.global.ls</string>
     <key>app_name</key>
     <string>노바워즈</string>
     <key>client_id</key>
@@ -33,7 +44,9 @@
     <key>secret</key>
     <string>15624467fd9b22c7f592de53ca92c0ed49a3ba1945a40116926c4edf1209f75c</string>
     <key>estapi</key>
-    <string>https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/ffg.global.ls</string>
+    <string>https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/mr.global.ls</string>
+    <key>env</key>
+    <string>stage</string>
 </dict>
 <key>AWS</key>
 <dict>
@@ -99,12 +112,13 @@
 
 |이름|타입|설명|(예)
 |-|-|-|-|
-|app_id|String|앱아이디|ffarm|
-|region|String||ffg.global.ls|
+|app_id|String|앱아이디|mr|
+|region|String||mr.global.ls|
 |app_name|String|앱이름|노바워즈|
 |client_id|String||b9b2b750-ea07-3808-a7b1-9f9ca4a9ffab.mp.estgames.com|
 |secret|String||15624467fd9b22c7f592de53ca92c0ed49a3ba1945a40116926c4edf1209f75c|
-|estapi|String|공통 모듈에서 사용하는 api 주소|https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/ffg.global.ls|
+|estapi|String|공통 모듈에서 사용하는 api 주소|https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/mr.global.ls|
+|env|String|어떤 레벨에 API를 사용할 지 선택|stage|
 
 ### :three: awsconfiguration.json 파일 추가 
 
@@ -155,6 +169,7 @@
 'estcommon_policy_title' = "이용약관";
 'estcommon_policy_subTitle' = "광고성 정보 수신 동의포함";
 'estcommon_policy_privacy' = "개인 정보 취급방침";
+'estcommon_policy_buttonText' = "동의합니다";
 
 'estcommon_authority_title' = "원활한 게임플레이를 위해 아래 권한을 필요로 합니다.";
 'estcommon_authority_confirm' = "확인";
@@ -191,6 +206,9 @@
 ### :five: AppDelegate 에 소스 코드 추가
 
 ```swift
+import estgames_common_framework    // 이스트게임즈 프레임워크 추가
+import GoogleSignIn     //구글 프레임워크 추가
+
 static let remoteNotificationKey = "RemoteNotification"
 var estAppDelegate: EstAppDelegate = EstAppDelegate()
 
@@ -332,6 +350,7 @@ estgamesCommon.authorityShow()
 :poop: 웹뷰 관련창
 ---
 
+* :new: EstgamesCommon으로 합쳐졌습니다. FAQ 호출 부분 함수 이름이 변경되었습니다. (1.0.2)
 * :grey_exclamation: 현재 웹뷰창 UI가 나오지 않아 적용되지 않았습니다.
 * :grey_exclamation: 테스트용 설정에서는 공지사항 게시판이 없어 에러가 납니다.
 * :grey_exclamation: 게임 시작 후 이지 아이디가 있어야 합니다.
@@ -339,17 +358,13 @@ estgamesCommon.authorityShow()
 ### 공지사항
 
 ```swift
-var wd : WebViewDialog!
-wd = WebViewDialog(pview: self, egToken: MpInfo.Account.egId)
-wd.showNotice()
+estgamesCommon..showNotice()
 ```
 
-### FAQ
+### CSCenter(문의, FAQ)
 
 ```swift
-var wd : WebViewDialog!
-wd = WebViewDialog(pview: self, egToken: MpInfo.Account.egId)
-wd.showFAQ()
+estgamesCommon..showCsCenter()
 ```
 
 
@@ -357,6 +372,8 @@ wd.showFAQ()
 ---
 
 ### :exclamation:  유저연동 초기 설정
+
+* :heavy_exclamation_mark: SNS 연동창을 띄우기 위해서는 Navigate Controller을 추가해 주어야 합니다.
 
 ```swift
 import estgames_common_framework    // 프레임워크 추가

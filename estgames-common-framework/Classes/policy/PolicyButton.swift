@@ -20,7 +20,7 @@ class PolicyButton : UIButton {
         
         super.init(frame: frames)
         self.setBackgroundImage(uncheckImage, for: .normal)
-        self.setTitle("동의합니다", for: .normal)
+        self.setTitle(NSLocalizedString("estcommon_policy_buttonText", comment: ""), for: .normal)
         self.addTarget(self, action: #selector(clickEvent), for: .touchUpInside)
     }
     

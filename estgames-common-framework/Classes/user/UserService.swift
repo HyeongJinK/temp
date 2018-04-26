@@ -168,10 +168,11 @@ public class UserService {
                 success: {datas in
                     if let status = datas["status"] {
                         let result = String(describing: status)
-                        if result == "COMPLETE"{            // 바로 성공
+                        if result == "COMPLETE" {            // 바로 성공
                             MpInfo.Account.principal = pi
                             MpInfo.Account.provider = provider
                             MpInfo.Account.email = email
+                            //MpInfo.Account.userId = userId
                             
                             self.goToLoginSuccessCallBack()
                         } else if result == "FAILURE" {     //guest와 sns 계정 충동
@@ -248,6 +249,7 @@ public class UserService {
                     MpInfo.Account.email = email
                     // sns 로 keychain이 모두 변경된 상태입니다.
                     //self.visibleView(view: self.viewSnsSuccess)
+                    
             },
                 fail: { error in
                     self.goToLoginFailCallBack("SNS_LOGIN")
@@ -283,6 +285,7 @@ public class UserService {
     }
     
     private func userResultShow() {
+        userDialog.setUserResultAction(closeAction: goToLoginSuccessCallBack, confirmAction: goToLoginSuccessCallBack)
         userDialog.showUserResultDialog()
     }
     
@@ -308,7 +311,6 @@ public class UserService {
                         
                         // 모달 화면을 닫고 -> guest게이데이터 그대로 이기 때문에 게임이어서 진행.
                         //self.dismiss(animated: true, completion: nil)
-                        self.goToLoginSuccessCallBack()
                     } else if result == "FAILURE" {
                         // 알 수 없는 오류
                         self.goToLoginFailCallBack("GUEST_LOGIN")
