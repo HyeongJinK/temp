@@ -7,12 +7,12 @@
 
 :new: 업데이트 부분 (1.0.2)
 ---
- * 토큰 리프레쉬 부분 수정
- * 웹뷰(공지사항, CSCenter(문의사항, FAQ))
-  * EstgamesCommon클래스에 합침
-  * egToken 수동으로 안 넣어도 됩니다.
-  * showFAQ() -> showCsCenter() 로 변경되었습니다.
 
+* 토큰 리프레쉬 부분 수정
+* 웹뷰(공지사항, CSCenter(문의사항, FAQ))
+ * EstgamesCommon클래스에 합침
+ * egToken 수동으로 안 넣어도 됩니다.
+ * showFAQ() -> showCsCenter() 로 변경되었습니다.
 * Info.plist 파일
  * MP 에 env 추가, 값으로 [stage|live]가 설정 될 예정이며 해당 설정에 따라 stage, live API를 호출한다.
 
@@ -374,7 +374,7 @@ estgamesCommon..showCsCenter()
 
 ### :exclamation:  유저연동 초기 설정
 
-* :heavy_exclamation_mark: SNS 연동창을 띄우기 위해서는 Navigate Controller을 추가해 주어야 합니다.
+* :exclamation: SNS 연동창을 띄우기 위해서는 Navigate Controller을 추가해 주어야 합니다.
 
 ```swift
 import estgames_common_framework    // 프레임워크 추가
