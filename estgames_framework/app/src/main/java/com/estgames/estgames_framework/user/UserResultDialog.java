@@ -19,7 +19,7 @@ public class UserResultDialog extends Dialog {
     Button confirmBt;
 
 
-    public UserResultDialog(@NonNull Context context) {
+    public UserResultDialog(Context context) {
         super(context);
     }
 

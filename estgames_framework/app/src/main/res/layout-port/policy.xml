@@ -22,7 +22,7 @@
         android:layout_marginTop="35.5dp"
         android:textSize="13sp"
         android:textColor="#D6D6D6"
-        android:text="@string/policy_title"/>
+        android:text="@string/estcommon_policy_title"/>
 
     <TextView
         android:id="@+id/policySubTitle1"
@@ -32,7 +32,7 @@
         android:layout_marginTop="54.5dp"
         android:textSize="9sp"
         android:textColor="#FF5F5F"
-        android:text="@string/policy_subTitle"/>
+        android:text="@string/estcommon_policy_subTitle"/>
 
     <WebView
         android:id="@+id/policyWebView1"
@@ -51,7 +51,7 @@
         android:background="@drawable/policybutton"
         android:textSize="15sp"
         android:textColor="#ffffff"
-        android:text="@string/policy_buttonText"
+        android:text="@string/estcommon_policy_buttonText"
         android:layout_below="@id/policyWebView1"/>
 
     <TextView
@@ -62,7 +62,7 @@
         android:layout_marginTop="26.5dp"
         android:textSize="13sp"
         android:textColor="#D6D6D6"
-        android:text="@string/policy_subTitle2"
+        android:text="@string/estcommon_policy_privacy"
         android:layout_below="@id/policybt1"/>
 
     <WebView
@@ -83,6 +83,6 @@
         android:background="@drawable/policybutton"
         android:textSize="15sp"
         android:textColor="#ffffff"
-        android:text="@string/policy_buttonText"
+        android:text="@string/estcommon_policy_buttonText"
         android:layout_below="@id/policyWebView2"/>
 </RelativeLayout>

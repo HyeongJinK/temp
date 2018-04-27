@@ -23,6 +23,14 @@ public class PolicyDialog extends Dialog {
     Button policybt1;
     Button policybt2;
 
+    Runnable callback = new Runnable() {
+        @Override
+        public void run() {
+
+        }
+    };
+    //Runnable closeCallback;
+
     boolean checked1 = false;
     boolean checked2 = false;
 
@@ -46,6 +54,7 @@ public class PolicyDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 dismiss();
+                callback.run();
             }
         });
 
@@ -56,6 +65,7 @@ public class PolicyDialog extends Dialog {
 
                 if (checked1 && checked2) {
                     dismiss();
+                    callback.run();
                 }
             }
         });
@@ -67,6 +77,7 @@ public class PolicyDialog extends Dialog {
 
                 if (checked1 && checked2) {
                     dismiss();
+                    callback.run();
                 }
             }
         });

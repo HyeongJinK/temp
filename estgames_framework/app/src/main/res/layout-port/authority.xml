@@ -14,7 +14,7 @@
         android:layout_marginTop="105dp"
         android:layout_marginRight="82dp"
         android:layout_marginBottom="25.5dp"
-        android:text="원활한 게임플레이를 위해 아래 권한을 필요로 합니다."
+        android:text="@string/estcommon_authority_title"
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -33,7 +33,7 @@
         android:layout_height="36dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/btn_confirm"
-        android:text="확인"
+        android:text="@string/estcommon_authority_confirm"
         android:textColor="#ffffff"
         android:textSize="16sp" />
 </LinearLayout>

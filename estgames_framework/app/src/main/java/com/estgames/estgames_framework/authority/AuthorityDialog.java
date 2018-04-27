@@ -27,6 +27,12 @@ public class AuthorityDialog extends Dialog {
     TextView title;
     WebView webView;
     Button closeBt;
+    Runnable callback = new Runnable() {
+        @Override
+        public void run() {
+
+        }
+    };
 
     public AuthorityDialog(@NonNull Context context, SharedPreferences pref) {
         super(context, Theme_NoTitleBar_Fullscreen);
@@ -42,9 +48,9 @@ public class AuthorityDialog extends Dialog {
         //TODO json 데이터 가져오기
 
         //타이틀
-        String tempStr = "<font color=\"#5C9AFF\">원활한 게임플레이</font>를 위해 아래 <font color=\"#5C9AFF\">권한</font>을 필요로 합니다.";
+        //String tempStr = "<font color=\"#5C9AFF\">원활한 게임플레이</font>를 위해 아래 <font color=\"#5C9AFF\">권한</font>을 필요로 합니다.";
         title = (TextView) findViewById(R.id.authority_title);
-        title.setText(Html.fromHtml(tempStr, Html.FROM_HTML_MODE_LEGACY));
+        title.setText(Html.fromHtml(title.getText().toString(), Html.FROM_HTML_MODE_LEGACY));
 
         //웹 뷰
         webView = (WebView) findViewById(R.id.authority_webView);
@@ -67,6 +73,7 @@ public class AuthorityDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+                callback.run();
             }
         });
     }

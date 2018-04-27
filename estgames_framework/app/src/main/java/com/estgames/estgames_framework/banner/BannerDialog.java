@@ -51,6 +51,12 @@ public class BannerDialog extends Dialog {
     String today;
     SharedPreferences pref;
     SharedPreferences.Editor prefEdit;
+    Runnable callback = new Runnable() {
+        @Override
+        public void run() {
+
+        }
+    };
 
 
     public BannerDialog(Context context, SharedPreferences pref) {
@@ -172,6 +178,7 @@ public class BannerDialog extends Dialog {
 
                 if(++currentIndex >= bitmap.size()) {   //더 이상 배너 그림이 없으면 닫기
                     dialog.dismiss();
+                    callback.run();
                 } else {
                     oneDayCheck.setChecked(false);  //이미지 변경하면서 체크 해제
                     imageView.setImageBitmap(bitmap.get(currentIndex));

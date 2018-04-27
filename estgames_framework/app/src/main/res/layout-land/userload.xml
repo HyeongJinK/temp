@@ -11,7 +11,7 @@
         android:layout_marginTop="14dp"
         android:textSize="12sp"
         android:textColor="#000000"
-        android:text="@string/userload_title"/>
+        android:text="@string/estcommon_userLoad_title"/>
 
     <Button
         android:id="@+id/userLoadCloseBt"
@@ -38,7 +38,7 @@
         android:lineSpacingExtra="7.5dp"
         android:textSize="10sp"
         android:textColor="#000000"
-        android:text="@string/userload_text"/>
+        android:text="@string/estcommon_userLoad_content"/>
 
     <TextView
         android:id="@+id/userLoadConfirmText"
@@ -49,7 +49,7 @@
         android:layout_marginTop="7.5dp"
         android:textSize="10sp"
         android:textColor="#307FFF"
-        android:text="@string/userload_confirm"/>
+        android:text="@string/estcommon_userLoad_confirmText"/>
 
 
     <Button
@@ -63,7 +63,7 @@
         android:layout_marginRight="5dp"
         android:textSize="12sp"
         android:textColor="#7E7D7D"
-        android:text="@string/userload_input"/>
+        android:text="@string/estcommon_userLoad_input"/>
 
     <Button
         android:id="@+id/userLoadSubmitBt"
@@ -75,5 +75,5 @@
         android:layout_marginTop="17.5dp"
         android:textSize="13sp"
         android:textColor="#ffffff"
-        android:text="@string/userload_submit"/>
+        android:text="@string/estcommon_userLoad_confirmButton"/>
 </RelativeLayout>

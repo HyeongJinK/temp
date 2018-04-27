@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#EBEAEA">
 
     <RelativeLayout
-        android:layout_width="312.5dp"
-        android:layout_height="204.5dp"
+        android:layout_width="352.5dp"
+        android:layout_height="199dp"
         android:background="@drawable/img_popup_box_user">
 
         <TextView
@@ -16,7 +17,7 @@
             android:layout_marginTop="14dp"
             android:textSize="12sp"
             android:textColor="#000000"
-            android:text="@string/estcommon_userLink_title"/>
+            android:text="@string/estcommon_userGuest_title"/>
 
         <Button
             android:layout_width="13.5dp"
@@ -34,29 +35,17 @@
             />
 
         <TextView
-            android:id="@+id/userLinkSnsDataText"
+            android:id="@+id/userGuestLinkMiddleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20.5dp"
-            android:layout_marginTop="55.5dp"
+            android:layout_marginLeft="21.5dp"
+            android:layout_marginTop="56.5dp"
             android:lineSpacingExtra="18dp"
             android:textSize="10sp"
             android:textColor="#000000"
-            android:text="@string/estcommon_userLink_middelLabel"/>
-
-        <TextView
-            android:id="@+id/userLinkGuestDataText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/userLinkSnsDataText"
-            android:layout_marginLeft="21.5dp"
-            android:layout_marginTop="17dp"
-            android:textSize="10sp"
-            android:textColor="#000000"
-            android:text="@string/estcommon_userLink_bottomLabel"/>
+            android:text="@string/estcommon_userGuest_middle"/>
 
         <View
-            android:id="@+id/userLinkDivisionLine"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_alignParentBottom="true"
@@ -65,30 +54,30 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="312.5dp"
+        android:layout_width="352.5dp"
         android:layout_height="53.5dp"
         android:background="#EBEAEA">
         <Button
-            android:id="@+id/userLinkSubmit"
-            android:layout_width="136dp"
+            android:id="@+id/userGuestLinkLoginBt"
+            android:layout_width="154dp"
             android:layout_height="35dp"
             android:background="@drawable/btn_confirm_user"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="18dp"
             android:layout_marginTop="9dp"
             android:layout_marginRight="8dp"
             android:textSize="13sp"
             android:textColor="#ffffff"
-            android:text="@string/estcommon_userLink_confirm"/>
+            android:text="@string/estcommon_userGuest_loginBt"/>
 
         <Button
-            android:id="@+id/userLinkCancel"
-            android:layout_width="136dp"
+            android:id="@+id/userGuestLinkBeforeBt"
+            android:layout_width="154dp"
             android:layout_height="35dp"
             android:background="@drawable/btn_cancel_user"
-            android:layout_toRightOf="@id/userLinkSubmit"
+            android:layout_toRightOf="@id/userGuestLinkLoginBt"
             android:layout_marginTop="9dp"
             android:textSize="13sp"
             android:textColor="#ffffff"
-            android:text="@string/estcommon_userLink_cancel"/>
+            android:text="@string/estcommon_userGuest_beforeBt"/>
     </RelativeLayout>
 </LinearLayout>

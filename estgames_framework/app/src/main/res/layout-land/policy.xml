@@ -22,7 +22,7 @@
         android:layout_marginTop="29dp"
         android:textSize="13sp"
         android:textColor="#D6D6D6"
-        android:text="@string/policy_title"/>
+        android:text="@string/estcommon_policy_title"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
         android:layout_marginTop="48dp"
         android:textSize="9sp"
         android:textColor="#FF5F5F"
-        android:text="@string/policy_subTitle"/>
+        android:text="@string/estcommon_policy_subTitle"/>
 
 
     <LinearLayout
@@ -65,7 +65,7 @@
                 android:background="@drawable/policybutton"
                 android:textSize="15sp"
                 android:textColor="#ffffff"
-                android:text="@string/policy_buttonText"/>
+                android:text="@string/estcommon_policy_buttonText"/>
         </LinearLayout>
 
         <LinearLayout
@@ -86,7 +86,7 @@
                 android:background="@drawable/policybutton"
                 android:textSize="15sp"
                 android:textColor="#ffffff"
-                android:text="@string/policy_buttonText"/>
+                android:text="@string/estcommon_policy_buttonText"/>
         </LinearLayout>
     </LinearLayout>
 

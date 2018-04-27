@@ -11,12 +11,13 @@ import android.support.annotation.NonNull;
 
 public class UserLinkDialog extends Dialog {
 
-    public UserLinkDialog(@NonNull Context context) {
+    public UserLinkDialog(Context context) {
         super(context);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
     }
 }

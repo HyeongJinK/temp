@@ -1,27 +1,38 @@
 <resources>
     <string name="app_name">estgames_framework</string>
-    <string name="policy_title">이용약관</string>
-    <string name="policy_subTitle">광고성 정보 수신 동의포함</string>
-    <string name="policy_subTitle2">개인정보 취급방침</string>
-    <string name="policy_buttonText">동의합니다</string>
 
-    <string name="banner_todayText">오늘 다시보지 않기</string>
-    <string name="banner_linkBt">자세히 보기</string>
+    <string name="estcommon_policy_title">이용약관</string>
+    <string name="estcommon_policy_subTitle">광고성 정보 수신 동의포함</string>
+    <string name="estcommon_policy_privacy">개인 정보 취급방침</string>
+    <string name="estcommon_policy_buttonText">동의합니다</string>
 
-    <string name="userlink_title">계정 연동</string>
-    <string name="userlink_text">입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebook Account: 기존게임닉네임 Lv.xx\n위의 데이터를 불러오시겠습니까?</string>
-    <string name="userlink_bottomText">!현재 플레이 중인 게임데이터현재게임닉네임 Lv.xx)는 삭제됩니다.</string>
-    <string name="userlink_confirmBt">네 불러오겠습니다</string>
-    <string name="userlink_cancelBt">아니오 새로 연동하기</string>
+    <string name="estcommon_authority_title"><font color="#5C9AFF">원활한 게임플레이</font>를 위해 아래 <font color="#5C9AFF">권한</font>을 필요로 합니다.</string>
+    <string name="estcommon_authority_confirm">확인</string>
 
-    <string name="userload_title">기존 계정 불러오기</string>
-    <string name="userload_submit">확인</string>
-    <string name="userload_input">입력하기</string>
-    <string name="userload_text">현재 게스트 모드로 플레이 중인 데이터 (현재게임닉네임 Lv.xx)를\n삭제하고 기존 데이터를 불러오시려면 아래 문자를 입력해주세요.</string>
-    <string name="userload_confirm">확인 문자 : confirm</string>
+    <string name="estcommon_userResult_title">알림</string>
+    <string name="estcommon_userResult_subTitle">불러오기 성공</string>
+    <string name="estcommon_userResult_titleMove">게임 재 구동을 위해 타이틀 화면으로 이동합니다.</string>
+    <string name="estcommon_userResult_confirm">확인</string>
 
-    <string name="userresult_title">알림</string>
-    <string name="userresult_subtitle">불러오기 성공!</string>
-    <string name="userresult_text">게임 재 구동을 위해 타이틀 화면으로 이동합니다.</string>
-    <string name="userresult_confirm">확인</string>
+    <string name="estcommon_userLoad_title">기존 계정 불러오기</string>
+    <string name="estcommon_userLoad_content">현재 게스트 모드로 플레이 중인 데이터([])를\n삭제하고 기존 데이터를 불러오시려면 아래 문자를 입력해주세요.</string>
+    <string name="estcommon_userLoad_confirmText">확인 문자 : confirm</string>
+    <string name="estcommon_userLoad_input">입력하기</string>
+    <string name="estcommon_userLoad_confirmButton">확인</string>
+
+    <string name="estcommon_userLink_title">계정 연동</string>
+    <string name="estcommon_userLink_middelLabel">입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebookAccount: []\n위의 데이터를 불러오시겠습니까?</string>
+    <string name="estcommon_userLink_bottomLabel">!현재 플레이 중인 게임데이터([])는 삭제됩니다</string>
+    <string name="estcommon_userLink_confirm">네, 불러오겠습니다</string>
+    <string name="estcommon_userLink_cancel">아니오, 새로 연동하기</string>
+
+    <string name="estcommon_banner_closeButton">닫기</string>
+    <string name="estcommon_banner_linkButton">자세히 보기</string>
+    <string name="estcommon_banner_oneDay">오늘 다시보지않기</string>
+
+    <string name="estcommon_userGuest_title">현재 계정 연동</string>
+    <string name="estcommon_userGuest_middle">기존 연동된 데이터 ([])를 삭제하고 현재 플레이중인 게임 데이터로 계정연동을 진행합니다.\n[]</string>
+    <string name="estcommon_userGuest_loginBt">네,로그인합니다</string>
+    <string name="estcommon_userGuest_beforeBt">이전으로 돌아가기</string>
+
 </resources>

@@ -11,7 +11,7 @@
         android:layout_marginTop="14dp"
         android:textSize="12sp"
         android:textColor="#000000"
-        android:text="@string/userresult_title"/>
+        android:text="@string/estcommon_userResult_title"/>
 
     <Button
         android:id="@+id/userResultClose"
@@ -39,7 +39,7 @@
         android:lineSpacingExtra="7.5dp"
         android:textSize="12sp"
         android:textColor="#307FFF"
-        android:text="@string/userresult_subtitle"/>
+        android:text="@string/estcommon_userResult_subTitle"/>
 
     <TextView
         android:id="@+id/userResultText"
@@ -50,7 +50,7 @@
         android:layout_marginTop="7.5dp"
         android:textSize="10sp"
         android:textColor="#000000"
-        android:text="@string/userresult_text"/>
+        android:text="@string/estcommon_userResult_titleMove"/>
 
 
 
@@ -65,5 +65,5 @@
         android:layout_marginBottom="8dp"
         android:textSize="13sp"
         android:textColor="#ffffff"
-        android:text="@string/userload_submit"/>
+        android:text="@string/estcommon_userResult_confirm"/>
 </RelativeLayout>

@@ -19,7 +19,7 @@ public class UserLoadDialog extends Dialog {
     Button inputBt;
     Button submitBt;
 
-    public UserLoadDialog(@NonNull Context context) {
+    public UserLoadDialog(Context context) {
         super(context);
     }
 

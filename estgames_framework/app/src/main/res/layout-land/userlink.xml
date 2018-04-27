@@ -17,7 +17,7 @@
             android:layout_marginTop="14dp"
             android:textSize="12sp"
             android:textColor="#000000"
-            android:text="@string/userlink_title"/>
+            android:text="@string/estcommon_userLink_title"/>
 
         <Button
             android:layout_width="13.5dp"
@@ -43,7 +43,7 @@
             android:lineSpacingExtra="18dp"
             android:textSize="10sp"
             android:textColor="#000000"
-            android:text="@string/userlink_text"/>
+            android:text="@string/estcommon_userLink_middelLabel"/>
 
         <TextView
             android:id="@+id/userLinkGuestDataText"
@@ -54,7 +54,7 @@
             android:layout_marginTop="15dp"
             android:textSize="10sp"
             android:textColor="#000000"
-            android:text="@string/userlink_bottomText"/>
+            android:text="@string/estcommon_userLink_bottomLabel"/>
 
         <View
             android:id="@+id/userLinkDivisionLine"
@@ -79,7 +79,7 @@
             android:layout_marginRight="8dp"
             android:textSize="13sp"
             android:textColor="#ffffff"
-            android:text="@string/userlink_confirmBt"/>
+            android:text="@string/estcommon_userLink_confirm"/>
 
         <Button
             android:id="@+id/userLinkCancel"
@@ -90,6 +90,6 @@
             android:layout_marginTop="9dp"
             android:textSize="13sp"
             android:textColor="#ffffff"
-            android:text="@string/userlink_cancelBt"/>
+            android:text="@string/estcommon_userLink_cancel"/>
     </RelativeLayout>
 </LinearLayout>
