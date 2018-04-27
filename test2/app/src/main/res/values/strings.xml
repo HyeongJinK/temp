@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ttestasdf</string>
+
+
+
+    <string name="title_activity_splash">SplashActivity</string>
+
+    <string name="facebook_app_id">381375695637219</string>
+    <string name="fb_login_protocol_scheme">fb381375695637219</string>
+
+    <string name="button_sign_in">Sign in</string>
+    <string name="button_sign_out">Sign out</string>
+    <string name="button_sync_data">Sync Data</string>
+
+    <string name="txt_status_signed">Signed</string>
+    <string name="txt_status_unsigned">Unsigned</string>
+
+    <string name="txt_provider_guest">Guest</string>
+</resources>

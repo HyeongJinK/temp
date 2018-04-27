@@ -1,0 +1,7 @@
+{
+  "Client" : {
+    "ClientId": "1cbfa4da-f456-36cd-95f7-c17938d1b1b5.mp.estgames.com",
+    "Secret": "435e1b2e970676e51826000ea3ef00fe0b43847866a7e95ff8903942f91a137c",
+    "Region": "mr.global.qa"
+  }
+}
