@@ -46,4 +46,77 @@
         android:layout_height="wrap_content"
         android:text="게임시작"/>
 
+    <Button
+        android:id="@+id/snsBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="계정연동"/>
+
+    <Button
+        android:id="@+id/clearBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그아웃"/>
+
+    <Button
+        android:id="@+id/statusBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="상태출력"/>
+
+
+
+
+    <TextView
+        android:id="@+id/txt-status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Status"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/txt_user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="User ID"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/txt_principal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="Principal"
+        />
+
+    <TextView
+        android:id="@+id/txt_eg_token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="EG Token"
+        />
+
+    <TextView
+        android:id="@+id/txt_refresh_token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="104dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="Refresh Token"
+        />
 </LinearLayout>

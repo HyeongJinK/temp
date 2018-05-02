@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.estgames.estgames_framework:app-release-1.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/f24f4fd1ba5115644c9eb049d5085fff/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/f24f4fd1ba5115644c9eb049d5085fff/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

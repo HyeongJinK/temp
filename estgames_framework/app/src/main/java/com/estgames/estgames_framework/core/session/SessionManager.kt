@@ -166,7 +166,14 @@ class SessionManager(context:Context) {
             else -> Right("expired")
         }
     }
-
+    //로그아웃 정보는 남는 다.
+    fun signOut(): Either<Throwable, String> {
+        return expire().rightTo {
+            _sessionRepo.revoke()
+            return@rightTo "sign out"
+        }
+    }
+    // 탈퇴 개념 캐릭터 정보도 날아간다
     fun revoke(): Either<Throwable, String> {
         val session = _sessionRepo.session
         return when(session) {
@@ -209,4 +216,3 @@ class SessionManager(context:Context) {
         return map
     }
 }
-
