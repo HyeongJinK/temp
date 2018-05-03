@@ -5,8 +5,8 @@
 
     <string name="title_activity_splash">SplashActivity</string>
 
-    <string name="facebook_app_id">381375695637219</string>
-    <string name="fb_login_protocol_scheme">fb381375695637219</string>
+    <string name="facebook_app_id">188102531988315</string>
+    <string name="fb_login_protocol_scheme">fb188102531988315</string>
 
     <string name="button_sign_in">Sign in</string>
     <string name="button_sign_out">Sign out</string>

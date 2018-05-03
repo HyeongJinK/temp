@@ -1,8 +1,6 @@
 package comaf.estgames.ttestasdf
 
 import android.app.Activity
-import android.content.Context
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,9 +17,11 @@ import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
 import com.estgames.estgames_framework.authority.AuthorityDialog
 import com.estgames.estgames_framework.banner.BannerDialog
+import com.estgames.estgames_framework.core.Result
 import com.estgames.estgames_framework.policy.PolicyDialog
 import com.estgames.estgames_framework.core.Session
 import com.estgames.estgames_framework.core.session.SessionManager
+import com.estgames.estgames_framework.user.UserLoadDialog
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
@@ -52,13 +52,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //uv = UserSerivce(this, this@MainActivity, applicationContext)
-        var test1bt: Button = findViewById(R.id.test1bt);
-        var test2bt: Button = findViewById(R.id.test2bt);
-        var test3bt: Button = findViewById(R.id.test3bt);
-        var startbt: Button = findViewById(R.id.startGame);
-        var snsBt: Button = findViewById(R.id.snsBt);
-        var clearBt: Button = findViewById(R.id.clearBt);
-        var statusBt: Button = findViewById(R.id.statusBt);
+        var test1bt: Button = findViewById(R.id.test1bt)
+        var test2bt: Button = findViewById(R.id.test2bt)
+        var test3bt: Button = findViewById(R.id.test3bt)
+        var startbt: Button = findViewById(R.id.startGame)
+        var snsBt: Button = findViewById(R.id.snsBt)
+        var clearBt: Button = findViewById(R.id.clearBt)
+        var statusBt: Button = findViewById(R.id.statusBt)
 
         val test1: AuthorityDialog = AuthorityDialog(this, getSharedPreferences("auth", Activity.MODE_PRIVATE));
         val test2: PolicyDialog = PolicyDialog(this);
@@ -86,6 +86,14 @@ class MainActivity : AppCompatActivity() {
             logout()
             //uv!!.logout()
         })
+
+        var testBt : Button = findViewById(R.id.testBt)
+
+        testBt.setOnClickListener(View.OnClickListener {
+            detectEvent()
+        })
+
+        detectEvent()
     }
 
 
@@ -113,8 +121,28 @@ class MainActivity : AppCompatActivity() {
                     override fun onIdentityId(identityId: String?) {
                         sessionManager
                                 .sync(hashMapOf("provider" to provider!!.displayName, "email" to "test@facebook.com"), identityId)
-                                .right {  }
-                                .left { err -> print(err)}
+                                .right {
+                                    //충돌없이 성공했을 경우
+                                }
+                                .left { err ->
+                                    var event:Result = err
+                                    when (event) {
+                                        is Result.SyncFailure -> {
+                                            var test: UserLoadDialog = UserLoadDialog(this@MainActivity)
+                                            test.show()
+                                        }
+                                        is Result.Failure -> {
+                                            if (identityManager.isUserSignedIn) {
+                                                identityManager.signOut()
+                                            }
+                                            Toast.makeText(
+                                                    this@MainActivity,
+                                                    "Error !!: ${event.cause}",
+                                                    Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
+                                    }
+                                }
                     }
                     override fun handleError(exception: Exception?) {}
                 })
@@ -160,7 +188,7 @@ class MainActivity : AppCompatActivity() {
                 .signInButton(GoogleButton::class.java)
                 .userPools(false)
                 .build()
-        SignInActivity.startSignInActivity(this@MainActivity, config)
+        SignInActivity.startSignInActivity(this, config)
     }
 
     private fun logout() {
@@ -181,18 +209,20 @@ class MainActivity : AppCompatActivity() {
     private fun userIdentity() {
         //print(sessionManager)
         //print(sessionManager.session)
-        val session = sessionManager.session as Session.Complete
+        if (sessionManager != null && sessionManager.session != null) {
+            val session = sessionManager.session as Session.Complete
 
-        if (session != null) {
-            txtStatus.text = if (session.provider != null)
-                "${getText(R.string.txt_status_signed)} : ${session.provider}"
-            else
-                "${getText(R.string.txt_status_unsigned)} : ${getText(R.string.txt_provider_guest)}"
+            if (session != null) {
+                txtStatus.text = if (session.provider != null)
+                    "${getText(R.string.txt_status_signed)} : ${session.provider}"
+                else
+                    "${getText(R.string.txt_status_unsigned)} : ${getText(R.string.txt_provider_guest)}"
 
-            txtUserId.text = "EG ID : ${session.egId}"
-            txtPrincipal.text = "Principal : ${session.principal}"
-            txtEgToken.text = "EG Token : ${session.egToken}"
-            txtRefreshToken.text = "Refresh Token : ${session.refreshToken}"
+                txtUserId.text = "EG ID : ${session.egId}"
+                txtPrincipal.text = "Principal : ${session.principal}"
+                txtEgToken.text = "EG Token : ${session.egToken}"
+                txtRefreshToken.text = "Refresh Token : ${session.refreshToken}"
+            }
         }
     }
 
@@ -207,26 +237,32 @@ class MainActivity : AppCompatActivity() {
      */
     private fun detectEvent() {
         val event = intent.getSerializableExtra(ARGUMENT_EVENT)
-
+        println("event: $event")
         when (event) {
-//            is Result.SyncFailure -> {
-//                // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
+            is Result.SyncFailure -> {
+                println("aksdjflksadjf")
+                // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
+                Toast.makeText(
+                        this@MainActivity,
+                        "충돌 !!",
+                        Toast.LENGTH_SHORT
+                ).show()
 //                SyncDialogFragment
 //                        .newDialog(event.egId, "I am pooh")
 //                        .apply {
 //                            listener = this@MainActivity
 //                        }.show(supportFragmentManager, "SyncDialog")
-//            }
-//            is Result.Failure -> {
-//                if (identityManager.isUserSignedIn) {
-//                    identityManager.signOut()
-//                }
-//                Toast.makeText(
-//                        this@MainActivity,
-//                        "Error !!: ${event.cause}",
-//                        Toast.LENGTH_SHORT
-//                ).show()
-//            }
+            }
+            is Result.Failure -> {
+                if (identityManager.isUserSignedIn) {
+                    identityManager.signOut()
+                }
+                Toast.makeText(
+                        this@MainActivity,
+                        "Error !!: ${event.cause}",
+                        Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 }

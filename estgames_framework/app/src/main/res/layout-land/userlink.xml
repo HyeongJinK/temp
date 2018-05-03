@@ -20,6 +20,7 @@
             android:text="@string/estcommon_userLink_title"/>
 
         <Button
+            android:id="@+id/userLinkCloseBt"
             android:layout_width="13.5dp"
             android:layout_height="13.5dp"
             android:layout_alignParentRight="true"
@@ -70,7 +71,7 @@
         android:layout_height="53.5dp"
         android:background="#EBEAEA">
         <Button
-            android:id="@+id/userLinkSubmit"
+            android:id="@+id/userLinkConfirm"
             android:layout_width="154dp"
             android:layout_height="35dp"
             android:background="@drawable/btn_confirm_user"
@@ -86,7 +87,7 @@
             android:layout_width="154dp"
             android:layout_height="35dp"
             android:background="@drawable/btn_cancel_user"
-            android:layout_toRightOf="@id/userLinkSubmit"
+            android:layout_toRightOf="@id/userLinkConfirm"
             android:layout_marginTop="9dp"
             android:textSize="13sp"
             android:textColor="#ffffff"

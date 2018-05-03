@@ -52,8 +52,8 @@
         android:text="@string/estcommon_userLoad_confirmText"/>
 
 
-    <Button
-        android:id="@+id/userLoadInputBt"
+    <EditText
+        android:id="@+id/userLoadEditText"
         android:layout_width="199dp"
         android:layout_height="33dp"
         android:layout_below="@id/userLoadConfirmText"
@@ -66,12 +66,12 @@
         android:text="@string/estcommon_userLoad_input"/>
 
     <Button
-        android:id="@+id/userLoadSubmitBt"
+        android:id="@+id/userLoadConfirmBt"
         android:layout_width="66.5dp"
         android:layout_height="32dp"
         android:background="@drawable/btn_confirm_user"
         android:layout_below="@id/userLoadConfirmText"
-        android:layout_toEndOf="@id/userLoadInputBt"
+        android:layout_toEndOf="@id/userLoadEditText"
         android:layout_marginTop="17.5dp"
         android:textSize="13sp"
         android:textColor="#ffffff"

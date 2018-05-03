@@ -53,7 +53,7 @@ public class UserSerivce constructor(callingActivity: Activity, activity:Context
     }
 
     val fail: (Throwable) -> Unit = {t ->
-        Toast.makeText(activety, "Error !! $t", Toast.LENGTH_SHORT)
+        Toast.makeText(callingActivity, "Error !! $t", Toast.LENGTH_SHORT)
     }
 
     public fun createUser() {
@@ -62,11 +62,11 @@ public class UserSerivce constructor(callingActivity: Activity, activity:Context
                 callingActivity,
                 { result ->
                     if (sessionManager.hasSession) {
-                        //sessionManager.open().right(complete).left(fail)
+                        sessionManager.open().right(complete).left(fail)
                     } else {
                         result.identityManager.getUserID(object : IdentityHandler {
                             override fun handleError(e: Exception?) {
-                                Toast.makeText(activety, "Error !! $e", Toast.LENGTH_SHORT)
+                                Toast.makeText(callingActivity, "Error !! $e", Toast.LENGTH_SHORT)
                             }
 
                             override fun onIdentityId(identityId: String?) {

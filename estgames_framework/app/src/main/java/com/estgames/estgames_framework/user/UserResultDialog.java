@@ -18,6 +18,18 @@ public class UserResultDialog extends Dialog {
     Button closeBt;
     Button confirmBt;
 
+    public Runnable closeCallBack = new Runnable() {
+        @Override
+        public void run() {
+
+        }
+    };
+    public Runnable confirmCallBack = new Runnable() {
+        @Override
+        public void run() {
+
+        }
+    };
 
     public UserResultDialog(Context context) {
         super(context);
@@ -30,20 +42,20 @@ public class UserResultDialog extends Dialog {
         setContentView(R.layout.userresult);
 
         closeBt = (Button) findViewById(R.id.userResultClose);
+        confirmBt = (Button) findViewById(R.id.userResultSubmit);
+
 
         closeBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                self.dismiss();
+                self.dismiss(); closeCallBack.run();
             }
         });
-
-        confirmBt = (Button) findViewById(R.id.userResultSubmit);
 
         confirmBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                self.dismiss();
+                self.dismiss(); confirmCallBack.run();
             }
         });
     }
