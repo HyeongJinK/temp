@@ -22,24 +22,65 @@ public class UserLinkDialog extends Dialog {
     public Runnable confirmCallBack = new Runnable() {
         @Override
         public void run() {
-
+            System.out.println("confirmCallBack");
         }
     };
     public Runnable cancelCallBack = new Runnable() {
         @Override
         public void run() {
-
+            System.out.println("cancelCallBack");
         }
     };
     public Runnable closeCallBack = new Runnable() {
         @Override
         public void run() {
-
+            System.out.println("closeCallBack");
         }
     };
 
     public UserLinkDialog(Context context) {
         super(context);
+    }
+
+    public UserLinkDialog(Context context, Runnable confirmCallBack, Runnable cancelCallBack, Runnable closeCallBack) {
+        super(context);
+        this.confirmCallBack = confirmCallBack;
+        this.cancelCallBack = cancelCallBack;
+        this.closeCallBack = closeCallBack;
+    }
+
+    public void setCallBack(Runnable confirmCallBack, Runnable cancelCallBack, Runnable closeCallBack) {
+        this.confirmCallBack = confirmCallBack;
+        this.cancelCallBack = cancelCallBack;
+        this.closeCallBack = closeCallBack;
+
+        confirmBt = (Button) findViewById(R.id.userLinkConfirm);
+        cancelBt = (Button) findViewById(R.id.userLinkCancel);
+        closeBt = (Button) findViewById(R.id.userLinkCloseBt);
+
+        confirmBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                self.dismiss();
+                confirmCallBack.run();
+            }
+        });
+
+        cancelBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                self.dismiss();
+                cancelCallBack.run();
+            }
+        });
+
+        closeBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                self.dismiss();
+                closeCallBack.run();
+            }
+        });
     }
 
     @Override

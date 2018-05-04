@@ -34,17 +34,17 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.android.volley:volley:1.1.0'
 
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.amazonaws:aws-android-sdk-core:2.6.0'
-    compile 'com.amazonaws:aws-android-sdk-cognito:2.6.0'
-    compile('com.amazonaws:aws-android-sdk-auth-core:2.6.0@aar') { transitive = true; }
-    compile('com.amazonaws:aws-android-sdk-auth-userpools:2.6.7@aar') { transitive = true; }
-    compile('com.amazonaws:aws-android-sdk-auth-ui:2.6.7@aar') { transitive = true; }
-    compile('com.amazonaws:aws-android-sdk-auth-facebook:2.6.7@aar') { transitive = true; }
-    compile('com.amazonaws:aws-android-sdk-auth-google:2.6.7@aar') { transitive = true; }
+//    compile 'com.android.support:multidex:1.0.1'
+//    compile 'com.amazonaws:aws-android-sdk-core:2.6.0'
+//    compile 'com.amazonaws:aws-android-sdk-cognito:2.6.0'
+//    compile('com.amazonaws:aws-android-sdk-auth-core:2.6.0@aar') { transitive = true; }
+//    compile('com.amazonaws:aws-android-sdk-auth-userpools:2.6.7@aar') { transitive = true; }
+//    compile('com.amazonaws:aws-android-sdk-auth-ui:2.6.7@aar') { transitive = true; }
+//    compile('com.amazonaws:aws-android-sdk-auth-facebook:2.6.7@aar') { transitive = true; }
+//    compile('com.amazonaws:aws-android-sdk-auth-google:2.6.7@aar') { transitive = true; }
 }
 
-task copyLibs(type: Copy) {
-    from configurations.compile
-    into 'libs'
-}
+//task copyLibs(type: Copy) {
+//    from configurations.compile
+//    into 'libs'
+//}

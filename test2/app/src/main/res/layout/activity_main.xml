@@ -64,11 +64,11 @@
         android:layout_height="wrap_content"
         android:text="상태출력"/>
 
-    <Button
-        android:id="@+id/testBt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="충돌확인"/>
+    <!--<Button-->
+        <!--android:id="@+id/testBt"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="충돌확인"/>-->
 
 
 

@@ -15,17 +15,29 @@ import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.VolleyError
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.estgames.estgames_framework.authority.AuthorityDialog
 import com.estgames.estgames_framework.banner.BannerDialog
+import com.estgames.estgames_framework.common.EstCommonFramework
+import com.estgames.estgames_framework.common.ResultDataJson
 import com.estgames.estgames_framework.core.Result
 import com.estgames.estgames_framework.policy.PolicyDialog
 import com.estgames.estgames_framework.core.Session
 import com.estgames.estgames_framework.core.session.SessionManager
+import com.estgames.estgames_framework.user.UserGuestLinkDialog
 import com.estgames.estgames_framework.user.UserLoadDialog
+import com.estgames.estgames_framework.user.UserResultDialog
+import org.json.JSONObject
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
-    //var uv:UserSerivce? = null;
+    lateinit var estCommonFramework: EstCommonFramework
+    var uv:UserSerivce? = null;
 
     private val txtStatus: TextView by lazy {
         findViewById<TextView>(R.id.txt_status)
@@ -51,7 +63,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        estCommonFramework = EstCommonFramework(this, getSharedPreferences("banner", Activity.MODE_PRIVATE));
         //uv = UserSerivce(this, this@MainActivity, applicationContext)
+        uv = UserSerivce(this, applicationContext)
         var test1bt: Button = findViewById(R.id.test1bt)
         var test2bt: Button = findViewById(R.id.test2bt)
         var test3bt: Button = findViewById(R.id.test3bt)
@@ -60,17 +74,17 @@ class MainActivity : AppCompatActivity() {
         var clearBt: Button = findViewById(R.id.clearBt)
         var statusBt: Button = findViewById(R.id.statusBt)
 
-        val test1: AuthorityDialog = AuthorityDialog(this, getSharedPreferences("auth", Activity.MODE_PRIVATE));
-        val test2: PolicyDialog = PolicyDialog(this);
-        val test3: BannerDialog = BannerDialog(this, getSharedPreferences("banner", Activity.MODE_PRIVATE));
+//        val test1: AuthorityDialog = AuthorityDialog(this, getSharedPreferences("auth", Activity.MODE_PRIVATE));
+//        val test2: PolicyDialog = PolicyDialog(this);
+//        val test3: BannerDialog = BannerDialog(this, getSharedPreferences("banner", Activity.MODE_PRIVATE));
 
-        test1bt.setOnClickListener(View.OnClickListener { test1.show() })
-        test2bt.setOnClickListener(View.OnClickListener { test2.show() })
-        test3bt.setOnClickListener(View.OnClickListener { test3.show() })
+        test1bt.setOnClickListener(View.OnClickListener {estCommonFramework.authorityShow()})
+        test2bt.setOnClickListener(View.OnClickListener {estCommonFramework.policyShow()})
+        test3bt.setOnClickListener(View.OnClickListener {estCommonFramework.bannerShow()})
 
         startbt.setOnClickListener(View.OnClickListener {
-            //uv!!.createUser()
-            createUser()
+            uv!!.createUser()
+            //createUser()
         })
 
         statusBt.setOnClickListener(View.OnClickListener {
@@ -78,22 +92,22 @@ class MainActivity : AppCompatActivity() {
         })
 
         snsBt.setOnClickListener(View.OnClickListener {
-            login()
-            //uv!!.login()
+            //login()
+            uv!!.goToLogin()
         })
 
         clearBt.setOnClickListener(View.OnClickListener {
-            logout()
-            //uv!!.logout()
+            //logout()
+            uv!!.logout()
         })
 
-        var testBt : Button = findViewById(R.id.testBt)
+//        var testBt : Button = findViewById(R.id.testBt)
+//
+//        testBt.setOnClickListener(View.OnClickListener {
+//            detectEvent()
+//        })
 
-        testBt.setOnClickListener(View.OnClickListener {
-            detectEvent()
-        })
-
-        detectEvent()
+        //detectEvent()
     }
 
 
@@ -207,9 +221,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun userIdentity() {
-        //print(sessionManager)
-        //print(sessionManager.session)
-        if (sessionManager != null && sessionManager.session != null) {
+
+        try {
             val session = sessionManager.session as Session.Complete
 
             if (session != null) {
@@ -223,6 +236,12 @@ class MainActivity : AppCompatActivity() {
                 txtEgToken.text = "EG Token : ${session.egToken}"
                 txtRefreshToken.text = "Refresh Token : ${session.refreshToken}"
             }
+        } catch (e: Exception) {
+            txtStatus.text = ""
+            txtUserId.text = "EG ID :"
+            txtPrincipal.text = "Principal :"
+            txtEgToken.text = "EG Token :"
+            txtRefreshToken.text = "Refresh Token :"
         }
     }
 

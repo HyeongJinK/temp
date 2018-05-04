@@ -19,6 +19,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.estgames.estgames_framework.R;
+import com.estgames.estgames_framework.common.BannerData;
+import com.estgames.estgames_framework.common.Event;
+import com.estgames.estgames_framework.common.ResultDataJson;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,9 +42,9 @@ import static android.R.style.Theme_NoTitleBar_Fullscreen;
 public class BannerDialog extends Dialog {
     ImageView imageView;
     ArrayList<Bitmap> bitmap;
-    ArrayList<Banner> openBanners;
-    BannerJson bannerJson;
-    String bannerApiUrl = "https://8726wj937l.execute-api.ap-northeast-2.amazonaws.com/live?region=catcafe.kr.ls&lang=ko&placement=LANDING";
+    ArrayList<BannerData> openBanners;
+    ResultDataJson bannerJson;
+    String bannerApiUrl = "https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/stage/start/mr";
     Dialog dialog;
     Button linkBt;
     Button closeBt;
@@ -51,25 +54,76 @@ public class BannerDialog extends Dialog {
     String today;
     SharedPreferences pref;
     SharedPreferences.Editor prefEdit;
-    Runnable callback = new Runnable() {
+    public Runnable callback = new Runnable() {
         @Override
         public void run() {
-
+            System.out.println("class callBack");
         }
     };
 
 
-    public BannerDialog(Context context, SharedPreferences pref) {
+    public BannerDialog(Context context, SharedPreferences pref, ResultDataJson data, Runnable callback) {
         super(context, Theme_NoTitleBar_Fullscreen);
-
+        bannerJson = data;
         bitmap = new ArrayList<Bitmap>();
-        openBanners = new ArrayList<Banner>();
+        openBanners = new ArrayList<BannerData>();
         this.pref = pref;
         prefEdit = this.pref.edit();
         todayDate = new Date();
+        this.callback = callback;
 
         SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
         today = dt.format(todayDate);
+
+        if (bannerJson.getEvents().size() > 0) {
+            Thread mThread = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (Event entry : bannerJson.getEvents()) {
+                            if (pref.getString(entry.getBanner().getName(), "0").equals(today)) {
+                                continue;   //오늘은 더 이상 보지 않기
+                            }
+
+                            if (entry.getBegin() != null && entry.getBegin().after(todayDate)) {
+                                continue;
+                            }
+
+                            if (entry.getEnd() != null && entry.getEnd().before(todayDate)) {
+                                continue;
+                            }
+
+                            URL url = new URL(entry.getBanner().getResource());
+
+                            HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+                            conn.setDoInput(true);
+                            conn.connect();
+
+                            InputStream is = conn.getInputStream();
+
+                            bitmap.add(BitmapFactory.decodeStream(is));
+                            openBanners.add(entry.getBanner());
+                        }
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                        dialog.dismiss();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        dialog.dismiss();
+                    }
+                }
+            };
+
+            mThread.start();
+
+            try {
+                mThread.join();
+                imageView.setImageBitmap(bitmap.get(currentIndex));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                dialog.dismiss();
+            }
+        }
     }
 
 
@@ -80,71 +134,6 @@ public class BannerDialog extends Dialog {
 
         setContentView(R.layout.banner);
         imageView = (ImageView)findViewById(R.id.bannerImgView);
-        RequestQueue queue = Volley.newRequestQueue(getContext());
-
-        StringRequest stringRequest = new StringRequest(bannerApiUrl
-                , new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                bannerJson = new BannerJson(response);
-                if (bannerJson.getEntries().size() > 0) {
-                    Thread mThread = new Thread() {
-                        @Override
-                        public void run() {
-                            try {
-                                for (Entry entry : bannerJson.getEntries()) {
-                                    if (pref.getString(entry.getBanner().getName(), "0").equals(today)) {
-                                        continue;   //오늘은 더 이상 보지 않기
-                                    }
-
-                                    if (entry.getBegin() != null && entry.getBegin().after(todayDate)) {
-                                        continue;
-                                    }
-
-                                    if (entry.getEnd() != null && entry.getEnd().before(todayDate)) {
-                                        continue;
-                                    }
-
-                                    URL url = new URL(entry.getBanner().getResource());
-
-                                    HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
-                                    conn.setDoInput(true);
-                                    conn.connect();
-
-                                    InputStream is = conn.getInputStream();
-
-                                    bitmap.add(BitmapFactory.decodeStream(is));
-                                    openBanners.add(entry.getBanner());
-                                }
-                            } catch (MalformedURLException e) {
-                                e.printStackTrace();
-                                dialog.dismiss();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                                dialog.dismiss();
-                            }
-                        }
-                    };
-
-                    mThread.start();
-
-                    try {
-                        mThread.join();
-                        imageView.setImageBitmap(bitmap.get(currentIndex));
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                        dialog.dismiss();
-                    }
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                dialog.dismiss();
-            }
-        });
-
-        queue.add(stringRequest);
 
         oneDayCheck = (CheckBox) findViewById(R.id.bannerOneDayCheck);
 

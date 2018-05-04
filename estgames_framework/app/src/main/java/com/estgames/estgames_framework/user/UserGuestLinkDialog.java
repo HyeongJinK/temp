@@ -13,7 +13,7 @@ import com.estgames.estgames_framework.R;
  * Created by mp on 2018. 5. 3..
  */
 
-public class UserGuestLink extends Dialog {
+public class UserGuestLinkDialog extends Dialog {
     Dialog self;
     Button closeBt;
     Button loginBt;
@@ -22,24 +22,31 @@ public class UserGuestLink extends Dialog {
     public Runnable closeCallBack = new Runnable() {
         @Override
         public void run() {
-
+            System.out.println("closeCallBack");
         }
     };
     public Runnable loginCallBack = new Runnable() {
         @Override
         public void run() {
-
+            System.out.println("loginCallBack");
         }
     };
     public Runnable beforeCallBack = new Runnable() {
         @Override
         public void run() {
-
+            System.out.println("beforeCallBack");
         }
     };
 
-    public UserGuestLink(@NonNull Context context) {
+    public UserGuestLinkDialog(@NonNull Context context) {
         super(context);
+    }
+
+    public UserGuestLinkDialog(@NonNull Context context, Runnable closeCallBack, Runnable loginCallBack, Runnable beforeCallBack) {
+        super(context);
+        this.closeCallBack = closeCallBack;
+        this.loginCallBack = loginCallBack;
+        this.beforeCallBack = beforeCallBack;
     }
 
     @Override

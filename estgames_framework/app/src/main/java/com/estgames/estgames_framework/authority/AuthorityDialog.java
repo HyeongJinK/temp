@@ -27,6 +27,7 @@ public class AuthorityDialog extends Dialog {
     TextView title;
     WebView webView;
     Button closeBt;
+    String url;
     Runnable callback = new Runnable() {
         @Override
         public void run() {
@@ -34,8 +35,19 @@ public class AuthorityDialog extends Dialog {
         }
     };
 
-    public AuthorityDialog(@NonNull Context context, SharedPreferences pref) {
+    public AuthorityDialog(@NonNull Context context, String url) {
         super(context, Theme_NoTitleBar_Fullscreen);
+        this.url = url;
+    }
+
+    public AuthorityDialog(@NonNull Context context, String url, Runnable callback) {
+        super(context, Theme_NoTitleBar_Fullscreen);
+        this.url = url;
+        this.callback = callback;
+    }
+
+    public void setWebViewUrl (String url) {
+        webView.loadUrl(url);
     }
 
 
@@ -64,7 +76,7 @@ public class AuthorityDialog extends Dialog {
             }
         });
 
-        webView.loadUrl("https://translate.google.co.kr/?hl=ko");
+        webView.loadUrl(url);
 
         //닫기 버튼
         closeBt = (Button) findViewById(R.id.authority_bt);

@@ -10,6 +10,9 @@ import android.widget.EditText;
 
 import com.estgames.estgames_framework.R;
 
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 /**
  * Created by mp on 2018. 4. 3..
  */
@@ -23,24 +26,47 @@ public class UserLoadDialog extends Dialog {
     public Runnable closeCallBack = new Runnable() {
         @Override
         public void run() {
-
+            System.out.println("closeCallBack");
         }
     };
     public Runnable confirmCallBack = new Runnable() {
         @Override
         public void run() {
-
+            System.out.println("confirmCallBack");
         }
     };
-    public Runnable confirmInputError = new Runnable() {
-        @Override
-        public void run() {
 
+    public Function<String, Boolean> confirmCheck = new Function<String, Boolean>() {
+        @Override
+        public Boolean apply(String s) {
+            if (s.equals("confirm")) {
+                return true;
+            } else {
+                return false;
+            }
         }
     };
 
     public UserLoadDialog(Context context) {
         super(context);
+    }
+
+    public UserLoadDialog(Context context, Runnable confirmCallBack, Runnable closeCallBack) {
+        super(context);
+        this.confirmCallBack = confirmCallBack;
+        this.closeCallBack = closeCallBack;
+    }
+
+    public UserLoadDialog(Context context, Runnable confirmCallBack, Function<String, Boolean> confirmCheck, Runnable closeCallBack) {
+        super(context);
+        this.confirmCallBack = confirmCallBack;
+        this.confirmCheck = confirmCheck;
+        this.closeCallBack = closeCallBack;
+    }
+
+
+    public String getEditText() {
+        return editText.getText().toString();
     }
 
     @Override
@@ -65,11 +91,9 @@ public class UserLoadDialog extends Dialog {
         confirmBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (editText.getText().equals("confirm")) {
+                if (confirmCheck.apply(editText.getText().toString())) {
                     self.dismiss();
                     confirmCallBack.run();
-                } else {
-                    confirmInputError.run();
                 }
             }
         });

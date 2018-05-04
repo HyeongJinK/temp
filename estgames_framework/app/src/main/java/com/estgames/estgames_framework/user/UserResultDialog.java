@@ -21,18 +21,24 @@ public class UserResultDialog extends Dialog {
     public Runnable closeCallBack = new Runnable() {
         @Override
         public void run() {
-
+            System.out.println("closeCallBack");
         }
     };
     public Runnable confirmCallBack = new Runnable() {
         @Override
         public void run() {
-
+            System.out.println("confirmCallBack");
         }
     };
 
     public UserResultDialog(Context context) {
         super(context);
+    }
+
+    public UserResultDialog(Context context, Runnable confirmCallBack, Runnable closeCallBack) {
+        super(context);
+        this.confirmCallBack = confirmCallBack;
+        this.closeCallBack = closeCallBack;
     }
 
     @Override
