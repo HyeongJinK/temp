@@ -1,4 +1,4 @@
-# estgames-common-framework (이스트 게임즈 아이폰 공통 라이브러리)
+# estgames-common-framework (이스트 게임즈 안드로이드 공통 라이브러리)
 
 ## :page_with_curl: Android App 프로젝트 설정
 
@@ -153,4 +153,144 @@ EGMP 서비스를 사용하기 위해서는 MP Console에 등록된 어플리케
     "Region": "mr.global.qa"
   }
 }
+```
+
+## 안드로이드 앱 빠르게 시작하기
+
+안드로이드 앱에서 EGMP 서비스를 사용하기 위해서는 AWS와 EGMP 설정을 기반으로 앱 Context를 초기화하고 구성해야 합니다.
+이 예제에서는 안드로이드 프레임워크의 `Application` 클래스를 이용해 Context 를 구성하도록 하겠습니다.
+
+:warning:  `Application` 클래스는  프로젝트의 패키지 최상위 레벨에 위치 시키도록 합니다.
+
+### AWS Configuration 구성
+
+EGMP의 로그인 인증 서비스는 AWS Cognito를 기반으로 동작합니다. 따라서 Aws Configuration 및 login 을 위한 IdentityManager를 초기화해야 합니다.
+
+`AwsConfiguration` 을 초기화 하고 Cognito 인증을 위한 `IdentityManager`를 등록합니다.
+기본 `IdentityManager`를 등록한 후 Facebook, Google 등의 Signin Provider를 `IdentityManager` 에 등록합니다.
+
+###### Application.java
+```java
+class Appication extends MultiDexApplication {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        initializeAws();
+        ...
+    }
+
+    private void initializeAws() {
+        // AwsConfiguration 초기화 및 생성
+        AWSConfiguration awsCfg = new AWSConfiguration(applicationContext());
+
+        // Cognito 인증을 위한 Default IdentityManager 설정
+        if (IdentityManager.getDefaultIdentityManager() == null) {
+            IdentityManager manager = new IdentityManager(applicationContext(), awsCfg);
+            IdentityManager.setDefaultIdentityManager(manager);
+        }
+
+        FacebookSignInProvider.setPermissions("public_profile");
+        GoogleSignInProvider.setPermissions(Scopes.EMAIL, Scopes.PROFILE);
+
+        IdentityManager.getDefaultIdentityManager().addSignInProvider(FacebookSignInProvider.class)
+        IdentityManager.getDefaultIdentityManager().addSignInProvider(GoogleSignInProvider.class)
+    }
+}
+```
+
+
+### PlatformContext 구성
+
+EGMP 서비스를 이용하기 위해 MP Configuration을 초기화 하고 Context를 구성하도록 합니다.
+Application 클래스를 MP Context로 인식 할 수 있도록 PlatformContext 인터페이스를 구현합니다.
+
+
+###### Application.java
+``` java
+class Application extends MultiDexAplication implements PlatformContext {
+    private Configuration mpCfg;
+    private String mpDeviceId;
+    private SessionRepository mpSessionRepository;
+
+    @Override
+    public Configuration getCongifuration() {
+        return this.mpCfg;
+    }
+
+    @Override
+    public String getDeviceId() {
+        return this.mpDeviceId;
+    }
+
+    @Override
+    public SessionRepository getSessionRepository() {
+        return this.mpSessionRepository;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        initializeAws();
+        initializeMp();
+        ...
+    }
+
+    private void initializeMp() {
+         this.mpCfg = new Configuration(getApplicationContext());
+         this.mpDeviceId = AndroidUtils.obtainDeviceId(getApplicationContext()) + "@android";
+         this.mpSessionRepository = new PreferenceSessionRepository(getApplicationContext());
+    }
+}
+```
+
+### Application 클래스 등록
+
+초기화 코드를 담고 있는 `Appication` 를 앱이 인식 할 수 있도록 AndroidManifest.xml 파일에 등록해줍니다.
+
+######  AndroidManifest.xml
+```xml
+<manifest ... >
+    <application
+        android:name='.Application'
+        ... >
+    ...
+    </application>
+</manifest>
+```
+
+
+### Startup 프로세스 API (배너, 이용약관, 권한)
+
+`EstCommonFramework` 클래스는 앱 시작시 호출할 수 있는 공통 프로세스 기능을 포함하고 있습니다. Activity가 시작될때 객체를 생성하도록 합니다.
+아래에 따라오는 모든 코드들은 Activity 클래스 코드 안에서 작성하도록 합니다.
+
+#### 1. `EstCommonFramework` 객체 생성
+```java
+class StartActivity extends AppCompatActivity {
+    EstCommonFramework empFramework;
+
+    ...
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        empFramework = new EstCommonFramework(this, getSharedPreference("banner", Activity.MODE_PRIVATE));
+    }
+}
+```
+
+#### 2. Application 요구 권한 화면
+```java
+
+empFramework.authorityShow();
+```
+
+#### 3. App 이용약관 화면
+```java
+empFramework.policyShow();
+```
+
+#### 4. 배너 화면
+```java
+empFramework.bannerShow();
 ```
