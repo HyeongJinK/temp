@@ -1,11 +1,11 @@
 package com.estgames.estgames_framework.banner;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -13,20 +13,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.estgames.estgames_framework.R;
 import com.estgames.estgames_framework.common.BannerData;
 import com.estgames.estgames_framework.common.Event;
 import com.estgames.estgames_framework.common.ResultDataJson;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -40,8 +31,8 @@ import static android.R.style.Theme_NoTitleBar_Fullscreen;
  */
 
 public class BannerDialog extends Dialog {
-    ImageView imageView;
     ArrayList<Bitmap> bitmap;
+    ArrayList<String> urls;
     ArrayList<BannerData> openBanners;
     ResultDataJson bannerJson;
     String bannerApiUrl = "https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/stage/start/mr";
@@ -62,70 +53,36 @@ public class BannerDialog extends Dialog {
     };
 
 
-    public BannerDialog(Context context, SharedPreferences pref, ResultDataJson data, Runnable callback) {
+    public BannerDialog(Context context, ResultDataJson data, Runnable callback)  {
         super(context, Theme_NoTitleBar_Fullscreen);
         bannerJson = data;
         bitmap = new ArrayList<Bitmap>();
         openBanners = new ArrayList<BannerData>();
-        this.pref = pref;
+        this.pref = context.getSharedPreferences("banner", Activity.MODE_PRIVATE);
         prefEdit = this.pref.edit();
         todayDate = new Date();
         this.callback = callback;
 
         SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
         today = dt.format(todayDate);
+        urls = new ArrayList<String>();
 
+        bannerSetting();
+    }
+
+    void bannerSetting() {
         if (bannerJson.getEvents().size() > 0) {
-            Thread mThread = new Thread() {
-                @Override
-                public void run() {
-                    try {
-                        for (Event entry : bannerJson.getEvents()) {
-                            if (pref.getString(entry.getBanner().getName(), "0").equals(today)) {
-                                continue;   //오늘은 더 이상 보지 않기
-                            }
 
-                            if (entry.getBegin() != null && entry.getBegin().after(todayDate)) {
-                                continue;
-                            }
-
-                            if (entry.getEnd() != null && entry.getEnd().before(todayDate)) {
-                                continue;
-                            }
-
-                            URL url = new URL(entry.getBanner().getResource());
-
-                            HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
-                            conn.setDoInput(true);
-                            conn.connect();
-
-                            InputStream is = conn.getInputStream();
-
-                            bitmap.add(BitmapFactory.decodeStream(is));
-                            openBanners.add(entry.getBanner());
-                        }
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                        dialog.dismiss();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        dialog.dismiss();
-                    }
+            for (Event entry : bannerJson.getEvents()) {
+                if (entry.getBanner() == null || pref.getString(entry.getBanner().getName(), "0").equals(today)) {
+                    continue;   //오늘은 더 이상 보지 않기
                 }
-            };
 
-            mThread.start();
-
-            try {
-                mThread.join();
-                imageView.setImageBitmap(bitmap.get(currentIndex));
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                dialog.dismiss();
+                bitmap.add(entry.getBanner().getImage());
+                openBanners.add(entry.getBanner());
             }
         }
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,12 +90,12 @@ public class BannerDialog extends Dialog {
         dialog = this;
 
         setContentView(R.layout.banner);
-        imageView = (ImageView)findViewById(R.id.bannerImgView);
-
+        ImageView imageView = (ImageView)findViewById(R.id.bannerImgView);
+        linkBt = (Button) findViewById(R.id.bannerLinkBt);
+        closeBt = (Button) findViewById(R.id.bannerCloseBt);
         oneDayCheck = (CheckBox) findViewById(R.id.bannerOneDayCheck);
 
-        linkBt = (Button) findViewById(R.id.bannerLinkBt);
-
+        imageView.setImageBitmap(bitmap.get(currentIndex));
         linkBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,8 +111,6 @@ public class BannerDialog extends Dialog {
             }
         });
 
-
-        closeBt = (Button) findViewById(R.id.bannerCloseBt);
 
         closeBt.setOnClickListener(new View.OnClickListener() {
             @Override

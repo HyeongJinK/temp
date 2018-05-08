@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="comaf.estgames.ttestasdf">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".Application"
@@ -37,6 +38,4 @@
             android:value="@string/facebook_app_id" />
 
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

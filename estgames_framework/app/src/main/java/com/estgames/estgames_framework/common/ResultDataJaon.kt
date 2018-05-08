@@ -1,9 +1,13 @@
 package com.estgames.estgames_framework.common
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import org.json.JSONArray
 import org.json.JSONObject
+import java.net.URL
 import java.text.SimpleDateFormat
 import java.util.*
+import javax.net.ssl.HttpsURLConnection
 
 /**
  * Created by mp on 2018. 5. 1..
@@ -35,7 +39,7 @@ class ResultDataJson {
 class Event {
     var begin: Date?
     var end: Date?
-    var banner : BannerData
+    var banner : BannerData?
 
     constructor(jsonData: JSONObject) {
         var dt: SimpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
@@ -52,7 +56,15 @@ class Event {
             end = null
         }
 
-        banner = BannerData(jsonData.getJSONObject("banner"))
+
+        var todayDate = Date()
+        if (begin != null && begin!!.after(todayDate)) {
+            banner = null
+        } else if (end != null && end!!.before(todayDate)) {
+            banner = null
+        } else {
+            banner = BannerData(jsonData.getJSONObject("banner"))
+        }
     }
 }
 
@@ -61,12 +73,20 @@ class BannerData {
     var resource: String = ""
     var writer: String = ""
     var action: ActionData
+    var image : Bitmap
 
     constructor(jsonData: JSONObject) {
         name = jsonData.optString("name")
         resource = jsonData.optString("resource")
         writer = jsonData.optString("writer")
         action = ActionData(jsonData.getJSONObject("action"))
+
+        val url = URL(resource)
+        val conn = url.openConnection() as HttpsURLConnection
+        conn.doInput = true
+        conn.connect()
+        val istream = conn.inputStream
+        image = BitmapFactory.decodeStream(istream)
     }
 }
 

@@ -15,25 +15,13 @@ import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.VolleyError
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import com.estgames.estgames_framework.authority.AuthorityDialog
-import com.estgames.estgames_framework.banner.BannerDialog
 import com.estgames.estgames_framework.common.EstCommonFramework
-import com.estgames.estgames_framework.common.ResultDataJson
 import com.estgames.estgames_framework.core.Result
-import com.estgames.estgames_framework.policy.PolicyDialog
 import com.estgames.estgames_framework.core.Session
 import com.estgames.estgames_framework.core.session.SessionManager
-import com.estgames.estgames_framework.user.UserGuestLinkDialog
 import com.estgames.estgames_framework.user.UserLoadDialog
-import com.estgames.estgames_framework.user.UserResultDialog
-import org.json.JSONObject
 import java.lang.Exception
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var estCommonFramework: EstCommonFramework
@@ -63,7 +51,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        estCommonFramework = EstCommonFramework(this, getSharedPreferences("banner", Activity.MODE_PRIVATE));
+
+
+
+
+
+        estCommonFramework = EstCommonFramework(this);
+
+
+
         //uv = UserSerivce(this, this@MainActivity, applicationContext)
         uv = UserSerivce(this, applicationContext)
         var test1bt: Button = findViewById(R.id.test1bt)

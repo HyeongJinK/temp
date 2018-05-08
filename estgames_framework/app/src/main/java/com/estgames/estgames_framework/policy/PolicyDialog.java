@@ -98,7 +98,7 @@ public class PolicyDialog extends Dialog {
 
         WebSettings webSettings2 = policyWebView2.getSettings();
         webSettings2.setJavaScriptEnabled(true);
-        policyWebView1.loadUrl(privateUrl);
+        policyWebView2.loadUrl(privateUrl);
 
         policyWebView2.setWebViewClient(new WebViewClient() {
             @Override
