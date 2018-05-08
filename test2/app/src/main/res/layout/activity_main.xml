@@ -23,6 +23,11 @@
         android:id="@+id/bannerEst"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />-->
+    <Button
+        android:id="@+id/test0bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="순서대로"/>
 
     <Button
         android:id="@+id/test1bt"

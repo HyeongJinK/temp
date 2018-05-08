@@ -32,7 +32,6 @@ class ResultDataJson {
         var proTemp: JSONArray = json.getJSONObject("process").getJSONArray(nation.toLowerCase())
         for (i in 1 .. proTemp.length()) {
             process.add(proTemp.getString(i - 1))
-            println(proTemp.getString(i-1))
         }
 
         var temp: JSONArray = json.getJSONArray("event")

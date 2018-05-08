@@ -143,8 +143,33 @@ public class EstCommonFramework {
     public boolean contractPrivate() {
         return policyDialog.contractPrivate();
     }
+    int index = 0;
+    Runnable processCheck = new Runnable() {
+        @Override
+        public void run() {
+            String process = data.getProcess().get(index);
+            switch (process) {
+                case "system_contract" :
+                    authorityCallBack = processCheck;
+                    authorityShow();
+                    break;
+                case "use_contract" :
+                    policyCallBack = processCheck;
+                    policyShow();
+                    break;
+                case "login" :
+                    break;
+                case "event" :
+                    bannerCallBack = processCallBack;
+                    bannerShow();
+                    break;
+            }
+            index++;
+        }
+    };
 
     public void processShow() {
-
+        index = 0;
+        processCheck.run();
     }
 }

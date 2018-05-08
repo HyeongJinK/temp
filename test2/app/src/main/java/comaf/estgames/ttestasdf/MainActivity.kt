@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         uv = UserSerivce(this, applicationContext)
+        var test0bt: Button = findViewById(R.id.test0bt)
         var test1bt: Button = findViewById(R.id.test1bt)
         var test2bt: Button = findViewById(R.id.test2bt)
         var test3bt: Button = findViewById(R.id.test3bt)
@@ -72,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 //        val test1: AuthorityDialog = AuthorityDialog(this, getSharedPreferences("auth", Activity.MODE_PRIVATE));
 //        val test2: PolicyDialog = PolicyDialog(this);
 //        val test3: BannerDialog = BannerDialog(this, getSharedPreferences("banner", Activity.MODE_PRIVATE));
-
+        test0bt.setOnClickListener(View.OnClickListener { estCommonFramework.processShow() })
         test1bt.setOnClickListener(View.OnClickListener {estCommonFramework.authorityShow()})
         test2bt.setOnClickListener(View.OnClickListener {estCommonFramework.policyShow()})
         test3bt.setOnClickListener(View.OnClickListener {estCommonFramework.bannerShow()})
