@@ -50,6 +50,13 @@ public class EstCommonFramework {
         }
     };
 
+    public Runnable processCallBack = new Runnable() {
+        @Override
+        public void run() {
+            System.out.println("processCallBack");
+        }
+    };
+
     static public Runnable initCallBack = new Runnable() {
         @Override
         public void run() {
@@ -113,5 +120,9 @@ public class EstCommonFramework {
 
     public boolean contractPrivate() {
         return policyDialog.contractPrivate();
+    }
+
+    public void processShow() {
+
     }
 }
