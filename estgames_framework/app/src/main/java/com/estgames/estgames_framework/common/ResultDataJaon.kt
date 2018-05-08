@@ -18,7 +18,7 @@ class ResultDataJson {
     var nation: String = ""
     var language: String = ""
     var events: ArrayList<Event> = ArrayList<Event> ()
-    //var process: String = ""
+    var process: ArrayList<String> = ArrayList<String> ()
     var url: UrlData
 
     constructor(jsonData: String) {
@@ -26,8 +26,15 @@ class ResultDataJson {
 
         nation = json.optString("nation")
         language = json.optString("language")
-        //placement = json.optString("placement")
         url = UrlData(json.getJSONObject("url"))
+
+
+        var proTemp: JSONArray = json.getJSONObject("process").getJSONArray(nation.toLowerCase())
+        for (i in 1 .. proTemp.length()) {
+            process.add(proTemp.getString(i - 1))
+            println(proTemp.getString(i-1))
+        }
+
         var temp: JSONArray = json.getJSONArray("event")
 
         for (i in 1 .. temp.length()) {

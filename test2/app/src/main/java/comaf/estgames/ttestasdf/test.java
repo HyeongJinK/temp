@@ -2,6 +2,7 @@ package comaf.estgames.ttestasdf;
 
 import android.support.multidex.MultiDexApplication;
 
+import com.estgames.estgames_framework.core.AndroidUtils;
 import com.estgames.estgames_framework.core.Configuration;
 import com.estgames.estgames_framework.core.PlatformContext;
 import com.estgames.estgames_framework.core.session.SessionRepository;
@@ -22,10 +23,10 @@ class test extends MultiDexApplication implements PlatformContext {
         return null;
     }
 
-    @Override
-    public Configuration getCongifuration() {
-        return this.mpCfg;
-    }
+//    @Override
+//    public Configuration getCongifuration() {
+//        return this.mpCfg;
+//    }
 
     @Override
     public String getDeviceId() {
@@ -47,7 +48,7 @@ class test extends MultiDexApplication implements PlatformContext {
 
     private void initializeMp() {
         this.mpCfg = new Configuration(getApplicationContext());
-//        this.mpDeviceId = AndroidUtils.obtainDeviceId(getApplicationContext()) + "@android";
+       // this.mpDeviceId = AndroidUtils.obtainDeviceId(getApplicationContext()) + "@android";
 //        this.mpSessionRepository = new PreferenceSessionRepository(getApplicationContext());
     }
 }

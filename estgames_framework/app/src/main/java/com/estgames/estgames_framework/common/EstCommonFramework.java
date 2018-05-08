@@ -61,9 +61,9 @@ public class EstCommonFramework {
             System.out.println("initCallBack");
         }
     };
-
+//TODO 더 좋은 방법을 찾아보자~
 //    public static EstCommonFramework create(final Context ctx) throws ExecutionException, InterruptedException {
-//        System.out.println("sakjfks");
+//        System.out.println("sakjfks");!!@
 //        try {
 //            ExecutorService executor = Executors.newSingleThreadExecutor();
 //            Future<EstCommonFramework> result = executor.submit(new Callable<EstCommonFramework>() {

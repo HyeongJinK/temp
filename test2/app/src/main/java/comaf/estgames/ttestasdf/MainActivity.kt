@@ -59,11 +59,11 @@ class MainActivity : AppCompatActivity() {
         var clearBt: Button = findViewById(R.id.clearBt)
         var statusBt: Button = findViewById(R.id.statusBt)
 
-        estCommonFramework = EstCommonFramework.create(this);
+        //estCommonFramework = EstCommonFramework.create(this);
         //EstCommonFramework.initCallBack = Runnable { println("kjafdjskl") }
-//        estCommonFramework = EstCommonFramework(this, Runnable {
-//           test1bt.setText("skdajf");
-//        });
+        estCommonFramework = EstCommonFramework(this, Runnable {
+           test1bt.setText("skdajf");
+        });
 
 
 
