@@ -55,8 +55,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-        estCommonFramework = EstCommonFramework(this);
+        EstCommonFramework.initCallBack = Runnable { println("kjafdjskl") }
+        estCommonFramework = EstCommonFramework(this, Runnable { println("kajjfmcnv") });
 
 
 

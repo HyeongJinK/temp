@@ -12,7 +12,6 @@ import com.estgames.estgames_framework.core.session.SessionManager
 import com.estgames.estgames_framework.user.*
 import java.lang.Exception
 import java.util.function.Consumer
-import java.util.function.Supplier
 
 /**
  * Created by mp on 2018. 5. 2..
@@ -20,7 +19,6 @@ import java.util.function.Supplier
 public class UserSerivce constructor(callingActivity: Activity, applicationContext: Context) {
     var callingActivity = callingActivity
     var app = applicationContext
-    //var activety = activity
 
     var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity, Runnable { userLoadDialog.show() }, Runnable { userGuestLinkDialog.show() }, Runnable { signout() })
     var userLoadDialog : UserLoadDialog = UserLoadDialog(callingActivity, Runnable { onSwitch() }, Runnable { signout() })

@@ -10,6 +10,17 @@ EGMP SDK를 사용하기 위해 build.gradle 파일에 의존성 정보를 등�
 ```gradle
 ....
 dependencies {
+    //AWS를 사용하기 위한 공통 모듈
+    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'com.amazonaws:aws-android-sdk-core:2.6.0'
+    implementation 'com.amazonaws:aws-android-sdk-cognito:2.6.0'
+    implementation('com.amazonaws:aws-android-sdk-auth-core:2.6.0@aar') { transitive = true; }
+    implementation('com.amazonaws:aws-android-sdk-auth-userpools:2.6.7@aar') { transitive = true; }
+    implementation('com.amazonaws:aws-android-sdk-auth-ui:2.6.7@aar') { transitive = true; }
+    implementation('com.amazonaws:aws-android-sdk-auth-facebook:2.6.7@aar') { transitive = true; }
+    implementation('com.amazonaws:aws-android-sdk-auth-google:2.6.7@aar') { transitive = true; }
+
+    //이스트 게임즈 공통 모듈
     implementaion 'com.estgames.estgames_framework:app-release2:1.0@aar'
     ...
 }
@@ -17,6 +28,7 @@ dependencies {
 
 :warning: 현재 EGMP 플랫폼에서는 라이브러리 저장소를 제공하지 않습니다.
 **app-release2.aar** 파일을 다운로드 받아 import 할 경우 로컬 repository를 설정해주세요.
+해당 파일은 gitlab에 lib 폴더 안에 있습니다.
 > 예: 라이브러리 파일을 프로젝트의 **libs** 디렉토리 아래에 위치시킬 경우
 ```gradle
 repositories {
@@ -259,11 +271,18 @@ class Application extends MultiDexAplication implements PlatformContext {
 </manifest>
 ```
 
+### UserService 클래스 등록
+
+```java
+
+```
+
 
 ### Startup 프로세스 API (배너, 이용약관, 권한)
 
 `EstCommonFramework` 클래스는 앱 시작시 호출할 수 있는 공통 프로세스 기능을 포함하고 있습니다. Activity가 시작될때 객체를 생성하도록 합니다.
 아래에 따라오는 모든 코드들은 Activity 클래스 코드 안에서 작성하도록 합니다.
+
 
 #### 1. `EstCommonFramework` 객체 생성
 ```java
@@ -274,15 +293,34 @@ class StartActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        empFramework = new EstCommonFramework(this, getSharedPreference("banner", Activity.MODE_PRIVATE));
+        EstCommonFramework.initCallBack = new Runnable() {    //콜백함수 설정 1
+            @Override
+            public void run() {
+                System.out.println("initCallBack");
+            }
+        });
+
+        empFramework = new EstCommonFramework(this);
+        empFramework = new EstCommonFramework(this, new Runnable() {    //콜백함수 설정 2
+            @Override
+            public void run() {
+                System.out.println("initCallBack");
+            }
+        });
     }
 }
 ```
+해당 객체를 생성할 때 StartApi를 호출하여 값을 구성한다. 해당 호출이 끝나면 initCallBack인터페이스에 run()함수를 호출한다. 데이터가 초기화가 안된 상태에서는 권한, 이용약관, 배너 창이 열리지 않는 다.
 
 #### 2. Application 요구 권한 화면
 ```java
-
-empFramework.authorityShow();
+empFramework.bannerCallBack = new Runnable() {  //콜백 함수 적용
+    @Override
+    public void run() {
+        System.out.println("bannerCallBack");
+    }
+}
+empFramework.authorityShow();   //보여주기
 ```
 
 #### 3. App 이용약관 화면
