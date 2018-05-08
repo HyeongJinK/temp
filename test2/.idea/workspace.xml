@@ -53,7 +53,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.73220974">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="UserSerivce.kt" pinned="false" current-in-tab="true">
+          <file leaf-file-name="UserSerivce.kt" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/UserSerivce.kt">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="22">
@@ -65,13 +65,31 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Application.kt" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Application.kt" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+                <state relative-caret-position="521">
+                  <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/test.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="320">
+                  <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
                   <folding>
-                    <element signature="e#34#710#0" expanded="false" />
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#608#609#0" expanded="true" />
+                    <element signature="e#635#636#0" expanded="true" />
+                    <element signature="e#696#697#0" expanded="true" />
+                    <element signature="e#729#730#0" expanded="true" />
+                    <element signature="e#778#779#0" expanded="true" />
+                    <element signature="e#816#817#0" expanded="true" />
+                    <element signature="e#885#886#0" expanded="true" />
+                    <element signature="e#932#933#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -80,13 +98,10 @@
           <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="239">
-                  <caret line="57" column="39" lean-forward="false" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="39" />
+                <state relative-caret-position="177">
+                  <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
                   <folding>
                     <element signature="e#34#1013#0" expanded="true" />
-                    <element signature="e#8484#8519#0" expanded="false" />
-                    <element signature="e#8588#8625#0" expanded="false" />
-                    <element signature="e#8631#8667#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -121,26 +136,6 @@
                     <element signature="e#4001#4851#0" expanded="true" />
                     <element signature="e#4850#4851#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="UserLinkDialog.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/9447fe381dcd0e781e9ec617f6be7e74/jars/classes.jar!/com/estgames/estgames_framework/user/UserLinkDialog.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="UserGuestLinkDialog.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/23d097063e84a0c2b470adbe454badf9/jars/classes.jar!/com/estgames/estgames_framework/user/UserGuestLinkDialog.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -214,6 +209,7 @@
       <find>cancelCallBack</find>
       <find>ajsdfkl</find>
       <find>_params\\\</find>
+      <find>checkSignature</find>
     </findStrings>
     <replaceStrings>
       <replace>context</replace>
@@ -2035,8 +2031,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/RequestHttpURLConnection.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/UserSerivce.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/test.java" />
       </list>
     </option>
   </component>
@@ -2240,7 +2238,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525759963570" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525765394276" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2288,7 +2286,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525759963570" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525765394276" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2495,7 +2493,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525759963571" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525765394277" />
       </method>
     </configuration>
     <list size="2">
@@ -2543,8 +2541,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="49" width="1800" height="962" extended-state="1" />
-    <editor active="true" />
+    <frame x="0" y="49" width="1800" height="962" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.4978001" order="7" side_tool="false" content_ui="tabs" />
@@ -2557,13 +2554,13 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281075" sideWeight="0.49041533" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845894" sideWeight="0.49277183" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29357797" sideWeight="0.48455805" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18233944" sideWeight="0.48455805" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27497193" sideWeight="0.51544195" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21899886" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12627986" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12627986" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990981" sideWeight="0.48774356" order="3" side_tool="false" content_ui="tabs" />
@@ -2587,19 +2584,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt</url>
-          <line>255</line>
+          <line>254</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt</url>
-          <line>253</line>
+          <line>252</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt</url>
-          <line>252</line>
+          <line>251</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -2609,39 +2606,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#34#1013#0" expanded="true" />
-            <element signature="e#8484#8519#0" expanded="false" />
-            <element signature="e#8588#8625#0" expanded="false" />
-            <element signature="e#8631#8667#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#34#1013#0" expanded="true" />
-            <element signature="e#8484#8519#0" expanded="false" />
-            <element signature="e#8588#8625#0" expanded="false" />
-            <element signature="e#8631#8667#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/content/ContextWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="107" column="4" lean-forward="false" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -2682,9 +2646,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#34#1013#0" expanded="true" />
-            <element signature="e#8484#8519#0" expanded="false" />
-            <element signature="e#8588#8625#0" expanded="false" />
-            <element signature="e#8631#8667#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2997,16 +2958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding>
-            <element signature="e#34#710#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/RequestHttpURLConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -3079,19 +3030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="57" column="39" lean-forward="false" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="39" />
-          <folding>
-            <element signature="e#34#1013#0" expanded="true" />
-            <element signature="e#8484#8519#0" expanded="false" />
-            <element signature="e#8588#8625#0" expanded="false" />
-            <element signature="e#8631#8667#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/UserSerivce.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -3099,6 +3037,58 @@
           <folding>
             <element signature="e#34#575#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+          <folding>
+            <element signature="e#34#1013#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/multidex-1.0.1.aar/07bc8ddda667a337844775f916de1955/jars/classes.jar!/android/support/multidex/MultiDexApplication.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/0c670c7efe94a376cef22b8f4ab7594c/jars/classes.jar!/com/estgames/estgames_framework/core/PlatformContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

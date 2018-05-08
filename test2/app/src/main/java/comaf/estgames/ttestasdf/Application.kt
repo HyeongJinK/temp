@@ -37,7 +37,6 @@ class Application: MultiDexApplication(), PlatformContext {
     override fun onCreate() {
         super.onCreate()
         initialize()
-        checkSignature()
         initEgPlatform()
     }
 
@@ -61,10 +60,6 @@ class Application: MultiDexApplication(), PlatformContext {
 
         IdentityManager.getDefaultIdentityManager()
                 .addSignInProvider(GoogleSignInProvider::class.java)
-    }
-
-    private fun checkSignature() {
-        Log.d(LOG_TAG, "====>> finger print sha1 by util : ${AndroidUtils.obtainFingerPrint(applicationContext)}")
     }
 }
 

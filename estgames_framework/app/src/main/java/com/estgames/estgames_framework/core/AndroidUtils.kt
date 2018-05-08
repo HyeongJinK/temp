@@ -15,6 +15,7 @@ object AndroidUtils {
     private const val PREFS_FILE = "eg_client_prefs.xml"
     private const val PREFS_FILE_DEVICE = "device_id"
 
+    @JvmStatic
     fun obtainDeviceId(context: Context): UUID {
         val prefs = context.getSharedPreferences(PREFS_FILE, 0)
         val deviceId = prefs.getString(PREFS_FILE_DEVICE, null)
@@ -38,7 +39,7 @@ object AndroidUtils {
         prefs.edit().putString(PREFS_FILE_DEVICE, uuid.toString()).commit()
         return uuid
     }
-
+    @JvmStatic
     fun obtainFingerPrint(context: Context): String {
         val pack = context.packageManager.getPackageInfo(
                 context.packageName, PackageManager.GET_SIGNATURES

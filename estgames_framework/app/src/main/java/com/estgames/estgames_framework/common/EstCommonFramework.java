@@ -4,12 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import com.estgames.estgames_framework.authority.AuthorityDialog;
 import com.estgames.estgames_framework.banner.BannerDialog;
-import com.estgames.estgames_framework.core.HttpRequest;
 import com.estgames.estgames_framework.core.HttpResponse;
 import com.estgames.estgames_framework.core.Method;
 import com.estgames.estgames_framework.policy.PolicyDialog;
 
-import kotlin.text.Charsets;
 
 import static com.estgames.estgames_framework.core.HttpUtils.request;
 
@@ -64,8 +62,32 @@ public class EstCommonFramework {
         }
     };
 
+//    public static EstCommonFramework create(final Context ctx) throws ExecutionException, InterruptedException {
+//        System.out.println("sakjfks");
+//        try {
+//            ExecutorService executor = Executors.newSingleThreadExecutor();
+//            Future<EstCommonFramework> result = executor.submit(new Callable<EstCommonFramework>() {
+//                @Override
+//                public EstCommonFramework call() {
+//                    String apiUrl = "https://m-linker.estgames.co.kr/sdk-start-api";
+//                    HttpResponse result = request(apiUrl, Method.GET);
+//                    ResultDataJson data = new ResultDataJson(new String(result.getContent()));
+//
+//                    return new EstCommonFramework(ctx, data);
+//                }
+//            });
+//
+//
+//            return result.get();
+//        } finally {
+//            System.out.println("sakjfks2");
+//        }
+//
+//    }
+
     public EstCommonFramework(Context context) {
         this.context = context;
+
         new Thread() {
             @Override
             public void run() {

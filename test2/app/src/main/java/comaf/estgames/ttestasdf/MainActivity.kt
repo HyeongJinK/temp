@@ -50,17 +50,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-
-
-
-        EstCommonFramework.initCallBack = Runnable { println("kjafdjskl") }
-        estCommonFramework = EstCommonFramework(this, Runnable { println("kajjfmcnv") });
-
-
-
-        //uv = UserSerivce(this, this@MainActivity, applicationContext)
         uv = UserSerivce(this, applicationContext)
         var test1bt: Button = findViewById(R.id.test1bt)
         var test2bt: Button = findViewById(R.id.test2bt)
@@ -69,6 +58,16 @@ class MainActivity : AppCompatActivity() {
         var snsBt: Button = findViewById(R.id.snsBt)
         var clearBt: Button = findViewById(R.id.clearBt)
         var statusBt: Button = findViewById(R.id.statusBt)
+
+        estCommonFramework = EstCommonFramework.create(this);
+        //EstCommonFramework.initCallBack = Runnable { println("kjafdjskl") }
+//        estCommonFramework = EstCommonFramework(this, Runnable {
+//           test1bt.setText("skdajf");
+//        });
+
+
+
+        //uv = UserSerivce(this, this@MainActivity, applicationContext)
 
 //        val test1: AuthorityDialog = AuthorityDialog(this, getSharedPreferences("auth", Activity.MODE_PRIVATE));
 //        val test2: PolicyDialog = PolicyDialog(this);
