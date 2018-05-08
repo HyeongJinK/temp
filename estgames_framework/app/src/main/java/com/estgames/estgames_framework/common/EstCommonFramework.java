@@ -50,18 +50,28 @@ public class EstCommonFramework {
         }
     };
 
-    public Runnable initCallBack = new Runnable() {
+    static public Runnable initCallBack = new Runnable() {
         @Override
         public void run() {
             System.out.println("initCallBack");
         }
     };
 
-    public void setBannerCallBack(Runnable callBack) {
-        bannerDialog.callback = callBack;
+    public EstCommonFramework(Context context) {
+        this.context = context;
+        new Thread() {
+            @Override
+            public void run() {
+                HttpResponse result = request(apiUrl, Method.GET);
+
+                data = new ResultDataJson(new String(result.getContent()));
+
+                initCallBack.run();
+            }
+        }.start();
     }
 
-    public EstCommonFramework(Context context) {
+    public EstCommonFramework(Context context, Runnable initCallBack) {
         this.context = context;
         new Thread() {
             @Override
