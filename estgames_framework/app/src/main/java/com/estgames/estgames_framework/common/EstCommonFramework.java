@@ -9,6 +9,8 @@ import com.estgames.estgames_framework.core.Method;
 import com.estgames.estgames_framework.policy.PolicyDialog;
 
 
+import java.util.function.Consumer;
+
 import static com.estgames.estgames_framework.core.HttpUtils.request;
 
 
@@ -55,7 +57,7 @@ public class EstCommonFramework {
         }
     };
 
-    static public Runnable initCallBack = new Runnable() {
+    public Runnable initCallBack = new Runnable() {
         @Override
         public void run() {
             System.out.println("initCallBack");
@@ -100,8 +102,9 @@ public class EstCommonFramework {
         }.start();
     }
 
-    public EstCommonFramework(Context context, Runnable initCallBack) {
+    public EstCommonFramework(Context context, CustomConsumer<EstCommonFramework> initCallBack) {
         this.context = context;
+        EstCommonFramework temp = this;
         new Thread() {
             @Override
             public void run() {
@@ -109,7 +112,7 @@ public class EstCommonFramework {
 
                 data = new ResultDataJson(new String(result.getContent()));
 
-                initCallBack.run();
+                initCallBack.accept(temp);
             }
         }.start();
     }
