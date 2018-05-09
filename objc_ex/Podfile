@@ -1,12 +1,14 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
+use_modular_headers!
 
-target 'estgames-common-framework-example' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+target 'objc_ex' do
   pod 'GoogleSignIn', '~> 4.0.0'
   #pod 'estgames-common-framework', '~> 0.9.6'
   pod 'estgames-common-framework', :path => '../'
-  # Pods for estgames-common-framework-example
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for objc_ex
 
 end

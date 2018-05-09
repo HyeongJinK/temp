@@ -359,13 +359,13 @@ estgamesCommon.authorityShow()
 ### 공지사항
 
 ```swift
-estgamesCommon..showNotice()
+estgamesCommon.showNotice()
 ```
 
 ### CSCenter(문의, FAQ)
 
 ```swift
-estgamesCommon..showCsCenter()
+estgamesCommon.showCsCenter()
 ```
 
 

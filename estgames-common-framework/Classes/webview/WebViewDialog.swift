@@ -6,7 +6,7 @@
 
 import Foundation
 
-public class WebViewDialog {
+private class WebViewDialog {
     var pview: UIViewController
     var webViewUIContoller: WebViewUIController
     

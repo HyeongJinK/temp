@@ -237,7 +237,7 @@
 				ED859371208ECFE2005C2271 /* SpoqaHanSansThin.ttf */,
 				ED859376208ECFE2005C2271 /* unchecked-checkbox-50.png */,
 			);
-			name = Assets;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		ED85932A208ECF89005C2271 /* Classes */ = {

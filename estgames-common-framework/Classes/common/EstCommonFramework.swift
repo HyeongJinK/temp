@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-public class EstgamesCommon {
+@objc public class EstgamesCommon : NSObject {
     var apiCallCount = 0;
     var processIndex : Int = 0
     let pview: UIViewController
@@ -19,6 +19,7 @@ public class EstgamesCommon {
     public var policyCallBack : () -> Void = { () -> Void in}
     public var bannerCallBack : () -> Void = { () -> Void in}
     public var processCallBack : () -> Void = { () -> Void in}
+    public var initCallBack: (UIViewController) -> Void = {(uv: UIViewController) -> Void in}
     let policy: PolicyViewController
     var process: [String] = Array<String>()
     
@@ -34,7 +35,7 @@ public class EstgamesCommon {
         
         policy = PolicyViewController()
         policy.modalPresentationStyle = .overCurrentContext
-        
+        super.init()
         dataSet(pview: pview)
     }
     
@@ -43,7 +44,7 @@ public class EstgamesCommon {
             let myGroup = DispatchGroup.init()
             let queue = DispatchQueue.global()
             let url = MpInfo.App.estapi.replacingOccurrences(of: "env", with: MpInfo.App.env)
-            print(url)
+            
             
             //let manager = SessionManager.default
             //manager.session.configuration.timeoutIntervalForRequest = 10
@@ -62,7 +63,6 @@ public class EstgamesCommon {
                         response in
                         if let result = response.result.value {
                             let bannerJson = result as! NSDictionary
-                            
                             if ((bannerJson["errorMessage"] as? String) != nil){
                                 self.dataSet(pview: pview)
                             } else {
@@ -71,6 +71,7 @@ public class EstgamesCommon {
                                 self.banner = bannerFramework(pview: pview, result: self.estgamesData!)
                                 self.policy.setWebUrl(webUrl1: self.estgamesData!.url.contract_service, webUrl2: self.estgamesData!.url.contract_private)
                                 self.process = self.estgamesData!.process[self.estgamesData!.nation.lowercased()] as! Array<String>
+                                self.initCallBack(self.pview)
                             }
                             myGroup.leave()
                         } else {
@@ -81,10 +82,12 @@ public class EstgamesCommon {
         }
     }
     
-    private func checkEstgamesData(){
+    private func checkEstgamesData() -> Bool{
         if estgamesData == nil {
             dataSet(pview: self.pview)
+            return false
         }
+        return true;
     }
     
     
@@ -148,7 +151,9 @@ public class EstgamesCommon {
     
     //이용약관
     public func policyShow() {
-        checkEstgamesData()
+        if (!checkEstgamesData()) {
+            return;
+        }
 
         policy.callbackFunc = policyCallBack
         pview.present(policy, animated: false)

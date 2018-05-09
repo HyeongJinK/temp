@@ -117,9 +117,17 @@ class UrlData {
     var system_contract: String = ""
     var contract_service: String = ""
     var contract_private: String = ""
+    var notice: String = ""
+    var cscenter:String = ""
+    var apiParent:String = ""
+    var characterInfo:String = ""
     
     init(_ jsonData: NSDictionary) {
         self.system_contract = jsonData["system_contract"] as! String
+        self.notice = jsonData["notice"] as! String
+        self.cscenter = jsonData["cscenter"] as! String
+        self.apiParent = jsonData["api_parent"] as! String
+        self.characterInfo = jsonData["character_info"] as! String
         
         let useContract = jsonData["use_contract"] as! NSDictionary
         
