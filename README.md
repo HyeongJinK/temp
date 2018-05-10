@@ -4,8 +4,10 @@
 [![License](https://img.shields.io/cocoapods/l/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
-:new: 업데이트 (1.0.3)
+:new: 업데이트 (1.0.4)
 ---
+
+:warning: 1.0.3버전 올릴 때 문제가 생겨 1.0.4버전으로 건너뛰었습니다.
 
 * EstgamesCommon 클래스에 생성자 콜백함수 생성
  * 생성자에서 startAPI를 호출해 값을 가져와 설정을 하는 데 설정되는 시간에 **show()를 호출해 창을 불러올 경우의 문제를 차단하기 위해 생성

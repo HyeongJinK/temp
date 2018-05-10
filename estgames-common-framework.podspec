@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'estgames-common-framework'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'Estgames common framework'
 
 # This description is used to generate tags and improve search results.
