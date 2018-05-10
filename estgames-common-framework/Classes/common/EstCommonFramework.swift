@@ -19,7 +19,7 @@ import Alamofire
     public var policyCallBack : () -> Void = { () -> Void in}
     public var bannerCallBack : () -> Void = { () -> Void in}
     public var processCallBack : () -> Void = { () -> Void in}
-    public var initCallBack: (UIViewController) -> Void = {(uv: UIViewController) -> Void in}
+    public var initCallBack: (EstgamesCommon) -> Void = {(uv: EstgamesCommon) -> Void in}
     let policy: PolicyViewController
     var process: [String] = Array<String>()
     
@@ -30,6 +30,18 @@ import Alamofire
     public init(pview:UIViewController) {
         self.pview = pview
         
+        authority = AuthorityViewController()
+        authority.modalPresentationStyle = .overCurrentContext
+        
+        policy = PolicyViewController()
+        policy.modalPresentationStyle = .overCurrentContext
+        super.init()
+        dataSet(pview: pview)
+    }
+    
+    public init(pview:UIViewController, initCallBack: @escaping (EstgamesCommon) -> Void) {
+        self.pview = pview
+        self.initCallBack = initCallBack
         authority = AuthorityViewController()
         authority.modalPresentationStyle = .overCurrentContext
         
@@ -71,7 +83,7 @@ import Alamofire
                                 self.banner = bannerFramework(pview: pview, result: self.estgamesData!)
                                 self.policy.setWebUrl(webUrl1: self.estgamesData!.url.contract_service, webUrl2: self.estgamesData!.url.contract_private)
                                 self.process = self.estgamesData!.process[self.estgamesData!.nation.lowercased()] as! Array<String>
-                                self.initCallBack(self.pview)
+                                self.initCallBack(self)
                             }
                             myGroup.leave()
                         } else {
@@ -95,7 +107,9 @@ import Alamofire
      공개 함수 api에 있는 순서대로 호출
      */
     public func processShow() {
-        checkEstgamesData()
+        if (!checkEstgamesData()) {
+            return;
+        }
         check()
     }
     
@@ -139,7 +153,9 @@ import Alamofire
     
     //권한
     public func authorityShow() {
-        checkEstgamesData()
+        if (!checkEstgamesData()) {
+            return;
+        }
         
         authority.callbackFunc = authorityCallBack
         pview.present(authority, animated: false)
@@ -172,7 +188,9 @@ import Alamofire
     }
     //배너
     public func bannerShow() {
-        checkEstgamesData()
+        if (!checkEstgamesData()) {
+            return;
+        }
         
         banner.closeBtCallBack = bannerCallBack
         banner.show()

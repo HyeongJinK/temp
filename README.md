@@ -4,8 +4,15 @@
 [![License](https://img.shields.io/cocoapods/l/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
+:new: 업데이트 (1.0.3)
+---
 
-:new: 업데이트 부분 (1.0.2)
+* EstgamesCommon 클래스에 생성자 콜백함수 생성
+ * 생성자에서 startAPI를 호출해 값을 가져와 설정을 하는 데 설정되는 시간에 **show()를 호출해 창을 불러올 경우의 문제를 차단하기 위해 생성
+ * Objective-c 예제 프로젝트 추가(objc_ex)
+ * Objective-c에서 Swift코드 사용방법 링크 http://beankhan.tistory.com/187
+
+:new: 업데이트 (1.0.2)
 ---
 
 * 토큰 리프레쉬 부분 수정
@@ -271,9 +278,14 @@ var estgamesCommon:EstgamesCommon!
 override func viewDidLoad() {   //프레임 워크 초기화
     super.viewDidLoad()
     estgamesCommon = EstgamesCommon(pview: self) //배너, 이용약관, 권한..등을 띄울 뷰
+    estgamesCommon = EstgamesCommon(pview: view, initCallBack: {(ec:EstgamesCommon) -> Void in ec.authorityShow()})
 }
 
 ```
+
+### initCallBack 생성자 콜백
+
+생성자에서 StartAPI를 호출하여 결과를 받아 값을 만들 후 호출하는 함수, 해당 콜백이 호출 되기 전에 **show() 함수 관련 호출을 할 경우 아무 일도 일어나지 않는 다.
 
 
 ### :computer: 설정된 순서대로 (배너, 이용약관, 권한)

@@ -11,10 +11,11 @@ import estgames_common_framework
 
 @objc class EstTest : NSObject {
     var est: EstgamesCommon
+    
     @objc init(view: UIViewController) {
-        est = EstgamesCommon(pview: view)
+        est = EstgamesCommon(pview: view, initCallBack: {(ec:EstgamesCommon) -> Void in ec.authorityShow()})
     }
     @objc func banerShow () {
-        est.policyShow()
+        est.bannerShow()
     }
 }
