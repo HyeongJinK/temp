@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         test3bt.setOnClickListener(View.OnClickListener {estCommonFramework.bannerShow()})
 
         startbt.setOnClickListener(View.OnClickListener {
+            uv!!.startSuccessCallBack = Runnable { println("test") }
             uv!!.createUser()
             //createUser()
         })
