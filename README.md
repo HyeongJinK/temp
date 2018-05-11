@@ -355,13 +355,13 @@ empFramework.bannerShow();
 
 ```java
 class StartActivity extends AppCompatActivity {
-    var uv:UserSerivce? = null;
+    private UserService uv;
 
     ...
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        uv = UserSerivce(this, applicationContext)  //객체생성
+        uv = new UserSerivce(this, applicationContext);  //객체생성
     }
 }
 ```
@@ -369,31 +369,33 @@ class StartActivity extends AppCompatActivity {
 #### 2. 게임시작
 
 ```java
-uv!!.startSuccessCallBack = Runnable { println("test") }
-uv!!.createUser()
+uv.startSuccessCallBack = new Runnable() {
+    @Override public void run() {
+        println("test");
+    };
+uv.createUser();
 
 //콜백함수
-startSuccessCallBack: Runnable = Runnable {  }  //성공시 호출
-startFailCallBack: CustomConsumer<String> = CustomConsumer {  } //Consumer 인터페이스와 같습니다. sdk버전을 19로 낮추면서 커스텀인터페이스를 하나 만들었습니다.
+uv.setStartSuccessCallBack(new Runnable() { ... });  //성공시 호출
+uv.startFailCallBack(new CustomConsumer<String>() { ... }); //Consumer 인터페이스와 같습니다. sdk버전을 19로 낮추면서 커스텀인터페이스를 하나 만들었습니다.
 
 ```
 
 #### 3. SNS 계정 연동
 
 ```java
-uv!!.goToLogin()
+uv.goToLogin();
 
 // 콜백함수
-
-goToLoginSuccessCallBack: Runnable = Runnable {  }  //성공시 호출
-goToLoginFailCallBack: CustomConsumer<String> = CustomConsumer {  } //실패시 호출
+uv.setGoToLoginSuccessCallBack(new Runnable() { ... });  //성공시 호출
+uv.setGoToLoginFailCallBack(new CustomConsumer<String>() { ... }); //실패시 호출
 ```
 
 #### 4. 로그아웃
 
 ```java
-uv!!.logout()
+uv.logout();
 
 //콜백함수
-clearSuccessCallBack: Runnable = Runnable {  }  //로그아웃 후 호출
+uv.setClearSuccessCallBack(new Runnable() { ... }); //로그아웃 후 호출
 ```
