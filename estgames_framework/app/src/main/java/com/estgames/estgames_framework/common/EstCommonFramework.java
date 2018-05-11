@@ -57,53 +57,14 @@ public class EstCommonFramework {
         }
     };
 
-    public Runnable initCallBack = new Runnable() {
+    public CustomConsumer initCallBack = new CustomConsumer<EstCommonFramework>() {
         @Override
-        public void run() {
+        public void accept(EstCommonFramework o) {
             System.out.println("initCallBack");
         }
     };
-//TODO 더 좋은 방법을 찾아보자~
-//    public static EstCommonFramework create(final Context ctx) throws ExecutionException, InterruptedException {
-//        System.out.println("sakjfks");!!@
-//        try {
-//            ExecutorService executor = Executors.newSingleThreadExecutor();
-//            Future<EstCommonFramework> result = executor.submit(new Callable<EstCommonFramework>() {
-//                @Override
-//                public EstCommonFramework call() {
-//                    String apiUrl = "https://m-linker.estgames.co.kr/sdk-start-api";
-//                    HttpResponse result = request(apiUrl, Method.GET);
-//                    ResultDataJson data = new ResultDataJson(new String(result.getContent()));
-//
-//                    return new EstCommonFramework(ctx, data);
-//                }
-//            });
-//
-//
-//            return result.get();
-//        } finally {
-//            System.out.println("sakjfks2");
-//        }
-//
-//    }
 
-    public EstCommonFramework(Context context) {
-        this.context = context;
-
-        new Thread() {
-            @Override
-            public void run() {
-                HttpResponse result = request(apiUrl, Method.GET);
-
-                data = new ResultDataJson(new String(result.getContent()));
-
-                initCallBack.run();
-            }
-        }.start();
-    }
-
-    public EstCommonFramework(Context context, CustomConsumer<EstCommonFramework> initCallBack) {
-        this.context = context;
+    public void create() {
         EstCommonFramework temp = this;
         new Thread() {
             @Override
@@ -115,6 +76,26 @@ public class EstCommonFramework {
                 initCallBack.accept(temp);
             }
         }.start();
+    }
+
+    public EstCommonFramework(Context context) {
+        this.context = context;
+
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                HttpResponse result = request(apiUrl, Method.GET);
+//
+//                data = new ResultDataJson(new String(result.getContent()));
+//
+//                initCallBack.run();
+//            }
+//        }.start();
+    }
+
+    public EstCommonFramework(Context context, CustomConsumer<EstCommonFramework> initCallBack) {
+        this.context = context;
+        this.initCallBack = initCallBack;
     }
 
     public void bannerShow() {

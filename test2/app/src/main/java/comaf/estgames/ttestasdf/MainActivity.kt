@@ -15,6 +15,7 @@ import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
+import com.estgames.estgames_framework.common.CustomConsumer
 import com.estgames.estgames_framework.common.EstCommonFramework
 import com.estgames.estgames_framework.core.Result
 import com.estgames.estgames_framework.core.Session
@@ -62,9 +63,12 @@ class MainActivity : AppCompatActivity() {
 
         //estCommonFramework = EstCommonFramework.create(this);
         //EstCommonFramework.initCallBack = Runnable { println("kjafdjskl") }
-        estCommonFramework = EstCommonFramework(this, Runnable {
-           test1bt.setText("skdajf");
+        estCommonFramework = EstCommonFramework(this, CustomConsumer {
+            test1bt.setText("skdajf")
+            //it.authorityShow()
         });
+
+        estCommonFramework.create();
 
 
 

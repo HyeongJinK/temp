@@ -1,5 +1,14 @@
 # estgames-common-framework (이스트 게임즈 안드로이드 공통 라이브러리)
 
+## 업데이트 사항
+
+:new: 1.0.5 업데이트 사항
+
+* authorityShow() 수정
+* EstCommonFramework 객체 생성 시 startApi 미호출, 해당 객체에 create 함수 호출 시 startApi 호출하여 값 설정
+* create 함수 callback
+* checkSignature() 삭제
+
 ## :page_with_curl: Android App 프로젝트 설정
 
 ### 라이브러리 import
@@ -293,20 +302,14 @@ class StartActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        EstCommonFramework.initCallBack = new Runnable() {    //콜백함수 설정 1
+        empFramework = new EstCommonFramework(this, new CustomConsumer() {
             @Override
-            public void run() {
-                System.out.println("initCallBack");
+            public void accept(EstcommonFramework ef) {
+                // 데이터 설정 후 콜백함수
+                // 해당 함수 호출 이후에 화면 호출 함수 호출
             }
         });
-
-        empFramework = new EstCommonFramework(this);
-        empFramework = new EstCommonFramework(this, new Runnable() {    //콜백함수 설정 2
-            @Override
-            public void run() {
-                System.out.println("initCallBack");
-            }
-        });
+        empFramework.create()   //해당 함수 호출 시 StartApi를 호출하여 값을 설정한다. 1.0.5버전에서 수정됨
     }
 }
 ```
@@ -314,21 +317,83 @@ class StartActivity extends AppCompatActivity {
 
 #### 2. Application 요구 권한 화면
 ```java
+empFramework.policyCallBack = new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("policyCallBack");
+    }
+};
+empFramework.authorityShow();   //보여주기
+```
+
+#### 3. App 이용약관 화면
+```java
+empFramework.policyCallBack = new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("policyCallBack");
+    }
+};
+empFramework.policyShow();
+```
+
+#### 4. 배너 화면
+```java
 empFramework.bannerCallBack = new Runnable() {  //콜백 함수 적용
     @Override
     public void run() {
         System.out.println("bannerCallBack");
     }
 }
-empFramework.authorityShow();   //보여주기
-```
-
-#### 3. App 이용약관 화면
-```java
-empFramework.policyShow();
-```
-
-#### 4. 배너 화면
-```java
 empFramework.bannerShow();
+```
+
+
+### 3. 유저 연동 프로세스
+
+#### 1. UserService 객체 생성
+
+```java
+class StartActivity extends AppCompatActivity {
+    var uv:UserSerivce? = null;
+
+    ...
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        uv = UserSerivce(this, applicationContext)  //객체생성
+    }
+}
+```
+
+#### 2. 게임시작
+
+```java
+uv!!.startSuccessCallBack = Runnable { println("test") }
+uv!!.createUser()
+
+//콜백함수
+startSuccessCallBack: Runnable = Runnable {  }  //성공시 호출
+startFailCallBack: CustomConsumer<String> = CustomConsumer {  } //Consumer 인터페이스와 같습니다. sdk버전을 19로 낮추면서 커스텀인터페이스를 하나 만들었습니다.
+
+```
+
+#### 3. SNS 계정 연동
+
+```java
+uv!!.goToLogin()
+
+// 콜백함수
+
+goToLoginSuccessCallBack: Runnable = Runnable {  }  //성공시 호출
+goToLoginFailCallBack: CustomConsumer<String> = CustomConsumer {  } //실패시 호출
+```
+
+#### 4. 로그아웃
+
+```java
+uv!!.logout()
+
+//콜백함수
+clearSuccessCallBack: Runnable = Runnable {  }  //로그아웃 후 호출
 ```

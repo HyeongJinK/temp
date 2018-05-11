@@ -3,6 +3,7 @@ package com.estgames.estgames_framework.authority;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.Html;
@@ -62,7 +63,12 @@ public class AuthorityDialog extends Dialog {
         //타이틀
         //String tempStr = "<font color=\"#5C9AFF\">원활한 게임플레이</font>를 위해 아래 <font color=\"#5C9AFF\">권한</font>을 필요로 합니다.";
         title = (TextView) findViewById(R.id.authority_title);
-        title.setText(Html.fromHtml(title.getText().toString(), Html.FROM_HTML_MODE_LEGACY));
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            title.setText(Html.fromHtml(title.getText().toString(), Html.FROM_HTML_MODE_LEGACY));
+        } else {
+            title.setText(Html.fromHtml(title.getText().toString()));
+        }
 
         //웹 뷰
         webView = (WebView) findViewById(R.id.authority_webView);
