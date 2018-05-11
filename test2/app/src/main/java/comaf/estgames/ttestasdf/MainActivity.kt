@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         //estCommonFramework = EstCommonFramework.create(this);
         //EstCommonFramework.initCallBack = Runnable { println("kjafdjskl") }
+
         estCommonFramework = EstCommonFramework(this, CustomConsumer {
             test1bt.setText("skdajf")
             //it.authorityShow()
