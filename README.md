@@ -4,6 +4,7 @@
 
 :new: 1.0.5 업데이트 사항
 
+* (5/11 5시 20분 이후) 웹뷰추가(공지사항, 고객센터), 디자인이 없어서 미적용 상태
 * authorityShow() 수정
 * EstCommonFramework 객체 생성 시 startApi 미호출, 해당 객체에 create 함수 호출 시 startApi 호출하여 값 설정
 * create 함수 callback
@@ -305,7 +306,7 @@ class StartActivity extends AppCompatActivity {
         empFramework = new EstCommonFramework(this, new CustomConsumer() {
             @Override
             public void accept(EstcommonFramework ef) {
-                // 데이터 설정 후 콜백함수
+                // 데이터 설정 후(create() 함수 호출 후) 콜백함수
                 // 해당 함수 호출 이후에 화면 호출 함수 호출
             }
         });
@@ -348,6 +349,17 @@ empFramework.bannerCallBack = new Runnable() {  //콜백 함수 적용
 empFramework.bannerShow();
 ```
 
+#### 4. 공지 화면
+```java
+empFramework.showNotice();
+```
+
+#### 4. 고객센터 화면
+```java
+
+empFramework.showCSCenter();
+```
+
 
 ### 3. 유저 연동 프로세스
 
@@ -355,13 +367,13 @@ empFramework.bannerShow();
 
 ```java
 class StartActivity extends AppCompatActivity {
-    private UserService uv;
+    var uv:UserSerivce? = null;
 
     ...
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        uv = new UserSerivce(this, applicationContext);  //객체생성
+        uv = UserSerivce(this, applicationContext)  //객체생성
     }
 }
 ```
@@ -369,33 +381,48 @@ class StartActivity extends AppCompatActivity {
 #### 2. 게임시작
 
 ```java
-uv.startSuccessCallBack = new Runnable() {
-    @Override public void run() {
-        println("test");
-    };
-uv.createUser();
+uv!!.startSuccessCallBack = Runnable { println("test") }
+uv!!.createUser()
 
 //콜백함수
-uv.setStartSuccessCallBack(new Runnable() { ... });  //성공시 호출
-uv.startFailCallBack(new CustomConsumer<String>() { ... }); //Consumer 인터페이스와 같습니다. sdk버전을 19로 낮추면서 커스텀인터페이스를 하나 만들었습니다.
+startSuccessCallBack: Runnable = Runnable {  }  //성공시 호출
+startFailCallBack: CustomConsumer<String> = CustomConsumer {  } //Consumer 인터페이스와 같습니다. sdk버전을 19로 낮추면서 커스텀인터페이스를 하나 만들었습니다.
 
 ```
 
 #### 3. SNS 계정 연동
 
 ```java
-uv.goToLogin();
+uv!!.goToLogin()
 
 // 콜백함수
-uv.setGoToLoginSuccessCallBack(new Runnable() { ... });  //성공시 호출
-uv.setGoToLoginFailCallBack(new CustomConsumer<String>() { ... }); //실패시 호출
+
+goToLoginSuccessCallBack: Runnable = Runnable {  }  //성공시 호출
+goToLoginFailCallBack: CustomConsumer<String> = CustomConsumer {  } //실패시 호출
 ```
 
 #### 4. 로그아웃
 
 ```java
-uv.logout();
+uv!!.logout()
 
 //콜백함수
-uv.setClearSuccessCallBack(new Runnable() { ... }); //로그아웃 후 호출
+clearSuccessCallBack: Runnable = Runnable {  }  //로그아웃 후 호출
 ```
+
+#### 5. 정보 가져오기
+
+```java
+val session = sessionManager.session as Session.Complete
+
+txtStatus.text = if (session.provider != null)
+    "${session.provider}"
+else
+    "guest"
+
+txtUserId.text = "EG ID : ${session.egId}"
+txtPrincipal.text = "Principal : ${session.principal}"
+txtEgToken.text = "EG Token : ${session.egToken}"
+txtRefreshToken.text = "Refresh Token : ${session.refreshToken}"
+```
+               
