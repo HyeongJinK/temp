@@ -16,7 +16,7 @@ import java.util.function.Consumer
 /**
  * Created by mp on 2018. 5. 2..
  */
-public class UserSerivce constructor(callingActivity: Activity, applicationContext: Context) {
+public class UserService constructor(callingActivity: Activity, applicationContext: Context) {
     var callingActivity = callingActivity
     var app = applicationContext
 
