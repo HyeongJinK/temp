@@ -66,7 +66,6 @@ class MainActivity : AppCompatActivity() {
 
         estCommonFramework = EstCommonFramework(this, CustomConsumer {
             test1bt.setText("skdajf")
-            //it.authorityShow()
         });
 
         estCommonFramework.create();
@@ -78,7 +77,9 @@ class MainActivity : AppCompatActivity() {
 //        val test1: AuthorityDialog = AuthorityDialog(this, getSharedPreferences("auth", Activity.MODE_PRIVATE));
 //        val test2: PolicyDialog = PolicyDialog(this);
 //        val test3: BannerDialog = BannerDialog(this, getSharedPreferences("banner", Activity.MODE_PRIVATE));
-        test0bt.setOnClickListener(View.OnClickListener { estCommonFramework.processShow() })
+        test0bt.setOnClickListener(View.OnClickListener {//estCommonFramework.processShow()
+            estCommonFramework.showNotice();
+             })
         test1bt.setOnClickListener(View.OnClickListener {estCommonFramework.authorityShow()})
         test2bt.setOnClickListener(View.OnClickListener {estCommonFramework.policyShow()})
         test3bt.setOnClickListener(View.OnClickListener {estCommonFramework.bannerShow()})

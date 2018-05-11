@@ -6,10 +6,11 @@ import com.estgames.estgames_framework.authority.AuthorityDialog;
 import com.estgames.estgames_framework.banner.BannerDialog;
 import com.estgames.estgames_framework.core.HttpResponse;
 import com.estgames.estgames_framework.core.Method;
+import com.estgames.estgames_framework.core.Profile;
+import com.estgames.estgames_framework.core.Token;
+import com.estgames.estgames_framework.core.session.SessionManager;
 import com.estgames.estgames_framework.policy.PolicyDialog;
-
-
-import java.util.function.Consumer;
+import com.estgames.estgames_framework.webview.WebViewDialog;
 
 import static com.estgames.estgames_framework.core.HttpUtils.request;
 
@@ -28,6 +29,9 @@ public class EstCommonFramework {
     PolicyDialog policyDialog;
 
     ResultDataJson data;
+
+    WebViewDialog notice;
+    WebViewDialog cscenter;
 
     public Runnable bannerCallBack = new Runnable() {
         @Override
@@ -164,5 +168,28 @@ public class EstCommonFramework {
 
     private void defaultProcess() {
         processCheck.run();
+    }
+
+    public void showNotice() {
+        SessionManager sm = new SessionManager(context);
+        if (sm != null) {
+            Token token = (Token) sm.getSession();
+
+            if (data != null) {
+                notice = new WebViewDialog(context, data.getUrl().getNotice() + "?eg_token=" + token.getEgToken() + "&lang=" + data.getLanguage());
+                notice.show();
+            }
+        }
+    }
+
+    public void showCSCenter() {
+        SessionManager sm = new SessionManager(context);
+        if (sm != null) {
+            Token token = (Token) sm.getSession();
+            if (data != null) {
+                cscenter = new WebViewDialog(context, data.getUrl().getCscenter() + "?eg_token=" + token.getEgToken() + "&lang=" + data.getLanguage());
+                cscenter.show();
+            }
+        }
     }
 }

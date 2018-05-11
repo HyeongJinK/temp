@@ -7,11 +7,9 @@ import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
-import com.estgames.estgames_framework.core.Result
 import com.estgames.estgames_framework.core.session.SessionManager
 import com.estgames.estgames_framework.user.*
 import java.lang.Exception
-import java.util.function.Consumer
 
 /**
  * Created by mp on 2018. 5. 2..
