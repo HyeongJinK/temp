@@ -281,12 +281,6 @@ class Application extends MultiDexAplication implements PlatformContext {
 </manifest>
 ```
 
-### UserService 클래스 등록
-
-```java
-
-```
-
 
 ### Startup 프로세스 API (배너, 이용약관, 권한)
 
@@ -366,14 +360,14 @@ empFramework.showCSCenter();
 #### 1. UserService 객체 생성
 
 ```java
-class StartActivity extends AppCompatActivity {
-    var uv:UserSerivce? = null;
+public class StartActivity extends AppCompatActivity {
+    private UserService uv;
 
     ...
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        uv = UserSerivce(this, applicationContext)  //객체생성
+        uv = new UserSerivce(this, this.getApplicationContext());  //객체생성
     }
 }
 ```
@@ -381,48 +375,58 @@ class StartActivity extends AppCompatActivity {
 #### 2. 게임시작
 
 ```java
-uv!!.startSuccessCallBack = Runnable { println("test") }
-uv!!.createUser()
+uv.setStartSuccessCallback(new Runnable() {
+    @Override public void run() {
+        ...
+    }
+});
+uv.createUser();
 
 //콜백함수
-startSuccessCallBack: Runnable = Runnable {  }  //성공시 호출
-startFailCallBack: CustomConsumer<String> = CustomConsumer {  } //Consumer 인터페이스와 같습니다. sdk버전을 19로 낮추면서 커스텀인터페이스를 하나 만들었습니다.
+uv.setStartSuccessCallBack(new Runnable() { ... })  //성공시 호출
+uv.setStartFailCallBack(new CustomConsumer<String>() {
+    @Override public void accept(String msg) { ... }
+ }); //Consumer 인터페이스와 같습니다. sdk버전을 19로 낮추면서 커스텀인터페이스를 하나 만들었습니다.
 
 ```
 
 #### 3. SNS 계정 연동
 
 ```java
-uv!!.goToLogin()
+uv.goToLogin();
 
 // 콜백함수
 
-goToLoginSuccessCallBack: Runnable = Runnable {  }  //성공시 호출
-goToLoginFailCallBack: CustomConsumer<String> = CustomConsumer {  } //실패시 호출
+uv.setGoToLoginSuccessCallBack(new Runnable() { ... });  //성공시 호출
+uv.setGoToLoginFailCallBack(new CustomConsumer<String>() {
+    @Override public void accept(String msg) { ... }
+}) //실패시 호출
 ```
 
 #### 4. 로그아웃
 
 ```java
-uv!!.logout()
+uv.logout();
 
 //콜백함수
-clearSuccessCallBack: Runnable = Runnable {  }  //로그아웃 후 호출
+uv.setClearSuccessCallBack(new Runnable() { ... }); //로그아웃 후 호출
 ```
 
 #### 5. 정보 가져오기
 
 ```java
-val session = sessionManager.session as Session.Complete
 
-txtStatus.text = if (session.provider != null)
-    "${session.provider}"
-else
-    "guest"
+// 사용자 정보
+Profile profile = uv.getSessionManager().getProfile();
 
-txtUserId.text = "EG ID : ${session.egId}"
-txtPrincipal.text = "Principal : ${session.principal}"
-txtEgToken.text = "EG Token : ${session.egToken}"
-txtRefreshToken.text = "Refresh Token : ${session.refreshToken}"
+txtStatus.text = profile.getProvider() != null ? session.getProvider() : "guest"
+txtUserId.text = "EG ID : " + profile.getEgId();
+txtPrincipal.text = "Principal : " + profile.getPrincipal();
+
+// 토큰정보
+Token token = uv.getSessionManager().getToken();
+
+txtEgToken.text = "EG Token : " + token.getEgToken();
+txtRefreshToken.text = "Refresh Token : " + token.getRefreshToken();
 ```
                
