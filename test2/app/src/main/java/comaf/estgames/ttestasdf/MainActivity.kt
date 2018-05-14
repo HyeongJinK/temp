@@ -1,8 +1,11 @@
 package comaf.estgames.ttestasdf
 
+import android.Manifest
 import android.app.Activity
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -24,6 +27,7 @@ import com.estgames.estgames_framework.core.session.SessionManager
 import com.estgames.estgames_framework.user.UserLoadDialog
 import java.lang.Exception
 
+private val MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1
 
 class MainActivity : AppCompatActivity() {
     lateinit var estCommonFramework: EstCommonFramework
@@ -81,7 +85,14 @@ class MainActivity : AppCompatActivity() {
         test0bt.setOnClickListener(View.OnClickListener {//estCommonFramework.processShow()
             estCommonFramework.showNotice();
              })
-        test1bt.setOnClickListener(View.OnClickListener {estCommonFramework.authorityShow()})
+        test1bt.setOnClickListener(View.OnClickListener {
+            estCommonFramework.authorityCallBack = Runnable {
+                if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == -1) {
+                    ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), MY_PERMISSIONS_REQUEST_READ_CONTACTS)
+                }
+            }
+            estCommonFramework.authorityShow()
+        })
         test2bt.setOnClickListener(View.OnClickListener {estCommonFramework.policyShow()})
         test3bt.setOnClickListener(View.OnClickListener {estCommonFramework.bannerShow()})
 

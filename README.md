@@ -236,38 +236,28 @@ Application 클래스를 MP Context로 인식 할 수 있도록 PlatformContext 
 
 ###### Application.java
 ``` java
-class Application extends MultiDexAplication implements PlatformContext {
-    private Configuration mpCfg;
-    private String mpDeviceId;
-    private SessionRepository mpSessionRepository;
+public class Application extends MultiDexApplication implements PlatformContext {
+    private PlatformContext delegateContext;
 
     @Override
-    public Configuration getCongifuration() {
-        return this.mpCfg;
+    public Configuration getConfiguration() {
+        return delegateContext.getConfiguration();
     }
 
     @Override
     public String getDeviceId() {
-        return this.mpDeviceId;
+        return delegateContext.getDeviceId();
     }
 
     @Override
     public SessionRepository getSessionRepository() {
-        return this.mpSessionRepository;
+        return delegateContext.getSessionRepository();
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        initializeAws();
-        initializeMp();
-        ...
-    }
-
-    private void initializeMp() {
-         this.mpCfg = new Configuration(getApplicationContext());
-         this.mpDeviceId = AndroidUtils.obtainDeviceId(getApplicationContext()) + "@android";
-         this.mpSessionRepository = new PreferenceSessionRepository(getApplicationContext());
+        this.delegateContext = new AwsPlatformContext(getApplicationContext());
     }
 }
 ```
