@@ -17,9 +17,9 @@ import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
 import com.estgames.estgames_framework.common.CustomConsumer
 import com.estgames.estgames_framework.common.EstCommonFramework
+import com.estgames.estgames_framework.common.UserService
 import com.estgames.estgames_framework.core.Profile
 import com.estgames.estgames_framework.core.Result
-import com.estgames.estgames_framework.core.Session
 import com.estgames.estgames_framework.core.session.SessionManager
 import com.estgames.estgames_framework.user.UserLoadDialog
 import java.lang.Exception
@@ -27,7 +27,7 @@ import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     lateinit var estCommonFramework: EstCommonFramework
-    var uv:UserSerivce? = null;
+    var uv:UserService? = null;
 
     private val txtStatus: TextView by lazy {
         findViewById<TextView>(R.id.txt_status)
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        uv = UserSerivce(this, applicationContext)
+        uv = UserService(this, applicationContext)
         var test0bt: Button = findViewById(R.id.test0bt)
         var test1bt: Button = findViewById(R.id.test1bt)
         var test2bt: Button = findViewById(R.id.test2bt)
