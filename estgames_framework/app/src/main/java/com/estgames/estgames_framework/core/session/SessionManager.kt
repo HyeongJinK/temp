@@ -15,7 +15,13 @@ class SessionManager(context:Context) {
 
     val hasSession: Boolean get() { return _platform.sessionRepository.hasSession }
 
-    val session: Session get() {return _platform.sessionRepository.session}
+    val profile: Profile get() {
+        return _platform.sessionRepository.session as Profile
+    }
+
+    val token: Token get() {
+        return _platform.sessionRepository.session as Token
+    }
 
     fun create(principal:String): Either<Throwable, String> {
         val executor = Executors.newSingleThreadExecutor()
