@@ -9,7 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35c5d139-4f26-43d3-a834-c000ff566bc0" name="Default" comment="" />
+    <list default="true" id="cf4d5369-dc55-4168-8883-fd3eaba2ae22" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,12 +25,6 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <task path="$PROJECT_DIR$/app">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -46,308 +40,64 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.57602084">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="UserSerivce.kt" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/UserSerivce.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="444">
-                  <caret line="162" column="1" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="162" selection-end-column="1" />
-                  <folding>
-                    <element signature="e#34#575#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/test.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="555">
-                  <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#666#667#0" expanded="true" />
-                    <element signature="e#693#694#0" expanded="true" />
-                    <element signature="e#844#845#0" expanded="true" />
-                    <element signature="e#882#883#0" expanded="true" />
-                    <element signature="e#951#952#0" expanded="true" />
-                    <element signature="e#998#999#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="349">
-                  <caret line="80" column="41" lean-forward="false" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="41" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AuthorityDialog.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/c6093e4e99a9df2a10b4b154ba537b85/jars/classes.jar!/com/estgames/estgames_framework/authority/AuthorityDialog.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="171">
-                  <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-                  <folding>
-                    <marker date="1526003296564" expanded="false" signature="0:104" ph="/.../" />
-                    <marker date="1526003296564" expanded="false" signature="165:713" ph="..." />
-                    <marker date="1526003296564" expanded="true" signature="896:941" ph="{...}" />
-                    <marker date="1526003296564" expanded="true" signature="924:935" ph="{}" />
-                    <marker date="1526003296564" expanded="true" signature="1009:1074" ph="{...}" />
-                    <marker date="1526003296564" expanded="true" signature="1160:1259" ph="{...}" />
-                    <marker date="1526003296564" expanded="false" signature="1302:1313" ph=" { " />
-                    <marker date="1526003296564" expanded="false" signature="1339:1345" ph=" }" />
-                    <marker date="1526003296564" expanded="true" signature="1402:2608" ph="{...}" />
-                    <marker date="1526003296564" expanded="false" signature="2042:2159" ph="shouldOverrideUrlLoading(view, request) → {" />
-                    <marker date="1526003296564" expanded="false" signature="2238:2253" ph="}" />
-                    <marker date="1526003296564" expanded="false" signature="2403:2468" ph="onClick(v) → {" />
-                    <marker date="1526003296564" expanded="false" signature="2585:2600" ph="}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="EstCommonFramework.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/c6093e4e99a9df2a10b4b154ba537b85/jars/classes.jar!/com/estgames/estgames_framework/common/EstCommonFramework.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="171">
-                  <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-                  <folding>
-                    <marker date="1526003296564" expanded="false" signature="0:104" ph="/.../" />
-                    <marker date="1526003296564" expanded="false" signature="162:579" ph="..." />
-                    <marker date="1526003296564" expanded="false" signature="894:951" ph="run() → { " />
-                    <marker date="1526003296564" expanded="false" signature="982:998" ph=" }" />
-                    <marker date="1526003296564" expanded="false" signature="1040:1084" ph="run() → {" />
-                    <marker date="1526003296564" expanded="false" signature="1142:1153" ph="}" />
-                    <marker date="1526003296564" expanded="false" signature="1192:1249" ph="run() → { " />
-                    <marker date="1526003296564" expanded="false" signature="1286:1302" ph=" }" />
-                    <marker date="1526003296564" expanded="false" signature="1342:1386" ph="run() → {" />
-                    <marker date="1526003296564" expanded="false" signature="1442:1453" ph="}" />
-                    <marker date="1526003296564" expanded="false" signature="1496:1589" ph="accept(o) → {" />
-                    <marker date="1526003296564" expanded="false" signature="1642:1653" ph="}" />
-                    <marker date="1526003296564" expanded="false" signature="1702:1746" ph="run() → {" />
-                    <marker date="1526003296564" expanded="false" signature="3342:3353" ph="}" />
-                    <marker date="1526003296564" expanded="true" signature="3381:3765" ph="{...}" />
-                    <marker date="1526003296564" expanded="false" signature="3392:3438" ph="run() → {" />
-                    <marker date="1526003296564" expanded="false" signature="3734:3749" ph="}" />
-                    <marker date="1526003296564" expanded="false" signature="3813:3824" ph=" { " />
-                    <marker date="1526003296564" expanded="false" signature="3847:3853" ph=" }" />
-                    <marker date="1526003296564" expanded="true" signature="3951:4032" ph="{...}" />
-                    <marker date="1526003296564" expanded="true" signature="4063:4248" ph="{...}" />
-                    <marker date="1526003296564" expanded="true" signature="4282:4509" ph="{...}" />
-                    <marker date="1526003296564" expanded="true" signature="4540:4798" ph="{...}" />
-                    <marker date="1526003296564" expanded="false" signature="4836:4847" ph=" { " />
-                    <marker date="1526003296564" expanded="false" signature="4890:4896" ph=" }" />
-                    <marker date="1526003296564" expanded="false" signature="4934:4945" ph=" { " />
-                    <marker date="1526003296564" expanded="false" signature="4988:4994" ph=" }" />
-                    <marker date="1526003296564" expanded="true" signature="5026:5090" ph="{...}" />
-                    <marker date="1526003296564" expanded="false" signature="5125:5136" ph=" { " />
-                    <marker date="1526003296564" expanded="false" signature="5160:5166" ph=" }" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="EstCommonFramework.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/924179a50e16ba305d214691a53e9780/jars/classes.jar!/com/estgames/estgames_framework/common/EstCommonFramework.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="217">
-                  <caret line="133" column="39" lean-forward="false" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
-                  <folding>
-                    <marker date="1525844478428" expanded="false" signature="0:104" ph="/.../" />
-                    <marker date="1525844478428" expanded="false" signature="162:579" ph="..." />
-                    <marker date="1525844478428" expanded="false" signature="894:951" ph="run() → { " />
-                    <marker date="1525844478428" expanded="false" signature="982:998" ph=" }" />
-                    <marker date="1525844478428" expanded="false" signature="1040:1084" ph="run() → {" />
-                    <marker date="1525844478428" expanded="false" signature="1142:1153" ph="}" />
-                    <marker date="1525844478428" expanded="false" signature="1192:1249" ph="run() → { " />
-                    <marker date="1525844478428" expanded="false" signature="1286:1302" ph=" }" />
-                    <marker date="1525844478428" expanded="false" signature="1342:1386" ph="run() → {" />
-                    <marker date="1525844478428" expanded="false" signature="1442:1453" ph="}" />
-                    <marker date="1525844478428" expanded="false" signature="1497:1541" ph="run() → {" />
-                    <marker date="1525844478428" expanded="false" signature="1594:1605" ph="}" />
-                    <marker date="1525844478428" expanded="false" signature="1654:1698" ph="run() → {" />
-                    <marker date="1525844478428" expanded="false" signature="3294:3305" ph="}" />
-                    <marker date="1525844478428" expanded="true" signature="3355:3740" ph="{...}" />
-                    <marker date="1525844478428" expanded="false" signature="3398:3444" ph="run() → {" />
-                    <marker date="1525844478428" expanded="false" signature="3709:3724" ph="}" />
-                    <marker date="1525844478428" expanded="true" signature="3818:4184" ph="{...}" />
-                    <marker date="1525844478428" expanded="false" signature="3861:3907" ph="run() → {" />
-                    <marker date="1525844478428" expanded="false" signature="4153:4168" ph="}" />
-                    <marker date="1525844478428" expanded="true" signature="4215:4400" ph="{...}" />
-                    <marker date="1525844478428" expanded="true" signature="4434:4661" ph="{...}" />
-                    <marker date="1525844478428" expanded="true" signature="4692:4950" ph="{...}" />
-                    <marker date="1525844478428" expanded="false" signature="4988:4999" ph=" { " />
-                    <marker date="1525844478428" expanded="false" signature="5042:5048" ph=" }" />
-                    <marker date="1525844478428" expanded="false" signature="5086:5097" ph=" { " />
-                    <marker date="1525844478428" expanded="false" signature="5140:5146" ph=" }" />
-                    <marker date="1525844478428" expanded="true" signature="5178:5242" ph="{...}" />
-                    <marker date="1525844478428" expanded="false" signature="5277:5288" ph=" { " />
-                    <marker date="1525844478428" expanded="false" signature="5312:5318" ph=" }" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/build.gradle">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="PolicyDialog.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/924179a50e16ba305d214691a53e9780/jars/classes.jar!/com/estgames/estgames_framework/policy/PolicyDialog.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-154">
-                  <caret line="46" column="11" lean-forward="false" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
-                  <folding>
-                    <marker date="1525844478428" expanded="false" signature="0:104" ph="/.../" />
-                    <marker date="1525844478428" expanded="false" signature="162:611" ph="..." />
-                    <marker date="1525844478428" expanded="true" signature="872:917" ph="{...}" />
-                    <marker date="1525844478428" expanded="true" signature="900:911" ph="{}" />
-                    <marker date="1525844478428" expanded="false" signature="1020:1031" ph=" { " />
-                    <marker date="1525844478428" expanded="false" signature="1046:1052" ph=" }" />
-                    <marker date="1525844478428" expanded="true" signature="1133:1240" ph="{...}" />
-                    <marker date="1525844478428" expanded="true" signature="1340:1481" ph="{...}" />
-                    <marker date="1525844478428" expanded="false" signature="1519:1530" ph=" { " />
-                    <marker date="1525844478428" expanded="false" signature="1551:1557" ph=" }" />
-                    <marker date="1525844478428" expanded="false" signature="1595:1606" ph=" { " />
-                    <marker date="1525844478428" expanded="false" signature="1627:1633" ph=" }" />
-                    <marker date="1525844478428" expanded="false" signature="1681:1692" ph=" { " />
-                    <marker date="1525844478428" expanded="false" signature="1725:1731" ph=" }" />
-                    <marker date="1525844478428" expanded="false" signature="1779:1790" ph=" { " />
-                    <marker date="1525844478428" expanded="false" signature="1823:1829" ph=" }" />
-                    <marker date="1525844478428" expanded="true" signature="1886:4261" ph="{...}" />
-                    <marker date="1525844478428" expanded="false" signature="2557:2674" ph="shouldOverrideUrlLoading(view, request) → {" />
-                    <marker date="1525844478428" expanded="false" signature="2753:2768" ph="}" />
-                    <marker date="1525844478428" expanded="false" signature="2989:3106" ph="shouldOverrideUrlLoading(view, request) → {" />
-                    <marker date="1525844478428" expanded="false" signature="3185:3200" ph="}" />
-                    <marker date="1525844478428" expanded="false" signature="3249:3314" ph="onClick(v) → {" />
-                    <marker date="1525844478428" expanded="false" signature="3418:3433" ph="}" />
-                    <marker date="1525844478428" expanded="false" signature="3478:3543" ph="onClick(v) → {" />
-                    <marker date="1525844478428" expanded="false" signature="3828:3843" ph="}" />
-                    <marker date="1525844478428" expanded="false" signature="3888:3953" ph="onClick(v) → {" />
-                    <marker date="1525844478428" expanded="false" signature="4238:4253" ph="}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-              <provider editor-type-id="android-designer2">
-                <state />
-              </provider>
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="32" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/build.gradle">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="265">
-                  <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-              <provider editor-type-id="android-manifest">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="EstCommonFramework.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/c1e2e896caf145794d6bb5db5fe2b7d0/jars/classes.jar!/com/estgames/estgames_framework/common/EstCommonFramework.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="525">
-                  <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-                  <folding>
-                    <marker date="1525415619565" expanded="false" signature="0:104" ph="/.../" />
-                    <marker date="1525415619565" expanded="false" signature="162:679" ph="..." />
-                    <marker date="1525415619565" expanded="true" signature="1017:1106" ph="{...}" />
-                    <marker date="1525415619565" expanded="false" signature="1044:1059" ph=" { " />
-                    <marker date="1525415619565" expanded="false" signature="1090:1100" ph=" }" />
-                    <marker date="1525415619565" expanded="false" signature="1161:1172" ph=" { " />
-                    <marker date="1525415619565" expanded="false" signature="1210:1216" ph=" }" />
-                    <marker date="1525415619565" expanded="true" signature="1301:2299" ph="{...}" />
-                    <marker date="1525415619565" expanded="true" signature="1483:2149" ph="{...}" />
-                    <marker date="1525415619565" expanded="true" signature="1537:2139" ph="{...}" />
-                    <marker date="1525415619565" expanded="true" signature="2171:2257" ph="{...}" />
-                    <marker date="1525415619565" expanded="true" signature="2232:2247" ph="{}" />
-                    <marker date="1525415619565" expanded="false" signature="2329:2340" ph=" { " />
-                    <marker date="1525415619565" expanded="false" signature="2365:2371" ph=" }" />
-                    <marker date="1525415619565" expanded="false" signature="2404:2415" ph=" { " />
-                    <marker date="1525415619565" expanded="false" signature="2443:2449" ph=" }" />
-                    <marker date="1525415619565" expanded="false" signature="2479:2490" ph=" { " />
-                    <marker date="1525415619565" expanded="false" signature="2515:2521" ph=" }" />
-                    <marker date="1525415619565" expanded="false" signature="2559:2570" ph=" { " />
-                    <marker date="1525415619565" expanded="false" signature="2613:2619" ph=" }" />
-                    <marker date="1525415619565" expanded="false" signature="2657:2668" ph=" { " />
-                    <marker date="1525415619565" expanded="false" signature="2711:2717" ph=" }" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#531#532#0" expanded="true" />
+                <element signature="e#588#589#0" expanded="true" />
+                <element signature="e#637#638#0" expanded="true" />
+                <element signature="e#689#690#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="470">
+              <caret line="234" column="69" lean-forward="false" selection-start-line="234" selection-start-column="69" selection-end-line="234" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="32" column="62" lean-forward="false" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>context</find>
-      <find>active</find>
-      <find>callingActivity</find>
-      <find>app</find>
-      <find>this@MainActivity</find>
-      <find>cancelCallBack</find>
-      <find>ajsdfkl</find>
-      <find>_params\\\</find>
-      <find>checkSignature</find>
-      <find>kjafdjskl</find>
-      <find>Cu</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>context</replace>
-      <replace>active</replace>
-      <replace>activety</replace>
-      <replace>callingActivity</replace>
-    </replaceStrings>
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -2451,25 +2201,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/raw/awsconfiguration.json" />
-        <option value="$PROJECT_DIR$/app/src/main/res/raw/egconfiguration.json" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/RequestHttpURLConnection.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/test.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/UserSerivce.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="26" />
     <option name="y" value="23" />
-    <option name="width" value="1800" />
-    <option name="height" value="962" />
+    <option name="width" value="1920" />
+    <option name="height" value="977" />
   </component>
   <component name="ProjectView">
     <navigator currentView="AndroidView" proportions="" version="1">
@@ -2486,6 +2227,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
@@ -2493,6 +2236,11 @@
             <path>
               <item name="test2" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="test2" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="test2" type="1abcf292:AndroidViewProjectNode" />
@@ -2528,20 +2276,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="device.picker.selection" value="Nexus_5X_API_27" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;jar:///Users/mp/.gradle/caches/transforms-1/files-1.1/app-release.aar/f24f4fd1ba5115644c9eb049d5085fff/jars/classes.jar!/com/estgames/estgames_framework/core/Either.class" />
-    <property name="android.profiler.active" value="true" />
-    <property name="android.project.structure.last.selected" value="SDK Location" />
-    <property name="android.project.structure.proportion" value="0.15" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1526027057249" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2555,7 +2297,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -2565,7 +2307,7 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
+      <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
@@ -2577,55 +2319,6 @@
       <patterns />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method>
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" />
       </method>
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -2673,54 +2366,6 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-      </Profilers>
-      <method>
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -2734,24 +2379,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-    </configuration>
-    <configuration name="test2 [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="signingReport" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -2796,110 +2423,30 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
     </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
       <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SCRATCH_FILE_ID" value="0" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="test2" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="test2" />
-      <envs />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Android App.app" />
-      <item index="1" class="java.lang.String" itemvalue="Gradle.test2 [signingReport]" />
-    </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.test2 [signingReport]" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -2909,687 +2456,108 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="35c5d139-4f26-43d3-a834-c000ff566bc0" name="Default" comment="" />
-      <created>1525220712629</created>
+      <changelist id="cf4d5369-dc55-4168-8883-fd3eaba2ae22" name="Default" comment="" />
+      <created>1526265715857</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1525220712629</updated>
+      <updated>1526265715857</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="26" y="23" width="1800" height="962" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="977" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.4978001" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39842874" sideWeight="0.5135135" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281075" sideWeight="0.49041533" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845894" sideWeight="0.49277183" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37946942" sideWeight="0.48455805" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66099775" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21899886" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12627986" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24334398" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990981" sideWeight="0.48774356" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51376146" sideWeight="0.4978001" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27497193" sideWeight="0.51544195" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.083715595" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="7" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/content/ContextWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="107" column="4" lean-forward="false" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        <state relative-caret-position="255">
+          <caret line="28" column="15" lean-forward="false" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="59" lean-forward="false" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/177fd2d49dfea093d0e481b91ebcc4ed/jars/classes.jar!/com/estgames/estgames_framework/core/session/SessionManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/content/ContextWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="107" column="19" lean-forward="false" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-auth-google/2.6.7/a3e446da1383fbbe642da7f07cfd1337aca8c366/aws-android-sdk-auth-google-2.6.7-sources.jar!/com/amazonaws/mobile/auth/google/GoogleSignInProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-auth-core/2.6.7/956770515e75c076927e0af2545436e8b65f455/aws-android-sdk-auth-core-2.6.7-sources.jar!/com/amazonaws/mobile/auth/core/signin/SignInManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="283" column="0" lean-forward="false" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-auth-ui/2.6.7/45b5b07c780c6ebedbf61546bb48568966988fc4/aws-android-sdk-auth-ui-2.6.7-sources.jar!/com/amazonaws/mobile/auth/ui/SignInActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="7265" column="0" lean-forward="false" selection-start-line="7265" selection-start-column="0" selection-end-line="7265" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/f24f4fd1ba5115644c9eb049d5085fff/jars/classes.jar!/com/estgames/estgames_framework/core/Either.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/manifests/instant-run/debug/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/f24f4fd1ba5115644c9eb049d5085fff/jars/classes.jar!/com/estgames/estgames_framework/core/Session.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/content/Intent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8464">
-          <caret line="7115" column="24" lean-forward="false" selection-start-line="7115" selection-start-column="24" selection-end-line="7115" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/android/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="24770" column="0" lean-forward="false" selection-start-line="24770" selection-start-column="0" selection-end-line="24770" selection-end-column="0" />
-          <folding>
-            <element signature="e#980629#980630#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/android/os/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32870#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#4670#4671#0" expanded="false" />
-            <element signature="e#4703#4704#0" expanded="false" />
-            <element signature="e#5154#5155#0" expanded="false" />
-            <element signature="e#5191#5192#0" expanded="false" />
-            <element signature="e#5369#5370#0" expanded="false" />
-            <element signature="e#5410#5411#0" expanded="false" />
-            <element signature="e#5756#5757#0" expanded="false" />
-            <element signature="e#5801#5802#0" expanded="false" />
-            <element signature="e#6593#6594#0" expanded="false" />
-            <element signature="e#6626#6627#0" expanded="false" />
-            <element signature="e#11193#11194#0" expanded="false" />
-            <element signature="e#11236#11237#0" expanded="false" />
-            <element signature="e#11549#11550#0" expanded="false" />
-            <element signature="e#11598#11599#0" expanded="false" />
-            <element signature="e#13794#13795#0" expanded="false" />
-            <element signature="e#13857#13858#0" expanded="false" />
-            <element signature="e#21128#21129#0" expanded="false" />
-            <element signature="e#21180#21181#0" expanded="false" />
-            <element signature="e#22023#22024#0" expanded="false" />
-            <element signature="e#22072#22073#0" expanded="false" />
-            <element signature="e#22429#22430#0" expanded="false" />
-            <element signature="e#22484#22485#0" expanded="false" />
-            <element signature="e#27585#27586#0" expanded="false" />
-            <element signature="e#27640#27641#0" expanded="false" />
-            <element signature="e#28476#28477#0" expanded="false" />
-            <element signature="e#28535#28536#0" expanded="false" />
-            <element signature="e#28712#28713#0" expanded="false" />
-            <element signature="e#28759#28760#0" expanded="false" />
-            <element signature="e#29220#29221#0" expanded="false" />
-            <element signature="e#29276#29277#0" expanded="false" />
-            <element signature="e#29457#29458#0" expanded="false" />
-            <element signature="e#29487#29488#0" expanded="false" />
-            <element signature="e#31529#31530#0" expanded="false" />
-            <element signature="e#31565#31566#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/android/os/Looper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#12231#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3209#3210#0" expanded="false" />
-            <element signature="e#3238#3239#0" expanded="false" />
-            <element signature="e#7564#7565#0" expanded="false" />
-            <element signature="e#7605#7606#0" expanded="false" />
-            <element signature="e#7865#7866#0" expanded="false" />
-            <element signature="e#7905#7906#0" expanded="false" />
-            <element signature="e#8167#8168#0" expanded="false" />
-            <element signature="e#8223#8224#0" expanded="false" />
-            <element signature="e#8690#8691#0" expanded="false" />
-            <element signature="e#8724#8725#0" expanded="false" />
-            <element signature="e#8789#8790#0" expanded="false" />
-            <element signature="e#8825#8826#0" expanded="false" />
-            <element signature="e#9686#9687#0" expanded="false" />
-            <element signature="e#9720#9721#0" expanded="false" />
-            <element signature="e#10315#10316#0" expanded="false" />
-            <element signature="e#10348#10349#0" expanded="false" />
-            <element signature="e#10501#10502#0" expanded="false" />
-            <element signature="e#10531#10532#0" expanded="false" />
-            <element signature="e#10685#10686#0" expanded="false" />
-            <element signature="e#10714#10715#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/awsconfiguration.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/egconfiguration.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/f24f4fd1ba5115644c9eb049d5085fff/jars/classes.jar!/com/estgames/estgames_framework/core/session/SessionManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/f24f4fd1ba5115644c9eb049d5085fff/jars/classes.jar!/com/estgames/estgames_framework/user/UserLinkDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/f24f4fd1ba5115644c9eb049d5085fff/jars/classes.jar!/com/estgames/estgames_framework/user/UserLoadDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/77ecfc987c246dcde6ce910c9281c2cc/jars/classes.jar!/com/estgames/estgames_framework/user/UserLoadDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/23d097063e84a0c2b470adbe454badf9/jars/classes.jar!/com/estgames/estgames_framework/user/UserLinkDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/23d097063e84a0c2b470adbe454badf9/jars/classes.jar!/com/estgames/estgames_framework/user/UserGuestLinkDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/9447fe381dcd0e781e9ec617f6be7e74/jars/classes.jar!/com/estgames/estgames_framework/user/UserLinkDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/c1e2e896caf145794d6bb5db5fe2b7d0/jars/classes.jar!/com/estgames/estgames_framework/common/EstCommonFramework.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <marker date="1525415619565" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1525415619565" expanded="false" signature="162:679" ph="..." />
-            <marker date="1525415619565" expanded="true" signature="1017:1106" ph="{...}" />
-            <marker date="1525415619565" expanded="false" signature="1044:1059" ph=" { " />
-            <marker date="1525415619565" expanded="false" signature="1090:1100" ph=" }" />
-            <marker date="1525415619565" expanded="false" signature="1161:1172" ph=" { " />
-            <marker date="1525415619565" expanded="false" signature="1210:1216" ph=" }" />
-            <marker date="1525415619565" expanded="true" signature="1301:2299" ph="{...}" />
-            <marker date="1525415619565" expanded="true" signature="1483:2149" ph="{...}" />
-            <marker date="1525415619565" expanded="true" signature="1537:2139" ph="{...}" />
-            <marker date="1525415619565" expanded="true" signature="2171:2257" ph="{...}" />
-            <marker date="1525415619565" expanded="true" signature="2232:2247" ph="{}" />
-            <marker date="1525415619565" expanded="false" signature="2329:2340" ph=" { " />
-            <marker date="1525415619565" expanded="false" signature="2365:2371" ph=" }" />
-            <marker date="1525415619565" expanded="false" signature="2404:2415" ph=" { " />
-            <marker date="1525415619565" expanded="false" signature="2443:2449" ph=" }" />
-            <marker date="1525415619565" expanded="false" signature="2479:2490" ph=" { " />
-            <marker date="1525415619565" expanded="false" signature="2515:2521" ph=" }" />
-            <marker date="1525415619565" expanded="false" signature="2559:2570" ph=" { " />
-            <marker date="1525415619565" expanded="false" signature="2613:2619" ph=" }" />
-            <marker date="1525415619565" expanded="false" signature="2657:2668" ph=" { " />
-            <marker date="1525415619565" expanded="false" signature="2711:2717" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/RequestHttpURLConnection.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/361659710e375fa1dea0891e197b5056/jars/classes.jar!/com/estgames/estgames_framework/common/EstCommonFramework.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/361659710e375fa1dea0891e197b5056/jars/classes.jar!/com/estgames/estgames_framework/banner/BannerDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="932">
-          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/a35ad281051eab23a7497e4192d18759/jars/classes.jar!/com/estgames/estgames_framework/banner/BannerDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <marker date="1525755749156" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1525755749156" expanded="false" signature="162:960" ph="..." />
-            <marker date="1525755749156" expanded="true" signature="1488:2363" ph="{...}" />
-            <marker date="1525755749156" expanded="true" signature="1773:1884" ph="{...}" />
-            <marker date="1525755749156" expanded="false" signature="1804:1823" ph=" { " />
-            <marker date="1525755749156" expanded="false" signature="1860:1874" ph=" }" />
-            <marker date="1525755749156" expanded="true" signature="2390:2991" ph="{...}" />
-            <marker date="1525755749156" expanded="true" signature="3048:4853" ph="{...}" />
-            <marker date="1525755749156" expanded="true" signature="3439:3950" ph="{...}" />
-            <marker date="1525755749156" expanded="true" signature="3481:3940" ph="{...}" />
-            <marker date="1525755749156" expanded="true" signature="4015:4845" ph="{...}" />
-            <marker date="1525755749156" expanded="true" signature="4057:4835" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/9deab633b168d388383f039e0af1c1da/jars/classes.jar!/com/estgames/estgames_framework/banner/BannerDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding>
-            <marker date="1525755954014" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1525755954014" expanded="false" signature="162:960" ph="..." />
-            <marker date="1525755954014" expanded="true" signature="1488:2363" ph="{...}" />
-            <marker date="1525755954014" expanded="true" signature="1773:1884" ph="{...}" />
-            <marker date="1525755954014" expanded="false" signature="1804:1823" ph=" { " />
-            <marker date="1525755954014" expanded="false" signature="1860:1874" ph=" }" />
-            <marker date="1525755954014" expanded="true" signature="2390:2991" ph="{...}" />
-            <marker date="1525755954014" expanded="true" signature="3048:4853" ph="{...}" />
-            <marker date="1525755954014" expanded="true" signature="3439:3950" ph="{...}" />
-            <marker date="1525755954014" expanded="true" signature="3481:3940" ph="{...}" />
-            <marker date="1525755954014" expanded="true" signature="4015:4845" ph="{...}" />
-            <marker date="1525755954014" expanded="true" signature="4057:4835" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/35d1082ecc44c10c19e4172bcf6ed79b/jars/classes.jar!/com/estgames/estgames_framework/banner/BannerDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding>
-            <marker date="1525756119959" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1525756119959" expanded="false" signature="162:960" ph="..." />
-            <marker date="1525756119959" expanded="true" signature="1488:2363" ph="{...}" />
-            <marker date="1525756119959" expanded="true" signature="1773:1884" ph="{...}" />
-            <marker date="1525756119959" expanded="false" signature="1804:1823" ph=" { " />
-            <marker date="1525756119959" expanded="false" signature="1860:1874" ph=" }" />
-            <marker date="1525756119959" expanded="true" signature="2390:3002" ph="{...}" />
-            <marker date="1525756119959" expanded="true" signature="3059:4864" ph="{...}" />
-            <marker date="1525756119959" expanded="true" signature="3450:3961" ph="{...}" />
-            <marker date="1525756119959" expanded="true" signature="3492:3951" ph="{...}" />
-            <marker date="1525756119959" expanded="true" signature="4026:4856" ph="{...}" />
-            <marker date="1525756119959" expanded="true" signature="4068:4846" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/multidex-1.0.1.aar/07bc8ddda667a337844775f916de1955/jars/classes.jar!/android/support/multidex/MultiDexApplication.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/0c670c7efe94a376cef22b8f4ab7594c/jars/classes.jar!/com/estgames/estgames_framework/core/PlatformContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/UserSerivce.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="162" column="1" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="162" selection-end-column="1" />
-          <folding>
-            <element signature="e#34#575#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/app/Dialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="287" column="16" lean-forward="false" selection-start-line="287" selection-start-column="16" selection-end-line="287" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/924179a50e16ba305d214691a53e9780/jars/classes.jar!/com/estgames/estgames_framework/common/EstCommonFramework.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="133" column="39" lean-forward="false" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
-          <folding>
-            <marker date="1525844478428" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1525844478428" expanded="false" signature="162:579" ph="..." />
-            <marker date="1525844478428" expanded="false" signature="894:951" ph="run() → { " />
-            <marker date="1525844478428" expanded="false" signature="982:998" ph=" }" />
-            <marker date="1525844478428" expanded="false" signature="1040:1084" ph="run() → {" />
-            <marker date="1525844478428" expanded="false" signature="1142:1153" ph="}" />
-            <marker date="1525844478428" expanded="false" signature="1192:1249" ph="run() → { " />
-            <marker date="1525844478428" expanded="false" signature="1286:1302" ph=" }" />
-            <marker date="1525844478428" expanded="false" signature="1342:1386" ph="run() → {" />
-            <marker date="1525844478428" expanded="false" signature="1442:1453" ph="}" />
-            <marker date="1525844478428" expanded="false" signature="1497:1541" ph="run() → {" />
-            <marker date="1525844478428" expanded="false" signature="1594:1605" ph="}" />
-            <marker date="1525844478428" expanded="false" signature="1654:1698" ph="run() → {" />
-            <marker date="1525844478428" expanded="false" signature="3294:3305" ph="}" />
-            <marker date="1525844478428" expanded="true" signature="3355:3740" ph="{...}" />
-            <marker date="1525844478428" expanded="false" signature="3398:3444" ph="run() → {" />
-            <marker date="1525844478428" expanded="false" signature="3709:3724" ph="}" />
-            <marker date="1525844478428" expanded="true" signature="3818:4184" ph="{...}" />
-            <marker date="1525844478428" expanded="false" signature="3861:3907" ph="run() → {" />
-            <marker date="1525844478428" expanded="false" signature="4153:4168" ph="}" />
-            <marker date="1525844478428" expanded="true" signature="4215:4400" ph="{...}" />
-            <marker date="1525844478428" expanded="true" signature="4434:4661" ph="{...}" />
-            <marker date="1525844478428" expanded="true" signature="4692:4950" ph="{...}" />
-            <marker date="1525844478428" expanded="false" signature="4988:4999" ph=" { " />
-            <marker date="1525844478428" expanded="false" signature="5042:5048" ph=" }" />
-            <marker date="1525844478428" expanded="false" signature="5086:5097" ph=" { " />
-            <marker date="1525844478428" expanded="false" signature="5140:5146" ph=" }" />
-            <marker date="1525844478428" expanded="true" signature="5178:5242" ph="{...}" />
-            <marker date="1525844478428" expanded="false" signature="5277:5288" ph=" { " />
-            <marker date="1525844478428" expanded="false" signature="5312:5318" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/924179a50e16ba305d214691a53e9780/jars/classes.jar!/com/estgames/estgames_framework/policy/PolicyDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
-          <caret line="46" column="11" lean-forward="false" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
-          <folding>
-            <marker date="1525844478428" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1525844478428" expanded="false" signature="162:611" ph="..." />
-            <marker date="1525844478428" expanded="true" signature="872:917" ph="{...}" />
-            <marker date="1525844478428" expanded="true" signature="900:911" ph="{}" />
-            <marker date="1525844478428" expanded="false" signature="1020:1031" ph=" { " />
-            <marker date="1525844478428" expanded="false" signature="1046:1052" ph=" }" />
-            <marker date="1525844478428" expanded="true" signature="1133:1240" ph="{...}" />
-            <marker date="1525844478428" expanded="true" signature="1340:1481" ph="{...}" />
-            <marker date="1525844478428" expanded="false" signature="1519:1530" ph=" { " />
-            <marker date="1525844478428" expanded="false" signature="1551:1557" ph=" }" />
-            <marker date="1525844478428" expanded="false" signature="1595:1606" ph=" { " />
-            <marker date="1525844478428" expanded="false" signature="1627:1633" ph=" }" />
-            <marker date="1525844478428" expanded="false" signature="1681:1692" ph=" { " />
-            <marker date="1525844478428" expanded="false" signature="1725:1731" ph=" }" />
-            <marker date="1525844478428" expanded="false" signature="1779:1790" ph=" { " />
-            <marker date="1525844478428" expanded="false" signature="1823:1829" ph=" }" />
-            <marker date="1525844478428" expanded="true" signature="1886:4261" ph="{...}" />
-            <marker date="1525844478428" expanded="false" signature="2557:2674" ph="shouldOverrideUrlLoading(view, request) → {" />
-            <marker date="1525844478428" expanded="false" signature="2753:2768" ph="}" />
-            <marker date="1525844478428" expanded="false" signature="2989:3106" ph="shouldOverrideUrlLoading(view, request) → {" />
-            <marker date="1525844478428" expanded="false" signature="3185:3200" ph="}" />
-            <marker date="1525844478428" expanded="false" signature="3249:3314" ph="onClick(v) → {" />
-            <marker date="1525844478428" expanded="false" signature="3418:3433" ph="}" />
-            <marker date="1525844478428" expanded="false" signature="3478:3543" ph="onClick(v) → {" />
-            <marker date="1525844478428" expanded="false" signature="3828:3843" ph="}" />
-            <marker date="1525844478428" expanded="false" signature="3888:3953" ph="onClick(v) → {" />
-            <marker date="1525844478428" expanded="false" signature="4238:4253" ph="}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/c6093e4e99a9df2a10b4b154ba537b85/jars/classes.jar!/com/estgames/estgames_framework/authority/AuthorityDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <marker date="1526003296564" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1526003296564" expanded="false" signature="165:713" ph="..." />
-            <marker date="1526003296564" expanded="true" signature="896:941" ph="{...}" />
-            <marker date="1526003296564" expanded="true" signature="924:935" ph="{}" />
-            <marker date="1526003296564" expanded="true" signature="1009:1074" ph="{...}" />
-            <marker date="1526003296564" expanded="true" signature="1160:1259" ph="{...}" />
-            <marker date="1526003296564" expanded="false" signature="1302:1313" ph=" { " />
-            <marker date="1526003296564" expanded="false" signature="1339:1345" ph=" }" />
-            <marker date="1526003296564" expanded="true" signature="1402:2608" ph="{...}" />
-            <marker date="1526003296564" expanded="false" signature="2042:2159" ph="shouldOverrideUrlLoading(view, request) → {" />
-            <marker date="1526003296564" expanded="false" signature="2238:2253" ph="}" />
-            <marker date="1526003296564" expanded="false" signature="2403:2468" ph="onClick(v) → {" />
-            <marker date="1526003296564" expanded="false" signature="2585:2600" ph="}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/c6093e4e99a9df2a10b4b154ba537b85/jars/classes.jar!/com/estgames/estgames_framework/common/EstCommonFramework.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding>
-            <marker date="1526003296564" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1526003296564" expanded="false" signature="162:579" ph="..." />
-            <marker date="1526003296564" expanded="false" signature="894:951" ph="run() → { " />
-            <marker date="1526003296564" expanded="false" signature="982:998" ph=" }" />
-            <marker date="1526003296564" expanded="false" signature="1040:1084" ph="run() → {" />
-            <marker date="1526003296564" expanded="false" signature="1142:1153" ph="}" />
-            <marker date="1526003296564" expanded="false" signature="1192:1249" ph="run() → { " />
-            <marker date="1526003296564" expanded="false" signature="1286:1302" ph=" }" />
-            <marker date="1526003296564" expanded="false" signature="1342:1386" ph="run() → {" />
-            <marker date="1526003296564" expanded="false" signature="1442:1453" ph="}" />
-            <marker date="1526003296564" expanded="false" signature="1496:1589" ph="accept(o) → {" />
-            <marker date="1526003296564" expanded="false" signature="1642:1653" ph="}" />
-            <marker date="1526003296564" expanded="false" signature="1702:1746" ph="run() → {" />
-            <marker date="1526003296564" expanded="false" signature="3342:3353" ph="}" />
-            <marker date="1526003296564" expanded="true" signature="3381:3765" ph="{...}" />
-            <marker date="1526003296564" expanded="false" signature="3392:3438" ph="run() → {" />
-            <marker date="1526003296564" expanded="false" signature="3734:3749" ph="}" />
-            <marker date="1526003296564" expanded="false" signature="3813:3824" ph=" { " />
-            <marker date="1526003296564" expanded="false" signature="3847:3853" ph=" }" />
-            <marker date="1526003296564" expanded="true" signature="3951:4032" ph="{...}" />
-            <marker date="1526003296564" expanded="true" signature="4063:4248" ph="{...}" />
-            <marker date="1526003296564" expanded="true" signature="4282:4509" ph="{...}" />
-            <marker date="1526003296564" expanded="true" signature="4540:4798" ph="{...}" />
-            <marker date="1526003296564" expanded="false" signature="4836:4847" ph=" { " />
-            <marker date="1526003296564" expanded="false" signature="4890:4896" ph=" }" />
-            <marker date="1526003296564" expanded="false" signature="4934:4945" ph=" { " />
-            <marker date="1526003296564" expanded="false" signature="4988:4994" ph=" }" />
-            <marker date="1526003296564" expanded="true" signature="5026:5090" ph="{...}" />
-            <marker date="1526003296564" expanded="false" signature="5125:5136" ph=" { " />
-            <marker date="1526003296564" expanded="false" signature="5160:5166" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="90">
+          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        <state relative-caret-position="284">
+          <caret line="32" column="62" lean-forward="false" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="80" column="41" lean-forward="false" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="41" />
+        <state relative-caret-position="470">
+          <caret line="234" column="69" lean-forward="false" selection-start-line="234" selection-start-column="69" selection-end-line="234" selection-end-column="69" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#637#638#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
   <component name="gradleExecuteTaskHistory">
-    <option value="$PROJECT_DIR$" />
+    <option value="" />
   </component>
 </project>

@@ -17,6 +17,7 @@ import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
 import com.estgames.estgames_framework.common.CustomConsumer
 import com.estgames.estgames_framework.common.EstCommonFramework
+import com.estgames.estgames_framework.core.Profile
 import com.estgames.estgames_framework.core.Result
 import com.estgames.estgames_framework.core.Session
 import com.estgames.estgames_framework.core.session.SessionManager
@@ -224,28 +225,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun userIdentity() {
+        val profile:Profile = sessionManager.profile
+        val token = sessionManager.token
 
-        try {
-            val session = sessionManager.session as Session.Complete
-
-            if (session != null) {
-                txtStatus.text = if (session.provider != null)
-                    "${getText(R.string.txt_status_signed)} : ${session.provider}"
-                else
-                    "${getText(R.string.txt_status_unsigned)} : ${getText(R.string.txt_provider_guest)}"
-
-                txtUserId.text = "EG ID : ${session.egId}"
-                txtPrincipal.text = "Principal : ${session.principal}"
-                txtEgToken.text = "EG Token : ${session.egToken}"
-                txtRefreshToken.text = "Refresh Token : ${session.refreshToken}"
-            }
-        } catch (e: Exception) {
-            txtStatus.text = ""
-            txtUserId.text = "EG ID :"
-            txtPrincipal.text = "Principal :"
-            txtEgToken.text = "EG Token :"
-            txtRefreshToken.text = "Refresh Token :"
-        }
+        txtStatus.text = profile.provider
+        txtUserId.text = "EG ID :" + profile.egId
+        txtPrincipal.text = "Principal :" +profile.principal
+        txtEgToken.text = "EG Token :" + token.egToken
+        txtRefreshToken.text = "Refresh Token :" + token.refreshToken
     }
 
 

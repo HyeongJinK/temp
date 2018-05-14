@@ -2,6 +2,7 @@ package com.estgames.estgames_framework.common;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import com.estgames.estgames_framework.authority.AuthorityDialog;
 import com.estgames.estgames_framework.banner.BannerDialog;
 import com.estgames.estgames_framework.core.HttpResponse;
@@ -173,7 +174,7 @@ public class EstCommonFramework {
     public void showNotice() {
         SessionManager sm = new SessionManager(context);
         if (sm != null) {
-            Token token = (Token) sm.getSession();
+            Token token = sm.getToken();
 
             if (data != null) {
                 notice = new WebViewDialog(context, data.getUrl().getNotice() + "?eg_token=" + token.getEgToken() + "&lang=" + data.getLanguage());
@@ -185,7 +186,7 @@ public class EstCommonFramework {
     public void showCSCenter() {
         SessionManager sm = new SessionManager(context);
         if (sm != null) {
-            Token token = (Token) sm.getSession();
+            Token token = sm.getToken();
             if (data != null) {
                 cscenter = new WebViewDialog(context, data.getUrl().getCscenter() + "?eg_token=" + token.getEgToken() + "&lang=" + data.getLanguage());
                 cscenter.show();
