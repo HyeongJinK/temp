@@ -11,6 +11,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 
 import com.estgames.estgames_framework.R;
@@ -23,8 +24,8 @@ public class PolicyDialog extends Dialog {
     ImageButton policyClosebt;
     WebView policyWebView1;
     WebView policyWebView2;
-    Button policybt1;
-    Button policybt2;
+    CheckBox policybt1;
+    CheckBox policybt2;
 
     String serviceUrl;
     String privateUrl;
@@ -81,8 +82,8 @@ public class PolicyDialog extends Dialog {
         policyClosebt = (ImageButton) findViewById(R.id.policyClosebt);
         policyWebView1 = (WebView) findViewById(R.id.policyWebView1);
         policyWebView2 = (WebView) findViewById(R.id.policyWebView2);
-        policybt1 = (Button) findViewById(R.id.policybt1);
-        policybt2 = (Button) findViewById(R.id.policybt2);
+        policybt1 = (CheckBox) findViewById(R.id.policybt1);
+        policybt2 = (CheckBox) findViewById(R.id.policybt2);
 
 
         WebSettings webSettings = policyWebView1.getSettings();

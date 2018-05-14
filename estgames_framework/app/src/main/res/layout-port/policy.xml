@@ -42,13 +42,15 @@
         android:layout_marginTop="74dp">
     </WebView>
 
-    <Button
+    <CheckBox
         android:id="@+id/policybt1"
+        android:button="@null"
         android:layout_width="232dp"
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/policybutton"
+        android:textAlignment="center"
         android:textSize="15sp"
         android:textColor="#ffffff"
         android:text="@string/estcommon_policy_buttonText"
@@ -75,12 +77,14 @@
         android:layout_below="@id/policybt1">
     </WebView>
 
-    <Button
+    <CheckBox
         android:id="@+id/policybt2"
+        android:button="@null"
         android:layout_width="232dp"
         android:layout_height="36dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/policybutton"
+        android:textAlignment="center"
         android:textSize="15sp"
         android:textColor="#ffffff"
         android:text="@string/estcommon_policy_buttonText"
