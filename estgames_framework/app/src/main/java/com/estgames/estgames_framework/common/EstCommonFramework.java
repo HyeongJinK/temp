@@ -193,4 +193,12 @@ public class EstCommonFramework {
             }
         }
     }
+
+    public String getNation() {
+        return data.getNation();
+    }
+
+    public String getLanguage() {
+        return data.getLanguage();
+    }
 }
