@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
 
-:new: 업데이트 (1.0.5)
+:new: 업데이트 (1.0.6)
 ---
 
 * EstgamesCommon 클래스에 국가, 언어 정보 리턴 함수 추가
