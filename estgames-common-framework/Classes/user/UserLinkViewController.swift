@@ -59,6 +59,8 @@ class UserLinkViewController: UIViewController {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
+        NSParagraphStyleAttributeName
+        attrString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange(location: 0, length: attrString.length))
         middleLabel.attributedText = attrString
         
         

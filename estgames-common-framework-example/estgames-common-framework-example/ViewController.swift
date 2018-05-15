@@ -44,6 +44,7 @@ class ViewController: UIViewController {
         vc = UserService(pview: self, googleEmail: googleEmail)
 //        dashboard = WebViewDialog(pview: self, egToken: MpInfo.Account.egToken)
         estgamesCommon = EstgamesCommon(pview: self)
+        
 //        userDialog = UserDialog(pview: self)
 //        userDialog.setUserLinkAction(closeAction: {() -> Void in print("closeAction")}, confirmAction: {() -> Void in print("confirmAction")}, cancelAction: {() -> Void in print("cancelAction")})
 //        userDialog.setUserLinkCharacterLabel(guest: "adfads", sns: "bzcxvczxv")

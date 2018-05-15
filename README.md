@@ -4,6 +4,14 @@
 [![License](https://img.shields.io/cocoapods/l/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
+
+:new: 업데이트 (1.0.5)
+---
+
+* EstgamesCommon 클래스에 국가, 언어 정보 리턴 함수 추가
+ * getNation()
+ * getLanguage()
+
 :new: 업데이트 (1.0.4)
 ---
 

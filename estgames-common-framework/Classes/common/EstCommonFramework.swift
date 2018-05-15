@@ -201,7 +201,7 @@ import Alamofire
         webView.egToken = MpInfo.Account.egToken
         webView.modalPresentationStyle = .overCurrentContext
         webView.nation = self.estgamesData!.language
-        webView.url = "https://m-stage.estgames.co.kr/cs/mr/dashboard"
+        webView.url = self.estgamesData!.url.cscenter
         pview.present(webView, animated: false)
     }
     
@@ -211,7 +211,15 @@ import Alamofire
         webView.egToken = MpInfo.Account.egToken
         webView.modalPresentationStyle = .overCurrentContext
         webView.nation = self.estgamesData!.language
-        webView.url = "https://m-stage.estgames.co.kr/cs/"+MpInfo.App.appId+"/notices"
+        webView.url = self.estgamesData!.url.notice
         pview.present(webView, animated: false)
+    }
+    
+    public func getNation() -> String? {
+        return estgamesData?.nation
+    }
+    
+    public func getLanguage() -> String? {
+        return estgamesData?.language
     }
 }
