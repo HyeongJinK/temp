@@ -2,6 +2,7 @@ package com.estgames.estgames_framework.core.session
 
 import android.content.Context
 import com.estgames.estgames_framework.core.*
+import org.json.JSONException
 import org.json.JSONObject
 import java.util.*
 import java.util.concurrent.Callable
@@ -96,7 +97,7 @@ class SessionManager(context:Context) {
                 }
             }
             else -> {
-                Left(Exception("There is any session."))
+                Left(Fail.TOKEN_EMPTY.with("There is any session."))
             }
         }
     }
@@ -161,7 +162,7 @@ class SessionManager(context:Context) {
                     try {
                         val msg = Api.Expire(session.egToken).json()
                         return@Callable Right(msg.getString("logout_time"))
-                    } catch (e: Exception) {
+                    } catch (e: Throwable) {
                         return@Callable Left(e)
                     }
                 })
@@ -213,7 +214,12 @@ class SessionManager(context:Context) {
             return JSONObject(String(r.content, Charsets.UTF_8))
         }
 
-        throw Exception(String(r.content, Charsets.UTF_8))
+        try {
+            var msg = JSONObject(String(r.content, Charsets.UTF_8))
+            throw Fail.resolve(msg.getString("code"), msg.getString("message"))
+        } catch (e: JSONException) {
+            throw Fail.API_REQUEST_FAIL.with("API Request Fail. - http response status : ${r.status}, message: ${r.message}")
+        }
     }
 
     private fun JSONObject.toMap(): Map<String, Any> {
