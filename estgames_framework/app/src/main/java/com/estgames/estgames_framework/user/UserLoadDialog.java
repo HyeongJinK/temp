@@ -3,15 +3,13 @@ package com.estgames.estgames_framework.user;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.estgames.estgames_framework.R;
+import com.estgames.estgames_framework.common.CustomFunction;
 
-import java.util.function.Function;
-import java.util.function.Supplier;
 
 /**
  * Created by mp on 2018. 4. 3..
@@ -36,7 +34,7 @@ public class UserLoadDialog extends Dialog {
         }
     };
 
-    public Function<String, Boolean> confirmCheck = new Function<String, Boolean>() {
+    public CustomFunction<String, Boolean> confirmCheck = new CustomFunction<String, Boolean>() {
         @Override
         public Boolean apply(String s) {
             if (s.equals("confirm")) {
@@ -44,6 +42,13 @@ public class UserLoadDialog extends Dialog {
             } else {
                 return false;
             }
+        }
+    };
+
+    public Runnable failConfirmCheck = new Runnable() {
+        @Override
+        public void run() {
+            System.out.println("failConfirmCheck");
         }
     };
 
@@ -57,7 +62,7 @@ public class UserLoadDialog extends Dialog {
         this.closeCallBack = closeCallBack;
     }
 
-    public UserLoadDialog(Context context, Runnable confirmCallBack, Function<String, Boolean> confirmCheck, Runnable closeCallBack) {
+    public UserLoadDialog(Context context, Runnable confirmCallBack, CustomFunction<String, Boolean> confirmCheck, Runnable closeCallBack) {
         super(context);
         this.confirmCallBack = confirmCallBack;
         this.confirmCheck = confirmCheck;
@@ -72,13 +77,13 @@ public class UserLoadDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println("Create-----------");
         self = this;
         setContentView(R.layout.userload);
 
         closeBt = (Button) findViewById(R.id.userLoadCloseBt);
         editText = (EditText) findViewById(R.id.userLoadEditText);
         confirmBt = (Button) findViewById(R.id.userLoadConfirmBt);
-
 
         closeBt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,8 +99,16 @@ public class UserLoadDialog extends Dialog {
                 if (confirmCheck.apply(editText.getText().toString())) {
                     self.dismiss();
                     confirmCallBack.run();
+                } else {
+                    failConfirmCheck.run();
                 }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        System.out.println("Start-----------");
     }
 }

@@ -61,7 +61,7 @@ public class UserService constructor(callingActivity: Activity, applicationConte
                                     //충돌이 발생했을 경우
                                     err ->
                                     //var event: Result = err
-
+                                    userLoadDialog.failConfirmCheck = goToLoginConfirmCallBack
                                     userLinkDialog.show()
 
                                 }
