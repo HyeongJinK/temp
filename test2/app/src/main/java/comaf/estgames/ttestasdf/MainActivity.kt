@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
 //        val test2: PolicyDialog = PolicyDialog(this);
 //        val test3: BannerDialog = BannerDialog(this, getSharedPreferences("banner", Activity.MODE_PRIVATE));
         test0bt.setOnClickListener(View.OnClickListener {//estCommonFramework.processShow()
-            estCommonFramework.showNotice();
+            estCommonFramework.processShow();
              })
         test1bt.setOnClickListener(View.OnClickListener {
             estCommonFramework.authorityCallBack = Runnable {
@@ -93,7 +93,10 @@ class MainActivity : AppCompatActivity() {
             }
             estCommonFramework.authorityShow()
         })
-        test2bt.setOnClickListener(View.OnClickListener {estCommonFramework.policyShow()})
+        test2bt.setOnClickListener(View.OnClickListener {
+            //estCommonFramework.policyShow()
+            estCommonFramework.contractService()
+            })
         test3bt.setOnClickListener(View.OnClickListener {estCommonFramework.bannerShow()})
 
         startbt.setOnClickListener(View.OnClickListener {

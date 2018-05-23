@@ -85,17 +85,6 @@ public class EstCommonFramework {
 
     public EstCommonFramework(Context context) {
         this.context = context;
-
-//        new Thread() {
-//            @Override
-//            public void run() {
-//                HttpResponse result = request(apiUrl, Method.GET);
-//
-//                data = new ResultDataJson(new String(result.getContent()));
-//
-//                initCallBack.run();
-//            }
-//        }.start();
     }
 
     public EstCommonFramework(Context context, CustomConsumer<EstCommonFramework> initCallBack) {
@@ -125,11 +114,14 @@ public class EstCommonFramework {
     }
 
     public boolean contractService() {
+        if (policyDialog == null)
+            return false;
         return policyDialog.contractService();
-        //policyDialog
     }
 
     public boolean contractPrivate() {
+        if (policyDialog == null)
+            return false;
         return policyDialog.contractPrivate();
     }
     int index = 0;
@@ -140,8 +132,8 @@ public class EstCommonFramework {
             if (data.getProcess().size() <= index) {
                 return;
             }
-
             String process = data.getProcess().get(index++);
+
             switch (process) {
                 case "system_contract" :
                     authorityCallBack = processCheck;
@@ -152,7 +144,7 @@ public class EstCommonFramework {
                     policyShow();
                     break;
                 case "event" :
-                    bannerCallBack = processCallBack;
+                    bannerCallBack = processCheck;
                     bannerShow();
                     break;
                 default:

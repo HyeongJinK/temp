@@ -7,6 +7,7 @@ import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
+import com.estgames.estgames_framework.core.Result
 import com.estgames.estgames_framework.core.session.SessionManager
 import com.estgames.estgames_framework.user.*
 import java.lang.Exception
@@ -44,11 +45,6 @@ public class UserService constructor(callingActivity: Activity, applicationConte
     val complete: (String) -> Unit = {t ->
         identityManager.login(callingActivity, object: DefaultSignInResultHandler() {
             override fun onSuccess(activity: Activity?, provider: IdentityProvider?) {
-                /**
-                 * identityManager 콜백에서(Child 스레드를 통해 cognito identity ID 를 가져옴.)
-                 * 메인 스레드 UI 접근 불가로 MainActivity 를 다시 실행 시킴.
-                 * sync 에러가 발생한 경우 MainActivity 실행시 충동 이벤트 객체를 같이 넘겨줌.
-                 */
                 identityManager.getUserID(object: IdentityHandler{
                     override fun onIdentityId(identityId: String?) {
                         sessionManager
@@ -60,10 +56,19 @@ public class UserService constructor(callingActivity: Activity, applicationConte
                                 .left {
                                     //충돌이 발생했을 경우
                                     err ->
-                                    //var event: Result = err
-                                    userLoadDialog.failConfirmCheck = goToLoginConfirmCallBack
-                                    userLinkDialog.show()
-
+                                    when (err) {
+                                        is Result.SyncFailure -> {
+                                            // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
+                                            userLoadDialog.failConfirmCheck = goToLoginConfirmCallBack
+                                            userLinkDialog.show()
+                                        }
+                                        is Result.Failure -> {
+                                            if (identityManager.isUserSignedIn) {
+                                                identityManager.signOut()
+                                            }
+                                            goToLoginFailCallBack.accept(err.message)
+                                        }
+                                    }
                                 }
                     }
                     override fun handleError(exception: Exception?) {
@@ -81,7 +86,6 @@ public class UserService constructor(callingActivity: Activity, applicationConte
 
     val fail: (Throwable) -> Unit = {t ->
         startFailCallBack.accept(t.toString())
-        //Toast.makeText(callingActivity, "Error !! $t", Toast.LENGTH_SHORT)
     }
 
     public fun createUser() {
@@ -94,7 +98,6 @@ public class UserService constructor(callingActivity: Activity, applicationConte
                         result.identityManager.getUserID(object : IdentityHandler {
                             override fun handleError(e: Exception?) {
                                 startFailCallBack.accept(e.toString())
-                                //Toast.makeText(callingActivity, "Error !! $e", Toast.LENGTH_SHORT)
                             }
 
                             override fun onIdentityId(identityId: String?) {
