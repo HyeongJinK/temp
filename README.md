@@ -2,12 +2,19 @@
 
 ## 업데이트 사항
 
+:new: 1.0.7 업데이트 사항
+
+* systemContractShowOrDismiss() 함수 추가 (권한창이 나와야 하는 지 확인)
+* processShow() 에서 권한창(authority)이 더 이상 나오지 않습니다.
+* systemContractShowOrDismiss() 함수를 호출해서 true일 경우 authorityShow() 함수를 호출하고 콜백으로 권한 팝업창을 띄우는 형식으로 되어야 합니다.
+
 :new: 1.0.6 업데이트 사항
 
 * :exclamation: AWSConfiguration 클래스 추가 - Application.java 설정부분이 변경되었습니다.
 * :exclamation: 사용자 정보 가져오는 부분이 변경되었습니다.  참고: (3. 유저 연동 프로세스 - 5. 정보 가져오기)
 * 이용약관 체크박스 누를경우 이미지가 변경되는 부분에서 체크 되었을 경우 변하는 걸로 수정
 * EstCommonFramework에 getNation()[나라], getLanguage()[언어] 함수 추가
+* processShow() 함수 버그 수정
 
 :new: 1.0.5 업데이트 사항
 
@@ -309,10 +316,25 @@ class StartActivity extends AppCompatActivity {
 
 #### 2. Application 요구 권한 화면
 ```java
+/**
+권한창이 나오는 국가인지 확인하는 함수
+*/
+Boolean check = empFramework.systemContractShowOrDismiss()
+
+check = true // 권한창이 나오는 국가
+check = false // 권한창이 나오지 않는 국가
+
+/**
+콜백 함수 설정
+*/
 empFramework.policyCallBack = new Runnable() {
     @Override
     public void run() {
-        System.out.println("policyCallBack");
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == -1) {
+            ActivityCompat.requestPermissions(this
+            , arrayOf(Manifest.permission.CAMERA)
+            , MY_PERMISSIONS_REQUEST_READ_CONTACTS)
+        }
     }
 };
 empFramework.authorityShow();   //보여주기

@@ -22,14 +22,13 @@
       </configuration>
     </facet>
     <facet type="kotlin-language" name="Kotlin">
-      <configuration version="3" platform="JVM 1.8" useProjectSettings="false">
+      <configuration version="3" platform="JVM 1.6" useProjectSettings="false">
         <compilerSettings />
         <compilerArguments>
           <option name="destination" value="$MODULE_DIR$/build/tmp/kotlin-classes/debug" />
           <option name="noStdlib" value="true" />
           <option name="noReflect" value="true" />
           <option name="moduleName" value="app_debug" />
-          <option name="jvmTarget" value="1.8" />
           <option name="addCompilerBuiltIns" value="true" />
           <option name="loadBuiltInsFromDependencies" value="true" />
           <option name="languageVersion" value="1.2" />
@@ -169,12 +168,13 @@
     <orderEntry type="library" name="Gradle: com.android.support:support-core-ui-26.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-utils-26.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.parse.bolts:bolts-android:1.2.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.estgames.estgames_framework:app-release-1.0.6" level="project" />
+    <orderEntry type="library" name="Gradle: com.estgames.estgames_framework:app-release-1.0.7" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: net.sf.kxml:kxml2:2.3.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-auth-google-2.6.7" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:runner-1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-auth-facebook-2.6.7" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable-26.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/mp/Desktop/android/test2/app/libs/tapjoyconnectlibrary.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-cognito:2.6.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.2.40@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.2.4@jar" level="project" />

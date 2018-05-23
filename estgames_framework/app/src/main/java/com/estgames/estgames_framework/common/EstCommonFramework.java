@@ -21,7 +21,11 @@ import static com.estgames.estgames_framework.core.HttpUtils.request;
  */
 
 public class EstCommonFramework {
-    String apiUrl = "https://m-linker.estgames.co.kr/sdk-start-api";
+    final String apiUrl = "https://m-linker.estgames.co.kr/sdk-start-api";
+    final String SystemContract = "system_contract";
+    final String UseContract = "use_contract";
+    final String Event = "event";
+
     SharedPreferences pref;
     Context context;
 
@@ -126,6 +130,15 @@ public class EstCommonFramework {
     }
     int index = 0;
 
+    public boolean systemContractShowOrDismiss() {
+        for(String process : data.getProcess()) {
+            if (process.equals(SystemContract)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     Runnable processCheck = new Runnable() {
         @Override
         public void run() {
@@ -135,15 +148,16 @@ public class EstCommonFramework {
             String process = data.getProcess().get(index++);
 
             switch (process) {
-                case "system_contract" :
-                    authorityCallBack = processCheck;
-                    authorityShow();
+                case SystemContract :
+//                    authorityCallBack = processCheck;
+//                    authorityShow();
+                    defaultProcess();
                     break;
-                case "use_contract" :
+                case UseContract :
                     policyCallBack = processCheck;
                     policyShow();
                     break;
-                case "event" :
+                case Event :
                     bannerCallBack = processCheck;
                     bannerShow();
                     break;
