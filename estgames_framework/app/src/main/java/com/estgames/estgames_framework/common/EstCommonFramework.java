@@ -143,6 +143,7 @@ public class EstCommonFramework {
         @Override
         public void run() {
             if (data.getProcess().size() <= index) {
+                processCallBack.run();
                 return;
             }
             String process = data.getProcess().get(index++);

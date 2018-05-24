@@ -6,7 +6,7 @@
 
 * systemContractShowOrDismiss() 함수 추가 (권한창이 나와야 하는 지 확인)
 * processShow() 에서 권한창(authority)이 더 이상 나오지 않습니다.
-* systemContractShowOrDismiss() 함수를 호출해서 true일 경우 authorityShow() 함수를 호출하고 콜백으로 권한 팝업창을 띄우는 형식으로 되어야 합니다.
+* systemContractShowOrDismiss() 함수를 호출해서 true일 경우 authorityShow() 함수를 호출하고 콜백으로 Manifest에 있는 권한 동의 팝업창을 띄우는 형식으로 되어야 합니다.
 
 :new: 1.0.6 업데이트 사항
 

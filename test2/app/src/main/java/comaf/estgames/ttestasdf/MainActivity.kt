@@ -83,6 +83,7 @@ class MainActivity : AppCompatActivity() {
 //        val test2: PolicyDialog = PolicyDialog(this);
 //        val test3: BannerDialog = BannerDialog(this, getSharedPreferences("banner", Activity.MODE_PRIVATE));
         test0bt.setOnClickListener(View.OnClickListener {//estCommonFramework.processShow()
+            estCommonFramework.processCallBack = Runnable { println("asjdhfjasdh") }
             estCommonFramework.processShow();
              })
         test1bt.setOnClickListener(View.OnClickListener {
