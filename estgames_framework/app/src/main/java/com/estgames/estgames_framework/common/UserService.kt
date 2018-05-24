@@ -19,10 +19,18 @@ public class UserService constructor(callingActivity: Activity, applicationConte
     var callingActivity = callingActivity
     var app = applicationContext
 
-    var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity, Runnable { userLoadDialog.show() }, Runnable { userGuestLinkDialog.show() }, Runnable { signout() })
-    var userLoadDialog : UserLoadDialog = UserLoadDialog(callingActivity, Runnable { onSwitch() }, Runnable { signout() })
-    var userGuestLinkDialog : UserGuestLinkDialog = UserGuestLinkDialog(callingActivity, Runnable { signout() }, Runnable { onSync() }, Runnable { userLinkDialog.show() })
-    var userResultDialog : UserResultDialog = UserResultDialog(callingActivity, Runnable { goToLoginSuccessCallBack.run() }, Runnable { goToLoginSuccessCallBack.run() })
+    /**
+     *
+     * */
+    public var setUserLinkMiddleText: CustormSupplier<String>? = null;
+    public var setUserLinkBottomText: CustormSupplier<String>? = null;
+    public var setUserLoadText: CustormSupplier<String>? = null;
+    public var setUserGuestText: CustormSupplier<String>? = null;
+
+    var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
+    var userLoadDialog : UserLoadDialog = UserLoadDialog(callingActivity)
+    var userGuestLinkDialog : UserGuestLinkDialog = UserGuestLinkDialog(callingActivity)
+    var userResultDialog : UserResultDialog = UserResultDialog(callingActivity)
 
     /**
      * 콜백함수
@@ -34,12 +42,42 @@ public class UserService constructor(callingActivity: Activity, applicationConte
     public var goToLoginConfirmCallBack: Runnable = Runnable {  }
     public var clearSuccessCallBack: Runnable = Runnable {  }
 
+
     val sessionManager: SessionManager by lazy {
         SessionManager(callingActivity)
     }
 
     val identityManager: IdentityManager by lazy {
         IdentityManager.getDefaultIdentityManager()
+    }
+
+    fun setting() {
+        //var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
+        userLinkDialog.confirmCallBack =  Runnable { userLoadDialog.show() }
+        userLinkDialog.cancelCallBack = Runnable { userGuestLinkDialog.show() }
+        userLinkDialog.closeCallBack = Runnable { signout() }
+
+        if (setUserLinkMiddleText != null)
+            userLinkDialog.userLinkSnsDataTextSupplier = setUserLinkMiddleText
+        if (setUserLinkBottomText != null)
+            userLinkDialog.userLinkGuestDataTextSupplier = setUserLinkBottomText
+
+        userLoadDialog.confirmCallBack = Runnable { onSwitch() }
+        userLoadDialog.closeCallBack = Runnable { signout() }
+        userLoadDialog.failConfirmCheck = goToLoginConfirmCallBack
+
+        if (setUserLoadText != null)
+            userLoadDialog.userLoadTextSupplier = setUserLoadText
+
+        userGuestLinkDialog.loginCallBack = Runnable { onSync() }
+        userGuestLinkDialog.beforeCallBack = Runnable { userLinkDialog.show() }
+        userGuestLinkDialog.closeCallBack = Runnable { signout() }
+
+        if (setUserGuestText != null)
+            userGuestLinkDialog.userGuestTextSupplier = setUserGuestText
+
+        userResultDialog.confirmCallBack = Runnable { goToLoginSuccessCallBack.run() }
+        userResultDialog.closeCallBack = Runnable { goToLoginSuccessCallBack.run() }
     }
 
     val complete: (String) -> Unit = {t ->
@@ -59,7 +97,7 @@ public class UserService constructor(callingActivity: Activity, applicationConte
                                     when (err) {
                                         is Result.SyncFailure -> {
                                             // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
-                                            userLoadDialog.failConfirmCheck = goToLoginConfirmCallBack
+                                            setting()
                                             userLinkDialog.show()
                                         }
                                         is Result.Failure -> {

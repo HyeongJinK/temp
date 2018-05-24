@@ -19,6 +19,7 @@ import com.amazonaws.mobile.auth.google.GoogleButton
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
 import com.estgames.estgames_framework.common.CustomConsumer
+import com.estgames.estgames_framework.common.CustormSupplier
 import com.estgames.estgames_framework.common.EstCommonFramework
 import com.estgames.estgames_framework.common.UserService
 import com.estgames.estgames_framework.core.Profile
@@ -111,6 +112,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         snsBt.setOnClickListener(View.OnClickListener {
+            uv!!.setUserLinkMiddleText = CustormSupplier { "akdfj" }
             //login()
             uv!!.goToLogin()
         })

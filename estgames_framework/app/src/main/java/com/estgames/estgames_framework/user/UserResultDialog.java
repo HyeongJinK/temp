@@ -35,12 +35,6 @@ public class UserResultDialog extends Dialog {
         super(context);
     }
 
-    public UserResultDialog(Context context, Runnable confirmCallBack, Runnable closeCallBack) {
-        super(context);
-        this.confirmCallBack = confirmCallBack;
-        this.closeCallBack = closeCallBack;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,5 +58,12 @@ public class UserResultDialog extends Dialog {
                 self.dismiss(); confirmCallBack.run();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        this.confirmCallBack = confirmCallBack;
+        this.closeCallBack = closeCallBack;
     }
 }

@@ -2,6 +2,7 @@ package comaf.estgames.ttestasdf;
 
 import android.support.multidex.MultiDexApplication;
 
+import com.estgames.estgames_framework.common.CustormSupplier;
 import com.estgames.estgames_framework.core.AndroidUtils;
 import com.estgames.estgames_framework.core.Configuration;
 import com.estgames.estgames_framework.core.PlatformContext;
@@ -26,6 +27,14 @@ class test extends MultiDexApplication implements PlatformContext {
 //    @Override
 //    public Configuration getCongifuration() {
 //        return this.mpCfg;
+
+    CustormSupplier<String> test = new CustormSupplier<String>() {
+        @Override
+        public String get() {
+            return null;
+        }
+    };
+
 //    }
 
     @Override

@@ -7,6 +7,15 @@
 * systemContractShowOrDismiss() 함수 추가 (권한창이 나와야 하는 지 확인)
 * processShow() 에서 권한창(authority)이 더 이상 나오지 않습니다.
 * systemContractShowOrDismiss() 함수를 호출해서 true일 경우 authorityShow() 함수를 호출하고 콜백으로 Manifest에 있는 권한 동의 팝업창을 띄우는 형식으로 되어야 합니다.
+* 유저 권한 팝업 텍스트 설정 함수인터페이스 추가
+  * CustormSupplier setUserLinkMiddleText
+    * 입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebookAccount: []\n위의 데이터를 불러오시겠습니까?
+  * CustormSupplier setUserLinkBottomText
+    * !현재 플레이 중인 게임데이터([])는 삭제됩니다
+  * CustormSupplier setUserLoadText
+    * 현재 게스트 모드로 플레이 중인 데이터([])를\n삭제하고 기존 데이터를 불러오시려면 아래 문자를 입력해주세요.
+  * CustormSupplier setUserGuestText
+    * 기존 연동된 데이터 ([])를 삭제하고 현재 플레이중인 게임 데이터로 계정연동을 진행합니다.\n[]
 
 :new: 1.0.6 업데이트 사항
 
@@ -412,6 +421,34 @@ uv.setStartFailCallBack(new CustomConsumer<String>() {
 #### 3. SNS 계정 연동
 
 ```java
+//팝업창에 텍스트 설정 초기화하지 않으면 아래 텍스트가 기본으로 들어간다. 국가별, 계정별 게임데이터 정보 출력에 따라 수정이 필요하다.
+uv.setUserLinkMiddleText = new CustormSupplier<String>() {
+    @Override
+    public String get() {
+        return "입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebookAccount: []\n위의 데이터를 불러오시겠습니까?";
+    }
+};
+uv.setUserLinkBottomText = new CustormSupplier<String>() {
+    @Override
+    public String get() {
+        return "!현재 플레이 중인 게임데이터([])는 삭제됩니다";
+    }
+};
+
+uv.setUserLoadText = new CustormSupplier<String>() {
+    @Override
+    public String get() {
+        return "현재 게스트 모드로 플레이 중인 데이터([])를\n삭제하고 기존 데이터를 불러오시려면 아래 문자를 입력해주세요";
+    }
+};
+    
+uv.setUserGuestText = new CustormSupplier<String>() {
+    @Override
+    public String get() {
+        return "기존 연동된 데이터 ([])를 삭제하고 현재 플레이중인 게임 데이터로 계정연동을 진행합니다.\n[]";
+    }
+};
+
 uv.goToLogin();
 
 // 콜백함수

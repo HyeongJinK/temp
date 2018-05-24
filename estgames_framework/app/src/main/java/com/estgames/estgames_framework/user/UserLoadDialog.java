@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.estgames.estgames_framework.R;
 import com.estgames.estgames_framework.common.CustomFunction;
+import com.estgames.estgames_framework.common.CustormSupplier;
 
 
 /**
@@ -20,6 +22,7 @@ public class UserLoadDialog extends Dialog {
     Button closeBt;
     EditText editText;
     Button confirmBt;
+    TextView userLoadText;
 
     public Runnable closeCallBack = new Runnable() {
         @Override
@@ -52,23 +55,20 @@ public class UserLoadDialog extends Dialog {
         }
     };
 
+    public CustormSupplier<String> userLoadTextSupplier = new CustormSupplier<String>() {
+        @Override
+        public String get() {
+            return (String) getContext().getText(R.string.estcommon_userLoad_content);
+        }
+    };
+
     public UserLoadDialog(Context context) {
         super(context);
     }
 
     public UserLoadDialog(Context context, Runnable confirmCallBack, Runnable closeCallBack) {
         super(context);
-        this.confirmCallBack = confirmCallBack;
-        this.closeCallBack = closeCallBack;
     }
-
-    public UserLoadDialog(Context context, Runnable confirmCallBack, CustomFunction<String, Boolean> confirmCheck, Runnable closeCallBack) {
-        super(context);
-        this.confirmCallBack = confirmCallBack;
-        this.confirmCheck = confirmCheck;
-        this.closeCallBack = closeCallBack;
-    }
-
 
     public String getEditText() {
         return editText.getText().toString();
@@ -77,7 +77,6 @@ public class UserLoadDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.out.println("Create-----------");
         self = this;
         setContentView(R.layout.userload);
 
@@ -109,6 +108,10 @@ public class UserLoadDialog extends Dialog {
     @Override
     protected void onStart() {
         super.onStart();
-        System.out.println("Start-----------");
+        this.confirmCallBack = confirmCallBack;
+        this.confirmCheck = confirmCheck;
+        this.closeCallBack = closeCallBack;
+        userLoadText = (TextView) findViewById(R.id.userLoadText);
+        userLoadText.setText(userLoadTextSupplier.get());
     }
 }
