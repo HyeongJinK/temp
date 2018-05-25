@@ -20,7 +20,7 @@ public class UserService constructor(callingActivity: Activity, applicationConte
     var app = applicationContext
 
     /**
-     *
+     *  팝업에 텍스트 설정하기
      * */
     public var setUserLinkMiddleText: CustormSupplier<String>? = null;
     public var setUserLinkBottomText: CustormSupplier<String>? = null;
@@ -154,6 +154,10 @@ public class UserService constructor(callingActivity: Activity, applicationConte
                 .signInButton(GoogleButton::class.java)
                 .userPools(false)
                 .build()
+        SignInActivity.startSignInActivity(callingActivity, config)
+    }
+
+    public fun goToLogin(config: AuthUIConfiguration) {
         SignInActivity.startSignInActivity(callingActivity, config)
     }
 
