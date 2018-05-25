@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">estgames_framework</string>
+    <!--<string name="app_name">estgames_framework</string>-->
 
     <string name="estcommon_policy_title">이용약관</string>
     <string name="estcommon_policy_subTitle">광고성 정보 수신 동의포함</string>
