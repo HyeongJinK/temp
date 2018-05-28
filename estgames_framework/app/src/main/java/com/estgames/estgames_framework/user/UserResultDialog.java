@@ -50,7 +50,7 @@ public class UserResultDialog extends Dialog {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        //UserResultDialog.super.dismiss();
+                        dismiss();
                         closeCallBack.run();
                     }
                 });
@@ -63,7 +63,7 @@ public class UserResultDialog extends Dialog {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        //UserResultDialog.super.dismiss();
+                        dismiss();
                         confirmCallBack.run();
                     }
                 });

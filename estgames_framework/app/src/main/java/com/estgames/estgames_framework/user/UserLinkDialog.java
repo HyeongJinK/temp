@@ -83,8 +83,8 @@ public class UserLinkDialog extends Dialog {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        dismiss();
                         confirmCallBack.run();
-                        //UserLinkDialog.super.dismiss();
                     }
                 });
             }
@@ -96,8 +96,8 @@ public class UserLinkDialog extends Dialog {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        dismiss();
                         cancelCallBack.run();
-                        //UserLinkDialog.super.dismiss();
                     }
                 });
             }
@@ -109,8 +109,8 @@ public class UserLinkDialog extends Dialog {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        dismiss();
                         closeCallBack.run();
-                        //UserLinkDialog.super.dismiss();
                     }
                 });
             }

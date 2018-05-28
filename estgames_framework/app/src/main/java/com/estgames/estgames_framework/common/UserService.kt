@@ -54,17 +54,12 @@ public class UserService constructor(callingActivity: Activity, applicationConte
     fun setting() {
         //var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
         userLinkDialog.confirmCallBack =  Runnable {
-            callingActivity.runOnUiThread(Runnable {
-                userLinkDialog.dismiss()
-                userLoadDialog.show()
-        })}
+            userLoadDialog.show()
+        }
         userLinkDialog.cancelCallBack = Runnable {
-            callingActivity.runOnUiThread(Runnable {
-                userLinkDialog.dismiss()
-                userGuestLinkDialog.show()
-            }) }
+            userGuestLinkDialog.show()
+        }
         userLinkDialog.closeCallBack = Runnable {
-            userLinkDialog.dismiss()
             signout()
         }
 
@@ -74,11 +69,10 @@ public class UserService constructor(callingActivity: Activity, applicationConte
             userLinkDialog.userLinkGuestDataTextSupplier = setUserLinkBottomText
 
         userLoadDialog.confirmCallBack = Runnable {
-            userLoadDialog.dismiss()
             onSwitch()
         }
         userLoadDialog.closeCallBack = Runnable {
-            userLinkDialog.dismiss()
+            userLoadDialog.dismiss()
             signout()
         }
         userLoadDialog.failConfirmCheck = goToLoginConfirmCallBack
@@ -87,16 +81,12 @@ public class UserService constructor(callingActivity: Activity, applicationConte
             userLoadDialog.userLoadTextSupplier = setUserLoadText
 
         userGuestLinkDialog.loginCallBack = Runnable {
-            userGuestLinkDialog.dismiss()
             onSync()
         }
         userGuestLinkDialog.beforeCallBack = Runnable {
-            callingActivity.runOnUiThread(Runnable{
-                userGuestLinkDialog.dismiss()
-                userLinkDialog.show()
-            }) }
+            userLinkDialog.show()
+        }
         userGuestLinkDialog.closeCallBack = Runnable {
-            userGuestLinkDialog.dismiss()
             signout()
         }
 
@@ -104,11 +94,9 @@ public class UserService constructor(callingActivity: Activity, applicationConte
             userGuestLinkDialog.userGuestTextSupplier = setUserGuestText
 
         userResultDialog.confirmCallBack = Runnable {
-            userResultDialog.dismiss()
             goToLoginSuccessCallBack.run()
         }
         userResultDialog.closeCallBack = Runnable {
-            userResultDialog.dismiss()
             goToLoginSuccessCallBack.run()
         }
     }
@@ -131,7 +119,9 @@ public class UserService constructor(callingActivity: Activity, applicationConte
                                         is Result.SyncFailure -> {
                                             // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
                                             setting()
-                                            userLinkDialog.show()
+                                            callingActivity.runOnUiThread(Runnable {
+                                                userLinkDialog.show()
+                                            })
                                         }
                                         is Result.Failure -> {
                                             if (identityManager.isUserSignedIn) {

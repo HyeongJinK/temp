@@ -35,7 +35,7 @@ public class UserServiceEx constructor(callingActivity: Activity) {
 
     /**
      * 콜백함수
-     * */
+* */
     public var startSuccessCallBack: Runnable = Runnable {  }
     public var startFailCallBack: CustomConsumer<String> = CustomConsumer {  }
     public var goToLoginSuccessCallBack: Runnable = Runnable {  }
