@@ -2,7 +2,6 @@ package com.estgames.estgames_framework.user;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,7 +50,7 @@ public class UserResultDialog extends Dialog {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        UserResultDialog.super.dismiss();
+                        //UserResultDialog.super.dismiss();
                         closeCallBack.run();
                     }
                 });
@@ -64,7 +63,7 @@ public class UserResultDialog extends Dialog {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        UserResultDialog.super.dismiss();
+                        //UserResultDialog.super.dismiss();
                         confirmCallBack.run();
                     }
                 });

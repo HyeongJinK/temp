@@ -70,7 +70,7 @@ public class UserGuestLinkDialog extends Dialog {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        UserGuestLinkDialog.super.dismiss();
+                        //UserGuestLinkDialog.super.dismiss();
                         closeCallBack.run();
                     }
                 });
@@ -83,7 +83,7 @@ public class UserGuestLinkDialog extends Dialog {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        UserGuestLinkDialog.super.dismiss();
+                        //UserGuestLinkDialog.super.dismiss();
                         loginCallBack.run();
                     }
                 });
@@ -96,7 +96,7 @@ public class UserGuestLinkDialog extends Dialog {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        UserGuestLinkDialog.super.dismiss();
+                        //UserGuestLinkDialog.super.dismiss();
                         beforeCallBack.run();
                     }
                 });

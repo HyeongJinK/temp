@@ -84,7 +84,7 @@ public class UserLinkDialog extends Dialog {
                     @Override
                     public void run() {
                         confirmCallBack.run();
-                        UserLinkDialog.super.dismiss();
+                        //UserLinkDialog.super.dismiss();
                     }
                 });
             }
@@ -97,7 +97,7 @@ public class UserLinkDialog extends Dialog {
                     @Override
                     public void run() {
                         cancelCallBack.run();
-                        UserLinkDialog.super.dismiss();
+                        //UserLinkDialog.super.dismiss();
                     }
                 });
             }
@@ -110,7 +110,7 @@ public class UserLinkDialog extends Dialog {
                     @Override
                     public void run() {
                         closeCallBack.run();
-                        UserLinkDialog.super.dismiss();
+                        //UserLinkDialog.super.dismiss();
                     }
                 });
             }

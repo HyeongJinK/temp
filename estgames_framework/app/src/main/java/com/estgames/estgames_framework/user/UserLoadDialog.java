@@ -84,7 +84,7 @@ public class UserLoadDialog extends Dialog {
         closeBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserLoadDialog.super.dismiss();
+                //UserLoadDialog.super.dismiss();
                 closeCallBack.run();
             }
         });
@@ -96,7 +96,7 @@ public class UserLoadDialog extends Dialog {
                     @Override
                     public void run() {
                         if (confirmCheck.apply(editText.getText().toString())) {
-                            UserLoadDialog.super.dismiss();
+                            //UserLoadDialog.super.dismiss();
                             confirmCallBack.run();
                         } else {
                             failConfirmCheck.run();

@@ -53,31 +53,64 @@ public class UserService constructor(callingActivity: Activity, applicationConte
 
     fun setting() {
         //var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
-        userLinkDialog.confirmCallBack =  Runnable { callingActivity.runOnUiThread(Runnable { userLoadDialog.show() })}
-        userLinkDialog.cancelCallBack = Runnable { callingActivity.runOnUiThread(Runnable {userGuestLinkDialog.show()}) }
-        userLinkDialog.closeCallBack = Runnable { signout() }
+        userLinkDialog.confirmCallBack =  Runnable {
+            callingActivity.runOnUiThread(Runnable {
+                userLinkDialog.dismiss()
+                userLoadDialog.show()
+        })}
+        userLinkDialog.cancelCallBack = Runnable {
+            callingActivity.runOnUiThread(Runnable {
+                userLinkDialog.dismiss()
+                userGuestLinkDialog.show()
+            }) }
+        userLinkDialog.closeCallBack = Runnable {
+            userLinkDialog.dismiss()
+            signout()
+        }
 
         if (setUserLinkMiddleText != null)
             userLinkDialog.userLinkSnsDataTextSupplier = setUserLinkMiddleText
         if (setUserLinkBottomText != null)
             userLinkDialog.userLinkGuestDataTextSupplier = setUserLinkBottomText
 
-        userLoadDialog.confirmCallBack = Runnable { onSwitch() }
-        userLoadDialog.closeCallBack = Runnable { signout() }
+        userLoadDialog.confirmCallBack = Runnable {
+            userLoadDialog.dismiss()
+            onSwitch()
+        }
+        userLoadDialog.closeCallBack = Runnable {
+            userLinkDialog.dismiss()
+            signout()
+        }
         userLoadDialog.failConfirmCheck = goToLoginConfirmCallBack
 
         if (setUserLoadText != null)
             userLoadDialog.userLoadTextSupplier = setUserLoadText
 
-        userGuestLinkDialog.loginCallBack = Runnable { onSync() }
-        userGuestLinkDialog.beforeCallBack = Runnable { callingActivity.runOnUiThread(Runnable{userLinkDialog.show()}) }
-        userGuestLinkDialog.closeCallBack = Runnable { signout() }
+        userGuestLinkDialog.loginCallBack = Runnable {
+            userGuestLinkDialog.dismiss()
+            onSync()
+        }
+        userGuestLinkDialog.beforeCallBack = Runnable {
+            callingActivity.runOnUiThread(Runnable{
+                userGuestLinkDialog.dismiss()
+                userLinkDialog.show()
+            }) }
+        userGuestLinkDialog.closeCallBack = Runnable {
+            userGuestLinkDialog.dismiss()
+            signout()
+        }
 
         if (setUserGuestText != null)
             userGuestLinkDialog.userGuestTextSupplier = setUserGuestText
 
-        userResultDialog.confirmCallBack = Runnable { goToLoginSuccessCallBack.run() }
-        userResultDialog.closeCallBack = Runnable { goToLoginSuccessCallBack.run() }
+        userResultDialog.confirmCallBack = Runnable {
+            userResultDialog.dismiss()
+            goToLoginSuccessCallBack.run()
+        }
+        userResultDialog.closeCallBack = Runnable {
+            userResultDialog.dismiss()
+            goToLoginSuccessCallBack.run()
+        }
     }
 
     val complete: (String) -> Unit = {t ->
