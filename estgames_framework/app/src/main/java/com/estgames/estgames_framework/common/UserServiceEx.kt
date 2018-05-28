@@ -2,6 +2,7 @@ package com.estgames.estgames_framework.common
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import com.amazonaws.mobile.auth.core.*
 import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
@@ -15,7 +16,7 @@ import java.lang.Exception
 /**
  * Created by mp on 2018. 5. 2..
  */
-public class UserService constructor(callingActivity: Activity, applicationContext: Context) {
+public class UserServiceEx constructor(callingActivity: Activity, applicationContext: Context) {
     var callingActivity = callingActivity
     var app = applicationContext
 
@@ -51,10 +52,23 @@ public class UserService constructor(callingActivity: Activity, applicationConte
         IdentityManager.getDefaultIdentityManager()
     }
 
+    companion object {
+        //const val LOG_TAG = "Tangerine"
+        const val ARGUMENT_EVENT = "event.object"
+
+        @JvmStatic fun start(context: Context, event: Result? = null) {
+            val intent = Intent(context, UserServiceEx::class.java).apply {
+                putExtra(ARGUMENT_EVENT, event)
+            }
+
+            context.startActivity(intent)
+        }
+    }
+
     fun setting() {
         //var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
-        userLinkDialog.confirmCallBack =  Runnable { callingActivity.runOnUiThread(Runnable { userLoadDialog.show() })}
-        userLinkDialog.cancelCallBack = Runnable { callingActivity.runOnUiThread(Runnable {userGuestLinkDialog.show()}) }
+        userLinkDialog.confirmCallBack =  Runnable { userLoadDialog.show() }
+        userLinkDialog.cancelCallBack = Runnable { userGuestLinkDialog.show() }
         userLinkDialog.closeCallBack = Runnable { signout() }
 
         if (setUserLinkMiddleText != null)
@@ -70,7 +84,7 @@ public class UserService constructor(callingActivity: Activity, applicationConte
             userLoadDialog.userLoadTextSupplier = setUserLoadText
 
         userGuestLinkDialog.loginCallBack = Runnable { onSync() }
-        userGuestLinkDialog.beforeCallBack = Runnable { callingActivity.runOnUiThread(Runnable{userLinkDialog.show()}) }
+        userGuestLinkDialog.beforeCallBack = Runnable { userLinkDialog.show() }
         userGuestLinkDialog.closeCallBack = Runnable { signout() }
 
         if (setUserGuestText != null)

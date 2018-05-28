@@ -16,6 +16,8 @@ import android.widget.ImageButton;
 
 import com.estgames.estgames_framework.R;
 
+import static com.amazonaws.mobile.auth.core.internal.util.ThreadUtils.runOnUiThread;
+
 /**
  * Created by mp on 2018. 3. 20..
  */
@@ -77,6 +79,7 @@ public class PolicyDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.policy);
 
         policyClosebt = (ImageButton) findViewById(R.id.policyClosebt);

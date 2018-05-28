@@ -22,8 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import javax.net.ssl.HttpsURLConnection;
-
 import static android.R.style.Theme_NoTitleBar_Fullscreen;
 
 /**
@@ -45,6 +43,7 @@ public class BannerDialog extends Dialog {
     String today;
     SharedPreferences pref;
     SharedPreferences.Editor prefEdit;
+
     public Runnable callback = new Runnable() {
         @Override
         public void run() {

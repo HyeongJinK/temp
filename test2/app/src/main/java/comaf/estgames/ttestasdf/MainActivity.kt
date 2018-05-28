@@ -31,7 +31,7 @@ import java.lang.Exception
 private val MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1
 
 class MainActivity : AppCompatActivity() {
-    //lateinit var estCommonFramework: EstCommonFramework
+    lateinit var estCommonFramework: EstCommonFramework
     var uv:UserService? = null;
 
     private val txtStatus: TextView by lazy {
@@ -58,10 +58,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         uv = UserService(this@MainActivity, applicationContext)
-//        var test0bt: Button = findViewById(R.id.test0bt)
-//        var test1bt: Button = findViewById(R.id.test1bt)
-//        var test2bt: Button = findViewById(R.id.test2bt)
-//        var test3bt: Button = findViewById(R.id.test3bt)
+        var test0bt: Button = findViewById(R.id.test0bt)
+        var test1bt: Button = findViewById(R.id.test1bt)
+        var test2bt: Button = findViewById(R.id.test2bt)
+        var test3bt: Button = findViewById(R.id.test3bt)
         var startbt: Button = findViewById(R.id.startGame)
         var snsBt: Button = findViewById(R.id.snsBt)
         var clearBt: Button = findViewById(R.id.clearBt)
@@ -70,36 +70,36 @@ class MainActivity : AppCompatActivity() {
         //estCommonFramework = EstCommonFramework.create(this);
         //EstCommonFramework.initCallBack = Runnable { println("kjafdjskl") }
 
-//        estCommonFramework = EstCommonFramework(this, CustomConsumer {
-//            test1bt.setText("skdajf")
-//        });
-//
-//        estCommonFramework.create();
-//
-//
-//
-//        //uv = UserSerivce(this, this@MainActivity, applicationContext)
-//
-////        val test1: AuthorityDialog = AuthorityDialog(this, getSharedPreferences("auth", Activity.MODE_PRIVATE));
-////        val test2: PolicyDialog = PolicyDialog(this);
-////        val test3: BannerDialog = BannerDialog(this, getSharedPreferences("banner", Activity.MODE_PRIVATE));
-//        test0bt.setOnClickListener(View.OnClickListener {//estCommonFramework.processShow()
-//            estCommonFramework.processCallBack = Runnable { println("asjdhfjasdh") }
-//            estCommonFramework.processShow();
-//             })
-//        test1bt.setOnClickListener(View.OnClickListener {
-//            estCommonFramework.authorityCallBack = Runnable {
-//                if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == -1) {
-//                    ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), MY_PERMISSIONS_REQUEST_READ_CONTACTS)
-//                }
-//            }
-//            estCommonFramework.authorityShow()
-//        })
-//        test2bt.setOnClickListener(View.OnClickListener {
-//            //estCommonFramework.policyShow()
-//            estCommonFramework.contractService()
-//            })
-//        test3bt.setOnClickListener(View.OnClickListener {estCommonFramework.bannerShow()})
+        estCommonFramework = EstCommonFramework(this, CustomConsumer {
+            test1bt.setText("skdajf")
+        });
+
+        estCommonFramework.create();
+
+runOnUiThread(Runnable {  })
+
+        //uv = UserSerivce(this, this@MainActivity, applicationContext)
+
+//        val test1: AuthorityDialog = AuthorityDialog(this, getSharedPreferences("auth", Activity.MODE_PRIVATE));
+//        val test2: PolicyDialog = PolicyDialog(this);
+//        val test3: BannerDialog = BannerDialog(this, getSharedPreferences("banner", Activity.MODE_PRIVATE));
+        test0bt.setOnClickListener(View.OnClickListener {//estCommonFramework.processShow()
+            estCommonFramework.processCallBack = Runnable { println("asjdhfjasdh") }
+            estCommonFramework.processShow();
+             })
+        test1bt.setOnClickListener(View.OnClickListener {
+            estCommonFramework.authorityCallBack = Runnable {
+                if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == -1) {
+                    ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), MY_PERMISSIONS_REQUEST_READ_CONTACTS)
+                }
+            }
+            estCommonFramework.authorityShow()
+        })
+        test2bt.setOnClickListener(View.OnClickListener {
+            estCommonFramework.policyShow()
+            //estCommonFramework.contractService()
+            })
+        test3bt.setOnClickListener(View.OnClickListener {estCommonFramework.bannerShow()})
 
         startbt.setOnClickListener(View.OnClickListener {
             uv!!.startSuccessCallBack = Runnable { println("test") }
