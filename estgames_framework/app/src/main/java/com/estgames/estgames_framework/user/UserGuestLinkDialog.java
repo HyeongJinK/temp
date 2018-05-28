@@ -1,5 +1,6 @@
 package com.estgames.estgames_framework.user;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ import com.estgames.estgames_framework.common.CustormSupplier;
  */
 
 public class UserGuestLinkDialog extends Dialog {
-    Dialog self;
+    Activity activity;
     Button closeBt;
     Button loginBt;
     Button beforeBt;
@@ -49,14 +50,14 @@ public class UserGuestLinkDialog extends Dialog {
         }
     };
 
-    public UserGuestLinkDialog(@NonNull Context context) {
+    public UserGuestLinkDialog(@NonNull Activity context) {
         super(context);
+        this.activity = context;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        self = this;
         setContentView(R.layout.userguestlink);
 
         closeBt = (Button) findViewById(R.id.userGuestLinkCloseBt);
@@ -66,24 +67,39 @@ public class UserGuestLinkDialog extends Dialog {
         closeBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                self.dismiss();
-                closeCallBack.run();
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        UserGuestLinkDialog.super.dismiss();
+                        closeCallBack.run();
+                    }
+                });
             }
         });
 
         loginBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                self.dismiss();
-                loginCallBack.run();
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        UserGuestLinkDialog.super.dismiss();
+                        loginCallBack.run();
+                    }
+                });
             }
         });
 
         beforeBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                self.dismiss();
-                beforeCallBack.run();
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        UserGuestLinkDialog.super.dismiss();
+                        beforeCallBack.run();
+                    }
+                });
             }
         });
     }

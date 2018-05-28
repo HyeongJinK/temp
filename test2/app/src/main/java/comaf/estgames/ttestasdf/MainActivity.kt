@@ -57,6 +57,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         uv = UserService(this@MainActivity, applicationContext)
         var test0bt: Button = findViewById(R.id.test0bt)
         var test1bt: Button = findViewById(R.id.test1bt)

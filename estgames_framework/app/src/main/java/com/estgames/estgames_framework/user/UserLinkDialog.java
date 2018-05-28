@@ -1,5 +1,6 @@
 package com.estgames.estgames_framework.user;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ import com.estgames.estgames_framework.common.CustormSupplier;
  */
 
 public class UserLinkDialog extends Dialog {
-    private Dialog self;
+    Activity activity;
     private Button closeBt;
     private Button confirmBt;
     private Button cancelBt;
@@ -57,14 +58,17 @@ public class UserLinkDialog extends Dialog {
         }
     };
 
-    public UserLinkDialog(Context context) {
-        super(context);
+//    public UserLinkDialog(Context context) {
+//        super(context);
+//    }
+    public UserLinkDialog(Activity activity) {
+        super((Context) activity);
+        this.activity = activity;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        self = this;
         setContentView(R.layout.userlink);
 
         confirmBt = (Button) findViewById(R.id.userLinkConfirm);
@@ -75,24 +79,40 @@ public class UserLinkDialog extends Dialog {
         confirmBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                self.dismiss();
-                confirmCallBack.run();
+                //getContext().
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        confirmCallBack.run();
+                        UserLinkDialog.super.dismiss();
+                    }
+                });
             }
         });
 
         cancelBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                self.dismiss();
-                cancelCallBack.run();
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        cancelCallBack.run();
+                        UserLinkDialog.super.dismiss();
+                    }
+                });
             }
         });
 
         closeBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                self.dismiss();
-                closeCallBack.run();
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        closeCallBack.run();
+                        UserLinkDialog.super.dismiss();
+                    }
+                });
             }
         });
     }

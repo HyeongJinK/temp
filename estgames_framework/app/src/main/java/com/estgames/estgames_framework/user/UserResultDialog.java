@@ -1,9 +1,9 @@
 package com.estgames.estgames_framework.user;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,7 +14,7 @@ import com.estgames.estgames_framework.R;
  */
 
 public class UserResultDialog extends Dialog {
-    Dialog self;
+    Activity activity;
     Button closeBt;
     Button confirmBt;
 
@@ -31,14 +31,14 @@ public class UserResultDialog extends Dialog {
         }
     };
 
-    public UserResultDialog(Context context) {
+    public UserResultDialog(Activity context) {
         super(context);
+        this.activity = context;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        self = this;
         setContentView(R.layout.userresult);
 
         closeBt = (Button) findViewById(R.id.userResultClose);
@@ -48,14 +48,26 @@ public class UserResultDialog extends Dialog {
         closeBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                self.dismiss(); closeCallBack.run();
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        UserResultDialog.super.dismiss();
+                        closeCallBack.run();
+                    }
+                });
             }
         });
 
         confirmBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                self.dismiss(); confirmCallBack.run();
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        UserResultDialog.super.dismiss();
+                        confirmCallBack.run();
+                    }
+                });
             }
         });
     }

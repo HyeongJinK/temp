@@ -16,9 +16,9 @@ import java.lang.Exception
 /**
  * Created by mp on 2018. 5. 2..
  */
-public class UserServiceEx constructor(callingActivity: Activity, applicationContext: Context) {
+public class UserServiceEx constructor(callingActivity: Activity) {
     var callingActivity = callingActivity
-    var app = applicationContext
+    //var app = applicationContext
 
     /**
      *  팝업에 텍스트 설정하기

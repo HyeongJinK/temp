@@ -1,5 +1,6 @@
 package com.estgames.estgames_framework.user;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ import com.estgames.estgames_framework.common.CustormSupplier;
  */
 
 public class UserLoadDialog extends Dialog {
-    Dialog self;
+    Activity activity;
     Button closeBt;
     EditText editText;
     Button confirmBt;
@@ -62,12 +63,9 @@ public class UserLoadDialog extends Dialog {
         }
     };
 
-    public UserLoadDialog(Context context) {
-        super(context);
-    }
-
-    public UserLoadDialog(Context context, Runnable confirmCallBack, Runnable closeCallBack) {
-        super(context);
+    public UserLoadDialog(Activity activity) {
+        super(activity);
+        this.activity = activity;
     }
 
     public String getEditText() {
@@ -77,7 +75,6 @@ public class UserLoadDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        self = this;
         setContentView(R.layout.userload);
 
         closeBt = (Button) findViewById(R.id.userLoadCloseBt);
@@ -87,7 +84,7 @@ public class UserLoadDialog extends Dialog {
         closeBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                self.dismiss();
+                UserLoadDialog.super.dismiss();
                 closeCallBack.run();
             }
         });
@@ -95,12 +92,17 @@ public class UserLoadDialog extends Dialog {
         confirmBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (confirmCheck.apply(editText.getText().toString())) {
-                    self.dismiss();
-                    confirmCallBack.run();
-                } else {
-                    failConfirmCheck.run();
-                }
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (confirmCheck.apply(editText.getText().toString())) {
+                            UserLoadDialog.super.dismiss();
+                            confirmCallBack.run();
+                        } else {
+                            failConfirmCheck.run();
+                        }
+                    }
+                });
             }
         });
     }
