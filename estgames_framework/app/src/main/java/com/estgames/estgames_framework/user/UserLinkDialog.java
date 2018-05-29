@@ -58,12 +58,17 @@ public class UserLinkDialog extends Dialog {
         }
     };
 
-//    public UserLinkDialog(Context context) {
-//        super(context);
-//    }
     public UserLinkDialog(Activity activity) {
         super((Context) activity);
         this.activity = activity;
+    }
+
+    public UserLinkDialog(Activity activity, Runnable confirmCallBack, Runnable cancelCallBack, Runnable closeCallBack) {
+        super((Context) activity);
+        this.activity = activity;
+        this.confirmCallBack = confirmCallBack;
+        this.cancelCallBack = cancelCallBack;
+        this.closeCallBack = closeCallBack;
     }
 
     @Override
@@ -79,40 +84,26 @@ public class UserLinkDialog extends Dialog {
         confirmBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //getContext().
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        dismiss();
-                        confirmCallBack.run();
-                    }
-                });
+
+                if (!activity.isFinishing())
+                    dismiss();
+                confirmCallBack.run();
             }
         });
 
         cancelBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        dismiss();
-                        cancelCallBack.run();
-                    }
-                });
+                dismiss();
+                cancelCallBack.run();
             }
         });
 
         closeBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        dismiss();
-                        closeCallBack.run();
-                    }
-                });
+                dismiss();
+                closeCallBack.run();
             }
         });
     }
@@ -120,9 +111,9 @@ public class UserLinkDialog extends Dialog {
     @Override
     protected void onStart() {
         super.onStart();
-        this.confirmCallBack = confirmCallBack;
-        this.cancelCallBack = cancelCallBack;
-        this.closeCallBack = closeCallBack;
+//        this.confirmCallBack = confirmCallBack;
+//        this.cancelCallBack = cancelCallBack;
+//        this.closeCallBack = closeCallBack;
 
         userLinkSnsDataText = (TextView) findViewById(R.id.userLinkSnsDataText);
         userLinkGuestDataText = (TextView) findViewById(R.id.userLinkGuestDataText);

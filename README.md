@@ -2,6 +2,27 @@
 
 ## 업데이트 사항
 
+:new: 1.0.8 업데이트 사항
+
+* :exclamation: 유저 아이디 추가 Profile에 추가 되었습니다.
+  * 해당 사항 추가로 인해 기존에 설치된 게임에서 실행할 경우 유저 아이디가 없어 에러가 납니다. 삭제 후 다시 설치한 후 실행해 주세요. 
+* :exclamation: UserService 클래스 선언시 매개변수가 수정되었습니다.
+  * new UserSerivce(this, this.getApplicationContext()); ----> new UserSerivce(this);
+* :exclamation: 뒤로가기가 수정되었습니다. 아래코드를 goToLogin함수 호출 전에 추가해 주세요
+    ```java
+    empUserService.setBack(new CustomConsumer<Activity>() {
+        @Override
+        public void accept(Activity activity) {
+            activity.startActivity(new Intent(activity, MRActivity.class));
+        }
+    });
+    ```
+* 배너 관련 버그 수정되었습니다.
+* EstCommonFramework에 estCommonFailCallBack이 추가 되었습니다.
+  * 타입은 CustomConsumer<ERROR_CODE> 이며 ERROR_CODE에 에러 이유가 정의 되어 있습니다.
+* ERROR_CODE  : 에러 코드는 더 추가될 예정입니다.
+    * PRINCIPAL_APICALL   //네트워크 에러
+
 :new: 1.0.7 업데이트 사항
 
 * systemContractShowOrDismiss() 함수 추가 (권한창이 나와야 하는 지 확인)
@@ -448,6 +469,13 @@ uv.setUserGuestText = new CustormSupplier<String>() {
         return "기존 연동된 데이터 ([])를 삭제하고 현재 플레이중인 게임 데이터로 계정연동을 진행합니다.\n[]";
     }
 };
+// 뒤로가기 구현을 위해서 추가된 코드
+empUserService.setBack(new CustomConsumer<Activity>() {
+    @Override
+    public void accept(Activity activity) {
+        activity.startActivity(new Intent(activity, MRActivity.class));
+    }
+});
 
 uv.goToLogin();
 
@@ -478,6 +506,7 @@ Profile profile = uv.getSessionManager().getProfile();
 txtStatus.text = profile.getProvider() != null ? session.getProvider() : "guest"
 txtUserId.text = "EG ID : " + profile.getEgId();
 txtPrincipal.text = "Principal : " + profile.getPrincipal();
+txtUserId.text = "UserId : " + profile.getUserId();
 
 // 토큰정보
 Token token = uv.getSessionManager().getToken();

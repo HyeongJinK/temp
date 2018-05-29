@@ -13,6 +13,9 @@ import com.estgames.estgames_framework.core.session.SessionManager;
 import com.estgames.estgames_framework.policy.PolicyDialog;
 import com.estgames.estgames_framework.webview.WebViewDialog;
 
+import java.io.IOException;
+import java.net.UnknownHostException;
+
 import static com.estgames.estgames_framework.core.HttpUtils.request;
 
 
@@ -73,18 +76,30 @@ public class EstCommonFramework {
         }
     };
 
+    public CustomConsumer<ERROR_CODE> estCommonFailCallBack = new CustomConsumer<ERROR_CODE>() {
+        @Override
+        public void accept(ERROR_CODE code) {
+
+        }
+    };
+
     public void create() {
         EstCommonFramework temp = this;
-        new Thread() {
-            @Override
-            public void run() {
-                HttpResponse result = request(apiUrl, Method.GET);
+            new Thread() {
+                @Override
+                public void run() {
+                    try {
+                    HttpResponse result = request(apiUrl, Method.GET);
 
-                data = new ResultDataJson(new String(result.getContent()));
+                    data = new ResultDataJson(new String(result.getContent()));
 
-                initCallBack.accept(temp);
-            }
-        }.start();
+                    initCallBack.accept(temp);
+                    } catch (Exception e) {
+                        estCommonFailCallBack.accept(ERROR_CODE.PRINCIPAL_APICALL);
+                        e.printStackTrace();
+                    }
+                }
+            }.start();
     }
 
     public EstCommonFramework(Context context) {
@@ -97,9 +112,12 @@ public class EstCommonFramework {
     }
 
     public void bannerShow() {
+        data.getEvents();
         if (data != null) {
             bannerDialog = new BannerDialog(context, data, bannerCallBack);
-            bannerDialog.show();
+            if (bannerDialog.bitmap.size() > 0) {
+                bannerDialog.show();
+            }
         }
     }
 

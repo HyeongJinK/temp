@@ -2,6 +2,9 @@ package com.estgames.estgames_framework.common
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.os.Handler
+import android.os.Looper
 import com.amazonaws.mobile.auth.core.*
 import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
@@ -15,9 +18,8 @@ import java.lang.Exception
 /**
  * Created by mp on 2018. 5. 2..
  */
-public class UserService constructor(callingActivity: Activity, applicationContext: Context) {
+public class UserService constructor(callingActivity: Activity) {
     var callingActivity = callingActivity
-    var app = applicationContext
 
     /**
      *  팝업에 텍스트 설정하기
@@ -27,7 +29,12 @@ public class UserService constructor(callingActivity: Activity, applicationConte
     public var setUserLoadText: CustormSupplier<String>? = null;
     public var setUserGuestText: CustormSupplier<String>? = null;
 
-    var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
+    //var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
+    var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity
+    , Runnable { //println(callingActivity.isFinishing)
+        userLoadDialog.show() }
+    , Runnable { userGuestLinkDialog.show() }
+    , Runnable { signout() })
     var userLoadDialog : UserLoadDialog = UserLoadDialog(callingActivity)
     var userGuestLinkDialog : UserGuestLinkDialog = UserGuestLinkDialog(callingActivity)
     var userResultDialog : UserResultDialog = UserResultDialog(callingActivity)
@@ -41,6 +48,7 @@ public class UserService constructor(callingActivity: Activity, applicationConte
     public var goToLoginFailCallBack: CustomConsumer<String> = CustomConsumer {  }
     public var goToLoginConfirmCallBack: Runnable = Runnable {  }
     public var clearSuccessCallBack: Runnable = Runnable {  }
+    public var back:CustomConsumer<Activity> = CustomConsumer {  }
 
 
     val sessionManager: SessionManager by lazy {
@@ -53,15 +61,19 @@ public class UserService constructor(callingActivity: Activity, applicationConte
 
     fun setting() {
         //var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
-        userLinkDialog.confirmCallBack =  Runnable {
-            userLoadDialog.show()
-        }
-        userLinkDialog.cancelCallBack = Runnable {
-            userGuestLinkDialog.show()
-        }
-        userLinkDialog.closeCallBack = Runnable {
-            signout()
-        }
+//        userLinkDialog.confirmCallBack =  Runnable {
+//            userLoadDialog.show()
+//        }
+//        userLinkDialog.cancelCallBack = Runnable {
+//            userGuestLinkDialog.show()
+//        }
+//        userLinkDialog.closeCallBack = Runnable {
+//            Handler(Looper.getMainLooper()).post(Runnable {
+//                System.out.println("----- closeCallBack -----")
+//                userLinkDialog.dismiss()
+//                signout()
+//            })
+//        }
 
         if (setUserLinkMiddleText != null)
             userLinkDialog.userLinkSnsDataTextSupplier = setUserLinkMiddleText
@@ -139,6 +151,8 @@ public class UserService constructor(callingActivity: Activity, applicationConte
             }
 
             override fun onCancel(activity: Activity?): Boolean {
+                back.accept(activity!!)
+                //activity!!.startActivity(Intent(activity!!, cls::class.java))
                 return false
             }
         })
@@ -172,12 +186,14 @@ public class UserService constructor(callingActivity: Activity, applicationConte
     }
 
     public fun goToLogin() {
-        val config = AuthUIConfiguration.Builder()
-                .signInButton(FacebookButton::class.java)
-                .signInButton(GoogleButton::class.java)
-                .userPools(false)
-                .build()
-        SignInActivity.startSignInActivity(callingActivity, config)
+        callingActivity.runOnUiThread(Runnable {
+            val config = AuthUIConfiguration.Builder()
+                    .signInButton(FacebookButton::class.java)
+                    .signInButton(GoogleButton::class.java)
+                    .userPools(false)
+                    .build()
+            SignInActivity.startSignInActivity(callingActivity, config)
+        })
     }
 
     public fun goToLogin(config: AuthUIConfiguration) {

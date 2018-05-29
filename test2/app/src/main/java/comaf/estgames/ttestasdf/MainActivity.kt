@@ -2,6 +2,7 @@ package comaf.estgames.ttestasdf
 
 import android.Manifest
 import android.app.Activity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        uv = UserService(this@MainActivity, applicationContext)
+        uv = UserService(this)
         var test0bt: Button = findViewById(R.id.test0bt)
         var test1bt: Button = findViewById(R.id.test1bt)
         var test2bt: Button = findViewById(R.id.test2bt)
@@ -74,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         estCommonFramework = EstCommonFramework(this, CustomConsumer {
             test1bt.setText("skdajf")
         });
-
+        estCommonFramework.initFailCallBack = CustomConsumer { t -> println(t) }
         estCommonFramework.create();
 
 runOnUiThread(Runnable {  })
@@ -113,6 +114,9 @@ runOnUiThread(Runnable {  })
         })
 
         snsBt.setOnClickListener(View.OnClickListener {
+            uv!!.back = CustomConsumer<Activity> { activity ->
+                activity.startActivity(Intent(activity, MainActivity::class.java))
+            }
             uv!!.setUserLinkMiddleText = CustormSupplier { "akdfj" }
             //login()
             uv!!.goToLogin()
@@ -248,7 +252,7 @@ runOnUiThread(Runnable {  })
 
         txtStatus.text = profile.provider
         txtUserId.text = "EG ID :" + profile.egId
-        txtPrincipal.text = "Principal :" +profile.principal
+        txtPrincipal.text = "Principal :" +profile.userId
         txtEgToken.text = "EG Token :" + token.egToken
         txtRefreshToken.text = "Refresh Token :" + token.refreshToken
     }

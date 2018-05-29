@@ -43,7 +43,8 @@ class SessionManager(context:Context) {
                         egId = me.getString("eg_id"),
                         principal = me.getString("principal_of_client"),
                         provider = if (provider.equals(null)) null else provider as String,
-                        email = if(email.equals(null)) null else email as String
+                        email = if(email.equals(null)) null else email as String,
+                        userId = me.getString("user_id")
                 ))
             } catch (e: Throwable) {
                 return@Callable Left(e)
@@ -82,7 +83,8 @@ class SessionManager(context:Context) {
                                 egId = me.getString("eg_id"),
                                 principal = me.getString("principal_of_client"),
                                 provider = if (provider.equals(null)) null else provider as String,
-                                email = if(email.equals(null)) null else email as String
+                                email = if(email.equals(null)) null else email as String,
+                                userId = me.getString("user_id")
                         ))
                     } catch (e: Throwable) {
                         return@Callable Left(e)
@@ -141,7 +143,8 @@ class SessionManager(context:Context) {
                             egId = it.egId,
                             principal = it.to,
                             provider = if (it.data.get("provider") != null) it.data.get("provider") as String else null,
-                            email = if(it.data.get("email") != null) it.data.get("email") as String else null
+                            email = if(it.data.get("email") != null) it.data.get("email") as String else null,
+                            userId = session.userId
                     )
                     return@rightTo it
                 }

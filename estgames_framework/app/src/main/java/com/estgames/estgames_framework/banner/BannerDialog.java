@@ -29,7 +29,7 @@ import static android.R.style.Theme_NoTitleBar_Fullscreen;
  */
 
 public class BannerDialog extends Dialog {
-    ArrayList<Bitmap> bitmap;
+    public ArrayList<Bitmap> bitmap;
     ArrayList<String> urls;
     ArrayList<BannerData> openBanners;
     ResultDataJson bannerJson;

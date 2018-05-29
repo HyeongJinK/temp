@@ -13,6 +13,7 @@ interface Profile {
     val principal: String
     val provider: String?
     val email: String?
+    val userId: String
 }
 
 sealed class Session(): Serializable {
@@ -27,7 +28,8 @@ sealed class Session(): Serializable {
             override val egId: String,
             override val principal: String,
             override val provider: String? = null,
-            override val email: String? = null
+            override val email: String? = null,
+            override val userId: String
     ) : Session(), Token, Profile
 
     object Empty: Session()
