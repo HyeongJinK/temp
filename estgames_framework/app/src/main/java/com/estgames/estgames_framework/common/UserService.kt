@@ -29,12 +29,13 @@ public class UserService constructor(callingActivity: Activity) {
     public var setUserLoadText: CustormSupplier<String>? = null;
     public var setUserGuestText: CustormSupplier<String>? = null;
 
-    //var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
-    var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity
-    , Runnable { //println(callingActivity.isFinishing)
-        userLoadDialog.show() }
-    , Runnable { userGuestLinkDialog.show() }
-    , Runnable { signout() })
+    var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
+//    var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity
+//    , Runnable { //println(callingActivity.isFinishing)
+//        Handler(Looper.getMainLooper()).post(Runnable {})
+//        userLoadDialog.show() }
+//    , Runnable { userGuestLinkDialog.show() }
+//    , Runnable { signout() })
     var userLoadDialog : UserLoadDialog = UserLoadDialog(callingActivity)
     var userGuestLinkDialog : UserGuestLinkDialog = UserGuestLinkDialog(callingActivity)
     var userResultDialog : UserResultDialog = UserResultDialog(callingActivity)
@@ -60,20 +61,21 @@ public class UserService constructor(callingActivity: Activity) {
     }
 
     fun setting() {
-        //var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
-//        userLinkDialog.confirmCallBack =  Runnable {
-//            userLoadDialog.show()
-//        }
-//        userLinkDialog.cancelCallBack = Runnable {
-//            userGuestLinkDialog.show()
-//        }
-//        userLinkDialog.closeCallBack = Runnable {
-//            Handler(Looper.getMainLooper()).post(Runnable {
-//                System.out.println("----- closeCallBack -----")
-//                userLinkDialog.dismiss()
-//                signout()
-//            })
-//        }
+        var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
+        userLinkDialog.confirmCallBack =  Runnable {
+
+            userLoadDialog.show()
+        }
+        userLinkDialog.cancelCallBack = Runnable {
+            userGuestLinkDialog.show()
+        }
+        userLinkDialog.closeCallBack = Runnable {
+            Handler(Looper.getMainLooper()).post(Runnable {
+                System.out.println("----- closeCallBack -----")
+                userLinkDialog.dismiss()
+                signout()
+            })
+        }
 
         if (setUserLinkMiddleText != null)
             userLinkDialog.userLinkSnsDataTextSupplier = setUserLinkMiddleText

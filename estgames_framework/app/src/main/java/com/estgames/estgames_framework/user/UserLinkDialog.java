@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.estgames.estgames_framework.R;
 import com.estgames.estgames_framework.common.CustormSupplier;
 
+import static com.amazonaws.mobile.auth.core.internal.util.ThreadUtils.runOnUiThread;
+
 
 /**
  * Created by mp on 2018. 4. 3..
@@ -84,10 +86,13 @@ public class UserLinkDialog extends Dialog {
         confirmBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (!activity.isFinishing())
-                    dismiss();
-                confirmCallBack.run();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        dismiss();
+                        confirmCallBack.run();
+                    }
+                });
             }
         });
 

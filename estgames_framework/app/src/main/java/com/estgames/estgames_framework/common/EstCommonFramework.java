@@ -121,6 +121,18 @@ public class EstCommonFramework {
         }
     }
 
+    private void pBannerShow() {
+        data.getEvents();
+        if (data != null) {
+            bannerDialog = new BannerDialog(context, data, bannerCallBack);
+            if (bannerDialog.bitmap.size() > 0) {
+                bannerDialog.show();
+            } else {
+                defaultProcess();
+            }
+        }
+    }
+
     public void authorityShow() {
         if (data != null) {
             authorityDialog = new AuthorityDialog(context, data.getUrl().getSystem_contract(), authorityCallBack);
@@ -178,7 +190,7 @@ public class EstCommonFramework {
                     break;
                 case Event :
                     bannerCallBack = processCheck;
-                    bannerShow();
+                    pBannerShow();
                     break;
                 default:
                     defaultProcess();
