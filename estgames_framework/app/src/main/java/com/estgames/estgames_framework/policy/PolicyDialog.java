@@ -89,27 +89,33 @@ public class PolicyDialog extends Dialog {
         policybt2 = (CheckBox) findViewById(R.id.policybt2);
 
 
-        WebSettings webSettings = policyWebView1.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        policyWebView1.loadUrl(serviceUrl);
+        if (serviceUrl != null && serviceUrl != "") {
+            WebSettings webSettings = policyWebView1.getSettings();
+            webSettings.setJavaScriptEnabled(true);
 
-        policyWebView1.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                return super.shouldOverrideUrlLoading(view, request);
-            }
-        });
+            policyWebView1.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    return super.shouldOverrideUrlLoading(view, request);
+                }
+            });
 
-        WebSettings webSettings2 = policyWebView2.getSettings();
-        webSettings2.setJavaScriptEnabled(true);
-        policyWebView2.loadUrl(privateUrl);
+            policyWebView1.loadUrl(serviceUrl);
+        }
 
-        policyWebView2.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                return super.shouldOverrideUrlLoading(view, request);
-            }
-        });
+        if (privateUrl != null && privateUrl != "") {
+            WebSettings webSettings2 = policyWebView2.getSettings();
+            webSettings2.setJavaScriptEnabled(true);
+
+            policyWebView2.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    return super.shouldOverrideUrlLoading(view, request);
+                }
+            });
+
+            policyWebView2.loadUrl(privateUrl);
+        }
 
         policyClosebt.setOnClickListener(new View.OnClickListener() {
             @Override

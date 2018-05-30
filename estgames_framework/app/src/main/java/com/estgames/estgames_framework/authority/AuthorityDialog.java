@@ -58,8 +58,6 @@ public class AuthorityDialog extends Dialog {
         dialog = this;
         setContentView(R.layout.authority);
 
-        //TODO json 데이터 가져오기
-
         //타이틀
         //String tempStr = "<font color=\"#5C9AFF\">원활한 게임플레이</font>를 위해 아래 <font color=\"#5C9AFF\">권한</font>을 필요로 합니다.";
         title = (TextView) findViewById(R.id.authority_title);
@@ -70,19 +68,21 @@ public class AuthorityDialog extends Dialog {
             title.setText(Html.fromHtml(title.getText().toString()));
         }
 
-        //웹 뷰
-        webView = (WebView) findViewById(R.id.authority_webView);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+        if (url != null && url != "") {
+            //웹 뷰
+            webView = (WebView) findViewById(R.id.authority_webView);
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
 
-        webView.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                return super.shouldOverrideUrlLoading(view, request);
-            }
-        });
+            webView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    return super.shouldOverrideUrlLoading(view, request);
+                }
+            });
 
-        webView.loadUrl(url);
+            webView.loadUrl(url);
+        }
 
         //닫기 버튼
         closeBt = (Button) findViewById(R.id.authority_bt);

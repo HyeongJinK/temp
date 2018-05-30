@@ -4,15 +4,12 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.estgames.estgames_framework.R;
 import com.estgames.estgames_framework.common.CustormSupplier;
-
-import static com.amazonaws.mobile.auth.core.internal.util.ThreadUtils.runOnUiThread;
 
 
 /**
@@ -86,20 +83,15 @@ public class UserLinkDialog extends Dialog {
         confirmBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        dismiss();
-                        confirmCallBack.run();
-                    }
-                });
+                dismiss();
+                confirmCallBack.run();
             }
         });
 
         cancelBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dismiss();
+                //dismiss();
                 cancelCallBack.run();
             }
         });
