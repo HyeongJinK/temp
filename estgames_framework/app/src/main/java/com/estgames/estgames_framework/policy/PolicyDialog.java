@@ -1,11 +1,14 @@
 package com.estgames.estgames_framework.policy;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
+import android.view.Window;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -31,6 +34,8 @@ public class PolicyDialog extends Dialog {
 
     String serviceUrl;
     String privateUrl;
+    SharedPreferences pref;
+    SharedPreferences.Editor prefEdit;
 
     Runnable callback = new Runnable() {
         @Override
@@ -79,8 +84,11 @@ public class PolicyDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.policy);
+
+        this.pref = getContext().getSharedPreferences("policy", Activity.MODE_PRIVATE);
+        prefEdit = this.pref.edit();
 
         policyClosebt = (ImageButton) findViewById(R.id.policyClosebt);
         policyWebView1 = (WebView) findViewById(R.id.policyWebView1);
@@ -131,6 +139,8 @@ public class PolicyDialog extends Dialog {
                 checked1 = !checked1;
 
                 if (checked1 && checked2) {
+                    prefEdit.putString("estPolicy", "true");
+                    prefEdit.commit();
                     dismiss();
                     callback.run();
                 }
@@ -143,6 +153,8 @@ public class PolicyDialog extends Dialog {
                 checked2 = !checked2;
 
                 if (checked1 && checked2) {
+                    prefEdit.putString("estPolicy", "true");
+                    prefEdit.commit();
                     dismiss();
                     callback.run();
                 }

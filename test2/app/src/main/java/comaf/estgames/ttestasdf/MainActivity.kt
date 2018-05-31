@@ -24,6 +24,7 @@ import com.estgames.estgames_framework.core.Profile
 import com.estgames.estgames_framework.core.Result
 import com.estgames.estgames_framework.core.session.SessionManager
 import com.estgames.estgames_framework.user.UserAllDialog
+import com.estgames.estgames_framework.user.UserLinkDialog
 import com.estgames.estgames_framework.user.UserLoadDialog
 import java.lang.Exception
 
@@ -31,8 +32,9 @@ private val MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1
 
 class MainActivity : AppCompatActivity() {
     lateinit var estCommonFramework: EstCommonFramework
-    var uv:UserServiceTest? = null;
+    var uv:UserService? = null;
     var tt:UserAllDialog? = null;
+    var tt2:UserLinkDialog? = null;
 
     private val txtStatus: TextView by lazy {
         findViewById<TextView>(R.id.txt_status)
@@ -65,12 +67,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        uv = UserServiceTest(this)
+        uv = UserService(this)
 
         uv!!.failCallBack = CustomConsumer { e ->
             errorCodeTxt.setText(e.name)
         }
         tt = UserAllDialog(this)
+        tt2 = UserLinkDialog(this)
 
 
         var test0bt: Button = findViewById(R.id.test0bt)
@@ -85,7 +88,7 @@ class MainActivity : AppCompatActivity() {
 
 
         estCommonFramework = EstCommonFramework(this, CustomConsumer {
-            test0bt.setText("순서대로, 스타트 API 호출 끝")
+            test0bt.setText("순서대로, 스타트 API 호출 끝   " + estCommonFramework.language)
         })
 
         estCommonFramework.estCommonFailCallBack = CustomConsumer {
@@ -105,13 +108,14 @@ class MainActivity : AppCompatActivity() {
         })
         //권한
         test1bt.setOnClickListener(View.OnClickListener {
-            estCommonFramework.authorityCallBack = Runnable {
-                if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == -1) {
-                    ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), MY_PERMISSIONS_REQUEST_READ_CONTACTS)
-                }
-                callBack.setText("권한 종료 콜백 실행")
-            }
-            estCommonFramework.authorityShow( )
+//            estCommonFramework.authorityCallBack = Runnable {
+//                if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == -1) {
+//                    ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), MY_PERMISSIONS_REQUEST_READ_CONTACTS)
+//                }
+//                callBack.setText("권한 종료 콜백 실행")
+//            }
+//            estCommonFramework.authorityShow( )
+            tt!!.show()
         })
 
         test2bt.setOnClickListener(View.OnClickListener {

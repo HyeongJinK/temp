@@ -2,13 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="313dp"
     android:layout_height="258dp">
-
-
-    <RelativeLayout
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/linkDialog"
         android:visibility="visible"
-        android:layout_width="312.5dp"
-        android:layout_height="258dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/img_popup_box_user">
 
         <TextView
@@ -98,7 +100,7 @@
         android:id="@+id/loadDialog"
         android:visibility="invisible"
         android:layout_width="313dp"
-        android:layout_height="180dp"
+        android:layout_height="258dp"
         android:background="@drawable/img_popup_box_user">
 
         <TextView
@@ -179,7 +181,7 @@
     <RelativeLayout
         android:id="@+id/GuestDialog"
         android:visibility="invisible"
-        android:layout_width="312.5dp"
+        android:layout_width="313dp"
         android:layout_height="258dp"
         android:background="@drawable/img_popup_box_user">
 
@@ -226,7 +228,7 @@
             android:layout_marginBottom="53.5dp"
             android:background="#E7E6E6"
             />
-    
+
         <Button
             android:id="@+id/GuestLinkLoginBt"
             android:layout_width="136dp"
@@ -256,8 +258,8 @@
     <RelativeLayout
         android:id="@+id/ResultDialog"
         android:visibility="invisible"
-        android:layout_width="313.5dp"
-        android:layout_height="180.5dp">
+        android:layout_width="313dp"
+        android:layout_height="258dp">
 
         <TextView
             android:layout_width="wrap_content"

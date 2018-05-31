@@ -1,5 +1,6 @@
 package com.estgames.estgames_framework.common;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -23,7 +24,7 @@ import static com.estgames.estgames_framework.core.HttpUtils.request;
  */
 
 public class EstCommonFramework {
-    final String apiUrl = "https://m-linker.estgames.co.kr/sdk-start-api";
+    final String apiUrl = "https://m-linker.estgames.co.kr/sdk-start-api?lang="+Locale.getDefault().getLanguage();
     final String SystemContract = "system_contract";
     final String UseContract = "use_contract";
     final String Event = "event";
@@ -152,11 +153,28 @@ public class EstCommonFramework {
     }
 
     public void policyShow() {
-        if (data != null) {
-            policyDialog = new PolicyDialog(context, data.getUrl().getContract_private(), data.getUrl().getContract_service(), policyCallBack);
-            policyDialog.show();
+        SharedPreferences pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
+        if (!pref.getString("estPolicy", "false").equals("true")) {
+            if (data != null) {
+                policyDialog = new PolicyDialog(context, data.getUrl().getContract_private(), data.getUrl().getContract_service(), policyCallBack);
+                policyDialog.show();
+            } else {
+                estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+            }
+        }
+    }
+
+    private void pPolicyShow() {
+        SharedPreferences pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
+        if (!pref.getString("estPolicy", "false").equals("true")) {
+            if (data != null) {
+                policyDialog = new PolicyDialog(context, data.getUrl().getContract_private(), data.getUrl().getContract_service(), policyCallBack);
+                policyDialog.show();
+            } else {
+                estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+            }
         } else {
-            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+            defaultProcess();
         }
     }
 
@@ -199,7 +217,7 @@ public class EstCommonFramework {
                     break;
                 case UseContract :
                     policyCallBack = processCheck;
-                    policyShow();
+                    pPolicyShow();
                     break;
                 case Event :
                     bannerCallBack = processCheck;
