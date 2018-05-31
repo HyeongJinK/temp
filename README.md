@@ -7,6 +7,7 @@
 * 계정연동 팝업 버그 수정
 * 팝업크기가 이상할 텐데 수정예정입니다.
 * goToLogin(AuthUIConfiguration config) 함수가 추가 되었습니다. 해당 함수로 SNS로그인 화면 일부 수정가능합니다.
+
   ```java
     AuthUIConfiguration config = new AuthUIConfiguration
             .Builder()
@@ -18,6 +19,7 @@
     //기본적인 설정
     //추가적으로 배경색, 로그이미지 변경을 할 수 있습니다.
   ``` 
+
 * :exclamation: ERROR_CODE 이름이 Fail로 변경되었습니다.
 * UserService 부분에 에러 콜백이 failCallBack으로 통합되었습니다. 이제 에러가 날 경우 모두 저 콜백함수를 호출합니다.
   * failCallBack의 타입은 CustomConsumer\<Fail> 입니다.
@@ -66,6 +68,7 @@
 * :exclamation: UserService 클래스 선언시 매개변수가 수정되었습니다.
   * new UserSerivce(this, this.getApplicationContext()); ----> new UserSerivce(this);
 * :exclamation: 뒤로가기가 수정되었습니다. 아래코드를 goToLogin함수 호출 전에 추가해 주세요
+
     ```java
     empUserService.setBack(new CustomConsumer<Activity>() {
         @Override
@@ -74,6 +77,7 @@
         }
     });
     ```
+    
 * 배너 관련 버그 수정되었습니다.
 * EstCommonFramework에 estCommonFailCallBack이 추가 되었습니다.
   * 타입은 CustomConsumer<ERROR_CODE> 이며 ERROR_CODE에 에러 이유가 정의 되어 있습니다.
