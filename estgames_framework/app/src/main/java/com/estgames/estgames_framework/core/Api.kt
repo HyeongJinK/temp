@@ -5,7 +5,8 @@ import org.json.JSONObject
 
 sealed class Api(val url: String, val method: Method, val data: Map<String, Any>) {
     companion object {
-        private const val MP_API_HOST = "https://api-account-stage.estgames.co.kr"
+        //private const val MP_API_HOST = "https://api-account-stage.estgames.co.kr"
+        private const val MP_API_HOST = "https://api-account.estgames.co.kr"
         private const val MP_API_VERSION = "v2"
     }
 

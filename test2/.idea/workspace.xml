@@ -44,78 +44,70 @@
       <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="77" column="68" lean-forward="false" selection-start-line="77" selection-start-column="68" selection-end-line="77" selection-end-column="68" />
-              <folding>
-                <element signature="e#34#1341#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EstCommonFramework.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/f40d8f0d98798ff4b68dc238686e1d62/jars/classes.jar!/com/estgames/estgames_framework/common/EstCommonFramework.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
-              <folding>
-                <marker date="1527580872783" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1527580872783" expanded="false" signature="162:787" ph="..." />
-                <marker date="1527580872783" expanded="false" signature="1296:1353" ph="run() → { " />
-                <marker date="1527580872783" expanded="false" signature="1384:1400" ph=" }" />
-                <marker date="1527580872783" expanded="false" signature="1442:1486" ph="run() → {" />
-                <marker date="1527580872783" expanded="false" signature="1544:1555" ph="}" />
-                <marker date="1527580872783" expanded="false" signature="1594:1651" ph="run() → { " />
-                <marker date="1527580872783" expanded="false" signature="1688:1704" ph=" }" />
-                <marker date="1527580872783" expanded="false" signature="1744:1788" ph="run() → {" />
-                <marker date="1527580872783" expanded="false" signature="1844:1855" ph="}" />
-                <marker date="1527580872783" expanded="false" signature="1898:1991" ph="accept(o) → {" />
-                <marker date="1527580872783" expanded="false" signature="2044:2055" ph="}" />
-                <marker date="1527580872783" expanded="true" signature="2111:2172" ph="get() → {" />
-                <marker date="1527580872783" expanded="true" signature="2217:2228" ph="}" />
-                <marker date="1527580872783" expanded="false" signature="2277:2321" ph="run() → {" />
-                <marker date="1527580872783" expanded="false" signature="3898:3909" ph="}" />
-                <marker date="1527580872783" expanded="true" signature="3937:4546" ph="{...}" />
-                <marker date="1527580872783" expanded="false" signature="3948:3994" ph="run() → {" />
-                <marker date="1527580872783" expanded="false" signature="4515:4530" ph="}" />
-                <marker date="1527580872783" expanded="false" signature="4594:4605" ph=" { " />
-                <marker date="1527580872783" expanded="false" signature="4628:4634" ph=" }" />
-                <marker date="1527580872783" expanded="true" signature="4732:4813" ph="{...}" />
-                <marker date="1527580872783" expanded="true" signature="4844:5133" ph="{...}" />
-                <marker date="1527580872783" expanded="true" signature="5167:5394" ph="{...}" />
-                <marker date="1527580872783" expanded="true" signature="5425:5683" ph="{...}" />
-                <marker date="1527580872783" expanded="true" signature="5722:5817" ph="{...}" />
-                <marker date="1527580872783" expanded="true" signature="5856:5951" ph="{...}" />
-                <marker date="1527580872783" expanded="true" signature="6002:6304" ph="{...}" />
-                <marker date="1527580872783" expanded="true" signature="6336:6400" ph="{...}" />
-                <marker date="1527580872783" expanded="false" signature="6435:6446" ph=" { " />
-                <marker date="1527580872783" expanded="false" signature="6470:6476" ph=" }" />
-                <marker date="1527580872783" expanded="true" signature="6507:6909" ph="{...}" />
-                <marker date="1527580872783" expanded="true" signature="6942:7350" ph="{...}" />
-                <marker date="1527580872783" expanded="false" signature="7381:7392" ph=" { " />
-                <marker date="1527580872783" expanded="false" signature="7421:7427" ph=" }" />
-                <marker date="1527580872783" expanded="false" signature="7460:7471" ph=" { " />
-                <marker date="1527580872783" expanded="false" signature="7502:7508" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserService.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/3c53c2c141e65154a40d9fae9966bc4a/jars/classes.jar!/com/estgames/estgames_framework/common/UserService.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            <state relative-caret-position="353">
+              <caret line="136" column="58" lean-forward="false" selection-start-line="136" selection-start-column="58" selection-end-line="136" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SessionManager.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/5ab6908681966d843945b82b5e89e246/jars/classes.jar!/com/estgames/estgames_framework/core/session/SessionManager.class">
+      <file leaf-file-name="EstCommonFramework.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/54fed08c5191cedf703894e060e6ba48/jars/classes.jar!/com/estgames/estgames_framework/common/EstCommonFramework.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="196">
+              <caret line="58" column="59" lean-forward="false" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="59" />
+              <folding>
+                <marker date="1527661742725" expanded="false" signature="0:104" ph="/.../" />
+                <marker date="1527661742725" expanded="false" signature="162:787" ph="..." />
+                <marker date="1527661742725" expanded="false" signature="1296:1353" ph="run() → { " />
+                <marker date="1527661742725" expanded="false" signature="1384:1400" ph=" }" />
+                <marker date="1527661742725" expanded="false" signature="1442:1486" ph="run() → {" />
+                <marker date="1527661742725" expanded="false" signature="1544:1555" ph="}" />
+                <marker date="1527661742725" expanded="false" signature="1594:1651" ph="run() → { " />
+                <marker date="1527661742725" expanded="false" signature="1688:1704" ph=" }" />
+                <marker date="1527661742725" expanded="false" signature="1744:1788" ph="run() → {" />
+                <marker date="1527661742725" expanded="false" signature="1844:1855" ph="}" />
+                <marker date="1527661742725" expanded="false" signature="1898:1991" ph="accept(o) → {" />
+                <marker date="1527661742725" expanded="false" signature="2044:2055" ph="}" />
+                <marker date="1527661742725" expanded="true" signature="2152:2215" ph="{...}" />
+                <marker date="1527661742725" expanded="true" signature="2198:2209" ph="{}" />
+                <marker date="1527661742725" expanded="false" signature="2264:2308" ph="run() → {" />
+                <marker date="1527661742725" expanded="false" signature="3886:3897" ph="}" />
+                <marker date="1527661742725" expanded="true" signature="3925:4570" ph="{...}" />
+                <marker date="1527661742725" expanded="false" signature="3936:3982" ph="run() → {" />
+                <marker date="1527661742725" expanded="false" signature="4539:4554" ph="}" />
+                <marker date="1527661742725" expanded="false" signature="4618:4629" ph=" { " />
+                <marker date="1527661742725" expanded="false" signature="4652:4658" ph=" }" />
+                <marker date="1527661742725" expanded="true" signature="4756:4837" ph="{...}" />
+                <marker date="1527661742725" expanded="true" signature="4868:5157" ph="{...}" />
+                <marker date="1527661742725" expanded="true" signature="5190:5539" ph="{...}" />
+                <marker date="1527661742725" expanded="true" signature="5573:5800" ph="{...}" />
+                <marker date="1527661742725" expanded="true" signature="5831:6089" ph="{...}" />
+                <marker date="1527661742725" expanded="true" signature="6128:6223" ph="{...}" />
+                <marker date="1527661742725" expanded="true" signature="6262:6357" ph="{...}" />
+                <marker date="1527661742725" expanded="true" signature="6408:6710" ph="{...}" />
+                <marker date="1527661742725" expanded="true" signature="6742:6806" ph="{...}" />
+                <marker date="1527661742725" expanded="false" signature="6841:6852" ph=" { " />
+                <marker date="1527661742725" expanded="false" signature="6876:6882" ph=" }" />
+                <marker date="1527661742725" expanded="true" signature="6913:7315" ph="{...}" />
+                <marker date="1527661742725" expanded="true" signature="7348:7756" ph="{...}" />
+                <marker date="1527661742725" expanded="false" signature="7787:7798" ph=" { " />
+                <marker date="1527661742725" expanded="false" signature="7827:7833" ph=" }" />
+                <marker date="1527661742725" expanded="false" signature="7866:7877" ph=" { " />
+                <marker date="1527661742725" expanded="false" signature="7908:7914" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="103" column="13" lean-forward="false" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -124,7 +116,7 @@
       <file leaf-file-name="Activity.java" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/app/Activity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
+            <state relative-caret-position="88605">
               <caret line="6147" column="22" lean-forward="false" selection-start-line="6147" selection-start-column="22" selection-end-line="6147" selection-end-column="22" />
               <folding />
             </state>
@@ -141,10 +133,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="awsconfiguration.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/awsconfiguration.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="egconfiguration.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/egconfiguration.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="79" lean-forward="false" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="405">
               <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
@@ -155,7 +167,7 @@
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
-              <caret line="32" column="60" lean-forward="false" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+              <caret line="32" column="62" lean-forward="false" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -164,14 +176,9 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-914">
-              <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-              <folding>
-                <element signature="e#587#605#0" expanded="true" />
-                <element signature="e#1414#1448#0" expanded="true" />
-                <element signature="e#3331#3356#0" expanded="true" />
-                <element signature="e#3464#3503#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="69">
+              <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
           <provider editor-type-id="android-manifest">
@@ -186,7 +193,14 @@
       <find>RunOnUiThread</find>
       <find>create</find>
       <find>exception</find>
+      <find>start</find>
+      <find>match_parent</find>
+      <find>wrap_content</find>
     </findStrings>
+    <replaceStrings>
+      <replace>wrap_content</replace>
+      <replace>match_parent</replace>
+    </replaceStrings>
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -2294,6 +2308,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/raw/egconfiguration.json" />
         <option value="$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt" />
       </list>
     </option>
@@ -2318,7 +2333,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2354,22 +2371,31 @@
             </path>
             <path>
               <item name="test2" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="test2" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="raw" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="test2" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="Nexus_5X_API_27" />
+    <property name="device.picker.selection" value="43003401171830c7" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2585,10 +2611,11 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5021299" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35941043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35941043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2596,17 +2623,16 @@
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.104898825" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2618,17 +2644,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -2649,64 +2664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="73" column="21" lean-forward="false" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
-          <folding>
-            <marker date="1527054046584" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1527054046584" expanded="false" signature="162:787" ph="..." />
-            <marker date="1527054046584" expanded="true" signature="1311:1400" ph="{...}" />
-            <marker date="1527054046584" expanded="false" signature="1338:1353" ph=" { " />
-            <marker date="1527054046584" expanded="false" signature="1384:1394" ph=" }" />
-            <marker date="1527054046584" expanded="true" signature="1457:1555" ph="{...}" />
-            <marker date="1527054046584" expanded="false" signature="1484:1499" ph=" { " />
-            <marker date="1527054046584" expanded="false" signature="1539:1549" ph=" }" />
-            <marker date="1527054046584" expanded="true" signature="1609:1704" ph="{...}" />
-            <marker date="1527054046584" expanded="false" signature="1636:1651" ph=" { " />
-            <marker date="1527054046584" expanded="false" signature="1688:1698" ph=" }" />
-            <marker date="1527054046584" expanded="true" signature="1759:1855" ph="{...}" />
-            <marker date="1527054046584" expanded="false" signature="1786:1801" ph=" { " />
-            <marker date="1527054046584" expanded="false" signature="1839:1849" ph=" }" />
-            <marker date="1527054046584" expanded="true" signature="1939:2055" ph="{...}" />
-            <marker date="1527054046584" expanded="false" signature="1989:2004" ph=" { " />
-            <marker date="1527054046584" expanded="false" signature="2039:2049" ph=" }" />
-            <marker date="1527054046584" expanded="true" signature="2119:3651" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="2147:3645" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="3679:4080" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="3703:4064" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="3735:4054" ph="{...}" />
-            <marker date="1527054046584" expanded="false" signature="4128:4139" ph=" { " />
-            <marker date="1527054046584" expanded="false" signature="4162:4168" ph=" }" />
-            <marker date="1527054046584" expanded="true" signature="4266:4347" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="4378:4563" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="4597:4824" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="4855:5113" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="5152:5247" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="5286:5381" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="5432:5734" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="5766:5830" ph="{...}" />
-            <marker date="1527054046584" expanded="false" signature="5865:5876" ph=" { " />
-            <marker date="1527054046584" expanded="false" signature="5900:5906" ph=" }" />
-            <marker date="1527054046584" expanded="true" signature="5937:6339" ph="{...}" />
-            <marker date="1527054046584" expanded="true" signature="6372:6780" ph="{...}" />
-            <marker date="1527054046584" expanded="false" signature="6811:6822" ph=" { " />
-            <marker date="1527054046584" expanded="false" signature="6851:6857" ph=" }" />
-            <marker date="1527054046584" expanded="false" signature="6890:6901" ph=" { " />
-            <marker date="1527054046584" expanded="false" signature="6932:6938" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="6147" column="22" lean-forward="false" selection-start-line="6147" selection-start-column="22" selection-end-line="6147" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2714,74 +2671,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/5ab6908681966d843945b82b5e89e246/jars/classes.jar!/com/estgames/estgames_framework/core/session/SessionManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/3c53c2c141e65154a40d9fae9966bc4a/jars/classes.jar!/com/estgames/estgames_framework/common/UserService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-914">
-          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-          <folding>
-            <element signature="e#587#605#0" expanded="true" />
-            <element signature="e#1414#1448#0" expanded="true" />
-            <element signature="e#3331#3356#0" expanded="true" />
-            <element signature="e#3464#3503#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/f40d8f0d98798ff4b68dc238686e1d62/jars/classes.jar!/com/estgames/estgames_framework/common/EstCommonFramework.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="510">
           <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
           <folding>
             <marker date="1527580872783" expanded="false" signature="0:104" ph="/.../" />
             <marker date="1527580872783" expanded="false" signature="162:787" ph="..." />
-            <marker date="1527580872783" expanded="false" signature="1296:1353" ph="run() → { " />
-            <marker date="1527580872783" expanded="false" signature="1384:1400" ph=" }" />
-            <marker date="1527580872783" expanded="false" signature="1442:1486" ph="run() → {" />
-            <marker date="1527580872783" expanded="false" signature="1544:1555" ph="}" />
-            <marker date="1527580872783" expanded="false" signature="1594:1651" ph="run() → { " />
-            <marker date="1527580872783" expanded="false" signature="1688:1704" ph=" }" />
-            <marker date="1527580872783" expanded="false" signature="1744:1788" ph="run() → {" />
-            <marker date="1527580872783" expanded="false" signature="1844:1855" ph="}" />
-            <marker date="1527580872783" expanded="false" signature="1898:1991" ph="accept(o) → {" />
-            <marker date="1527580872783" expanded="false" signature="2044:2055" ph="}" />
-            <marker date="1527580872783" expanded="true" signature="2111:2172" ph="get() → {" />
-            <marker date="1527580872783" expanded="true" signature="2217:2228" ph="}" />
-            <marker date="1527580872783" expanded="false" signature="2277:2321" ph="run() → {" />
-            <marker date="1527580872783" expanded="false" signature="3898:3909" ph="}" />
+            <marker date="1527580872783" expanded="true" signature="1311:1400" ph="{...}" />
+            <marker date="1527580872783" expanded="false" signature="1338:1353" ph=" { " />
+            <marker date="1527580872783" expanded="false" signature="1384:1394" ph=" }" />
+            <marker date="1527580872783" expanded="true" signature="1457:1555" ph="{...}" />
+            <marker date="1527580872783" expanded="false" signature="1484:1499" ph=" { " />
+            <marker date="1527580872783" expanded="false" signature="1539:1549" ph=" }" />
+            <marker date="1527580872783" expanded="true" signature="1609:1704" ph="{...}" />
+            <marker date="1527580872783" expanded="false" signature="1636:1651" ph=" { " />
+            <marker date="1527580872783" expanded="false" signature="1688:1698" ph=" }" />
+            <marker date="1527580872783" expanded="true" signature="1759:1855" ph="{...}" />
+            <marker date="1527580872783" expanded="false" signature="1786:1801" ph=" { " />
+            <marker date="1527580872783" expanded="false" signature="1839:1849" ph=" }" />
+            <marker date="1527580872783" expanded="true" signature="1939:2055" ph="{...}" />
+            <marker date="1527580872783" expanded="false" signature="1989:2004" ph=" { " />
+            <marker date="1527580872783" expanded="false" signature="2039:2049" ph=" }" />
+            <marker date="1527580872783" expanded="true" signature="2141:2228" ph="{...}" />
+            <marker date="1527580872783" expanded="false" signature="2170:2185" ph=" { " />
+            <marker date="1527580872783" expanded="false" signature="2212:2222" ph=" }" />
+            <marker date="1527580872783" expanded="true" signature="2292:3909" ph="{...}" />
+            <marker date="1527580872783" expanded="true" signature="2320:3903" ph="{...}" />
             <marker date="1527580872783" expanded="true" signature="3937:4546" ph="{...}" />
-            <marker date="1527580872783" expanded="false" signature="3948:3994" ph="run() → {" />
-            <marker date="1527580872783" expanded="false" signature="4515:4530" ph="}" />
+            <marker date="1527580872783" expanded="true" signature="3961:4530" ph="{...}" />
+            <marker date="1527580872783" expanded="true" signature="3993:4520" ph="{...}" />
             <marker date="1527580872783" expanded="false" signature="4594:4605" ph=" { " />
             <marker date="1527580872783" expanded="false" signature="4628:4634" ph=" }" />
             <marker date="1527580872783" expanded="true" signature="4732:4813" ph="{...}" />
@@ -2804,21 +2726,144 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/3c53c2c141e65154a40d9fae9966bc4a/jars/classes.jar!/com/estgames/estgames_framework/common/UserService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/5ab6908681966d843945b82b5e89e246/jars/classes.jar!/com/estgames/estgames_framework/core/session/SessionManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88605">
+          <caret line="6147" column="22" lean-forward="false" selection-start-line="6147" selection-start-column="22" selection-end-line="6147" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/awsconfiguration.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="103" column="13" lean-forward="false" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/app-release.aar/54fed08c5191cedf703894e060e6ba48/jars/classes.jar!/com/estgames/estgames_framework/common/EstCommonFramework.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="58" column="59" lean-forward="false" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="59" />
+          <folding>
+            <marker date="1527661742725" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1527661742725" expanded="false" signature="162:787" ph="..." />
+            <marker date="1527661742725" expanded="false" signature="1296:1353" ph="run() → { " />
+            <marker date="1527661742725" expanded="false" signature="1384:1400" ph=" }" />
+            <marker date="1527661742725" expanded="false" signature="1442:1486" ph="run() → {" />
+            <marker date="1527661742725" expanded="false" signature="1544:1555" ph="}" />
+            <marker date="1527661742725" expanded="false" signature="1594:1651" ph="run() → { " />
+            <marker date="1527661742725" expanded="false" signature="1688:1704" ph=" }" />
+            <marker date="1527661742725" expanded="false" signature="1744:1788" ph="run() → {" />
+            <marker date="1527661742725" expanded="false" signature="1844:1855" ph="}" />
+            <marker date="1527661742725" expanded="false" signature="1898:1991" ph="accept(o) → {" />
+            <marker date="1527661742725" expanded="false" signature="2044:2055" ph="}" />
+            <marker date="1527661742725" expanded="true" signature="2152:2215" ph="{...}" />
+            <marker date="1527661742725" expanded="true" signature="2198:2209" ph="{}" />
+            <marker date="1527661742725" expanded="false" signature="2264:2308" ph="run() → {" />
+            <marker date="1527661742725" expanded="false" signature="3886:3897" ph="}" />
+            <marker date="1527661742725" expanded="true" signature="3925:4570" ph="{...}" />
+            <marker date="1527661742725" expanded="false" signature="3936:3982" ph="run() → {" />
+            <marker date="1527661742725" expanded="false" signature="4539:4554" ph="}" />
+            <marker date="1527661742725" expanded="false" signature="4618:4629" ph=" { " />
+            <marker date="1527661742725" expanded="false" signature="4652:4658" ph=" }" />
+            <marker date="1527661742725" expanded="true" signature="4756:4837" ph="{...}" />
+            <marker date="1527661742725" expanded="true" signature="4868:5157" ph="{...}" />
+            <marker date="1527661742725" expanded="true" signature="5190:5539" ph="{...}" />
+            <marker date="1527661742725" expanded="true" signature="5573:5800" ph="{...}" />
+            <marker date="1527661742725" expanded="true" signature="5831:6089" ph="{...}" />
+            <marker date="1527661742725" expanded="true" signature="6128:6223" ph="{...}" />
+            <marker date="1527661742725" expanded="true" signature="6262:6357" ph="{...}" />
+            <marker date="1527661742725" expanded="true" signature="6408:6710" ph="{...}" />
+            <marker date="1527661742725" expanded="true" signature="6742:6806" ph="{...}" />
+            <marker date="1527661742725" expanded="false" signature="6841:6852" ph=" { " />
+            <marker date="1527661742725" expanded="false" signature="6876:6882" ph=" }" />
+            <marker date="1527661742725" expanded="true" signature="6913:7315" ph="{...}" />
+            <marker date="1527661742725" expanded="true" signature="7348:7756" ph="{...}" />
+            <marker date="1527661742725" expanded="false" signature="7787:7798" ph=" { " />
+            <marker date="1527661742725" expanded="false" signature="7827:7833" ph=" }" />
+            <marker date="1527661742725" expanded="false" signature="7866:7877" ph=" { " />
+            <marker date="1527661742725" expanded="false" signature="7908:7914" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
-          <caret line="32" column="60" lean-forward="false" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+          <caret line="32" column="62" lean-forward="false" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/egconfiguration.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="79" lean-forward="false" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/comaf/estgames/ttestasdf/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="77" column="68" lean-forward="false" selection-start-line="77" selection-start-column="68" selection-end-line="77" selection-end-column="68" />
-          <folding>
-            <element signature="e#34#1341#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="353">
+          <caret line="136" column="58" lean-forward="false" selection-start-line="136" selection-start-column="58" selection-end-line="136" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>

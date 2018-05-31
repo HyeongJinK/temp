@@ -92,17 +92,12 @@ public class UserLoadDialog extends Dialog {
         confirmBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (confirmCheck.apply(editText.getText().toString())) {
-                            dismiss();
-                            confirmCallBack.run();
-                        } else {
-                            failConfirmCheck.run();
-                        }
-                    }
-                });
+                if (confirmCheck.apply(editText.getText().toString())) {
+                    dismiss();
+                    confirmCallBack.run();
+                } else {
+                    failConfirmCheck.run();
+                }
             }
         });
     }

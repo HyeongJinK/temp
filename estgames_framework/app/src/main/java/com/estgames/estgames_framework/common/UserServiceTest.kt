@@ -13,14 +13,10 @@ import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
 import com.estgames.estgames_framework.core.Result
 import com.estgames.estgames_framework.core.session.SessionManager
-import com.estgames.estgames_framework.policy.PolicyDialog
-import com.estgames.estgames_framework.user.UserGuestLinkDialog
-import com.estgames.estgames_framework.user.UserLinkDialog
-import com.estgames.estgames_framework.user.UserLoadDialog
-import com.estgames.estgames_framework.user.UserResultDialog
+import com.estgames.estgames_framework.user.*
 import java.lang.Exception
 
-public class UserServiceTest constructor(callingActivity: Activity) {
+public class UserServiceTest  constructor(callingActivity: Activity) {
     var callingActivity = callingActivity
 
     /**
@@ -32,20 +28,15 @@ public class UserServiceTest constructor(callingActivity: Activity) {
     public var setUserGuestText: CustormSupplier<String>? = null;
 
     var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
-    //    var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity
-//    , Runnable { //println(callingActivity.isFinishing)
-//        Handler(Looper.getMainLooper()).post(Runnable {})
-//        userLoadDialog.show() }
-//    , Runnable { userGuestLinkDialog.show() }
-//    , Runnable { signout() })
     var userLoadDialog : UserLoadDialog = UserLoadDialog(callingActivity)
     var userGuestLinkDialog : UserGuestLinkDialog = UserGuestLinkDialog(callingActivity)
     var userResultDialog : UserResultDialog = UserResultDialog(callingActivity)
-    var policyDialog : PolicyDialog = PolicyDialog(callingActivity);
 
     /**
      * 콜백함수
      * */
+
+
     public var startSuccessCallBack: Runnable = Runnable {  }
     public var startFailCallBack: CustomConsumer<String> = CustomConsumer {  }
     public var goToLoginSuccessCallBack: Runnable = Runnable {  }
@@ -64,9 +55,8 @@ public class UserServiceTest constructor(callingActivity: Activity) {
     }
 
     fun setting() {
-        var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
+        userLinkDialog = UserLinkDialog(callingActivity)
         userLinkDialog.confirmCallBack =  Runnable {
-
             userLoadDialog.show()
         }
         userLinkDialog.cancelCallBack = Runnable {
@@ -74,8 +64,6 @@ public class UserServiceTest constructor(callingActivity: Activity) {
         }
         userLinkDialog.closeCallBack = Runnable {
             Handler(Looper.getMainLooper()).post(Runnable {
-                System.out.println("----- closeCallBack -----")
-                userLinkDialog.dismiss()
                 signout()
             })
         }
@@ -121,8 +109,7 @@ public class UserServiceTest constructor(callingActivity: Activity) {
     val complete: (String) -> Unit = {t ->
         identityManager.login(callingActivity, object: DefaultSignInResultHandler() {
             override fun onSuccess(activity: Activity?, provider: IdentityProvider?) {
-                callingActivity.runOnUiThread(Runnable {
-                identityManager.getUserID(object: IdentityHandler {
+                identityManager.getUserID(object: IdentityHandler{
                     override fun onIdentityId(identityId: String?) {
                         sessionManager
                                 .sync(hashMapOf("provider" to provider!!.displayName, "email" to "test@facebook.com"), identityId)
@@ -136,9 +123,10 @@ public class UserServiceTest constructor(callingActivity: Activity) {
                                     when (err) {
                                         is Result.SyncFailure -> {
                                             // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
-                                            setting()
-                                            policyDialog.show()
-                                            //userLinkDialog.show()
+                                            Handler(Looper.getMainLooper()).post(Runnable {
+                                                setting()
+                                                userLinkDialog.show()
+                                            })
                                         }
                                         is Result.Failure -> {
                                             if (identityManager.isUserSignedIn) {
@@ -153,12 +141,10 @@ public class UserServiceTest constructor(callingActivity: Activity) {
                         goToLoginFailCallBack.accept(exception.toString())
                     }
                 })
-                });
             }
 
             override fun onCancel(activity: Activity?): Boolean {
                 back.accept(activity!!)
-                //activity!!.startActivity(Intent(activity!!, cls::class.java))
                 return false
             }
         })
@@ -166,7 +152,7 @@ public class UserServiceTest constructor(callingActivity: Activity) {
     }
 
     val fail: (Throwable) -> Unit = {t ->
-        startFailCallBack.accept(t.toString())
+        startFailCallBack.accept(t.message)
     }
 
     public fun createUser() {

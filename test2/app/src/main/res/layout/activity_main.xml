@@ -15,77 +15,59 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!--<com.example.mp.bannertest.FrameTest-->
-    <!--android:id="@+id/jafkdsj"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"></com.example.mp.bannertest.FrameTest>-->
-    <!--<com.example.mp.banner.myTest
-        android:id="@+id/bannerEst"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />-->
+
     <Button
         android:id="@+id/test0bt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="순서대로"/>
 
     <Button
         android:id="@+id/test1bt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="권한"/>
+        android:layout_height="40dp"
+        android:text="권한"
+
+        />
     <Button
         android:id="@+id/test2bt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="이용약관"/>
     <Button
         android:id="@+id/test3bt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="배너"/>
 
     <Button
         android:id="@+id/startGame"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="게임시작"/>
 
     <Button
         android:id="@+id/snsBt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="계정연동"/>
 
     <Button
         android:id="@+id/clearBt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="로그아웃"/>
 
     <Button
         android:id="@+id/statusBt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="상태출력"/>
-
-    <!--<Button-->
-        <!--android:id="@+id/testBt"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="충돌확인"/>-->
-
-
-
 
     <TextView
         android:id="@+id/txt-status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="Status"
         android:textSize="18sp"
         />
@@ -94,9 +76,6 @@
         android:id="@+id/txt_user_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
         android:text="User ID"
         android:textSize="14sp"
         />
@@ -105,9 +84,6 @@
         android:id="@+id/txt_principal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
         android:text="Principal"
         />
 
@@ -115,9 +91,6 @@
         android:id="@+id/txt_eg_token"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
         android:text="EG Token"
         />
 
@@ -125,9 +98,22 @@
         android:id="@+id/txt_refresh_token"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="104dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
         android:text="Refresh Token"
+        />
+
+    <TextView
+        android:id="@+id/txt_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="error"
+        />
+
+    <TextView
+        android:id="@+id/callBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="callBack"
         />
 </LinearLayout>

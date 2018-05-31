@@ -5,16 +5,15 @@ import android.content.SharedPreferences;
 
 import com.estgames.estgames_framework.authority.AuthorityDialog;
 import com.estgames.estgames_framework.banner.BannerDialog;
+import com.estgames.estgames_framework.core.Fail;
 import com.estgames.estgames_framework.core.HttpResponse;
 import com.estgames.estgames_framework.core.Method;
-import com.estgames.estgames_framework.core.Profile;
 import com.estgames.estgames_framework.core.Token;
 import com.estgames.estgames_framework.core.session.SessionManager;
 import com.estgames.estgames_framework.policy.PolicyDialog;
 import com.estgames.estgames_framework.webview.WebViewDialog;
 
-import java.io.IOException;
-import java.net.UnknownHostException;
+import java.util.Locale;
 
 import static com.estgames.estgames_framework.core.HttpUtils.request;
 
@@ -76,30 +75,38 @@ public class EstCommonFramework {
         }
     };
 
-    public CustomConsumer<ERROR_CODE> estCommonFailCallBack = new CustomConsumer<ERROR_CODE>() {
+    public CustomConsumer<Fail> estCommonFailCallBack = new CustomConsumer<Fail>() {
         @Override
-        public void accept(ERROR_CODE code) {
+        public void accept(Fail code) {
 
         }
     };
 
     public void create() {
         EstCommonFramework temp = this;
-            new Thread() {
+        try {
+            Thread startApi = new Thread() {
                 @Override
                 public void run() {
                     try {
-                    HttpResponse result = request(apiUrl, Method.GET);
+                        HttpResponse result = request(apiUrl, Method.GET);
 
-                    data = new ResultDataJson(new String(result.getContent()));
+                        data = new ResultDataJson(new String(result.getContent()));
 
-                    initCallBack.accept(temp);
+                        initCallBack.accept(temp);
                     } catch (Exception e) {
-                        estCommonFailCallBack.accept(ERROR_CODE.PRINCIPAL_APICALL);
                         e.printStackTrace();
+                        estCommonFailCallBack.accept(Fail.API_REQUEST_FAIL);
                     }
                 }
-            }.start();
+            };
+
+            startApi.start();
+            //startApi.
+        } catch (Exception e) {
+            e.printStackTrace();
+            estCommonFailCallBack.accept(Fail.API_REQUEST_FAIL);
+        }
     }
 
     public EstCommonFramework(Context context) {
@@ -112,17 +119,17 @@ public class EstCommonFramework {
     }
 
     public void bannerShow() {
-        data.getEvents();
         if (data != null) {
             bannerDialog = new BannerDialog(context, data, bannerCallBack);
             if (bannerDialog.bitmap.size() > 0) {
                 bannerDialog.show();
             }
+        } else {
+            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
         }
     }
 
     private void pBannerShow() {
-        data.getEvents();
         if (data != null) {
             bannerDialog = new BannerDialog(context, data, bannerCallBack);
             if (bannerDialog.bitmap.size() > 0) {
@@ -130,6 +137,8 @@ public class EstCommonFramework {
             } else {
                 defaultProcess();
             }
+        } else {
+            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
         }
     }
 
@@ -137,6 +146,8 @@ public class EstCommonFramework {
         if (data != null) {
             authorityDialog = new AuthorityDialog(context, data.getUrl().getSystem_contract(), authorityCallBack);
             authorityDialog.show();
+        } else {
+            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
         }
     }
 
@@ -144,6 +155,8 @@ public class EstCommonFramework {
         if (data != null) {
             policyDialog = new PolicyDialog(context, data.getUrl().getContract_private(), data.getUrl().getContract_service(), policyCallBack);
             policyDialog.show();
+        } else {
+            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
         }
     }
 
@@ -200,8 +213,12 @@ public class EstCommonFramework {
     };
 
     public void processShow() {
-        index = 0;
-        processCheck.run();
+        if (data != null) {
+            index = 0;
+            processCheck.run();
+        } else {
+            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+        }
     }
 
     private void defaultProcess() {
@@ -216,7 +233,11 @@ public class EstCommonFramework {
             if (data != null) {
                 notice = new WebViewDialog(context, data.getUrl().getNotice() + "?eg_token=" + token.getEgToken() + "&lang=" + data.getLanguage());
                 notice.show();
+            } else {
+                estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
             }
+        } else {
+            estCommonFailCallBack.accept(Fail.TOKEN_EMPTY);
         }
     }
 
@@ -227,7 +248,11 @@ public class EstCommonFramework {
             if (data != null) {
                 cscenter = new WebViewDialog(context, data.getUrl().getCscenter() + "?eg_token=" + token.getEgToken() + "&lang=" + data.getLanguage());
                 cscenter.show();
+            } else {
+                estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
             }
+        } else {
+            estCommonFailCallBack.accept(Fail.TOKEN_EMPTY);
         }
     }
 
@@ -236,6 +261,6 @@ public class EstCommonFramework {
     }
 
     public String getLanguage() {
-        return data.getLanguage();
+        return Locale.getDefault().getLanguage();
     }
 }

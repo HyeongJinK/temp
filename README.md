@@ -2,7 +2,63 @@
 
 ## 업데이트 사항
 
-:new: 1.0.8 업데이트 사항(작업중)
+:new: 1.0.9 업데이트 사항
+
+* 계정연동 팝업 버그 수정
+* 팝업크기가 이상할 텐데 수정예정입니다.
+* goToLogin(AuthUIConfiguration config) 함수가 추가 되었습니다. 해당 함수로 SNS로그인 화면 일부 수정가능합니다.
+  ```java
+    AuthUIConfiguration config = new AuthUIConfiguration
+            .Builder()
+            .signInButton(FacebookButton.class)
+            .signInButton(GoogleButton.class)
+            .userPools(false)
+            .build();
+    empUserService.goToLogin(config);
+    //기본적인 설정
+    //추가적으로 배경색, 로그이미지 변경을 할 수 있습니다.
+  ``` 
+* :exclamation: ERROR_CODE 이름이 Fail로 변경되었습니다.
+* UserService 부분에 에러 콜백이 failCallBack으로 통합되었습니다. 이제 에러가 날 경우 모두 저 콜백함수를 호출합니다.
+  * failCallBack의 타입은 CustomConsumer\<Fail> 입니다.
+* EstCommonFramework의 에러 콜백은 estCommonFailCallBack 을 호출합니다.
+  * 타입은 CustomConsumer\<Fail> 입니다.
+
+```java
+/*
+    Fail enum 정의입니다.
+*/
+
+    START_API_NOT_CALL,     //기존 네트워크 에러 이름이 변경 되었습니다.
+
+    TOKEN_EMPTY,
+    TOKEN_CREATION,
+    TOKEN_INVALID("session.invalid"),
+    TOKEN_EXPIRED("session.expired"),
+
+    CLIENT_UNKNOWN_PROVIDER("api.provider"),
+    CLIENT_NOT_REGISTERED("app.none"),
+
+    API_REQUEST_FAIL,
+    API_ACCESS_DENIED("auth.forbidden"),
+    API_OMITTED_PARAMETER("api.param"),
+    API_UNSUPPORTED_METHOD("api.method"),
+    API_BAD_REQUEST("api.request"),
+    API_INCOMPATIBLE_VERSION("api.version"),
+    API_CHARACTER_INFO,
+
+    ACCOUNT_NOT_EXIST("account.none"),
+    ACCOUNT_ALREADY_EXIST("account.duplicate"),
+    ACCOUNT_INVALID_PROPERTY("account.value"),
+    ACCOUNT_SYNC_FAIL("account.sync"),
+
+    SIGN_AWS_LOGIN_VIEW,
+    SIGN_GOOGLE_SDK,
+    SIGN_FACEBOOK_SDK,
+    SIGN_AWS_SESSION;
+```
+
+:new: 1.0.8 업데이트 사항
 
 * 계정연동 팝업 dialog dismiss 함수는 원인을 찾고 있습니다.
 * :exclamation: 유저 아이디 추가 Profile에 추가 되었습니다.

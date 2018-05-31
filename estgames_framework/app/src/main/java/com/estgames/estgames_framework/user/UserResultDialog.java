@@ -47,26 +47,16 @@ public class UserResultDialog extends Dialog {
         closeBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        dismiss();
-                        closeCallBack.run();
-                    }
-                });
+                dismiss();
+                closeCallBack.run();
             }
         });
 
         confirmBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        dismiss();
-                        confirmCallBack.run();
-                    }
-                });
+                dismiss();
+                confirmCallBack.run();
             }
         });
     }

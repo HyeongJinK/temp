@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="313dp"
+    android:layout_height="258dp">
+
+
+    <RelativeLayout
+        android:id="@+id/linkDialog"
+        android:visibility="visible"
+        android:layout_width="312.5dp"
+        android:layout_height="258dp"
+        android:background="@drawable/img_popup_box_user">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.5dp"
+            android:layout_marginTop="14dp"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:text="@string/estcommon_userLink_title"/>
+
+        <Button
+            android:id="@+id/LinkCloseBt"
+            android:layout_width="13.5dp"
+            android:layout_height="13.5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="11.5dp"
+            android:layout_marginRight="15.5dp"
+            android:background="@drawable/btn_close_user"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="37dp"
+            android:background="#898989"
+            />
+
+        <TextView
+            android:id="@+id/LinkSnsDataText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.5dp"
+            android:layout_marginTop="55.5dp"
+            android:lineSpacingExtra="18dp"
+            android:textSize="10sp"
+            android:textColor="#000000"
+            android:text="@string/estcommon_userLink_middelLabel"/>
+
+        <TextView
+            android:id="@+id/LinkGuestDataText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LinkSnsDataText"
+            android:layout_marginLeft="21.5dp"
+            android:layout_marginTop="17dp"
+            android:textSize="10sp"
+            android:textColor="#000000"
+            android:text="@string/estcommon_userLink_bottomLabel"/>
+
+        <View
+            android:id="@+id/LinkDivisionLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="53.5dp"
+            android:background="#E7E6E6"
+            />
+
+        <Button
+            android:id="@+id/LinkConfirm"
+            android:layout_width="136dp"
+            android:layout_height="35dp"
+            android:background="@drawable/btn_confirm_user"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="9.5dp"
+            android:layout_marginRight="8dp"
+            android:textSize="13sp"
+            android:textColor="#ffffff"
+            android:text="@string/estcommon_userLink_confirm"/>
+
+        <Button
+            android:id="@+id/LinkCancel"
+            android:layout_width="136dp"
+            android:layout_height="35dp"
+            android:background="@drawable/btn_cancel_user"
+            android:layout_toRightOf="@id/LinkConfirm"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="9.5dp"
+            android:textSize="13sp"
+            android:textColor="#ffffff"
+            android:text="@string/estcommon_userLink_cancel"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/loadDialog"
+        android:visibility="invisible"
+        android:layout_width="313dp"
+        android:layout_height="180dp"
+        android:background="@drawable/img_popup_box_user">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.5dp"
+            android:layout_marginTop="14dp"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:text="@string/estcommon_userLoad_title"/>
+
+        <Button
+            android:id="@+id/LoadCloseBt"
+            android:layout_width="13.5dp"
+            android:layout_height="13.5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="11.5dp"
+            android:layout_marginRight="15.5dp"
+            android:background="@drawable/btn_close_user"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="37dp"
+            android:background="#898989"
+            />
+
+        <TextView
+            android:id="@+id/LoadText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21.5dp"
+            android:layout_marginTop="56.5dp"
+            android:lineSpacingExtra="7.5dp"
+            android:textSize="10sp"
+            android:textColor="#000000"
+            android:text="@string/estcommon_userLoad_content"/>
+
+        <TextView
+            android:id="@+id/LoadConfirmText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LoadText"
+            android:layout_marginLeft="21.5dp"
+            android:layout_marginTop="7.5dp"
+            android:textSize="10sp"
+            android:textColor="#307FFF"
+            android:text="@string/estcommon_userLoad_confirmText"/>
+
+
+        <EditText
+            android:id="@+id/LoadEditText"
+            android:layout_width="199dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/LoadConfirmText"
+            android:background="@drawable/img_inputbox_user"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="17.5dp"
+            android:layout_marginRight="5dp"
+            android:textSize="12sp"
+            android:textColor="#7E7D7D"
+            android:text="@string/estcommon_userLoad_input"/>
+
+        <Button
+            android:id="@+id/LoadConfirmBt"
+            android:layout_width="66.5dp"
+            android:layout_height="32dp"
+            android:background="@drawable/btn_confirm_user"
+            android:layout_below="@id/LoadConfirmText"
+            android:layout_toEndOf="@id/LoadEditText"
+            android:layout_marginTop="17.5dp"
+            android:textSize="13sp"
+            android:textColor="#ffffff"
+            android:text="@string/estcommon_userLoad_confirmButton"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/GuestDialog"
+        android:visibility="invisible"
+        android:layout_width="312.5dp"
+        android:layout_height="258dp"
+        android:background="@drawable/img_popup_box_user">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.5dp"
+            android:layout_marginTop="14dp"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:text="@string/estcommon_userGuest_title"/>
+
+        <Button
+            android:id="@+id/GuestLinkCloseBt"
+            android:layout_width="13.5dp"
+            android:layout_height="13.5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="11.5dp"
+            android:layout_marginRight="15.5dp"
+            android:background="@drawable/btn_close_user"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="37dp"
+            android:background="#898989"
+            />
+
+        <TextView
+            android:id="@+id/GuestLinkMiddleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.5dp"
+            android:layout_marginTop="55.5dp"
+            android:lineSpacingExtra="18dp"
+            android:textSize="10sp"
+            android:textColor="#000000"
+            android:text="@string/estcommon_userGuest_middle"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="53.5dp"
+            android:background="#E7E6E6"
+            />
+    
+        <Button
+            android:id="@+id/GuestLinkLoginBt"
+            android:layout_width="136dp"
+            android:layout_height="35dp"
+            android:background="@drawable/btn_confirm_user"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="9.5dp"
+            android:layout_marginRight="8dp"
+            android:textSize="13sp"
+            android:textColor="#ffffff"
+            android:text="@string/estcommon_userGuest_loginBt"/>
+
+        <Button
+            android:id="@+id/GuestLinkBeforeBt"
+            android:layout_width="136dp"
+            android:layout_height="35dp"
+            android:background="@drawable/btn_cancel_user"
+            android:layout_toRightOf="@id/GuestLinkLoginBt"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="9.5dp"
+            android:textSize="13sp"
+            android:textColor="#ffffff"
+            android:text="@string/estcommon_userGuest_beforeBt"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ResultDialog"
+        android:visibility="invisible"
+        android:layout_width="313.5dp"
+        android:layout_height="180.5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.5dp"
+            android:layout_marginTop="14dp"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:text="@string/estcommon_userResult_title"/>
+
+        <Button
+            android:id="@+id/ResultClose"
+            android:layout_width="13.5dp"
+            android:layout_height="13.5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="11.5dp"
+            android:layout_marginRight="15.5dp"
+            android:background="@drawable/btn_close_user"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="37dp"
+            android:background="#898989"
+            />
+
+        <TextView
+            android:id="@+id/ResultSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21.5dp"
+            android:layout_marginTop="56.5dp"
+            android:lineSpacingExtra="7.5dp"
+            android:textSize="12sp"
+            android:textColor="#307AF5"
+            android:text="@string/estcommon_userResult_subTitle"/>
+
+        <TextView
+            android:id="@+id/ResultText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ResultSubTitle"
+            android:layout_marginLeft="21.5dp"
+            android:layout_marginTop="7.5dp"
+            android:textSize="10sp"
+            android:textColor="#000000"
+            android:text="@string/estcommon_userResult_titleMove"/>
+
+
+        <Button
+            android:id="@+id/ResultSubmit"
+            android:layout_width="117dp"
+            android:layout_height="35dp"
+            android:background="@drawable/btn_confirm_user"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:textSize="13sp"
+            android:textColor="#ffffff"
+            android:text="@string/estcommon_userResult_confirm"/>
+    </RelativeLayout>
+</RelativeLayout>

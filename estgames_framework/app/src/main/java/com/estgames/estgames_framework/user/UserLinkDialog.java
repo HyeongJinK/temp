@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -84,14 +86,14 @@ public class UserLinkDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 dismiss();
-                confirmCallBack.run();
+                new Handler(Looper.getMainLooper()).post(confirmCallBack);
             }
         });
 
         cancelBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //dismiss();
+                dismiss();
                 cancelCallBack.run();
             }
         });
@@ -108,9 +110,9 @@ public class UserLinkDialog extends Dialog {
     @Override
     protected void onStart() {
         super.onStart();
-//        this.confirmCallBack = confirmCallBack;
-//        this.cancelCallBack = cancelCallBack;
-//        this.closeCallBack = closeCallBack;
+        this.confirmCallBack = confirmCallBack;
+        this.cancelCallBack = cancelCallBack;
+        this.closeCallBack = closeCallBack;
 
         userLinkSnsDataText = (TextView) findViewById(R.id.userLinkSnsDataText);
         userLinkGuestDataText = (TextView) findViewById(R.id.userLinkGuestDataText);

@@ -1,15 +1,13 @@
 package com.estgames.estgames_framework.common
 
 import android.app.Activity
-import android.content.Context
-import android.content.Intent
-import android.os.Handler
-import android.os.Looper
 import com.amazonaws.mobile.auth.core.*
 import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
+import com.estgames.estgames_framework.core.EGException
+import com.estgames.estgames_framework.core.Fail
 import com.estgames.estgames_framework.core.Result
 import com.estgames.estgames_framework.core.session.SessionManager
 import com.estgames.estgames_framework.user.*
@@ -29,25 +27,16 @@ public class UserService constructor(callingActivity: Activity) {
     public var setUserLoadText: CustormSupplier<String>? = null;
     public var setUserGuestText: CustormSupplier<String>? = null;
 
-    var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
-//    var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity
-//    , Runnable { //println(callingActivity.isFinishing)
-//        Handler(Looper.getMainLooper()).post(Runnable {})
-//        userLoadDialog.show() }
-//    , Runnable { userGuestLinkDialog.show() }
-//    , Runnable { signout() })
-    var userLoadDialog : UserLoadDialog = UserLoadDialog(callingActivity)
-    var userGuestLinkDialog : UserGuestLinkDialog = UserGuestLinkDialog(callingActivity)
-    var userResultDialog : UserResultDialog = UserResultDialog(callingActivity)
+    var userAllDialog: UserAllDialog? = null
 
     /**
      * 콜백함수
      * */
+
+    public var failCallBack: CustomConsumer<Fail> = CustomConsumer {  }
     public var startSuccessCallBack: Runnable = Runnable {  }
-    public var startFailCallBack: CustomConsumer<String> = CustomConsumer {  }
     public var goToLoginSuccessCallBack: Runnable = Runnable {  }
     public var goToLoginFailCallBack: CustomConsumer<String> = CustomConsumer {  }
-    public var goToLoginConfirmCallBack: Runnable = Runnable {  }
     public var clearSuccessCallBack: Runnable = Runnable {  }
     public var back:CustomConsumer<Activity> = CustomConsumer {  }
 
@@ -61,108 +50,92 @@ public class UserService constructor(callingActivity: Activity) {
     }
 
     fun setting() {
-        var userLinkDialog : UserLinkDialog = UserLinkDialog(callingActivity)
-        userLinkDialog.confirmCallBack =  Runnable {
-
-            userLoadDialog.show()
-        }
-        userLinkDialog.cancelCallBack = Runnable {
-            userGuestLinkDialog.show()
-        }
-        userLinkDialog.closeCallBack = Runnable {
-            Handler(Looper.getMainLooper()).post(Runnable {
-                System.out.println("----- closeCallBack -----")
-                userLinkDialog.dismiss()
-                signout()
-            })
+        userAllDialog!!.closeCallBack = Runnable {
+            signout()
         }
 
         if (setUserLinkMiddleText != null)
-            userLinkDialog.userLinkSnsDataTextSupplier = setUserLinkMiddleText
+            userAllDialog!!.linkSnsDataTextSupplier = setUserLinkMiddleText
         if (setUserLinkBottomText != null)
-            userLinkDialog.userLinkGuestDataTextSupplier = setUserLinkBottomText
+            userAllDialog!!.linkGuestDataTextSupplier = setUserLinkBottomText
 
-        userLoadDialog.confirmCallBack = Runnable {
+        userAllDialog!!.loadConfirmCallBack = Runnable {
             onSwitch()
         }
-        userLoadDialog.closeCallBack = Runnable {
-            userLoadDialog.dismiss()
-            signout()
-        }
-        userLoadDialog.failConfirmCheck = goToLoginConfirmCallBack
+
+//TODO        userLoadDialog.failConfirmCheck = goToLoginConfirmCallBack
 
         if (setUserLoadText != null)
-            userLoadDialog.userLoadTextSupplier = setUserLoadText
+            userAllDialog!!.loadTextSupplier = setUserLoadText
 
-        userGuestLinkDialog.loginCallBack = Runnable {
+        userAllDialog!!.guestConfirmCallBack = Runnable {
             onSync()
-        }
-        userGuestLinkDialog.beforeCallBack = Runnable {
-            userLinkDialog.show()
-        }
-        userGuestLinkDialog.closeCallBack = Runnable {
-            signout()
         }
 
         if (setUserGuestText != null)
-            userGuestLinkDialog.userGuestTextSupplier = setUserGuestText
+            userAllDialog!!.guestTextSupplier = setUserGuestText
 
-        userResultDialog.confirmCallBack = Runnable {
-            goToLoginSuccessCallBack.run()
-        }
-        userResultDialog.closeCallBack = Runnable {
+        userAllDialog!!.resultConfirmCallBack = Runnable {
             goToLoginSuccessCallBack.run()
         }
     }
 
-    val complete: (String) -> Unit = {t ->
+    val complete: (String) -> Unit = {
         identityManager.login(callingActivity, object: DefaultSignInResultHandler() {
             override fun onSuccess(activity: Activity?, provider: IdentityProvider?) {
-                identityManager.getUserID(object: IdentityHandler{
-                    override fun onIdentityId(identityId: String?) {
-                        sessionManager
-                                .sync(hashMapOf("provider" to provider!!.displayName, "email" to "test@facebook.com"), identityId)
-                                .right {
-                                    //성공했을 경우
-                                    goToLoginSuccessCallBack.run()
-                                }
-                                .left {
-                                    //충돌이 발생했을 경우
-                                    err ->
-                                    when (err) {
-                                        is Result.SyncFailure -> {
-                                            // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
-                                            setting()
-                                            callingActivity.runOnUiThread(Runnable {
-                                                userLinkDialog.show()
-                                            })
-                                        }
-                                        is Result.Failure -> {
-                                            if (identityManager.isUserSignedIn) {
-                                                identityManager.signOut()
+                callingActivity.runOnUiThread(Runnable {
+
+                    identityManager.getUserID(object: IdentityHandler {
+                        override fun onIdentityId(identityId: String?) {
+
+                            sessionManager
+                                    .sync(hashMapOf("provider" to provider!!.displayName, "email" to "test@facebook.com"), identityId)
+                                    .right {
+                                        //성공했을 경우
+                                        goToLoginSuccessCallBack.run()
+                                    }
+                                    .left {
+                                        //충돌이 발생했을 경우
+                                        err ->
+                                        when (err) {
+                                            is Result.SyncFailure -> {
+                                                // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
+
+                                                callingActivity.runOnUiThread(Runnable {
+                                                    userAllDialog = UserAllDialog(callingActivity)
+                                                    setting()
+
+                                                    userAllDialog!!.show()
+                                                })
                                             }
-                                            goToLoginFailCallBack.accept(err.message)
+                                            is Result.Failure -> {
+                                                if (identityManager.isUserSignedIn) {
+                                                    identityManager.signOut()
+                                                }
+                                                failCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
+                                            }
                                         }
                                     }
-                                }
-                    }
-                    override fun handleError(exception: Exception?) {
-                        goToLoginFailCallBack.accept(exception.toString())
-                    }
+                        }
+                        override fun handleError(exception: Exception?) {
+                            failCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
+                        }
+                    })
+
                 })
             }
 
             override fun onCancel(activity: Activity?): Boolean {
                 back.accept(activity!!)
-                //activity!!.startActivity(Intent(activity!!, cls::class.java))
                 return false
             }
         })
         startSuccessCallBack.run()
     }
 
-    val fail: (Throwable) -> Unit = {t ->
-        startFailCallBack.accept(t.toString())
+    val fail: (Throwable) -> Unit = { t ->
+        val code: EGException = t as EGException
+        failCallBack.accept(code.code)
     }
 
     public fun createUser() {
@@ -174,7 +147,7 @@ public class UserService constructor(callingActivity: Activity) {
                     } else {
                         result.identityManager.getUserID(object : IdentityHandler {
                             override fun handleError(e: Exception?) {
-                                startFailCallBack.accept(e.toString())
+                                failCallBack.accept(Fail.TOKEN_CREATION)
                             }
 
                             override fun onIdentityId(identityId: String?) {
@@ -222,10 +195,12 @@ public class UserService constructor(callingActivity: Activity) {
      */
     fun onSwitch() {
         sessionManager.create(identityManager.cachedUserID).right {
-            userResultDialog.show()
+            //userResultDialog.show()
         }.left {
-            goToLoginFailCallBack.accept("sign in fail : $it")
+            val code: EGException = it as EGException
             identityManager.signOut()
+            failCallBack.accept(code.code)
+            userAllDialog!!.dismiss();
         }
     }
 
@@ -238,10 +213,12 @@ public class UserService constructor(callingActivity: Activity) {
         sessionManager.sync(
                 mapOf("provider" to provider), identityManager.cachedUserID, true
         ).right {
-            userResultDialog.show()
+            //userResultDialog.show()
         }.left {
-            goToLoginFailCallBack.accept("sync fail : $it")
+            val code: EGException = it as EGException
             identityManager.signOut()
+            failCallBack.accept(code.code)
+            userAllDialog!!.dismiss()
         }
     }
 }
