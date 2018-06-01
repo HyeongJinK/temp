@@ -112,11 +112,13 @@ public class EstCommonFramework {
 
     public EstCommonFramework(Context context) {
         this.context = context;
+        pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
     }
 
     public EstCommonFramework(Context context, CustomConsumer<EstCommonFramework> initCallBack) {
         this.context = context;
         this.initCallBack = initCallBack;
+        pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
     }
 
     public void bannerShow() {
@@ -152,39 +154,52 @@ public class EstCommonFramework {
         }
     }
 
+    private boolean policyCheck() {
+        if (policyCheck())
+            return true;
+        else
+            return false;
+    }
+
+    public void defaultPolicyShow() {
+
+    }
+
     public void policyShow() {
-        SharedPreferences pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
-        if (!pref.getString("estPolicy", "false").equals("true")) {
-            if (data != null) {
+        if (data != null) {
+            if (!policyCheck()) {
                 policyDialog = new PolicyDialog(context, data.getUrl().getContract_private(), data.getUrl().getContract_service(), policyCallBack);
                 policyDialog.show();
-            } else {
-                estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
             }
+        } else {
+            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
         }
     }
 
     private void pPolicyShow() {
-        SharedPreferences pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
-        if (!pref.getString("estPolicy", "false").equals("true")) {
-            if (data != null) {
+        if (data != null) {
+            if (!policyCheck()) {
                 policyDialog = new PolicyDialog(context, data.getUrl().getContract_private(), data.getUrl().getContract_service(), policyCallBack);
                 policyDialog.show();
             } else {
-                estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+                defaultProcess();
             }
         } else {
-            defaultProcess();
+            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
         }
     }
 
     public boolean contractService() {
+        if (policyCheck())
+            return true;
         if (policyDialog == null)
             return false;
         return policyDialog.contractService();
     }
 
     public boolean contractPrivate() {
+        if (policyCheck())
+            return true;
         if (policyDialog == null)
             return false;
         return policyDialog.contractPrivate();

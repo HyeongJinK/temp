@@ -185,6 +185,8 @@ public class UserAllDialog extends Dialog{
         loadClose.setOnClickListener(closeListener);
         guestcClose.setOnClickListener(closeListener);
 
+
+        //loadEditText.setOnFocusChangeListener();
     }
 
     public Runnable loadConfirmCallBack = new Runnable() {

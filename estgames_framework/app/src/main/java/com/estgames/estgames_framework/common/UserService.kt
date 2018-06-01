@@ -22,10 +22,10 @@ public class UserService constructor(callingActivity: Activity) {
     /**
      *  팝업에 텍스트 설정하기
      * */
-    public var setUserLinkMiddleText: CustormSupplier<String>? = null;
-    public var setUserLinkBottomText: CustormSupplier<String>? = null;
-    public var setUserLoadText: CustormSupplier<String>? = null;
-    public var setUserGuestText: CustormSupplier<String>? = null;
+    public var setUserLinkMiddleText: CustormSupplier<String>? = null
+    public var setUserLinkBottomText: CustormSupplier<String>? = null
+    public var setUserLoadText: CustormSupplier<String>? = null
+    public var setUserGuestText: CustormSupplier<String>? = null
 
     var userAllDialog: UserAllDialog? = null
 
@@ -33,10 +33,10 @@ public class UserService constructor(callingActivity: Activity) {
      * 콜백함수
      * */
 
-    public var failCallBack: CustomConsumer<Fail> = CustomConsumer {  }
+    public var startFailCallBack: CustomConsumer<Fail> = CustomConsumer {  }
+    public var goToLoginFailCallBack: CustomConsumer<Fail> = CustomConsumer {  }
     public var startSuccessCallBack: Runnable = Runnable {  }
     public var goToLoginSuccessCallBack: Runnable = Runnable {  }
-    public var goToLoginFailCallBack: CustomConsumer<String> = CustomConsumer {  }
     public var clearSuccessCallBack: Runnable = Runnable {  }
     public var back:CustomConsumer<Activity> = CustomConsumer {  }
 
@@ -62,8 +62,6 @@ public class UserService constructor(callingActivity: Activity) {
         userAllDialog!!.loadConfirmCallBack = Runnable {
             onSwitch()
         }
-
-//TODO        userLoadDialog.failConfirmCheck = goToLoginConfirmCallBack
 
         if (setUserLoadText != null)
             userAllDialog!!.loadTextSupplier = setUserLoadText
@@ -112,13 +110,13 @@ public class UserService constructor(callingActivity: Activity) {
                                                 if (identityManager.isUserSignedIn) {
                                                     identityManager.signOut()
                                                 }
-                                                failCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
+                                                goToLoginFailCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
                                             }
                                         }
                                     }
                         }
                         override fun handleError(exception: Exception?) {
-                            failCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
+                            goToLoginFailCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
                         }
                     })
 
@@ -135,7 +133,7 @@ public class UserService constructor(callingActivity: Activity) {
 
     val fail: (Throwable) -> Unit = { t ->
         val code: EGException = t as EGException
-        failCallBack.accept(code.code)
+        startFailCallBack.accept(code.code)
     }
 
     public fun createUser() {
@@ -147,7 +145,7 @@ public class UserService constructor(callingActivity: Activity) {
                     } else {
                         result.identityManager.getUserID(object : IdentityHandler {
                             override fun handleError(e: Exception?) {
-                                failCallBack.accept(Fail.TOKEN_CREATION)
+                                startFailCallBack.accept(Fail.TOKEN_CREATION)
                             }
 
                             override fun onIdentityId(identityId: String?) {
@@ -199,8 +197,8 @@ public class UserService constructor(callingActivity: Activity) {
         }.left {
             val code: EGException = it as EGException
             identityManager.signOut()
-            failCallBack.accept(code.code)
-            userAllDialog!!.dismiss();
+            goToLoginFailCallBack.accept(code.code)
+            userAllDialog!!.dismiss()
         }
     }
 
@@ -217,7 +215,7 @@ public class UserService constructor(callingActivity: Activity) {
         }.left {
             val code: EGException = it as EGException
             identityManager.signOut()
-            failCallBack.accept(code.code)
+            goToLoginFailCallBack.accept(code.code)
             userAllDialog!!.dismiss()
         }
     }

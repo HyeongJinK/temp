@@ -1,25 +1,20 @@
 package com.estgames.estgames_framework.policy;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 
 import com.estgames.estgames_framework.R;
-
-import static com.amazonaws.mobile.auth.core.internal.util.ThreadUtils.runOnUiThread;
 
 /**
  * Created by mp on 2018. 3. 20..
