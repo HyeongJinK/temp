@@ -155,15 +155,12 @@ public class EstCommonFramework {
     }
 
     private boolean policyCheck() {
-        if (policyCheck())
+        if (pref.getString("estPolicy", "false").equals("true"))
             return true;
         else
             return false;
     }
 
-    public void defaultPolicyShow() {
-
-    }
 
     public void policyShow() {
         if (data != null) {
