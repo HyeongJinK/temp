@@ -33,8 +33,7 @@ public class UserService constructor(callingActivity: Activity) {
      * 콜백함수
      * */
 
-    public var startFailCallBack: CustomConsumer<Fail> = CustomConsumer {  }
-    public var goToLoginFailCallBack: CustomConsumer<Fail> = CustomConsumer {  }
+    public var failCallBack: CustomConsumer<Fail> = CustomConsumer {  }
     public var startSuccessCallBack: Runnable = Runnable {  }
     public var goToLoginSuccessCallBack: Runnable = Runnable {  }
     public var clearSuccessCallBack: Runnable = Runnable {  }
@@ -110,13 +109,13 @@ public class UserService constructor(callingActivity: Activity) {
                                                 if (identityManager.isUserSignedIn) {
                                                     identityManager.signOut()
                                                 }
-                                                goToLoginFailCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
+                                                failCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
                                             }
                                         }
                                     }
                         }
                         override fun handleError(exception: Exception?) {
-                            goToLoginFailCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
+                            failCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
                         }
                     })
 
@@ -133,7 +132,7 @@ public class UserService constructor(callingActivity: Activity) {
 
     val fail: (Throwable) -> Unit = { t ->
         val code: EGException = t as EGException
-        startFailCallBack.accept(code.code)
+        failCallBack.accept(code.code)
     }
 
     public fun createUser() {
@@ -145,7 +144,7 @@ public class UserService constructor(callingActivity: Activity) {
                     } else {
                         result.identityManager.getUserID(object : IdentityHandler {
                             override fun handleError(e: Exception?) {
-                                startFailCallBack.accept(Fail.TOKEN_CREATION)
+                                failCallBack.accept(Fail.TOKEN_CREATION)
                             }
 
                             override fun onIdentityId(identityId: String?) {
@@ -197,7 +196,7 @@ public class UserService constructor(callingActivity: Activity) {
         }.left {
             val code: EGException = it as EGException
             identityManager.signOut()
-            goToLoginFailCallBack.accept(code.code)
+            failCallBack.accept(code.code)
             userAllDialog!!.dismiss()
         }
     }
@@ -215,7 +214,7 @@ public class UserService constructor(callingActivity: Activity) {
         }.left {
             val code: EGException = it as EGException
             identityManager.signOut()
-            goToLoginFailCallBack.accept(code.code)
+            failCallBack.accept(code.code)
             userAllDialog!!.dismiss()
         }
     }

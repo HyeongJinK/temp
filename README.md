@@ -23,6 +23,8 @@
   ``` 
 
 * :exclamation: ERROR_CODE 이름이 Fail로 변경되었습니다.
+* :exclamation: UserService 부분에 에러 콜백이 failCallBack으로 통합되었습니다. 이제 에러가 날 경우 모두 저 콜백함수를 호출합니다.
+  * failCallBack의 타입은 CustomConsumer\<Fail> 입니다.
 * EstCommonFramework의 에러 콜백은 estCommonFailCallBack 을 호출합니다.
   * 타입은 CustomConsumer\<Fail> 입니다.
 
