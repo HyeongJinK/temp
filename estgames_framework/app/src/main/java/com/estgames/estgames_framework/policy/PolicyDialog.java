@@ -3,6 +3,7 @@ package com.estgames.estgames_framework.policy;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -124,7 +125,7 @@ public class PolicyDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 dismiss();
-                callback.run();
+//                callback.run();
             }
         });
 
@@ -137,7 +138,7 @@ public class PolicyDialog extends Dialog {
                     prefEdit.putString("estPolicy", "true");
                     prefEdit.commit();
                     dismiss();
-                    callback.run();
+//                    callback.run();
                 }
             }
         });
@@ -151,8 +152,16 @@ public class PolicyDialog extends Dialog {
                     prefEdit.putString("estPolicy", "true");
                     prefEdit.commit();
                     dismiss();
-                    callback.run();
+//                    callback.run();
                 }
+            }
+        });
+
+        // 다이얼로그 창이 닫혔을때 콜백을 실행하도록 수정.
+        this.setOnDismissListener(new OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                callback.run();
             }
         });
     }
