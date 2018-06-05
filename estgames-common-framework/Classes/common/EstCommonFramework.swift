@@ -145,6 +145,7 @@ import Alamofire
             case "use_contract" :
                 if (policy.isShowPolicyShow()) {
                     policy.callbackFunc = check
+                    policy.closeBt.closeBtAction = check
                     pview.present(policy, animated: false)
                 } else {
                     check()
@@ -185,6 +186,7 @@ import Alamofire
         
         if (policy.isShowPolicyShow()) {
             policy.callbackFunc = policyCallBack
+            policy.closeBt.closeBtAction = policyCallBack
             pview.present(policy, animated: false)
         }
     }
