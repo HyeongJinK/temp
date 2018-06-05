@@ -65,8 +65,12 @@ class UserGuestLinkViewController: UIViewController {
         loginButton.confirmBtAction = loginAction
         
         
-        let cancelButtonImg = UIImage(named: "btn_cancel_user", in: Bundle(for: UserGuestLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
-        beforeButton.setBackgroundImage(cancelButtonImg, for: .normal)
+        let cancelButtonImg:UIImage? = UIImage(named: "btn_cancel_user", in: Bundle(for: UserGuestLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
+        if let cbimg = cancelButtonImg {
+            beforeButton.setBackgroundImage(cbimg, for: .normal)
+        } else {
+            beforeButton.backgroundColor = UIColor.gray
+        }
         beforeButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         beforeButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         beforeButton.setTitle(NSLocalizedString("estcommon_userGuest_beforeBt", comment: ""), for: .normal)

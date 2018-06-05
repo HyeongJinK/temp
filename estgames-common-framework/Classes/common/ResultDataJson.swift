@@ -23,22 +23,25 @@ public class ResultDataJson {
             self.language = resultDataJson["language"] as! String
             self.events = Array<EventData>()
             
-            let eventJson: Array<NSDictionary> = resultDataJson["event"] as! Array<NSDictionary>
+            let eventJson: Array<NSDictionary>? = resultDataJson["event"] as? Array<NSDictionary>
             let dateFormat = DateFormatter()
             dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
             
             let now:Date = Date()
             
-            for event in eventJson {
-                if event["begin"] as? String != nil && now < dateFormat.date(from: event["begin"] as! String)! {
-                    continue
-                }
+            if let ej = eventJson {
+                for event in ej {
+                    if event["begin"] as? String != nil && now < dateFormat.date(from: event["begin"] as! String)! {
+                        continue
+                    }
                 
-                if event["end"] as? String != nil && now > dateFormat.date(from: event["end"] as! String)! {
-                    continue
+                    if event["end"] as? String != nil && now > dateFormat.date(from: event["end"] as! String)! {
+                        continue
+                    }
+                    events.append(EventData(event))
                 }
-                events.append(EventData(event))
             }
+            
             
             self.process = resultDataJson["process"] as! NSDictionary
             self.url = UrlData(resultDataJson["url"] as! NSDictionary)

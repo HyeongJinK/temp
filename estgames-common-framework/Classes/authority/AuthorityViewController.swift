@@ -13,7 +13,7 @@ class AuthorityViewController: UIViewController {
     var webView: UIWebView!
     var confirmButton: UIButton!
     var authorityDataSet: AuthorityDataSet!
-    var webViewUrl: String = ""
+    var webViewUrl: String? = nil
     var callbackFunc:() -> Void = {() -> Void in}
     
     public func setWebUrl (url: String) {
@@ -40,11 +40,19 @@ class AuthorityViewController: UIViewController {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 19)
         titleLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
-        webView.loadRequest(URLRequest(url: URL(string: self.webViewUrl)!))
+        if let weburl = self.webViewUrl {
+            if let url = URL(string: weburl) {
+                    webView.loadRequest(URLRequest(url: url))
+            }
+        }
         
+        let confirmButtonImage:UIImage? = UIImage(named: "btn_confirm", in: Bundle(for: AuthorityViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
         
-        let confirmButtonImage = UIImage(named: "btn_confirm", in: Bundle(for: AuthorityViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
-        confirmButton.setBackgroundImage(confirmButtonImage, for: .normal)
+        if let cbi = confirmButtonImage {
+            confirmButton.setBackgroundImage(cbi, for: .normal)
+        } else {
+            confirmButton.backgroundColor = UIColor.darkGray
+        }
         confirmButton.setTitle(NSLocalizedString("estcommon_authority_confirm", comment: ""), for: .normal)
         confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)

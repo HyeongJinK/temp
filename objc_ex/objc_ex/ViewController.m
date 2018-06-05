@@ -14,10 +14,10 @@
 @end
 
 @implementation ViewController
-    EstTest * est;
+    //EstTest * est;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    est = [[EstTest alloc] initWithView:self];
+    //est = [[EstTest alloc] initWithView:self];
     // Do any additional setup after loading the view, typically from a nib.
     //EstgamesCommon *test = [[EstgamesCommon] init];
 }
@@ -29,7 +29,7 @@
 }
 
 - (IBAction)bannerShow:(id)sender {
-    [est banerShow];
+    //[est banerShow];
 }
     
 @end

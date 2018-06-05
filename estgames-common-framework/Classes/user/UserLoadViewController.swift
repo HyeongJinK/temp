@@ -61,15 +61,20 @@ class UserLoadViewController: UIViewController {
         confirmLabel.textColor = UIColor(red: 48/255, green: 127/255, blue: 1, alpha: 1)
         
         
-        let inputButtonImg = UIImage(named: "img_inputbox_user", in: Bundle(for: UserLoadViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
-        inputText.background = inputButtonImg
+        let inputButtonImg:UIImage? = UIImage(named: "img_inputbox_user", in: Bundle(for: UserLoadViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
+        if let ibimg = inputButtonImg {
+            inputText.background = ibimg
+        }
         inputText.textColor = UIColor(red: 126/255, green: 125/255, blue: 125/255, alpha: 1)
         inputText.text = NSLocalizedString("estcommon_userLoad_input", comment: "")
         inputText.textAlignment = .center
+        inputText.addTarget(self, action: #selector(editBegin), for: .editingDidBegin)
 
-        let confirmButtonImage = UIImage(named: "btn_confirm_user", in: Bundle(for: UserLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
+        let confirmButtonImage:UIImage? = UIImage(named: "btn_confirm_user", in: Bundle(for: UserLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
+        if let cbimg = confirmButtonImage {
+            confirmButton.setBackgroundImage(cbimg, for: .normal)
+        }
         confirmButton.setTitle(NSLocalizedString("estcommon_userLoad_confirmButton", comment: ""), for: .normal)
-        confirmButton.setBackgroundImage(confirmButtonImage, for: .normal)
         confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         confirmButton.addTarget(self, action: #selector(confirmBtAction(_:)), for: .touchUpInside)
@@ -90,5 +95,9 @@ class UserLoadViewController: UIViewController {
             self.dismiss(animated: false, completion: nil)
             confirmActionCallBack()
         }
+    }
+    
+    @objc func editBegin() {
+        inputText.text = ""
     }
 }

@@ -32,8 +32,10 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'estgames-common-framework/Classes/**/*'
   
-  s.resource_bundles = {
-'estgames-common-framework' => ['estgames-common-framework/Assets/*.png', 'estgames-common-framework/Resources/*']
+  s.resource_bundles = {'estgames-common-framework' => ['estgames-common-framework/Assets/*.png'
+                                , 'estgames-common-framework/Assets/*.ttf',
+                                , 'estgames-common-framework/Assets/*.xcassets'
+                                , 'estgames-common-framework/Resources/*']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

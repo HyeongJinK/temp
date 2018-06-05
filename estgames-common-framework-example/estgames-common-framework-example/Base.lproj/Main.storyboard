@@ -163,15 +163,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUn-OH-CXS">
-                                <rect key="frame" x="216" y="140" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUn-OH-CXS">
+                                <rect key="frame" x="216" y="140" width="8" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGz-Lp-15s">
-                                <rect key="frame" x="287" y="140" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGz-Lp-15s">
+                                <rect key="frame" x="287" y="140" width="10" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -181,31 +181,49 @@
                                 <rect key="frame" x="250" y="70" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="권한"/>
+                                <connections>
+                                    <action selector="authTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qtl-R6-elx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkV-UH-4ht">
                                 <rect key="frame" x="130" y="70" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="순서대로"/>
+                                <connections>
+                                    <action selector="processAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2CN-ee-1dV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQM-tB-JfO">
                                 <rect key="frame" x="130" y="100" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="이용약관"/>
+                                <connections>
+                                    <action selector="policyTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VoP-D3-Jm1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE0-jM-6lV">
-                                <rect key="frame" x="300" y="85" width="52" height="30"/>
+                                <rect key="frame" x="311" y="85" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="대시보드"/>
+                                <state key="normal" title="국,언"/>
+                                <connections>
+                                    <action selector="dashboardTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6E5-xI-UTf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYm-9x-RK7">
                                 <rect key="frame" x="200" y="70" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="배너"/>
+                                <connections>
+                                    <action selector="bannerTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vls-Oa-bcO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sN6-4R-XDm">
                                 <rect key="frame" x="200" y="100" width="95" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="약관동의 데이터"/>
+                                <connections>
+                                    <action selector="policyDataTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KeM-5F-xCL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKS-6m-1Ug">
                                 <rect key="frame" x="10" y="543" width="82" height="30"/>
@@ -218,6 +236,7 @@
                                 <state key="normal" title="공지사항"/>
                                 <connections>
                                     <action selector="noticeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3nU-lz-NFd"/>
+                                    <action selector="noticeTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tpf-Kg-zbO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2S-E8-WFE">
@@ -226,16 +245,48 @@
                                 <state key="normal" title="FAQ"/>
                                 <connections>
                                     <action selector="faqAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fLZ-5c-o1p"/>
+                                    <action selector="faqTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bq4-47-Ztq"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="callback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kK-B6-fOQ">
+                                <rect key="frame" x="54" y="425" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="errorCode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdk-32-VNP">
+                                <rect key="frame" x="210" y="425" width="78" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg8-bl-Vbd">
+                                <rect key="frame" x="216" y="165" width="48" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDY-Ze-yfG">
+                                <rect key="frame" x="287" y="165" width="33" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="28S-hS-Mg9"/>
                     <connections>
+                        <outlet property="callBack" destination="5kK-B6-fOQ" id="7cs-4a-H1w"/>
                         <outlet property="con1" destination="RUn-OH-CXS" id="6ju-Rv-P6C"/>
                         <outlet property="con2" destination="WGz-Lp-15s" id="olW-x1-RWO"/>
+                        <outlet property="errorCode" destination="Vdk-32-VNP" id="BsV-PX-N5u"/>
+                        <outlet property="lang" destination="NDY-Ze-yfG" id="9H1-U5-3PP"/>
                         <outlet property="lblEgId" destination="6kL-9P-Rfk" id="dGB-vw-rza"/>
                         <outlet property="lblEgToken" destination="pah-Re-SCK" id="3Vw-GP-eYc"/>
                         <outlet property="lblEmail" destination="qus-GQ-Tvu" id="oWY-dq-uoc"/>
@@ -243,6 +294,7 @@
                         <outlet property="lblPrincipal" destination="As5-Ap-fUl" id="cDi-Ye-TNV"/>
                         <outlet property="lblProviderName" destination="8DG-LD-d2R" id="m2k-f1-3Y1"/>
                         <outlet property="lblRefreshToken" destination="yba-uL-8iy" id="knc-bm-2w4"/>
+                        <outlet property="nation" destination="Tg8-bl-Vbd" id="Ac0-Z3-OXY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

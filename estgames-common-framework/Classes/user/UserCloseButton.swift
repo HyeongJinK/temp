@@ -17,7 +17,12 @@ class UserCloseButton : UIButton {
         view = pview
         super.init(frame: frame)
         
-        self.setImage(closeButtonImage, for: .normal)
+        if let cimg = closeButtonImage {
+            self.setImage(cimg, for: .normal)
+        } else {
+            self.setTitle("X", for: .normal)
+        }
+        
         self.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
     }
     

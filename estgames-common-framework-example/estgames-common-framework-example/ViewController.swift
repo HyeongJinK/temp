@@ -11,7 +11,6 @@ import estgames_common_framework
 import GoogleSignIn
 
 class ViewController: UIViewController {
-//    var dashboard: WebViewDialog!
     var estgamesCommon:EstgamesCommon!
     var vc : UserService!
     
@@ -29,6 +28,11 @@ class ViewController: UIViewController {
     @IBOutlet var con2: UILabel!
     
     
+    @IBOutlet var nation: UILabel!
+    @IBOutlet var lang: UILabel!
+    @IBOutlet var callBack: UILabel!
+    @IBOutlet var errorCode: UILabel!
+    
     @IBAction func noticeAction(_ sender: Any) {
         estgamesCommon.showNotice()
     }
@@ -41,14 +45,69 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
 
-        vc = UserService(pview: self, googleEmail: googleEmail)
-//        dashboard = WebViewDialog(pview: self, egToken: MpInfo.Account.egToken)
-        estgamesCommon = EstgamesCommon(pview: self)
         
-//        userDialog = UserDialog(pview: self)
-//        userDialog.setUserLinkAction(closeAction: {() -> Void in print("closeAction")}, confirmAction: {() -> Void in print("confirmAction")}, cancelAction: {() -> Void in print("cancelAction")})
-//        userDialog.setUserLinkCharacterLabel(guest: "adfads", sns: "bzcxvczxv")
-//        userDialog.setUserGuestLinkCharacterLabel(guest: "fjkd", sns: "fjkjf")
+        estgamesCommon = EstgamesCommon(pview: self)    // EstgamesCommon 객체 생성
+        estgamesCommon.initCallBack = {(estcommon) -> Void in   //EstgamesCommon에 create 함수를 호출 하고 값 설정이 성공했을 때 호출 되는 함수
+            self.errorCode.text = "성공"
+        }
+        estgamesCommon.estCommonFailCallBack = {(err) -> Void in    //EstgamesCommon 내에서 에러가 발생 했을 경우 호출되는 콜백함수
+            switch (err) {
+                case .START_API_NOT_CALL :
+                    self.errorCode.text = "API 호출 시 네트워크 에러"
+                    break
+                case .START_API_DATA_FAIL :
+                    self.errorCode.text = "내려 받은 값 오류"
+                    break
+                case .START_API_DATA_INIT :
+                    self.errorCode.text = "값이 초기화 되지 않았습니다."
+                    break
+                default:
+                break
+            }
+        }
+        estgamesCommon.create();    //스타트 api 호출, 내려받은 값으로 설정
+        
+        estgamesCommon.processCallBack = {() -> Void in //processShow() 호출이 끝나고 호출하는 콜백함수
+            self.callBack.text = "processShow 종료"
+            self.con1.text = self.estgamesCommon.contractService().description
+            self.con2.text = self.estgamesCommon.contractPrivate().description
+        }
+
+        estgamesCommon.bannerCallBack = {() -> Void in //bannerShow() 함수 호출 이후 호출되는 콜백함수
+            self.callBack.text = "bannerShow() 종료"
+        }
+        
+        estgamesCommon.authorityCallBack = {() -> Void in //authorityShow() 함수 호출 이후 호출되는 콜백함수
+            self.callBack.text = "authorityShow() 종료"
+        }
+        
+        estgamesCommon.policyCallBack  = {() -> Void in //policyShow() 함수 호출 이후 호출되는 콜백함수
+            self.callBack.text = "policyShow() 종료"
+            self.con1.text = self.estgamesCommon.contractService().description
+            self.con2.text = self.estgamesCommon.contractPrivate().description
+        }
+        
+        
+        
+        vc = UserService(pview: self, googleEmail: googleEmail)
+    
+        vc.startSuccessCallBack = {() -> Void in
+            print("startGame() 함수 호출 성공 시 호출되는 콜백함수")
+        }
+        
+        vc.goToLoginSuccessCallBack = {() -> Void in
+            print("goToLogin() 함수 호출 성공 시 호출되는 콜백함수")
+        }
+        
+        vc.failCallBack = {(err) -> Void in     //유저 서비스 부분 에러 콜백 함수
+            switch (err) {
+                case .TOKEN_EMPTY :
+                    self.errorCode.text = "토큰이 없음"
+                    break
+                default:
+                    break
+            }
+        }
         dataPrint()
     }
     
@@ -67,6 +126,8 @@ class ViewController: UIViewController {
         self.lblEgId.text = MpInfo.Account.egId
         self.lblEgToken.text = MpInfo.Account.egToken
         self.lblRefreshToken.text = MpInfo.Account.refreshToken
+//        var nation:String = "";
+//        if let nation2 = estgamesCommon.getNation() {nation = nation2}
         self.lblEmail.text = String(describing:MpInfo.Account.email)
     }
     
@@ -78,7 +139,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func gameStart(_ sender: Any) {
-        vc.startSuccessCallBack = { () -> Void in print("su")}
         vc.startGame()
     }
 
@@ -91,78 +151,46 @@ class ViewController: UIViewController {
     }
     
     
+    /**
+     estcommon
+     */
+    @IBAction func processAction(_ sender: Any) {
+        estgamesCommon.processCallBack = {() -> Void in //순서대로 호출이 끝나고 호출하는 콜백함수
+            self.callBack.text = "순서대로 종료"
+            self.con1.text = self.estgamesCommon.contractService().description
+            self.con2.text = self.estgamesCommon.contractPrivate().description
+        }
+        estgamesCommon.processShow()
+    }
     
+    @IBAction func bannerTest(_ sender: Any) {
+        estgamesCommon.bannerShow()
+    }
     
+    @IBAction func authTest(_ sender: Any) {
+        estgamesCommon.authorityShow()
+    }
     
+    @IBAction func policyTest(_ sender: Any) {
+        estgamesCommon.policyShow()
+    }
     
+    @IBAction func policyDataTest(_ sender: Any) {
+        self.con1.text = self.estgamesCommon.contractService().description
+        self.con2.text = self.estgamesCommon.contractPrivate().description
+    }
     
+    @IBAction func dashboardTest(_ sender: Any) {
+        self.nation.text = estgamesCommon.getNation()
+        self.lang.text = estgamesCommon.getLanguage()
+    }
     
+    @IBAction func noticeTest(_ sender: Any) {
+        estgamesCommon.showNotice()
+    }
     
-    
-//    // 순서대로 호출
-//    @IBAction func processAction(_ sender: Any) {
-//        estgamesCommon.processCallBack = {() -> Void in //순서대로 호출이 끝나고 호출하는 콜백함수
-//            print(self.estgamesCommon.contractService().description)
-//            print(self.estgamesCommon.contractPrivate().description)
-//            }
-//        estgamesCommon.processShow()
-//    }
-//    // 배너만 따로 호출
-//    @IBAction func bannerTest(_ sender: Any) {
-//        estgamesCommon.bannerShow()
-//    }
-//
-//    func authCallBack() {
-//        print("authority Call Back")
-//    }
-//    // 권한만 따로 호출
-//    @IBAction func authorityTest(_ sender: Any) {
-//        estgamesCommon.authorityCallBack = authCallBack
-//        estgamesCommon.authorityShow()
-//    }
-//
-//    // 이용약관만 따로 호출
-//    @IBAction func policyTest(_ sender: Any) {
-//        estgamesCommon.policyCallBack = {() -> Void in
-//            print(self.estgamesCommon.contractService())
-//            print(self.estgamesCommon.contractPrivate())
-//            }
-//        estgamesCommon.policyShow()
-//    }
-//
-//    @IBAction func testttt(_ sender: Any) {
-//        con1.text = estgamesCommon.contractService().description
-//        con2.text = estgamesCommon.contractPrivate().description
-//        //print(userDialog.getInputText())
-//    }
-//
-//    /**
-//     계정연동 UI만 띄우기
-//     */
-//    @IBAction func userLinkTest(_ sender: Any) {
-//        userDialog.showUserLinkDialog()
-//    }
-//
-//    @IBAction func UserLoadTest(_ sender: Any) {
-//        userDialog.showUserLoadDialog()
-//    }
-//
-//    @IBAction func UserGuestLinkTest(_ sender: Any) {
-//        userDialog.showUserGuestLinkDialog()
-//    }
-//
-//    @IBAction func UserResultTest(_ sender: Any) {
-//        userDialog.showUserResultDialog()
-//    }
-//
-//    /**
-//     웹뷰창
-//     */
-//    @IBAction func webViewShowTest(_ sender: Any) {
-//        dashboard.show()
-//    }
-//
-//
-
+    @IBAction func faqTest(_ sender: Any) {
+        estgamesCommon.showCsCenter()
+    }
 }
 

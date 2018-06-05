@@ -73,11 +73,13 @@ class UserLinkViewController: UIViewController {
         confirmButton.confirmBtAction = confirmAction
         
         
-        let cancelButtonImg = UIImage(named: "btn_cancel_user", in: Bundle(for: UserLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
-        cancelButton.setBackgroundImage(cancelButtonImg, for: .normal)
+        let cancelButtonImg:UIImage? = UIImage(named: "btn_cancel_user", in: Bundle(for: UserLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
+        if let cbImg = cancelButtonImg {
+            cancelButton.setBackgroundImage(cbImg, for: .normal)
+        }
+        cancelButton.setTitle(NSLocalizedString("estcommon_userLink_cancel", comment: ""), for: .normal)
         cancelButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        cancelButton.setTitle(NSLocalizedString("estcommon_userLink_cancel", comment: ""), for: .normal)
         cancelButton.addTarget(self, action: #selector(cancelBtAction(_:)), for: .touchUpInside)
         
         

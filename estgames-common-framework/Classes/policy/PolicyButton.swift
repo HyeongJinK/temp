@@ -10,32 +10,45 @@ import Foundation
 class PolicyButton : UIButton {
     public var isChecked: Bool = false
     
-    let checkImage:UIImage
-    let uncheckImage:UIImage
+    let checkImage:UIImage?
+    let uncheckImage:UIImage?
     var checkBtCallBack: () -> Void = {() -> Void in }
     
     init(_ frames: CGRect) {
-        uncheckImage = UIImage(named: "btn_provision_off", in:Bundle(for: PolicyViewController.self), compatibleWith:nil)!.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
-        checkImage = UIImage(named: "btn_provision_on", in:Bundle(for: PolicyViewController.self), compatibleWith:nil)!.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
+        uncheckImage = UIImage(named: "btn_provision_off", in:Bundle(for: PolicyViewController.self), compatibleWith:nil)?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
+        checkImage = UIImage(named: "btn_provision_on", in:Bundle(for: PolicyViewController.self), compatibleWith:nil)?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
+        //
         
         super.init(frame: frames)
-        self.setBackgroundImage(uncheckImage, for: .normal)
+        
+        if let unimage = uncheckImage, let cImage = checkImage {
+            self.setBackgroundImage(unimage, for: .normal)
+        } else {
+            self.backgroundColor = UIColor.gray
+        }
+        
         self.setTitle(NSLocalizedString("estcommon_policy_buttonText", comment: ""), for: .normal)
         self.addTarget(self, action: #selector(clickEvent), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        uncheckImage = UIImage(named: "btn_provision_off", in:Bundle(for: PolicyButton.self), compatibleWith:nil)!.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
-        checkImage = UIImage(named: "btn_provision_on", in:Bundle(for: PolicyButton.self), compatibleWith:nil)!.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     @objc func clickEvent() {
         isChecked = !isChecked
-        if isChecked {
-            self.setBackgroundImage(checkImage, for: .normal)
+        if let unimage = uncheckImage, let cImage = checkImage {
+            if isChecked {
+                self.setBackgroundImage(cImage, for: .normal)
+            } else {
+                self.setBackgroundImage(unimage, for: .normal)
+            }
         } else {
-            self.setBackgroundImage(uncheckImage, for: .normal)
+            if isChecked {
+                self.backgroundColor = UIColor.black
+            } else {
+                self.backgroundColor = UIColor.gray
+            }
         }
         checkBtCallBack()
     }

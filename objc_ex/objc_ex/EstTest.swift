@@ -8,14 +8,24 @@
 
 import Foundation
 import estgames_common_framework
+import GoogleSignIn
 
 @objc class EstTest : NSObject {
-    var est: EstgamesCommon
+    //var est: EstgamesCommon
     
-    @objc init(view: UIViewController) {
-        est = EstgamesCommon(pview: view, initCallBack: {(ec:EstgamesCommon) -> Void in ec.authorityShow()})
+    @objc override init() {
+        
     }
-    @objc func banerShow () {
-        est.bannerShow()
+    
+//    @objc init(view: UIViewController) {
+//        est = EstgamesCommon(pview: view, initCallBack: {(ec:EstgamesCommon) -> Void in ec.authorityShow()})
+//    }
+//    @objc func banerShow () {
+//        est.bannerShow()
+//    }
+    
+    @objc func application_openURLWithOptionKey(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print("google: application")
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 class PolicyViewController: UIViewController {
+    let policyUserDefaultName : String = "estPolicy"
     var backgroudView:UIView!
     var backImageView:UIImageView!
     var titleLabel1:UILabel!
@@ -15,15 +16,15 @@ class PolicyViewController: UIViewController {
     var subTitleLabel: UILabel!
     var webView1:UIWebView!
     var webView2:UIWebView!
-    var webUrl1:String  = ""
-    var webUrl2: String  = ""
+    var webUrl1:String?  = nil
+    var webUrl2: String?  = nil
     var submitBt1: PolicyButton!
     var submitBt2: PolicyButton!
     var closeBt: PolicyCloseBt!
     var dataSet: PolicyDataSet!
     var callbackFunc:() -> Void = {() -> Void in}
     
-    public func setWebUrl (webUrl1: String, webUrl2: String) {
+    public func setWebUrl (webUrl1: String?, webUrl2: String?) {
         self.webUrl1 = webUrl1
         self.webUrl2 = webUrl2
     }
@@ -40,9 +41,6 @@ class PolicyViewController: UIViewController {
         } else {
             newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
         }
-        
-        print(newSize.width)
-        print(newSize.height)
         
         let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
         
@@ -64,41 +62,56 @@ class PolicyViewController: UIViewController {
     override func viewDidLoad() {
         dataSet = PolicyDataSet(deviceNum: DeviceClassification.deviceResolution(self.view.frame.width, self.view.frame.height))
         
-        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
-
         backgroudView = UIView(frame: dataSet.backgroudViewFrame)
         backImageView = UIImageView(frame: dataSet.backgroudImageFrame)
-        
-        let backgroudImg = UIImage(named: "img_provision_bigbox", in:Bundle(for: PolicyViewController.self), compatibleWith:nil)!.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
-        //var resizeImg = resizeImage(image: backgroudImg, targetSize: dataSet.backgroudViewFrame.size)
-        backImageView.image = backgroudImg
-        //backgroudView.backgroundColor = UIColor(patternImage: resizeImg)
-    
         titleLabel1 = UILabel(frame: dataSet.titleLabel1Frame)
+        subTitleLabel = UILabel(frame: dataSet.subTitleLabelFrame)
+        submitBt1 = PolicyButton(dataSet.submitBt1Frame)
+        titleLabel2 = UILabel(frame: dataSet.titleLabel2Frame)
+        submitBt2 = PolicyButton(dataSet.submitBt2Frame)
+        closeBt = PolicyCloseBt(self)
+        webView1 = UIWebView(frame: dataSet.webView1Frame)
+        webView2 = UIWebView(frame: dataSet.webView2Frame)
+        
+        
+        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+        
+        
+        let backgroudImg:UIImage? = UIImage(named: "img_provision_bigbox", in:Bundle(for: PolicyViewController.self), compatibleWith:nil)?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
+        if let bImg = backgroudImg {
+            backImageView.image = bImg
+        }
+    
+        
         labelSet(titleLabel1, NSLocalizedString("estcommon_policy_title", comment: ""), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
         
-        subTitleLabel = UILabel(frame: dataSet.subTitleLabelFrame)
+        
         labelSet(subTitleLabel, NSLocalizedString("estcommon_policy_subTitle", comment: ""), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), 10)
         
-        webView1 = UIWebView(frame: dataSet.webView1Frame)
-        webView1.loadRequest(URLRequest(url: URL(string: self.webUrl1)!))
         
-        submitBt1 = PolicyButton(dataSet.submitBt1Frame)
+        if let weburl = webUrl1 {
+            webView1.loadRequest(URLRequest(url: URL(string: weburl)!))
+        }
+        
+        
         submitBt1.checkBtCallBack = checkBoxTrueClose
 
-        titleLabel2 = UILabel(frame: dataSet.titleLabel2Frame)
+        
         labelSet(titleLabel2, NSLocalizedString("estcommon_policy_privacy", comment: ""), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
         
-        webView2 = UIWebView(frame: dataSet.webView2Frame)
-        webView2.loadRequest(URLRequest(url: URL(string: self.webUrl2)!))
         
-        submitBt2 = PolicyButton(dataSet.submitBt2Frame)
+        if let weburl = webUrl2 {
+            webView2.loadRequest(URLRequest(url: URL(string: weburl)!))
+        }
+        
+        
         submitBt2.checkBtCallBack = checkBoxTrueClose
         
-        closeBt = PolicyCloseBt(self)
+        
         closeBt.frame = dataSet.closeBtFrame
         closeBt.closeBtAction = callbackFunc
 
+        
         self.view.addSubview(backgroudView)
         backgroudView.insertSubview(backImageView, at: 0)
         backgroudView.addSubview(titleLabel1)
@@ -111,8 +124,21 @@ class PolicyViewController: UIViewController {
         backgroudView.addSubview(closeBt)
     }
     
+    public func isShowPolicyShow() -> Bool {
+        let pList = UserDefaults.standard
+
+        if pList.string(forKey: policyUserDefaultName) != nil && "true" == pList.string(forKey: policyUserDefaultName) {
+            return false
+        }
+        return true
+    }
+    
     private func checkBoxTrueClose() {
         if (submitBt1.isChecked && submitBt2.isChecked) {
+            let pList = UserDefaults.standard
+            
+            pList.set("true", forKey: policyUserDefaultName)
+            pList.synchronize()
             self.dismiss(animated: false, completion: callbackFunc)
         }
     }

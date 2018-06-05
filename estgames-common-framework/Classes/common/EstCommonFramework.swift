@@ -20,6 +20,7 @@ import Alamofire
     public var bannerCallBack : () -> Void = { () -> Void in}
     public var processCallBack : () -> Void = { () -> Void in}
     public var initCallBack: (EstgamesCommon) -> Void = {(uv: EstgamesCommon) -> Void in}
+    public var estCommonFailCallBack: (Fail) -> Void = {(error: Fail) -> Void in}
     let policy: PolicyViewController
     var process: [String] = Array<String>()
     
@@ -36,7 +37,7 @@ import Alamofire
         policy = PolicyViewController()
         policy.modalPresentationStyle = .overCurrentContext
         super.init()
-        dataSet(pview: pview)
+        //dataSet(pview: pview)
     }
     
     public init(pview:UIViewController, initCallBack: @escaping (EstgamesCommon) -> Void) {
@@ -48,14 +49,14 @@ import Alamofire
         policy = PolicyViewController()
         policy.modalPresentationStyle = .overCurrentContext
         super.init()
-        dataSet(pview: pview)
+    //    dataSet(pview: pview)
     }
     
-    private func dataSet(pview:UIViewController) {
+    public func create() {
         if estgamesData == nil {
             let myGroup = DispatchGroup.init()
             let queue = DispatchQueue.global()
-            let url = MpInfo.App.estapi.replacingOccurrences(of: "env", with: MpInfo.App.env)
+            let url = MpInfo.App.estapi.replacingOccurrences(of: "env", with: MpInfo.App.env)+"?lang="+getLanguage()!
             
             
             //let manager = SessionManager.default
@@ -65,6 +66,7 @@ import Alamofire
             
             if (apiCallCount >= 3) {    //api 호출 실패가 3번이 넘으면
                 myGroup.leave()
+                self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
                 return
             }
             queue.async {
@@ -75,19 +77,19 @@ import Alamofire
                         response in
                         if let result = response.result.value {
                             let bannerJson = result as! NSDictionary
-                            if ((bannerJson["errorMessage"] as? String) != nil){
-                                self.dataSet(pview: pview)
+                            if ((bannerJson["errorMessage"] as? String) != nil){    //3번 에러가 났을 경우 한번 더 시도
+                                self.create()
                             } else {
                                 self.estgamesData = ResultDataJson(resultDataJson:bannerJson[MpInfo.App.region] as! NSDictionary)   //배너 파싱
                                 self.authority.setWebUrl(url: self.estgamesData!.url.system_contract)
-                                self.banner = bannerFramework(pview: pview, result: self.estgamesData!)
+                                self.banner = bannerFramework(pview: self.pview, result: self.estgamesData!)
                                 self.policy.setWebUrl(webUrl1: self.estgamesData!.url.contract_service, webUrl2: self.estgamesData!.url.contract_private)
                                 self.process = self.estgamesData!.process[self.estgamesData!.nation.lowercased()] as! Array<String>
                                 self.initCallBack(self)
                             }
                             myGroup.leave()
                         } else {
-                            print("error")
+                            self.estCommonFailCallBack(Fail.START_API_DATA_FAIL)
                         }
                 }
             }
@@ -96,7 +98,6 @@ import Alamofire
     
     private func checkEstgamesData() -> Bool{
         if estgamesData == nil {
-            dataSet(pview: self.pview)
             return false
         }
         return true;
@@ -108,40 +109,49 @@ import Alamofire
      */
     public func processShow() {
         if (!checkEstgamesData()) {
+            //에러 코드 리턴
+            self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
             return;
+        } else {
+            processIndex = -1
+            check()
         }
-        check()
+        
     }
     
     func check() {
-        if (process.count > processIndex) {
+        if ((process.count-1) > processIndex) {
             call()
         } else {
-            processIndex = 0
             processCallBack()
         }
     }
     
     func call() {
+        processIndex += 1
         switch self.process[processIndex] {
             case "event":
-                processIndex += 1
-                banner.closeBtCallBack = check
-                banner.show()
+                if (banner.count() > 0) {
+                    banner.closeBtCallBack = check
+                    banner.show()
+                } else {
+                    check()
+                }
             break
             case "system_contract":
-                processIndex += 1
                 authority.callbackFunc = check
                 pview.present(authority, animated: false)
                 break
             case "use_contract" :
-                processIndex += 1
-                policy.callbackFunc = check
-                pview.present(policy, animated: false)
+                if (policy.isShowPolicyShow()) {
+                    policy.callbackFunc = check
+                    pview.present(policy, animated: false)
+                } else {
+                    check()
+                }
                 break
             //case "login" :
             default:
-                processIndex += 1
                 check()
                 break
         }
@@ -154,6 +164,7 @@ import Alamofire
     //권한
     public func authorityShow() {
         if (!checkEstgamesData()) {
+            self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
             return;
         }
         
@@ -168,11 +179,14 @@ import Alamofire
     //이용약관
     public func policyShow() {
         if (!checkEstgamesData()) {
+            self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
             return;
         }
-
-        policy.callbackFunc = policyCallBack
-        pview.present(policy, animated: false)
+        
+        if (policy.isShowPolicyShow()) {
+            policy.callbackFunc = policyCallBack
+            pview.present(policy, animated: false)
+        }
     }
     
     public func policyDismiss() {
@@ -180,15 +194,24 @@ import Alamofire
     }
     //이용약관 동의합니다. 버튼 체크했는 지 확인 버튼
     public func contractService() -> Bool {
+        if (!policy.isShowPolicyShow()) {   //이전에 이용약관 동의를 한 상태
+            return true
+        }
+        
         return policy.submitBt1.isChecked
     }
     
     public func contractPrivate() -> Bool {
+        if (!policy.isShowPolicyShow()) {   //이전에 이용약관 동의를 한 상태
+            return true
+        }
+        
         return policy.submitBt2.isChecked
     }
     //배너
     public func bannerShow() {
         if (!checkEstgamesData()) {
+            self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
             return;
         }
         
@@ -202,6 +225,7 @@ import Alamofire
         webView.modalPresentationStyle = .overCurrentContext
         webView.nation = self.estgamesData!.language
         webView.url = self.estgamesData!.url.cscenter
+        
         pview.present(webView, animated: false)
     }
     
@@ -212,14 +236,26 @@ import Alamofire
         webView.modalPresentationStyle = .overCurrentContext
         webView.nation = self.estgamesData!.language
         webView.url = self.estgamesData!.url.notice
+        
         pview.present(webView, animated: false)
     }
     
     public func getNation() -> String? {
-        return estgamesData?.nation
+        if (!checkEstgamesData()) {
+            self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
+            return nil;
+        }
+        
+        if let data = estgamesData {
+            return data.nation
+        }
+        return nil
     }
     
     public func getLanguage() -> String? {
-        return estgamesData?.language
+        if let lang = Locale.current.languageCode {
+            return lang;
+        }
+        return "KO"
     }
 }

@@ -52,6 +52,9 @@ class AuthorityDataSet {
             confirmButton = CGRect(x: 322, y: 320, width: 167.5, height: 37.5)
             break;
         default:
+            titleLabel = CGRect(x: 0, y: 109, width: 210, height: 47)
+            webView = CGRect(x: 23.5, y: 181, width: 328, height: 313.5)
+            confirmButton = CGRect(x: 103, y: 519.5, width: 168.5, height: 37.5)
             break;
         }
     }

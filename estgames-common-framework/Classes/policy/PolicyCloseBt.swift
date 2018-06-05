@@ -8,23 +8,27 @@
 import Foundation
 
 class PolicyCloseBt : UIButton {
-    let closeBtImage:UIImage
+    let closeBtImage:UIImage?
     let viewC:PolicyViewController?
     var closeBtAction: () -> Void = {() -> Void in}
     
     required init?(coder aDecoder: NSCoder) {
-        closeBtImage = UIImage(named: "btn_close_img", in:Bundle(for: PolicyCloseBt.self), compatibleWith:nil)!
+        closeBtImage = UIImage(named: "btn_close_img", in:Bundle(for: PolicyCloseBt.self), compatibleWith:nil)
         viewC = nil
         super.init(coder: aDecoder)
     }
     
     init(_ viewP:PolicyViewController) {
         viewC = viewP
-        closeBtImage = UIImage(named: "btn_close_img", in:Bundle(for: PolicyCloseBt.self), compatibleWith:nil)!
+        closeBtImage = UIImage(named: "btn_close_img", in:Bundle(for: PolicyCloseBt.self), compatibleWith:nil)
         super.init(frame: CGRect.zero)
         
-        //self.setImage(UIImage(, for: .highlighted)
-        self.setImage(closeBtImage, for: .normal)
+        if let cImage = closeBtImage {
+            self.setImage(cImage, for: .normal)
+        } else {
+            self.setTitle("X", for: .normal)
+        }
+        
         self.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
     }
     
