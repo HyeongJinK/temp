@@ -3,6 +3,7 @@ package com.estgames.estgames_framework.banner;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -120,12 +121,18 @@ public class BannerDialog extends Dialog {
                 }
 
                 if(++currentIndex >= bitmap.size()) {   //더 이상 배너 그림이 없으면 닫기
-                    callback.run();
                     dialog.dismiss();
                 } else {
                     oneDayCheck.setChecked(false);  //이미지 변경하면서 체크 해제
                     imageView.setImageBitmap(bitmap.get(currentIndex));
                 }
+            }
+        });
+
+        this.setOnDismissListener(new OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                callback.run();
             }
         });
     }
