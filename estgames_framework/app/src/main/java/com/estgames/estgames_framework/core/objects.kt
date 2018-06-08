@@ -44,4 +44,5 @@ sealed class Result(): Serializable {
             val data: Map<String, Any>,
             val at: Date): Result()
     data class SyncFailure(val egId: String, val message: String): Result()
+    data class Login(val type: String, val egId: String, val provider: String? = null): Result()
 }

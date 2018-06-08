@@ -223,8 +223,6 @@ public class EstCommonFramework {
 
             switch (process) {
                 case SystemContract :
-//                    authorityCallBack = processCheck;
-//                    authorityShow();
                     defaultProcess();
                     break;
                 case UseContract :

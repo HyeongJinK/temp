@@ -2,50 +2,44 @@ package com.estgames.estgames_framework.user;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.estgames.estgames_framework.R;
-import com.estgames.estgames_framework.common.CustomFunction;
 import com.estgames.estgames_framework.common.CustormSupplier;
+import com.estgames.estgames_framework.core.Result;
+import com.estgames.estgames_framework.core.session.SessionManager;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 
 public class UserAllDialog extends Dialog{
-    RelativeLayout link;
-    RelativeLayout load;
-    RelativeLayout guest;
-    RelativeLayout result;
+    private DialogState STATE_READY;
+    private DialogState STATE_SYNC;
+    private DialogState STATE_SWITCH;
 
-    Button linkConfirm;
-    Button linkCancel;
-    Button linkClose;
-    private TextView linkSnsDataText;
-    private TextView linkGuestDataText;
+    private DialogState state;
 
-    Button loadConfirm;
-    Button loadClose;
-    EditText loadEditText;
-    TextView loadText;
+    private SessionManager sessionManager;
+    private String identityId;
+    private String provider;
 
-    Button guestLogin;
-    Button guestBefore;
-    Button guestcClose;
-    TextView guestText;
+    private CompleteHandler completeHandler;
+    private CancelHandler cancelHandler;
+    private FailHandler failHandler;
 
-    Button resultConfirm;
-    Button resultClose;
-
-    int height1;
-    int height2;
-
-    public UserAllDialog(@NonNull Context context) {
+    public UserAllDialog(@NonNull Context context, @NonNull String identity, @NonNull String provider) {
         super(context);
+        this.identityId = identity;
+        this.provider = provider;
     }
 
     @Override
@@ -54,183 +48,47 @@ public class UserAllDialog extends Dialog{
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.userall);
 
-        link = (RelativeLayout) findViewById(R.id.linkDialog);
-        load = (RelativeLayout) findViewById(R.id.loadDialog);
-        guest = (RelativeLayout) findViewById(R.id.GuestDialog);
-        result = (RelativeLayout) findViewById(R.id.ResultDialog);
+        sessionManager = new SessionManager(this.getContext());
 
-        linkConfirm = (Button) findViewById(R.id.LinkConfirm);
-        linkCancel = (Button) findViewById(R.id.LinkCancel);
-        linkClose = (Button) findViewById(R.id.LinkCloseBt);
+        STATE_READY = new Ready(this);
+        STATE_SYNC = new Sync(this);
+        STATE_SWITCH = new Switch(this);
 
-        loadConfirm = (Button) findViewById(R.id.LoadConfirmBt);
-        loadClose = (Button) findViewById(R.id.LoadCloseBt);
-
-        guestLogin = (Button) findViewById(R.id.GuestLinkLoginBt);
-        guestBefore = (Button) findViewById(R.id.GuestLinkBeforeBt);
-        guestcClose = (Button) findViewById(R.id.GuestLinkCloseBt);
-
-        resultConfirm = (Button) findViewById(R.id.ResultSubmit);
-        resultClose = (Button) findViewById(R.id.ResultClose);
-
-        linkSnsDataText = (TextView) findViewById(R.id.LinkSnsDataText);
-        linkGuestDataText = (TextView) findViewById(R.id.LinkGuestDataText);
-
-        loadText = (TextView) findViewById(R.id.LoadText);
-
-        guestText = (TextView) findViewById(R.id.GuestLinkMiddleText);
-
-        loadEditText = (EditText) findViewById(R.id.LoadEditText);
-
-//        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-//        lp.copyFrom(getWindow().getAttributes());
-//
-//        Window window = getWindow();
-//        lp.height = height1;
-//        window.setAttributes(lp);
-
-
-        View.OnClickListener closeListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                link.setVisibility(View.VISIBLE);
-                load.setVisibility(View.INVISIBLE);
-                guest.setVisibility(View.INVISIBLE);
-                result.setVisibility(View.INVISIBLE);
-                dismiss();
-                closeCallBack.run();
-            }
-        };
-
-        linkConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                link.setVisibility(View.INVISIBLE);
-                load.setVisibility(View.VISIBLE);
+        this.setOnDismissListener(new OnDismissListener() {
+            @Override public void onDismiss(DialogInterface dialogInterface) {
+                state.dismiss();
             }
         });
-
-        linkCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                link.setVisibility(View.INVISIBLE);
-                guest.setVisibility(View.VISIBLE);
-            }
-        });
-
-
-
-        loadConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (confirmCheck.apply(loadEditText.getText().toString())) {
-                    load.setVisibility(View.INVISIBLE);
-                    result.setVisibility(View.VISIBLE);
-                    loadConfirmCallBack.run();
-                } else {
-                    //failConfirmCheck.run();
-                }
-            }
-        });
-
-        guestLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                guest.setVisibility(View.INVISIBLE);
-                result.setVisibility(View.VISIBLE);
-                guestConfirmCallBack.run();
-            }
-        });
-
-        guestBefore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                guest.setVisibility(View.INVISIBLE);
-                link.setVisibility(View.VISIBLE);
-            }
-        });
-
-        resultConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-                link.setVisibility(View.VISIBLE);
-                load.setVisibility(View.INVISIBLE);
-                guest.setVisibility(View.INVISIBLE);
-                result.setVisibility(View.INVISIBLE);
-                resultConfirmCallBack.run();
-            }
-        });
-
-        resultClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-                link.setVisibility(View.VISIBLE);
-                load.setVisibility(View.INVISIBLE);
-                guest.setVisibility(View.INVISIBLE);
-                result.setVisibility(View.INVISIBLE);
-                resultConfirmCallBack.run();
-            }
-        });
-
-        //linkClose.setOnClickListener(closeListener);
-        linkClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-                closeCallBack.run();
-            }
-        });
-        loadClose.setOnClickListener(closeListener);
-        guestcClose.setOnClickListener(closeListener);
-
-
-        //loadEditText.setOnFocusChangeListener();
     }
 
-    public Runnable loadConfirmCallBack = new Runnable() {
-        @Override
-        public void run() {
-            System.out.println("loadConfirmCallBack");
-        }
-    };
+    public UserAllDialog setOnCompleted(CompleteHandler handler) {
+        this.completeHandler = handler;
+        return this;
+    }
 
-    public Runnable guestConfirmCallBack = new Runnable() {
-        @Override
-        public void run() {
-            System.out.println("guestConfirmCallBack");
-        }
-    };
+    public UserAllDialog setOnCancel(CancelHandler handler) {
+        this.cancelHandler = handler;
+        return this;
+    }
 
-    public Runnable resultConfirmCallBack = new Runnable() {
-        @Override
-        public void run() {
-            System.out.println("resultConfirmCallBack");
-        }
-    };
-
-    public Runnable closeCallBack = new Runnable() {
-        @Override
-        public void run() {
-            System.out.println("loadConfirmCallBack");
-        }
-    };
-
-
-
+    public UserAllDialog setOnFail(FailHandler handler) {
+        this.failHandler = handler;
+        return this;
+    }
 
     @Override
     protected void onStart() {
         super.onStart();
-
-        linkSnsDataText.setText(linkSnsDataTextSupplier.get());
-        linkGuestDataText.setText(linkGuestDataTextSupplier.get());
-
-        loadText.setText(loadTextSupplier.get());
-
-        guestText.setText(guestTextSupplier.get());
+        changeState(STATE_READY);
     }
+
+    /**
+     * Listener Interface
+     */
+    public interface CompleteHandler { void apply(Result.Login result); }
+    public interface CancelHandler { void cancel(); }
+    public interface FailHandler { void fail(Throwable t); }
+
 
     public CustormSupplier<String> linkSnsDataTextSupplier = new CustormSupplier<String>() {
         @Override
@@ -243,17 +101,6 @@ public class UserAllDialog extends Dialog{
         @Override
         public String get() {
             return (String) getContext().getText(R.string.estcommon_userLink_bottomLabel);
-        }
-    };
-
-    public CustomFunction<String, Boolean> confirmCheck = new CustomFunction<String, Boolean>() {
-        @Override
-        public Boolean apply(String s) {
-            if (s.equals("confirm")) {
-                return true;
-            } else {
-                return false;
-            }
         }
     };
 
@@ -270,4 +117,272 @@ public class UserAllDialog extends Dialog{
             return (String) getContext().getText(R.string.estcommon_userGuest_middle);
         }
     };
+
+    private void changeState(DialogState state) {
+        if (this.state != null) {
+            this.state.hide();
+        }
+        this.state = state;
+        this.state.show();
+    }
+
+    /**
+     * Dialog 상태 인터페이스 정의
+     */
+    private interface DialogState {
+        void show();
+        void hide();
+        void dismiss();
+    }
+
+    /**
+     * 최초로 보이는 Dialog 창의 상태를 표현.
+     * 사용자에게 기존 계정 로그인 또는 현재계정의 연동 선택 화면을 보여줌.
+     */
+    private class Ready implements DialogState {
+        private UserAllDialog context;
+
+        private Ready(UserAllDialog ctx) {
+            context = ctx;
+
+            // 기존계정으로 로그인 하기 버튼에 대한 핸들러 등록
+            context.findViewById(R.id.btn_switch).setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View view) {
+                    context.changeState(context.STATE_SWITCH);
+                }
+            });
+
+            // 현재 계정에 연동하기 버튼에 대한 핸들러 등록
+            context.findViewById(R.id.btn_sync).setOnClickListener(new View.OnClickListener(){
+                @Override public void onClick(View view) {
+                    context.changeState(context.STATE_SYNC);
+                }
+            });
+
+            // 창 닫기 버튼에 대한 핸들러 등록
+            context.findViewById(R.id.btn_ready_close).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.dismiss();
+                }
+            });
+        }
+
+        @Override public void show() {
+            context.findViewById(R.id.v_ready_dialog).setVisibility(View.VISIBLE);
+            ((TextView)context.findViewById(R.id.txt_ready_target_data)).setText(linkSnsDataTextSupplier.get());
+            ((TextView)context.findViewById(R.id.txt_ready_current_data)).setText(linkGuestDataTextSupplier.get());
+        }
+
+        @Override
+        public void hide() {
+            context.findViewById(R.id.v_ready_dialog).setVisibility(View.INVISIBLE);
+        }
+
+        @Override public void dismiss() {
+            context.cancelHandler.cancel();
+        }
+    }
+
+    /**
+     * 계정 불러오기 동의 Dialog 상태의 표현.
+     * 사용자에게 기존 계정을 불러올 것인지 의사를 확인하는 화면을 보여줌.
+     */
+    private class Switch implements DialogState {
+        private UserAllDialog context;
+        private EditText confirmText;
+
+        private Switch(UserAllDialog ctx) {
+            context = ctx;
+            confirmText = context.findViewById(R.id.ed_switch_confirm_word);
+
+            // 계정 불러오기 동의 버튼에 대한 핸들러 등록
+            context.findViewById(R.id.btn_switch_confirm).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if ("confirm".equals(confirmText.getText().toString())) {
+                        context.sessionManager
+                                .create(context.identityId)
+                                .right(new Function1<String, Unit>() {
+                                    @Override public Unit invoke(String token) {
+                                        Result.Login data = new Result.Login(
+                                                "SWITCH",
+                                                sessionManager.getProfile().getEgId(),
+                                                context.provider);
+
+                                        context.changeState(new Complete(context, data));
+                                        return null;
+                                    }
+                                })
+                                .left(new Function1<Throwable, Unit>() {
+                                    @Override
+                                    public Unit invoke(Throwable t) {
+                                        context.changeState(new Fail(context, t));
+                                        return null;
+                                    }
+                                });
+                    } else {
+                        confirmText.setText("");
+                        confirmText.setHint(R.string.estcommon_userLoad_input_wrong);
+                    }
+                }
+            });
+
+            // 창 닫기 버튼에 대한 핸들러 등록
+            context.findViewById(R.id.btn_switch_close).setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View view) {
+                    context.dismiss();
+                }
+            });
+        }
+
+        @Override public void show() {
+            context.findViewById(R.id.v_switch_dialog).setVisibility(View.VISIBLE);
+            ((TextView)context.findViewById(R.id.txt_switch_confirm_desc)).setText(loadTextSupplier.get());
+        }
+
+        @Override public void hide() {
+            context.findViewById(R.id.v_switch_dialog).setVisibility(View.INVISIBLE);
+        }
+
+        @Override public void dismiss() {
+            context.cancelHandler.cancel();
+        }
+    }
+
+    /**
+     * 계정연계 동의 Dialog 창 상태의 표현.
+     * 사용자에게 현재 플레이 계정과 기존 계정을 연계하고 기존 계정정보는 삭제할지 여부를 묻는 화면을 보여줌.
+     */
+    private class Sync implements DialogState {
+        private UserAllDialog context;
+
+        private Sync(UserAllDialog ctx) {
+            context = ctx;
+
+            // 계정 전환 버튼에 대한 핸들러 등록
+            context.findViewById(R.id.btn_sync_confirm).setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View view) {
+                    Map<String, String> data = new HashMap<>();
+                    data.put("provider", context.provider);
+
+                    context.sessionManager
+                            .sync(data, context.identityId, true)
+                            .right(new Function1<Result.SyncComplete, Unit>() {
+                                @Override
+                                public Unit invoke(Result.SyncComplete result) {
+                                    Result.Login data = new Result.Login("SYNC", result.getEgId(), context.provider);
+                                    context.changeState(new Complete( context, data));
+                                    return null;
+                                }
+                            })
+                            .left(new Function1<Result, Unit>() {
+                                @Override
+                                public Unit invoke(Result result) {
+                                    context.changeState(new Fail(context, ((Result.Failure)result).getCause()));
+                                    return null;
+                                }
+                            });
+                }
+            });
+
+            // 이전으로 돌아기기 버튼에 대한 핸들러 등록
+            context.findViewById(R.id.btn_sync_cancel).setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View view) {
+                    context.changeState(context.STATE_READY);
+                }
+            });
+
+            // 창 닫기 버튼에 대한 핸들러 등록
+            context.findViewById(R.id.btn_sync_close).setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View view) {
+                    context.dismiss();
+                }
+            });
+        }
+
+        @Override public void show() {
+            context.findViewById(R.id.v_sync_dialog).setVisibility(View.VISIBLE);
+            ((TextView)context.findViewById(R.id.txt_sync_description)).setText(guestTextSupplier.get());
+        }
+
+        @Override public void hide() {
+            context.findViewById(R.id.v_sync_dialog).setVisibility(View.INVISIBLE);
+        }
+
+        @Override public void dismiss() {
+            context.cancelHandler.cancel();
+        }
+    }
+
+    /**
+     * 사용자 동의 완료 Dialog 창의 상태를 표현.
+     * 사용자 전환 또는 동기화 완료가 되었음을 알려주는 화면을 보여줌.
+     */
+    private class Complete implements DialogState {
+        private UserAllDialog context;
+        private Result.Login result;
+
+        private Complete(UserAllDialog ctx, Result.Login data) {
+            context = ctx;
+            this.result = data;
+
+            // 확인 버튼에 대한 핸들러 등록
+            context.findViewById(R.id.btn_complete_confirm).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.dismiss();
+                }
+            });
+
+            // 창닫기 버튼에 대한 핸들러 등록
+            context.findViewById(R.id.btn_complete_close).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.dismiss();
+                }
+            });
+        }
+
+        @Override public void show() {
+            context.findViewById(R.id.v_complete_dialog).setVisibility(View.VISIBLE);
+        }
+
+        @Override public void hide() {
+            context.findViewById(R.id.v_complete_dialog).setVisibility(View.INVISIBLE);
+        }
+
+        @Override public void dismiss() {
+            context.completeHandler.apply(result);
+        }
+    }
+
+    /**
+     * 사용자 계정 전환 또는 동기화가 실패한 상태를 표현.
+     * 사용자 동의 Dialog 창을 닫는다.
+     */
+    private class Fail implements DialogState {
+        private UserAllDialog context;
+        private Throwable cause;
+
+        private Fail(UserAllDialog ctx, Throwable t) {
+            context = ctx;
+            cause = t;
+        }
+
+        @Override
+        public void show() {
+            context.dismiss();
+        }
+
+        @Override
+        public void hide() {
+            context.dismiss();
+        }
+
+        @Override
+        public void dismiss() {
+            context.failHandler.fail(cause);
+        }
+    }
 }

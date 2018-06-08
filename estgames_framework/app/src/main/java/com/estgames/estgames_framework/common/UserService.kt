@@ -22,23 +22,36 @@ public class UserService constructor(callingActivity: Activity) {
     /**
      *  팝업에 텍스트 설정하기
      * */
-    public var setUserLinkMiddleText: CustormSupplier<String>? = null
-    public var setUserLinkBottomText: CustormSupplier<String>? = null
-    public var setUserLoadText: CustormSupplier<String>? = null
-    public var setUserGuestText: CustormSupplier<String>? = null
+    var userLinkMiddleText: CustormSupplier<String>? = null
+    var userLinkBottomText: CustormSupplier<String>? = null
+    var userLoadText: CustormSupplier<String>? = null
+    var userGuestText: CustormSupplier<String>? = null
 
     var userAllDialog: UserAllDialog? = null
 
     /**
      * 콜백함수
      * */
+    var failCallBack: CustomConsumer<Fail> = CustomConsumer {  }
+    var startSuccessCallBack: Runnable = Runnable {  }
+    var clearSuccessCallBack: Runnable = Runnable {  }
+    var back:CustomConsumer<Activity> = CustomConsumer {  }
 
-    public var failCallBack: CustomConsumer<Fail> = CustomConsumer {  }
-    public var startSuccessCallBack: Runnable = Runnable {  }
-    public var goToLoginSuccessCallBack: Runnable = Runnable {  }
-    public var clearSuccessCallBack: Runnable = Runnable {  }
-    public var back:CustomConsumer<Activity> = CustomConsumer {  }
+    var loginResultHandler: LoginResultHandler = object: LoginResultHandler {
+            override fun onComplete(result: Result.Login) { }
+            override fun onFail(code: Fail) { }
+            override fun onCancel() { }
+        }
 
+    var loginComplete: LoginComplete = object: LoginComplete {
+        override fun onComplete() {}
+    }
+    var loginFail: LoginFailure = object: LoginFailure {
+        override fun onFail(code: Fail) {}
+    }
+    var loginCancel: LoginCanceled = object: LoginCanceled{
+        override fun onCanceled() {}
+    }
 
     val sessionManager: SessionManager by lazy {
         SessionManager(callingActivity)
@@ -48,99 +61,16 @@ public class UserService constructor(callingActivity: Activity) {
         IdentityManager.getDefaultIdentityManager()
     }
 
-    fun setting() {
-        userAllDialog!!.closeCallBack = Runnable {
-            signout()
-        }
-
-        if (setUserLinkMiddleText != null)
-            userAllDialog!!.linkSnsDataTextSupplier = setUserLinkMiddleText
-        if (setUserLinkBottomText != null)
-            userAllDialog!!.linkGuestDataTextSupplier = setUserLinkBottomText
-
-        userAllDialog!!.loadConfirmCallBack = Runnable {
-            onSwitch()
-        }
-
-        if (setUserLoadText != null)
-            userAllDialog!!.loadTextSupplier = setUserLoadText
-
-        userAllDialog!!.guestConfirmCallBack = Runnable {
-            onSync()
-        }
-
-        if (setUserGuestText != null)
-            userAllDialog!!.guestTextSupplier = setUserGuestText
-
-        userAllDialog!!.resultConfirmCallBack = Runnable {
-            goToLoginSuccessCallBack.run()
-        }
-    }
-
-    val complete: (String) -> Unit = {
-        identityManager.login(callingActivity, object: DefaultSignInResultHandler() {
-            override fun onSuccess(activity: Activity?, provider: IdentityProvider?) {
-                callingActivity.runOnUiThread(Runnable {
-
-                    identityManager.getUserID(object: IdentityHandler {
-                        override fun onIdentityId(identityId: String?) {
-
-                            sessionManager
-                                    .sync(hashMapOf("provider" to provider!!.displayName, "email" to "test@facebook.com"), identityId)
-                                    .right {
-                                        //성공했을 경우
-                                        goToLoginSuccessCallBack.run()
-                                    }
-                                    .left {
-                                        //충돌이 발생했을 경우
-                                        err ->
-                                        when (err) {
-                                            is Result.SyncFailure -> {
-                                                // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
-
-                                                callingActivity.runOnUiThread(Runnable {
-                                                    userAllDialog = UserAllDialog(callingActivity)
-                                                    setting()
-
-                                                    userAllDialog!!.show()
-                                                })
-                                            }
-                                            is Result.Failure -> {
-                                                if (identityManager.isUserSignedIn) {
-                                                    identityManager.signOut()
-                                                }
-                                                failCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
-                                            }
-                                        }
-                                    }
-                        }
-                        override fun handleError(exception: Exception?) {
-                            failCallBack.accept(Fail.ACCOUNT_SYNC_FAIL)
-                        }
-                    })
-
-                })
-            }
-
-            override fun onCancel(activity: Activity?): Boolean {
-                back.accept(activity!!)
-                return false
-            }
-        })
-        startSuccessCallBack.run()
-    }
-
-    val fail: (Throwable) -> Unit = { t ->
-        val code: EGException = t as EGException
-        failCallBack.accept(code.code)
-    }
-
-    public fun createUser() {
+    fun createUser() {
         identityManager.resumeSession(
                 callingActivity,
                 { result ->
                     if (sessionManager.hasSession) {
-                        sessionManager.open().right(complete).left(fail)
+                        sessionManager.open()
+                                .right { startSuccessCallBack.run() }
+                                .left { t ->
+                                    failCallBack.accept((t as EGException).code)
+                                }
                     } else {
                         result.identityManager.getUserID(object : IdentityHandler {
                             override fun handleError(e: Exception?) {
@@ -148,7 +78,12 @@ public class UserService constructor(callingActivity: Activity) {
                             }
 
                             override fun onIdentityId(identityId: String?) {
-                                sessionManager.create(principal=identityId!!).right(complete).left(fail)
+                                sessionManager.create(principal=identityId!!)
+                                        .right { startSuccessCallBack.run() }
+                                        .left { t ->
+                                            val code: EGException = t as EGException
+                                            failCallBack.accept(code.code)
+                                        }
                             }
                         })
                     }
@@ -157,7 +92,8 @@ public class UserService constructor(callingActivity: Activity) {
         )
     }
 
-    public fun goToLogin() {
+    fun goToLogin() {
+        initLoginHandler()
         callingActivity.runOnUiThread(Runnable {
             val config = AuthUIConfiguration.Builder()
                     .signInButton(FacebookButton::class.java)
@@ -168,17 +104,83 @@ public class UserService constructor(callingActivity: Activity) {
         })
     }
 
-    public fun goToLogin(config: AuthUIConfiguration) {
+    fun goToLogin(config: AuthUIConfiguration) {
+        initLoginHandler()
         SignInActivity.startSignInActivity(callingActivity, config)
     }
 
-    public fun signout() {
+    private fun initLoginHandler() {
+        // Cognito 의 SNS 로그인 결과 Handler 등록.
+        identityManager.login(callingActivity, object: DefaultSignInResultHandler() {
+            override fun onSuccess(activity: Activity?, provider: IdentityProvider?) {
+                callingActivity.runOnUiThread {
+                    identityManager.getUserID(object: IdentityHandler{
+                        override fun onIdentityId(identityId: String?) {
+                            sessionManager
+                                    .sync(hashMapOf("provider" to provider!!.displayName, "email" to "test@facebook.com"), identityId)
+                                    .right {
+                                        loginResultHandler.onComplete(Result.Login("LOGIN", it.egId, provider!!.displayName))
+                                    }
+                                    .left { err ->
+                                        when(err) {
+                                            is Result.SyncFailure -> {
+                                                // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
+                                                callingActivity.runOnUiThread {
+                                                    userAllDialog = UserAllDialog(callingActivity, identityId!!, provider.displayName).apply {
+                                                        setOnCompleted { loginResultHandler.onComplete(it) }
+                                                        setOnCancel {
+                                                            signout()
+                                                            loginResultHandler.onCancel()
+                                                        }
+                                                        setOnFail {
+                                                            signout()
+                                                            loginResultHandler.onFail((it as EGException).code)
+                                                        }
+
+                                                        if (userLinkMiddleText != null)
+                                                            linkSnsDataTextSupplier = userLinkMiddleText
+                                                        if (userLinkBottomText != null)
+                                                            linkGuestDataTextSupplier = userLinkBottomText
+                                                        if (userLoadText != null)
+                                                            loadTextSupplier = userLoadText
+                                                        if (userGuestText != null)
+                                                            guestTextSupplier = userGuestText
+                                                    }
+
+                                                    userAllDialog!!.show()
+                                                }
+                                            }
+                                            is Result.Failure -> {
+                                                if (identityManager.isUserSignedIn) {
+                                                    identityManager.signOut()
+                                                }
+                                                loginResultHandler.onFail(Fail.ACCOUNT_SYNC_FAIL)
+                                            }
+                                        }
+                                    }
+                        }
+
+                        override fun handleError(exception: Exception?) {
+                            loginResultHandler.onFail(Fail.ACCOUNT_SYNC_FAIL)
+                        }
+                    })
+                }
+            }
+
+            override fun onCancel(activity: Activity?): Boolean {
+                back.accept(activity)
+                return false
+            }
+        })
+    }
+
+    fun signout() {
         if (identityManager.isUserSignedIn) {
             identityManager.signOut()
         }
     }
 
-    public fun logout() {
+    fun logout() {
         if (identityManager.isUserSignedIn) {
             identityManager.signOut()
         }

@@ -7,7 +7,7 @@
         android:layout_height="0dp"
         />
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/linkDialog"
+        android:id="@+id/v_ready_dialog"
         android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +23,7 @@
             android:text="@string/estcommon_userLink_title"/>
 
         <Button
-            android:id="@+id/LinkCloseBt"
+            android:id="@+id/btn_ready_close"
             android:layout_width="13.5dp"
             android:layout_height="13.5dp"
             android:layout_alignParentRight="true"
@@ -39,7 +39,7 @@
             />
 
         <TextView
-            android:id="@+id/LinkSnsDataText"
+            android:id="@+id/txt_ready_target_data"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20.5dp"
@@ -50,10 +50,10 @@
             android:text="@string/estcommon_userLink_middelLabel"/>
 
         <TextView
-            android:id="@+id/LinkGuestDataText"
+            android:id="@+id/txt_ready_current_data"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/LinkSnsDataText"
+            android:layout_below="@id/txt_ready_target_data"
             android:layout_marginLeft="21.5dp"
             android:layout_marginTop="17dp"
             android:textSize="10sp"
@@ -70,7 +70,7 @@
             />
 
         <Button
-            android:id="@+id/LinkConfirm"
+            android:id="@+id/btn_switch"
             android:layout_width="136dp"
             android:layout_height="35dp"
             android:background="@drawable/btn_confirm_user"
@@ -83,11 +83,11 @@
             android:text="@string/estcommon_userLink_confirm"/>
 
         <Button
-            android:id="@+id/LinkCancel"
+            android:id="@+id/btn_sync"
             android:layout_width="136dp"
             android:layout_height="35dp"
             android:background="@drawable/btn_cancel_user"
-            android:layout_toRightOf="@id/LinkConfirm"
+            android:layout_toRightOf="@id/btn_switch"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="9.5dp"
             android:textSize="13sp"
@@ -97,7 +97,7 @@
 
 
     <RelativeLayout
-        android:id="@+id/loadDialog"
+        android:id="@+id/v_switch_dialog"
         android:visibility="invisible"
         android:layout_width="313dp"
         android:layout_height="258dp"
@@ -113,7 +113,7 @@
             android:text="@string/estcommon_userLoad_title"/>
 
         <Button
-            android:id="@+id/LoadCloseBt"
+            android:id="@+id/btn_switch_close"
             android:layout_width="13.5dp"
             android:layout_height="13.5dp"
             android:layout_alignParentRight="true"
@@ -129,7 +129,7 @@
             />
 
         <TextView
-            android:id="@+id/LoadText"
+            android:id="@+id/txt_switch_confirm_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="21.5dp"
@@ -140,10 +140,10 @@
             android:text="@string/estcommon_userLoad_content"/>
 
         <TextView
-            android:id="@+id/LoadConfirmText"
+            android:id="@+id/txt_switch_confirm_word"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/LoadText"
+            android:layout_below="@id/txt_switch_confirm_desc"
             android:layout_marginLeft="21.5dp"
             android:layout_marginTop="7.5dp"
             android:textSize="10sp"
@@ -152,34 +152,33 @@
 
 
         <EditText
-            android:id="@+id/LoadEditText"
+            android:id="@+id/ed_switch_confirm_word"
             android:layout_width="199dp"
             android:layout_height="33dp"
-            android:layout_below="@id/LoadConfirmText"
+            android:layout_below="@id/txt_switch_confirm_word"
             android:background="@drawable/img_inputbox_user"
             android:layout_marginLeft="19dp"
             android:layout_marginTop="17.5dp"
             android:layout_marginRight="5dp"
             android:textSize="12sp"
             android:textColor="#7E7D7D"
-            android:text="@string/estcommon_userLoad_input"/>
+            android:hint="@string/estcommon_userLoad_input"/>
 
         <Button
-            android:id="@+id/LoadConfirmBt"
+            android:id="@+id/btn_switch_confirm"
             android:layout_width="66.5dp"
             android:layout_height="32dp"
             android:background="@drawable/btn_confirm_user"
-            android:layout_below="@id/LoadConfirmText"
-            android:layout_toEndOf="@id/LoadEditText"
+            android:layout_below="@id/txt_switch_confirm_word"
+            android:layout_toEndOf="@id/ed_switch_confirm_word"
             android:layout_marginTop="17.5dp"
             android:textSize="13sp"
             android:textColor="#ffffff"
             android:text="@string/estcommon_userLoad_confirmButton"/>
-
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/GuestDialog"
+        android:id="@+id/v_sync_dialog"
         android:visibility="invisible"
         android:layout_width="313dp"
         android:layout_height="258dp"
@@ -195,7 +194,7 @@
             android:text="@string/estcommon_userGuest_title"/>
 
         <Button
-            android:id="@+id/GuestLinkCloseBt"
+            android:id="@+id/btn_sync_close"
             android:layout_width="13.5dp"
             android:layout_height="13.5dp"
             android:layout_alignParentRight="true"
@@ -211,7 +210,7 @@
             />
 
         <TextView
-            android:id="@+id/GuestLinkMiddleText"
+            android:id="@+id/txt_sync_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20.5dp"
@@ -230,7 +229,7 @@
             />
 
         <Button
-            android:id="@+id/GuestLinkLoginBt"
+            android:id="@+id/btn_sync_confirm"
             android:layout_width="136dp"
             android:layout_height="35dp"
             android:background="@drawable/btn_confirm_user"
@@ -243,11 +242,11 @@
             android:text="@string/estcommon_userGuest_loginBt"/>
 
         <Button
-            android:id="@+id/GuestLinkBeforeBt"
+            android:id="@+id/btn_sync_cancel"
             android:layout_width="136dp"
             android:layout_height="35dp"
             android:background="@drawable/btn_cancel_user"
-            android:layout_toRightOf="@id/GuestLinkLoginBt"
+            android:layout_toRightOf="@id/btn_sync_confirm"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="9.5dp"
             android:textSize="13sp"
@@ -256,7 +255,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/ResultDialog"
+        android:id="@+id/v_complete_dialog"
         android:visibility="invisible"
         android:layout_width="313dp"
         android:layout_height="258dp">
@@ -271,7 +270,7 @@
             android:text="@string/estcommon_userResult_title"/>
 
         <Button
-            android:id="@+id/ResultClose"
+            android:id="@+id/btn_complete_close"
             android:layout_width="13.5dp"
             android:layout_height="13.5dp"
             android:layout_alignParentRight="true"
@@ -287,7 +286,7 @@
             />
 
         <TextView
-            android:id="@+id/ResultSubTitle"
+            android:id="@+id/txt_complete_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="21.5dp"
@@ -298,10 +297,10 @@
             android:text="@string/estcommon_userResult_subTitle"/>
 
         <TextView
-            android:id="@+id/ResultText"
+            android:id="@+id/txt_complete_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ResultSubTitle"
+            android:layout_below="@id/txt_complete_title"
             android:layout_marginLeft="21.5dp"
             android:layout_marginTop="7.5dp"
             android:textSize="10sp"
@@ -310,7 +309,7 @@
 
 
         <Button
-            android:id="@+id/ResultSubmit"
+            android:id="@+id/btn_complete_confirm"
             android:layout_width="117dp"
             android:layout_height="35dp"
             android:background="@drawable/btn_confirm_user"
