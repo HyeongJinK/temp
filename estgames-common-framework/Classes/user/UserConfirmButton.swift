@@ -8,8 +8,8 @@
 import Foundation
 
 class UserConfirmButton : UIButton {
-    var confirmButtonImage: UIImage?
-    var view: UIViewController?
+    let confirmButtonImage: UIImage?
+    let view: UIViewController?
     var confirmBtAction: () -> Void = {() -> Void in}
     
     init(_ pview: UIViewController, frame: CGRect) {

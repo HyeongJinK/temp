@@ -19,14 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         return estAppDelegate.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
-    
+
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+
         return estAppDelegate.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
-    
+
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print("\napp = \(app)")
+        print("\nopen url = \(url)")
+        print("\nopen url = \(url.absoluteString)")
+        print("\nopen url = \(url.path)")
+        print("\noptions = \(options)")
+
         print("google: application")
-        
+
         return GIDSignIn.sharedInstance().handle(url,
                                                  sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
                                                  annotation: options[UIApplicationOpenURLOptionsKey.annotation])

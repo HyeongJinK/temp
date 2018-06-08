@@ -24,11 +24,14 @@ public class UserService {
     
     var getGoogleEmail : (() -> String)?
     
+    //public var startFailCallBack: (String) -> Void = {(message: String) -> Void in }
+    //public var goToLoginFailCallBack: (String) -> Void = {(message: String) -> Void in }
+    
+    
     public var failCallBack: (Fail) -> Void = {(message: Fail) -> Void in}
     public var startSuccessCallBack: () -> Void = {() -> Void in }
-    //public var startFailCallBack: (String) -> Void = {(message: String) -> Void in }
-    public var goToLoginSuccessCallBack: () -> Void = {() -> Void in }
-    //public var goToLoginFailCallBack: (String) -> Void = {(message: String) -> Void in }
+    public var goToLoginSuccessCallBack: (String?, String) -> Void = {(egId: String?, resultType:String) -> Void in }
+    public var goToLoginCloseCallBack: () -> Void = {() -> Void in}
     public var goToLoginConfirmCallBack: () -> Void = {() -> Void in }
     public var clearSuccessCallBack: () -> Void = {() -> Void in }
     
@@ -119,7 +122,7 @@ public class UserService {
         config.logoImage = nil//UIImage(named: "UserIcon")
         
         AWSAuthUIViewController.presentViewController(
-            with: pView.navigationController!,
+            with: pView,
             configuration: config,
             completionHandler: { (provider: AWSSignInProvider, error: Error?) in
                 if error != nil {
@@ -184,9 +187,7 @@ public class UserService {
                             MpInfo.Account.provider = provider
                             MpInfo.Account.email = email
                             //MpInfo.Account.userId = userId
-                            
-                            self.goToLoginSuccessCallBack()
-                        } else if result == "FAILURE" {     //guest와 sns 계정 충동
+                        } else if result == "FAILURE" {     //guest와 sns 계정 충돌
                             self.visibleSyncView(
                                 snsEgId: String(describing: datas["duplicated"]!),
                                 egToken: egToken,
@@ -224,8 +225,11 @@ public class UserService {
     }
     
     func show() {
+        userDialog.userResultViewController.egId = nil
+        userDialog.userResultViewController.resultType = "NONE"
+        userDialog.userLoadViewController.inputText.text = "";
         userDialog.setUserLinkCharacterLabel(guest: characterInfo(MpInfo.Account.egId), sns: characterInfo(self.crashSnsSyncIno.snsEgId))
-        userDialog.setUserLinkAction(closeAction: logout, confirmAction: linkConfirmAction, cancelAction: linkCancelAction)
+        userDialog.setUserLinkAction(closeAction: closeAction, confirmAction: linkConfirmAction, cancelAction: linkCancelAction)
         userDialog.showUserLinkDialog()
     }
     
@@ -263,6 +267,9 @@ public class UserService {
                 success: { data in
                     MpInfo.Account.provider = self.crashSnsSyncIno.provider
                     MpInfo.Account.email = email
+                    
+                    self.userDialog.userResultViewController.egId = self.crashSnsSyncIno.snsEgId
+                    self.userDialog.userResultViewController.resultType = "LOGINBYSNS"
                     // sns 로 keychain이 모두 변경된 상태입니다.
                     //self.visibleView(view: self.viewSnsSuccess)
                     
@@ -279,7 +286,7 @@ public class UserService {
     }
     
     private func userLoadShow() {
-        userDialog.setUserLoadAction(closeAction: logout, confirmCheck: loadConfirmAction, confirmActionCallBack: LoadConfirmCallBack)
+        userDialog.setUserLoadAction(closeAction: closeAction, confirmCheck: loadConfirmAction, confirmActionCallBack: LoadConfirmCallBack)
         userDialog.showUserLoadDialog()
     }
     
@@ -298,7 +305,7 @@ public class UserService {
     
     private func userGuestLinkShow() {
         userDialog.setUserGuestLinkCharacterLabel(guest: characterInfo(MpInfo.Account.egId), sns: characterInfo(self.crashSnsSyncIno.snsEgId))
-        userDialog.setUserGuestLinkAction(closeAction: logout, loginAction: loginAction, beforeAction: beforeAction)
+        userDialog.setUserGuestLinkAction(closeAction: closeAction, loginAction: loginAction, beforeAction: beforeAction)
         userDialog.showUserGuestLinkDialog()
     }
     
@@ -326,7 +333,7 @@ public class UserService {
                         MpInfo.Account.principal = principal
                         MpInfo.Account.provider = provider
                         MpInfo.Account.email = email
-                        
+                        self.userDialog.userResultViewController.resultType = "LOGINBYFORCE"
                         // 모달 화면을 닫고 -> guest게이데이터 그대로 이기 때문에 게임이어서 진행.
                         //self.dismiss(animated: true, completion: nil)
                     } else if result == "FAILURE" {
@@ -371,6 +378,11 @@ public class UserService {
         })
         
         return characterInfo
+    }
+    
+    func closeAction() {
+        logout()
+        self.goToLoginCloseCallBack()
     }
     
     func logout() {

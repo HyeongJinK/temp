@@ -16,11 +16,21 @@ public class WebViewUIController: UIViewController {
     var egToken: String?
     var nation: String="en"
     
+    
+    public override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        print("test")
+        
+        if self.presentedViewController != nil {
+            print("test2")
+            super.dismiss(animated: flag, completion: completion)
+        }
+    }
+    
     public override func viewDidLoad() {
         //print(self.view.frame)
         backgroundView = UIView(frame: self.view.frame)
-        closeBt = UIButton(frame: CGRect(x: 0, y: 30, width: self.view.frame.width, height: 30))
-        webView = UIWebView(frame: CGRect(x: 0, y: 61, width: self.view.frame.width, height: self.view.frame.height - 60))
+        closeBt = UIButton(frame: CGRect(x: 0, y: 30, width: self.view.frame.width, height: 50))
+        webView = UIWebView(frame: CGRect(x: 0, y: 81, width: self.view.frame.width, height: self.view.frame.height - 60))
         
         backgroundView.backgroundColor = UIColor.black
         
@@ -40,6 +50,7 @@ public class WebViewUIController: UIViewController {
     }
     
     @objc func closeAction(_ sender:UIButton) {
-        self.dismiss(animated: false, completion: nil)
+        //self.dismiss(animated: false, completion: nil)
+        super.dismiss(animated: false, completion: nil)
     }
 }

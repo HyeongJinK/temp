@@ -66,6 +66,7 @@ import Alamofire
             
             if (apiCallCount >= 3) {    //api 호출 실패가 3번이 넘으면
                 myGroup.leave()
+                apiCallCount = 0
                 self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
                 return
             }
@@ -145,7 +146,6 @@ import Alamofire
             case "use_contract" :
                 if (policy.isShowPolicyShow()) {
                     policy.callbackFunc = check
-                    policy.closeBt.closeBtAction = check
                     pview.present(policy, animated: false)
                 } else {
                     check()
@@ -186,7 +186,7 @@ import Alamofire
         
         if (policy.isShowPolicyShow()) {
             policy.callbackFunc = policyCallBack
-            policy.closeBt.closeBtAction = policyCallBack
+            //policy.closeBt.closeBtActionCallBack = policyCallBack
             pview.present(policy, animated: false)
         }
     }
@@ -213,7 +213,7 @@ import Alamofire
     //배너
     public func bannerShow() {
         if (!checkEstgamesData()) {
-            self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
+            self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
             return;
         }
         
@@ -222,6 +222,10 @@ import Alamofire
     }
     
     public func showCsCenter() {
+        if (!checkEstgamesData()) {
+            self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
+            return;
+        }
         webView = WebViewUIController()
         webView.egToken = MpInfo.Account.egToken
         webView.modalPresentationStyle = .overCurrentContext
@@ -233,6 +237,10 @@ import Alamofire
     
     //이용약관 다이얼로그
     public func showNotice() {
+        if (!checkEstgamesData()) {
+            self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
+            return;
+        }
         webView = WebViewUIController()
         webView.egToken = MpInfo.Account.egToken
         webView.modalPresentationStyle = .overCurrentContext
@@ -244,7 +252,7 @@ import Alamofire
     
     public func getNation() -> String? {
         if (!checkEstgamesData()) {
-            self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
+            self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
             return nil;
         }
         

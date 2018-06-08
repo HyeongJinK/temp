@@ -16,6 +16,7 @@
 'estcommon_userLoad_confirmText' = "확인 문자 : confirm";
 'estcommon_userLoad_input' = "입력하기";
 'estcommon_userLoad_confirmButton' = "확인";
+'estcommon_userLoad_input_wrong' = "정확한 단어를 입력하세요.";
 
 'estcommon_userLink_title' = "계정 연동";
 'estcommon_userLink_middelLabel' = "입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebookAccount: []\n위의 데이터를 불러오시겠습니까?";

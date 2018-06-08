@@ -34,6 +34,9 @@ class UserDataSet {
     
     
     init(deviceNum: Int) {
+        print("deviceNUM")
+        print(deviceNum)
+        print("deviceNUM")
         switch(deviceNum) {
 //        case 320480 :
 //            break;
@@ -126,13 +129,13 @@ class UserDataSet {
             userLinkConfirmButton = CGRect(x: 18, y: 167, width: 142, height: 37)
             userLinkCancelButton = CGRect(x: 168, y: 167, width: 142, height: 37)
             
-            userLoadbackgroundView = CGRect(x: 23.5, y: 350, width: 328, height: 187)
+            userLoadbackgroundView = CGRect(x: 23.5, y: 299, width: 328, height: 187)
             userLoadMiddleLabel = CGRect(x: 22, y: 50.5, width: 270, height: 38)
             userLoadConfirmLabel = CGRect(x: 22, y: 97, width: 270, height: 10)
             userLoadInputButton = CGRect(x: 19, y: 124, width: 209.5, height: 35)
             userLoadConfirmButton = CGRect(x: 233.5, y: 124, width: 70, height: 35)
             
-            userResultBackgroundView = CGRect(x: 23.5, y: 350, width: 328, height: 187)
+            userResultBackgroundView = CGRect(x: 23.5, y: 299, width: 328, height: 187)
             userResultSubLabel = CGRect(x: 22, y: 59.5, width: 200, height: 12)
             userResultContentLabel = CGRect(x: 22, y: 79, width: 200, height: 10)
             userResultConfirmButton = CGRect(x: 102, y: 140, width: 123.5, height: 37.5)

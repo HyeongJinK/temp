@@ -10,18 +10,25 @@ import Foundation
 class UserResultViewController: UIViewController {
     var backgroundView: UIView!
     var userResultTitle: UILabel! //알림
-    var closeButton: UserCloseButton!//닫기
+    //var closeButton: UserCloseButton!//닫기
+    var closeButton: UIButton!
     var lineView: UIView!
     var subLabel: UILabel!
     var contentLabel: UILabel!
-    var confirmButton: UserConfirmButton!
-    var closeActon: () -> Void = {() -> Void in}
-    var confirmAction: () -> Void = {() -> Void in}
+    //var confirmButton: UserConfirmButton!
+    var confirmButton: UIButton!
+    var closeActon: (String?, String) -> Void = {(egId, type) -> Void in}
+    var confirmAction: (String?, String) -> Void = {(egId, type) -> Void in}
+    //var closeActon: () -> Void = {() -> Void in}
+    //var confirmAction: () -> Void = {() -> Void in}
+    var egId :String? = nil
+    var resultType:String = "NONE"
     
     func dataSet(_ data:UserDataSet) {
         backgroundView = UIView(frame: data.userResultBackgroundView!)
         userResultTitle = UILabel(frame: data.titleLabel!)
-        closeButton = UserCloseButton(self, frame: data.closeButton!)
+        //closeButton = UserCloseButton(self, frame: data.closeButton!)
+        closeButton = UIButton(frame: data.closeButton!)
         lineView = UIView(frame: data.lineView!)
         subLabel = UILabel(frame: data.userResultSubLabel!)
         contentLabel = UILabel(frame: data.userResultContentLabel!)
@@ -38,7 +45,15 @@ class UserResultViewController: UIViewController {
         userResultTitle.font = UIFont.systemFont(ofSize: 12)
         
         
-        closeButton.closeBtAction = closeActon
+        let closeButtonImage:UIImage? = UIImage(named: "btn_close_img_user", in:Bundle(for: UserCloseButton.self), compatibleWith:nil)
+        if let cimg = closeButtonImage {
+            closeButton.setImage(cimg, for: .normal)
+        } else {
+            closeButton.setTitle("X", for: .normal)
+        }
+        closeButton.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
+        
+        //closeButton.closeBtAction = closeActon
         
         
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
@@ -52,8 +67,21 @@ class UserResultViewController: UIViewController {
         contentLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         
         
-        confirmButton.setTitle(NSLocalizedString("estcommon_userResult_confirm", comment: ""), for: .normal)
-        confirmButton.confirmBtAction = confirmAction
+        let confirmButtonImage:UIImage? = UIImage(named: "btn_confirm_user", in: Bundle(for: UserLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
+        
+        if let cimg = confirmButtonImage {
+            self.confirmButton.setBackgroundImage(cimg, for: .normal)
+        } else {
+            self.confirmButton.backgroundColor = UIColor.gray
+        }
+        
+        self.confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        self.confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        self.confirmButton.addTarget(self, action: #selector(confirmBtAction(_:)), for: .touchUpInside)
+        self.confirmButton.setTitle(NSLocalizedString("estcommon_userResult_confirm", comment: ""), for: .normal)
+        
+        //confirmButton.setTitle(NSLocalizedString("estcommon_userResult_confirm", comment: ""), for: .normal)
+        //confirmButton.confirmBtAction = confirmAction
         
         
         backgroundView.addSubview(userResultTitle)
@@ -63,5 +91,15 @@ class UserResultViewController: UIViewController {
         backgroundView.addSubview(contentLabel)
         backgroundView.addSubview(confirmButton)
         self.view.addSubview(backgroundView)
+    }
+    
+    @objc func closeBtAction(_ sender:UIButton) {
+        closeActon(egId, resultType)
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    @objc func confirmBtAction(_ sender:UIButton) {
+        confirmAction(egId, resultType)
+        self.dismiss(animated: false, completion: nil)
     }
 }

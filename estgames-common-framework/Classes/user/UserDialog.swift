@@ -47,7 +47,7 @@ public class UserDialog {
         self.userLoadViewController.confirmActionCallBack = confirmActionCallBack
     }
     
-    public func setUserResultAction(closeAction: @escaping () -> Void, confirmAction:@escaping () -> Void) {
+    public func setUserResultAction(closeAction: @escaping (String?, String) -> Void, confirmAction:@escaping (String?, String) -> Void) {
         self.userResultViewController.closeActon = closeAction
         self.userResultViewController.confirmAction = confirmAction
     }

@@ -95,8 +95,14 @@ class ViewController: UIViewController {
             print("startGame() 함수 호출 성공 시 호출되는 콜백함수")
         }
         
-        vc.goToLoginSuccessCallBack = {() -> Void in
+        vc.goToLoginSuccessCallBack = {(egId, resultType) -> Void in
             print("goToLogin() 함수 호출 성공 시 호출되는 콜백함수")
+            print(egId)
+            print(resultType)
+        }
+        
+        vc.goToLoginCloseCallBack = {() -> Void in
+            print("goToLogin() 도중 중간에 끝냄")
         }
         
         vc.failCallBack = {(err) -> Void in     //유저 서비스 부분 에러 콜백 함수

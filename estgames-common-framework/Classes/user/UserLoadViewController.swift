@@ -56,7 +56,7 @@ class UserLoadViewController: UIViewController {
         middleLabel.attributedText = attrString
         
         
-        confirmLabel.text=NSLocalizedString("estcommon_userLoad_confirmText", comment: "")
+        confirmLabel.text = NSLocalizedString("estcommon_userLoad_confirmText", comment: "")
         confirmLabel.font = UIFont.systemFont(ofSize: 10)
         confirmLabel.textColor = UIColor(red: 48/255, green: 127/255, blue: 1, alpha: 1)
         
@@ -66,9 +66,10 @@ class UserLoadViewController: UIViewController {
             inputText.background = ibimg
         }
         inputText.textColor = UIColor(red: 126/255, green: 125/255, blue: 125/255, alpha: 1)
-        inputText.text = NSLocalizedString("estcommon_userLoad_input", comment: "")
+        inputText.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("estcommon_userLoad_input", comment: ""))
+        //inputText.text = NSLocalizedString("estcommon_userLoad_input", comment: "")
         inputText.textAlignment = .center
-        inputText.addTarget(self, action: #selector(editBegin), for: .editingDidBegin)
+        //inputText.addTarget(self, action: #selector(editBegin), for: .editingDidBegin)
 
         let confirmButtonImage:UIImage? = UIImage(named: "btn_confirm_user", in: Bundle(for: UserLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
         if let cbimg = confirmButtonImage {
@@ -94,6 +95,9 @@ class UserLoadViewController: UIViewController {
         if (confirmCheck()) {
             self.dismiss(animated: false, completion: nil)
             confirmActionCallBack()
+        } else {
+            inputText.text = ""
+            inputText.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("estcommon_userLoad_input_wrong", comment: ""))
         }
     }
     

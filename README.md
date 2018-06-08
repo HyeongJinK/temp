@@ -12,6 +12,9 @@
 * UserService
   * 실패 시 호출되는 콜백함수가 failCallBack로 통합됩니다. failCallBack: (Fail) -> Void 타입으로 Fail enum 타입으로 에러코드가 리턴됩니다.
 
+* Localizable.strings 파일에
+  * 'estcommon_userLoad_input_wrong' = "정확한 단어를 입력하세요."; 를 추가해주세요
+
 * Fail 에러 Enum 추가
 
 |실패 메시지|설명|

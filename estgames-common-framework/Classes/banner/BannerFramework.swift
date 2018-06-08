@@ -29,18 +29,6 @@ public class bannerFramework {
         
         bottomView = bannerBottomView() //아래바 생성
         bannerView!.addSubview(bottomView)
-    }
-    
-    func createMainView(_ pview:UIView) -> UIView {
-        //뷰 생성
-        let view = UIView()
-        view.frame = CGRect(x: 0, y: 0, width: pview.frame.size.width, height: pview.frame.size.height) //뷰 크기 창크기로
-        
-        return view
-    }
-    
-    private func dataSetting() {
-        imageViewsTemps.removeAll()
         
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "yyyy-MM-dd"
@@ -59,6 +47,30 @@ public class bannerFramework {
                 , viewHeight: bannerView!.frame.size.height
                 , bottomViewHeight: bottomView.bottomViewHeight)
             imageViewsTemps.append(imageView)
+        }
+    }
+    
+    func createMainView(_ pview:UIView) -> UIView {
+        //뷰 생성
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: pview.frame.size.width, height: pview.frame.size.height) //뷰 크기 창크기로
+        
+        return view
+    }
+    
+    private func dataSetting() {
+        //imageViewsTemps.removeAll()
+        
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "yyyy-MM-dd"
+        let today = dateFormat.string(from: Date())
+        
+        let pList = UserDefaults.standard   //오늘만 보기 데이터
+        
+        for (index, banner) in imageViewsTemps.enumerated() {
+            if pList.string(forKey: banner.bannerEntry!.banner.name) != nil && today == pList.string(forKey: banner.bannerEntry!.banner.name)!{
+                imageViewsTemps.remove(at: index)
+            }
         }
     }
     

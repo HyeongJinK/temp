@@ -109,7 +109,7 @@ class PolicyViewController: UIViewController {
         
         
         closeBt.frame = dataSet.closeBtFrame
-        closeBt.closeBtAction = callbackFunc
+        closeBt.closeBtActionCallBack = callbackFunc
 
         
         self.view.addSubview(backgroudView)

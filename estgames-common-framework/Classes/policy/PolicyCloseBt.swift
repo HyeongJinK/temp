@@ -10,7 +10,7 @@ import Foundation
 class PolicyCloseBt : UIButton {
     let closeBtImage:UIImage?
     let viewC:PolicyViewController?
-    var closeBtAction: () -> Void = {() -> Void in}
+    var closeBtActionCallBack: (() -> Void)? = nil
     
     required init?(coder aDecoder: NSCoder) {
         closeBtImage = UIImage(named: "btn_close_img", in:Bundle(for: PolicyCloseBt.self), compatibleWith:nil)
@@ -33,6 +33,6 @@ class PolicyCloseBt : UIButton {
     }
     
     @objc func closeBtAction(_ sender:UIButton) {
-        viewC!.dismiss(animated: false, completion: closeBtAction)
+        viewC!.dismiss(animated: false, completion: closeBtActionCallBack)
     }
 }

@@ -8,8 +8,8 @@
 import Foundation
 
 class UserCloseButton : UIButton {
-    var closeButtonImage: UIImage?
-    var view: UIViewController?
+    let closeButtonImage: UIImage?
+    let view: UIViewController?
     var closeBtAction: () -> Void = {() -> Void in}
     
     init(_ pview: UIViewController, frame: CGRect) {
