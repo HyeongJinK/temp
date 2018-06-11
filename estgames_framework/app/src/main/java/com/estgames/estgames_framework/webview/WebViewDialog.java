@@ -5,8 +5,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
+import android.view.Window;
 import android.webkit.WebResourceRequest;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -14,37 +14,32 @@ import android.widget.Button;
 import com.estgames.estgames_framework.R;
 
 public class WebViewDialog extends Dialog {
-    Dialog dialog;
-    Button closeBt;
-    WebView webView;
-    String url;
-    Runnable callBack = new Runnable() {
+    private Button closeBt;
+    private WebView webView;
+    private String url;
+    private Runnable callBack = new Runnable() {
         @Override
-        public void run() {
-            System.out.println("webViewCallBack");
-        }
+        public void run() {}
     };
 
     public WebViewDialog(@NonNull Context context, String url) {
-        super(context);
+        super(context, android.R.style.Theme_NoTitleBar_Fullscreen);
         this.url = url;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        dialog = this;
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.webview);
 
         closeBt = (Button) findViewById(R.id.webView_CloseBt);
         webView = (WebView) findViewById(R.id.webView_View);
-
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
+        webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient() {
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) { return super.shouldOverrideUrlLoading(view, request);
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                return super.shouldOverrideUrlLoading(view, request);
             }
         });
 
@@ -53,7 +48,7 @@ public class WebViewDialog extends Dialog {
         closeBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+                dismiss();
             }
         });
     }

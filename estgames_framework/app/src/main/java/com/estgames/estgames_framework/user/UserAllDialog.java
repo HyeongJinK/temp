@@ -202,7 +202,7 @@ public class UserAllDialog extends Dialog{
             context.findViewById(R.id.btn_switch_confirm).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if ("confirm".equals(confirmText.getText().toString())) {
+                    if ("confirm".equals(confirmText.getText().toString().trim())) {
                         context.sessionManager
                                 .create(context.identityId)
                                 .right(new Function1<String, Unit>() {
