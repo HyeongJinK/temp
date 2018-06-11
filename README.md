@@ -8,6 +8,7 @@
 * EstgamesCommon
   * 객체 생성 시 생성자에서 startapi를 호출하는 방식에서 객체생성 후 crate() 함수를 호출해야 startapi를 호출하여 값을 설정합니다.
   * 이용약관 전부 동의시 show해도 더 이상 나오지 않음
+  * 오류 처리는 estCommonFailCallBack 콜백함수로 리턴됩니다. ((Fail) -> Void 타입)
 
 * UserService
   * 실패 시 호출되는 콜백함수가 failCallBack로 통합됩니다. failCallBack: (Fail) -> Void 타입으로 Fail enum 타입으로 에러코드가 리턴됩니다.

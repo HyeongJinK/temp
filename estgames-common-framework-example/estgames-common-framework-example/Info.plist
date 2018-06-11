@@ -2,6 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
 	<key>AWS</key>
 	<dict>
 		<key>CredentialsProvider</key>
@@ -11,7 +29,7 @@
 				<key>Default</key>
 				<dict>
 					<key>PoolId</key>
-					<string>ap-northeast-2:f3e54d03-7439-43ae-a846-d4bfd7e9c980</string>
+					<string>ap-northeast-2:492ef421-4fad-43d9-ac21-5f549c7acd65</string>
 					<key>Region</key>
 					<string>ap-northeast-2</string>
 				</dict>
@@ -41,20 +59,6 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -64,20 +68,16 @@
 			<string>com.ESTgames.mrglb.${PRODUCT_NAME}</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.915170168211-65if7jlchf26id1vp2d2n975caau82ik</string>
-				<string>fb1641813522553524</string>
+				<string>com.googleusercontent.apps.825002676307-etghc2c1aiqcq5m5duh457gir198mtbg</string>
+				<string>fb188102531988315</string>
 				<string>com.ESTgames.mrglb.${PRODUCT_NAME}</string>
 			</array>
 		</dict>
 	</array>
-	<key>CFBundleVersion</key>
-	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>1641813522553524</string>
+	<string>188102531988315</string>
 	<key>FacebookDisplayName</key>
 	<string>FFG-facebook</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
 	<key>MP</key>
 	<dict>
 		<key>app_id</key>
@@ -85,15 +85,17 @@
 		<key>app_name</key>
 		<string>노바워즈</string>
 		<key>client_id</key>
-		<string>b9b2b750-ea07-3808-a7b1-9f9ca4a9ffab.mp.estgames.com</string>
+		<string>1cbfa4da-f456-36cd-95f7-c17938d1b1b5.mp.estgames.com</string>
 		<key>env</key>
-		<string>stage</string>
+		<string>live</string>
 		<key>estapi</key>
-		<string>https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/stage/start/mr</string>
+		<string>https://m-linker.estgames.co.kr/sdk-start-api</string>
+		<key>account_api</key>
+		<string>https://api-account.estgames.co.kr</string>
 		<key>region</key>
 		<string>mr.global.ls</string>
 		<key>secret</key>
-		<string>15624467fd9b22c7f592de53ca92c0ed49a3ba1945a40116926c4edf1209f75c</string>
+		<string>435e1b2e970676e51826000ea3ef00fe0b43847866a7e95ff8903942f91a137c</string>
 	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -116,5 +118,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>${PRODUCT_NAME} Camera Usage</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>${PRODUCT_NAME} Microphone Usage</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>${PRODUCT_NAME} PhotoLibrary Usage</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>${PRODUCT_NAME} library Usage</string>
 </dict>
 </plist>

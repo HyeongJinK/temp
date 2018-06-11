@@ -4,7 +4,7 @@
   "CredentialsProvider": {
     "CognitoIdentity": {
       "Default": {
-        "PoolId": "ap-northeast-2:f3e54d03-7439-43ae-a846-d4bfd7e9c980",
+        "PoolId": "ap-northeast-2:492ef421-4fad-43d9-ac21-5f549c7acd65",
         "Region": "ap-northeast-2"
       }
     }
@@ -24,11 +24,11 @@
     }
   },
   "GoogleSignIn": {
-    "ClientId-iOS": "915170168211-65if7jlchf26id1vp2d2n975caau82ik.apps.googleusercontent.com",
+    "ClientId-iOS": "825002676307-etghc2c1aiqcq5m5duh457gir198mtbg.apps.googleusercontent.com",
     "Permissions": "email,profile,openid"
   },
   "FacebookSignIn": {
-    "AppId": "1641813522553524",
+    "AppId": "188102531988315",
     "Permissions": "public_profile"
   }
 }

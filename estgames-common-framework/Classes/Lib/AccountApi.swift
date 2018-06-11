@@ -65,7 +65,7 @@ public class AccountApi {
                              fail: @escaping(_ error: Error?)-> Void) {
         
         let method: HTTPMethod = .get
-        let url = "https://api-account-stage.estgames.co.kr/v2/account/me?eg_token=" + egToken
+        let url = MpInfo.App.accountApi + "/v2/account/me?eg_token=" + egToken
         request(url, method: method, encoding: JSONEncoding.default)
             .validate(contentType: ["application/json"])
             .validate(statusCode: 200..<300)
@@ -83,7 +83,8 @@ public class AccountApi {
                             fail: @escaping(_ error: Error?)-> Void) {
         
         let method: HTTPMethod = .post
-        let url = "https://api-account-stage.estgames.co.kr/v2/account/token"
+        
+        let url = MpInfo.App.accountApi + "/v2/account/token"
         
         let params: Parameters = self.makeCreateTokenParameters(approval_type: "principal", principal: principal, device: device, profile: profile)
         
@@ -105,7 +106,7 @@ public class AccountApi {
                              fail: @escaping(_ error: Error?)-> Void) {
         
         let method: HTTPMethod = .post
-        let url = "https://api-account-stage.estgames.co.kr/v2/account/token"
+        let url = MpInfo.App.accountApi + "/v2/account/token"
         let params: Parameters = self.makeRefreshTokenParameters(approval_type: "refresh_token", egToken: egToken, refreshToken: refreshToken, device: device, profile: profile)
         
         request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader)
@@ -124,7 +125,7 @@ public class AccountApi {
                         success: @escaping (_ data: Dictionary<String, Any>)-> Void,
                         fail: @escaping (_ error: Error?)-> Void) {
         let method: HTTPMethod = .post
-        let url = "https://api-account-stage.estgames.co.kr/v2/account/synchronize"
+        let url = MpInfo.App.accountApi + "/v2/account/synchronize"
         var params: Parameters = ["eg_token": egToken, "principal": principal]
         
         if let profile = profile {
@@ -148,7 +149,7 @@ public class AccountApi {
                                fail: @escaping (_ error: Error?)-> Void) {
         
         let method: HTTPMethod = .post
-        let url = "https://api-account-stage.estgames.co.kr/v2/account/synchronize"
+        let url = MpInfo.App.accountApi + "/v2/account/synchronize"
         var params: Parameters = ["eg_token": egToken, "principal": principal, "force": "True"]
         if (data != nil) {
             params["data"] = data

@@ -34,9 +34,6 @@ class UserDataSet {
     
     
     init(deviceNum: Int) {
-        print("deviceNUM")
-        print(deviceNum)
-        print("deviceNUM")
         switch(deviceNum) {
 //        case 320480 :
 //            break;

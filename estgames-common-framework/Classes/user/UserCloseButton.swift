@@ -23,7 +23,7 @@ class UserCloseButton : UIButton {
             self.setTitle("X", for: .normal)
         }
         
-        self.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
+        self.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchDown)
     }
     
     required init?(coder aDecoder: NSCoder) {

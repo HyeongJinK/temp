@@ -49,6 +49,12 @@ public class MpInfo {
             }
         }
         
+        public static var accountApi: String {
+            get {
+                return MpInfo.mpDict["account_api"]!
+            }
+        }
+        
         public static var env: String {
             get {
                 return MpInfo.mpDict["env"]!
