@@ -16,6 +16,9 @@
 * Localizable.strings 파일에
   * 'estcommon_userLoad_input_wrong' = "정확한 단어를 입력하세요."; 를 추가해주세요
 
+* info.plist 파일에 
+  * account_api = https://api-account.estgames.co.kr 추가 부탁드려요
+
 * Fail 에러 Enum 추가
 
 |실패 메시지|설명|
