@@ -24,9 +24,9 @@ class SessionManager(context:Context) {
         return _platform.sessionRepository.session as Token
     }
 
-    fun create(principal:String): Either<Throwable, String> {
+    fun create(principal:String): Either<EGException, String> {
         val executor = Executors.newSingleThreadExecutor()
-        val result = executor.submit(Callable<Either<Throwable, Session.Complete>> {
+        val result = executor.submit(Callable<Either<EGException, Session.Complete>> {
             try {
                 val token = Api.Token(
                         _platform.configuration.clientId,
@@ -47,7 +47,7 @@ class SessionManager(context:Context) {
                         email = if(email.equals(null)) null else email as String,
                         userId = me.getString("user_id")
                 ))
-            } catch (e: Throwable) {
+            } catch (e: EGException) {
                 return@Callable Left(e)
             }
         }).get()
@@ -59,12 +59,12 @@ class SessionManager(context:Context) {
         }
     }
 
-    fun open(): Either<Throwable, String> {
+    fun open(): Either<EGException, String> {
         val session = _sessionRepo.session
         return when(session) {
             is Token -> {
                 val executor = Executors.newSingleThreadExecutor()
-                val result = executor.submit(Callable<Either<Throwable, Session.Complete>> {
+                val result = executor.submit(Callable<Either<EGException, Session.Complete>> {
                     try {
                         val token = Api.Refresh(
                                 _platform.configuration.clientId,
@@ -87,7 +87,7 @@ class SessionManager(context:Context) {
                                 email = if(email.equals(null)) null else email as String,
                                 userId = me.getString("user_id")
                         ))
-                    } catch (e: Throwable) {
+                    } catch (e: EGException) {
                         return@Callable Left(e)
                     }
                 }).get()
@@ -156,16 +156,16 @@ class SessionManager(context:Context) {
         }
     }
 
-    fun expire(): Either<Throwable, String> {
+    fun expire(): Either<EGException, String> {
         val session = _sessionRepo.session
         return when (session) {
             is Token -> {
                 val executor = Executors.newSingleThreadExecutor()
-                val result = executor.submit(Callable<Either<Throwable, String>> {
+                val result = executor.submit(Callable<Either<EGException, String>> {
                     try {
                         val msg = Api.Expire(session.egToken).json()
                         return@Callable Right(msg.getString("logout_time"))
-                    } catch (e: Throwable) {
+                    } catch (e: EGException) {
                         return@Callable Left(e)
                     }
                 })
@@ -177,19 +177,19 @@ class SessionManager(context:Context) {
         }
     }
     //로그아웃 정보는 남는 다.
-    fun signOut(): Either<Throwable, String> {
+    fun signOut(): Either<EGException, String> {
         return expire().rightTo {
             _sessionRepo.revoke()
             return@rightTo "sign out"
         }
     }
     // 탈퇴 개념 캐릭터 정보도 날아간다
-    fun revoke(): Either<Throwable, String> {
+    fun revoke(): Either<EGException, String> {
         val session = _sessionRepo.session
         return when(session) {
             is Token -> {
                 val executor = Executors.newSingleThreadExecutor()
-                val result = executor.submit(Callable<Either<Throwable, String>> {
+                val result = executor.submit(Callable<Either<EGException, String>> {
                     try {
                         val msg = Api.Abandon(
                                 session.egToken,
@@ -197,7 +197,7 @@ class SessionManager(context:Context) {
                                 _platform.configuration.secret,
                                 _platform.configuration.region).json()
                         return@Callable Right(msg.getString("code"))
-                    } catch (e: Exception) {
+                    } catch (e: EGException) {
                         return@Callable Left(e)
                     }
                 })

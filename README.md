@@ -2,6 +2,13 @@
 
 ## 업데이트 사항
 
+:new: 1.0.10 업데이트 사항
+* 로그인 계정연동 팝업 뒤로가기 버튼 동작 버그 수정
+* 로그인 계정연동 핸들러 변경. 로그인 계정 연동시 계정 충돌 다이얼러로그 창 동작 결과에 대한 핸들러를 새로 작성하였습니다.
+  * UserService의 FailCallback의 역할이 분리되었습니다. : FailCallback 은 게임 시작 동작에만 관여하고, 로그인 계정연동 핸들러는 새롭게 정의했습니다.
+  * 로그인 계정 연동 핸들러는 세가지 상태에 대한 핸들러를 등록 하도록 수정했습니다. : onComplete / onFail / onCancel
+
+
 :new: 1.0.9 업데이트 사항
 
 * 계정연동 팝업 버그 수정
@@ -503,7 +510,7 @@ uv.createUser();
 
 //콜백함수
 uv.setStartSuccessCallBack(new Runnable() { ... })  //성공시 호출
-uv.setStartFailCallBack(new CustomConsumer<String>() {
+uv.setFailCallBack(new CustomConsumer<String>() {
     @Override public void accept(String msg) { ... }
  }); //Consumer 인터페이스와 같습니다. sdk버전을 19로 낮추면서 커스텀인터페이스를 하나 만들었습니다.
 
@@ -549,13 +556,22 @@ empUserService.setBack(new CustomConsumer<Activity>() {
 
 uv.goToLogin();
 
-// 콜백함수
-
-uv.setGoToLoginSuccessCallBack(new Runnable() { ... });  //성공시 호출
-uv.setGoToLoginFailCallBack(new CustomConsumer<String>() {
-    @Override public void accept(String msg) { ... }
-}) //실패시 호출
+//핸들러 등록
+uv.setLoginResultHandler(new LoginResultHandler() {
+    @Override public void onComplete(Result.Login result) { ... };
+    @Override public void onFail(Fail code) { ... };
+    @Override public void onCancel() { ... };
+});
 ```
+
+SNS 계정 로그인 및 연동에 관한 핸들러를 등록하도록 합니다. `LoginResultHandler` 인터페이스는 다음의 메서드로 구성되어 있습니다.
+
+* public void onComplete(Result.Login result) : 계정연동이 성공한 후 호출 됩니다.
+  * Result.Login.getType() : LOGIN(정상적인 로그인) / SWITCH(계정전환) / SYNC(계정연계)
+  * Result.Login.getEgID() : 로그인한 사용자의 EGID
+  * Result.Login.getProvider() : 로그인한 사용자의 Provider 정보
+* public void onFail(Fail code) : SNS 계정연동이 실패했을때 호출 됩니다.
+* public void onCancel() : SNS 계정연동을 취소했을 경우 호출 됩니다.
 
 #### 4. 로그아웃
 

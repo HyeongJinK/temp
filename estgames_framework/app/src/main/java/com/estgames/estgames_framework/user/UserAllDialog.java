@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.estgames.estgames_framework.R;
 import com.estgames.estgames_framework.common.CustormSupplier;
+import com.estgames.estgames_framework.core.EGException;
+import com.estgames.estgames_framework.core.Fail;
 import com.estgames.estgames_framework.core.Result;
 import com.estgames.estgames_framework.core.session.SessionManager;
 
@@ -87,7 +89,7 @@ public class UserAllDialog extends Dialog{
      */
     public interface CompleteHandler { void apply(Result.Login result); }
     public interface CancelHandler { void cancel(); }
-    public interface FailHandler { void fail(Throwable t); }
+    public interface FailHandler { void fail(EGException t); }
 
 
     public CustormSupplier<String> linkSnsDataTextSupplier = new CustormSupplier<String>() {
@@ -217,7 +219,7 @@ public class UserAllDialog extends Dialog{
                                 .left(new Function1<Throwable, Unit>() {
                                     @Override
                                     public Unit invoke(Throwable t) {
-                                        context.changeState(new Fail(context, t));
+                                        context.changeState(new Failure(context, t));
                                         return null;
                                     }
                                 });
@@ -279,7 +281,7 @@ public class UserAllDialog extends Dialog{
                             .left(new Function1<Result, Unit>() {
                                 @Override
                                 public Unit invoke(Result result) {
-                                    context.changeState(new Fail(context, ((Result.Failure)result).getCause()));
+                                    context.changeState(new Failure(context, ((Result.Failure)result).getCause()));
                                     return null;
                                 }
                             });
@@ -361,11 +363,11 @@ public class UserAllDialog extends Dialog{
      * 사용자 계정 전환 또는 동기화가 실패한 상태를 표현.
      * 사용자 동의 Dialog 창을 닫는다.
      */
-    private class Fail implements DialogState {
+    private class Failure implements DialogState {
         private UserAllDialog context;
         private Throwable cause;
 
-        private Fail(UserAllDialog ctx, Throwable t) {
+        private Failure(UserAllDialog ctx, Throwable t) {
             context = ctx;
             cause = t;
         }
@@ -382,7 +384,11 @@ public class UserAllDialog extends Dialog{
 
         @Override
         public void dismiss() {
-            context.failHandler.fail(cause);
+            if (cause instanceof EGException) {
+                context.failHandler.fail((EGException) cause);
+            } else {
+                context.failHandler.fail(Fail.SIGN_SWITCH_OR_SYNC.with(cause.getMessage(), cause));
+            }
         }
     }
 }

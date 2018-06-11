@@ -43,16 +43,6 @@ public class UserService constructor(callingActivity: Activity) {
             override fun onCancel() { }
         }
 
-    var loginComplete: LoginComplete = object: LoginComplete {
-        override fun onComplete() {}
-    }
-    var loginFail: LoginFailure = object: LoginFailure {
-        override fun onFail(code: Fail) {}
-    }
-    var loginCancel: LoginCanceled = object: LoginCanceled{
-        override fun onCanceled() {}
-    }
-
     val sessionManager: SessionManager by lazy {
         SessionManager(callingActivity)
     }
@@ -68,9 +58,7 @@ public class UserService constructor(callingActivity: Activity) {
                     if (sessionManager.hasSession) {
                         sessionManager.open()
                                 .right { startSuccessCallBack.run() }
-                                .left { t ->
-                                    failCallBack.accept((t as EGException).code)
-                                }
+                                .left { failCallBack.accept(it.code) }
                     } else {
                         result.identityManager.getUserID(object : IdentityHandler {
                             override fun handleError(e: Exception?) {
@@ -80,10 +68,7 @@ public class UserService constructor(callingActivity: Activity) {
                             override fun onIdentityId(identityId: String?) {
                                 sessionManager.create(principal=identityId!!)
                                         .right { startSuccessCallBack.run() }
-                                        .left { t ->
-                                            val code: EGException = t as EGException
-                                            failCallBack.accept(code.code)
-                                        }
+                                        .left { failCallBack.accept(it.code)}
                             }
                         })
                     }
@@ -134,7 +119,7 @@ public class UserService constructor(callingActivity: Activity) {
                                                         }
                                                         setOnFail {
                                                             signout()
-                                                            loginResultHandler.onFail((it as EGException).code)
+                                                            loginResultHandler.onFail(it.code)
                                                         }
 
                                                         if (userLinkMiddleText != null)
@@ -192,6 +177,7 @@ public class UserService constructor(callingActivity: Activity) {
      * Sync Dialog 핸들러 메서드.
      * 계정전환 버튼을 눌렀을 경우.
      */
+    @Deprecated("Login Dialog 에 종속적인 코드를 포함하고 있어서 오류 가능성이 있음.")
     fun onSwitch() {
         sessionManager.create(identityManager.cachedUserID).right {
             //userResultDialog.show()
@@ -207,6 +193,7 @@ public class UserService constructor(callingActivity: Activity) {
      * Sync Dialog 핸들러 메서드.
      * 계정연동 버튼을 눌렀을 경우.
      */
+    @Deprecated("Login Dialog 에 종속적인 코드를 포함하고 있어서 오류 가능성이 있음.")
     fun onSync() {
         val provider = identityManager.currentIdentityProvider.displayName
         sessionManager.sync(

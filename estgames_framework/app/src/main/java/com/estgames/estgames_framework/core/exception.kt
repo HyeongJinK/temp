@@ -35,7 +35,8 @@ enum class Fail(private val serverCode: String? = null) {
     SIGN_AWS_LOGIN_VIEW,
     SIGN_GOOGLE_SDK,
     SIGN_FACEBOOK_SDK,
-    SIGN_AWS_SESSION;
+    SIGN_AWS_SESSION,
+    SIGN_SWITCH_OR_SYNC;
 
     companion object {
         @JvmStatic fun resolve(code: String, message: String): EGException {
