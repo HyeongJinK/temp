@@ -10,8 +10,8 @@ import UIKit
 import Foundation
 
 var bannerView:UIView?
-var imageViews:[BannerImageView] = Array<BannerImageView>()
-var imageViewsTemps:[BannerImageView] = Array<BannerImageView>()
+var imageViews:[UIView] = Array<UIView>()
+var imageViewsTemps:[UIView] = Array<UIView>()
 
 public class bannerFramework {
     var estgamesBanner: ResultDataJson?
@@ -24,6 +24,10 @@ public class bannerFramework {
     public init(pview:UIViewController, result:ResultDataJson) {
         self.pview = pview
         self.estgamesBanner = result
+        
+        imageViews.removeAll()
+        imageViewsTemps.removeAll()
+        
         bannerView = UIView(frame: CGRect(x: 0, y: 0, width: pview.view.frame.size.width, height: pview.view.frame.size.height))
         bannerView?.translatesAutoresizingMaskIntoConstraints = false
         
@@ -68,7 +72,8 @@ public class bannerFramework {
         let pList = UserDefaults.standard   //오늘만 보기 데이터
         
         for (index, banner) in imageViewsTemps.enumerated() {
-            if pList.string(forKey: banner.bannerEntry!.banner.name) != nil && today == pList.string(forKey: banner.bannerEntry!.banner.name)!{
+            let banerImg:BannerImageView = banner as! BannerImageView
+            if pList.string(forKey: banerImg.bannerEntry!.banner.name) != nil && today == pList.string(forKey: banerImg.bannerEntry!.banner.name)!{
                 imageViewsTemps.remove(at: index)
             }
         }

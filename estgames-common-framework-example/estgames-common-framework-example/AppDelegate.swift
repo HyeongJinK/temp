@@ -26,14 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        print("\napp = \(app)")
-        print("\nopen url = \(url)")
-        print("\nopen url = \(url.absoluteString)")
-        print("\nopen url = \(url.path)")
-        print("\noptions = \(options)")
-
-        print("google: application")
-
         return GIDSignIn.sharedInstance().handle(url,
                                                  sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
                                                  annotation: options[UIApplicationOpenURLOptionsKey.annotation])

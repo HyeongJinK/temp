@@ -18,10 +18,7 @@ public class WebViewUIController: UIViewController {
     
     
     public override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-        print("test")
-        
         if self.presentedViewController != nil {
-            print("test2")
             super.dismiss(animated: flag, completion: completion)
         }
     }
@@ -41,6 +38,7 @@ public class WebViewUIController: UIViewController {
         
         if (url != nil && egToken != nil) {
             url! += "?eg_token="+egToken!+"&lang="+nation
+            print(url)
             webView.loadRequest(URLRequest(url: URL(string: url!)!))
         }
         

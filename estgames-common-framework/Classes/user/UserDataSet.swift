@@ -39,11 +39,11 @@ class UserDataSet {
 //            break;
         case 320568 :
             titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
-            closeButton = CGRect(x: 259.5, y: 12, width: 14, height: 14)
+            closeButton = CGRect(x: 259.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 290, height: 0.5)
             
             userLinkBackgroudView = CGRect(x: 15, y: 172, width: 290, height: 224)
-            userLinkCloseButton = CGRect(x: 259.5, y: 12, width: 14, height: 14)
+            userLinkCloseButton = CGRect(x: 259.5, y: 0, width: 30, height: 30)
             userLinkLineView = CGRect(x: 0, y: 39, width: 290, height: 0.5)
             userLinkMiddleLabel = CGRect(x: 22, y: 50.5, width: 270, height: 66)
             userLinkBottomLabel = CGRect(x: 22, y: 132, width: 270, height: 10)
@@ -64,11 +64,11 @@ class UserDataSet {
             break;
         case 375667 :
             titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
-            closeButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
             userLinkBackgroudView = CGRect(x: 23.5, y: 226, width: 328, height: 214)
-            userLinkCloseButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            userLinkCloseButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             userLinkLineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             userLinkMiddleLabel = CGRect(x: 22, y: 50.5, width: 270, height: 66)
             userLinkBottomLabel = CGRect(x: 22, y: 132, width: 270, height: 10)
@@ -89,11 +89,11 @@ class UserDataSet {
             break;
         case 414736 :
             titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
-            closeButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
             userLinkBackgroudView = CGRect(x: 43, y: 261, width: 328, height: 214)
-            userLinkCloseButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            userLinkCloseButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             userLinkLineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             userLinkMiddleLabel = CGRect(x: 22, y: 50.5, width: 270, height: 66)
             userLinkBottomLabel = CGRect(x: 22, y: 132, width: 270, height: 10)
@@ -114,11 +114,11 @@ class UserDataSet {
             break;
         case 375812 :
             titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
-            closeButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
             userLinkBackgroudView = CGRect(x: 23.5, y: 299, width: 328, height: 214)
-            userLinkCloseButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            userLinkCloseButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             userLinkLineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             userLinkMiddleLabel = CGRect(x: 22, y: 50.5, width: 270, height: 66)
             userLinkBottomLabel = CGRect(x: 22, y: 132, width: 270, height: 10)
@@ -141,11 +141,11 @@ class UserDataSet {
 //            break;
         case 568320 :
             titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
-            closeButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
             userLinkBackgroudView = CGRect(x: 99, y: 55                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              , width: 370, height: 209.5)
-            userLinkCloseButton = CGRect(x: 339.5, y: 12, width: 14, height: 14)
+            userLinkCloseButton = CGRect(x: 339.5, y: 0, width: 30, height: 30)
             userLinkLineView = CGRect(x: 0, y: 39, width: 370, height: 0.5)
             userLinkMiddleLabel = CGRect(x: 22, y: 50.5, width: 270, height: 66)
             userLinkBottomLabel = CGRect(x: 22, y: 130, width: 270, height: 10)
@@ -166,11 +166,11 @@ class UserDataSet {
             break;
         case 667375 :
             titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
-            closeButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
             userLinkBackgroudView = CGRect(x: 159, y: 78, width: 370, height: 209.5)
-            userLinkCloseButton = CGRect(x: 339.5, y: 12, width: 14, height: 14)
+            userLinkCloseButton = CGRect(x: 339.5, y: 0, width: 30, height: 30)
             userLinkLineView = CGRect(x: 0, y: 39, width: 370, height: 0.5)
             userLinkMiddleLabel = CGRect(x: 22, y: 50.5, width: 270, height: 66)
             userLinkBottomLabel = CGRect(x: 22, y: 130, width: 270, height: 10)
@@ -191,11 +191,11 @@ class UserDataSet {
             break;
         case 736412 :
             titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
-            closeButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
             userLinkBackgroudView = CGRect(x: 183, y: 101, width: 370, height: 209.5)
-            userLinkCloseButton = CGRect(x: 339.5, y: 12, width: 14, height: 14)
+            userLinkCloseButton = CGRect(x: 339.5, y: 0, width: 30, height: 30)
             userLinkLineView = CGRect(x: 0, y: 39, width: 370, height: 0.5)
             userLinkMiddleLabel = CGRect(x: 22, y: 50.5, width: 270, height: 66)
             userLinkBottomLabel = CGRect(x: 22, y: 130, width: 270, height: 10)
@@ -216,11 +216,11 @@ class UserDataSet {
             break;
         case 812375 :
             titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
-            closeButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
             userLinkBackgroudView = CGRect(x: 235, y: 78, width: 370, height: 209.5)
-            userLinkCloseButton = CGRect(x: 339.5, y: 12, width: 14, height: 14)
+            userLinkCloseButton = CGRect(x: 339.5, y: 0, width: 30, height: 30)
             userLinkLineView = CGRect(x: 0, y: 39, width: 370, height: 0.5)
             userLinkMiddleLabel = CGRect(x: 22, y: 50.5, width: 270, height: 66)
             userLinkBottomLabel = CGRect(x: 22, y: 130, width: 270, height: 10)
@@ -241,11 +241,11 @@ class UserDataSet {
             break;
         default:
             titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
-            closeButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
             userLinkBackgroudView = CGRect(x: 23.5, y: 226, width: 328, height: 214)
-            userLinkCloseButton = CGRect(x: 297.5, y: 12, width: 14, height: 14)
+            userLinkCloseButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             userLinkLineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             userLinkMiddleLabel = CGRect(x: 22, y: 50.5, width: 270, height: 66)
             userLinkBottomLabel = CGRect(x: 22, y: 132, width: 270, height: 10)

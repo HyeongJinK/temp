@@ -170,7 +170,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func bannerTest(_ sender: Any) {
-        estgamesCommon.bannerShow()
+        //estgamesCommon.bannerShow()
+        estgamesCommon.create()
     }
     
     @IBAction func authTest(_ sender: Any) {

@@ -37,8 +37,8 @@ class CloseBt: UIButton {
             dateFormat.dateFormat = "yyyy-MM-dd"
             
             let pList = UserDefaults.standard
-            
-            pList.set(dateFormat.string(from: Date()), forKey: imageViews.last!.bannerEntry!.banner.name)
+            let last: BannerImageView = imageViews.last! as! BannerImageView
+            pList.set(dateFormat.string(from: Date()), forKey: last.bannerEntry!.banner.name)
             pList.synchronize()
         }
         self.checkBt!.unCheckInit()

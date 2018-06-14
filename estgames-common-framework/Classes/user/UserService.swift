@@ -121,8 +121,19 @@ public class UserService {
         config.isBackgroundColorFullScreen = false
         config.logoImage = nil//UIImage(named: "UserIcon")
         
+//        AWSAuthUIViewController.presentViewController(
+//            with: pView,
+//            configuration: config,
+//            completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+//                if error != nil {
+//                    //self.goToLoginFailCallBack("AWS_LOGINVIEW")
+//                    self.failCallBack(Fail.SIGN_AWS_LOGIN_VIEW)
+//                } else {
+//                    self.onSignIn(true, provider)
+//                }
+//        })
         AWSAuthUIViewController.presentViewController(
-            with: pView,
+            with: pView.navigationController!,
             configuration: config,
             completionHandler: { (provider: AWSSignInProvider, error: Error?) in
                 if error != nil {
@@ -132,6 +143,7 @@ public class UserService {
                     self.onSignIn(true, provider)
                 }
         })
+
     }
     
     func onSignIn (_ success: Bool, _ provider: AWSSignInProvider) {

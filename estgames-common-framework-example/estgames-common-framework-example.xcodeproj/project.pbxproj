@@ -415,6 +415,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7VT8SF39BZ;
 				INFOPLIST_FILE = "estgames-common-framework-example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -435,6 +436,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7VT8SF39BZ;
 				INFOPLIST_FILE = "estgames-common-framework-example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

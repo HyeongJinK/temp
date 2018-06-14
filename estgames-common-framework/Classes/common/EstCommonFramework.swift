@@ -54,23 +54,26 @@ import Alamofire
     
     public func create() {
         if estgamesData == nil {
-            let myGroup = DispatchGroup.init()
-            let queue = DispatchQueue.global()
-            let url = MpInfo.App.estapi.replacingOccurrences(of: "env", with: MpInfo.App.env)+"?lang="+getLanguage()!
+            //let myGroup = DispatchGroup.init()
+            //let queue = DispatchQueue.global()
+            var url = MpInfo.App.estapi.replacingOccurrences(of: "env", with: MpInfo.App.env)+"?lang="+getLanguage()!
             
             
             //let manager = SessionManager.default
             //manager.session.configuration.timeoutIntervalForRequest = 10
-            myGroup.enter()
+            //myGroup.enter()
             apiCallCount += 1
             
             if (apiCallCount >= 3) {    //api 호출 실패가 3번이 넘으면
-                myGroup.leave()
+                //myGroup.leave()
                 apiCallCount = 0
                 self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
                 return
             }
-            queue.async {
+            
+            
+            URLCache.shared.removeAllCachedResponses()
+            //queue.async {
                 request(url)
                     .validate(contentType: ["application/json"])
                     .validate(statusCode: 200..<300)
@@ -88,12 +91,12 @@ import Alamofire
                                 self.process = self.estgamesData!.process[self.estgamesData!.nation.lowercased()] as! Array<String>
                                 self.initCallBack(self)
                             }
-                            myGroup.leave()
+                            //myGroup.leave()
                         } else {
                             self.estCommonFailCallBack(Fail.START_API_DATA_FAIL)
                         }
                 }
-            }
+            //}
         }
     }
     

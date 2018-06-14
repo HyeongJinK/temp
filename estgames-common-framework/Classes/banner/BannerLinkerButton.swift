@@ -28,7 +28,8 @@ class LinkerButton: UIButton {
     }
     
     @objc func linkBtAction(_ sender:UIButton) {
-        let entry:EventData = imageViews.last!.bannerEntry!
+        let last:BannerImageView = imageViews.last! as! BannerImageView
+        let entry:EventData = last.bannerEntry!
         
         switch entry.banner.action.type {
         case "WEB_VIEW":

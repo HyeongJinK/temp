@@ -155,7 +155,7 @@ public class AccountApi {
             params["data"] = data
         }
         
-        print("\(egToken), \(principal), \(data!)")
+        //print("\(egToken), \(principal), \(data!)")
         
         request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader)
             .validate(contentType: ["application/json"])
@@ -165,7 +165,7 @@ public class AccountApi {
                 if response.result.isSuccess {
                     success(response.result.value as! Dictionary)
                 } else {
-                    print(response.result.error.debugDescription)
+                    //print(response.result.error.debugDescription)
                     fail(response.result.error)
                 }
         }

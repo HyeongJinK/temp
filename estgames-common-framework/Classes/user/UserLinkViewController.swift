@@ -10,10 +10,8 @@ import Foundation
 class UserLinkViewController: UIViewController {
     var backgroudView: UIView!
     var userLinkTitle: UILabel!
-    //var closeButton: UserCloseButton!
-    
-    var closeButton: UIButton!
-    
+    var closeButton: UserCloseButton!
+    //var closeButton: UIButton!
     var lineView: UIView!
     var middleLabel: UILabel!
     var bottomLabel: UILabel!
@@ -30,8 +28,8 @@ class UserLinkViewController: UIViewController {
     func dataSet(_ data:UserDataSet) {
         backgroudView = UIView(frame: data.userLinkBackgroudView!)
         userLinkTitle = UILabel(frame: data.titleLabel!)
-        //closeButton = UserCloseButton(self, frame: data.userLinkCloseButton!)//x: backgroudView.frame.width - 16.5 - 14
-        closeButton = UIButton(frame: data.userLinkCloseButton!)
+        closeButton = UserCloseButton(self, frame: data.userLinkCloseButton!)//x: backgroudView.frame.width - 16.5 - 14
+        //closeButton = UIButton(frame: data.userLinkCloseButton!)
         lineView = UIView(frame: data.userLinkLineView!)  //width: backgroundView.frame.width
         middleLabel = UILabel(frame: data.userLinkMiddleLabel!)
         bottomLabel = UILabel(frame: data.userLinkBottomLabel!)
@@ -51,15 +49,17 @@ class UserLinkViewController: UIViewController {
         //userLinkTitle.font = UIFont.init(name: "SqoqaHanSans", size: 12)
         
         
-        //closeButton.closeBtAction = closeActon
-        let closeButtonImage = UIImage(named: "btn_close_img_user", in:Bundle(for: UserCloseButton.self), compatibleWith:nil)
-        if let cimg = closeButtonImage {
-            closeButton.setImage(cimg, for: .normal)
-        } else {
-            closeButton.setTitle("X", for: .normal)
-        }
+        closeButton.closeBtAction = closeActon
+//        let closeButtonImage = UIImage(named: "btn_close_img_user", in:Bundle(for: UserCloseButton.self), compatibleWith:nil)
+//        if let cimg = closeButtonImage {
+//            closeButton.setImage(cimg, for: .normal)
+//        } else {
+//            closeButton.setTitle("X", for: .normal)
+//        }
+//
+//        closeButton.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
+//        closeButton.backgroundImage(for: .normal)
         
-        closeButton.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
         
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
         
@@ -104,11 +104,10 @@ class UserLinkViewController: UIViewController {
         backgroudView.addSubview(confirmButton)
         backgroudView.addSubview(cancelButton)
     }
-    
-    @objc func closeBtAction(_ sender:UIButton) {
-        print("안녕")
-        dismiss(animated: false, completion: closeActon)
-    }
+//
+//    @objc func closeBtAction(_ sender:UIButton) {
+//        dismiss(animated: false, completion: closeActon)
+//    }
     
     @objc func cancelBtAction(_ sender:UIButton) {
         self.dismiss(animated: false, completion: nil)
