@@ -98,6 +98,15 @@ public class UserService {
             })
         }
     }
+    
+    public func goToLogin(onComplete: (String?, String) -> Void
+        , onCancel: () -> Void) {
+        goToLoginSuccessCallBack = onComplete
+        goToLoginCloseCallBack = onCancel
+        
+        goToLogin()
+    }
+    
     public func goToLogin() {
         let config = AWSAuthUIConfiguration()
         

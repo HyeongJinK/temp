@@ -45,6 +45,7 @@ public class bannerFramework {
                 continue
             }
             
+            
             //이미지 뷰 생성
             let imageView = BannerImageView(entry
                 , viewWidth: bannerView!.frame.size.width
