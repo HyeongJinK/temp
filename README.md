@@ -333,9 +333,11 @@ func googleEmail() -> String {
 
 |실패 메시지|설명|
 |-|-|
+| EstgamesCommon 관련 오류 |
 |START_API_NOT_CALL|startAPI 네트워크 에러|
 |START_API_DATA_FAIL|받은 데이터 오류|
 |START_API_DATA_INIT|값이 초기화가 안된 상태|
+| UserService 관련 오류 |
 |TOKEN_EMPTY|토큰이 없음|
 |TOKEN_CREATION|토큰 생성 시 에러|
 |TOKEN_INVALID||
