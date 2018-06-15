@@ -98,8 +98,19 @@ public class UserService {
             })
         }
     }
-    
     public func goToLogin() {
+        let config = AWSAuthUIConfiguration()
+        
+        config.enableUserPoolsUI = false
+        config.addSignInButtonView(class: AWSGoogleSignInButton.self)
+        config.addSignInButtonView(class: AWSFacebookSignInButton.self)
+        config.canCancel = true
+        config.isBackgroundColorFullScreen = false
+        config.logoImage = nil//UIImage(named: "UserIcon")
+        
+        goToLogin(config: config)
+    }
+    public func goToLogin(config:AWSAuthUIConfiguration) {
         if MpInfo.Account.isAuthedUser() == false {
             self.failCallBack(Fail.TOKEN_EMPTY)
             //goToLoginFailCallBack("EMPTY_TOKEN")
@@ -112,28 +123,8 @@ public class UserService {
             return
         }
         
-        let config = AWSAuthUIConfiguration()
-        
-        config.enableUserPoolsUI = false
-        config.addSignInButtonView(class: AWSGoogleSignInButton.self)
-        config.addSignInButtonView(class: AWSFacebookSignInButton.self)
-        config.canCancel = true
-        config.isBackgroundColorFullScreen = false
-        config.logoImage = nil//UIImage(named: "UserIcon")
-        
-//        AWSAuthUIViewController.presentViewController(
-//            with: pView,
-//            configuration: config,
-//            completionHandler: { (provider: AWSSignInProvider, error: Error?) in
-//                if error != nil {
-//                    //self.goToLoginFailCallBack("AWS_LOGINVIEW")
-//                    self.failCallBack(Fail.SIGN_AWS_LOGIN_VIEW)
-//                } else {
-//                    self.onSignIn(true, provider)
-//                }
-//        })
         AWSAuthUIViewController.presentViewController(
-            with: pView.navigationController!,
+            with: pView,
             configuration: config,
             completionHandler: { (provider: AWSSignInProvider, error: Error?) in
                 if error != nil {
@@ -143,6 +134,17 @@ public class UserService {
                     self.onSignIn(true, provider)
                 }
         })
+//        AWSAuthUIViewController.presentViewController(
+//            with: pView.navigationController!,
+//            configuration: config,
+//            completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+//                if error != nil {
+//                    //self.goToLoginFailCallBack("AWS_LOGINVIEW")
+//                    self.failCallBack(Fail.SIGN_AWS_LOGIN_VIEW)
+//                } else {
+//                    self.onSignIn(true, provider)
+//                }
+//        })
 
     }
     

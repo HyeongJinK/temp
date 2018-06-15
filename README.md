@@ -5,6 +5,9 @@
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
 
+:new: 업데이트 (1.0.9)
+---
+
 * EstgamesCommon
   * 객체 생성 시 생성자에서 startapi를 호출하는 방식에서 객체생성 후 crate() 함수를 호출해야 startapi를 호출하여 값을 설정합니다.
   * 이용약관 전부 동의시 show해도 더 이상 나오지 않음
@@ -103,6 +106,8 @@
     <string>노바워즈</string>
     <key>client_id</key>
     <string>b9b2b750-ea07-3808-a7b1-9f9ca4a9ffab.mp.estgames.com</string>
+    <key>account_api</key>
+	<string>https://api-account.estgames.co.kr</string>
     <key>secret</key>
     <string>15624467fd9b22c7f592de53ca92c0ed49a3ba1945a40116926c4edf1209f75c</string>
     <key>estapi</key>
@@ -180,7 +185,8 @@
 |client_id|String||b9b2b750-ea07-3808-a7b1-9f9ca4a9ffab.mp.estgames.com|
 |secret|String||15624467fd9b22c7f592de53ca92c0ed49a3ba1945a40116926c4edf1209f75c|
 |estapi|String|공통 모듈에서 사용하는 api 주소|https://dvn2co5qnk.execute-api.ap-northeast-2.amazonaws.com/live/start/mr.global.ls|
-|:new: env|String|어떤 레벨에 API를 사용할 지 선택|stage|
+|env|String|어떤 레벨에 API를 사용할 지 선택|stage|
+|account_api|String|https://api-account.estgames.co.kr|
 
 ### :three: awsconfiguration.json 파일 추가 
 
@@ -246,6 +252,7 @@
 'estcommon_userLoad_confirmText' = "확인 문자 : confirm";
 'estcommon_userLoad_input' = "입력하기";
 'estcommon_userLoad_confirmButton' = "확인";
+'estcommon_userLoad_input_wrong' = "정확한 단어를 입력하세요.";
 
 'estcommon_userLink_title' = "계정 연동";
 'estcommon_userLink_middelLabel' = "입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebookAccount: []\n위의 데이터를 불러오시겠습니까?";
@@ -352,8 +359,32 @@ func googleEmail() -> String {
 |SIGN_AWS_SESSION|aws 세션 에러|    
 |GOOGLE_CALLBACK_EMPTY|구글 이메일 콜백함수 초기화가 안되어 있음|
 
-:mag: 공통으로 사용되는 창
+
+
+:mag: 공통으로 사용되는 창 : EstgamesCommon
 ---
+
+|이름|타입|설명|
+|-|-|-|
+|create()|void create()|StartApi를 호출, 데이터를 가져와 설정한다. 해당함수를 호출해서 데이터를 설정에 성공해야 다른 함수들이 호출된다.|
+|initCallBack|(EstgamesCommon) -> Void|create 함수에 성공했을 때 호출되는 콜백함수|
+|estCommonFailCallBack|(Fail) -> Void|EstgamesCommon 객체 안에 있는 함수 호출 시 실패 했을 경우 호출되는 콜백함수|
+|processShow()|void processShow()|설정된 순서대로 배너, 이용약관..등이 출력됩니다.|
+|processCallBack|() -> Void|processShow() 함수 호출 후 호출되는 콜백함수|
+|bannerShow()|void bannerShow()|배너를 출력합니다.|
+|bannerCallBack|() -> Void|배너 호출 종료 시 호출됩니다.|
+|authorityShow()|void authorityShow()|권한창을 출력합니다.|
+|authorityCallBack|() -> Void|authorigyShow 호출 이후 콜백함수|
+|policyShow()|void policyShow()|이용약관창을 출력합니다.|
+|policyCallBack|() -> Void|policyShow호출 이후 콜백함수|
+|contractService()|Boolean contractService()|이용약관 체크 유무(서비스)|
+|contractPrivate()|Boolean contractPrivate()|이용약관 체크 유무(개인)|
+|showNotice()|void showNotice()|공지사항창을 출력합니다.|
+|showCsCenter()|void showCsCenter()|FAQ, 문의사항 창을 출력합니다.|
+|getNation()|String? getNation()|나라정보 리턴|
+|getLanguage()|String? getLanguate()|기기의 언어정보 리턴|
+
+
 
 ### :exclamation: 초기설정 (배너, 이용약관, 권한)관련 창
 
@@ -515,23 +546,33 @@ estgamesCommon.showNotice()
 estgamesCommon.showCsCenter()
 ```
 
+### 나라, 언어 관련
+
+```swift
+estgamesCommon.getNation()
+estgamesCommon.getLanguage()
+```
+
 
 :bust_in_silhouette: 계정관련
 ---
 
+|이름|타입|설명|
+|-|-|-|
+|failCallBack|(Fail) -> Void|유저 서비스에서 에러가 났을 경우 호출되는 콜백함수|
+|startGame()|void startGame()|게임시작, 토큰 생성|
+|goToLogin()|void goToLogin()|SNS 계정연동|
+|clearKey()|void clearKey()|로그인 정보 삭제|
+|startSuccessCallBack|() -> Void|startGame성공 시 콜백함수|
+|goToLoginSuccessCallBack|(egId:String?, resultType:String) -> Void|goToLogin 성공 시 콜백함수 egId는 SNS 계정으로 연동 시에만 바꿘 아이디가 들어옵니다. 게스트 계정으로 덮어씌울 경우에는 nil값입니다. SNS계정으로 연동 시 "LOGINBYSNS" 게스트 계정으로 덮어 씌우기 시 "LOGINBYFORCE" 으로 resultType값이 들어옵니다.
+|goToLoginCloseCallBack|() -> Void|SNS 연동 중간에 X버튼을 눌렀을 경우에 콜백함수|
+|clearSuccessCallBack|() -> Void|clearKey 함수 성공 후 콜백함수|
+
+
+
 ### :exclamation:  유저연동 초기 설정
 
 * :exclamation: SNS 연동창을 띄우기 위해서는 Navigate Controller을 추가해 주어야 합니다.
-
-|이름|설명|
-|-|-|
-|failCallBack (Fail) -> Void|유저 서비스 객체에서 에러가 났을 경우 호출되는 콜백함수|
-|startGame()|토큰생성|
-|goToLogin()|SNS 계정연동 시작|
-|startSuccessCallBack: () -> Void|토큰생성 성공시 콜백 함수|
-|startSuccessCallBack: () -> Void|토큰생성 성공시 콜백 함수|
-|goToLoginConfirmCallBack: () -> Void|SNS 계정 연동 중 confirm 입력 창에 값 입력 실패 시 호출되는 콜백함수 구현하지 않으면 아무일도 하지 않는 다.|
-
 
 ```swift
 import estgames_common_framework    // 프레임워크 추가
@@ -548,7 +589,7 @@ override func viewDidLoad() {
         print("startGame() 함수 호출 성공 시 호출되는 콜백함수")
     }
     
-    vc.goToLoginSuccessCallBack = {() -> Void in
+    vc.goToLoginSuccessCallBack = {(egId, resultType) -> Void in
         print("goToLogin() 함수 호출 성공 시 호출되는 콜백함수")
     }
     
@@ -618,202 +659,5 @@ vc.goToLogin()
 |이름|설명|
 |-|-|
 |goToLogin()|SNS 계정연동 시작|
-|startSuccessCallBack: () -> Void|토큰생성 성공시 콜백 함수|
-|goToLoginConfirmCallBack: () -> Void|SNS 계정 연동 중 confirm 입력 창에 값 입력 실패 시 호출되는 콜백함수 구현하지 않으면 아무일도 하지 않는 다.|
-
-
-
-
-
-예제 ViewController 전체 코드(참고용)
-===
-
-```swift
-import UIKit
-import estgames_common_framework
-import GoogleSignIn
-
-class ViewController: UIViewController {
-    var estgamesCommon:EstgamesCommon!
-    var vc : UserService!
-    
-    var userDialog: UserDialog!
-    
-    @IBOutlet var lblIdentityId: UILabel!
-    @IBOutlet var lblPrincipal: UILabel!
-    @IBOutlet var lblProviderName: UILabel!
-    @IBOutlet var lblEgId: UILabel!
-    @IBOutlet var lblEgToken: UILabel!
-    @IBOutlet var lblRefreshToken: UILabel!
-    @IBOutlet var lblEmail: UILabel!
-    
-    @IBOutlet var con1: UILabel!
-    @IBOutlet var con2: UILabel!
-    
-    
-    @IBOutlet var nation: UILabel!
-    @IBOutlet var lang: UILabel!
-    @IBOutlet var callBack: UILabel!
-    @IBOutlet var errorCode: UILabel!
-    
-    @IBAction func noticeAction(_ sender: Any) {
-        estgamesCommon.showNotice()
-    }
-    
-    @IBAction func faqAction(_ sender: Any) {
-        estgamesCommon.showCsCenter()
-    }
-    @IBOutlet var faqAction: UIButton!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
-
-        
-        estgamesCommon = EstgamesCommon(pview: self)    // EstgamesCommon 객체 생성
-        estgamesCommon.initCallBack = {(estcommon) -> Void in   //EstgamesCommon에 create 함수를 호출 하고 값 설정이 성공했을 때 호출 되는 함수
-            self.errorCode.text = "성공"
-        }
-        estgamesCommon.estCommonFailCallBack = {(err) -> Void in    //EstgamesCommon 내에서 에러가 발생 했을 경우 호출되는 콜백함수
-            switch (err) {
-                case .START_API_NOT_CALL :
-                    self.errorCode.text = "API 호출 시 네트워크 에러"
-                    break
-                case .START_API_DATA_FAIL :
-                    self.errorCode.text = "내려 받은 값 오류"
-                    break
-                case .START_API_DATA_INIT :
-                    self.errorCode.text = "값이 초기화 되지 않았습니다."
-                    break
-                default:
-                break
-            }
-        }
-        estgamesCommon.create();    //스타트 api 호출, 내려받은 값으로 설정
-        
-        estgamesCommon.processCallBack = {() -> Void in //processShow() 호출이 끝나고 호출하는 콜백함수
-            self.callBack.text = "processShow 종료"
-            self.con1.text = self.estgamesCommon.contractService().description
-            self.con2.text = self.estgamesCommon.contractPrivate().description
-        }
-
-        estgamesCommon.bannerCallBack = {() -> Void in //bannerShow() 함수 호출 이후 호출되는 콜백함수
-            self.callBack.text = "bannerShow() 종료"
-        }
-        
-        estgamesCommon.authorityCallBack = {() -> Void in //authorityShow() 함수 호출 이후 호출되는 콜백함수
-            self.callBack.text = "authorityShow() 종료"
-        }
-        
-        estgamesCommon.policyCallBack  = {() -> Void in //policyShow() 함수 호출 이후 호출되는 콜백함수
-            self.callBack.text = "policyShow() 종료"
-            self.con1.text = self.estgamesCommon.contractService().description
-            self.con2.text = self.estgamesCommon.contractPrivate().description
-        }
-        
-        
-        
-        vc = UserService(pview: self, googleEmail: googleEmail)
-    
-        vc.startSuccessCallBack = {() -> Void in
-            print("startGame() 함수 호출 성공 시 호출되는 콜백함수")
-        }
-        
-        vc.goToLoginSuccessCallBack = {() -> Void in
-            print("goToLogin() 함수 호출 성공 시 호출되는 콜백함수")
-        }
-        
-        vc.failCallBack = {(err) -> Void in     //유저 서비스 부분 에러 콜백 함수
-            switch (err) {
-                case .TOKEN_EMPTY :
-                    self.errorCode.text = "토큰이 없음"
-                    break
-                default:
-                    break
-            }
-        }
-        dataPrint()
-    }
-    
-    func googleEmail() -> String {
-        if let user = GIDSignIn.sharedInstance().currentUser {
-            return user.profile.email
-        } else {
-            return ""
-        }
-    }
-    
-    func dataPrint() {
-        self.lblIdentityId.text = vc.getPrincipal()
-        self.lblPrincipal.text = MpInfo.Account.principal
-        self.lblProviderName.text = MpInfo.Account.provider
-        self.lblEgId.text = MpInfo.Account.egId
-        self.lblEgToken.text = MpInfo.Account.egToken
-        self.lblRefreshToken.text = MpInfo.Account.refreshToken
-//        var nation:String = "";
-//        if let nation2 = estgamesCommon.getNation() {nation = nation2}
-        self.lblEmail.text = String(describing:MpInfo.Account.email)
-    }
-    
-    /**
-     계정연동
-     */
-    @IBAction func rePrint(_ sender: Any) {
-        dataPrint()
-    }
-    
-    @IBAction func gameStart(_ sender: Any) {
-        vc.startGame()
-    }
-
-    @IBAction func clearToken(_ sender: Any) {
-        vc.clearKey()
-    }
-    
-    @IBAction func snsConnect(_ sender: Any) {
-        vc.goToLogin()
-    }
-    
-    
-    /**
-     estcommon
-     */
-    @IBAction func processAction(_ sender: Any) {
-        estgamesCommon.processCallBack = {() -> Void in //순서대로 호출이 끝나고 호출하는 콜백함수
-            self.callBack.text = "순서대로 종료"
-            self.con1.text = self.estgamesCommon.contractService().description
-            self.con2.text = self.estgamesCommon.contractPrivate().description
-        }
-        estgamesCommon.processShow()
-    }
-    
-    @IBAction func bannerTest(_ sender: Any) {
-        estgamesCommon.bannerShow()
-    }
-    
-    @IBAction func authTest(_ sender: Any) {
-        estgamesCommon.authorityShow()
-    }
-    
-    @IBAction func policyTest(_ sender: Any) {
-        estgamesCommon.policyShow()
-    }
-    
-    @IBAction func policyDataTest(_ sender: Any) {
-        self.con1.text = self.estgamesCommon.contractService().description
-        self.con2.text = self.estgamesCommon.contractPrivate().description
-    }
-    
-    @IBAction func dashboardTest(_ sender: Any) {
-        self.nation.text = estgamesCommon.getNation()
-        self.lang.text = estgamesCommon.getLanguage()
-    }
-    
-    @IBAction func noticeTest(_ sender: Any) {
-        estgamesCommon.showNotice()
-    }
-    
-    @IBAction func faqTest(_ sender: Any) {
-        estgamesCommon.showCsCenter()
-    }
-}
-```
+|goToLoginSuccessCallBack: (egId:String?, resultType:String) -> Void|goToLogin 성공 시 콜백함수 egId는 SNS 계정으로 연동 시에만 바꿘 아이디가 들어옵니다. 게스트 계정으로 덮어씌울 경우에는 nil값입니다. SNS계정으로 연동 시 "LOGINBYSNS" 게스트 계정으로 덮어 씌우기 시 "LOGINBYFORCE" 으로 resultType값이 들어옵니다.
+|goToLoginCloseCallBack: () -> Void|SNS 연동 중간에 X버튼을 눌렀을 경우에 콜백함수|
