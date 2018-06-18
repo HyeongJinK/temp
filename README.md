@@ -12,7 +12,7 @@
   * :exclamation: failCallBack은 이제 start 함수 실패에만 동작하는 콜백함수로 수정
   * :exclamation: goToLoginFailCallBack 함수 추가 goToLogin함수 동작 중 에러 시 동작
   * goToLogin(config: AWSAuthUIConfiguratrion) 함수 추가, 설정을 넘겨 로고이미지, 배경색을 변경할 수 있습니다.
-  * goToLogin(onComplete: @escaping (String?, String) -> Void, onFail : @escaping (Fail) -> Void, onCancel: @escaping () -> Void) 함수 추가
+  * goToLogin(onComplete: (String?, String) -> Void, onFail : (Fail) -> Void, onCancel: () -> Void) 함수 추가
     * onComplete = goToLoginSuccessCallBack 에 설정됩니다.
     * onFail = goToLoginFailCallBack 에 설정됩니다.
     * onCancel = goToLoginCloseCallBack 에 설정됩니다.
@@ -574,12 +574,15 @@ estgamesCommon.getLanguage()
 
 |이름|타입|설명|
 |-|-|-|
-|failCallBack|(Fail) -> Void|유저 서비스에서 에러가 났을 경우 호출되는 콜백함수|
 |startGame()|void startGame()|게임시작, 토큰 생성|
+|failCallBack|(Fail) -> Void|startGame에서 실패시 호출|
 |goToLogin()|void goToLogin()|SNS 계정연동|
+|goToLogin(config)|goToLogin(config: AWSAuthUIConfiguratrion)|매개변수로 설정파일을 넘겨 UI를 조정한다.|
+|goToLogin(onComplete, onFail, onCancel)|goToLogin(onComplete: (String?, String) -> Void, onFail : (Fail) -> Void, onCancel: () -> Void)|"onComplete" = goToLoginSuccessCallBack,   "onFail" = goToLoginFailCallBack,   "onCancel" = goToLoginCloseCallBack 에 설정됩니다.|
 |clearKey()|void clearKey()|로그인 정보 삭제|
 |startSuccessCallBack|() -> Void|startGame성공 시 콜백함수|
-|goToLoginSuccessCallBack|(egId:String?, resultType:String) -> Void|goToLogin 성공 시 콜백함수 egId는 SNS 계정으로 연동 시에만 바꿘 아이디가 들어옵니다. 게스트 계정으로 덮어씌울 경우에는 nil값입니다. SNS계정으로 연동 시 "LOGINBYSNS" 게스트 계정으로 덮어 씌우기 시 "LOGINBYFORCE" 으로 resultType값이 들어옵니다.
+|goToLoginSuccessCallBack|(egId:String?, resultType:String) -> Void|goToLogin 성공 시 콜백함수 egId는 SNS 계정으로 연동 시에만 바꿘 아이디가 들어옵니다. 게스트 계정으로 덮어씌울 경우에는 nil값입니다. SNS계정으로 연동 시 "LOGINBYSNS" 게스트 계정으로 덮어 씌우기 시 "LOGINBYFORCE" 으로 resultType값이 들어옵니다.|
+|goToLoginFailCallBack|(Fail) -> Void|goToLogin 실패시 호출되는 콜백함수|
 |goToLoginCloseCallBack|() -> Void|SNS 연동 중간에 X버튼을 눌렀을 경우에 콜백함수|
 |clearSuccessCallBack|() -> Void|clearKey 함수 성공 후 콜백함수|
 
