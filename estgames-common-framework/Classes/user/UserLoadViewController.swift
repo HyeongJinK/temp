@@ -19,7 +19,7 @@ class UserLoadViewController: UIViewController {
     var closeActon: () -> Void = {() -> Void in}
     var confirmCheck: () -> Bool = {() -> Bool in return true}
     var confirmActionCallBack: () -> Void = {() -> Void in}
-    var replaceStr:String = ""
+    var replaceMiddleStr:String = "[]"
     
     func dataSet(_ data:UserDataSet) {
         backgroundView = UIView(frame: data.userLoadbackgroundView!)
@@ -49,7 +49,7 @@ class UserLoadViewController: UIViewController {
         
         middleLabel.font = UIFont.systemFont(ofSize: 10)
         middleLabel.numberOfLines = 0
-        let attrString = NSMutableAttributedString(string:NSLocalizedString("estcommon_userLoad_content", comment: "").replacingOccurrences(of: "[]", with: replaceStr))
+        let attrString = NSMutableAttributedString(string:NSLocalizedString("estcommon_userLoad_content", comment: "").replacingOccurrences(of: "[]", with: replaceMiddleStr))
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 9
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
@@ -89,6 +89,16 @@ class UserLoadViewController: UIViewController {
         backgroundView.addSubview(confirmLabel)
         backgroundView.addSubview(inputText)
         backgroundView.addSubview(confirmButton)
+    }
+    
+    public func replaceStr() {
+        middleLabel.font = UIFont.systemFont(ofSize: 10)
+        middleLabel.numberOfLines = 0
+        let attrString = NSMutableAttributedString(string:NSLocalizedString("estcommon_userLoad_content", comment: "").replacingOccurrences(of: "[]", with: replaceMiddleStr))
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 9
+        attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
+        middleLabel.attributedText = attrString
     }
     
     @objc func confirmBtAction(_ sender:UIButton) {

@@ -19,8 +19,8 @@ class UserGuestLinkViewController: UIViewController {
     var closeActon: () -> Void = {() -> Void in}
     var loginAction: () -> Void = {() -> Void in}
     var beforeAction: () -> Void = {() -> Void in}
-    var replaceStrSns: String = ""
-    var replaceStrGuest: String = ""
+    var replaceStrSns: String = "[]"
+    var replaceStrGuest: String = "[]"
     
     func dataSet(_ data:UserDataSet) {
         backgroudView = UIView(frame: data.userLinkBackgroudView!)
@@ -85,6 +85,16 @@ class UserGuestLinkViewController: UIViewController {
         backgroudView.addSubview(lineView2)
         backgroudView.addSubview(loginButton)
         backgroudView.addSubview(beforeButton)
+    }
+    
+    public func replaceStr () {
+        middleLabel.font = UIFont.systemFont(ofSize: 10)
+        middleLabel.numberOfLines = 0
+        let attrString = NSMutableAttributedString(string: NSLocalizedString("estcommon_userGuest_middle", comment: "").replacingOccurrences(of: "[]", with: replaceStrSns) + NSLocalizedString("estcommon_userGuest_bottom", comment: "").replacingOccurrences(of: "[]", with: replaceStrGuest))
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
+        attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
+        middleLabel.attributedText = attrString
     }
     
     @objc func beforeBtAction(_ sender:UIButton) {

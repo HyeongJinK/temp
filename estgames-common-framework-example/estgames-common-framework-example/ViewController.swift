@@ -170,8 +170,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func bannerTest(_ sender: Any) {
-        //estgamesCommon.bannerShow()
-        estgamesCommon.create()
+//        var gs:GameService = GameService()
+//        gs.getCharacterInfo(region: MpInfo.App.region, egId: MpInfo.Account.egId);
+    
+        estgamesCommon.bannerShow()
+        //estgamesCommon.create()
     }
     
     @IBAction func authTest(_ sender: Any) {

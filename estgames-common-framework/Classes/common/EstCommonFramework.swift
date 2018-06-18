@@ -79,21 +79,25 @@ import Alamofire
                     .validate(statusCode: 200..<300)
                     .responseJSON() {
                         response in
-                        if let result = response.result.value {
-                            let bannerJson = result as! NSDictionary
-                            if ((bannerJson["errorMessage"] as? String) != nil){    //3번 에러가 났을 경우 한번 더 시도
-                                self.create()
+                        if (response.result.isSuccess) {
+                            if let result = response.result.value {
+                                let bannerJson = result as! NSDictionary
+                                if ((bannerJson["errorMessage"] as? String) != nil){    //3번 에러가 났을 경우 한번 더 시도
+                                    self.create()
+                                } else {
+                                    self.estgamesData = ResultDataJson(resultDataJson:bannerJson[MpInfo.App.region] as! NSDictionary)   //배너 파싱
+                                    self.authority.setWebUrl(url: self.estgamesData!.url.system_contract)
+                                    self.banner = bannerFramework(pview: self.pview, result: self.estgamesData!)
+                                    self.policy.setWebUrl(webUrl1: self.estgamesData!.url.contract_service, webUrl2: self.estgamesData!.url.contract_private)
+                                    self.process = self.estgamesData!.process[self.estgamesData!.nation.lowercased()] as! Array<String>
+                                    self.initCallBack(self)
+                                }
+                                //myGroup.leave()
                             } else {
-                                self.estgamesData = ResultDataJson(resultDataJson:bannerJson[MpInfo.App.region] as! NSDictionary)   //배너 파싱
-                                self.authority.setWebUrl(url: self.estgamesData!.url.system_contract)
-                                self.banner = bannerFramework(pview: self.pview, result: self.estgamesData!)
-                                self.policy.setWebUrl(webUrl1: self.estgamesData!.url.contract_service, webUrl2: self.estgamesData!.url.contract_private)
-                                self.process = self.estgamesData!.process[self.estgamesData!.nation.lowercased()] as! Array<String>
-                                self.initCallBack(self)
+                                self.estCommonFailCallBack(Fail.START_API_DATA_FAIL)
                             }
-                            //myGroup.leave()
                         } else {
-                            self.estCommonFailCallBack(Fail.START_API_DATA_FAIL)
+                            self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
                         }
                 }
             //}

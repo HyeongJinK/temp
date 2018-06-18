@@ -25,13 +25,14 @@ public class UserService {
     var getGoogleEmail : (() -> String)?
     
     //public var startFailCallBack: (String) -> Void = {(message: String) -> Void in }
-    //public var goToLoginFailCallBack: (String) -> Void = {(message: String) -> Void in }
+    
     
     
     public var failCallBack: (Fail) -> Void = {(message: Fail) -> Void in}
     public var startSuccessCallBack: () -> Void = {() -> Void in }
     public var goToLoginSuccessCallBack: (String?, String) -> Void = {(egId: String?, resultType:String) -> Void in }
     public var goToLoginCloseCallBack: () -> Void = {() -> Void in}
+    public var goToLoginFailCallBack: (Fail) -> Void = {(message: Fail) -> Void in }
     public var goToLoginConfirmCallBack: () -> Void = {() -> Void in }
     public var clearSuccessCallBack: () -> Void = {() -> Void in }
     
@@ -99,12 +100,25 @@ public class UserService {
         }
     }
     
-    public func goToLogin(onComplete: (String?, String) -> Void
-        , onCancel: () -> Void) {
+    public func goToLogin(onComplete: @escaping (String?, String) -> Void
+        , onFail : @escaping (Fail) -> Void
+        , onCancel: @escaping () -> Void) {
         goToLoginSuccessCallBack = onComplete
+        goToLoginFailCallBack = onFail
         goToLoginCloseCallBack = onCancel
         
         goToLogin()
+    }
+    
+    public func goToLogin(onComplete: @escaping (String?, String) -> Void
+        , onFail : @escaping (Fail) -> Void
+        , onCancel: @escaping () -> Void
+        , config : AWSAuthUIConfiguration) {
+        goToLoginSuccessCallBack = onComplete
+        goToLoginFailCallBack = onFail
+        goToLoginCloseCallBack = onCancel
+        
+        goToLogin(config: config)
     }
     
     public func goToLogin() {
@@ -119,16 +133,16 @@ public class UserService {
         
         goToLogin(config: config)
     }
-    public func goToLogin(config:AWSAuthUIConfiguration) {
+    public func goToLogin(config : AWSAuthUIConfiguration) {
         if MpInfo.Account.isAuthedUser() == false {
-            self.failCallBack(Fail.TOKEN_EMPTY)
-            //goToLoginFailCallBack("EMPTY_TOKEN")
+            //self.failCallBack(Fail.TOKEN_EMPTY)
+            goToLoginFailCallBack(Fail.TOKEN_EMPTY)
             return
         }
         
         if MpInfo.Account.provider != "guest" {
-            self.failCallBack(Fail.ACCOUNT_ALREADY_EXIST)
-            //goToLoginFailCallBack("READY_SNSLOGIN")
+            //self.failCallBack(Fail.ACCOUNT_ALREADY_EXIST)
+            goToLoginFailCallBack(Fail.ACCOUNT_ALREADY_EXIST)
             return
         }
         
@@ -137,8 +151,8 @@ public class UserService {
             configuration: config,
             completionHandler: { (provider: AWSSignInProvider, error: Error?) in
                 if error != nil {
-                    //self.goToLoginFailCallBack("AWS_LOGINVIEW")
-                    self.failCallBack(Fail.SIGN_AWS_LOGIN_VIEW)
+                    self.goToLoginFailCallBack(Fail.SIGN_AWS_LOGIN_VIEW)
+                    //self.failCallBack(Fail.SIGN_AWS_LOGIN_VIEW)
                 } else {
                     self.onSignIn(true, provider)
                 }
@@ -179,8 +193,8 @@ public class UserService {
                 }
             } else if identityProviderName == "accounts.google.com" {
                 if getGoogleEmail == nil {
-                    //self.goToLoginFailCallBack("EMPTY_GOOGLECALLBACK")
-                    self.failCallBack(Fail.GOOGLE_CALLBACK_EMPTY)
+                    self.goToLoginFailCallBack(Fail.GOOGLE_CALLBACK_EMPTY)
+                    //self.failCallBack(Fail.GOOGLE_CALLBACK_EMPTY)
                 } else {
                     self.snsSyncProcess("google", getGoogleEmail!())
                 }
@@ -190,8 +204,8 @@ public class UserService {
     
     func snsSyncProcess(_ provider:String, _ email:String) {
         if MpInfo.Account.isAuthedUser() == false {
-            self.failCallBack(Fail.TOKEN_EMPTY)
-            //goToLoginFailCallBack("EMPTY_TOKEN")
+            //self.failCallBack(Fail.TOKEN_EMPTY)
+            goToLoginFailCallBack(Fail.TOKEN_EMPTY)
             return
         }
         let profile: String = self.makeProfile(provider, email)
@@ -219,19 +233,19 @@ public class UserService {
                                 provider: provider,
                                 email: email)
                         } else {    //연동, 충돌 그외의 에러
-                            self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
-                            //self.goToLoginFailCallBack("SNS_SYNC")
+                            //self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
+                            self.goToLoginFailCallBack(Fail.ACCOUNT_SYNC_FAIL)
                         }
                     }
             },
                 fail: {error in
-                    //self.goToLoginFailCallBack("SNS_SYNC_FAIL")
-                    self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
+                    self.goToLoginFailCallBack(Fail.ACCOUNT_SYNC_FAIL)
+                    //self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
             }
             )
         } else {
-            self.failCallBack(Fail.API_ACCESS_DENIED)
-            //self.goToLoginFailCallBack("PRINCIPAL_APICALL")
+            //self.failCallBack(Fail.API_ACCESS_DENIED)
+            self.goToLoginFailCallBack(Fail.API_ACCESS_DENIED)
         }
     }
     
@@ -251,10 +265,15 @@ public class UserService {
         userDialog.userResultViewController.egId = nil
         userDialog.userResultViewController.resultType = "NONE"
         userDialog.userLoadViewController.inputText.text = "";
-        userDialog.setUserLinkCharacterLabel(guest: characterInfo(MpInfo.Account.egId), sns: characterInfo(self.crashSnsSyncIno.snsEgId))
+        userDialog.setUserLinkProviderLabel(provider: self.crashSnsSyncIno.provider)
+        characterInfo(MpInfo.Account.egId, userDialog.setUserLinkCharacterLabelGuest)
+        characterInfo(self.crashSnsSyncIno.snsEgId, userDialog.setUserLinkCharacterLabelSNS)
         userDialog.setUserLinkAction(closeAction: closeAction, confirmAction: linkConfirmAction, cancelAction: linkCancelAction)
         userDialog.showUserLinkDialog()
     }
+    
+    
+    
     
     private func linkConfirmAction() {  //sns계정 연동으로
         userLoadShow()
@@ -298,18 +317,19 @@ public class UserService {
                     
             },
                 fail: { error in
-                    self.failCallBack(Fail.ACCOUNT_NOT_EXIST)
-                    //self.goToLoginFailCallBack("SNS_LOGIN")
+                    //self.failCallBack(Fail.ACCOUNT_NOT_EXIST)
+                    self.goToLoginFailCallBack(Fail.ACCOUNT_NOT_EXIST)
             }
             )
         } else {
-            self.failCallBack(Fail.API_ACCESS_DENIED)
-            //self.goToLoginFailCallBack("PRINCIPAL_APICALL")
+            //self.failCallBack(Fail.API_ACCESS_DENIED)
+            self.goToLoginFailCallBack(Fail.API_ACCESS_DENIED)
         }
     }
     
     private func userLoadShow() {
         userDialog.setUserLoadAction(closeAction: closeAction, confirmCheck: loadConfirmAction, confirmActionCallBack: LoadConfirmCallBack)
+        userDialog.setUserLoadCharacterLabel()
         userDialog.showUserLoadDialog()
     }
     
@@ -327,8 +347,9 @@ public class UserService {
     }
     
     private func userGuestLinkShow() {
-        userDialog.setUserGuestLinkCharacterLabel(guest: characterInfo(MpInfo.Account.egId), sns: characterInfo(self.crashSnsSyncIno.snsEgId))
         userDialog.setUserGuestLinkAction(closeAction: closeAction, loginAction: loginAction, beforeAction: beforeAction)
+        userDialog.setUserGuestLinkCharacterLabel()
+        //userDialog.setUserGuestLinkCharacterLabel(guest: characterInfo(MpInfo.Account.egId), sns: characterInfo(self.crashSnsSyncIno.snsEgId))
         userDialog.showUserGuestLinkDialog()
     }
     
@@ -361,18 +382,18 @@ public class UserService {
                         //self.dismiss(animated: true, completion: nil)
                     } else if result == "FAILURE" {
                         // 알 수 없는 오류
-                        self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
-                        //self.goToLoginFailCallBack("GUEST_LOGIN")
+                        //self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
+                        self.goToLoginFailCallBack(Fail.ACCOUNT_SYNC_FAIL)
                     } else {
-                        self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
-                        //self.goToLoginFailCallBack("GUEST_LOGIN")
+                        //self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
+                        self.goToLoginFailCallBack(Fail.ACCOUNT_SYNC_FAIL)
                     }
                 }
         },
             fail: {
                 error in
-                self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
-                //self.goToLoginFailCallBack("GUEST_LOGIN")
+                //self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
+                self.goToLoginFailCallBack(Fail.ACCOUNT_SYNC_FAIL)
         }
         )
     }
@@ -382,25 +403,6 @@ public class UserService {
         success: @escaping(_ data: Dictionary<String, Any>)-> Void,
         fail: @escaping(_ error: Error?)-> Void) {
         accountService.refreshToken(egToken: egToken, refreshToken: refreshToken, device: device, profile: profile, success: success, fail: fail)
-    }
-    
-    private func characterInfo(_ egId: String) -> String {
-        var characterInfo: String = ""
-        self.gameService.getCharacterInfo(
-            region: MpInfo.App.region, egId: egId,
-            success: {(data: Array) in
-                for dictItem in data {
-                    for (_, v) in dictItem {
-                        characterInfo += "\(v) "
-                    }
-                }
-        },
-            fail: {(error: Error?) in
-                self.failCallBack(Fail.API_CHARACTER_INFO)
-                //self.goToLoginFailCallBack("CHARACTER_INFO")
-        })
-        
-        return characterInfo
     }
     
     func closeAction() {
@@ -413,6 +415,39 @@ public class UserService {
             AWSSignInManager.sharedInstance().logout(completionHandler: {(result: Any?, error: Error?) in
             })
         }
+    }
+    
+    private func characterInfo(_ egId: String, _ f:@escaping (String) -> Void) {
+        self.gameService.getCharacterInfo(
+            region: MpInfo.App.region, egId: egId,
+            success: {(data: String) in
+                f(data)
+        },
+            fail: {(error: Error?) in
+                self.failCallBack(Fail.API_CHARACTER_INFO)
+        })
+    }
+    
+    private func characterInfo(_ egId: String) -> String {
+        var characterInfo: String = ""
+        self.gameService.getCharacterInfo(
+            region: MpInfo.App.region, egId: egId,
+            success: {(data: String) in
+                print("adsfsadfs"+data)
+                characterInfo = data
+        },
+            fail: {(error: Error?) in
+                //self.failCallBack(Fail.API_CHARACTER_INFO)
+                self.goToLoginFailCallBack(Fail.API_CHARACTER_INFO)
+        })
+        print("adfadf = " + characterInfo)
+        //        myGroup.notify(queue: DispatchQueue.main, execute: {
+        //            print("qerqwer = " + characterInfo)
+        //
+        //        })
+        
+        print("adfadf2 = " + characterInfo)
+        return characterInfo
     }
     
     func alert(_ message:String) -> Void{

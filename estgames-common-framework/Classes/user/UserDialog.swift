@@ -58,18 +58,49 @@ public class UserDialog {
         self.userGuestLinkViewController.beforeAction = beforeAction
     }
     
-    public func setUserLinkCharacterLabel(guest: String, sns: String) {
-        self.userLinkViewController.replaceStrSns = sns
+    public func setUserLinkProviderLabel(provider: String) {
+        self.userLinkViewController.replaceStrProvider = provider
+        
+    }
+    
+    public func setUserLinkCharacterLabelGuest(guest: String) {
         self.userLinkViewController.replaceStrGuest = guest
+        self.userLinkViewController.replaceStr()
+    }
+    
+    public func setUserLinkCharacterLabelSNS(sns: String) {
+        self.userLinkViewController.replaceStrSns = sns
+        self.userLinkViewController.replaceStr()
+    }
+    
+    public func setUserLoadCharacterLabel() {
+        self.userLoadViewController.replaceMiddleStr = self.userLinkViewController.replaceStrGuest
+        self.userLoadViewController.replaceStr()
     }
     
     public func setUserLoadCharacterLabel(guest: String) {
         self.userLoadViewController.middleLabel.text = self.userLoadViewController.middleLabel.text!.replacingOccurrences(of: "[]", with: guest)
     }
     
-    public func setUserGuestLinkCharacterLabel(guest: String, sns: String) {
-        self.userGuestLinkViewController.replaceStrSns = sns
+    public func setUserGuestLinkCharacterLabel() {
+        self.userGuestLinkViewController.replaceStrGuest = self.userLinkViewController.replaceStrGuest
+        self.userGuestLinkViewController.replaceStrSns = self.userLinkViewController.replaceStrSns
+        self.userGuestLinkViewController.replaceStr ()
+    }
+    
+    public func setUserGuestLinkCharacterLabel(guest: String ,sns: String) {
         self.userGuestLinkViewController.replaceStrGuest = guest
+        self.userGuestLinkViewController.replaceStrSns = sns
+    }
+    
+    public func setUserGuestLinkCharacterLabelGuest(guest: String) {
+        self.userGuestLinkViewController.replaceStrGuest = guest
+        self.userGuestLinkViewController.replaceStr()
+    }
+    
+    public func setUserGuestLinkCharacterLabelSns(sns: String) {
+        self.userGuestLinkViewController.replaceStrSns = sns
+        self.userGuestLinkViewController.replaceStr()
     }
     
     public func showUserLinkDialog() {

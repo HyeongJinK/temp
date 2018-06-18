@@ -23,6 +23,7 @@ class UserLinkViewController: UIViewController {
     var cancelAction: () -> Void = {() -> Void in}
     var replaceStrSns: String = ""
     var replaceStrGuest: String = ""
+    var replaceStrProvider: String = ""
     
     
     func dataSet(_ data:UserDataSet) {
@@ -66,7 +67,7 @@ class UserLinkViewController: UIViewController {
         
         middleLabel.font = UIFont.systemFont(ofSize: 10)
         middleLabel.numberOfLines = 0
-        let attrString = NSMutableAttributedString(string: NSLocalizedString("estcommon_userLink_middelLabel", comment: "").replacingOccurrences(of: "[]", with: replaceStrSns))
+        let attrString = NSMutableAttributedString(string: NSLocalizedString("estcommon_userLink_middelLabel", comment: "").replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider))
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
@@ -103,6 +104,16 @@ class UserLinkViewController: UIViewController {
         backgroudView.addSubview(lineView2)
         backgroudView.addSubview(confirmButton)
         backgroudView.addSubview(cancelButton)
+    }
+    public func replaceStr() {
+        middleLabel.font = UIFont.systemFont(ofSize: 10)
+        middleLabel.numberOfLines = 0
+        let attrString = NSMutableAttributedString(string: NSLocalizedString("estcommon_userLink_middelLabel", comment: "").replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider))
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
+        attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
+        middleLabel.attributedText = attrString
+        bottomLabel.text = NSLocalizedString("estcommon_userLink_bottomLabel", comment: "").replacingOccurrences(of: "[]", with: replaceStrGuest)
     }
 //
 //    @objc func closeBtAction(_ sender:UIButton) {

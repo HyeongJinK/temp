@@ -5,6 +5,21 @@
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
 
+:new: 업데이트 (1.0.10)
+---
+
+* UserService
+  * :exclamation: failCallBack은 이제 start 함수 실패에만 동작하는 콜백함수로 수정
+  * :exclamation: goToLoginFailCallBack 함수 추가 goToLogin함수 동작 중 에러 시 동작
+  * goToLogin(config: AWSAuthUIConfiguratrion) 함수 추가, 설정을 넘겨 로고이미지, 배경색을 변경할 수 있습니다.
+  * goToLogin(onComplete: @escaping (String?, String) -> Void, onFail : @escaping (Fail) -> Void, onCancel: @escaping () -> Void) 함수 추가
+    * onComplete = goToLoginSuccessCallBack 에 설정됩니다.
+    * onFail = goToLoginFailCallBack 에 설정됩니다.
+    * onCancel = goToLoginCloseCallBack 에 설정됩니다.
+    * 기존의 방식대로 하나하나 콜백함수를 설정하셔도 되고 해당 함수를 호출해서 한꺼번에 설정 + 계정연동 호출하셔도 됩니다.
+* 계정 연동 팝업
+  * 캐릭터 정보 적용, 데이터가 없을 경우 ****[**Lv]이 나옵니다.
+
 :new: 업데이트 (1.0.9)
 ---
 
