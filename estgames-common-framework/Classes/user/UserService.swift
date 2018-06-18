@@ -433,20 +433,13 @@ public class UserService {
         self.gameService.getCharacterInfo(
             region: MpInfo.App.region, egId: egId,
             success: {(data: String) in
-                print("adsfsadfs"+data)
                 characterInfo = data
         },
             fail: {(error: Error?) in
                 //self.failCallBack(Fail.API_CHARACTER_INFO)
                 self.goToLoginFailCallBack(Fail.API_CHARACTER_INFO)
         })
-        print("adfadf = " + characterInfo)
-        //        myGroup.notify(queue: DispatchQueue.main, execute: {
-        //            print("qerqwer = " + characterInfo)
-        //
-        //        })
-        
-        print("adfadf2 = " + characterInfo)
+
         return characterInfo
     }
     

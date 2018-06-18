@@ -16,7 +16,7 @@ var imageViewsTemps:[UIView] = Array<UIView>()
 public class bannerFramework {
     var estgamesBanner: ResultDataJson?
     var pview:UIViewController
-    var closeBtCallBack: () -> Void = {() -> Void in print("FAFD")}
+    var closeBtCallBack: () -> Void = {() -> Void in }
     let myGroup = DispatchGroup()
     let bottomView:bannerBottomView
     
