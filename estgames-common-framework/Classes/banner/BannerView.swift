@@ -23,7 +23,12 @@ class BannerView {
                 let dtinternet = try? Data(contentsOf: imgUrl!)
                 if let itImg = dtinternet {
                     imageView.image = UIImage(data: itImg)
+                    
                     imageView.isUserInteractionEnabled = true
+                    imageView.contentMode = .scaleAspectFit
+                    //.scaleToFill
+                    //.scaleAspectFit
+                    //.scaleAspectFill
                 } else {
                     imageView.tintColor = UIColor.white
                 }

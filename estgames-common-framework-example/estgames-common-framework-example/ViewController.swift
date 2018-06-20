@@ -44,6 +44,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let image:UIImage
+//        let imageView:UIImageView
+//
+//        imageView.contentMode = .scaleToFill
         
         self.navigationController?.isNavigationBarHidden = true
         
@@ -180,14 +184,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func authTest(_ sender: Any) {
-        MpInfo.App.region = "test"
-        print(MpInfo.App.region)
-        //estgamesCommon.authorityShow()
+        estgamesCommon.authorityShow()
     }
     
-    @IBAction func policyTest(_ sender: Any) {
-        print(MpInfo.App.region)
-        //estgamesCommon.policyShow()
+    @IBAction func policyTest(_ sender: Any) {        
+        estgamesCommon.policyShow()
     }
     
     @IBAction func policyDataTest(_ sender: Any) {
@@ -206,6 +207,10 @@ class ViewController: UIViewController {
     
     @IBAction func faqTest(_ sender: Any) {
         estgamesCommon.showCsCenter()
+        
+    }
+    @IBAction func eventTeset(_ sender: Any) {
+         estgamesCommon.showEvent()
     }
 }
 
