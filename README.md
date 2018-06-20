@@ -4,6 +4,61 @@
 [![License](https://img.shields.io/cocoapods/l/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
+:new: 업데이트 (1.1.0)
+---
+
+* region, env 설정 추가, 아래 코드로 설정을 변경 할 수 있다. 
+```swift
+MpInfo.App.region = "mr.global.ls"
+MpInfo.App.env = "live"
+```
+* Info.plist
+  * :exclamation: MP - estapi : https://m-linker.estgames.co.kr 로 수정 필요
+* 배너에 웹뷰 기능 추가
+* Localizable.string
+  * :exclamation: 'estcommon_authority_title' = "원활한 게임플레이를 위해\n아래 권한을 필요로 합니다.";   해당 키 수정 필요
+  * English 번역 추가 필요
+* EstgamesCommon
+  * showEvent() 함수 추가 : 이벤트 페이지를 보여주는 웹뷰창입니다.
+
+```
+'estcommon_policy_title' = "Terms & Agreement";
+'estcommon_policy_subTitle' = "Including the agreement for receiving advertisement";
+'estcommon_policy_privacy' = "Privacy Policy";
+'estcommon_policy_buttonText' = "Agree";
+
+'estcommon_authority_title' = "Following permissions are needed for the smooth game play.";
+'estcommon_authority_confirm' = "Confirm";
+
+'estcommon_userResult_title' = "Notification";
+'estcommon_userResult_subTitle' = "Successfully Loaded";
+'estcommon_userResult_titleMove' = "Move to the title page for restart";
+'estcommon_userResult_confirm' = "Confirm";
+
+'estcommon_userLoad_title' = "Load existing account";
+'estcommon_userLoad_content' = "Please insert the words below if you would like to delete the current game data([]) and load the previous game.";
+'estcommon_userLoad_confirmText' = "Confirm Text: confirm";
+'estcommon_userLoad_input' = "Insert";
+'estcommon_userLoad_confirmButton' = "Confirm";
+'estcommon_userLoad_input_wrong' = "Please insert correct words";
+
+'estcommon_userLink_title' = "Account Interlink";
+'estcommon_userLink_middelLabel' = "Previous game data exists in the account..\nFacebookAccount: []\nWould you like to load the data?";
+'estcommon_userLink_bottomLabel' = "Current playing game data([]) will be deleted";
+'estcommon_userLink_confirm' = "Yes, I would like to load the previous game";
+'estcommon_userLink_cancel' = "No, I would like to play the new game";
+
+'estcommon_banner_closeButton' = "Close";
+'estcommon_banner_linkButton' = "Detail view";
+'estcommon_banner_oneDay' = "Don't show again today";
+
+'estcommon_userGuest_title' = "Interlink Current Account";
+'estcommon_userGuest_middle' = "Delete the previous game data([]) and interlink with the current game.";
+'estcommon_userGuest_bottom' = "\n[]";
+'estcommon_userGuest_loginBt' = "Yes, I would like to login";
+'estcommon_userGuest_beforeBt' = "Back to previous";
+
+```
 
 :new: 업데이트 (1.0.10)
 ---
@@ -18,7 +73,7 @@
     * onCancel = goToLoginCloseCallBack 에 설정됩니다.
     * 기존의 방식대로 하나하나 콜백함수를 설정하셔도 되고 해당 함수를 호출해서 한꺼번에 설정 + 계정연동 호출하셔도 됩니다.
 * 계정 연동 팝업
-  * 캐릭터 정보 적용, 데이터가 없을 경우 ****[**Lv]이 나옵니다.
+  * 캐릭터 정보 적용, 문구 일부 수정
 
 :new: 업데이트 (1.0.9)
 ---

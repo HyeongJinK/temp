@@ -22,6 +22,7 @@ class AuthorityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         authorityDataSet = AuthorityDataSet(deviceNum: DeviceClassification.deviceResolution(self.view.frame.width, self.view.frame.height))
         
         backgroundView = UIView(frame: self.view.frame)

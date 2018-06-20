@@ -10,14 +10,14 @@ import Foundation
 
 //이미지 뷰
 class BannerImageView: UIImageView {
-    public var bannerEntry: EventData?
+    public var bannerEntry: Banners?
     
     required init?(coder aDecoder: NSCoder) {
         self.bannerEntry = nil
         super.init(coder: aDecoder)
     }
     
-    init(_ entry: EventData, viewWidth: CGFloat, viewHeight: CGFloat, bottomViewHeight: CGFloat) {
+    init(_ entry: Banners, viewWidth: CGFloat, viewHeight: CGFloat, bottomViewHeight: CGFloat) {
         self.bannerEntry = entry
         
         super.init(frame: CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight - bottomViewHeight))
@@ -25,7 +25,7 @@ class BannerImageView: UIImageView {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self
             , action: #selector(imageViewClick))
         
-        let imgUrl = URL(string: entry.banner.resource)
+        let imgUrl = URL(string: entry.banner.content.resource)
         let dtinternet = try? Data(contentsOf: imgUrl!)
         if let itImg = dtinternet {
             self.image = UIImage(data: itImg)

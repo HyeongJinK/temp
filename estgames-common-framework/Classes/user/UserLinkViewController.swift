@@ -21,7 +21,7 @@ class UserLinkViewController: UIViewController {
     var closeActon: () -> Void = {() -> Void in}
     var confirmAction: () -> Void = {() -> Void in}
     var cancelAction: () -> Void = {() -> Void in}
-    var replaceStrSns: String = ""
+    var replaceStrSns: String = "[]"
     var replaceStrGuest: String = ""
     var replaceStrProvider: String = ""
     
@@ -74,7 +74,7 @@ class UserLinkViewController: UIViewController {
         middleLabel.attributedText = attrString
         
         
-        bottomLabel.text = NSLocalizedString("estcommon_userLink_bottomLabel", comment: "").replacingOccurrences(of: "[]", with: replaceStrGuest)
+        bottomLabel.text = NSLocalizedString("estcommon_userLink_bottomLabel", comment: "").replacingOccurrences(of: "([])", with: replaceStrGuest)
         bottomLabel.font = UIFont.systemFont(ofSize: 10)
         
         
@@ -113,7 +113,6 @@ class UserLinkViewController: UIViewController {
         style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
         middleLabel.attributedText = attrString
-        bottomLabel.text = NSLocalizedString("estcommon_userLink_bottomLabel", comment: "").replacingOccurrences(of: "[]", with: replaceStrGuest)
     }
 //
 //    @objc func closeBtAction(_ sender:UIButton) {

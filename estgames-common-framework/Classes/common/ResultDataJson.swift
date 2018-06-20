@@ -12,8 +12,8 @@ public class ResultDataJson {
     public var errorMessage:String?
     var nation: String = ""
     var language: String = ""
-    var events : [EventData]
-    var process: NSDictionary
+    var banner : [Banners]
+    var process: [String] = Array<String>()
     var url: UrlData
     
     public init(resultDataJson: NSDictionary) {
@@ -21,11 +21,12 @@ public class ResultDataJson {
         if (self.errorMessage == nil) {
             self.nation = resultDataJson["nation"] as! String
             self.language = resultDataJson["language"] as! String
-            self.events = Array<EventData>()
+            self.banner = Array<Banners>()
             
-            let eventJson: Array<NSDictionary>? = resultDataJson["event"] as? Array<NSDictionary>
+            let eventJson: Array<NSDictionary>? = resultDataJson["banner"] as? Array<NSDictionary>
             let dateFormat = DateFormatter()
-            dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            dateFormat.timeZone = TimeZone(identifier: "GMT")
+            dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ssz"
             
             let now:Date = Date()
             
@@ -38,24 +39,24 @@ public class ResultDataJson {
                     if event["end"] as? String != nil && now > dateFormat.date(from: event["end"] as! String)! {
                         continue
                     }
-                    events.append(EventData(event))
+                    banner.append(Banners(event))
                 }
             }
             
             
-            self.process = resultDataJson["process"] as! NSDictionary
+            self.process = resultDataJson["process"] as! [String]
             self.url = UrlData(resultDataJson["url"] as! NSDictionary)
         } else {
             self.nation = "en"
             self.language = "en"
-            self.events = Array<EventData>()
-            self.process = resultDataJson["process"] as! NSDictionary
+            self.banner = Array<Banners>()
+            self.process = resultDataJson["process"] as! [String]
             self.url = UrlData(resultDataJson["url"] as! NSDictionary)
         }
     }
 }
 
-class EventData {
+class Banners {
     var begin:Date?
     var end:Date?
     var banner:BannerData
@@ -64,7 +65,8 @@ class EventData {
         self.banner = BannerData(jsonData["banner"] as! NSDictionary)
         
         let dateFormat: DateFormatter = DateFormatter()
-        dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormat.timeZone = TimeZone(identifier: "GMT")
+        dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ssz"
         
         if jsonData["begin"] as? String != nil {
             self.begin = dateFormat.date(from: jsonData["begin"] as! String)
@@ -82,13 +84,13 @@ class EventData {
 
 class BannerData {
     var name:String
-    var resource:String
+    var content:ContentData
     var writer:String
     var action:ActionData
     
     init(_ jsonData: NSDictionary) {
         self.name = jsonData["name"] as! String
-        self.resource = jsonData["resource"] as! String
+        self.content = ContentData(jsonData["content"] as! NSDictionary)
         self.writer = jsonData["writer"] as! String
         self.action = ActionData(jsonData["action"] as! NSDictionary)
     }
@@ -111,6 +113,16 @@ class ActionData {
     }
 }
 
+class ContentData {
+    var resource : String = ""
+    var type : String = ""
+    
+    init(_ jsonData: NSDictionary) {
+        self.type = jsonData["type"] as! String
+        self.resource = jsonData["resource"] as! String
+    }
+}
+
 
 class ProcessData {
     
@@ -124,6 +136,7 @@ class UrlData {
     var cscenter:String = ""
     var apiParent:String = ""
     var characterInfo:String = ""
+    var event:String = ""
     
     init(_ jsonData: NSDictionary) {
         self.system_contract = jsonData["system_contract"] as! String
@@ -131,6 +144,7 @@ class UrlData {
         self.cscenter = jsonData["cscenter"] as! String
         self.apiParent = jsonData["api_parent"] as! String
         self.characterInfo = jsonData["character_info"] as! String
+        self.event = jsonData["event"] as! String
         
         let useContract = jsonData["use_contract"] as! NSDictionary
         

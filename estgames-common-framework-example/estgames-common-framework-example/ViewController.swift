@@ -27,7 +27,6 @@ class ViewController: UIViewController {
     @IBOutlet var con1: UILabel!
     @IBOutlet var con2: UILabel!
     
-    
     @IBOutlet var nation: UILabel!
     @IBOutlet var lang: UILabel!
     @IBOutlet var callBack: UILabel!
@@ -41,10 +40,12 @@ class ViewController: UIViewController {
         estgamesCommon.showCsCenter()
     }
     @IBOutlet var faqAction: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         self.navigationController?.isNavigationBarHidden = true
-
         
         estgamesCommon = EstgamesCommon(pview: self)    // EstgamesCommon 객체 생성
         estgamesCommon.initCallBack = {(estcommon) -> Void in   //EstgamesCommon에 create 함수를 호출 하고 값 설정이 성공했을 때 호출 되는 함수
@@ -66,7 +67,7 @@ class ViewController: UIViewController {
             }
         }
         estgamesCommon.create();    //스타트 api 호출, 내려받은 값으로 설정
-        
+        //MpInfo.App.region = "test"
         estgamesCommon.processCallBack = {() -> Void in //processShow() 호출이 끝나고 호출하는 콜백함수
             self.callBack.text = "processShow 종료"
             self.con1.text = self.estgamesCommon.contractService().description
@@ -170,6 +171,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func bannerTest(_ sender: Any) {
+
 //        var gs:GameService = GameService()
 //        gs.getCharacterInfo(region: MpInfo.App.region, egId: MpInfo.Account.egId);
     
@@ -178,11 +180,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func authTest(_ sender: Any) {
-        estgamesCommon.authorityShow()
+        MpInfo.App.region = "test"
+        print(MpInfo.App.region)
+        //estgamesCommon.authorityShow()
     }
     
     @IBAction func policyTest(_ sender: Any) {
-        estgamesCommon.policyShow()
+        print(MpInfo.App.region)
+        //estgamesCommon.policyShow()
     }
     
     @IBAction func policyDataTest(_ sender: Any) {

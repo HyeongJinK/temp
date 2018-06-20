@@ -8,14 +8,14 @@
 import Foundation
 
 class BannerWebView: UIWebView {
-    public var bannerEntry: EventData?
+    public var bannerEntry: Banners?
     
-    init(_ entry: EventData, viewWidth: CGFloat, viewHeight: CGFloat, bottomViewHeight: CGFloat) {
+    init(_ entry: Banners, viewWidth: CGFloat, viewHeight: CGFloat, bottomViewHeight: CGFloat) {
         self.bannerEntry = entry
         
         super.init(frame: CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight - bottomViewHeight))
         
-        let url = URL(string: entry.banner.resource)
+        let url = URL(string: entry.banner.content.resource)
         
         if let urlcheck = url {
             self.loadRequest(URLRequest(url:urlcheck))

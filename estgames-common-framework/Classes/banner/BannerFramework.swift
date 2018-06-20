@@ -10,8 +10,8 @@ import UIKit
 import Foundation
 
 var bannerView:UIView?
-var imageViews:[UIView] = Array<UIView>()
-var imageViewsTemps:[UIView] = Array<UIView>()
+var imageViews:[BannerView] = Array<BannerView>()
+var imageViewsTemps:[BannerView] = Array<BannerView>()
 
 public class bannerFramework {
     var estgamesBanner: ResultDataJson?
@@ -40,18 +40,17 @@ public class bannerFramework {
         
         let pList = UserDefaults.standard   //오늘만 보기 데이터
         
-        for entry in self.estgamesBanner!.events {
+        for entry in self.estgamesBanner!.banner {
             if pList.string(forKey: entry.banner.name) != nil && today == pList.string(forKey: entry.banner.name)!{
                 continue
             }
-            
-            
-            //이미지 뷰 생성
-            let imageView = BannerImageView(entry
+
+            //뷰 생성
+            let bView = BannerView(entry
                 , viewWidth: bannerView!.frame.size.width
                 , viewHeight: bannerView!.frame.size.height
                 , bottomViewHeight: bottomView.bottomViewHeight)
-            imageViewsTemps.append(imageView)
+            imageViewsTemps.append(bView)
         }
     }
     
@@ -73,8 +72,7 @@ public class bannerFramework {
         let pList = UserDefaults.standard   //오늘만 보기 데이터
         
         for (index, banner) in imageViewsTemps.enumerated() {
-            let banerImg:BannerImageView = banner as! BannerImageView
-            if pList.string(forKey: banerImg.bannerEntry!.banner.name) != nil && today == pList.string(forKey: banerImg.bannerEntry!.banner.name)!{
+            if pList.string(forKey: banner.bannerEntry!.banner.name) != nil && today == pList.string(forKey: banner.bannerEntry!.banner.name)!{
                 imageViewsTemps.remove(at: index)
             }
         }
@@ -102,7 +100,7 @@ public class bannerFramework {
             
             for img in imageViewsTemps {
                 imageViews.append(img)
-                bannerView!.addSubview(img)
+                bannerView!.addSubview(img.view)
             }
         }
     }

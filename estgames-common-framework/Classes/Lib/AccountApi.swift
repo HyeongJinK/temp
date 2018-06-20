@@ -15,6 +15,7 @@ class AppInfo {
     static let appName = MpInfo.App.appName
     static let clientId = MpInfo.App.clientId
     static let secret = MpInfo.App.secret
+    static let accountApi = MpInfo.App.env == "live" ? MpInfo.App.accountApi : "https://api-account-stage.estgames.co.kr"
 }
 
 //public enum Method: String {
@@ -35,7 +36,7 @@ public class AccountApi {
         let parameters: Parameters = [
             "client_id": AppInfo.clientId,
             "secret": AppInfo.secret,
-            "region": AppInfo.region,
+            "region": MpInfo.App.region,
             "device": device,
             "approval_type": approval_type,
             "principal": principal,
@@ -49,7 +50,7 @@ public class AccountApi {
         let parameters: Parameters = [
             "client_id": AppInfo.clientId,
             "secret": AppInfo.secret,
-            "region": AppInfo.region,
+            "region": MpInfo.App.region,
             "device": device,
             "approval_type": approval_type,
             "eg_token": egToken,
@@ -87,7 +88,7 @@ public class AccountApi {
         let url = MpInfo.App.accountApi + "/v2/account/token"
         
         let params: Parameters = self.makeCreateTokenParameters(approval_type: "principal", principal: principal, device: device, profile: profile)
-        
+        //print(params)
         request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader )
             .validate(contentType: ["application/json"])
             .validate(statusCode: 200..<300)

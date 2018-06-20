@@ -1,0 +1,108 @@
+
+/* Class = "UILabel"; text = "callback"; ObjectID = "5kK-B6-fOQ"; */
+"5kK-B6-fOQ.text" = "callback";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6kL-9P-Rfk"; */
+"6kL-9P-Rfk.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8DG-LD-d2R"; */
+"8DG-LD-d2R.text" = "Label";
+
+/* Class = "UILabel"; text = "RefreshToken"; ObjectID = "9ZD-hS-PX8"; */
+"9ZD-hS-PX8.text" = "RefreshToken";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "As5-Ap-fUl"; */
+"As5-Ap-fUl.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "토큰삭제"; ObjectID = "BJA-8Z-nKA"; */
+"BJA-8Z-nKA.normalTitle" = "토큰삭제";
+
+/* Class = "UIButton"; normalTitle = "게임시작"; ObjectID = "EVb-rN-HxY"; */
+"EVb-rN-HxY.normalTitle" = "게임시작";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FoF-kt-07p"; */
+"FoF-kt-07p.text" = "Label";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "IxG-XJ-SiH"; */
+"IxG-XJ-SiH.text" = "Email";
+
+/* Class = "UIButton"; normalTitle = "상태갱신"; ObjectID = "KJt-5Q-RYs"; */
+"KJt-5Q-RYs.normalTitle" = "상태갱신";
+
+/* Class = "UILabel"; text = "ProviderName"; ObjectID = "KeE-lm-T7o"; */
+"KeE-lm-T7o.text" = "ProviderName";
+
+/* Class = "UIButton"; normalTitle = "FAQ"; ObjectID = "L2S-E8-WFE"; */
+"L2S-E8-WFE.normalTitle" = "FAQ";
+
+/* Class = "UILabel"; text = "lang"; ObjectID = "NDY-Ze-yfG"; */
+"NDY-Ze-yfG.text" = "lang";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "RUn-OH-CXS"; */
+"RUn-OH-CXS.text" = "1";
+
+/* Class = "UIButton"; normalTitle = "이용약관"; ObjectID = "TQM-tB-JfO"; */
+"TQM-tB-JfO.normalTitle" = "이용약관";
+
+/* Class = "UILabel"; text = "nation"; ObjectID = "Tg8-bl-Vbd"; */
+"Tg8-bl-Vbd.text" = "nation";
+
+/* Class = "UIButton"; normalTitle = "현재 계정 연동"; ObjectID = "Tk9-M4-0QF"; */
+"Tk9-M4-0QF.normalTitle" = "현재 계정 연동";
+
+/* Class = "UILabel"; text = "errorCode"; ObjectID = "Vdk-32-VNP"; */
+"Vdk-32-VNP.text" = "errorCode";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "WGz-Lp-15s"; */
+"WGz-Lp-15s.text" = "2";
+
+/* Class = "UIButton"; normalTitle = "계정연동 완료"; ObjectID = "bKS-6m-1Ug"; */
+"bKS-6m-1Ug.normalTitle" = "계정연동 완료";
+
+/* Class = "UIButton"; normalTitle = "계정연동"; ObjectID = "f8N-mt-5Fm"; */
+"f8N-mt-5Fm.normalTitle" = "계정연동";
+
+/* Class = "UIButton"; normalTitle = "국,언"; ObjectID = "gE0-jM-6lV"; */
+"gE0-jM-6lV.normalTitle" = "국,언";
+
+/* Class = "UILabel"; text = "EgId"; ObjectID = "jYN-kC-8GC"; */
+"jYN-kC-8GC.text" = "EgId";
+
+/* Class = "UILabel"; text = "IdentityId"; ObjectID = "kAB-IV-kin"; */
+"kAB-IV-kin.text" = "IdentityId";
+
+/* Class = "UILabel"; text = "EgToken"; ObjectID = "kBq-z7-9Ma"; */
+"kBq-z7-9Ma.text" = "EgToken";
+
+/* Class = "UIButton"; normalTitle = "SNS연동"; ObjectID = "kNs-Md-nQM"; */
+"kNs-Md-nQM.normalTitle" = "SNS연동";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pah-Re-SCK"; */
+"pah-Re-SCK.text" = "Label";
+
+/* Class = "UILabel"; text = "Principal"; ObjectID = "qHZ-sa-aj9"; */
+"qHZ-sa-aj9.text" = "Principal";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qus-GQ-Tvu"; */
+"qus-GQ-Tvu.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "약관동의 데이터"; ObjectID = "sN6-4R-XDm"; */
+"sN6-4R-XDm.normalTitle" = "약관동의 데이터";
+
+/* Class = "UIButton"; normalTitle = "배너"; ObjectID = "tYm-9x-RK7"; */
+"tYm-9x-RK7.normalTitle" = "배너";
+
+/* Class = "UIButton"; normalTitle = "순서대로"; ObjectID = "wkV-UH-4ht"; */
+"wkV-UH-4ht.normalTitle" = "순서대로";
+
+/* Class = "UIButton"; normalTitle = "공지사항"; ObjectID = "x02-YW-39o"; */
+"x02-YW-39o.normalTitle" = "공지사항";
+
+/* Class = "UIButton"; normalTitle = "기존 계정 불러오기"; ObjectID = "xcY-0B-o0x"; */
+"xcY-0B-o0x.normalTitle" = "기존 계정 불러오기";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yba-uL-8iy"; */
+"yba-uL-8iy.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "권한"; ObjectID = "zyW-NJ-GYp"; */
+"zyW-NJ-GYp.normalTitle" = "권한";

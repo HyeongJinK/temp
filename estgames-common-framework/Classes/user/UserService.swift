@@ -266,7 +266,7 @@ public class UserService {
         userDialog.userResultViewController.resultType = "NONE"
         userDialog.userLoadViewController.inputText.text = "";
         userDialog.setUserLinkProviderLabel(provider: self.crashSnsSyncIno.provider)
-        characterInfo(MpInfo.Account.egId, userDialog.setUserLinkCharacterLabelGuest)
+        //characterInfo(MpInfo.Account.egId, userDialog.setUserLinkCharacterLabelGuest)
         characterInfo(self.crashSnsSyncIno.snsEgId, userDialog.setUserLinkCharacterLabelSNS)
         userDialog.setUserLinkAction(closeAction: closeAction, confirmAction: linkConfirmAction, cancelAction: linkCancelAction)
         userDialog.showUserLinkDialog()
@@ -329,7 +329,7 @@ public class UserService {
     
     private func userLoadShow() {
         userDialog.setUserLoadAction(closeAction: closeAction, confirmCheck: loadConfirmAction, confirmActionCallBack: LoadConfirmCallBack)
-        userDialog.setUserLoadCharacterLabel()
+        //userDialog.setUserLoadCharacterLabel()
         userDialog.showUserLoadDialog()
     }
     

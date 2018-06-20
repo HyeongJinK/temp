@@ -23,6 +23,9 @@ public class MpInfo {
             get {
                 return MpInfo.mpDict["region"]!
             }
+            set(newval) {
+                MpInfo.mpDict["region"]! = newval
+            }
         }
         
         public static var appName: String {
@@ -58,6 +61,9 @@ public class MpInfo {
         public static var env: String {
             get {
                 return MpInfo.mpDict["env"]!
+            }
+            set(newval) {
+                MpInfo.mpDict["env"]! = newval
             }
         }
     }

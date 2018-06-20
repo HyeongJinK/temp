@@ -74,7 +74,7 @@ public class UserDialog {
     }
     
     public func setUserLoadCharacterLabel() {
-        self.userLoadViewController.replaceMiddleStr = self.userLinkViewController.replaceStrGuest
+        self.userLoadViewController.replaceMiddleStr = ""
         self.userLoadViewController.replaceStr()
     }
     
@@ -83,7 +83,8 @@ public class UserDialog {
     }
     
     public func setUserGuestLinkCharacterLabel() {
-        self.userGuestLinkViewController.replaceStrGuest = self.userLinkViewController.replaceStrGuest
+        //self.userGuestLinkViewController.replaceStrGuest = self.userLinkViewController.replaceStrGuest
+        self.userGuestLinkViewController.replaceStrGuest = ""
         self.userGuestLinkViewController.replaceStrSns = self.userLinkViewController.replaceStrSns
         self.userGuestLinkViewController.replaceStr ()
     }

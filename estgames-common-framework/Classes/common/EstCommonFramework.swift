@@ -56,9 +56,8 @@ import Alamofire
         if estgamesData == nil {
             //let myGroup = DispatchGroup.init()
             //let queue = DispatchQueue.global()
-            var url = MpInfo.App.estapi.replacingOccurrences(of: "env", with: MpInfo.App.env)+"?lang="+getLanguage()!
-            
-            
+            let url = MpInfo.App.estapi+"/sd_v_1_" + MpInfo.App.env + "?region=" + MpInfo.App.region + "&lang="+getLanguage()!
+            print(url)
             //let manager = SessionManager.default
             //manager.session.configuration.timeoutIntervalForRequest = 10
             //myGroup.enter()
@@ -85,11 +84,11 @@ import Alamofire
                                 if ((bannerJson["errorMessage"] as? String) != nil){    //3번 에러가 났을 경우 한번 더 시도
                                     self.create()
                                 } else {
-                                    self.estgamesData = ResultDataJson(resultDataJson:bannerJson[MpInfo.App.region] as! NSDictionary)   //배너 파싱
+                                    self.estgamesData = ResultDataJson(resultDataJson:bannerJson as! NSDictionary)   //배너 파싱
                                     self.authority.setWebUrl(url: self.estgamesData!.url.system_contract)
                                     self.banner = bannerFramework(pview: self.pview, result: self.estgamesData!)
                                     self.policy.setWebUrl(webUrl1: self.estgamesData!.url.contract_service, webUrl2: self.estgamesData!.url.contract_private)
-                                    self.process = self.estgamesData!.process[self.estgamesData!.nation.lowercased()] as! Array<String>
+                                    self.process = self.estgamesData!.process
                                     self.initCallBack(self)
                                 }
                                 //myGroup.leave()
@@ -138,7 +137,7 @@ import Alamofire
     func call() {
         processIndex += 1
         switch self.process[processIndex] {
-            case "event":
+            case "banner":
                 if (banner.count() > 0) {
                     banner.closeBtCallBack = check
                     banner.show()
@@ -253,6 +252,19 @@ import Alamofire
         webView.modalPresentationStyle = .overCurrentContext
         webView.nation = self.estgamesData!.language
         webView.url = self.estgamesData!.url.notice
+        
+        pview.present(webView, animated: false)
+    }
+    public func showEvent() {
+        if (!checkEstgamesData()) {
+            self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
+            return;
+        }
+        webView = WebViewUIController()
+        webView.egToken = MpInfo.Account.egToken
+        webView.modalPresentationStyle = .overCurrentContext
+        webView.nation = self.estgamesData!.language
+        webView.url = self.estgamesData!.url.event
         
         pview.present(webView, animated: false)
     }

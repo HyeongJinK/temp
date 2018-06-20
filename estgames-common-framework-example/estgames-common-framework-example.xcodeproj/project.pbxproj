@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C2C136A8001E3AE9ABFC17A5 /* Pods_estgames_common_framework_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A0EC7EAF33E759A453829A /* Pods_estgames_common_framework_example.framework */; };
+		ED0DF2AC20D9DECE000DB8D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED0DF2AE20D9DECE000DB8D3 /* Localizable.strings */; };
 		ED8593FE208F07E9005C2271 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8593FD208F07E9005C2271 /* AppDelegate.swift */; };
 		ED859400208F07E9005C2271 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8593FF208F07E9005C2271 /* ViewController.swift */; };
 		ED859403208F07E9005C2271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED859401208F07E9005C2271 /* Main.storyboard */; };
 		ED859405208F07EB005C2271 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED859404208F07EB005C2271 /* Assets.xcassets */; };
 		ED859408208F07EB005C2271 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED859406208F07EB005C2271 /* LaunchScreen.storyboard */; };
 		ED859410208F09F2005C2271 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ED85940F208F09F2005C2271 /* awsconfiguration.json */; };
-		ED859412208F0A42005C2271 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED859411208F0A42005C2271 /* Localizable.strings */; };
 		ED9695D020906B750037BE70 /* sc1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9695CF20906B750037BE70 /* sc1.png */; };
 		ED9695D220907A020037BE70 /* sc2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9695D120907A020037BE70 /* sc2.png */; };
 /* End PBXBuildFile section */
@@ -23,6 +23,11 @@
 		4E3AE6B7852AD55E9C649B8A /* Pods-estgames-common-framework-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-estgames-common-framework-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-estgames-common-framework-example/Pods-estgames-common-framework-example.release.xcconfig"; sourceTree = "<group>"; };
 		86280DD381B084B76838FDCA /* Pods-estgames-common-framework-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-estgames-common-framework-example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-estgames-common-framework-example/Pods-estgames-common-framework-example.debug.xcconfig"; sourceTree = "<group>"; };
 		88A0EC7EAF33E759A453829A /* Pods_estgames_common_framework_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_estgames_common_framework_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0DF2AD20D9DECE000DB8D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED0DF2AF20D9DEDB000DB8D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED0DF2B020D9DF72000DB8D3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		ED0DF2B120D9DF72000DB8D3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		ED0DF2B220D9DF72000DB8D3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED8593FA208F07E9005C2271 /* estgames-common-framework-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "estgames-common-framework-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8593FD208F07E9005C2271 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED8593FF208F07E9005C2271 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +36,6 @@
 		ED859407208F07EB005C2271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED859409208F07EB005C2271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED85940F208F09F2005C2271 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
-		ED859411208F0A42005C2271 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		ED9695CF20906B750037BE70 /* sc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sc1.png; sourceTree = "<group>"; };
 		ED9695D120907A020037BE70 /* sc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sc2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +99,7 @@
 				ED859406208F07EB005C2271 /* LaunchScreen.storyboard */,
 				ED85940F208F09F2005C2271 /* awsconfiguration.json */,
 				ED859409208F07EB005C2271 /* Info.plist */,
-				ED859411208F0A42005C2271 /* Localizable.strings */,
+				ED0DF2AE20D9DECE000DB8D3 /* Localizable.strings */,
 			);
 			path = "estgames-common-framework-example";
 			sourceTree = "<group>";
@@ -145,6 +149,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = ED8593F1208F07E9005C2271;
 			productRefGroup = ED8593FB208F07E9005C2271 /* Products */;
@@ -161,7 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED859412208F0A42005C2271 /* Localizable.strings in Resources */,
+				ED0DF2AC20D9DECE000DB8D3 /* Localizable.strings in Resources */,
 				ED859410208F09F2005C2271 /* awsconfiguration.json in Resources */,
 				ED859408208F07EB005C2271 /* LaunchScreen.storyboard in Resources */,
 				ED9695D020906B750037BE70 /* sc1.png in Resources */,
@@ -273,10 +278,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		ED0DF2AE20D9DECE000DB8D3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED0DF2AD20D9DECE000DB8D3 /* en */,
+				ED0DF2AF20D9DEDB000DB8D3 /* Base */,
+				ED0DF2B220D9DF72000DB8D3 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		ED859401208F07E9005C2271 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				ED859402208F07E9005C2271 /* Base */,
+				ED0DF2B020D9DF72000DB8D3 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -285,6 +301,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				ED859407208F07EB005C2271 /* Base */,
+				ED0DF2B120D9DF72000DB8D3 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -296,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -356,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

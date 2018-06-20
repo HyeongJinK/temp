@@ -89,7 +89,7 @@
 		<key>env</key>
 		<string>live</string>
 		<key>estapi</key>
-		<string>https://m-linker.estgames.co.kr/sdk-start-api</string>
+		<string>https://m-linker.estgames.co.kr</string>
 		<key>account_api</key>
 		<string>https://api-account.estgames.co.kr</string>
 		<key>region</key>
