@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         
 //        let image:UIImage
 //        let imageView:UIImageView
-//
+//        
 //        imageView.contentMode = .scaleToFill
         
         self.navigationController?.isNavigationBarHidden = true

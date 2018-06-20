@@ -117,12 +117,10 @@ import Alamofire
         if (!checkEstgamesData()) {
             //에러 코드 리턴
             self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
-            return;
         } else {
             processIndex = -1
             check()
         }
-        
     }
     
     func check() {
@@ -171,11 +169,10 @@ import Alamofire
     public func authorityShow() {
         if (!checkEstgamesData()) {
             self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
-            return;
+        } else {
+            authority.callbackFunc = authorityCallBack
+            pview.present(authority, animated: false)
         }
-        
-        authority.callbackFunc = authorityCallBack
-        pview.present(authority, animated: false)
     }
     
     public func authorityDismiss() {
@@ -186,13 +183,12 @@ import Alamofire
     public func policyShow() {
         if (!checkEstgamesData()) {
             self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
-            return;
-        }
-        
-        if (policy.isShowPolicyShow()) {
-            policy.callbackFunc = policyCallBack
-            //policy.closeBt.closeBtActionCallBack = policyCallBack
-            pview.present(policy, animated: false)
+        } else {
+            if (policy.isShowPolicyShow()) {
+                policy.callbackFunc = policyCallBack
+                //policy.closeBt.closeBtActionCallBack = policyCallBack
+                pview.present(policy, animated: false)
+            }
         }
     }
     
@@ -219,25 +215,24 @@ import Alamofire
     public func bannerShow() {
         if (!checkEstgamesData()) {
             self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
-            return;
+        } else {
+            banner.closeBtCallBack = bannerCallBack
+            banner.show()
         }
-        
-        banner.closeBtCallBack = bannerCallBack
-        banner.show()
     }
     
     public func showCsCenter() {
         if (!checkEstgamesData()) {
             self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
-            return;
+        } else {
+            webView = WebViewUIController()
+            webView.egToken = MpInfo.Account.egToken
+            webView.modalPresentationStyle = .overCurrentContext
+            webView.nation = self.estgamesData!.language
+            webView.url = self.estgamesData!.url.cscenter
+            
+            pview.present(webView, animated: false)
         }
-        webView = WebViewUIController()
-        webView.egToken = MpInfo.Account.egToken
-        webView.modalPresentationStyle = .overCurrentContext
-        webView.nation = self.estgamesData!.language
-        webView.url = self.estgamesData!.url.cscenter
-        
-        pview.present(webView, animated: false)
     }
     
     //이용약관 다이얼로그
@@ -245,39 +240,41 @@ import Alamofire
         if (!checkEstgamesData()) {
             self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
             return;
+        } else {
+            webView = WebViewUIController()
+            webView.egToken = MpInfo.Account.egToken
+            webView.modalPresentationStyle = .overCurrentContext
+            webView.nation = self.estgamesData!.language
+            webView.url = self.estgamesData!.url.notice
+            
+            pview.present(webView, animated: false)
         }
-        webView = WebViewUIController()
-        webView.egToken = MpInfo.Account.egToken
-        webView.modalPresentationStyle = .overCurrentContext
-        webView.nation = self.estgamesData!.language
-        webView.url = self.estgamesData!.url.notice
-        
-        pview.present(webView, animated: false)
     }
     public func showEvent() {
         if (!checkEstgamesData()) {
             self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
             return;
+        } else {
+            webView = WebViewUIController()
+            webView.egToken = MpInfo.Account.egToken
+            webView.modalPresentationStyle = .overCurrentContext
+            webView.nation = self.estgamesData!.language
+            webView.url = self.estgamesData!.url.event
+            
+            pview.present(webView, animated: false)
         }
-        webView = WebViewUIController()
-        webView.egToken = MpInfo.Account.egToken
-        webView.modalPresentationStyle = .overCurrentContext
-        webView.nation = self.estgamesData!.language
-        webView.url = self.estgamesData!.url.event
-        
-        pview.present(webView, animated: false)
     }
     
     public func getNation() -> String? {
         if (!checkEstgamesData()) {
             self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
             return "";
+        } else {
+            if let data = estgamesData {
+                return data.nation
+            }
+            return ""
         }
-        
-        if let data = estgamesData {
-            return data.nation
-        }
-        return ""
     }
     
     public func getLanguage() -> String? {

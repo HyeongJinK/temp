@@ -38,7 +38,7 @@ class UserDataSet {
 //        case 320480 :
 //            break;
         case 320568 :
-            titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
+            titleLabel = CGRect(x: 21.5, y: 15, width: 150, height: 12)
             closeButton = CGRect(x: 259.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 290, height: 0.5)
             
@@ -63,7 +63,7 @@ class UserDataSet {
             userResultConfirmButton = CGRect(x: 83.5, y: 151, width: 123.5, height: 37.5)
             break;
         case 375667 :
-            titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
+            titleLabel = CGRect(x: 21.5, y: 15, width: 150, height: 12)
             closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
@@ -88,7 +88,7 @@ class UserDataSet {
             userResultConfirmButton = CGRect(x: 102, y: 140, width: 123.5, height: 37.5)
             break;
         case 414736 :
-            titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
+            titleLabel = CGRect(x: 21.5, y: 15, width: 150, height: 12)
             closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
@@ -113,7 +113,7 @@ class UserDataSet {
             userResultConfirmButton = CGRect(x: 102, y: 140, width: 123.5, height: 37.5)
             break;
         case 375812 :
-            titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
+            titleLabel = CGRect(x: 21.5, y: 15, width: 150, height: 12)
             closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
@@ -140,7 +140,7 @@ class UserDataSet {
 //        case 480320 :
 //            break;
         case 568320 :
-            titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
+            titleLabel = CGRect(x: 21.5, y: 15, width: 150, height: 12)
             closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
@@ -165,7 +165,7 @@ class UserDataSet {
             userResultConfirmButton = CGRect(x: 109, y: 143.5, width: 123.5, height: 37.5)
             break;
         case 667375 :
-            titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
+            titleLabel = CGRect(x: 21.5, y: 15, width: 150, height: 12)
             closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
@@ -190,7 +190,7 @@ class UserDataSet {
             userResultConfirmButton = CGRect(x: 109, y: 143.5, width: 123.5, height: 37.5)
             break;
         case 736412 :
-            titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
+            titleLabel = CGRect(x: 21.5, y: 15, width: 150, height: 12)
             closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
@@ -215,7 +215,7 @@ class UserDataSet {
             userResultConfirmButton = CGRect(x: 109, y: 143.5, width: 123.5, height: 37.5)
             break;
         case 812375 :
-            titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
+            titleLabel = CGRect(x: 21.5, y: 15, width: 150, height: 12)
             closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             
@@ -240,7 +240,7 @@ class UserDataSet {
             userResultConfirmButton = CGRect(x: 109, y: 143.5, width: 123.5, height: 37.5)
             break;
         default:
-            titleLabel = CGRect(x: 21.5, y: 15, width: 100, height: 12)
+            titleLabel = CGRect(x: 21.5, y: 15, width: 150, height: 12)
             closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
             

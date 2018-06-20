@@ -18,19 +18,16 @@ class BannerView {
             case "image/jpeg" :
                 //이미지 뷰 생성
                 let imageView:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight - bottomViewHeight))
-                
+                imageView.backgroundColor = UIColor.white
+                imageView.isUserInteractionEnabled = true
+                imageView.contentMode = .scaleAspectFit
+                //.scaleToFill
+                //.scaleAspectFit
+                //.scaleAspectFill
                 let imgUrl = URL(string: entry.banner.content.resource)
                 let dtinternet = try? Data(contentsOf: imgUrl!)
                 if let itImg = dtinternet {
                     imageView.image = UIImage(data: itImg)
-                    
-                    imageView.isUserInteractionEnabled = true
-                    imageView.contentMode = .scaleAspectFit
-                    //.scaleToFill
-                    //.scaleAspectFit
-                    //.scaleAspectFill
-                } else {
-                    imageView.tintColor = UIColor.white
                 }
                 view = imageView
                 break
