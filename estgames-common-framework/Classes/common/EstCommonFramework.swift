@@ -57,7 +57,6 @@ import Alamofire
             //let myGroup = DispatchGroup.init()
             //let queue = DispatchQueue.global()
             let url = MpInfo.App.estapi+"/sd_v_1_" + MpInfo.App.env + "?region=" + MpInfo.App.region + "&lang="+getLanguage()!
-            print(url)
             //let manager = SessionManager.default
             //manager.session.configuration.timeoutIntervalForRequest = 10
             //myGroup.enter()
@@ -272,13 +271,13 @@ import Alamofire
     public func getNation() -> String? {
         if (!checkEstgamesData()) {
             self.estCommonFailCallBack(Fail.START_API_DATA_INIT)
-            return nil;
+            return "";
         }
         
         if let data = estgamesData {
             return data.nation
         }
-        return nil
+        return ""
     }
     
     public func getLanguage() -> String? {
