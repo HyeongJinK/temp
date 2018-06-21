@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C2C136A8001E3AE9ABFC17A5 /* Pods_estgames_common_framework_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A0EC7EAF33E759A453829A /* Pods_estgames_common_framework_example.framework */; };
 		ED0DF2AC20D9DECE000DB8D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED0DF2AE20D9DECE000DB8D3 /* Localizable.strings */; };
+		ED0DF2F320DB87AF000DB8D3 /* sc3.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0DF2F120DB87AE000DB8D3 /* sc3.png */; };
+		ED0DF2F420DB87AF000DB8D3 /* sc4.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0DF2F220DB87AF000DB8D3 /* sc4.png */; };
 		ED8593FE208F07E9005C2271 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8593FD208F07E9005C2271 /* AppDelegate.swift */; };
 		ED859400208F07E9005C2271 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8593FF208F07E9005C2271 /* ViewController.swift */; };
 		ED859403208F07E9005C2271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED859401208F07E9005C2271 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 		ED0DF2B020D9DF72000DB8D3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		ED0DF2B120D9DF72000DB8D3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ED0DF2B220D9DF72000DB8D3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED0DF2F120DB87AE000DB8D3 /* sc3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sc3.png; sourceTree = "<group>"; };
+		ED0DF2F220DB87AF000DB8D3 /* sc4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sc4.png; sourceTree = "<group>"; };
 		ED8593FA208F07E9005C2271 /* estgames-common-framework-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "estgames-common-framework-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8593FD208F07E9005C2271 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED8593FF208F07E9005C2271 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		ED8593FC208F07E9005C2271 /* estgames-common-framework-example */ = {
 			isa = PBXGroup;
 			children = (
+				ED0DF2F120DB87AE000DB8D3 /* sc3.png */,
+				ED0DF2F220DB87AF000DB8D3 /* sc4.png */,
 				ED9695D120907A020037BE70 /* sc2.png */,
 				ED9695CF20906B750037BE70 /* sc1.png */,
 				ED8593FD208F07E9005C2271 /* AppDelegate.swift */,
@@ -169,6 +175,8 @@
 				ED0DF2AC20D9DECE000DB8D3 /* Localizable.strings in Resources */,
 				ED859410208F09F2005C2271 /* awsconfiguration.json in Resources */,
 				ED859408208F07EB005C2271 /* LaunchScreen.storyboard in Resources */,
+				ED0DF2F420DB87AF000DB8D3 /* sc4.png in Resources */,
+				ED0DF2F320DB87AF000DB8D3 /* sc3.png in Resources */,
 				ED9695D020906B750037BE70 /* sc1.png in Resources */,
 				ED9695D220907A020037BE70 /* sc2.png in Resources */,
 				ED859405208F07EB005C2271 /* Assets.xcassets in Resources */,
