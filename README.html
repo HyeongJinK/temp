@@ -401,7 +401,11 @@ blockquote {
 <li>proceessShow에서 권한창이 제외되었습니다.</li>
 </ul>
 </li>
-<li>region, env 설정 추가, 아래 코드로 리젼과 디버그 설정을 변경 할 수 있습니다.</li>
+<li>region, env 설정 추가, 아래 코드로 리젼과 디버그 설정을 변경 할 수 있습니다.
+<ul>
+<li>해당값은 EstgamesCommon 객체에 create() 함수 호출 전, UserService 객체에 startGame() 함수 호출 전에 변경하셔야 제대로 된 region, env로 나옵니다.</li>
+</ul>
+</li>
 </ul>
 <pre class="hljs"><code><div><span class="hljs-type">MpInfo</span>.<span class="hljs-type">App</span>.region = <span class="hljs-string">"mr.global.ls"</span>
 <span class="hljs-type">MpInfo</span>.<span class="hljs-type">App</span>.env = <span class="hljs-string">"live"</span>
@@ -409,7 +413,7 @@ blockquote {
 <ul>
 <li>Info.plist
 <ul>
-<li><img class="emoji" alt="exclamation" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEXklEQVR42u2aTWhcZRSG3/Pda2aIk78WjQiBgi5KKDF04y4Igq1ShIKL4kLQhVtBQcGdILgviLhz6w910xIQ4ra67cJIaSZJZ5ppfiZD5ufOnbnfOcfFvZOO1cncLDLpfJkDd5c7k/vcc95zzvsNqSrOchic8RgBGAEYATjb4Z/UBz9eWPgqc+HCG97UVATm1K3GeJ5pbW3lzq+svD7UAPY3NuZnM5ml52dnocxAmnZLBAJQLRSGPwN2jPlT799/L1xdBaecNQgAEWHH8/DysAMwRHn2fdDYGLxj3CcAZIDD2YkBUJFC5HmQY9xDABhABNSHvgtEnrfNIlYAaMoLydsX1YfDD6BS2baq+5K82bQQGACrFocewNuqLSbatcd4eEkAOJEBAGCBDauaGoDG90CINoZeBAFAVfP8VI33E0GrCmbOOwFAgHVOUlvT/X2cAcCaEwAAbLaPAYDiFgiKopITAFikyMYARH0BmI4Iimi72Sy7kQHWFqzvp57skhIoX1MNnOgCVxqNkk3q+nDMPeKKADDRrlN+QFt1S1O2QlYFA+tOAVCRQtphiAFEqnmnADBQ5JR7QAJqoBngn3gGqG7aFK2wowGquukUAAusR10acBQAjjfBolsZAOTTTIOUlABZW3AKgIispzFGOovQu43GllMiGBLt9tsIKVZ/sGoJA44TB/B+rVZm1YD7GCPJGFxwDoCqqgXK/VohA7BERecAIHZ4Stzn7dsYVsFJABZYY9WeO4B2jJAB+gAD6wJJGawf5QzJkykw7yQAAdaiuBT+F8ChBohsuJkBxhStKoSo5wwQqSIEdtzUAOYidz1sDxFsLtfr+04CaNXrBdtDBPFECMs/qbKTAD5SrTEQ2B7DkI27wMCnwIEBSHaCR0YV/lPXc6pALI5rpwHAH9QXHajW6yL/Id7ZAhnYdRrAnsh3FWuXNPY9QF2iSEDmRd//9TQA0OiXomc8Tg3Az5cu5Z4FAAMtgduLi9fPT05+9tLMzIKXzU5EQVB5VKncrVarX1+7d++u0wBW5udvXTx37nrO97FfrUKiCH4mg+nJSZTDEA8qlW/eWl390kkAy3Nz31+cmPiY63X8vbf3r7NC3xgszs6inMmgUKt9+E6x+INTAJanp1/Jjo8/mAFQqNXgGwPTtRSJCATA3NQUSu1268r2dtYpEQxVPzDtNnbDEJ7ngZKj8kND1BgQEcpBAN/azC+53JtOAWipvta0FizS0xQlIkQiaDEjMuayWxlAlGknZdbvZDhURUt1wikAgepWiHSHo01VNAbsCp04gBrzrUpsePYsgaRUcKCKhupvTgH4otG4U2Z+WE40wHSBoK5/YEcE+yK3Pw8Ctw5HAeDA2qtN4K9QFS8Yg7HkwRVAE0BJBI9F9tpBcMPZSfDTbPZVNebHHNHlcSJ4iQ9QV0WgeidqNm98q1p3FkAnPslmrwrREhFNQ7UI5t9vttt/nIllaLQOjwCMAIwAjAA8Y/EPeqMRHQ+9uFUAAAAASUVORK5CYII=" /> MP - estapi : https://m-linker.estgames.co.kr 로 수정 필요</li>
+<li><img class="emoji" alt="exclamation" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEXklEQVR42u2aTWhcZRSG3/Pda2aIk78WjQiBgi5KKDF04y4Igq1ShIKL4kLQhVtBQcGdILgviLhz6w910xIQ4ra67cJIaSZJZ5ppfiZD5ufOnbnfOcfFvZOO1cncLDLpfJkDd5c7k/vcc95zzvsNqSrOchic8RgBGAEYATjb4Z/UBz9eWPgqc+HCG97UVATm1K3GeJ5pbW3lzq+svD7UAPY3NuZnM5ml52dnocxAmnZLBAJQLRSGPwN2jPlT799/L1xdBaecNQgAEWHH8/DysAMwRHn2fdDYGLxj3CcAZIDD2YkBUJFC5HmQY9xDABhABNSHvgtEnrfNIlYAaMoLydsX1YfDD6BS2baq+5K82bQQGACrFocewNuqLSbatcd4eEkAOJEBAGCBDauaGoDG90CINoZeBAFAVfP8VI33E0GrCmbOOwFAgHVOUlvT/X2cAcCaEwAAbLaPAYDiFgiKopITAFikyMYARH0BmI4Iimi72Sy7kQHWFqzvp57skhIoX1MNnOgCVxqNkk3q+nDMPeKKADDRrlN+QFt1S1O2QlYFA+tOAVCRQtphiAFEqnmnADBQ5JR7QAJqoBngn3gGqG7aFK2wowGquukUAAusR10acBQAjjfBolsZAOTTTIOUlABZW3AKgIispzFGOovQu43GllMiGBLt9tsIKVZ/sGoJA44TB/B+rVZm1YD7GCPJGFxwDoCqqgXK/VohA7BERecAIHZ4Stzn7dsYVsFJABZYY9WeO4B2jJAB+gAD6wJJGawf5QzJkykw7yQAAdaiuBT+F8ChBohsuJkBxhStKoSo5wwQqSIEdtzUAOYidz1sDxFsLtfr+04CaNXrBdtDBPFECMs/qbKTAD5SrTEQ2B7DkI27wMCnwIEBSHaCR0YV/lPXc6pALI5rpwHAH9QXHajW6yL/Id7ZAhnYdRrAnsh3FWuXNPY9QF2iSEDmRd//9TQA0OiXomc8Tg3Az5cu5Z4FAAMtgduLi9fPT05+9tLMzIKXzU5EQVB5VKncrVarX1+7d++u0wBW5udvXTx37nrO97FfrUKiCH4mg+nJSZTDEA8qlW/eWl390kkAy3Nz31+cmPiY63X8vbf3r7NC3xgszs6inMmgUKt9+E6x+INTAJanp1/Jjo8/mAFQqNXgGwPTtRSJCATA3NQUSu1268r2dtYpEQxVPzDtNnbDEJ7ngZKj8kND1BgQEcpBAN/azC+53JtOAWipvta0FizS0xQlIkQiaDEjMuayWxlAlGknZdbvZDhURUt1wikAgepWiHSHo01VNAbsCp04gBrzrUpsePYsgaRUcKCKhupvTgH4otG4U2Z+WE40wHSBoK5/YEcE+yK3Pw8Ctw5HAeDA2qtN4K9QFS8Yg7HkwRVAE0BJBI9F9tpBcMPZSfDTbPZVNebHHNHlcSJ4iQ9QV0WgeidqNm98q1p3FkAnPslmrwrREhFNQ7UI5t9vttt/nIllaLQOjwCMAIwAjAA8Y/EPeqMRHQ+9uFUAAAAASUVORK5CYII=" /> MP - estapi : 기존 https://m-linker.estgames.co.kr/sdk-start-api 에서 https://m-linker.estgames.co.kr 로 수정이 필요합니다.</li>
 </ul>
 </li>
 <li>Localizable.string

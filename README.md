@@ -15,6 +15,7 @@
   * 배너 이미지 크기조절 모드 변경
   * proceessShow에서 권한창이 제외되었습니다.
 * region, env 설정 추가, 아래 코드로 리젼과 디버그 설정을 변경 할 수 있습니다. 
+  * 해당값은 EstgamesCommon 객체에 create() 함수 호출 전, UserService 객체에 startGame() 함수 호출 전에 변경하셔야 제대로 된 region, env로 나옵니다.
 
 ```swift
 MpInfo.App.region = "mr.global.ls"
@@ -22,7 +23,7 @@ MpInfo.App.env = "live"
 ```
 
 * Info.plist
-  * :exclamation: MP - estapi : https://m-linker.estgames.co.kr 로 수정 필요
+  * :exclamation: MP - estapi : 기존 https://m-linker.estgames.co.kr/sdk-start-api 에서 https://m-linker.estgames.co.kr 로 수정이 필요합니다.
 * Localizable.string
   * :exclamation: 'estcommon_authority_title' = "원활한 게임플레이를 위해\n아래 권한을 필요로 합니다.";   해당 키 수정 필요
   * English 번역 추가 필요

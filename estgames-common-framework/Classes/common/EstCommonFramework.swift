@@ -54,16 +54,11 @@ import Alamofire
     
     public func create() {
         if estgamesData == nil {
-            //let myGroup = DispatchGroup.init()
-            //let queue = DispatchQueue.global()
-            let url = MpInfo.App.estapi+"/sd_v_1_" + MpInfo.App.env + "?region=" + MpInfo.App.region + "&lang="+getLanguage()!
-            //let manager = SessionManager.default
-            //manager.session.configuration.timeoutIntervalForRequest = 10
-            //myGroup.enter()
+            //let url = MpInfo.App.estapi+"/sd_v_1_" + MpInfo.App.env + "?region=" + MpInfo.App.region + "&lang="+getLanguage()!
+            let url = MpInfo.App.estapi+"/sd_v_1_live?region=" + MpInfo.App.region + "&lang="+getLanguage()!
             apiCallCount += 1
             
             if (apiCallCount >= 3) {    //api 호출 실패가 3번이 넘으면
-                //myGroup.leave()
                 apiCallCount = 0
                 self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
                 return
