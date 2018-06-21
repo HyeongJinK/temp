@@ -6,15 +6,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 
 import com.estgames.estgames_framework.R;
 
 public class WebViewDialog extends Dialog {
-    private Button closeBt;
     private WebView webView;
     private String url;
     private Runnable callBack = new Runnable() {
@@ -31,9 +30,10 @@ public class WebViewDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         setContentView(R.layout.webview);
 
-        closeBt = (Button) findViewById(R.id.webView_CloseBt);
         webView = (WebView) findViewById(R.id.webView_View);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient() {
@@ -45,7 +45,8 @@ public class WebViewDialog extends Dialog {
 
         webView.loadUrl(url);
 
-        closeBt.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_web_view_close).bringToFront();
+        findViewById(R.id.btn_web_view_close).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dismiss();

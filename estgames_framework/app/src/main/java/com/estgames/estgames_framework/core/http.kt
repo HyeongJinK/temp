@@ -104,8 +104,8 @@ class HttpRequest(val method: Method, url: String, headers: Map<String, String>,
             }
 
             return when(conn.responseCode) {
-                200 -> HttpResponse(conn.inputStream, conn.responseCode, conn.responseMessage)
-                else -> HttpResponse(conn.errorStream, conn.responseCode, conn.responseMessage)
+                200, 302 -> HttpResponse(conn.inputStream, conn.responseCode, conn.responseMessage, conn.headerFields)
+                else -> HttpResponse(conn.errorStream, conn.responseCode, conn.responseMessage, conn.headerFields)
             }
 
         } finally {
@@ -114,12 +114,32 @@ class HttpRequest(val method: Method, url: String, headers: Map<String, String>,
     }
 }
 
-class HttpResponse constructor(stream: InputStream, val status: Int, val message: String) {
+class HttpResponse constructor(
+        stream: InputStream,
+        val status: Int,
+        val message: String,
+        private val headerMap: Map<String, List<String>>) {
+
     val content = getBytes(stream)
     val inputStream: InputStream
             get() = ByteArrayInputStream(content)
     val reader: Reader
             get() = InputStreamReader(ByteArrayInputStream(content), "utf-8")
+    val headers: Map<String, String>
+            get() {
+                var entries = headerMap.entries.map {
+                    e -> Pair(e.key, e.value.fold("") {r, v -> if (r.equals("")) "$v" else "$r, $v" })
+                }
+                return mapOf(*entries.toTypedArray())
+            }
+
+    fun header(key: String): String? {
+        return if (key in headerMap) {
+            headerMap.get(key)!!.fold("") { a, b -> if (a.equals("")) "$b" else "$a, $b" }
+        } else {
+            null
+        }
+    }
 
     private fun getBytes(stream: InputStream): ByteArray {
         val out = ByteArrayOutputStream()

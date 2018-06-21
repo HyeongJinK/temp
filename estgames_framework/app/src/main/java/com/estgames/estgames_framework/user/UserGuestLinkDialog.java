@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.estgames.estgames_framework.R;
-import com.estgames.estgames_framework.common.CustormSupplier;
 
 
 /**
@@ -40,13 +39,6 @@ public class UserGuestLinkDialog extends Dialog {
         @Override
         public void run() {
             System.out.println("beforeCallBack");
-        }
-    };
-
-    public CustormSupplier<String> userGuestTextSupplier = new CustormSupplier<String>() {
-        @Override
-        public String get() {
-            return (String) getContext().getText(R.string.estcommon_userGuest_middle);
         }
     };
 
@@ -111,6 +103,5 @@ public class UserGuestLinkDialog extends Dialog {
         this.loginCallBack = loginCallBack;
         this.beforeCallBack = beforeCallBack;
         userGuestText = (TextView) findViewById(R.id.userGuestLinkMiddleText);
-        userGuestText.setText(userGuestTextSupplier.get());
     }
 }

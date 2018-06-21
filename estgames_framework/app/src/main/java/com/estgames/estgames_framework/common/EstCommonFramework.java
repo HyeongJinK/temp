@@ -3,20 +3,24 @@ package com.estgames.estgames_framework.common;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.estgames.estgames_framework.authority.AuthorityDialog;
+import com.estgames.estgames_framework.banner.BannerCacheRepository;
 import com.estgames.estgames_framework.banner.BannerDialog;
+import com.estgames.estgames_framework.banner.BannerDialogHandler;
+import com.estgames.estgames_framework.core.Api;
 import com.estgames.estgames_framework.core.Fail;
 import com.estgames.estgames_framework.core.HttpResponse;
-import com.estgames.estgames_framework.core.Method;
+import com.estgames.estgames_framework.core.PlatformContext;
 import com.estgames.estgames_framework.core.Token;
 import com.estgames.estgames_framework.core.session.SessionManager;
 import com.estgames.estgames_framework.policy.PolicyDialog;
 import com.estgames.estgames_framework.webview.WebViewDialog;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
-
-import static com.estgames.estgames_framework.core.HttpUtils.request;
 
 
 /**
@@ -24,10 +28,15 @@ import static com.estgames.estgames_framework.core.HttpUtils.request;
  */
 
 public class EstCommonFramework {
-    final String apiUrl = "https://m-linker.estgames.co.kr/sdk-start-api?lang="+Locale.getDefault().getLanguage();
+    private String TAG = "EMP Common";
+    private PlatformContext platformContext;
+
+    private ProcessDescription pd;
+    private SessionManager sessionManager;
+
     final String SystemContract = "system_contract";
     final String UseContract = "use_contract";
-    final String Event = "event";
+    final String Banner = "banner";
 
     SharedPreferences pref;
     Context context;
@@ -36,52 +45,49 @@ public class EstCommonFramework {
     BannerDialog bannerDialog;
     PolicyDialog policyDialog;
 
-    ResultDataJson data;
-
     WebViewDialog notice;
     WebViewDialog cscenter;
 
     public Runnable bannerCallBack = new Runnable() {
-        @Override
-        public void run() {
-            System.out.println("callBack");
-        }
+        @Override public void run() {}
     };
 
     public Runnable authorityCallBack = new Runnable() {
-        @Override
-        public void run() {
-            System.out.println("authorityCallBack");
-        }
+        @Override public void run() {}
     };
 
     public Runnable policyCallBack = new Runnable() {
-        @Override
-        public void run() {
-            System.out.println("policyCallBack");
-        }
+        @Override public void run() {}
     };
 
     public Runnable processCallBack = new Runnable() {
-        @Override
-        public void run() {
-            System.out.println("processCallBack");
-        }
+        @Override public void run() {}
     };
 
     public CustomConsumer initCallBack = new CustomConsumer<EstCommonFramework>() {
-        @Override
-        public void accept(EstCommonFramework o) {
-            System.out.println("initCallBack");
-        }
+        @Override public void accept(EstCommonFramework o) {}
     };
 
     public CustomConsumer<Fail> estCommonFailCallBack = new CustomConsumer<Fail>() {
-        @Override
-        public void accept(Fail code) {
-
-        }
+        @Override public void accept(Fail code) {}
     };
+
+    public EstCommonFramework(Context context) {
+        this.context = context;
+        platformContext = (PlatformContext) context.getApplicationContext();
+        sessionManager = new SessionManager(context);
+
+        pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
+    }
+
+    public EstCommonFramework(Context context, CustomConsumer<EstCommonFramework> initCallBack) {
+        this.context = context;
+        platformContext = (PlatformContext) context.getApplicationContext();
+        sessionManager = new SessionManager(context);
+
+        this.initCallBack = initCallBack;
+        pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
+    }
 
     public void create() {
         EstCommonFramework temp = this;
@@ -90,41 +96,43 @@ public class EstCommonFramework {
                 @Override
                 public void run() {
                     try {
-                        HttpResponse result = request(apiUrl, Method.GET);
+                        HttpResponse result = new Api.ProcessDescribe(
+                                platformContext.getConfiguration().getRegion(), Locale.getDefault().getLanguage()
+                        ).invoke();
 
-                        data = new ResultDataJson(new String(result.getContent()));
+                        pd = ProcessDescriptionParser.parse(new String(result.getContent(), "utf-8"));
 
                         initCallBack.accept(temp);
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        Log.e(TAG, "Fail to initialize process...", e);
                         estCommonFailCallBack.accept(Fail.API_REQUEST_FAIL);
                     }
                 }
             };
 
             startApi.start();
-            //startApi.
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(TAG, "Fail to initialize process...", e);
             estCommonFailCallBack.accept(Fail.API_REQUEST_FAIL);
         }
     }
 
-    public EstCommonFramework(Context context) {
-        this.context = context;
-        pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
-    }
-
-    public EstCommonFramework(Context context, CustomConsumer<EstCommonFramework> initCallBack) {
-        this.context = context;
-        this.initCallBack = initCallBack;
-        pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
-    }
-
     public void bannerShow() {
-        if (data != null) {
-            bannerDialog = new BannerDialog(context, data, bannerCallBack);
-            if (bannerDialog.bitmap.size() > 0) {
+        if (pd != null) {
+            BannerCacheRepository cache = new BannerCacheRepository(context);
+            List<Banner> banners = new ArrayList<>();
+            for (Banner b: pd.getBanners()) {
+                if (!cache.isHideOnToday(b.getName())) {banners.add(b);}
+            }
+
+            if (banners.size() > 0) {
+                bannerDialog = new BannerDialog(context, banners, cache);
+                bannerDialog.setDialogHandler(new BannerDialogHandler() {
+                    @Override public void onDialogClosed() {
+                        cache.dispose();
+                        bannerCallBack.run();
+                    }
+                });
                 bannerDialog.show();
             }
         } else {
@@ -133,9 +141,21 @@ public class EstCommonFramework {
     }
 
     private void pBannerShow() {
-        if (data != null) {
-            bannerDialog = new BannerDialog(context, data, bannerCallBack);
-            if (bannerDialog.bitmap.size() > 0) {
+        if (pd != null) {
+            BannerCacheRepository cache = new BannerCacheRepository(context);
+            List<Banner> banners = new ArrayList<>();
+            for (Banner b: pd.getBanners()) {
+                if (!cache.isHideOnToday(b.getName())) {banners.add(b);}
+            }
+
+            if (banners.size() > 0) {
+                bannerDialog = new BannerDialog(context, pd.getBanners(), cache);
+                bannerDialog.setDialogHandler(new BannerDialogHandler() {
+                    @Override public void onDialogClosed() {
+                        cache.dispose();
+                        bannerCallBack.run();
+                    }
+                });
                 bannerDialog.show();
             } else {
                 defaultProcess();
@@ -146,8 +166,8 @@ public class EstCommonFramework {
     }
 
     public void authorityShow() {
-        if (data != null) {
-            authorityDialog = new AuthorityDialog(context, data.getUrl().getSystem_contract(), authorityCallBack);
+        if (pd != null) {
+            authorityDialog = new AuthorityDialog(context, pd.getUrl().getAuthority(), authorityCallBack);
             authorityDialog.show();
         } else {
             estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
@@ -163,9 +183,9 @@ public class EstCommonFramework {
 
 
     public void policyShow() {
-        if (data != null) {
+        if (pd != null) {
             if (!policyCheck()) {
-                policyDialog = new PolicyDialog(context, data.getUrl().getContract_private(), data.getUrl().getContract_service(), policyCallBack);
+                policyDialog = new PolicyDialog(context, pd.getUrl().getContractPrivate(), pd.getUrl().getContractService(), policyCallBack);
                 policyDialog.show();
             }
         } else {
@@ -174,9 +194,9 @@ public class EstCommonFramework {
     }
 
     private void pPolicyShow() {
-        if (data != null) {
+        if (pd != null) {
             if (!policyCheck()) {
-                policyDialog = new PolicyDialog(context, data.getUrl().getContract_private(), data.getUrl().getContract_service(), policyCallBack);
+                policyDialog = new PolicyDialog(context, pd.getUrl().getContractPrivate(), pd.getUrl().getContractService(), policyCallBack);
                 policyDialog.show();
             } else {
                 defaultProcess();
@@ -204,7 +224,7 @@ public class EstCommonFramework {
     int index = 0;
 
     public boolean systemContractShowOrDismiss() {
-        for(String process : data.getProcess()) {
+        for(String process : pd.getProcess()) {
             if (process.equals(SystemContract)) {
                 return true;
             }
@@ -215,11 +235,11 @@ public class EstCommonFramework {
     Runnable processCheck = new Runnable() {
         @Override
         public void run() {
-            if (data.getProcess().size() <= index) {
+            if (pd.getProcess().length <= index) {
                 processCallBack.run();
                 return;
             }
-            String process = data.getProcess().get(index++);
+            String process = pd.getProcess()[index++];
 
             switch (process) {
                 case SystemContract :
@@ -229,7 +249,7 @@ public class EstCommonFramework {
                     policyCallBack = processCheck;
                     pPolicyShow();
                     break;
-                case Event :
+                case Banner :
                     bannerCallBack = processCheck;
                     pBannerShow();
                     break;
@@ -241,7 +261,7 @@ public class EstCommonFramework {
     };
 
     public void processShow() {
-        if (data != null) {
+        if (pd != null) {
             index = 0;
             processCheck.run();
         } else {
@@ -254,38 +274,38 @@ public class EstCommonFramework {
     }
 
     public void showNotice() {
-        SessionManager sm = new SessionManager(context);
-        if (sm != null) {
-            Token token = sm.getToken();
-
-            if (data != null) {
-                notice = new WebViewDialog(context, data.getUrl().getNotice() + "?eg_token=" + token.getEgToken() + "&lang=" + data.getLanguage());
-                notice.show();
-            } else {
-                estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
-            }
+        Token token = sessionManager.getToken();
+        if (pd != null) {
+            notice = new WebViewDialog(context, pd.getUrl().getNotice() + "?eg_token=" + token.getEgToken() + "&lang=" + pd.getLanguage());
+            notice.show();
         } else {
-            estCommonFailCallBack.accept(Fail.TOKEN_EMPTY);
+            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
         }
     }
 
     public void showCSCenter() {
-        SessionManager sm = new SessionManager(context);
-        if (sm != null) {
-            Token token = sm.getToken();
-            if (data != null) {
-                cscenter = new WebViewDialog(context, data.getUrl().getCscenter() + "?eg_token=" + token.getEgToken() + "&lang=" + data.getLanguage());
-                cscenter.show();
-            } else {
-                estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
-            }
+        Token token = sessionManager.getToken();
+        if (pd != null) {
+            cscenter = new WebViewDialog(context, pd.getUrl().getCs() + "?eg_token=" + token.getEgToken() + "&lang=" + pd.getLanguage());
+            cscenter.show();
         } else {
-            estCommonFailCallBack.accept(Fail.TOKEN_EMPTY);
+            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+        }
+    }
+
+    public void showEvent() {
+        Token token = sessionManager.getToken();
+        if (pd != null) {
+            String url = String.format("%s?eg_token=%s&lang=%s", pd.getUrl().getEvent(), token.getEgToken(), pd.getLanguage());
+            WebViewDialog eventDialog = new WebViewDialog(context, url);
+            eventDialog.show();
+        } else {
+            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
         }
     }
 
     public String getNation() {
-        return data.getNation();
+        return pd.getNation();
     }
 
     public String getLanguage() {

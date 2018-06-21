@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.estgames.estgames_framework.R;
-import com.estgames.estgames_framework.common.CustormSupplier;
+import com.estgames.estgames_framework.common.GameService;
 import com.estgames.estgames_framework.core.EGException;
 import com.estgames.estgames_framework.core.Fail;
 import com.estgames.estgames_framework.core.Result;
@@ -19,6 +19,10 @@ import com.estgames.estgames_framework.core.session.SessionManager;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -33,15 +37,19 @@ public class UserAllDialog extends Dialog{
     private SessionManager sessionManager;
     private String identityId;
     private String provider;
+    private String egId;
 
     private CompleteHandler completeHandler;
     private CancelHandler cancelHandler;
     private FailHandler failHandler;
 
-    public UserAllDialog(@NonNull Context context, @NonNull String identity, @NonNull String provider) {
+    private Future<String> gameuser;
+
+    public UserAllDialog(@NonNull Context context, @NonNull String identity, @NonNull String provider, @NonNull String egId) {
         super(context);
         this.identityId = identity;
         this.provider = provider;
+        this.egId = egId;
     }
 
     @Override
@@ -59,6 +67,14 @@ public class UserAllDialog extends Dialog{
         this.setOnDismissListener(new OnDismissListener() {
             @Override public void onDismiss(DialogInterface dialogInterface) {
                 state.dismiss();
+            }
+        });
+
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        this.gameuser = executor.submit(new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                return new GameService(UserAllDialog.this.getContext()).retrieveGameUser(egId);
             }
         });
     }
@@ -91,41 +107,21 @@ public class UserAllDialog extends Dialog{
     public interface CancelHandler { void cancel(); }
     public interface FailHandler { void fail(EGException t); }
 
-
-    public CustormSupplier<String> linkSnsDataTextSupplier = new CustormSupplier<String>() {
-        @Override
-        public String get() {
-            return (String) getContext().getText(R.string.estcommon_userLink_middelLabel);
-        }
-    };
-
-    public CustormSupplier<String> linkGuestDataTextSupplier = new CustormSupplier<String>() {
-        @Override
-        public String get() {
-            return (String) getContext().getText(R.string.estcommon_userLink_bottomLabel);
-        }
-    };
-
-    public CustormSupplier<String> loadTextSupplier = new CustormSupplier<String>() {
-        @Override
-        public String get() {
-            return (String) getContext().getText(R.string.estcommon_userLoad_content);
-        }
-    };
-
-    public CustormSupplier<String> guestTextSupplier = new CustormSupplier<String>() {
-        @Override
-        public String get() {
-            return (String) getContext().getText(R.string.estcommon_userGuest_middle);
-        }
-    };
-
     private void changeState(DialogState state) {
         if (this.state != null) {
             this.state.hide();
         }
         this.state = state;
         this.state.show();
+    }
+
+    private String getGameuser() {
+        try {
+            return gameuser.get();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Error!!";
+        }
     }
 
     /**
@@ -172,8 +168,12 @@ public class UserAllDialog extends Dialog{
 
         @Override public void show() {
             context.findViewById(R.id.v_ready_dialog).setVisibility(View.VISIBLE);
-            ((TextView)context.findViewById(R.id.txt_ready_target_data)).setText(linkSnsDataTextSupplier.get());
-            ((TextView)context.findViewById(R.id.txt_ready_current_data)).setText(linkGuestDataTextSupplier.get());
+            ((TextView)context.findViewById(R.id.txt_ready_target_data)).setText(
+                    String.format((String)context.getContext().getString(R.string.estcommon_userLink_middelLabel), context.provider, context.getGameuser())
+            );
+            ((TextView)context.findViewById(R.id.txt_ready_current_data)).setText(
+                    context.getContext().getString(R.string.estcommon_userLink_bottomLabel)
+            );
         }
 
         @Override
@@ -240,7 +240,9 @@ public class UserAllDialog extends Dialog{
 
         @Override public void show() {
             context.findViewById(R.id.v_switch_dialog).setVisibility(View.VISIBLE);
-            ((TextView)context.findViewById(R.id.txt_switch_confirm_desc)).setText(loadTextSupplier.get());
+            ((TextView)context.findViewById(R.id.txt_switch_confirm_desc)).setText(
+                    context.getContext().getString(R.string.estcommon_userLoad_content)
+            );
         }
 
         @Override public void hide() {
@@ -305,7 +307,9 @@ public class UserAllDialog extends Dialog{
 
         @Override public void show() {
             context.findViewById(R.id.v_sync_dialog).setVisibility(View.VISIBLE);
-            ((TextView)context.findViewById(R.id.txt_sync_description)).setText(guestTextSupplier.get());
+            ((TextView)context.findViewById(R.id.txt_sync_description)).setText(
+                    String.format((String)context.getContext().getString(R.string.estcommon_userGuest_middle), context.getGameuser())
+            );
         }
 
         @Override public void hide() {

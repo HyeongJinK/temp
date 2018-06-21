@@ -5,17 +5,23 @@ import org.json.JSONObject
 
 sealed class Api(val url: String, val method: Method, val data: Map<String, Any>) {
     companion object {
-        //private const val MP_API_HOST = "https://api-account-stage.estgames.co.kr"
-        private const val MP_API_HOST = "https://api-account.estgames.co.kr"
-        private const val MP_API_VERSION = "v2"
+        private const val MP_PROCESS_DESCRIPTION_API_HOST = "https://m-linker.estgames.co.kr/sd_v_1_live"
+        private const val MP_GAME_API_HOST = "https://mp-pub.estgames.co.kr/live/game"
+        private const val MP_BRIDGE_API_HOST = "https://api-account.estgames.co.kr"
+        private const val MP_BRIDGE_API_VERSION = "v2"
     }
 
     fun invoke(): HttpResponse {
         return request(url, method, data)
     }
 
+    class ProcessDescribe(region: String, lang: String):
+            Api("$MP_PROCESS_DESCRIPTION_API_HOST", Method.GET,
+                    hashMapOf("region" to region, "lang" to lang)
+            )
+
     class Token(clientId: String, secret: String, region:String, device:String, principal: String):
-            Api("$MP_API_HOST/$MP_API_VERSION/account/token", Method.POST,
+            Api("$MP_BRIDGE_API_HOST/$MP_BRIDGE_API_VERSION/account/token", Method.POST,
                     hashMapOf(
                             "client_id" to clientId,
                             "secret" to secret,
@@ -28,7 +34,7 @@ sealed class Api(val url: String, val method: Method, val data: Map<String, Any>
     class Refresh(
             clientId: String, secret:String, region:String,
             device:String, refreshToken:String, egToken:String):
-            Api("$MP_API_HOST/$MP_API_VERSION/account/token", Method.POST,
+            Api("$MP_BRIDGE_API_HOST/$MP_BRIDGE_API_VERSION/account/token", Method.POST,
                     hashMapOf(
                             "client_id" to clientId,
                             "secret" to secret,
@@ -39,12 +45,12 @@ sealed class Api(val url: String, val method: Method, val data: Map<String, Any>
                             "eg_token" to egToken))
 
     class Me(egToken: String) : Api(
-            "$MP_API_HOST/$MP_API_VERSION/account/me", Method.GET,
+            "$MP_BRIDGE_API_HOST/$MP_BRIDGE_API_VERSION/account/me", Method.GET,
             hashMapOf("eg_token" to egToken)
     )
 
     class Synchronize(egToken: String, principal: String, data: Map<String, Any> = mapOf(), force: Boolean = false): Api(
-            "$MP_API_HOST/$MP_API_VERSION/account/synchronize", Method.POST,
+            "$MP_BRIDGE_API_HOST/$MP_BRIDGE_API_VERSION/account/synchronize", Method.POST,
             hashMapOf(
                     "eg_token" to egToken,
                     "principal" to principal,
@@ -53,17 +59,21 @@ sealed class Api(val url: String, val method: Method, val data: Map<String, Any>
     )
 
     class Expire(egToken: String): Api(
-            "$MP_API_HOST/$MP_API_VERSION/account/signout", Method.POST,
+            "$MP_BRIDGE_API_HOST/$MP_BRIDGE_API_VERSION/account/signout", Method.POST,
             hashMapOf("eg_token" to egToken)
     )
 
-    class Abandon(egToken: String, client_id: String, secret: String, region: String): Api(
-            "$MP_API_HOST/$MP_API_VERSION/account/abandon", Method.POST,
+    class Abandon(egToken: String, clientId: String, secret: String, region: String): Api(
+            "$MP_BRIDGE_API_HOST/$MP_BRIDGE_API_VERSION/account/abandon", Method.POST,
             hashMapOf(
                     "eg_token" to egToken,
-                    "client_id" to client_id,
+                    "client_id" to clientId,
                     "secret" to secret,
                     "region" to region
             )
+    )
+
+    class GameUser(region: String, egId: String): Api(
+            "$MP_GAME_API_HOST/$region", Method.GET, hashMapOf("eg_id" to egId)
     )
 }

@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.estgames.estgames_framework.R;
-import com.estgames.estgames_framework.common.CustormSupplier;
 
 
 /**
@@ -42,20 +41,6 @@ public class UserLinkDialog extends Dialog {
         @Override
         public void run() {
             System.out.println("closeCallBack");
-        }
-    };
-
-    public CustormSupplier<String> userLinkSnsDataTextSupplier = new CustormSupplier<String>() {
-        @Override
-        public String get() {
-            return (String) getContext().getText(R.string.estcommon_userLink_middelLabel);
-        }
-    };
-
-    public CustormSupplier<String> userLinkGuestDataTextSupplier = new CustormSupplier<String>() {
-        @Override
-        public String get() {
-            return (String) getContext().getText(R.string.estcommon_userLink_bottomLabel);
         }
     };
 
@@ -116,7 +101,5 @@ public class UserLinkDialog extends Dialog {
 
         userLinkSnsDataText = (TextView) findViewById(R.id.userLinkSnsDataText);
         userLinkGuestDataText = (TextView) findViewById(R.id.userLinkGuestDataText);
-        userLinkSnsDataText.setText(userLinkSnsDataTextSupplier.get());
-        userLinkGuestDataText.setText(userLinkGuestDataTextSupplier.get());
     }
 }

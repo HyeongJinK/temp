@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.estgames.estgames_framework.R;
 import com.estgames.estgames_framework.common.CustomFunction;
-import com.estgames.estgames_framework.common.CustormSupplier;
 
 
 /**
@@ -53,13 +52,6 @@ public class UserLoadDialog extends Dialog {
         @Override
         public void run() {
             System.out.println("failConfirmCheck");
-        }
-    };
-
-    public CustormSupplier<String> userLoadTextSupplier = new CustormSupplier<String>() {
-        @Override
-        public String get() {
-            return (String) getContext().getText(R.string.estcommon_userLoad_content);
         }
     };
 
@@ -109,6 +101,5 @@ public class UserLoadDialog extends Dialog {
         this.confirmCheck = confirmCheck;
         this.closeCallBack = closeCallBack;
         userLoadText = (TextView) findViewById(R.id.userLoadText);
-        userLoadText.setText(userLoadTextSupplier.get());
     }
 }

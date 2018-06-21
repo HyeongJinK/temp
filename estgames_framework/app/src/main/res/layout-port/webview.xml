@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/webView_CloseBt"
+        android:id="@+id/btn_web_view_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="닫기"/>
+        android:layout_gravity="right|top"
+        android:background="@drawable/btn_web_dialog_close" />
+
     <WebView
         android:id="@+id/webView_View"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </WebView>
-</LinearLayout>
+</FrameLayout>

@@ -1,6 +1,4 @@
 <resources>
-    <!--<string name="app_name">estgames_framework</string>-->
-
     <string name="estcommon_policy_title">이용약관</string>
     <string name="estcommon_policy_subTitle">광고성 정보 수신 동의포함</string>
     <string name="estcommon_policy_privacy">개인 정보 취급방침</string>
@@ -15,15 +13,15 @@
     <string name="estcommon_userResult_confirm">확인</string>
 
     <string name="estcommon_userLoad_title">기존 계정 불러오기</string>
-    <string name="estcommon_userLoad_content">현재 게스트 모드로 플레이 중인 데이터([])를\n삭제하고 기존 데이터를 불러오시려면 아래 문자를 입력해주세요.</string>
+    <string name="estcommon_userLoad_content">현재 게스트 모드로 플레이 중인 데이터를\n삭제하고 기존 데이터를 불러오시려면 아래 문자를 입력해주세요.</string>
     <string name="estcommon_userLoad_confirmText">확인 문자 : confirm</string>
     <string name="estcommon_userLoad_input">입력하기</string>
     <string name="estcommon_userLoad_input_wrong">정확한 단어를 입력하세요.</string>
     <string name="estcommon_userLoad_confirmButton">확인</string>
 
     <string name="estcommon_userLink_title">계정 연동</string>
-    <string name="estcommon_userLink_middelLabel">입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebookAccount: []\n위의 데이터를 불러오시겠습니까?</string>
-    <string name="estcommon_userLink_bottomLabel">!현재 플레이 중인 게임데이터([])는 삭제됩니다</string>
+    <string name="estcommon_userLink_middelLabel">입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\n%s : %s\n위의 데이터를 불러오시겠습니까?</string>
+    <string name="estcommon_userLink_bottomLabel">!현재 플레이 중인 게임데이터는 삭제됩니다</string>
     <string name="estcommon_userLink_confirm">네, 불러오겠습니다</string>
     <string name="estcommon_userLink_cancel">아니오, 새로 연동하기</string>
 
@@ -32,7 +30,7 @@
     <string name="estcommon_banner_oneDay">오늘 다시보지않기</string>
 
     <string name="estcommon_userGuest_title">현재 계정 연동</string>
-    <string name="estcommon_userGuest_middle">기존 연동된 데이터 ([])를 삭제하고 현재 플레이중인 게임 데이터로 계정연동을 진행합니다.\n[]</string>
+    <string name="estcommon_userGuest_middle">기존 연동된 데이터 (%s)를 삭제하고 현재 플레이중인 게임 데이터로 계정연동을 진행합니다.\n</string>
     <string name="estcommon_userGuest_loginBt">네,로그인합니다</string>
     <string name="estcommon_userGuest_beforeBt">이전으로 돌아가기</string>
 

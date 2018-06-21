@@ -6,14 +6,14 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:id="@+id/bottomBar"
+        android:id="@+id/view_bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#3E4147"
         android:layout_alignParentBottom="true">
 
         <CheckBox
-            android:id="@+id/bannerOneDayCheck"
+            android:id="@+id/chk_hide_for_a_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -22,11 +22,11 @@
             android:button="@drawable/checkbox"/>
 
         <TextView
-            android:id="@+id/bannerOneDayText"
+            android:id="@+id/txt_hide_for_a_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/bannerOneDayCheck"
+            android:layout_toEndOf="@id/chk_hide_for_a_day"
             android:text="@string/estcommon_banner_oneDay"
             android:textSize="12sp"
             android:textStyle="bold"
@@ -34,7 +34,7 @@
             />
 
         <Button
-            android:id="@+id/bannerCloseBt"
+            android:id="@+id/btn_dismiss"
             android:layout_width="38dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
@@ -44,10 +44,10 @@
             android:background="@drawable/btn_bottom_close" />
 
         <Button
-            android:id="@+id/bannerLinkBt"
+            android:id="@+id/btn_link_action"
             android:layout_width="106dp"
             android:layout_height="30dp"
-            android:layout_toLeftOf="@id/bannerCloseBt"
+            android:layout_toLeftOf="@id/btn_dismiss"
             android:layout_marginTop="6dp"
             android:background="@drawable/btn_detail"
             android:text="@string/estcommon_banner_linkButton"
@@ -57,10 +57,21 @@
              />
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/bannerImgView"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomBar"/>
+        android:layout_above="@id/view_bottom_bar">
 
+        <ImageView
+            android:id="@+id/img_banner_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_loading"/>
+
+        <WebView
+            android:id="@+id/web_banner_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 </RelativeLayout>

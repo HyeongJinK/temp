@@ -16,17 +16,8 @@ import java.lang.Exception
 /**
  * Created by mp on 2018. 5. 2..
  */
-public class UserService constructor(callingActivity: Activity) {
+class UserService constructor(callingActivity: Activity) {
     var callingActivity = callingActivity
-
-    /**
-     *  팝업에 텍스트 설정하기
-     * */
-    var userLinkMiddleText: CustormSupplier<String>? = null
-    var userLinkBottomText: CustormSupplier<String>? = null
-    var userLoadText: CustormSupplier<String>? = null
-    var userGuestText: CustormSupplier<String>? = null
-
     var userAllDialog: UserAllDialog? = null
 
     /**
@@ -111,7 +102,7 @@ public class UserService constructor(callingActivity: Activity) {
                                             is Result.SyncFailure -> {
                                                 // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
                                                 callingActivity.runOnUiThread {
-                                                    userAllDialog = UserAllDialog(callingActivity, identityId!!, provider.displayName).apply {
+                                                    userAllDialog = UserAllDialog(callingActivity, identityId!!, provider.displayName, err.egId).apply {
                                                         setOnCompleted { loginResultHandler.onComplete(it) }
                                                         setOnCancel {
                                                             signout()
@@ -121,15 +112,6 @@ public class UserService constructor(callingActivity: Activity) {
                                                             signout()
                                                             loginResultHandler.onFail(it.code)
                                                         }
-
-                                                        if (userLinkMiddleText != null)
-                                                            linkSnsDataTextSupplier = userLinkMiddleText
-                                                        if (userLinkBottomText != null)
-                                                            linkGuestDataTextSupplier = userLinkBottomText
-                                                        if (userLoadText != null)
-                                                            loadTextSupplier = userLoadText
-                                                        if (userGuestText != null)
-                                                            guestTextSupplier = userGuestText
                                                     }
 
                                                     userAllDialog!!.show()
