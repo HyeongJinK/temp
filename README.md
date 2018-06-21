@@ -69,11 +69,11 @@ MpInfo.App.env = "live"
 로컬라이징 적용방법
 ---
 
-![](https://gitlab.com/estmp/banner-ios-sdk/blob/master/estgames-common-framework-example/estgames-common-framework-example/sc3.png)
+![](https://gitlab.com/estmp/banner-ios-sdk/raw/master/estgames-common-framework-example/estgames-common-framework-example/sc3.png)
 
 Localizable.string 파일을 선택하시면 오른쪽 Localization 메뉴에 로컬라이징 적용 버튼이 있습니다. 해당 버튼을 먼저 눌러주세요
 
-![](https://gitlab.com/estmp/banner-ios-sdk/blob/master/estgames-common-framework-example/estgames-common-framework-example/sc4.png)
+![](https://gitlab.com/estmp/banner-ios-sdk/raw/master/estgames-common-framework-example/estgames-common-framework-example/sc4.png)
 
 프로젝트를 선택하시고 Info에 들어가시면 Localization 메뉴가 있는 데 +를 눌러서 원하시는 국가를 추가해 주시면 됩니다.
 
