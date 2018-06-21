@@ -52,6 +52,7 @@ public class bannerFramework {
                 , bottomViewHeight: bottomView.bottomViewHeight)
             imageViewsTemps.append(bView)
         }
+        imageViewsTemps.reverse()
     }
     
     func createMainView(_ pview:UIView) -> UIView {
@@ -101,6 +102,13 @@ public class bannerFramework {
             for img in imageViewsTemps {
                 imageViews.append(img)
                 bannerView!.addSubview(img.view)
+            }
+            
+            if (imageViews.last?.bannerEntry?.banner.action.type == "NONE") {
+                bottomView.linkBt.isHidden = true
+            } else {
+                bottomView.linkBt.setTitle(imageViews.last?.bannerEntry?.banner.action.button, for: .normal)
+                bottomView.linkBt.isHidden = false
             }
         }
     }

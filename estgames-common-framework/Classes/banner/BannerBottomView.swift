@@ -24,6 +24,7 @@ class bannerBottomView: UIView {
     var linkbtWidth:CGFloat = 110
     var linkbtHeight:CGFloat = 31
     var closeBt:CloseBt!
+    let linkBt:LinkerButton = LinkerButton()
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -69,19 +70,17 @@ class bannerBottomView: UIView {
 //        oneDayLabel.addConstraint(yCenterConstraint)
         self.addSubview(oneDayLabel)
         
-        //닫기 버튼
-        closeBt = CloseBt(check: checkbox)
+        //자세히 보기 버튼
+        
+        closeBt = CloseBt(check: checkbox, linkbt: linkBt)
         closeBt.frame = CGRect(x: self.frame.size.width - self.closebtWidth - self.closebtRightMargin
             , y: self.closebtTopMargin
             , width: self.closebtWidth
             , height: self.closebtHeight)
         
-        self.addSubview(closeBt)
-        
-        //자세히 보기 버튼
-        let linkBt = LinkerButton()
         linkBt.frame = CGRect(x: closeBt.frame.origin.x - closebtLiftMargin - linkbtWidth, y: closebtTopMargin, width: linkbtWidth, height: linkbtHeight)
         
         self.addSubview(linkBt)
+        self.addSubview(closeBt)
     }
 }

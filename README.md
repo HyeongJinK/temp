@@ -9,6 +9,11 @@
 
 * EstgamesCommon
   * showEvent() 함수 추가 : 이벤트 페이지를 보여주는 웹뷰창입니다.
+  * 배너에 웹뷰 기능 추가
+  * 배너 자세히 보기 링크가 없을 경우 버튼이 나오지 않습니다.
+  * 배너 자세히 보기 문구를 관리자에서 관리합니다.
+  * 배너 이미지 크기조절 모드 변경
+  * proceessShow에서 권한창이 제외되었습니다.
 * region, env 설정 추가, 아래 코드로 리젼과 디버그 설정을 변경 할 수 있습니다. 
 
 ```swift
@@ -18,7 +23,6 @@ MpInfo.App.env = "live"
 
 * Info.plist
   * :exclamation: MP - estapi : https://m-linker.estgames.co.kr 로 수정 필요
-* 배너에 웹뷰 기능 추가
 * Localizable.string
   * :exclamation: 'estcommon_authority_title' = "원활한 게임플레이를 위해\n아래 권한을 필요로 합니다.";   해당 키 수정 필요
   * English 번역 추가 필요

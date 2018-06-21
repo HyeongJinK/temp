@@ -24,7 +24,7 @@ class LinkerButton: UIButton {
         self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         self.titleLabel?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
         self.setTitle(linkBtTitle, for: .normal)
-        self.addTarget(self, action: #selector(linkBtAction(_:)), for: .touchUpInside)
+        self.addTarget(self, action: #selector(linkBtAction(_:)), for: .touchUpInside)        
     }
     
     @objc func linkBtAction(_ sender:UIButton) {

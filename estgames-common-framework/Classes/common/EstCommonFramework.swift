@@ -143,8 +143,9 @@ import Alamofire
                 }
             break
             case "system_contract":
-                authority.callbackFunc = check
-                pview.present(authority, animated: false)
+                check()
+//                authority.callbackFunc = check
+//                pview.present(authority, animated: false)
                 break
             case "use_contract" :
                 if (policy.isShowPolicyShow()) {

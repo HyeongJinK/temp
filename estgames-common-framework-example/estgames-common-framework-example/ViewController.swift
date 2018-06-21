@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     
     var userDialog: UserDialog!
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     @IBOutlet var lblIdentityId: UILabel!
     @IBOutlet var lblPrincipal: UILabel!
     @IBOutlet var lblProviderName: UILabel!

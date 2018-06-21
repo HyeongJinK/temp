@@ -12,6 +12,7 @@ import Foundation
 class CloseBt: UIButton {
     let closeBtTitle:String = NSLocalizedString("estcommon_banner_closeButton", comment: "")
     var checkBt: CheckBox?
+    var linkBt: LinkerButton?
     let closeBtImage:UIImage?
     var closeBtCallBack: () -> Void = {() -> Void in }
     
@@ -20,12 +21,13 @@ class CloseBt: UIButton {
         super.init(coder: aDecoder)
     }
     
-    init(check: CheckBox) {
+    init(check: CheckBox, linkbt: LinkerButton) {
         closeBtImage = UIImage(named: "btn_bottom_close_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)
         
         super.init(frame: CGRect.zero)
         
         self.checkBt = check
+        self.linkBt = linkbt
         self.setImage(closeBtImage, for: .normal)
         self.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
     }
@@ -43,6 +45,12 @@ class CloseBt: UIButton {
         }
         self.checkBt!.unCheckInit()
         imageViews.popLast()!.view.removeFromSuperview()
+        if (imageViews.last?.bannerEntry?.banner.action.type == "NONE") {
+            self.linkBt!.isHidden = true
+        } else {
+            self.linkBt!.setTitle(imageViews.last?.bannerEntry?.banner.action.button, for: .normal)
+            self.linkBt!.isHidden = false
+        }
         
         if (imageViews.isEmpty) {
             closeBtCallBack()

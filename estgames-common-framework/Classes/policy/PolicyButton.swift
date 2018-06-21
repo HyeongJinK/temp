@@ -15,8 +15,8 @@ class PolicyButton : UIButton {
     var checkBtCallBack: () -> Void = {() -> Void in }
     
     init(_ frames: CGRect) {
-        uncheckImage = UIImage(named: "btn_provision_off", in:Bundle(for: PolicyViewController.self), compatibleWith:nil)?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
-        checkImage = UIImage(named: "btn_provision_on", in:Bundle(for: PolicyViewController.self), compatibleWith:nil)?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
+        uncheckImage = UIImage(named: "btn_provision_off", in:Bundle(for: PolicyButton.self), compatibleWith:nil)?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
+        checkImage = UIImage(named: "btn_provision_on", in:Bundle(for: PolicyButton.self), compatibleWith:nil)?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 5)
         //
         
         super.init(frame: frames)

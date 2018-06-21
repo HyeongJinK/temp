@@ -25,16 +25,26 @@ public class WebViewUIController: UIViewController {
     }
     
     public override func viewDidLoad() {
-        //print(self.view.frame)
         backgroundView = UIView(frame: self.view.frame)
-        closeBt = UIButton(frame: CGRect(x: 0, y: 30, width: self.view.frame.width, height: 50))
-        webView = WKWebView(frame: CGRect(x: 0, y: 81, width: self.view.frame.width, height: self.view.frame.height - 60))
+        var y = 0
+        if (self.view.frame.width.isEqual(to: 375) && self.view.frame.height.isEqual(to: 812)) {
+            y = 42
+        }
+        closeBt = UIButton(frame: CGRect(x: Int(self.view.frame.width - 50), y: y, width: 50, height: 50))
+        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         
         backgroundView.backgroundColor = UIColor.black
         
-        closeBt.backgroundColor = UIColor.white
-        closeBt.setTitle("닫기", for: .normal)
-        closeBt.setTitleColor(UIColor.black, for: .normal)
+        let closeButtonImage:UIImage? = UIImage(named: "btn_total_close_img", in:Bundle(for: WebViewUIController.self), compatibleWith:nil)
+        
+        if let img = closeButtonImage {
+            closeBt.setImage(img, for: .normal)
+        } else {
+            closeBt.backgroundColor = UIColor.white
+            closeBt.setTitle("닫기", for: .normal)
+            closeBt.setTitleColor(UIColor.black, for: .normal)
+        }
+  
         closeBt.addTarget(self, action: #selector(closeAction(_:)), for: .touchUpInside)
         
         if (url != nil && egToken != nil) {
@@ -43,8 +53,8 @@ public class WebViewUIController: UIViewController {
         }
         
         self.view.addSubview(backgroundView)
-        backgroundView.addSubview(closeBt)
         backgroundView.addSubview(webView)
+        backgroundView.addSubview(closeBt)
     }
     
     @objc func closeAction(_ sender:UIButton) {

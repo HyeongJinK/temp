@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     static let remoteNotificationKey = "RemoteNotification"
     var estAppDelegate: EstAppDelegate = EstAppDelegate()
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         return estAppDelegate.application(application, didFinishLaunchingWithOptions: launchOptions)
     }

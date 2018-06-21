@@ -25,7 +25,7 @@ public class ResultDataJson {
             
             let eventJson: Array<NSDictionary>? = resultDataJson["banner"] as? Array<NSDictionary>
             let dateFormat = DateFormatter()
-            dateFormat.timeZone = TimeZone(identifier: "GMT")
+            //dateFormat.timeZone = TimeZone(identifier: "UTC")
             dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ssz"
             
             let now:Date = Date()
