@@ -96,7 +96,7 @@ Localizable.string 파일을 선택하시면 오른쪽 Localization 메뉴에 �
 
 * 로그인 화면 커스텀 예제입니다.
 
-![](https://gitlab.com/estmp/banner-ios-sdk/raw/master/estgames-common-framework-example/estgames-common-framework-example/IMG_3491.PNG)
+![](https://gitlab.com/estmp/banner-ios-sdk/raw/master/estgames-common-framework-example/estgames-common-framework-example/IMG_3491.PNG =100x100)
 
 ```swift
 @objc func emp_goToLogin() {
