@@ -756,6 +756,20 @@ Mpinfo.Account.userId
 ```swift
 // 게임 토큰이 필요합니다. 없을 경우 에러 발생
 vc.goToLogin()
+
+// or  직접 UI 설정
+
+let config = AWSAuthUIConfiguration()
+        
+config.enableUserPoolsUI = false    //유저정보 저장 설정
+config.addSignInButtonView(class: AWSGoogleSignInButton.self)
+config.addSignInButtonView(class: AWSFacebookSignInButton.self) // 버튼 설정
+config.canCancel = true     //취소 버튼
+config.isBackgroundColorFullScreen = false    //배경색을 로고부분에만 적용할 건지 전체화면에 적용할 건지 선택
+config.backgroundColor = UIColor.blue   //배경색 설정
+config.logoImage = nil//UIImage(named: "UserIcon")      //로고 이미지 설정
+
+vc.goToLogin(config)
 ```
 
 #### :mag: 관련함수 및 매개 변수 
@@ -763,5 +777,7 @@ vc.goToLogin()
 |이름|설명|
 |-|-|
 |goToLogin()|SNS 계정연동 시작|
+|goToLogin(config)|goToLogin(config: AWSAuthUIConfiguratrion)|매개변수로 설정파일을 넘겨 UI를 조정한다.|
+|goToLogin(onComplete, onFail, onCancel)|goToLogin(onComplete: (String?, String) -> Void, onFail : (Fail) -> Void, onCancel: () -> Void)|"onComplete" = goToLoginSuccessCallBack,   "onFail" = goToLoginFailCallBack,   "onCancel" = goToLoginCloseCallBack 에 설정됩니다.|
 |goToLoginSuccessCallBack: (egId:String?, resultType:String) -> Void|goToLogin 성공 시 콜백함수 egId는 SNS 계정으로 연동 시에만 바꿘 아이디가 들어옵니다. 게스트 계정으로 덮어씌울 경우에는 nil값입니다. SNS계정으로 연동 시 "LOGINBYSNS" 게스트 계정으로 덮어 씌우기 시 "LOGINBYFORCE" 으로 resultType값이 들어옵니다.
 |goToLoginCloseCallBack: () -> Void|SNS 연동 중간에 X버튼을 눌렀을 경우에 콜백함수|
