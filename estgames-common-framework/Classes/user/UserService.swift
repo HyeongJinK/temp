@@ -453,6 +453,9 @@ public class UserService {
         AWSSignInManager.sharedInstance().logout(completionHandler: {(result: Any?, error: Error?) in
         })
         self.accountService.clearKeychain()
+        let pList = UserDefaults.standard
+        pList.set("false", forKey: "estPolicy")
+        pList.synchronize()
         clearSuccessCallBack()
     }
     

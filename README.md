@@ -13,7 +13,8 @@
   * 배너 자세히 보기 링크가 없을 경우 버튼이 나오지 않습니다.
   * 배너 자세히 보기 문구를 관리자에서 관리합니다.
   * 배너 이미지 크기조절 모드 변경
-  * proceessShow에서 권한창이 제외되었습니다.
+  * processShow에서 권한창이 제외되었습니다.
+  * processShow에서 이용약관 미동의 시 더 이상 진행하지 않고 종료됩니다.
 * region, env 설정 추가, 아래 코드로 리젼과 디버그 설정을 변경 할 수 있습니다. 
   * 해당값은 EstgamesCommon 객체에 create() 함수 호출 전, UserService 객체에 startGame() 함수 호출 전에 변경하셔야 제대로 된 region, env로 나옵니다.
 
@@ -449,6 +450,16 @@ func googleEmail() -> String {
 |GOOGLE_CALLBACK_EMPTY|구글 이메일 콜백함수 초기화가 안되어 있음|
 
 
+초기 설정
+---
+
+리젼과 개발환경(env)를 설정한다. 설정하지 않으면 info.plist에 있는 값이 기본으로 들어가기 때문에 하지 않아도 무방하다.
+
+```swift
+MpInfo.App.region = "mr.global.ls"
+MpInfo.App.env = "live"
+```
+
 
 :mag: 공통으로 사용되는 창 : EstgamesCommon
 ---
@@ -470,6 +481,7 @@ func googleEmail() -> String {
 |contractPrivate()|Boolean contractPrivate()|이용약관 체크 유무(개인)|
 |showNotice()|void showNotice()|공지사항창을 출력합니다.|
 |showCsCenter()|void showCsCenter()|FAQ, 문의사항 창을 출력합니다.|
+|showEvent()|void showEvent()|이벤트창을 출력합니다.|
 |getNation()|String? getNation()|나라정보 리턴|
 |getLanguage()|String? getLanguate()|기기의 언어정보 리턴|
 

@@ -54,7 +54,7 @@ class CloseBt: UIButton {
         
         if (imageViews.isEmpty) {
             closeBtCallBack()
-            bannerView?.removeFromSuperview()
+            bannerView!.dismiss(animated: false, completion: nil)
         }
     }
 }

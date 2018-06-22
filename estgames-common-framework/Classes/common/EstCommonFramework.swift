@@ -120,7 +120,11 @@ import Alamofire
     
     func check() {
         if ((process.count-1) > processIndex) {
-            call()
+            if (processIndex != -1 && process[processIndex] == "use_contract" && policy.isShowPolicyShow()) {
+                processCallBack()
+            } else {
+                call()
+            }
         } else {
             processCallBack()
         }

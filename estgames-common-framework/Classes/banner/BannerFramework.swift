@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-var bannerView:UIView?
+var bannerView:UIViewController?
 var imageViews:[BannerView] = Array<BannerView>()
 var imageViewsTemps:[BannerView] = Array<BannerView>()
 
@@ -28,11 +28,12 @@ public class bannerFramework {
         imageViews.removeAll()
         imageViewsTemps.removeAll()
         
-        bannerView = UIView(frame: CGRect(x: 0, y: 0, width: pview.view.frame.size.width, height: pview.view.frame.size.height))
-        bannerView?.translatesAutoresizingMaskIntoConstraints = false
+        bannerView = UIViewController(nibName: nil, bundle: nil)
+        //bannerView = UIViewController(frame: CGRect(x: 0, y: 0, width: pview.view.frame.size.width, height: pview.view.frame.size.height))
+        //bannerView?.translatesAutoresizingMaskIntoConstraints = false
         
         bottomView = bannerBottomView() //아래바 생성
-        bannerView!.addSubview(bottomView)
+        bannerView!.view.addSubview(bottomView)
         
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "yyyy-MM-dd"
@@ -47,8 +48,8 @@ public class bannerFramework {
 
             //뷰 생성
             let bView = BannerView(entry
-                , viewWidth: bannerView!.frame.size.width
-                , viewHeight: bannerView!.frame.size.height
+                , viewWidth: bannerView!.view.frame.size.width
+                , viewHeight: bannerView!.view.frame.size.height
                 , bottomViewHeight: bottomView.bottomViewHeight)
             imageViewsTemps.append(bView)
         }
@@ -97,11 +98,12 @@ public class bannerFramework {
         if (imageViewsTemps.count > 0) {
             bottomView.closeBt.closeBtCallBack = closeBtCallBack
             
-            self.pview.view.addSubview(bannerView!)
+            self.pview.present(bannerView!, animated: false)
+            //self.pview.view.addSubview(bannerView!)
             
             for img in imageViewsTemps {
                 imageViews.append(img)
-                bannerView!.addSubview(img.view)
+                bannerView!.view.addSubview(img.view)
             }
             
             if (imageViews.last?.bannerEntry?.banner.action.type == "NONE") {

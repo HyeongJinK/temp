@@ -126,7 +126,7 @@ class PolicyViewController: UIViewController {
     
     public func isShowPolicyShow() -> Bool {
         let pList = UserDefaults.standard
-
+        
         if pList.string(forKey: policyUserDefaultName) != nil && "true" == pList.string(forKey: policyUserDefaultName) {
             return false
         }
