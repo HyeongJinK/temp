@@ -94,6 +94,31 @@ Localizable.string 파일을 선택하시면 오른쪽 Localization 메뉴에 �
 * 계정 연동 팝업
   * 캐릭터 정보 적용, 문구 일부 수정
 
+* 로그인 화면 커스텀 예제입니다.
+
+![](https://gitlab.com/estmp/banner-ios-sdk/raw/master/estgames-common-framework-example/estgames-common-framework-example/IMG_3491.PNG)
+
+```swift
+@objc func emp_goToLogin() {
+    print("[EMPNative.swift] emp_goToLogin()")
+    estAccount.goToLoginCloseCallBack = emp_goToLogin_close_callback   //계정연동중 중간에 X버튼을 눌렀을 경우
+    estAccount.goToLoginSuccessCallBack = emp_goToLogin_success_callback//계정연동 완료 팝업까지 가서 닫기나, X버튼을 눌렀을 경우
+    
+    let config = AWSAuthUIConfiguration()
+    
+    config.enableUserPoolsUI = false    //유저정보 저장 설정
+    config.addSignInButtonView(class: AWSGoogleSignInButton.self)
+    config.addSignInButtonView(class: AWSFacebookSignInButton.self) // 버튼 설정
+    config.canCancel = true     //취소 버튼
+    config.isBackgroundColorFullScreen = true    //배경색을 로고부분에만 적용할 건지 전체화면에 적용할 건지 선택
+    config.backgroundColor = UIColor.black   //배경색 설정
+    config.logoImage = UIImage(named: "logo-aws")      //로고 이미지 설정
+    
+    estAccount.goToLogin(config: config)
+    //estAccount.goToLogin()
+}
+```
+
 :new: 업데이트 (1.0.9)
 ---
 
