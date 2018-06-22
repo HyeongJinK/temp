@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-var bannerView:UIViewController?
+var bannerView:BannerViewController?
 var imageViews:[BannerView] = Array<BannerView>()
 var imageViewsTemps:[BannerView] = Array<BannerView>()
 
@@ -28,7 +28,8 @@ public class bannerFramework {
         imageViews.removeAll()
         imageViewsTemps.removeAll()
         
-        bannerView = UIViewController(nibName: nil, bundle: nil)
+        bannerView = BannerViewController()
+        
         //bannerView = UIViewController(frame: CGRect(x: 0, y: 0, width: pview.view.frame.size.width, height: pview.view.frame.size.height))
         //bannerView?.translatesAutoresizingMaskIntoConstraints = false
         
