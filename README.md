@@ -612,6 +612,35 @@ SNS 계정 로그인 및 연동에 관한 핸들러를 등록하도록 합니다
 * public void onFail(Fail code) : SNS 계정연동이 실패했을때 호출 됩니다.
 * public void onCancel() : SNS 계정연동을 취소했을 경우 호출 됩니다.
 
+##### 로그인 배경화면 변경
+
+SNS 계정 로그인 화면을 옵션을 이용해 변경 할 수 있습니다. Aws SDK의 `AuthUIConfiguration` 객체를 이용하면 옵션을 지정할 수 있습니다.
+
+```java
+        AuthUIConfiguration conf = new AuthUIConfiguration.Builder()
+                        .logoResId(R.drawable.logo_aws)
+                        .backgroundColor(Color.BLACK)
+                        .isBackgroundColorFullScreen(true)
+                        .signInButton(FacebookButton.class)
+                        .signInButton(GoogleButton.class)
+                        .userPools(false)
+                        .canCancel(true)
+                        .build();
+
+        uv.goToLogin(conf);
+```
+
+> 옵션 객체의 설정 메소드는 다음과 같습니다.
+
+메소드 이름 | 값
+----------|-----
+logoResId   | 로그인 화면의 로고를 설정합니다.
+backgroundColor | 배경색을 지정합니다.
+isBackgroundColorFullScreen | 배경색을 전체화면으로 적용합니다. 배경색 지정과 함께 설정해야 재대로 적용됩니다.
+signInButton | 로그인할 SNS 버튼을 지정합니다.
+userPools | AWS Cognito 사용자 풀을 이용한 로그인을 설정합니다. EMP 는 사용자풀을 사용하지 않습니다. false로 설정해주세요
+canCanel | 취소 버튼을 설정합니다.
+
 #### 4. 로그아웃
 
 ```java

@@ -1,5 +1,7 @@
 package com.estgames.estgames_framework.common
 
+import com.estgames.estgames_framework.core.Method
+import com.estgames.estgames_framework.core.request
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.SimpleDateFormat
@@ -73,7 +75,16 @@ data class Banner(
         val resource: String,
         val contentType: String,
         val action: Action
-)
+) {
+    var content: ByteArray?
+    init {
+        this.content = if (contentType.contains("image")) {
+            request(resource, Method.GET).content
+        } else {
+            null
+        }
+    }
+}
 
 sealed class Action {
     data class WebView(val url: String, val button: String): Action()

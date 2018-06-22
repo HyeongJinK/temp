@@ -33,6 +33,11 @@ public class PolicyDialog extends Dialog {
     SharedPreferences pref;
     SharedPreferences.Editor prefEdit;
 
+//    Runnable callback = new Runnable() {
+//        @Override
+//        public void run() {
+//        }
+//    };
     private Handler handler;
 
     boolean checked1 = false;

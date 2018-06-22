@@ -2,6 +2,8 @@ package com.estgames.estgames_framework.banner
 
 import android.app.Activity
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.util.Base64
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
@@ -73,10 +75,14 @@ class BannerCacheRepository(context: Context) {
 
     private fun load() {
         val bannerData = preference.getString(BANNER_CONTAINER, null)
-        if (bannerData != null) {
-            banners = ObjectInputStream(ByteArrayInputStream(Base64.decode(bannerData, 0))).use { oi ->
-                oi.readObject() as HashMap<String, Banner>
+        try {
+            if (bannerData != null) {
+                banners = ObjectInputStream(ByteArrayInputStream(Base64.decode(bannerData, 0))).use { oi ->
+                    oi.readObject() as HashMap<String, Banner>
+                }
             }
+        } catch (e: Exception) {
+            clear()
         }
     }
 
@@ -86,7 +92,7 @@ class BannerCacheRepository(context: Context) {
 
             var bannerData = Base64.encodeToString(bo.toByteArray(), 0)
             preference.edit().putString(BANNER_CONTAINER, bannerData).commit()
-            return
+            return@use
         }
     }
 }

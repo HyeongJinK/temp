@@ -73,5 +73,22 @@
             android:id="@+id/web_banner_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/err_banner_view"
+            android:background="@android:color/background_light"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Fail to load banner"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

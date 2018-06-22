@@ -33,7 +33,7 @@ class PreferenceSessionRepository(context:Context): SessionRepository {
                 ObjectOutputStream(bo).use { oo -> oo.writeObject(session) }
                 val sessionString = Base64.encodeToString(bo.toByteArray(), 0)
                 _pref.edit().putString(SESSION_OBJECT, sessionString).commit()
-                return
+                return@use
             }
         }
 

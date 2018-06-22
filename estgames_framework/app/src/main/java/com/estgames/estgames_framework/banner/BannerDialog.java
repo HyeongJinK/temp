@@ -1,5 +1,6 @@
 package com.estgames.estgames_framework.banner;
 
+import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -7,9 +8,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -20,16 +24,10 @@ import android.widget.ImageView;
 import com.estgames.estgames_framework.R;
 import com.estgames.estgames_framework.common.Action;
 import com.estgames.estgames_framework.common.Banner;
-import com.estgames.estgames_framework.core.HttpResponse;
-import com.estgames.estgames_framework.core.HttpUtils;
-import com.estgames.estgames_framework.core.Method;
 
+import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * Created by mp on 2018. 1. 24..
@@ -118,16 +116,18 @@ public class BannerDialog extends Dialog {
     }
 
     private class ImageBannerView extends BannerView {
-        private String resource;
+        private Bitmap resource;
         private String buttonName;
         private String actionType;
         private String actionTarget;
 
-        private Bitmap cache;
+        private ImageView view;
 
         ImageBannerView(BannerDialog ctx, Banner b) {
             super(ctx, b.getName());
-            resource = b.getResource();
+            if (b.getContent() != null) {
+                resource = BitmapFactory.decodeStream(new ByteArrayInputStream(b.getContent()));
+            }
 
             Action action = b.getAction();
             if (action instanceof Action.WebView) {
@@ -149,26 +149,14 @@ public class BannerDialog extends Dialog {
                 context.findViewById(R.id.btn_link_action).setVisibility(View.INVISIBLE);
             }
 
-            context.findViewById(R.id.img_banner_view).setVisibility(View.VISIBLE);
-            if (cache != null) {
-                ((ImageView)context.findViewById(R.id.img_banner_view)).setImageBitmap(cache);
-            } else {
-                try {
-                    ExecutorService executor = Executors.newSingleThreadExecutor();
-                    cache = executor.submit(new Callable<Bitmap>() {
-                        @Override public Bitmap call() throws Exception {
-                            HttpResponse res = HttpUtils.request(resource, Method.GET);
-                            return BitmapFactory.decodeStream(res.getInputStream());
-                        }
-                    }).get();
-                    executor.shutdown();
+            view = context.findViewById(R.id.img_banner_view);
+            view.setVisibility(View.VISIBLE);
 
-                    ((ImageView)context.findViewById(R.id.img_banner_view)).setImageBitmap(cache);
-                } catch (InterruptedException e) {
-                } catch (ExecutionException e) {
-                    // error Image 를 보여줘야 함.
-                    e.printStackTrace();
-                }
+            if (resource != null) {
+                view.setImageBitmap(resource);
+            } else {
+                view.setVisibility(View.GONE);
+                context.findViewById(R.id.err_banner_view).setVisibility(View.VISIBLE);
             }
         }
 
@@ -183,6 +171,7 @@ public class BannerDialog extends Dialog {
             context.findViewById(R.id.img_banner_view).setVisibility(View.GONE);
         }
     }
+
 
     private class WebBannerView extends BannerView {
         private String resource;
@@ -204,6 +193,25 @@ public class BannerDialog extends Dialog {
                 public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                     return super.shouldOverrideUrlLoading(view, request);
                 }
+
+                @Override
+                public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                    view.setVisibility(View.GONE);
+                    context.findViewById(R.id.err_banner_view).setVisibility(View.VISIBLE);
+                }
+
+                @TargetApi(Build.VERSION_CODES.M)
+                @Override
+                public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                    view.setVisibility(View.GONE);
+                    context.findViewById(R.id.err_banner_view).setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
+                    view.setVisibility(View.GONE);
+                    context.findViewById(R.id.err_banner_view).setVisibility(View.VISIBLE);
+                }
             });
             view.loadUrl(resource);
 
@@ -222,6 +230,7 @@ public class BannerDialog extends Dialog {
 
         @Override void open() {
             if (index < banners.size()) {
+                context.findViewById(R.id.err_banner_view).setVisibility(View.GONE);
                 banners.get(index).open();
                 ((CheckBox)context.findViewById(R.id.chk_hide_for_a_day)).setChecked(false);
             }

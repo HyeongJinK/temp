@@ -3,6 +3,8 @@ package com.estgames.estgames_framework.common;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import com.estgames.estgames_framework.authority.AuthorityDialog;
@@ -12,6 +14,8 @@ import com.estgames.estgames_framework.banner.BannerDialogHandler;
 import com.estgames.estgames_framework.core.Api;
 import com.estgames.estgames_framework.core.Fail;
 import com.estgames.estgames_framework.core.HttpResponse;
+import com.estgames.estgames_framework.core.HttpUtils;
+import com.estgames.estgames_framework.core.Method;
 import com.estgames.estgames_framework.core.PlatformContext;
 import com.estgames.estgames_framework.core.Token;
 import com.estgames.estgames_framework.core.session.SessionManager;
@@ -101,7 +105,6 @@ public class EstCommonFramework {
                         ).invoke();
 
                         pd = ProcessDescriptionParser.parse(new String(result.getContent(), "utf-8"));
-
                         initCallBack.accept(temp);
                     } catch (Exception e) {
                         Log.e(TAG, "Fail to initialize process...", e);
@@ -149,7 +152,7 @@ public class EstCommonFramework {
             }
 
             if (banners.size() > 0) {
-                bannerDialog = new BannerDialog(context, pd.getBanners(), cache);
+                bannerDialog = new BannerDialog(context, banners, cache);
                 bannerDialog.setDialogHandler(new BannerDialogHandler() {
                     @Override public void onDialogClosed() {
                         cache.dispose();
@@ -294,7 +297,7 @@ public class EstCommonFramework {
     public void showNotice() {
         Token token = sessionManager.getToken();
         if (pd != null) {
-            notice = new WebViewDialog(context, pd.getUrl().getNotice() + "?eg_token=" + token.getEgToken() + "&lang=" + pd.getLanguage());
+            notice = new WebViewDialog(context, pd.getUrl().getNotice() + "?eg_token=" + token.getEgToken() + "&lang=" + getLanguage());
             notice.show();
         } else {
             estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
@@ -304,7 +307,7 @@ public class EstCommonFramework {
     public void showCSCenter() {
         Token token = sessionManager.getToken();
         if (pd != null) {
-            cscenter = new WebViewDialog(context, pd.getUrl().getCs() + "?eg_token=" + token.getEgToken() + "&lang=" + pd.getLanguage());
+            cscenter = new WebViewDialog(context, pd.getUrl().getCs() + "?eg_token=" + token.getEgToken() + "&lang=" + getLanguage());
             cscenter.show();
         } else {
             estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
@@ -314,7 +317,7 @@ public class EstCommonFramework {
     public void showEvent() {
         Token token = sessionManager.getToken();
         if (pd != null) {
-            String url = String.format("%s?eg_token=%s&lang=%s", pd.getUrl().getEvent(), token.getEgToken(), pd.getLanguage());
+            String url = String.format("%s?eg_token=%s&lang=%s", pd.getUrl().getEvent(), token.getEgToken(), getLanguage());
             WebViewDialog eventDialog = new WebViewDialog(context, url);
             eventDialog.show();
         } else {
