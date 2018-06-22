@@ -121,7 +121,8 @@ import Alamofire
     func check() {
         if ((process.count-1) > processIndex) {
             if (processIndex != -1 && process[processIndex] == "use_contract" && policy.isShowPolicyShow()) {
-                processCallBack()
+                estCommonFailCallBack(Fail.PROCESS_DENIED_CONTRACT)
+                //processCallBack()
             } else {
                 call()
             }

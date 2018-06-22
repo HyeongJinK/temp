@@ -73,10 +73,11 @@ public class bannerFramework {
         let today = dateFormat.string(from: Date())
         
         let pList = UserDefaults.standard   //오늘만 보기 데이터
-        
+        var remove = 0
         for (index, banner) in imageViewsTemps.enumerated() {
-            if pList.string(forKey: banner.bannerEntry!.banner.name) != nil && today == pList.string(forKey: banner.bannerEntry!.banner.name)!{
-                imageViewsTemps.remove(at: index)
+            if pList.string(forKey: banner.bannerEntry!.banner.name) != nil && today == pList.string(forKey: banner.bannerEntry!.banner.name)! {
+                imageViewsTemps.remove(at: index-remove)
+                remove += 1
             }
         }
     }

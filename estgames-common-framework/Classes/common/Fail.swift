@@ -12,6 +12,8 @@ import Foundation
     case START_API_DATA_FAIL
     case START_API_DATA_INIT
     
+    case PROCESS_DENIED_CONTRACT
+    
     case TOKEN_EMPTY
     case TOKEN_CREATION
     case TOKEN_INVALID

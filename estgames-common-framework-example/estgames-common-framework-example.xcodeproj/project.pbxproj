@@ -19,6 +19,9 @@
 		ED859410208F09F2005C2271 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ED85940F208F09F2005C2271 /* awsconfiguration.json */; };
 		ED9695D020906B750037BE70 /* sc1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9695CF20906B750037BE70 /* sc1.png */; };
 		ED9695D220907A020037BE70 /* sc2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9695D120907A020037BE70 /* sc2.png */; };
+		EDBFC30720DCBE9000963E4F /* logo-aws@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EDBFC30420DCBE9000963E4F /* logo-aws@2x.png */; };
+		EDBFC30820DCBE9000963E4F /* logo-aws@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EDBFC30520DCBE9000963E4F /* logo-aws@3x.png */; };
+		EDBFC30920DCBE9000963E4F /* logo-aws.png in Resources */ = {isa = PBXBuildFile; fileRef = EDBFC30620DCBE9000963E4F /* logo-aws.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		ED85940F208F09F2005C2271 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		ED9695CF20906B750037BE70 /* sc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sc1.png; sourceTree = "<group>"; };
 		ED9695D120907A020037BE70 /* sc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sc2.png; sourceTree = "<group>"; };
+		EDBFC30420DCBE9000963E4F /* logo-aws@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-aws@2x.png"; path = "../../../../Downloads/111/logo-aws@2x.png"; sourceTree = "<group>"; };
+		EDBFC30520DCBE9000963E4F /* logo-aws@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-aws@3x.png"; path = "../../../../Downloads/111/logo-aws@3x.png"; sourceTree = "<group>"; };
+		EDBFC30620DCBE9000963E4F /* logo-aws.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-aws.png"; path = "../../../../Downloads/111/logo-aws.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,9 @@
 		ED8593FC208F07E9005C2271 /* estgames-common-framework-example */ = {
 			isa = PBXGroup;
 			children = (
+				EDBFC30620DCBE9000963E4F /* logo-aws.png */,
+				EDBFC30420DCBE9000963E4F /* logo-aws@2x.png */,
+				EDBFC30520DCBE9000963E4F /* logo-aws@3x.png */,
 				ED0DF2F120DB87AE000DB8D3 /* sc3.png */,
 				ED0DF2F220DB87AF000DB8D3 /* sc4.png */,
 				ED9695D120907A020037BE70 /* sc2.png */,
@@ -172,9 +181,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDBFC30920DCBE9000963E4F /* logo-aws.png in Resources */,
 				ED0DF2AC20D9DECE000DB8D3 /* Localizable.strings in Resources */,
 				ED859410208F09F2005C2271 /* awsconfiguration.json in Resources */,
 				ED859408208F07EB005C2271 /* LaunchScreen.storyboard in Resources */,
+				EDBFC30720DCBE9000963E4F /* logo-aws@2x.png in Resources */,
+				EDBFC30820DCBE9000963E4F /* logo-aws@3x.png in Resources */,
 				ED0DF2F420DB87AF000DB8D3 /* sc4.png in Resources */,
 				ED0DF2F320DB87AF000DB8D3 /* sc3.png in Resources */,
 				ED9695D020906B750037BE70 /* sc1.png in Resources */,

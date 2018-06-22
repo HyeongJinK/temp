@@ -10,6 +10,10 @@ import UIKit
 import estgames_common_framework
 import GoogleSignIn
 
+import AWSAuthUI
+import AWSFacebookSignIn
+import AWSGoogleSignIn
+
 class ViewController: UIViewController {
     var estgamesCommon:EstgamesCommon!
     var vc : UserService!
@@ -70,6 +74,9 @@ class ViewController: UIViewController {
                 case .START_API_DATA_INIT :
                     self.errorCode.text = "값이 초기화 되지 않았습니다."
                     break
+                case .PROCESS_DENIED_CONTRACT :
+                    self.errorCode.text = "이용약관을 동의해주세요"
+                break
                 default:
                 break
             }
@@ -162,7 +169,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func snsConnect(_ sender: Any) {
-        vc.goToLogin()
+        let config = AWSAuthUIConfiguration()
+        
+        config.enableUserPoolsUI = false    //유저정보 저장 설정
+        config.addSignInButtonView(class: AWSGoogleSignInButton.self)
+        config.addSignInButtonView(class: AWSFacebookSignInButton.self) // 버튼 설정
+        config.canCancel = true     //취소 버튼
+        config.isBackgroundColorFullScreen = true    //배경색을 로고부분에만 적용할 건지 전체화면에 적용할 건지 선택
+        config.backgroundColor = UIColor.black   //배경색 설정
+        config.logoImage = UIImage(named: "logo-aws")      //로고 이미지 설정
+        
+        vc.goToLogin(config: config)
+        //vc.goToLogin()
     }
     
     

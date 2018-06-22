@@ -14,7 +14,7 @@
   * 배너 자세히 보기 문구를 관리자에서 관리합니다.
   * 배너 이미지 크기조절 모드 변경
   * processShow에서 권한창이 제외되었습니다.
-  * processShow에서 이용약관 미동의 시 더 이상 진행하지 않고 종료됩니다.
+  * processShow에서 이용약관 미동의 시 더 이상 진행하지 않고 종료됩니다. 이 경우 estCommonFailCallBack을 호출하며 PROCESS_DENIED_CONTRACT 이 실패메시지로 들어옵니다.
 * region, env 설정 추가, 아래 코드로 리젼과 디버그 설정을 변경 할 수 있습니다. 
   * 해당값은 EstgamesCommon 객체에 create() 함수 호출 전, UserService 객체에 startGame() 함수 호출 전에 변경하셔야 제대로 된 region, env로 나옵니다.
 
@@ -328,7 +328,7 @@ Localizable.string 파일을 선택하시면 오른쪽 Localization 메뉴에 �
 'estcommon_policy_privacy' = "개인 정보 취급방침";
 'estcommon_policy_buttonText' = "동의합니다";
 
-'estcommon_authority_title' = "원활한 게임플레이를 위해 아래 권한을 필요로 합니다.";
+'estcommon_authority_title' = "원활한 게임플레이를 위해\n아래 권한을 필요로 합니다.";
 'estcommon_authority_confirm' = "확인";
 
 'estcommon_userResult_title' = "알림";
@@ -426,6 +426,7 @@ func googleEmail() -> String {
 |START_API_NOT_CALL|startAPI 네트워크 에러|
 |START_API_DATA_FAIL|받은 데이터 오류|
 |START_API_DATA_INIT|값이 초기화가 안된 상태|
+|PROCESS_DENIED_CONTRACT|processShow 처리중 이용약관을 미동의하여 중간종료 되었을 경우|
 |TOKEN_EMPTY|토큰이 없음|
 |TOKEN_CREATION|토큰 생성 시 에러|
 |TOKEN_INVALID||
@@ -515,6 +516,9 @@ override func viewDidLoad() {   //프레임 워크 초기화
             case .START_API_DATA_INIT :
                 self.errorCode.text = "값이 초기화 되지 않았습니다."
                 break
+            case .PROCESS_DENIED_CONTRACT :
+                self.errorCode.text = "이용약관을 동의해주세요"
+            break
             default:
             break
         }
@@ -758,6 +762,9 @@ Mpinfo.Account.userId
 vc.goToLogin()
 
 // or  직접 UI 설정
+import AWSAuthUI            //AWSAuthUIConfiguration
+import AWSFacebookSignIn    //페이스북 버튼
+import AWSGoogleSignIn      //구글 버튼
 
 let config = AWSAuthUIConfiguration()
         
@@ -769,7 +776,7 @@ config.isBackgroundColorFullScreen = false    //배경색을 로고부분에만 
 config.backgroundColor = UIColor.blue   //배경색 설정
 config.logoImage = nil//UIImage(named: "UserIcon")      //로고 이미지 설정
 
-vc.goToLogin(config)
+vc.goToLogin(config: config)
 ```
 
 #### :mag: 관련함수 및 매개 변수 
