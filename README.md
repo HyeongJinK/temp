@@ -2,6 +2,22 @@
 
 ## 업데이트 사항
 
+:new: 1.1.0 업데이트 사항
+* showEvent() 함수 추가 : 이벤트 페이지를 보여주는 웹뷰 다이얼로그 입니다.
+* 배너 기능 추가
+  * 웹배너 등록 - 이미지 배너 뿐만 아니라 웹 배너도 등록하고 보여줄 수 있습니다.
+  * 베너 버튼 커스터마이징 기능 - 배너 버튼의 이름을 관리자가 등록 하고 변경 할 수 있습니다.
+* 앱 Configuration 개선 : Option 정보를 이용해서 코드에서 Configuration 값을 조정 할 수 있습니다.
+  * Option 클래스 추가
+  * Configuration 정보 지연 설정 기능 추가
+* 라이브러리 리소스의 다국어 지원
+  * Default 언어가 영어로 변경되었습니다.
+  * 현재 지원하는 언어는 영어와 한국어입니다.
+* UserService 의 CustomSupplier 등록 기능 삭제 : 로그인계정 충돌시 다이얼로그에 텍스트를 전달해 주지 않아도 됩니다.
+* processShow 수정
+  * 약관동의 화면에서 약관 동의 거부할 경우 클라이언트에 실패 메시지 ( ***PROCESS_CONTRACT_DENIED*** )를 돌려주며 진행을 멈추도록 수정했습니다.
+
+
 :new: 1.0.10 업데이트 사항
 * 로그인 계정연동 팝업 뒤로가기 버튼 동작 버그 수정
 * 로그인 계정연동 핸들러 변경. 로그인 계정 연동시 계정 충돌 다이얼러로그 창 동작 결과에 대한 핸들러를 새로 작성하였습니다.
@@ -341,6 +357,7 @@ class Appication extends MultiDexApplication {
 EGMP 서비스를 이용하기 위해 MP Configuration을 초기화 하고 Context를 구성하도록 합니다.
 Application 클래스를 MP Context로 인식 할 수 있도록 PlatformContext 인터페이스를 구현합니다.
 
+> `AwsPlatformContext` 클래스는 위에 언급한 AWS 설정을 만들어주는 역할을 하는 클래스입니다. 이 클래스를 사용해 Application 클래스를 구성하면 따로 AWS 구성 코드를 작성하지 않아도 됩니다.
 
 ###### Application.java
 ``` java
@@ -368,6 +385,42 @@ public class Application extends MultiDexApplication implements PlatformContext 
         this.delegateContext = new AwsPlatformContext(getApplicationContext());
     }
 }
+```
+
+##### Configuration 속성 관리
+
+`Configuration.Option`  클래스를 이용해 설정값을 등록 할 수 있습니다. 이 옵션을 사용하면 `egconfiguration.json` 파일에 기술된 속성과 다른 값을 적용하여 설정을 구성 할 수 있습니다.
+
+```java
+    Configuration.Option option = new Configuration.Option()
+                                          .clientId("other-client-id")
+                                          .secret("other-client-secret")
+                                          .region("test.region");
+
+    delegateContenxt = new AwsPlatformContext(getApplicationContext(), option);
+```
+
+`Configuration.Option` 클래스 API
+ * `Configuration.Option` 의 속성설정 메소드들은 모두 메소드 체인으로 연결됩니다.
+
+메소드 이름 | 데이터 타입 |  설명
+----------|--------------------------|------------------------
+clientId    | String or LazyOption\<String> | Client ID 속성을 설정합니다.
+secret      | String or LazyOption\<String> | Secret 속성을 설정합니다.
+region      | String or LazyOption\<String> | Region 속성을 설정합니다.
+
+> `LazyOption`으로 등록된 속성값들은 해당 속성값이 로드 된 후에 속성값에 접근 할 수 있도록 해줍니다. 네트워크등을 통하여 속성값들을 불러와 설정하는 경우에 유용하게 사용할 수 있습니다.
+
+```java
+    Configuration.Option option =
+        new Configuration.Option()
+            .region(new LazyOption<String>() { 
+                @Override public String value() { 
+                    // 서버로부터 region값을 로드하는 코드 
+                    String region = ..... 
+                    return region 
+                }
+            });
 ```
 
 ### Application 클래스 등록
@@ -462,15 +515,28 @@ empFramework.bannerCallBack = new Runnable() {  //콜백 함수 적용
 empFramework.bannerShow();
 ```
 
-#### 4. 공지 화면
+#### 5. 공지 화면
 ```java
 empFramework.showNotice();
 ```
 
-#### 4. 고객센터 화면
+#### 6. 고객센터 화면
 ```java
 
 empFramework.showCSCenter();
+```
+
+#### 7. 이벤트 화면
+```java
+
+empFramework.showEvent();
+```
+
+#### 8. 국가, 언어조회
+```java
+
+empFramework.getNation();
+empFramework.getLanguage();
 ```
 
 
@@ -519,33 +585,6 @@ uv.setFailCallBack(new CustomConsumer<String>() {
 #### 3. SNS 계정 연동
 
 ```java
-//팝업창에 텍스트 설정 초기화하지 않으면 아래 텍스트가 기본으로 들어간다. 국가별, 계정별 게임데이터 정보 출력에 따라 수정이 필요하다.
-uv.setUserLinkMiddleText = new CustormSupplier<String>() {
-    @Override
-    public String get() {
-        return "입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\nFacebookAccount: []\n위의 데이터를 불러오시겠습니까?";
-    }
-};
-uv.setUserLinkBottomText = new CustormSupplier<String>() {
-    @Override
-    public String get() {
-        return "!현재 플레이 중인 게임데이터([])는 삭제됩니다";
-    }
-};
-
-uv.setUserLoadText = new CustormSupplier<String>() {
-    @Override
-    public String get() {
-        return "현재 게스트 모드로 플레이 중인 데이터([])를\n삭제하고 기존 데이터를 불러오시려면 아래 문자를 입력해주세요";
-    }
-};
-    
-uv.setUserGuestText = new CustormSupplier<String>() {
-    @Override
-    public String get() {
-        return "기존 연동된 데이터 ([])를 삭제하고 현재 플레이중인 게임 데이터로 계정연동을 진행합니다.\n[]";
-    }
-};
 // 뒤로가기 구현을 위해서 추가된 코드
 empUserService.setBack(new CustomConsumer<Activity>() {
     @Override

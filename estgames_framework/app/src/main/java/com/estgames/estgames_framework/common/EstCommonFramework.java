@@ -185,7 +185,16 @@ public class EstCommonFramework {
     public void policyShow() {
         if (pd != null) {
             if (!policyCheck()) {
-                policyDialog = new PolicyDialog(context, pd.getUrl().getContractPrivate(), pd.getUrl().getContractService(), policyCallBack);
+                policyDialog = new PolicyDialog(context, pd.getUrl().getContractPrivate(), pd.getUrl().getContractService());
+                policyDialog.setHanler(new PolicyDialog.Handler() {
+                    @Override public void onAccepted() {
+                        policyCallBack.run();
+                    }
+
+                    @Override public void onDenied(String state) {
+                        estCommonFailCallBack.accept(Fail.PROCESS_CONTRACT_DENIED);
+                    }
+                });
                 policyDialog.show();
             }
         } else {
@@ -196,7 +205,16 @@ public class EstCommonFramework {
     private void pPolicyShow() {
         if (pd != null) {
             if (!policyCheck()) {
-                policyDialog = new PolicyDialog(context, pd.getUrl().getContractPrivate(), pd.getUrl().getContractService(), policyCallBack);
+                policyDialog = new PolicyDialog(context, pd.getUrl().getContractPrivate(), pd.getUrl().getContractService());
+                policyDialog.setHanler(new PolicyDialog.Handler() {
+                    @Override public void onAccepted() {
+                        policyCallBack.run();
+                    }
+
+                    @Override public void onDenied(String state) {
+                        estCommonFailCallBack.accept(Fail.PROCESS_CONTRACT_DENIED);
+                    }
+                });
                 policyDialog.show();
             } else {
                 defaultProcess();

@@ -33,13 +33,7 @@ public class PolicyDialog extends Dialog {
     SharedPreferences pref;
     SharedPreferences.Editor prefEdit;
 
-    Runnable callback = new Runnable() {
-        @Override
-        public void run() {
-
-        }
-    };
-    //Runnable closeCallback;
+    private Handler handler;
 
     boolean checked1 = false;
     boolean checked2 = false;
@@ -53,13 +47,6 @@ public class PolicyDialog extends Dialog {
         this.serviceUrl = serviceUrl;
         this.privateUrl = privateUrl;
     }
-    public PolicyDialog(Context context, String serviceUrl, String privateUrl, Runnable callback) {
-        super(context);
-        this.serviceUrl = serviceUrl;
-        this.privateUrl = privateUrl;
-        this.callback = callback;
-    }
-
 
     public Boolean contractService() {
         return checked1;
@@ -75,6 +62,10 @@ public class PolicyDialog extends Dialog {
 
     public void setContractPrivate (String url) {
         policyWebView2.loadUrl(url);
+    }
+
+    public void setHanler(Handler h) {
+        handler = h;
     }
 
     @Override
@@ -125,7 +116,6 @@ public class PolicyDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 dismiss();
-//                callback.run();
             }
         });
 
@@ -138,7 +128,6 @@ public class PolicyDialog extends Dialog {
                     prefEdit.putString("estPolicy", "true");
                     prefEdit.commit();
                     dismiss();
-//                    callback.run();
                 }
             }
         });
@@ -152,7 +141,6 @@ public class PolicyDialog extends Dialog {
                     prefEdit.putString("estPolicy", "true");
                     prefEdit.commit();
                     dismiss();
-//                    callback.run();
                 }
             }
         });
@@ -161,8 +149,17 @@ public class PolicyDialog extends Dialog {
         this.setOnDismissListener(new OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
-                callback.run();
+                if (checked1 && checked2) {
+                    handler.onAccepted();
+                } else {
+                    handler.onDenied("DENIED");
+                }
             }
         });
+    }
+
+    public interface Handler {
+        void onAccepted();
+        void onDenied(String state);
     }
 }

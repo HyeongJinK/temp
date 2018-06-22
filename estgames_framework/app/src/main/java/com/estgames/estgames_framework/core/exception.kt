@@ -11,6 +11,8 @@ open class EGException: Exception {
 enum class Fail(private val serverCode: String? = null) {
     START_API_NOT_CALL,
 
+    PROCESS_CONTRACT_DENIED,
+
     TOKEN_EMPTY,
     TOKEN_CREATION,
     TOKEN_INVALID("session.invalid"),
