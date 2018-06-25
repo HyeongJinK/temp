@@ -105,15 +105,6 @@ public class bannerFramework {
             
             for img in imageViewsTemps {
                 imageViews.append(img)
-                print("================")
-                print(bannerView)
-                print("================")
-                print(bannerView!.view)
-                print("================")
-                print(img)
-                print("================")
-                print(img.view)
-                print("================")
                 bannerView!.view.addSubview(img.view)
             }
             
