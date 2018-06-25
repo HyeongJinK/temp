@@ -10,5 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         />
+
+        <activity
+            android:name="com.estgames.aws.custom.EgAwsSignInActivity"
+            android:label="@string/title_activity_sign_in"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
     </application>
 </manifest>

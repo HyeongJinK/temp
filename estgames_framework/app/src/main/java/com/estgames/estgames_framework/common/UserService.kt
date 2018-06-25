@@ -5,7 +5,7 @@ import com.amazonaws.mobile.auth.core.*
 import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
-import com.amazonaws.mobile.auth.ui.SignInActivity
+import com.estgames.aws.custom.EgAwsSignInActivity
 import com.estgames.estgames_framework.core.EGException
 import com.estgames.estgames_framework.core.Fail
 import com.estgames.estgames_framework.core.Result
@@ -76,13 +76,13 @@ class UserService constructor(callingActivity: Activity) {
                     .signInButton(GoogleButton::class.java)
                     .userPools(false)
                     .build()
-            SignInActivity.startSignInActivity(callingActivity, config)
+            EgAwsSignInActivity.startSignInActivity(callingActivity, config)
         })
     }
 
     fun goToLogin(config: AuthUIConfiguration) {
         initLoginHandler()
-        SignInActivity.startSignInActivity(callingActivity, config)
+        EgAwsSignInActivity.startSignInActivity(callingActivity, config)
     }
 
     private fun initLoginHandler() {
