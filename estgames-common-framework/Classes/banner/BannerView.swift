@@ -15,7 +15,7 @@ class BannerView {
         self.bannerEntry = entry
         
         switch(entry.banner.content.type) {
-            case "image/jpeg" :
+            case "image/jpeg", "image/png", "image/PNG", "image/jpg", "image/JPG", "image/JPEG" :
                 //이미지 뷰 생성
                 let imageView:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight - bottomViewHeight))
                 imageView.backgroundColor = UIColor.white
