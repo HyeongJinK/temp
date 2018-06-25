@@ -89,7 +89,7 @@ public class AccountApi {
         let url = AppInfo.accountApi + "/v2/account/token"
         
         let params: Parameters = self.makeCreateTokenParameters(approval_type: "principal", principal: principal, device: device, profile: profile)
-        //print(params)
+        
         request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader )
             .validate(contentType: ["application/json"])
             .validate(statusCode: 200..<300)
@@ -157,7 +157,6 @@ public class AccountApi {
             params["data"] = data
         }
         
-        //print("\(egToken), \(principal), \(data!)")
         
         request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader)
             .validate(contentType: ["application/json"])
@@ -167,7 +166,6 @@ public class AccountApi {
                 if response.result.isSuccess {
                     success(response.result.value as! Dictionary)
                 } else {
-                    //print(response.result.error.debugDescription)
                     fail(response.result.error)
                 }
         }

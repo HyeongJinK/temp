@@ -43,6 +43,8 @@ class BannerView {
                 view = webView
                 break
             default:
+                view = UIView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight - bottomViewHeight))
+                view.backgroundColor = UIColor.white
                 break
         }
     }

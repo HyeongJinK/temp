@@ -113,8 +113,6 @@ class ViewController: UIViewController {
         
         vc.goToLoginSuccessCallBack = {(egId, resultType) -> Void in
             print("goToLogin() 함수 호출 성공 시 호출되는 콜백함수")
-            print(egId)
-            print(resultType)
         }
         
         vc.goToLoginCloseCallBack = {() -> Void in
