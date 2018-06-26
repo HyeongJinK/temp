@@ -17,12 +17,13 @@ class UserResultViewController: UIViewController {
     var contentLabel: UILabel!
     //var confirmButton: UserConfirmButton!
     var confirmButton: UIButton!
-    var closeActon: (String?, String) -> Void = {(egId, type) -> Void in}
-    var confirmAction: (String?, String) -> Void = {(egId, type) -> Void in}
+    var closeActon: (String?, String, String) -> Void = {(egId, type, provider) -> Void in}
+    var confirmAction: (String?, String, String) -> Void = {(egId, type, provider) -> Void in}
     //var closeActon: () -> Void = {() -> Void in}
     //var confirmAction: () -> Void = {() -> Void in}
     var egId :String? = nil
-    var resultType:String = "NONE"
+    var resultType:String = "LOGIN"
+    var provider:String = ""
     
     func dataSet(_ data:UserDataSet) {
         backgroundView = UIView(frame: data.userResultBackgroundView!)
@@ -94,12 +95,12 @@ class UserResultViewController: UIViewController {
     }
     
     @objc func closeBtAction(_ sender:UIButton) {
-        closeActon(egId, resultType)
+        closeActon(egId, resultType, provider)
         self.dismiss(animated: false, completion: nil)
     }
     
     @objc func confirmBtAction(_ sender:UIButton) {
-        confirmAction(egId, resultType)
+        confirmAction(egId, resultType, provider)
         self.dismiss(animated: false, completion: nil)
     }
 }

@@ -86,7 +86,7 @@ Localizable.string 파일을 선택하시면 오른쪽 Localization 메뉴에 �
   * :exclamation: failCallBack은 이제 start 함수 실패에만 동작하는 콜백함수로 수정
   * :exclamation: goToLoginFailCallBack 함수 추가 goToLogin함수 동작 중 에러 시 동작
   * goToLogin(config: AWSAuthUIConfiguratrion) 함수 추가, 설정을 넘겨 로고이미지, 배경색을 변경할 수 있습니다.
-  * goToLogin(onComplete: (String?, String) -> Void, onFail : (Fail) -> Void, onCancel: () -> Void) 함수 추가
+  * goToLogin(onComplete: (String?, String, String) -> Void, onFail : (Fail) -> Void, onCancel: () -> Void) 함수 추가
     * onComplete = goToLoginSuccessCallBack 에 설정됩니다.
     * onFail = goToLoginFailCallBack 에 설정됩니다.
     * onCancel = goToLoginCloseCallBack 에 설정됩니다.
@@ -96,7 +96,7 @@ Localizable.string 파일을 선택하시면 오른쪽 Localization 메뉴에 �
 
 * 로그인 화면 커스텀 예제입니다.
 
-![](https://gitlab.com/estmp/banner-ios-sdk/raw/master/estgames-common-framework-example/estgames-common-framework-example/IMG_3491.PNG)
+![](https://gitlab.com/estmp/banner-ios-sdk/raw/master/estgames-common-framework-example/estgames-common-framework-example/IMG_3491.PNG =100100)
 
 ```swift
 @objc func emp_goToLogin() {
@@ -696,7 +696,7 @@ estgamesCommon.getLanguage()
 |goToLogin(onComplete, onFail, onCancel)|goToLogin(onComplete: (String?, String) -> Void, onFail : (Fail) -> Void, onCancel: () -> Void)|"onComplete" = goToLoginSuccessCallBack,   "onFail" = goToLoginFailCallBack,   "onCancel" = goToLoginCloseCallBack 에 설정됩니다.|
 |clearKey()|void clearKey()|로그인 정보 삭제|
 |startSuccessCallBack|() -> Void|startGame성공 시 콜백함수|
-|goToLoginSuccessCallBack|(egId:String?, resultType:String) -> Void|goToLogin 성공 시 콜백함수 egId는 SNS 계정으로 연동 시에만 바꿘 아이디가 들어옵니다. 게스트 계정으로 덮어씌울 경우에는 nil값입니다. SNS계정으로 연동 시 "LOGINBYSNS" 게스트 계정으로 덮어 씌우기 시 "LOGINBYFORCE" 으로 resultType값이 들어옵니다.|
+|goToLoginSuccessCallBack|(egId:String?, resultType:String, provider:String) -> Void|goToLogin 성공 시 콜백함수 egId는 SNS 계정으로 연동 시에만 바꿘 아이디가 들어옵니다. 게스트 계정으로 덮어씌울 경우에는 nil값입니다. SNS계정으로 연동 시 "LOGINBYSNS" 게스트 계정으로 덮어 씌우기 시 "LOGINBYFORCE" 으로 resultType값이 들어옵니다.|
 |goToLoginFailCallBack|(Fail) -> Void|goToLogin 실패시 호출되는 콜백함수|
 |goToLoginCloseCallBack|() -> Void|SNS 연동 중간에 X버튼을 눌렀을 경우에 콜백함수|
 |clearSuccessCallBack|() -> Void|clearKey 함수 성공 후 콜백함수|
@@ -722,7 +722,7 @@ override func viewDidLoad() {
         print("startGame() 함수 호출 성공 시 호출되는 콜백함수")
     }
     
-    vc.goToLoginSuccessCallBack = {(egId, resultType) -> Void in
+    vc.goToLoginSuccessCallBack = {(egId, resultType, provider) -> Void in
         print("goToLogin() 함수 호출 성공 시 호출되는 콜백함수")
     }
     
@@ -811,5 +811,5 @@ vc.goToLogin(config: config)
 |goToLogin()|SNS 계정연동 시작|
 |goToLogin(config)|goToLogin(config: AWSAuthUIConfiguratrion)|매개변수로 설정파일을 넘겨 UI를 조정한다.|
 |goToLogin(onComplete, onFail, onCancel)|goToLogin(onComplete: (String?, String) -> Void, onFail : (Fail) -> Void, onCancel: () -> Void)|"onComplete" = goToLoginSuccessCallBack,   "onFail" = goToLoginFailCallBack,   "onCancel" = goToLoginCloseCallBack 에 설정됩니다.|
-|goToLoginSuccessCallBack: (egId:String?, resultType:String) -> Void|goToLogin 성공 시 콜백함수 egId는 SNS 계정으로 연동 시에만 바꿘 아이디가 들어옵니다. 게스트 계정으로 덮어씌울 경우에는 nil값입니다. SNS계정으로 연동 시 "LOGINBYSNS" 게스트 계정으로 덮어 씌우기 시 "LOGINBYFORCE" 으로 resultType값이 들어옵니다.
+|goToLoginSuccessCallBack: (egId:String?, resultType:String, provider:String) -> Void|goToLogin 성공 시 콜백함수 egId는 SNS 계정으로 연동 시에만 바꿘 아이디가 들어옵니다. 게스트 계정으로 덮어씌울 경우에는 nil값입니다. SNS계정으로 연동 시 "LOGINBYSNS" 게스트 계정으로 덮어 씌우기 시 "LOGINBYFORCE" 으로 resultType값이 들어옵니다.
 |goToLoginCloseCallBack: () -> Void|SNS 연동 중간에 X버튼을 눌렀을 경우에 콜백함수|

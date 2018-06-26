@@ -30,7 +30,7 @@ public class UserService {
     
     public var failCallBack: (Fail) -> Void = {(message: Fail) -> Void in}
     public var startSuccessCallBack: () -> Void = {() -> Void in }
-    public var goToLoginSuccessCallBack: (String?, String) -> Void = {(egId: String?, resultType:String) -> Void in }
+    public var goToLoginSuccessCallBack: (String?, String, String) -> Void = {(egId: String?, resultType:String, provider:String) -> Void in }
     public var goToLoginCloseCallBack: () -> Void = {() -> Void in}
     public var goToLoginFailCallBack: (Fail) -> Void = {(message: Fail) -> Void in }
     public var goToLoginConfirmCallBack: () -> Void = {() -> Void in }
@@ -100,7 +100,7 @@ public class UserService {
         }
     }
     
-    public func goToLogin(onComplete: @escaping (String?, String) -> Void
+    public func goToLogin(onComplete: @escaping (String?, String, String) -> Void
         , onFail : @escaping (Fail) -> Void
         , onCancel: @escaping () -> Void) {
         goToLoginSuccessCallBack = onComplete
@@ -110,7 +110,7 @@ public class UserService {
         goToLogin()
     }
     
-    public func goToLogin(onComplete: @escaping (String?, String) -> Void
+    public func goToLogin(onComplete: @escaping (String?, String, String) -> Void
         , onFail : @escaping (Fail) -> Void
         , onCancel: @escaping () -> Void
         , config : AWSAuthUIConfiguration) {
@@ -263,7 +263,7 @@ public class UserService {
     
     func show() {
         userDialog.userResultViewController.egId = nil
-        userDialog.userResultViewController.resultType = "NONE"
+        userDialog.userResultViewController.resultType = "LOGIN"
         userDialog.userLoadViewController.inputText.text = "";
         userDialog.setUserLinkProviderLabel(provider: self.crashSnsSyncIno.provider)
         //characterInfo(MpInfo.Account.egId, userDialog.setUserLinkCharacterLabelGuest)
@@ -311,7 +311,8 @@ public class UserService {
                     MpInfo.Account.email = email
                     
                     self.userDialog.userResultViewController.egId = self.crashSnsSyncIno.snsEgId
-                    self.userDialog.userResultViewController.resultType = "LOGINBYSNS"
+                    self.userDialog.userResultViewController.resultType = "SWITCH"
+                    self.userDialog.userResultViewController.provider = self.crashSnsSyncIno.provider
                     // sns 로 keychain이 모두 변경된 상태입니다.
                     //self.visibleView(view: self.viewSnsSuccess)
                     
@@ -377,7 +378,8 @@ public class UserService {
                         MpInfo.Account.principal = principal
                         MpInfo.Account.provider = provider
                         MpInfo.Account.email = email
-                        self.userDialog.userResultViewController.resultType = "LOGINBYFORCE"
+                        self.userDialog.userResultViewController.resultType = "SYNC"
+                        self.userDialog.userResultViewController.provider = provider
                         // 모달 화면을 닫고 -> guest게이데이터 그대로 이기 때문에 게임이어서 진행.
                         //self.dismiss(animated: true, completion: nil)
                     } else if result == "FAILURE" {
