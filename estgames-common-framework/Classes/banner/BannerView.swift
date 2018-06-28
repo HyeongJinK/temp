@@ -20,7 +20,7 @@ class BannerView {
                 let imageView:UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight - bottomViewHeight))
                 imageView.backgroundColor = UIColor.white
                 imageView.isUserInteractionEnabled = true
-                imageView.contentMode = .scaleAspectFit
+                imageView.contentMode = .scaleAspectFill
                 //.scaleToFill
                 //.scaleAspectFit
                 //.scaleAspectFill

@@ -33,7 +33,7 @@ class PolicyDataSet {
             webView2Frame = CGRect(x: 26.5, y: 311, width: 240, height: 134.5)
             submitBt1Frame = CGRect(x: 26.5, y: 221.5, width: 241, height: 37.5)
             submitBt2Frame = CGRect(x: 26.5, y: 454, width: 241, height: 37.5)
-            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
+            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 30, y: 11, width: 30, height: 30)
             break;
         case 375667 :
             backgroudViewFrame = CGRect(x: 41.5, y: 71.5, width: 293.5, height: 522.5)
@@ -45,7 +45,7 @@ class PolicyDataSet {
             webView2Frame = CGRect(x: 26.5, y: 311, width: 240, height: 134.5)
             submitBt1Frame = CGRect(x: 26.5, y: 221.5, width: 241, height: 37.5)
             submitBt2Frame = CGRect(x: 26.5, y: 454, width: 241, height: 37.5)
-            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
+            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 30, y: 11, width: 30, height: 30)
             break;
         case 414736 :
             backgroudViewFrame = CGRect(x: 60, y: 106.5, width: 293.5, height: 522.5)
@@ -57,7 +57,7 @@ class PolicyDataSet {
             webView2Frame = CGRect(x: 26.5, y: 311, width: 240, height: 134.5)
             submitBt1Frame = CGRect(x: 26.5, y: 221.5, width: 241, height: 37.5)
             submitBt2Frame = CGRect(x: 26.5, y: 454, width: 241, height: 37.5)
-            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
+            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 30, y: 11, width: 30, height: 30)
             break;
         case 375812 :
             backgroudViewFrame = CGRect(x: 41.5, y: 144.5, width: 293.5, height: 522.5)
@@ -69,7 +69,7 @@ class PolicyDataSet {
             webView2Frame = CGRect(x: 26.5, y: 311, width: 240, height: 134.5)
             submitBt1Frame = CGRect(x: 26.5, y: 221.5, width: 241, height: 37.5)
             submitBt2Frame = CGRect(x: 26.5, y: 454, width: 241, height: 37.5)
-            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
+            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 30, y: 11, width: 30, height: 30)
             break;
 //        case 480320 :
 //            break;
@@ -83,7 +83,7 @@ class PolicyDataSet {
             webView2Frame = CGRect(x: 253.5, y: 72.5, width: 219.5, height: 135.5)
             submitBt1Frame = CGRect(x: 26, y: 216.5, width: 220.5, height: 37.5)
             submitBt2Frame = CGRect(x: 253.5, y: 216.5, width: 220.5, height: 37.5)
-            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
+            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 30, y: 11, width: 30, height: 30)
             break;
         case 667375 :
             backgroudViewFrame = CGRect(x: 84, y: 43.5, width: 499, height: 286.5)
@@ -95,7 +95,7 @@ class PolicyDataSet {
             webView2Frame = CGRect(x: 253.5, y: 72.5, width: 219.5, height: 135.5)
             submitBt1Frame = CGRect(x: 26, y: 216.5, width: 220.5, height: 37.5)
             submitBt2Frame = CGRect(x: 253.5, y: 216.5, width: 220.5, height: 37.5)
-            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
+            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 30, y: 11, width: 30, height: 30)
             break;
         case 736412 :
             backgroudViewFrame = CGRect(x: 118.5, y: 62.5, width: 499, height: 286.5)
@@ -107,7 +107,7 @@ class PolicyDataSet {
             webView2Frame = CGRect(x: 253.5, y: 72.5, width: 219.5, height: 135.5)
             submitBt1Frame = CGRect(x: 26, y: 216.5, width: 220.5, height: 37.5)
             submitBt2Frame = CGRect(x: 253.5, y: 216.5, width: 220.5, height: 37.5)
-            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
+            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 30, y: 11, width: 30, height: 30)
             break;
         case 812375 :
             backgroudViewFrame = CGRect(x: 156.5, y: 43.5, width: 499, height: 286.5)
@@ -119,7 +119,7 @@ class PolicyDataSet {
             webView2Frame = CGRect(x: 253.5, y: 72.5, width: 219.5, height: 135.5)
             submitBt1Frame = CGRect(x: 26, y: 216.5, width: 220.5, height: 37.5)
             submitBt2Frame = CGRect(x: 253.5, y: 216.5, width: 220.5, height: 37.5)
-            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
+            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 30, y: 11, width: 30, height: 30)
             break;
         default:
             backgroudViewFrame = CGRect(x: 60, y: 106.5, width: 293.5, height: 522.5)
@@ -131,7 +131,7 @@ class PolicyDataSet {
             webView2Frame = CGRect(x: 26.5, y: 311, width: 240, height: 134.5)
             submitBt1Frame = CGRect(x: 26.5, y: 221.5, width: 241, height: 37.5)
             submitBt2Frame = CGRect(x: 26.5, y: 454, width: 241, height: 37.5)
-            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 18, y: 11, width: 18, height: 18)
+            closeBtFrame = CGRect(x: backgroudViewFrame.width - 10.5 - 30, y: 11, width: 30, height: 30)
             break;
         }
     }

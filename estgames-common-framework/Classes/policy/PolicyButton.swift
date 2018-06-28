@@ -27,7 +27,7 @@ class PolicyButton : UIButton {
             self.backgroundColor = UIColor.gray
         }
         
-        self.setTitle(NSLocalizedString("estcommon_policy_buttonText", comment: ""), for: .normal)
+        self.setTitle("estcommon_policy_buttonText".localized(), for: .normal)
         self.addTarget(self, action: #selector(clickEvent), for: .touchUpInside)
     }
     

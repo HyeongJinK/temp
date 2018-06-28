@@ -17,6 +17,7 @@ import AWSGoogleSignIn
 class ViewController: UIViewController {
     var estgamesCommon:EstgamesCommon!
     var vc : UserService!
+    var gameAgent: GameAgent = GameAgent()
     
     var userDialog: UserDialog!
     
@@ -48,6 +49,7 @@ class ViewController: UIViewController {
         estgamesCommon.showCsCenter()
     }
     @IBOutlet var faqAction: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +113,7 @@ class ViewController: UIViewController {
             print("startGame() 함수 호출 성공 시 호출되는 콜백함수")
         }
         
-        vc.goToLoginSuccessCallBack = {(egId, resultType) -> Void in
+        vc.goToLoginSuccessCallBack = {(egId, resultType, pro) -> Void in
             print("goToLogin() 함수 호출 성공 시 호출되는 콜백함수")
         }
         
@@ -203,6 +205,8 @@ class ViewController: UIViewController {
         //estgamesCommon.create()
     }
     
+    
+    
     @IBAction func authTest(_ sender: Any) {
         estgamesCommon.authorityShow()
     }
@@ -231,6 +235,19 @@ class ViewController: UIViewController {
     }
     @IBAction func eventTeset(_ sender: Any) {
          estgamesCommon.showEvent()
+    }
+    @IBAction func engTest(_ sender: Any) {
+        estgamesCommon.setLanguage(lang: "en")
+    }
+    @IBAction func korTest(_ sender: Any) {
+        estgamesCommon.setLanguage(lang: "ko")
+    }
+    @IBAction func openTest(_ sender: Any) {
+        gameAgent.retrieveStatus(onReceived: {(result) -> Void in
+            self.errorCode.text = result.description
+        }, onFail: {(fail) -> Void in
+            self.errorCode.text = "점검API에러"
+        })
     }
 }
 

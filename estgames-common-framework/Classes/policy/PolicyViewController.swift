@@ -59,6 +59,19 @@ class PolicyViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: size)//UIFont.init(name: "SpoqaHanSans", size: size)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        labelSet(titleLabel1, "estcommon_policy_title".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+        
+        
+        labelSet(subTitleLabel, "estcommon_policy_subTitle".localized(), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), 10)
+        
+        labelSet(titleLabel2, "estcommon_policy_privacy".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+        
+        submitBt1.setTitle("estcommon_policy_buttonText".localized(), for: .normal)
+        submitBt2.setTitle("estcommon_policy_buttonText".localized(), for: .normal)
+    }
+    
     override func viewDidLoad() {
         dataSet = PolicyDataSet(deviceNum: DeviceClassification.deviceResolution(self.view.frame.width, self.view.frame.height))
         
@@ -83,10 +96,10 @@ class PolicyViewController: UIViewController {
         }
     
         
-        labelSet(titleLabel1, NSLocalizedString("estcommon_policy_title", comment: ""), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
-        
-        
-        labelSet(subTitleLabel, NSLocalizedString("estcommon_policy_subTitle", comment: ""), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), 10)
+//        labelSet(titleLabel1, "estcommon_policy_title".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+//
+//
+//        labelSet(subTitleLabel, "estcommon_policy_subTitle".localized(), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), 10)
         
         
         if let weburl = webUrl1 {
@@ -97,7 +110,7 @@ class PolicyViewController: UIViewController {
         submitBt1.checkBtCallBack = checkBoxTrueClose
 
         
-        labelSet(titleLabel2, NSLocalizedString("estcommon_policy_privacy", comment: ""), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+//        labelSet(titleLabel2, "estcommon_policy_privacy".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
         
         
         if let weburl = webUrl2 {

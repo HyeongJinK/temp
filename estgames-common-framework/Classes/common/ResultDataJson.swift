@@ -137,6 +137,8 @@ class UrlData {
     var apiParent:String = ""
     var characterInfo:String = ""
     var event:String = ""
+    var game_open:String = ""
+
     
     init(_ jsonData: NSDictionary) {
         self.system_contract = jsonData["system_contract"] as! String
@@ -145,6 +147,7 @@ class UrlData {
         self.apiParent = jsonData["api_parent"] as! String
         self.characterInfo = jsonData["character_info"] as! String
         self.event = jsonData["event"] as! String
+        self.game_open = jsonData["game_open_status"] as! String
         
         let useContract = jsonData["use_contract"] as! NSDictionary
         

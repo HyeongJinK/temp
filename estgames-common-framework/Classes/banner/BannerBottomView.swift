@@ -25,6 +25,7 @@ class bannerBottomView: UIView {
     var linkbtHeight:CGFloat = 31
     var closeBt:CloseBt!
     let linkBt:LinkerButton = LinkerButton()
+    let oneDayLabel:UILabel = UILabel()
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -56,13 +57,13 @@ class bannerBottomView: UIView {
         self.addSubview(checkbox)
         
         //하루보기 레이블
-        let oneDayLabel:UILabel = UILabel()
+        
         
         oneDayLabel.frame = CGRect(x: checkboxLeftMargin + checkboxRightMargin + bottomViewHeight - (checkboxTopMargin * 2), y: (bottomViewHeight-labelFontSize)/2, width: 300, height: labelFontSize)
         
         oneDayLabel.font = UIFont.boldSystemFont(ofSize: labelFontSize)
         oneDayLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        oneDayLabel.text = NSLocalizedString("estcommon_banner_oneDay", comment: "")
+        oneDayLabel.text = "estcommon_banner_oneDay".localized()
         //TODO 오토레이아웃 안됨...
 //        isUserInteractionEnabled = false
 //        oneDayLabel.translatesAutoresizingMaskIntoConstraints = false

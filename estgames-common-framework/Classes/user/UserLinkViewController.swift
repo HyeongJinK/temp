@@ -39,12 +39,30 @@ class UserLinkViewController: UIViewController {
         cancelButton = UIButton(frame: data.userLinkCancelButton!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        userLinkTitle.text = "estcommon_userLink_title".localized()
+        
+        middleLabel.font = UIFont.systemFont(ofSize: 10)
+        middleLabel.numberOfLines = 0
+        let attrString = NSMutableAttributedString(string: "estcommon_userLink_middelLabel".localized().replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider))
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
+        attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
+        middleLabel.attributedText = attrString
+        
+        bottomLabel.text = "estcommon_userLink_bottomLabel".localized().replacingOccurrences(of: "([])", with: replaceStrGuest)
+        confirmButton.setTitle("estcommon_userLink_confirm".localized(), for: .normal)
+        cancelButton.setTitle("estcommon_userLink_cancel".localized(), for: .normal)
+    }
+    
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor(red: 53/255, green: 59/255, blue: 72/255, alpha: 0.8)
         
         backgroudView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
-        userLinkTitle.text = NSLocalizedString("estcommon_userLink_title", comment: "")
+//        userLinkTitle.text = "estcommon_userLink_title".localized()
         userLinkTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         userLinkTitle.font = UIFont.systemFont(ofSize: 12)
         //userLinkTitle.font = UIFont.init(name: "SqoqaHanSans", size: 12)
@@ -65,23 +83,23 @@ class UserLinkViewController: UIViewController {
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
         
         
-        middleLabel.font = UIFont.systemFont(ofSize: 10)
-        middleLabel.numberOfLines = 0
-        let attrString = NSMutableAttributedString(string: NSLocalizedString("estcommon_userLink_middelLabel", comment: "").replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider))
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
-        attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
-        middleLabel.attributedText = attrString
+//        middleLabel.font = UIFont.systemFont(ofSize: 10)
+//        middleLabel.numberOfLines = 0
+//        let attrString = NSMutableAttributedString(string: "estcommon_userLink_middelLabel".localized().replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider))
+//        let style = NSMutableParagraphStyle()
+//        style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
+//        attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
+//        middleLabel.attributedText = attrString
         
         
-        bottomLabel.text = NSLocalizedString("estcommon_userLink_bottomLabel", comment: "").replacingOccurrences(of: "([])", with: replaceStrGuest)
+//        bottomLabel.text = "estcommon_userLink_bottomLabel".localized().replacingOccurrences(of: "([])", with: replaceStrGuest)
         bottomLabel.font = UIFont.systemFont(ofSize: 10)
         
         
         lineView2.backgroundColor = UIColor(red: 231/255, green: 230/255, blue: 230/255, alpha: 1)
         
         
-        confirmButton.setTitle(NSLocalizedString("estcommon_userLink_confirm", comment: ""), for: .normal)
+//        confirmButton.setTitle("estcommon_userLink_confirm".localized(), for: .normal)
         confirmButton.confirmBtAction = confirmAction
         
         
@@ -89,7 +107,7 @@ class UserLinkViewController: UIViewController {
         if let cbImg = cancelButtonImg {
             cancelButton.setBackgroundImage(cbImg, for: .normal)
         }
-        cancelButton.setTitle(NSLocalizedString("estcommon_userLink_cancel", comment: ""), for: .normal)
+//        cancelButton.setTitle("estcommon_userLink_cancel".localized(), for: .normal)
         cancelButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         cancelButton.addTarget(self, action: #selector(cancelBtAction(_:)), for: .touchUpInside)
@@ -108,7 +126,7 @@ class UserLinkViewController: UIViewController {
     public func replaceStr() {
         middleLabel.font = UIFont.systemFont(ofSize: 10)
         middleLabel.numberOfLines = 0
-        let attrString = NSMutableAttributedString(string: NSLocalizedString("estcommon_userLink_middelLabel", comment: "").replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider))
+        let attrString = NSMutableAttributedString(string: "estcommon_userLink_middelLabel".localized().replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider))
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName

@@ -34,7 +34,7 @@ public class bannerFramework {
         //bannerView?.translatesAutoresizingMaskIntoConstraints = false
         
         bottomView = bannerBottomView() //아래바 생성
-        bannerView!.view.addSubview(bottomView)
+        
         
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "yyyy-MM-dd"
@@ -114,6 +114,8 @@ public class bannerFramework {
                 bottomView.linkBt.setTitle(imageViews.last?.bannerEntry?.banner.action.button, for: .normal)
                 bottomView.linkBt.isHidden = false
             }
+            bottomView.oneDayLabel.text = "estcommon_banner_oneDay".localized()
+            bannerView!.view.addSubview(bottomView)
         }
     }
 }

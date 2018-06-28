@@ -284,6 +284,30 @@
                                     <action selector="eventTeset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kCb-Yc-VZv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsZ-Nc-hNH">
+                                <rect key="frame" x="43" y="603" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="영어"/>
+                                <connections>
+                                    <action selector="engTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VdL-hU-wJJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDU-Jf-8Fg">
+                                <rect key="frame" x="107" y="603" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="한글"/>
+                                <connections>
+                                    <action selector="korTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Qe-pM-7OS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAJ-Uu-A9b">
+                                <rect key="frame" x="222" y="609" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="open"/>
+                                <connections>
+                                    <action selector="openTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m8p-fy-eNv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

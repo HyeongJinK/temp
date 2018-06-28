@@ -19,7 +19,12 @@ class AuthorityViewController: UIViewController {
     public func setWebUrl (url: String) {
         self.webViewUrl = url
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        titleLabel.text = "estcommon_authority_title".localized()
+        confirmButton.setTitle("estcommon_authority_confirm".localized(), for: .normal)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +39,7 @@ class AuthorityViewController: UIViewController {
         backgroundView.backgroundColor = UIColor(red: 53/255, green: 59/255, blue: 72/255, alpha: 1)
         
         
-        titleLabel.text = NSLocalizedString("estcommon_authority_title", comment: "")
+//        titleLabel.text = "estcommon_authority_title".localized()
         titleLabel.center.x = backgroundView.center.x
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
@@ -54,7 +59,7 @@ class AuthorityViewController: UIViewController {
         } else {
             confirmButton.backgroundColor = UIColor.darkGray
         }
-        confirmButton.setTitle(NSLocalizedString("estcommon_authority_confirm", comment: ""), for: .normal)
+//        confirmButton.setTitle("estcommon_authority_confirm".localized(), for: .normal)
         confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         confirmButton.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)

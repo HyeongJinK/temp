@@ -36,12 +36,21 @@ class UserResultViewController: UIViewController {
         confirmButton = UserConfirmButton(self, frame: data.userResultConfirmButton!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        userResultTitle.text = "estcommon_userResult_title".localized()
+        subLabel.text = "estcommon_userResult_subTitle".localized()
+        contentLabel.text = "estcommon_userResult_titleMove".localized()
+        self.confirmButton.setTitle("estcommon_userResult_confirm".localized(), for: .normal)
+    }
+    
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor(red: 53/255, green: 59/255, blue: 72/255, alpha: 0.8)
         
         backgroundView.backgroundColor = UIColor(red: 9, green: 9, blue: 9, alpha: 1)
         
-        userResultTitle.text = NSLocalizedString("estcommon_userResult_title", comment: "")
+//        userResultTitle.text = "estcommon_userResult_title".localized()
         userResultTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         userResultTitle.font = UIFont.systemFont(ofSize: 12)
         
@@ -59,11 +68,12 @@ class UserResultViewController: UIViewController {
         
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
         
-        subLabel.text = NSLocalizedString("estcommon_userResult_subTitle", comment: "")
+        
+//        subLabel.text = "estcommon_userResult_subTitle".localized()
         subLabel.font = UIFont.systemFont(ofSize: 12)
         subLabel.textColor = UIColor(red: 48/255, green: 122/255, blue: 245/255, alpha: 1)
         
-        contentLabel.text = NSLocalizedString("estcommon_userResult_titleMove", comment: "")
+//        contentLabel.text = "estcommon_userResult_titleMove".localized()
         contentLabel.font = UIFont.systemFont(ofSize: 10)
         contentLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         
@@ -79,7 +89,7 @@ class UserResultViewController: UIViewController {
         self.confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         self.confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         self.confirmButton.addTarget(self, action: #selector(confirmBtAction(_:)), for: .touchUpInside)
-        self.confirmButton.setTitle(NSLocalizedString("estcommon_userResult_confirm", comment: ""), for: .normal)
+//        self.confirmButton.setTitle("estcommon_userResult_confirm".localized(), for: .normal)
         
         //confirmButton.setTitle(NSLocalizedString("estcommon_userResult_confirm", comment: ""), for: .normal)
         //confirmButton.confirmBtAction = confirmAction

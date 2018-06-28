@@ -33,12 +33,28 @@ class UserGuestLinkViewController: UIViewController {
         beforeButton = UIButton(frame: data.userLinkCancelButton!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        gltitle.text = "estcommon_userGuest_title".localized()
+        
+        middleLabel.font = UIFont.systemFont(ofSize: 10)
+        middleLabel.numberOfLines = 0
+        let attrString = NSMutableAttributedString(string: "estcommon_userGuest_middle".localized().replacingOccurrences(of: "[]", with: replaceStrSns) + "estcommon_userGuest_bottom".localized().replacingOccurrences(of: "[]", with: replaceStrGuest))
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
+        attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
+        middleLabel.attributedText = attrString
+        
+        loginButton.setTitle("estcommon_userGuest_loginBt".localized(), for: .normal)
+        beforeButton.setTitle("estcommon_userGuest_beforeBt".localized(), for: .normal)
+    }
+    
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor(red: 53/255, green: 59/255, blue: 72/255, alpha: 0.8)
         
         backgroudView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
-        gltitle.text = NSLocalizedString("estcommon_userGuest_title", comment: "")
+//        gltitle.text = "estcommon_userGuest_title".localized()
         gltitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         gltitle.font = UIFont.systemFont(ofSize: 12)
         
@@ -49,19 +65,19 @@ class UserGuestLinkViewController: UIViewController {
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
         
         
-        middleLabel.font = UIFont.systemFont(ofSize: 10)
-        middleLabel.numberOfLines = 0
-        let attrString = NSMutableAttributedString(string: NSLocalizedString("estcommon_userGuest_middle", comment: "").replacingOccurrences(of: "[]", with: replaceStrSns) + NSLocalizedString("estcommon_userGuest_bottom", comment: "").replacingOccurrences(of: "[]", with: replaceStrGuest))
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
-        attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
-        middleLabel.attributedText = attrString
+//        middleLabel.font = UIFont.systemFont(ofSize: 10)
+//        middleLabel.numberOfLines = 0
+//        let attrString = NSMutableAttributedString(string: "estcommon_userGuest_middle".localized().replacingOccurrences(of: "[]", with: replaceStrSns) + "estcommon_userGuest_bottom".localized().replacingOccurrences(of: "[]", with: replaceStrGuest))
+//        let style = NSMutableParagraphStyle()
+//        style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
+//        attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
+//        middleLabel.attributedText = attrString
         
         
         lineView2.backgroundColor = UIColor(red: 231/255, green: 230/255, blue: 230/255, alpha: 1)
         
         
-        loginButton.setTitle(NSLocalizedString("estcommon_userGuest_loginBt", comment: ""), for: .normal)
+//        loginButton.setTitle("estcommon_userGuest_loginBt".localized(), for: .normal)
         loginButton.confirmBtAction = loginAction
         
         
@@ -73,7 +89,7 @@ class UserGuestLinkViewController: UIViewController {
         }
         beforeButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         beforeButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        beforeButton.setTitle(NSLocalizedString("estcommon_userGuest_beforeBt", comment: ""), for: .normal)
+//        beforeButton.setTitle("estcommon_userGuest_beforeBt".localized(), for: .normal)
         beforeButton.addTarget(self, action: #selector(beforeBtAction(_:)), for: .touchUpInside)
         
         
@@ -90,7 +106,7 @@ class UserGuestLinkViewController: UIViewController {
     public func replaceStr () {
         middleLabel.font = UIFont.systemFont(ofSize: 10)
         middleLabel.numberOfLines = 0
-        let attrString = NSMutableAttributedString(string: NSLocalizedString("estcommon_userGuest_middle", comment: "").replacingOccurrences(of: "[]", with: replaceStrSns) + NSLocalizedString("estcommon_userGuest_bottom", comment: "").replacingOccurrences(of: "[]", with: replaceStrGuest))
+        let attrString = NSMutableAttributedString(string: "estcommon_userGuest_middle".localized().replacingOccurrences(of: "[]", with: replaceStrSns) + "estcommon_userGuest_bottom".localized().replacingOccurrences(of: "[]", with: replaceStrGuest))
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName

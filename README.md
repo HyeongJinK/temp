@@ -4,6 +4,22 @@
 [![License](https://img.shields.io/cocoapods/l/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
+:new: 업데이트 (1.2.0)
+---
+
+* EstgamesCommon
+  * void setLanguage(String) 함수 추가 매개변수로 넘기는 언어코드로 언어설정, 없을 경우 기기의 기본설정 값으로 설정됩니다.
+  * 배너 이미지 크기조절 모드가 변경되었습니다. 비율유지에 전체크기입니다. 비율유지라 잘리는 곳이 있습니다.
+* GameAgent 추가
+  * retrieveStatus(onReceived :  (_ result: Bool) -> Void , onFail :  (_ fail: Fail) -> Void) : API를 호출해 점검 모드인지 확인
+  * 성공시 OnReceived 호출, 실패시 onFail 호출
+  * OnReceived에 result값이 true면 오픈, false면 점검
+  * onFail 결과값으로 오는 에러들
+    * START_API_DATA_INIT : 스타트API에 오픈 유/무 URL를 받지 못함 
+    * API_OMITTED_PARAMETER : 리젼값이 잘못설정됨
+    * API_BAD_REQUEST : 서버에서 잘못된 값을 가져옴
+    * API_REQUEST_FAIL : 호출실패
+
 :new: 업데이트 (1.1.0)
 ---
 
@@ -813,3 +829,37 @@ vc.goToLogin(config: config)
 |goToLogin(onComplete, onFail, onCancel)|goToLogin(onComplete: (String?, String) -> Void, onFail : (Fail) -> Void, onCancel: () -> Void)|"onComplete" = goToLoginSuccessCallBack,   "onFail" = goToLoginFailCallBack,   "onCancel" = goToLoginCloseCallBack 에 설정됩니다.|
 |goToLoginSuccessCallBack: (egId:String?, resultType:String, provider:String) -> Void|goToLogin 성공 시 콜백함수 egId는 SNS 계정으로 연동 시에만 바꿘 아이디가 들어옵니다. 게스트 계정으로 덮어씌울 경우에는 nil값입니다. SNS계정으로 연동 시 "LOGINBYSNS" 게스트 계정으로 덮어 씌우기 시 "LOGINBYFORCE" 으로 resultType값이 들어옵니다.
 |goToLoginCloseCallBack: () -> Void|SNS 연동 중간에 X버튼을 눌렀을 경우에 콜백함수|
+
+
+
+:bust_in_silhouette: 게임에이젼트
+---
+
+
+|이름|타입|설명|
+|-|-|-|
+|retrieveStatus|retrieveStatus(onReceived :  (_ result: Bool) -> Void , onFail :  (_ fail: Fail) -> Void)|API를 호출해 점검 모드인지 확인|
+
+* 성공시 OnReceived 호출, 실패시 onFail 호출
+* OnReceived에 result값이 true면 오픈, false면 점검
+* onFail 결과값으로 오는 에러들
+* START_API_DATA_INIT : 스타트API에 오픈 유/무 URL를 받지 못함 
+* API_OMITTED_PARAMETER : 리젼값이 잘못설정됨
+* API_BAD_REQUEST : 서버에서 잘못된 값을 가져옴
+* API_REQUEST_FAIL : 호출실패
+
+### :exclamation:  초기설정
+
+```swift
+var gameAgent: GameAgent = GameAgent()
+```
+
+### 함수 호출 (예)
+
+```swift
+gameAgent.retrieveStatus(onReceived: {(result) -> Void in
+    self.errorCode.text = result.description
+}, onFail: {(fail) -> Void in
+    print(fail)
+})
+```
