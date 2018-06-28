@@ -1,10 +1,6 @@
 package com.estgames.estgames_framework.common;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import com.estgames.estgames_framework.authority.AuthorityDialog;
@@ -14,8 +10,6 @@ import com.estgames.estgames_framework.banner.BannerDialogHandler;
 import com.estgames.estgames_framework.core.Api;
 import com.estgames.estgames_framework.core.Fail;
 import com.estgames.estgames_framework.core.HttpResponse;
-import com.estgames.estgames_framework.core.HttpUtils;
-import com.estgames.estgames_framework.core.Method;
 import com.estgames.estgames_framework.core.PlatformContext;
 import com.estgames.estgames_framework.core.Token;
 import com.estgames.estgames_framework.core.session.SessionManager;
@@ -37,12 +31,12 @@ public class EstCommonFramework {
 
     private ProcessDescription pd;
     private SessionManager sessionManager;
+    private ClientPreferences preferences;
 
     final String SystemContract = "system_contract";
     final String UseContract = "use_contract";
     final String Banner = "banner";
 
-    SharedPreferences pref;
     Context context;
 
     AuthorityDialog authorityDialog;
@@ -80,17 +74,16 @@ public class EstCommonFramework {
         this.context = context;
         platformContext = (PlatformContext) context.getApplicationContext();
         sessionManager = new SessionManager(context);
-
-        pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
+        preferences = new ClientPreferences(context);
     }
 
     public EstCommonFramework(Context context, CustomConsumer<EstCommonFramework> initCallBack) {
         this.context = context;
         platformContext = (PlatformContext) context.getApplicationContext();
         sessionManager = new SessionManager(context);
+        preferences = new ClientPreferences(context);
 
         this.initCallBack = initCallBack;
-        pref = this.context.getSharedPreferences("policy", Activity.MODE_PRIVATE);
     }
 
     public void create() {
@@ -101,7 +94,7 @@ public class EstCommonFramework {
                 public void run() {
                     try {
                         HttpResponse result = new Api.ProcessDescribe(
-                                platformContext.getConfiguration().getRegion(), Locale.getDefault().getLanguage()
+                                platformContext.getConfiguration().getRegion(), preferences.getLocale().getLanguage()
                         ).invoke();
 
                         pd = ProcessDescriptionParser.parse(new String(result.getContent(), "utf-8"));
@@ -129,7 +122,7 @@ public class EstCommonFramework {
             }
 
             if (banners.size() > 0) {
-                bannerDialog = new BannerDialog(context, banners, cache);
+                bannerDialog = new BannerDialog(context, banners, cache, preferences);
                 bannerDialog.setDialogHandler(new BannerDialogHandler() {
                     @Override public void onDialogClosed() {
                         cache.dispose();
@@ -152,7 +145,7 @@ public class EstCommonFramework {
             }
 
             if (banners.size() > 0) {
-                bannerDialog = new BannerDialog(context, banners, cache);
+                bannerDialog = new BannerDialog(context, banners, cache, preferences);
                 bannerDialog.setDialogHandler(new BannerDialogHandler() {
                     @Override public void onDialogClosed() {
                         cache.dispose();
@@ -170,7 +163,7 @@ public class EstCommonFramework {
 
     public void authorityShow() {
         if (pd != null) {
-            authorityDialog = new AuthorityDialog(context, pd.getUrl().getAuthority(), authorityCallBack);
+            authorityDialog = new AuthorityDialog(context, preferences, pd.getUrl().getAuthority(), authorityCallBack);
             authorityDialog.show();
         } else {
             estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
@@ -178,17 +171,14 @@ public class EstCommonFramework {
     }
 
     private boolean policyCheck() {
-        if (pref.getString("estPolicy", "false").equals("true"))
-            return true;
-        else
-            return false;
+        return preferences.getTermsAgreement();
     }
 
 
     public void policyShow() {
         if (pd != null) {
             if (!policyCheck()) {
-                policyDialog = new PolicyDialog(context, pd.getUrl().getContractPrivate(), pd.getUrl().getContractService());
+                policyDialog = new PolicyDialog(context, pd.getUrl().getContractService(), pd.getUrl().getContractPrivacy(), preferences);
                 policyDialog.setHanler(new PolicyDialog.Handler() {
                     @Override public void onAccepted() {
                         policyCallBack.run();
@@ -208,7 +198,7 @@ public class EstCommonFramework {
     private void pPolicyShow() {
         if (pd != null) {
             if (!policyCheck()) {
-                policyDialog = new PolicyDialog(context, pd.getUrl().getContractPrivate(), pd.getUrl().getContractService());
+                policyDialog = new PolicyDialog(context, pd.getUrl().getContractService(), pd.getUrl().getContractPrivacy(), preferences);
                 policyDialog.setHanler(new PolicyDialog.Handler() {
                     @Override public void onAccepted() {
                         policyCallBack.run();
@@ -295,8 +285,8 @@ public class EstCommonFramework {
     }
 
     public void showNotice() {
-        Token token = sessionManager.getToken();
         if (pd != null) {
+            Token token = sessionManager.getToken();
             notice = new WebViewDialog(context, pd.getUrl().getNotice() + "?eg_token=" + token.getEgToken() + "&lang=" + getLanguage());
             notice.show();
         } else {
@@ -330,6 +320,10 @@ public class EstCommonFramework {
     }
 
     public String getLanguage() {
-        return Locale.getDefault().getLanguage();
+        return preferences.getLocale().getLanguage();
+    }
+
+    public void setLanguage(String lang) {
+        preferences.setLocale(new Locale(lang));
     }
 }

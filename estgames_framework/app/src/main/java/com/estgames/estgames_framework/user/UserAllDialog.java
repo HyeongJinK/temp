@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.estgames.estgames_framework.R;
-import com.estgames.estgames_framework.common.GameService;
+import com.estgames.estgames_framework.common.ClientPreferences;
+import com.estgames.estgames_framework.common.GameAgent;
+import com.estgames.estgames_framework.core.AndroidUtils;
 import com.estgames.estgames_framework.core.EGException;
 import com.estgames.estgames_framework.core.Fail;
 import com.estgames.estgames_framework.core.Result;
@@ -35,9 +38,12 @@ public class UserAllDialog extends Dialog{
     private DialogState state;
 
     private SessionManager sessionManager;
+    private ClientPreferences preferences;
+
     private String identityId;
     private String provider;
     private String egId;
+    private Map<String, String> syncData;
 
     private CompleteHandler completeHandler;
     private CancelHandler cancelHandler;
@@ -45,11 +51,10 @@ public class UserAllDialog extends Dialog{
 
     private Future<String> gameuser;
 
-    public UserAllDialog(@NonNull Context context, @NonNull String identity, @NonNull String provider, @NonNull String egId) {
+    public UserAllDialog(@NonNull Context context,
+                          @NonNull ClientPreferences pref) {
         super(context);
-        this.identityId = identity;
-        this.provider = provider;
-        this.egId = egId;
+        this.preferences = pref;
     }
 
     @Override
@@ -74,9 +79,25 @@ public class UserAllDialog extends Dialog{
         this.gameuser = executor.submit(new Callable<String>() {
             @Override
             public String call() throws Exception {
-                return new GameService(UserAllDialog.this.getContext()).retrieveGameUser(egId);
+                return new GameAgent(UserAllDialog.this.getContext()).retrieveGameUser(egId);
             }
         });
+    }
+
+    public void setEgId(@NonNull String egId) {
+        this.egId = egId;
+    }
+
+    public void setProvider(@NonNull String provider) {
+        this.provider = provider;
+    }
+
+    public void setIdentityId(@NonNull String id) {
+        this.identityId = id;
+    }
+
+    public void setData(@NonNull Map<String, String> data) {
+        this.syncData = data;
     }
 
     public UserAllDialog setOnCompleted(CompleteHandler handler) {
@@ -98,6 +119,11 @@ public class UserAllDialog extends Dialog{
     protected void onStart() {
         super.onStart();
         changeState(STATE_READY);
+    }
+
+    private String getText(int resourceId) {
+        CharSequence text = AndroidUtils.getLocaleText(resourceId, preferences.getLocale(), getContext());
+        return text.toString();
     }
 
     /**
@@ -143,15 +169,23 @@ public class UserAllDialog extends Dialog{
         private Ready(UserAllDialog ctx) {
             context = ctx;
 
+            ((TextView)context.findViewById(R.id.txt_ready_title)).setText(
+                    context.getText(R.string.estcommon_userLink_title)
+            );
+
             // 기존계정으로 로그인 하기 버튼에 대한 핸들러 등록
-            context.findViewById(R.id.btn_switch).setOnClickListener(new View.OnClickListener() {
+            Button btnSwitch = context.findViewById(R.id.btn_switch);
+            btnSwitch.setText(context.getText(R.string.estcommon_userLink_confirm));
+            btnSwitch.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View view) {
                     context.changeState(context.STATE_SWITCH);
                 }
             });
 
             // 현재 계정에 연동하기 버튼에 대한 핸들러 등록
-            context.findViewById(R.id.btn_sync).setOnClickListener(new View.OnClickListener(){
+            Button btnSync = context.findViewById(R.id.btn_sync);
+            btnSync.setText(context.getText(R.string.estcommon_userLink_cancel));
+            btnSync.setOnClickListener(new View.OnClickListener(){
                 @Override public void onClick(View view) {
                     context.changeState(context.STATE_SYNC);
                 }
@@ -169,10 +203,10 @@ public class UserAllDialog extends Dialog{
         @Override public void show() {
             context.findViewById(R.id.v_ready_dialog).setVisibility(View.VISIBLE);
             ((TextView)context.findViewById(R.id.txt_ready_target_data)).setText(
-                    String.format((String)context.getContext().getString(R.string.estcommon_userLink_middelLabel), context.provider, context.getGameuser())
+                    String.format(context.getText(R.string.estcommon_userLink_middelLabel), context.provider, context.getGameuser())
             );
             ((TextView)context.findViewById(R.id.txt_ready_current_data)).setText(
-                    context.getContext().getString(R.string.estcommon_userLink_bottomLabel)
+                    context.getText(R.string.estcommon_userLink_bottomLabel)
             );
         }
 
@@ -192,17 +226,20 @@ public class UserAllDialog extends Dialog{
      */
     private class Switch implements DialogState {
         private UserAllDialog context;
-        private EditText confirmText;
+        private EditText edConfirm;
 
         private Switch(UserAllDialog ctx) {
             context = ctx;
-            confirmText = context.findViewById(R.id.ed_switch_confirm_word);
+            edConfirm = context.findViewById(R.id.ed_switch_confirm_word);
+            edConfirm.setHint(context.getText(R.string.estcommon_userLoad_input));
 
             // 계정 불러오기 동의 버튼에 대한 핸들러 등록
-            context.findViewById(R.id.btn_switch_confirm).setOnClickListener(new View.OnClickListener() {
+            Button btnConfirm = context.findViewById(R.id.btn_switch_confirm);
+            btnConfirm.setText(context.getText(R.string.estcommon_userLoad_confirmButton));
+            btnConfirm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if ("confirm".equals(confirmText.getText().toString().trim())) {
+                    if ("confirm".equals(edConfirm.getText().toString().trim())) {
                         context.sessionManager
                                 .create(context.identityId)
                                 .right(new Function1<String, Unit>() {
@@ -224,8 +261,8 @@ public class UserAllDialog extends Dialog{
                                     }
                                 });
                     } else {
-                        confirmText.setText("");
-                        confirmText.setHint(R.string.estcommon_userLoad_input_wrong);
+                        edConfirm.setText("");
+                        edConfirm.setHint(context.getText(R.string.estcommon_userLoad_input_wrong));
                     }
                 }
             });
@@ -240,8 +277,14 @@ public class UserAllDialog extends Dialog{
 
         @Override public void show() {
             context.findViewById(R.id.v_switch_dialog).setVisibility(View.VISIBLE);
+            ((TextView)context.findViewById(R.id.txt_switch_title)).setText(
+                    context.getText(R.string.estcommon_userLoad_title)
+            );
             ((TextView)context.findViewById(R.id.txt_switch_confirm_desc)).setText(
-                    context.getContext().getString(R.string.estcommon_userLoad_content)
+                    context.getText(R.string.estcommon_userLoad_content)
+            );
+            ((TextView)context.findViewById(R.id.txt_switch_confirm_word)).setText(
+                    context.getText(R.string.estcommon_userLoad_confirmText)
             );
         }
 
@@ -265,13 +308,12 @@ public class UserAllDialog extends Dialog{
             context = ctx;
 
             // 계정 전환 버튼에 대한 핸들러 등록
-            context.findViewById(R.id.btn_sync_confirm).setOnClickListener(new View.OnClickListener() {
+            Button btnConfirm = context.findViewById(R.id.btn_sync_confirm);
+            btnConfirm.setText(context.getText(R.string.estcommon_userGuest_loginBt));
+            btnConfirm.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View view) {
-                    Map<String, String> data = new HashMap<>();
-                    data.put("provider", context.provider);
-
                     context.sessionManager
-                            .sync(data, context.identityId, true)
+                            .sync(syncData, context.identityId, true)
                             .right(new Function1<Result.SyncComplete, Unit>() {
                                 @Override
                                 public Unit invoke(Result.SyncComplete result) {
@@ -291,7 +333,9 @@ public class UserAllDialog extends Dialog{
             });
 
             // 이전으로 돌아기기 버튼에 대한 핸들러 등록
-            context.findViewById(R.id.btn_sync_cancel).setOnClickListener(new View.OnClickListener() {
+            Button btnCancel = context.findViewById(R.id.btn_sync_cancel);
+            btnCancel.setText(context.getText(R.string.estcommon_userGuest_beforeBt));
+            btnCancel.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View view) {
                     context.changeState(context.STATE_READY);
                 }
@@ -307,8 +351,11 @@ public class UserAllDialog extends Dialog{
 
         @Override public void show() {
             context.findViewById(R.id.v_sync_dialog).setVisibility(View.VISIBLE);
+            ((TextView)context.findViewById(R.id.txt_sync_title)).setText(
+                    getText(R.string.estcommon_userGuest_title)
+            );
             ((TextView)context.findViewById(R.id.txt_sync_description)).setText(
-                    String.format((String)context.getContext().getString(R.string.estcommon_userGuest_middle), context.getGameuser())
+                    String.format(context.getText(R.string.estcommon_userGuest_middle), context.getGameuser())
             );
         }
 
@@ -331,10 +378,12 @@ public class UserAllDialog extends Dialog{
 
         private Complete(UserAllDialog ctx, Result.Login data) {
             context = ctx;
-            this.result = data;
+            result = data;
 
             // 확인 버튼에 대한 핸들러 등록
-            context.findViewById(R.id.btn_complete_confirm).setOnClickListener(new View.OnClickListener() {
+            Button btnConfirm = context.findViewById(R.id.btn_complete_confirm);
+            btnConfirm.setText(context.getText(R.string.estcommon_userResult_confirm));
+            btnConfirm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     context.dismiss();
@@ -352,6 +401,15 @@ public class UserAllDialog extends Dialog{
 
         @Override public void show() {
             context.findViewById(R.id.v_complete_dialog).setVisibility(View.VISIBLE);
+            ((TextView)context.findViewById(R.id.txt_complete_title)).setText(
+                    context.getText(R.string.estcommon_userResult_title)
+            );
+            ((TextView)context.findViewById(R.id.txt_complete_subtitle)).setText(
+                    context.getText(R.string.estcommon_userResult_subTitle)
+            );
+            ((TextView)context.findViewById(R.id.txt_complete_message)).setText(
+                    context.getText(R.string.estcommon_userResult_titleMove)
+            );
         }
 
         @Override public void hide() {

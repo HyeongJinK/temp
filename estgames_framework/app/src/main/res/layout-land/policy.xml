@@ -6,7 +6,7 @@
     android:background="#353B48">
 
     <ImageButton
-        android:id="@+id/policyClosebt"
+        android:id="@+id/btn_term_close"
         android:layout_width="17.5dp"
         android:layout_height="17.5dp"
         android:src="@drawable/btn_close"
@@ -16,6 +16,7 @@
         android:layout_marginTop="10.5dp" />
 
     <TextView
+        android:id="@+id/txt_term_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -25,6 +26,7 @@
         android:text="@string/estcommon_policy_title"/>
 
     <TextView
+        android:id="@+id/txt_title_for_term_of_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -48,18 +50,13 @@
             android:layout_marginLeft="25.5dp"
             android:layout_marginRight="8dp">
             <WebView
-                android:id="@+id/policyWebView1"
+                android:id="@+id/web_term_of_service"
                 android:layout_width="210dp"
                 android:layout_height="130dp"
                 android:layout_marginBottom="8dp">
             </WebView>
-            <!--<ImageButton-->
-                <!--android:layout_width="211dp"-->
-                <!--android:layout_height="36dp"-->
-                <!--android:src="@drawable/Btn_Provision_on"-->
-                <!--/>-->
             <CheckBox
-                android:id="@+id/policybt1"
+                android:id="@+id/chk_agreement_of_service"
                 android:button="@null"
                 android:layout_width="211dp"
                 android:layout_height="36dp"
@@ -75,14 +72,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <WebView
-                android:id="@+id/policyWebView2"
+                android:id="@+id/web_term_of_privacy"
                 android:layout_width="210dp"
                 android:layout_height="130dp"
                 android:layout_marginBottom="8dp">
             </WebView>
 
             <CheckBox
-                android:id="@+id/policybt2"
+                android:id="@+id/chk_agreement_of_privacy"
                 android:button="@null"
                 android:layout_width="211dp"
                 android:layout_height="36dp"

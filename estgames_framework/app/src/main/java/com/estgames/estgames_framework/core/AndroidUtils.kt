@@ -2,6 +2,7 @@ package com.estgames.estgames_framework.core
 
 import android.content.Context
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.provider.Settings
 import android.telephony.TelephonyManager
 import java.io.ByteArrayInputStream
@@ -39,6 +40,7 @@ object AndroidUtils {
         prefs.edit().putString(PREFS_FILE_DEVICE, uuid.toString()).commit()
         return uuid
     }
+
     @JvmStatic
     fun obtainFingerPrint(context: Context): String {
         val pack = context.packageManager.getPackageInfo(
@@ -51,5 +53,12 @@ object AndroidUtils {
             val pk = MessageDigest.getInstance("SHA1").digest(x509.encoded)
             return@map pk.map { String.format("%02x", it) }.reduce { a, b -> "$a:$b"}.toUpperCase()
         }[0]
+    }
+
+    @JvmStatic
+    fun getLocaleText(resourceId: Int, locale: Locale, context: Context): CharSequence? {
+        val conf = Configuration(context.resources.configuration)
+        conf.setLocale(locale)
+        return context.createConfigurationContext(conf).resources.getText(resourceId)
     }
 }

@@ -98,5 +98,5 @@ data class UrlDescription(
         val cs: String,
         val authority: String,
         val contractService: String,
-        val contractPrivate: String
+        val contractPrivacy: String
 )

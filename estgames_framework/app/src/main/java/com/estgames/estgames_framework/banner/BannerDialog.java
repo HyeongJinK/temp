@@ -20,27 +20,33 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.estgames.estgames_framework.R;
 import com.estgames.estgames_framework.common.Action;
 import com.estgames.estgames_framework.common.Banner;
+import com.estgames.estgames_framework.common.ClientPreferences;
+import com.estgames.estgames_framework.core.AndroidUtils;
 
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by mp on 2018. 1. 24..
  */
 
 public class BannerDialog extends Dialog {
+    private ClientPreferences preferences;
     private BannerCacheRepository cache;
     private BannerDialogHandler handler;
 
     private BannerChain bannerChain;
 
-    public BannerDialog(Context context, List<Banner> banners, BannerCacheRepository repository)  {
+    public BannerDialog(Context context, List<Banner> banners, BannerCacheRepository repository, ClientPreferences pref)  {
         super(context, android.R.style.Theme_NoTitleBar_Fullscreen);
+        preferences = pref;
         cache = repository;
 
         bannerChain = new BannerChain(this);
@@ -87,6 +93,10 @@ public class BannerDialog extends Dialog {
                 cache.setHideOnToday(bannerChain.getBannerName(), b);
             }
         });
+
+        ((TextView)findViewById(R.id.txt_hide_for_a_day)).setText(
+                AndroidUtils.getLocaleText(R.string.estcommon_banner_oneDay, preferences.getLocale(), getContext())
+        );
 
         setOnDismissListener(new OnDismissListener() {
             @Override public void onDismiss(DialogInterface dialogInterface) {

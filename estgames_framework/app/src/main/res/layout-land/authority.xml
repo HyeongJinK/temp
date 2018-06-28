@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/authority_title"
+        android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -17,24 +17,15 @@
         android:textStyle="bold" />
 
     <WebView
-        android:id="@+id/authority_webView"
+        android:id="@+id/web_permissions"
         android:layout_width="436dp"
         android:layout_height="225dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15.5dp">
     </WebView>
-    <!--<TextView-->
-        <!--android:layout_width="436dp"-->
-        <!--android:layout_height="225dp"-->
-        <!--android:layout_gravity="center_horizontal"-->
-        <!--android:text="1. 기기, 사진, 미디어 파일 액세스 (필수적 접근 권한)-->
-<!--게임을 설치하거나 게임 데이터를 저장하기 위해 필요한 권한입니다."-->
-        <!--android:textColor="#ffffff"-->
-        <!--android:textSize="11sp"-->
-        <!--android:textStyle="bold" />-->
 
     <Button
-        android:id="@+id/authority_bt"
+        android:id="@+id/btn_close"
         android:layout_width="161dp"
         android:layout_height="36dp"
         android:layout_gravity="center_horizontal"

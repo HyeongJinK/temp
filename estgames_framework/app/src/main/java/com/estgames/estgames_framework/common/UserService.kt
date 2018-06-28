@@ -1,6 +1,7 @@
 package com.estgames.estgames_framework.common
 
 import android.app.Activity
+import android.os.Bundle
 import com.amazonaws.mobile.auth.core.*
 import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
@@ -11,7 +12,13 @@ import com.estgames.estgames_framework.core.Fail
 import com.estgames.estgames_framework.core.Result
 import com.estgames.estgames_framework.core.session.SessionManager
 import com.estgames.estgames_framework.user.*
+import com.facebook.AccessToken
+import com.facebook.GraphRequest
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import java.lang.Exception
+import java.util.concurrent.Callable
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 /**
  * Created by mp on 2018. 5. 2..
@@ -40,6 +47,10 @@ class UserService constructor(callingActivity: Activity) {
 
     val identityManager: IdentityManager by lazy {
         IdentityManager.getDefaultIdentityManager()
+    }
+
+    private val preferences: ClientPreferences by lazy {
+        ClientPreferences(callingActivity)
     }
 
     fun createUser() {
@@ -85,6 +96,32 @@ class UserService constructor(callingActivity: Activity) {
         EgAwsSignInActivity.startSignInActivity(callingActivity, config)
     }
 
+    private fun retrieveEmail(provider: String): String? {
+        return when (provider.toLowerCase()) {
+            "facebook" -> Executors.newSingleThreadExecutor().use { executor ->
+                val result = executor.submit(Callable {
+                    return@Callable GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(), null)
+                            .apply {
+                                parameters = Bundle().apply { putString("fields", "email, name, id") }
+                            }
+                            .executeAndWait()
+                }).get().jsonObject
+
+                return@use if (result.has("email")) result.getString("email") else null
+            }
+            "google" -> GoogleSignIn.getLastSignedInAccount(callingActivity)!!.email
+            else -> null
+        }
+    }
+
+    private inline fun <R> ExecutorService.use(code: (ExecutorService) -> R): R {
+        try {
+            return code(this)
+        } finally {
+            this.shutdown()
+        }
+    }
+
     private fun initLoginHandler() {
         // Cognito 의 SNS 로그인 결과 Handler 등록.
         identityManager.login(callingActivity, object: DefaultSignInResultHandler() {
@@ -92,8 +129,12 @@ class UserService constructor(callingActivity: Activity) {
                 callingActivity.runOnUiThread {
                     identityManager.getUserID(object: IdentityHandler{
                         override fun onIdentityId(identityId: String?) {
+                            val email = retrieveEmail(provider!!.displayName)
+                            val data = hashMapOf("provider" to provider!!.displayName)
+                            if (email != null) data.put("email", email)
+
                             sessionManager
-                                    .sync(hashMapOf("provider" to provider!!.displayName, "email" to "test@facebook.com"), identityId)
+                                    .sync(data, identityId)
                                     .right {
                                         loginResultHandler.onComplete(Result.Login("LOGIN", it.egId, provider!!.displayName))
                                     }
@@ -102,7 +143,11 @@ class UserService constructor(callingActivity: Activity) {
                                             is Result.SyncFailure -> {
                                                 // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
                                                 callingActivity.runOnUiThread {
-                                                    userAllDialog = UserAllDialog(callingActivity, identityId!!, provider.displayName, err.egId).apply {
+                                                    userAllDialog = UserAllDialog(callingActivity, preferences).apply {
+                                                        setIdentityId(identityId!!)
+                                                        setProvider(provider.displayName)
+                                                        setEgId(err.egId)
+                                                        setData(data)
                                                         setOnCompleted { loginResultHandler.onComplete(it) }
                                                         setOnCancel {
                                                             signout()

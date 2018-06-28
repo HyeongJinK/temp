@@ -5,6 +5,7 @@ import com.amazonaws.mobile.auth.core.IdentityManager
 import com.amazonaws.mobile.auth.facebook.FacebookSignInProvider
 import com.amazonaws.mobile.auth.google.GoogleSignInProvider
 import com.amazonaws.mobile.config.AWSConfiguration
+import com.estgames.estgames_framework.common.ClientPreferences
 import com.estgames.estgames_framework.core.session.PreferenceSessionRepository
 import com.estgames.estgames_framework.core.session.SessionRepository
 import com.google.android.gms.common.Scopes
@@ -158,14 +159,13 @@ class AwsPlatformContext(context: Context, option: Configuration.Option): Platfo
             IdentityManager.setDefaultIdentityManager(IdentityManager(context.applicationContext, awsCfg));
         }
 
-        FacebookSignInProvider.setPermissions("public_profile");
+        FacebookSignInProvider.setPermissions("public_profile", "email");
         GoogleSignInProvider.setPermissions(Scopes.EMAIL, Scopes.PROFILE);
 
         IdentityManager.getDefaultIdentityManager().addSignInProvider(FacebookSignInProvider::class.java)
         IdentityManager.getDefaultIdentityManager().addSignInProvider(GoogleSignInProvider::class.java)
     }
 
-//    override val configuration: Configuration = Configuration(context.applicationContext)
     override val configuration: Configuration = Configuration.build(context.applicationContext, option)
     override val deviceId: String = "${AndroidUtils.obtainDeviceId(context.applicationContext)}@android"
     override val sessionRepository: SessionRepository = PreferenceSessionRepository(context.applicationContext)

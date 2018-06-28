@@ -6,7 +6,7 @@ import org.json.JSONObject
 sealed class Api(val url: String, val method: Method, val data: Map<String, Any>) {
     companion object {
         private const val MP_PROCESS_DESCRIPTION_API_HOST = "https://m-linker.estgames.co.kr/sd_v_1_live"
-        private const val MP_GAME_API_HOST = "https://mp-pub.estgames.co.kr/live/game"
+        private const val MP_GAME_API_HOST = "https://mp-pub.estgames.co.kr"
         private const val MP_BRIDGE_API_HOST = "https://api-account.estgames.co.kr"
         private const val MP_BRIDGE_API_VERSION = "v2"
     }
@@ -74,6 +74,10 @@ sealed class Api(val url: String, val method: Method, val data: Map<String, Any>
     )
 
     class GameUser(region: String, egId: String): Api(
-            "$MP_GAME_API_HOST/$region", Method.GET, hashMapOf("eg_id" to egId)
+            "$MP_GAME_API_HOST/live/game/$region", Method.GET, hashMapOf("eg_id" to egId)
+    )
+
+    class GameServiceStatus(region: String): Api (
+            "$MP_GAME_API_HOST/live/game-open-status", Method.GET, hashMapOf("region" to region)
     )
 }
