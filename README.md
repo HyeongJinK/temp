@@ -16,9 +16,9 @@
   * OnReceived에 result값이 true면 오픈, false면 점검
   * onFail 결과값으로 오는 에러들
     * START_API_DATA_INIT : 스타트API에 오픈 유/무 URL를 받지 못함 
-    * API_OMITTED_PARAMETER : 리젼값이 잘못설정됨
-    * API_BAD_REQUEST : 서버에서 잘못된 값을 가져옴
-    * API_REQUEST_FAIL : 호출실패
+    * API_BAD_REQUEST : 리젼값이 잘못설정됨
+    * API_UNKNOWN_RESPONSE : 서버에서 잘못된 값을 가져옴
+    * API_REQUEST_FAIL : 네트워크 에러
 
 :new: 업데이트 (1.1.0)
 ---
@@ -478,9 +478,10 @@ func googleEmail() -> String {
 |API_ACCESS_DENIED|API 호출 권한이 없음|
 |API_OMITTED_PARAMETER|API 호출 파라미터 에러|
 |API_UNSUPPORTED_METHOD||
-|API_BAD_REQUEST|잘못된 값 리턴|
+|API_BAD_REQUEST|잘못된 값으로 호출|
 |API_INCOMPATIBLE_VERSION||
 |API_CHARACTER_INFO|캐릭터 정보 API 에러|
+|API_UNKNOWN_RESPONSE| API 잘못된 정보 린턴|
 |ACCOUNT_NOT_EXIST|계정정보가 없음|
 |ACCOUNT_ALREADY_EXIST|이미 등록된 계정|
 |ACCOUNT_INVALID_PROPERTY||

@@ -35,15 +35,13 @@ import Alamofire
                                     onReceived(false)
                                 }
                             } else {
-                                onFail(Fail.API_OMITTED_PARAMETER)
+                                onFail(Fail.API_BAD_REQUEST)
                             }
                         } else {
-                            onFail(Fail.API_BAD_REQUEST)
-                            //self.estCommonFailCallBack(Fail.START_API_DATA_FAIL)
+                            onFail(Fail.API_UNKNOWN_RESPONSE)
                         }
                     } else {
                         onFail(Fail.API_REQUEST_FAIL)
-                        //self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
                     }
             }
         

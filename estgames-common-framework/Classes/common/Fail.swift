@@ -29,6 +29,7 @@ import Foundation
     case API_BAD_REQUEST
     case API_INCOMPATIBLE_VERSION
     case API_CHARACTER_INFO
+    case API_UNKNOWN_RESPONSE
     
     case ACCOUNT_NOT_EXIST
     case ACCOUNT_ALREADY_EXIST
