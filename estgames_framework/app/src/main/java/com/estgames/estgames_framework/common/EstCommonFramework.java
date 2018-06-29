@@ -101,7 +101,7 @@ public class EstCommonFramework {
                         initCallBack.accept(temp);
                     } catch (Exception e) {
                         Log.e(TAG, "Fail to initialize process...", e);
-                        estCommonFailCallBack.accept(Fail.API_REQUEST_FAIL);
+                        estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
                     }
                 }
             };
@@ -132,7 +132,7 @@ public class EstCommonFramework {
                 bannerDialog.show();
             }
         } else {
-            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+            estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
         }
     }
 
@@ -157,7 +157,7 @@ public class EstCommonFramework {
                 defaultProcess();
             }
         } else {
-            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+            estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
         }
     }
 
@@ -166,7 +166,7 @@ public class EstCommonFramework {
             authorityDialog = new AuthorityDialog(context, preferences, pd.getUrl().getAuthority(), authorityCallBack);
             authorityDialog.show();
         } else {
-            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+            estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
         }
     }
 
@@ -191,7 +191,7 @@ public class EstCommonFramework {
                 policyDialog.show();
             }
         } else {
-            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+            estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
         }
     }
 
@@ -213,7 +213,7 @@ public class EstCommonFramework {
                 defaultProcess();
             }
         } else {
-            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+            estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
         }
     }
 
@@ -276,7 +276,7 @@ public class EstCommonFramework {
             index = 0;
             processCheck.run();
         } else {
-            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+            estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
         }
     }
 
@@ -285,33 +285,39 @@ public class EstCommonFramework {
     }
 
     public void showNotice() {
-        if (pd != null) {
-            Token token = sessionManager.getToken();
+        Token token = sessionManager.getToken();
+        if (token == null) {
+            estCommonFailCallBack.accept(Fail.TOKEN_EMPTY);
+        } else if (pd == null){
+            estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
+        } else {
             notice = new WebViewDialog(context, pd.getUrl().getNotice() + "?eg_token=" + token.getEgToken() + "&lang=" + getLanguage());
             notice.show();
-        } else {
-            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
         }
     }
 
     public void showCSCenter() {
         Token token = sessionManager.getToken();
-        if (pd != null) {
+        if (token == null) {
+            estCommonFailCallBack.accept(Fail.TOKEN_EMPTY);
+        } else if(pd == null) {
+            estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
+        } else {
             cscenter = new WebViewDialog(context, pd.getUrl().getCs() + "?eg_token=" + token.getEgToken() + "&lang=" + getLanguage());
             cscenter.show();
-        } else {
-            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
         }
     }
 
     public void showEvent() {
         Token token = sessionManager.getToken();
-        if (pd != null) {
+        if (token == null) {
+            estCommonFailCallBack.accept(Fail.TOKEN_EMPTY);
+        } else if (pd == null) {
+            estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
+        } else {
             String url = String.format("%s?eg_token=%s&lang=%s", pd.getUrl().getEvent(), token.getEgToken(), getLanguage());
             WebViewDialog eventDialog = new WebViewDialog(context, url);
             eventDialog.show();
-        } else {
-            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
         }
     }
 

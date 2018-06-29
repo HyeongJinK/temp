@@ -16,12 +16,20 @@ class SessionManager(context:Context) {
 
     val hasSession: Boolean get() { return _platform.sessionRepository.hasSession }
 
-    val profile: Profile get() {
-        return _platform.sessionRepository.session as Profile
+    val profile: Profile? get() {
+        val s = _platform.sessionRepository.session
+        return when(s) {
+            is Profile -> s
+            else -> null
+        }
     }
 
-    val token: Token get() {
-        return _platform.sessionRepository.session as Token
+    val token: Token? get() {
+        val s = _platform.sessionRepository.session
+        return when(s) {
+            is Token -> s
+            else -> null
+        }
     }
 
     fun create(principal:String): Either<EGException, String> {

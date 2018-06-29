@@ -2,6 +2,7 @@ package com.estgames.estgames_framework.common
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import com.amazonaws.mobile.auth.core.*
 import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
@@ -173,6 +174,7 @@ class UserService constructor(callingActivity: Activity) {
                         }
 
                         override fun handleError(exception: Exception?) {
+                            Log.e("UserService", "SNS Login failed!!!", exception)
                             loginResultHandler.onFail(Fail.ACCOUNT_SYNC_FAIL)
                         }
                     })
