@@ -226,7 +226,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func noticeTest(_ sender: Any) {
-        estgamesCommon.showNotice()
+        print(Fail.START_API_NOT_CALL.describe)
+        //estgamesCommon.showNotice()
     }
     
     @IBAction func faqTest(_ sender: Any) {
