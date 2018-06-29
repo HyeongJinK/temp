@@ -40,6 +40,7 @@ class GameAgent(context: Context, configuration: Configuration) {
                 }.left { e ->
                     Log.e(TAG, e.message, e)
                     when (e) {
+                        is InternalException -> l.onError(Fail.API_BAD_REQUEST)
                         is EGException -> l.onError(e.code)
                         else -> l.onError(Fail.API_REQUEST_FAIL)
                     }
@@ -49,11 +50,15 @@ class GameAgent(context: Context, configuration: Configuration) {
     }
 
     fun retrieveStatus(): Boolean {
-        return Executors.newSingleThreadExecutor().use { exe ->
-            val result = exe.submit(Callable {
-                retrieveStatusAsJson().getString("status").equals("on")
-            })
-            return@use result.get()
+        try {
+            return Executors.newSingleThreadExecutor().use { exe ->
+                val result = exe.submit(Callable {
+                    retrieveStatusAsJson().getString("status").equals("on")
+                })
+                return@use result.get()
+            }
+        } catch (e: InternalException) {
+            throw Fail.API_BAD_REQUEST.with(e.message)
         }
     }
 
@@ -63,15 +68,15 @@ class GameAgent(context: Context, configuration: Configuration) {
 
     private fun Api.json(): JSONObject {
         val r = this.invoke()
-        if (r.status == 200) {
-            return JSONObject(String(r.content, Charsets.UTF_8))
-        }
-
         try {
             var msg = JSONObject(String(r.content, Charsets.UTF_8))
-            throw Fail.resolve(msg.getString("code"), msg.getString("message"))
+            if (r.status != 200) {
+                return msg
+            } else {
+                throw InternalException(msg.getInt("code"), msg.getString("message"))
+            }
         } catch (e: JSONException) {
-            throw Fail.API_REQUEST_FAIL.with("API Request Fail. - http response status : ${r.status}, message: ${r.message}")
+            throw Fail.API_UNKNOWN_RESPONSE.with("API Request Fail. - http response status : ${r.status}, message: ${r.message}")
         }
     }
 
@@ -100,4 +105,6 @@ class GameAgent(context: Context, configuration: Configuration) {
             listener(result)
         }
     }
+
+    private class InternalException(val code: Int, override val message: String): Exception(message)
 }

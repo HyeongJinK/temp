@@ -130,13 +130,13 @@ class UserService constructor(callingActivity: Activity) {
                     identityManager.getUserID(object: IdentityHandler{
                         override fun onIdentityId(identityId: String?) {
                             val email = retrieveEmail(provider!!.displayName)
-                            val data = hashMapOf("provider" to provider!!.displayName)
+                            val data = hashMapOf("provider" to provider.displayName)
                             if (email != null) data.put("email", email)
 
                             sessionManager
                                     .sync(data, identityId)
                                     .right {
-                                        loginResultHandler.onComplete(Result.Login("LOGIN", it.egId, provider!!.displayName))
+                                        loginResultHandler.onComplete(Result.Login("LOGIN", it.egId, provider.displayName))
                                     }
                                     .left { err ->
                                         when(err) {
@@ -208,10 +208,9 @@ class UserService constructor(callingActivity: Activity) {
     fun onSwitch() {
         sessionManager.create(identityManager.cachedUserID).right {
             //userResultDialog.show()
-        }.left {
-            val code: EGException = it as EGException
+        }.left {e ->
             identityManager.signOut()
-            failCallBack.accept(code.code)
+            failCallBack.accept(e.code)
             userAllDialog!!.dismiss()
         }
     }

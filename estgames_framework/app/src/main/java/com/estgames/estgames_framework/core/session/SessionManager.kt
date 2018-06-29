@@ -212,16 +212,22 @@ class SessionManager(context:Context) {
     }
 
     private fun Api.json(): JSONObject {
-        val r = this.invoke()
-        if (r.status == 200) {
-            return JSONObject(String(r.content, Charsets.UTF_8))
-        }
-
         try {
-            var msg = JSONObject(String(r.content, Charsets.UTF_8))
-            throw Fail.resolve(msg.getString("code"), msg.getString("message"))
-        } catch (e: JSONException) {
-            throw Fail.API_REQUEST_FAIL.with("API Request Fail. - http response status : ${r.status}, message: ${r.message}")
+            val r = this.invoke()
+            try {
+                if (r.status == 200) {
+                    return JSONObject(String(r.content, Charsets.UTF_8))
+                } else {
+                    var msg = JSONObject(String(r.content, Charsets.UTF_8))
+                    throw Fail.resolve(msg.getString("code"), msg.getString("message"))
+                }
+            } catch (e: JSONException) {
+                    throw Fail.API_UNKNOWN_RESPONSE.with("API Request Fail. - http response status : ${r.status}, message: ${r.message}")
+            }
+        } catch (e: EGException) {
+            throw e
+        } catch (e: Exception) {
+            throw Fail.API_REQUEST_FAIL.with("API Request Failed!! : ${e.message}", e)
         }
     }
 

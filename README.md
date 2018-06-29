@@ -2,6 +2,17 @@
 
 ## 업데이트 사항
 
+:new: 1.2.0 업데이트 사항
+* SNS 로그인 레이아웃 개선 - 배경화면 및 SNS 로그인 버튼 레이아웃 수정
+* SDK 의 언어 설정 기능 추가
+* 배너 이미지 크기 조절 방식 변경
+  * 비율유지 전체화면 -> 비율유지 이미지 자름으로 변경되었습니다.
+  * 이미지 뷰의 레터박스가 사라지고 기기 화면의 크기에 맞게 이미지가 재조정되어 보입니다.
+* GameAgent 클래스 추가
+  * 게임서비스의 오픈 여부를 확인하는 API를 추가했습니다.
+* SNS 사용자 계정 연계시 사용자 email 정보 획등
+  * 이제 AOS SDK 에서도 계정 연계시 사용자의 email 정보를 저장합니다.
+
 :new: 1.1.0 업데이트 사항
 * showEvent() 함수 추가 : 이벤트 페이지를 보여주는 웹뷰 다이얼로그 입니다.
 * 배너 기능 추가
@@ -51,39 +62,7 @@
 * EstCommonFramework의 에러 콜백은 estCommonFailCallBack 을 호출합니다.
   * 타입은 CustomConsumer\<Fail> 입니다.
 
-```java
-/*
-    Fail enum 정의입니다.
-*/
 
-    START_API_NOT_CALL,     //기존 네트워크 에러 이름이 변경 되었습니다.
-
-    TOKEN_EMPTY,
-    TOKEN_CREATION,
-    TOKEN_INVALID("session.invalid"),
-    TOKEN_EXPIRED("session.expired"),
-
-    CLIENT_UNKNOWN_PROVIDER("api.provider"),
-    CLIENT_NOT_REGISTERED("app.none"),
-
-    API_REQUEST_FAIL,
-    API_ACCESS_DENIED("auth.forbidden"),
-    API_OMITTED_PARAMETER("api.param"),
-    API_UNSUPPORTED_METHOD("api.method"),
-    API_BAD_REQUEST("api.request"),
-    API_INCOMPATIBLE_VERSION("api.version"),
-    API_CHARACTER_INFO,
-
-    ACCOUNT_NOT_EXIST("account.none"),
-    ACCOUNT_ALREADY_EXIST("account.duplicate"),
-    ACCOUNT_INVALID_PROPERTY("account.value"),
-    ACCOUNT_SYNC_FAIL("account.sync"),
-
-    SIGN_AWS_LOGIN_VIEW,
-    SIGN_GOOGLE_SDK,
-    SIGN_FACEBOOK_SDK,
-    SIGN_AWS_SESSION;
-```
 
 :new: 1.0.8 업데이트 사항
 
@@ -439,6 +418,47 @@ region      | String or LazyOption\<String> | Region 속성을 설정합니다.
 ```
 
 
+### API 예외 상황 코드
+```java
+/*
+    Fail enum 정의입니다.
+*/
+    START_API_NOT_CALL,                         // start api 호출 실패
+    START_API_DATA_FAIL,                        // client process description data 오류
+    START_API_DATA_INIT,                        // client process description 초기화 실패
+
+    PROCESS_CONTRACT_DENIED,                    // 약관 동의 거부
+
+    TOKEN_EMPTY,                                // 토큰 없음
+    TOKEN_CREATION,                             // 토큰 생성 실패
+    TOKEN_INVALID("session.invalid"),           // 유효하지 않은 토큰
+    TOKEN_EXPIRED("session.expired"),           // 만료된 토큰
+
+    CLIENT_UNKNOWN_PROVIDER("api.provider"),     // 연계할 수 없는 프로바이더
+    CLIENT_NOT_REGISTERED("app.none"),           // 등록되지 않은 클라이언트
+
+    API_REQUEST_FAIL,                            // MP API 요청 실패
+    API_ACCESS_DENIED("auth.forbidden"),         // API 접근 권한 없음
+    API_OMITTED_PARAMETER("api.param"),          // API 파라미터가 누락됨
+    API_UNSUPPORTED_METHOD("api.method"),        // 허용되지 않은 메소드로 요청
+    API_BAD_REQUEST("api.request"),              // 잘못된 API 요청
+    API_INCOMPATIBLE_VERSION("api.version"),     // API 버전 호환 안됨
+    API_CHARACTER_INFO,                          // 캐릭터 정보 조회 실패
+    API_UNKNOWN_RESPONSE,                        // API 응답을 변환 할 수 없음
+
+    ACCOUNT_NOT_EXIST("account.none"),            // 계정정보 없음
+    ACCOUNT_ALREADY_EXIST("account.duplicate"),   // 이미 등록된 계정임
+    ACCOUNT_INVALID_PROPERTY("account.value"),    // 유효하지 않은 계정 속성
+    ACCOUNT_SYNC_FAIL("account.sync"),            // 계정연동 실패
+
+    SIGN_AWS_LOGIN_VIEW,
+    SIGN_GOOGLE_SDK,
+    SIGN_FACEBOOK_SDK,
+    SIGN_AWS_SESSION,
+    SIGN_SWITCH_OR_SYNC
+
+```
+
 ### Startup 프로세스 API (배너, 이용약관, 권한)
 
 `EstCommonFramework` 클래스는 앱 시작시 호출할 수 있는 공통 프로세스 기능을 포함하고 있습니다. Activity가 시작될때 객체를 생성하도록 합니다.
@@ -668,4 +688,57 @@ Token token = uv.getSessionManager().getToken();
 txtEgToken.text = "EG Token : " + token.getEgToken();
 txtRefreshToken.text = "Refresh Token : " + token.getRefreshToken();
 ```
-               
+
+### Game Agent
+
+EG 플랫폼과 연동된 게임 서비스의 상태 및 정보를 조회하는 기능을 포함하고 있습니다.
+
+#### 1. GameAgent 객체 생성
+```java
+    @Overrid
+    public void onCreate(Bundle savedInstanceState) {
+        GameAgent ag = new GameAgent(this);
+    }
+}
+```
+
+#### 2. Game Server 오픈 여부 조회
+
+GameAgent 객체를 통해 현재 게임 서비스의 open / close 여부를 확인 할 수 있습니다. 이 메서드는 비동기로 동작합니다. 따라서 메소드 호출시 핸들러를 필요로 합니다.
+
+```java
+    GameAgent ga = new GameAgent(...);
+
+    ...
+
+    ga.retrieveStatus(new GameAgent.StatusReceiver() {
+        @Override
+        public void onReceived(boolean isServiceOn) {
+            // isServiceOn == true 이면 서비스가 오픈된 상태 아니면 닫힌 상태입니다.
+            // 클라이언트 코드 작성
+        }
+
+        @Override
+        public void onFail(Fail code) {
+            // 상태 조회시 오류가 발생한 경우
+        }
+    });
+
+```
+
+##### `GameAgent.StatusReceiver` 인터페이스
+
+게임 서비스 상태 요청에 대한 응답 받는 핸들러 인터페이스입니다. 메소드는 다음과 같습니다.
+
+* public void onReceived(boolean isServiceOn) : 서버로부터 확인 응답이 왔을 경우 호출됩니다.
+  * isServiceOn  이 `true` 인 경우 서비스가 오픈된 상태입니다.
+* public void onFail(Fail code) : 서버로부터 정상적인 응답을 받지 못 했을 경우 호출됩니다. 응답 코드는 다음과 같습니다.
+
+코드 | 설명
+----|------
+API_BAD_REQUEST | 클라이언트가 잘못된 요청을 보낸경우. 예) 잘못된 region값으로 호출 등
+API_UNKNOWN_RESPONSE | 서버로부터 정상적인 응답값을 받지 못한 경우.
+API_REQUEST_FAIL | 서버 API 호출 실패
+
+
+
