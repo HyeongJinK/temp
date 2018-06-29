@@ -70,7 +70,7 @@ class GameAgent(context: Context, configuration: Configuration) {
         val r = this.invoke()
         try {
             var msg = JSONObject(String(r.content, Charsets.UTF_8))
-            if (r.status != 200) {
+            if (r.status == 200) {
                 return msg
             } else {
                 throw InternalException(msg.getInt("code"), msg.getString("message"))
