@@ -8,6 +8,7 @@ import com.estgames.estgames_framework.banner.BannerCacheRepository;
 import com.estgames.estgames_framework.banner.BannerDialog;
 import com.estgames.estgames_framework.banner.BannerDialogHandler;
 import com.estgames.estgames_framework.core.Api;
+import com.estgames.estgames_framework.core.EGException;
 import com.estgames.estgames_framework.core.Fail;
 import com.estgames.estgames_framework.core.HttpResponse;
 import com.estgames.estgames_framework.core.PlatformContext;
@@ -101,7 +102,11 @@ public class EstCommonFramework {
                         initCallBack.accept(temp);
                     } catch (Exception e) {
                         Log.e(TAG, "Fail to initialize process...", e);
-                        estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+                        if (e instanceof EGException) {
+                            estCommonFailCallBack.accept(((EGException) e).getCode());
+                        } else {
+                            estCommonFailCallBack.accept(Fail.START_API_NOT_CALL);
+                        }
                     }
                 }
             };
@@ -109,7 +114,11 @@ public class EstCommonFramework {
             startApi.start();
         } catch (Exception e) {
             Log.e(TAG, "Fail to initialize process...", e);
-            estCommonFailCallBack.accept(Fail.API_REQUEST_FAIL);
+            if (e instanceof EGException) {
+                estCommonFailCallBack.accept(((EGException) e).getCode());
+            } else {
+                estCommonFailCallBack.accept(Fail.API_REQUEST_FAIL);
+            }
         }
     }
 

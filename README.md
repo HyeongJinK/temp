@@ -12,6 +12,9 @@
   * 게임서비스의 오픈 여부를 확인하는 API를 추가했습니다.
 * SNS 사용자 계정 연계시 사용자 email 정보 획등
   * 이제 AOS SDK 에서도 계정 연계시 사용자의 email 정보를 저장합니다.
+  * 구글 로그인의 경우 Google-SDK 버전을 확인하셔야 합니다.
+  * 그래들 dependencies 설정에 **implementation 'com.google.android.gms:play-services-auth:15.0.1'** 를 추가해주세요.
+* PlatformContext 설정 옵션이 추가되었습니다.
 
 :new: 1.1.0 업데이트 사항
 * showEvent() 함수 추가 : 이벤트 페이지를 보여주는 웹뷰 다이얼로그 입니다.
@@ -129,6 +132,9 @@ EGMP SDK를 사용하기 위해 build.gradle 파일에 의존성 정보를 등�
 ```gradle
 ....
 dependencies {
+    // Google SDK 를 사용하기위한 모듈
+    implementation 'com.google.android.gms:play-services-auth:15.0.1'
+
     //AWS를 사용하기 위한 공통 모듈
     implementation 'com.android.support:multidex:1.0.1'
     implementation 'com.amazonaws:aws-android-sdk-core:2.6.0'
@@ -372,9 +378,9 @@ public class Application extends MultiDexApplication implements PlatformContext 
 
 ```java
     Configuration.Option option = new Configuration.Option()
-                                          .clientId("other-client-id")
-                                          .secret("other-client-secret")
-                                          .region("test.region");
+                                      .clientId("other-client-id")
+                                      .secret("other-client-secret")
+                                      .region("test.region");
 
     delegateContenxt = new AwsPlatformContext(getApplicationContext(), option);
 ```
@@ -402,6 +408,63 @@ region      | String or LazyOption\<String> | Region 속성을 설정합니다.
             });
 ```
 
+##### Configuration LazyInitializer
+
+`Configuration.Option` 이외에도 `Initializer` 인터페이스를 이용해 Client 설정을 지정할 수 있습니다.
+특히 `LazyInitializer` 클래스를 이용해 초기화 시점을 지연 및 컨트롤 할 수 있습니다.
+
+`Initializer` 인터페이스 API
+
+메소드 이름 | 설명
+------------|----------
+public Configuration getConfiguration() | 초기화된 Configuration 객체를 반환
+public void init(Configuration.Option option) | Configuration.Option 객체를 이용해 Configuration 을 초기화
+
+###### Application.java
+```java
+package  net.sample.android.app;
+...
+
+class Application extends MultiDexApplication implements PlatformContext {
+    private Initializer initializer;
+    ...
+
+
+    public void setConfig(Configuration.Option option) {
+        initializer.init(option);
+    }
+
+    @Override
+    public void onCreate() {
+        ...
+
+        initializer = new LazyInitializer(getApplicationContext());
+        delegateContext = new AwsPlatformContext(getApplicationContext(), initializer);
+    }
+}
+```
+
+###### TestActivity.java
+```java
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        ...
+
+        Configuration.Option option = new Configuration.Option()
+                                      .clientId("other-client-id")
+                                      .secret("other-client-secret")
+                                      .region("test.region");
+
+        Application app = (net.sample.android.app.Application)getAppication();
+        app.setConfig(option);
+
+    }
+
+```
+
+> :warning: `LazyInitializer` 를 사용해 초기화하는 경우 반드시 `init()` 메소드를 호출해서 초기화를 먼저 시켜야 합니다. 초기화 하지 않을경우 `CLIENT_NOT_INITIALZED` 예외가 발생합니다.
+
 ### Application 클래스 등록
 
 초기화 코드를 담고 있는 `Appication` 를 앱이 인식 할 수 있도록 AndroidManifest.xml 파일에 등록해줍니다.
@@ -419,45 +482,32 @@ region      | String or LazyOption\<String> | Region 속성을 설정합니다.
 
 
 ### API 예외 상황 코드
-```java
-/*
-    Fail enum 정의입니다.
-*/
-    START_API_NOT_CALL,                         // start api 호출 실패
-    START_API_DATA_FAIL,                        // client process description data 오류
-    START_API_DATA_INIT,                        // client process description 초기화 실패
 
-    PROCESS_CONTRACT_DENIED,                    // 약관 동의 거부
-
-    TOKEN_EMPTY,                                // 토큰 없음
-    TOKEN_CREATION,                             // 토큰 생성 실패
-    TOKEN_INVALID("session.invalid"),           // 유효하지 않은 토큰
-    TOKEN_EXPIRED("session.expired"),           // 만료된 토큰
-
-    CLIENT_UNKNOWN_PROVIDER("api.provider"),     // 연계할 수 없는 프로바이더
-    CLIENT_NOT_REGISTERED("app.none"),           // 등록되지 않은 클라이언트
-
-    API_REQUEST_FAIL,                            // MP API 요청 실패
-    API_ACCESS_DENIED("auth.forbidden"),         // API 접근 권한 없음
-    API_OMITTED_PARAMETER("api.param"),          // API 파라미터가 누락됨
-    API_UNSUPPORTED_METHOD("api.method"),        // 허용되지 않은 메소드로 요청
-    API_BAD_REQUEST("api.request"),              // 잘못된 API 요청
-    API_INCOMPATIBLE_VERSION("api.version"),     // API 버전 호환 안됨
-    API_CHARACTER_INFO,                          // 캐릭터 정보 조회 실패
-    API_UNKNOWN_RESPONSE,                        // API 응답을 변환 할 수 없음
-
-    ACCOUNT_NOT_EXIST("account.none"),            // 계정정보 없음
-    ACCOUNT_ALREADY_EXIST("account.duplicate"),   // 이미 등록된 계정임
-    ACCOUNT_INVALID_PROPERTY("account.value"),    // 유효하지 않은 계정 속성
-    ACCOUNT_SYNC_FAIL("account.sync"),            // 계정연동 실패
-
-    SIGN_AWS_LOGIN_VIEW,
-    SIGN_GOOGLE_SDK,
-    SIGN_FACEBOOK_SDK,
-    SIGN_AWS_SESSION,
-    SIGN_SWITCH_OR_SYNC
-
-```
+예외코드 (Platform WEB API code) | 설명
+-------|-----
+START_API_NOT_CALL | start api 호출 실패
+START_API_DATA_FAIL | client process description data 오류
+START_API_DATA_INIT | client process description 초기화 실패
+PROCESS_CONTRACT_DENIED | 약관 동의 거부
+TOKEN_EMPTY | 토큰 없음
+TOKEN_CREATION | 토큰 생성 실패
+TOKEN_INVALID (session.invalid) | 유효하지 않은 토큰
+TOKEN_EXPIRED (session.expired) | 만료된 토큰
+CLIENT_NOT_INITIALIZED | 클라이언트 정보가 초기화 되지 않음.
+CLIENT_UNKNOWN_PROVIDER (api.provider) | 연계할 수 없는 프로바이더
+CLIENT_NOT_REGISTERED (app.none) | 등록되지 않은 클라이언트
+API_REQUEST_FAIL | MP API 요청 실패
+API_ACCESS_DENIED (auth.forbidden) | API 접근 권한 없음
+API_OMITTED_PARAMETER (api.param) | API 파라미터가 누락됨
+API_UNSUPPORTED_METHOD (api.method) | 허용되지 않은 메소드로 요청
+API_BAD_REQUEST (api.request) | 잘못된 API 요청
+API_INCOMPATIBLE_VERSION (api.version) | API 버전 호환 안됨
+API_CHARACTER_INFO | 캐릭터 정보 조회 실패
+API_UNKNOWN_RESPONSE | API 응답을 변환 할 수 없음
+ACCOUNT_NOT_EXIST (account.none) | 계정정보 없음
+ACCOUNT_ALREADY_EXIST (account.duplicate) | 이미 등록된 계정임
+ACCOUNT_INVALID_PROPERTY (account.value) | 유효하지 않은 계정 속성
+ACCOUNT_SYNC_FAIL (account.sync) | 계정연동 실패
 
 ### Startup 프로세스 API (배너, 이용약관, 권한)
 

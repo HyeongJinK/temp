@@ -5,7 +5,6 @@ import com.amazonaws.mobile.auth.core.IdentityManager
 import com.amazonaws.mobile.auth.facebook.FacebookSignInProvider
 import com.amazonaws.mobile.auth.google.GoogleSignInProvider
 import com.amazonaws.mobile.config.AWSConfiguration
-import com.estgames.estgames_framework.common.ClientPreferences
 import com.estgames.estgames_framework.core.session.PreferenceSessionRepository
 import com.estgames.estgames_framework.core.session.SessionRepository
 import com.google.android.gms.common.Scopes
@@ -144,11 +143,42 @@ interface PlatformContext {
     val sessionRepository: SessionRepository
 }
 
+interface Initializer {
+    val configuration: Configuration
+    fun init(option: Configuration.Option)
+}
+
+internal class DefaultInitializer(context: Context, option: Configuration.Option): Initializer {
+    override val configuration: Configuration = Configuration.build(context, option);
+    override fun init(option: Configuration.Option) {}
+}
+
+class LazyInitializer(private val context: Context): Initializer {
+    private val proxy = object: Configuration() {
+        var config: Configuration? = null;
+        override val clientId: String
+            get() = config?.clientId ?: throw Fail.CLIENT_NOT_INITIALIZED.with("Client configuration is not initialized!! - check [Client ID]")
+
+        override val secret: String
+            get() = config?.secret ?: throw Fail.CLIENT_NOT_INITIALIZED.with("Client configuration is not initialized!! - check [Client Secret]")
+
+        override val region: String
+            get() = config?.region ?: throw Fail.CLIENT_NOT_INITIALIZED.with("Client configuration is not initialized!! - check [Client Region]")
+    }
+
+    override val configuration: Configuration = proxy
+
+    override fun init(option: Configuration.Option) {
+        this.proxy.config = Configuration.build(context, option)
+    }
+}
+
 /**
  * AWS 설정을 포함한 EG Platform Context Delegate 구현체
  */
-class AwsPlatformContext(context: Context, option: Configuration.Option): PlatformContext {
+class AwsPlatformContext(context: Context, initializer: Initializer): PlatformContext {
     constructor(context: Context): this(context, Configuration.Option())
+    constructor(context: Context, option: Configuration.Option): this(context, DefaultInitializer(context, option))
 
     init {
         // AwsConfiguration 초기화 및 생성
@@ -166,7 +196,7 @@ class AwsPlatformContext(context: Context, option: Configuration.Option): Platfo
         IdentityManager.getDefaultIdentityManager().addSignInProvider(GoogleSignInProvider::class.java)
     }
 
-    override val configuration: Configuration = Configuration.build(context.applicationContext, option)
+    override val configuration: Configuration = initializer.configuration
     override val deviceId: String = "${AndroidUtils.obtainDeviceId(context.applicationContext)}@android"
     override val sessionRepository: SessionRepository = PreferenceSessionRepository(context.applicationContext)
 }
