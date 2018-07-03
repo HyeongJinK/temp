@@ -3,6 +3,7 @@ package com.estgames.estgames_framework.policy;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -98,16 +99,9 @@ public class PolicyDialog extends Dialog {
     private void setTermOfService() {
         ((TextView)findViewById(R.id.txt_title_for_term_of_service)).setText(getLocaleText(R.string.estcommon_policy_subTitle));
 
-        webTermOfService = findViewById(R.id.web_term_of_service);
+        webTermOfService = findAndSetView(R.id.web_term_of_service);
 
         if (termOfService != null && !termOfService.isEmpty()) {
-            webTermOfService.getSettings().setJavaScriptEnabled(true);
-            webTermOfService.setWebViewClient(new WebViewClient() {
-                @Override
-                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                    return super.shouldOverrideUrlLoading(view, request);
-                }
-            });
             webTermOfService.loadUrl(termOfService);
         }
 
@@ -132,16 +126,9 @@ public class PolicyDialog extends Dialog {
             subTitle.setText(getLocaleText(R.string.estcommon_policy_privacy));
         }
 
-        webTermOfPrivacy = findViewById(R.id.web_term_of_privacy);
+        webTermOfPrivacy = findAndSetView(R.id.web_term_of_privacy);
 
         if (termOfPrivacy != null && !termOfPrivacy.isEmpty()) {
-            webTermOfPrivacy.getSettings().setJavaScriptEnabled(true);
-            webTermOfPrivacy.setWebViewClient(new WebViewClient() {
-                @Override
-                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                    return super.shouldOverrideUrlLoading(view, request);
-                }
-            });
             webTermOfPrivacy.loadUrl(termOfPrivacy);
         }
 
@@ -158,6 +145,23 @@ public class PolicyDialog extends Dialog {
                 }
             }
         });
+    }
+
+    private WebView findAndSetView(int resourceId) {
+        WebView view = findViewById(resourceId);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            view.getSettings().setSafeBrowsingEnabled(false);
+        }
+        view.getSettings().setJavaScriptEnabled(true);
+        view.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                return super.shouldOverrideUrlLoading(view, request);
+            }
+        });
+
+        return view;
     }
 
     private String getLocaleText(int resourceId) {

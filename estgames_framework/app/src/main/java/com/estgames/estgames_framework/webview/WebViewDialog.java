@@ -2,6 +2,7 @@ package com.estgames.estgames_framework.webview;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -35,6 +36,9 @@ public class WebViewDialog extends Dialog {
         setContentView(R.layout.webview);
 
         webView = (WebView) findViewById(R.id.webView_View);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            webView.getSettings().setSafeBrowsingEnabled(false);
+        }
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient() {
             @Override

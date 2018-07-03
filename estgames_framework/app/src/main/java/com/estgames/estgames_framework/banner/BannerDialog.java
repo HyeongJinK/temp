@@ -197,6 +197,10 @@ public class BannerDialog extends Dialog {
 
             view = context.findViewById(R.id.web_banner_view);
             view.setVisibility(View.VISIBLE);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                view.getSettings().setSafeBrowsingEnabled(false);
+            }
             view.getSettings().setJavaScriptEnabled(true);
             view.setWebViewClient(new WebViewClient() {
                 @Override
