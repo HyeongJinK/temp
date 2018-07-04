@@ -82,6 +82,7 @@ public class UserAllDialog extends Dialog{
                 return new GameAgent(UserAllDialog.this.getContext()).retrieveGameUser(egId);
             }
         });
+        executor.shutdown();
     }
 
     public void setEgId(@NonNull String egId) {
