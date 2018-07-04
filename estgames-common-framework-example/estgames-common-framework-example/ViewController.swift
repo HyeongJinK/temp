@@ -13,6 +13,7 @@ import GoogleSignIn
 import AWSAuthUI
 import AWSFacebookSignIn
 import AWSGoogleSignIn
+import SwiftKeychainWrapper
 
 class ViewController: UIViewController {
     var estgamesCommon:EstgamesCommon!
@@ -53,6 +54,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //KeychainWrapper.standard.string(forKey: <#T##String#>)
         
 //        let image:UIImage
 //        let imageView:UIImageView
@@ -117,11 +120,17 @@ class ViewController: UIViewController {
             print("goToLogin() 함수 호출 성공 시 호출되는 콜백함수")
         }
         
+        vc.goToLoginFailCallBack = {(fail) -> Void in
+            print("adsfacvasdfsad")
+            print(fail.describe)
+        }
+        
         vc.goToLoginCloseCallBack = {() -> Void in
             print("goToLogin() 도중 중간에 끝냄")
         }
         
         vc.failCallBack = {(err) -> Void in     //유저 서비스 부분 에러 콜백 함수
+            print(err.describe)
             switch (err) {
                 case .TOKEN_EMPTY :
                     self.errorCode.text = "토큰이 없음"

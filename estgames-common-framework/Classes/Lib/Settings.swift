@@ -81,73 +81,73 @@ public class MpInfo {
         
         public internal(set) static var egId: String {
             get {
-                return KeychainWrapper.standard.string(forKey: "mp.eg_id") ?? ""
+                return KeychainWrapper.standard.string(forKey: MpInfo.App.region+"_mp.eg_id") ?? ""
             }
             set(newval) {
-                KeychainWrapper.standard.set(newval, forKey: "mp.eg_id")
+                KeychainWrapper.standard.set(newval, forKey: MpInfo.App.region+"_mp.eg_id")
             }
         }
         
         public internal(set) static var egToken: String {
             get {
-                return KeychainWrapper.standard.string(forKey: "mp.eg_token") ?? ""
+                return KeychainWrapper.standard.string(forKey: MpInfo.App.region+"_mp.eg_token") ?? ""
             }
             set(newval) {
-                KeychainWrapper.standard.set(newval, forKey: "mp.eg_token")
+                KeychainWrapper.standard.set(newval, forKey: MpInfo.App.region+"_mp.eg_token")
             }
         }
         
         public internal(set) static var refreshToken: String {
             get {
-                return KeychainWrapper.standard.string(forKey: "mp.refresh_token") ?? ""
+                return KeychainWrapper.standard.string(forKey: MpInfo.App.region+"_mp.refresh_token") ?? ""
             }
             set(newval) {
-                KeychainWrapper.standard.set(newval, forKey: "mp.refresh_token")
+                KeychainWrapper.standard.set(newval, forKey: MpInfo.App.region+"_mp.refresh_token")
             }
         }
         
         public internal(set) static var principal: String {
             get {
-                return KeychainWrapper.standard.string(forKey: "mp.principal") ?? ""
+                return KeychainWrapper.standard.string(forKey: MpInfo.App.region+"_mp.principal") ?? ""
             }
             set(newval) {
-                KeychainWrapper.standard.set(newval, forKey: "mp.principal")
+                KeychainWrapper.standard.set(newval, forKey: MpInfo.App.region+"_mp.principal")
             }
         }
         
         public internal(set) static var provider: String {
             get {
-                return KeychainWrapper.standard.string(forKey: "mp.provider") ?? ""
+                return KeychainWrapper.standard.string(forKey: MpInfo.App.region+"_mp.provider") ?? ""
             }
             set(newval) {
-                KeychainWrapper.standard.set(newval, forKey: "mp.provider")
+                KeychainWrapper.standard.set(newval, forKey: MpInfo.App.region+"_mp.provider")
             }
         }
         
         public internal(set) static var email: String {
             get {
-                return KeychainWrapper.standard.string(forKey: "mp.email") ?? ""
+                return KeychainWrapper.standard.string(forKey: MpInfo.App.region+"_mp.email") ?? ""
             }
             set(newval) {
-                KeychainWrapper.standard.set(newval, forKey: "mp.email")
+                KeychainWrapper.standard.set(newval, forKey: MpInfo.App.region+"_mp.email")
             }
         }
         
         public internal(set) static var device: String {
             get {
-                return KeychainWrapper.standard.string(forKey: "mp.device") ?? ""
+                return KeychainWrapper.standard.string(forKey: MpInfo.App.region+"_mp.device") ?? ""
             }
             set(newval) {
-                KeychainWrapper.standard.set(newval, forKey: "mp.device")
+                KeychainWrapper.standard.set(newval, forKey: MpInfo.App.region+"_mp.device")
             }
         }
         
         public internal(set) static var userId: String {
             get {
-                return KeychainWrapper.standard.string(forKey: "mp.user_id") ?? ""
+                return KeychainWrapper.standard.string(forKey: MpInfo.App.region+"_mp.user_id") ?? ""
             }
             set(newval) {
-                KeychainWrapper.standard.set(newval, forKey: "mp.user_id")
+                KeychainWrapper.standard.set(newval, forKey: MpInfo.App.region+"_mp.user_id")
             }
         }
     }

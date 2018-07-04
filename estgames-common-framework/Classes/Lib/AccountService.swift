@@ -111,13 +111,13 @@ public class AccountService {
     }
     
     public func clearKeychain() {
-        KeychainWrapper.standard.removeObject(forKey: "mp.eg_id")
-        KeychainWrapper.standard.removeObject(forKey: "mp.eg_token")
-        KeychainWrapper.standard.removeObject(forKey: "mp.refresh_token")
-        KeychainWrapper.standard.removeObject(forKey: "mp.principal")
-        KeychainWrapper.standard.removeObject(forKey: "mp.provider")
-        KeychainWrapper.standard.removeObject(forKey: "mp.email")
-        KeychainWrapper.standard.removeObject(forKey: "mp.device")
-        KeychainWrapper.standard.removeObject(forKey: "mp.user_id")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.eg_id")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.eg_token")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.refresh_token")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.principal")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.provider")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.email")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.device")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.user_id")
     }
 }

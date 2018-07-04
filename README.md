@@ -4,6 +4,13 @@
 [![License](https://img.shields.io/cocoapods/l/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
+:new: 업데이트 (1.2.1)
+---
+
+* Localizable.string 파일을 프레임워크 안에 추가했습니다. 더 이상 추가 하지 않으셔도 됩니다. 없는 언어가 들어올 경우 영어로 기본설정 됩니다.
+* region 값에 따라 유저로그인 정보을 따로 관리하게 수정했습니다.
+
+
 :new: 업데이트 (1.2.0)
 ---
 
@@ -361,7 +368,7 @@ Localizable.string 파일을 선택하시면 오른쪽 Localization 메뉴에 �
 
 ```
 
-### :four: Localizable.strings에 문자열 추가 (로컬라이징)
+### :four: Localizable.strings에 문자열 추가 (로컬라이징)  (1.21 버전 이후 부터는 추가 하지 않아도 됩니다.)
 
 ```
 'estcommon_policy_title' = "이용약관";

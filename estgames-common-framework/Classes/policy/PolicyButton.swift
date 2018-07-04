@@ -21,7 +21,7 @@ class PolicyButton : UIButton {
         
         super.init(frame: frames)
         
-        if let unimage = uncheckImage, let cImage = checkImage {
+        if let unimage = uncheckImage, let _ = checkImage {
             self.setBackgroundImage(unimage, for: .normal)
         } else {
             self.backgroundColor = UIColor.gray

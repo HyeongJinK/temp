@@ -20,10 +20,24 @@ extension String {
             lang = defaultLang
         }
         
-        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
-        let bundle = Bundle(path: path!)
+        let bundle:Bundle? = Bundle(identifier: "org.cocoapods.estgames-common-framework")
+        var path = bundle?.path(forResource: lang, ofType: "lproj")//Bundle.main.path(forResource: lang, ofType: "lproj")
         
-        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+        if path == nil {
+            path = bundle?.path(forResource: "en", ofType: "lproj")
+        }
+        
+        if let p = path {
+            let b = Bundle(path: p)
+            if let d = b {
+                return NSLocalizedString(self, tableName: nil, bundle: d, value: "", comment: "")
+            } else {
+                return NSLocalizedString(self, comment: "");
+            }
+        } else {
+            return NSLocalizedString(self, comment: "");
+        }
+        
     }
 }
 
@@ -75,6 +89,7 @@ extension String {
         if EstgamesCommon.estgamesData == nil {
             //let url = MpInfo.App.estapi+"/sd_v_1_" + MpInfo.App.env + "?region=" + MpInfo.App.region + "&lang="+getLanguage()!
             let url = MpInfo.App.estapi+"/sd_v_1_live?region=" + MpInfo.App.region + "&lang="+getLanguage()!
+            print(url);
             apiCallCount += 1
             
             if (apiCallCount >= 3) {    //api 호출 실패가 3번이 넘으면
@@ -266,7 +281,7 @@ extension String {
             webView.modalPresentationStyle = .overCurrentContext
             webView.nation = getLanguage()!
             webView.url = EstgamesCommon.estgamesData!.url.notice
-            
+            //webView.url = "https://m-stage.estgames.co.kr/cs/mr"
             pview.present(webView, animated: false)
         }
     }

@@ -426,7 +426,7 @@ public class UserService {
                 f(data)
         },
             fail: {(error: Error?) in
-                self.failCallBack(Fail.API_CHARACTER_INFO)
+                self.goToLoginFailCallBack(Fail.API_CHARACTER_INFO)
         })
     }
     

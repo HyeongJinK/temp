@@ -17,7 +17,7 @@ public class GameService {
         , fail: @escaping(_ error: Error?)-> Void
         ) {
         
-        let url = "https://mp-pub.estgames.co.kr/live/game/mr.global.ls?eg_id="+egId
+        let url = "https://mp-pub.estgames.co.kr/live/game/"+MpInfo.App.region+"?eg_id="+egId
         request(url)
             .validate(contentType: ["application/json"])
             .validate(statusCode: 200..<300)
@@ -33,28 +33,4 @@ public class GameService {
                 }
         }
     }
-    
-//    public func getCharacterInfo (
-//        region: String,egId: String
-//        , fail: @escaping(_ error: Error?)-> Void
-//        ) -> Stirng {
-//        let myGroup = DispatchGroup()
-//        myGroup.enter()
-//        let url = "https://mp-pub.estgames.co.kr/live/game/mr.global.ls?eg_id="+egId
-//        print(url)
-//        request(url)
-//            .validate(contentType: ["application/json"])
-//            .validate(statusCode: 200..<300)
-//            .responseJSON { response in
-//                if (response.result.isSuccess) {
-//                    if let data = response.result.value {
-//                        let dataJson = data as! NSDictionary
-//                        let charInfo:String = dataJson["character"] as! String
-//                        
-//                    }
-//                } else {
-//                    fail(response.result.error)
-//                }
-//        }
-//    }
 }
