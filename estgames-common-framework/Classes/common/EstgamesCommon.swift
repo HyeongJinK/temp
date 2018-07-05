@@ -86,49 +86,44 @@ extension String {
     }
     
     public func create() {
-        if EstgamesCommon.estgamesData == nil {
-            //let url = MpInfo.App.estapi+"/sd_v_1_" + MpInfo.App.env + "?region=" + MpInfo.App.region + "&lang="+getLanguage()!
-            let url = MpInfo.App.estapi+"/sd_v_1_live?region=" + MpInfo.App.region + "&lang="+getLanguage()!
-            print(url);
-            apiCallCount += 1
-            
-            if (apiCallCount >= 3) {    //api 호출 실패가 3번이 넘으면
-                apiCallCount = 0
-                self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
-                return
-            }
-            
-            
-            URLCache.shared.removeAllCachedResponses()
-            //queue.async {
-                request(url)
-                    .validate(contentType: ["application/json"])
-                    .validate(statusCode: 200..<300)
-                    .responseJSON() {
-                        response in
-                        if (response.result.isSuccess) {
-                            if let result = response.result.value {
-                                let bannerJson = result as! NSDictionary
-                                if ((bannerJson["errorMessage"] as? String) != nil){    //3번 에러가 났을 경우 한번 더 시도
-                                    self.create()
-                                } else {
-                                    EstgamesCommon.estgamesData = ResultDataJson(resultDataJson:bannerJson as! NSDictionary)   //배너 파싱
-                                    self.authority.setWebUrl(url: EstgamesCommon.estgamesData!.url.system_contract)
-                                    self.banner = bannerFramework(pview: self.pview, result: EstgamesCommon.estgamesData!)
-                                    self.policy.setWebUrl(webUrl1: EstgamesCommon.estgamesData!.url.contract_service, webUrl2: EstgamesCommon.estgamesData!.url.contract_private)
-                                    self.process = EstgamesCommon.estgamesData!.process
-                                    self.initCallBack(self)
-                                }
-                                //myGroup.leave()
-                            } else {
-                                self.estCommonFailCallBack(Fail.START_API_DATA_FAIL)
-                            }
-                        } else {
-                            self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
-                        }
-                }
-            //}
+        //let url = MpInfo.App.estapi+"/sd_v_1_" + MpInfo.App.env + "?region=" + MpInfo.App.region + "&lang="+getLanguage()!
+        let url = MpInfo.App.estapi+"/sd_v_1_live?region=" + MpInfo.App.region + "&lang="+getLanguage()!
+        apiCallCount += 1
+        
+        if (apiCallCount >= 3) {    //api 호출 실패가 3번이 넘으면
+            apiCallCount = 0
+            self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
+            return
         }
+        
+        URLCache.shared.removeAllCachedResponses()
+        //queue.async {
+            request(url)
+                .validate(contentType: ["application/json"])
+                .validate(statusCode: 200..<400)
+                .responseJSON() {
+                    response in
+                    if (response.result.isSuccess) {
+                        if let result = response.result.value {
+                            let bannerJson = result as! NSDictionary
+                            if ((bannerJson["errorMessage"] as? String) != nil){    //3번 에러가 났을 경우 한번 더 시도
+                                self.create()
+                            } else {
+                                EstgamesCommon.estgamesData = ResultDataJson(resultDataJson:bannerJson as! NSDictionary)   //배너 파싱
+                                self.authority.setWebUrl(url: EstgamesCommon.estgamesData!.url.system_contract)
+                                self.banner = bannerFramework(pview: self.pview, result: EstgamesCommon.estgamesData!)
+                                self.policy.setWebUrl(webUrl1: EstgamesCommon.estgamesData!.url.contract_service, webUrl2: EstgamesCommon.estgamesData!.url.contract_private)
+                                self.process = EstgamesCommon.estgamesData!.process
+                                self.initCallBack(self)
+                            }
+                            //myGroup.leave()
+                        } else {
+                            self.estCommonFailCallBack(Fail.START_API_DATA_FAIL)
+                        }
+                    } else {
+                        self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
+                    }
+            }
     }
     
     private func checkEstgamesData() -> Bool{

@@ -66,6 +66,7 @@ class ViewController: UIViewController {
         
         estgamesCommon = EstgamesCommon(pview: self)    // EstgamesCommon 객체 생성
         estgamesCommon.initCallBack = {(estcommon) -> Void in   //EstgamesCommon에 create 함수를 호출 하고 값 설정이 성공했을 때 호출 되는 함수
+            print("성공")
             self.errorCode.text = "성공"
         }
         estgamesCommon.estCommonFailCallBack = {(err) -> Void in    //EstgamesCommon 내에서 에러가 발생 했을 경우 호출되는 콜백함수
@@ -240,8 +241,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func faqTest(_ sender: Any) {
-        estgamesCommon.showCsCenter()
-        
+        estgamesCommon.create()
+        print("create")
     }
     @IBAction func eventTeset(_ sender: Any) {
          estgamesCommon.showEvent()
