@@ -151,7 +151,6 @@ extension String {
         if ((process.count-1) > processIndex) {
             if (processIndex != -1 && process[processIndex] == "use_contract" && policy.isShowPolicyShow()) {
                 estCommonFailCallBack(Fail.PROCESS_DENIED_CONTRACT)
-                //processCallBack()
             } else {
                 call()
             }
@@ -184,7 +183,6 @@ extension String {
                     check()
                 }
                 break
-            //case "login" :
             default:
                 check()
                 break
@@ -230,7 +228,6 @@ extension String {
         if (!policy.isShowPolicyShow()) {   //이전에 이용약관 동의를 한 상태
             return true
         }
-        
         return policy.submitBt1.isChecked
     }
     
@@ -238,7 +235,6 @@ extension String {
         if (!policy.isShowPolicyShow()) {   //이전에 이용약관 동의를 한 상태
             return true
         }
-        
         return policy.submitBt2.isChecked
     }
     //배너
