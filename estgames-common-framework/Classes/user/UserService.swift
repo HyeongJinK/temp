@@ -223,6 +223,7 @@ public class UserService {
                             MpInfo.Account.principal = pi
                             MpInfo.Account.provider = provider
                             MpInfo.Account.email = email
+                            self.goToLoginSuccessCallBack(MpInfo.Account.egId, "LOGIN", provider)
                             //MpInfo.Account.userId = userId
                         } else if result == "FAILURE" {     //guest와 sns 계정 충돌
                             self.visibleSyncView(
