@@ -21,7 +21,7 @@
 
     <string name="estcommon_userLink_title">계정 연동</string>
     <string name="estcommon_userLink_middelLabel">입력하신 계정에 이미 플레이 중인 데이터가 있습니다.\n%s : %s\n위의 데이터를 불러오시겠습니까?</string>
-    <string name="estcommon_userLink_bottomLabel">!현재 플레이 중인 게임데이터는 삭제됩니다</string>
+    <string name="estcommon_userLink_bottomLabel">현재 플레이 중인 게임데이터는 삭제됩니다</string>
     <string name="estcommon_userLink_confirm">네, 불러오겠습니다</string>
     <string name="estcommon_userLink_cancel">아니오, 새로 연동하기</string>
 
