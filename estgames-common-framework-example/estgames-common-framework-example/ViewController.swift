@@ -118,6 +118,9 @@ class ViewController: UIViewController {
         }
         
         vc.goToLoginSuccessCallBack = {(egId, resultType, pro) -> Void in
+            print(egId)
+            print(resultType)
+            print(pro)
             print("goToLogin() 함수 호출 성공 시 호출되는 콜백함수")
         }
         

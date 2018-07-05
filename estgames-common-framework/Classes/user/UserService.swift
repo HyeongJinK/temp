@@ -24,10 +24,6 @@ public class UserService {
     
     var getGoogleEmail : (() -> String)?
     
-    //public var startFailCallBack: (String) -> Void = {(message: String) -> Void in }
-    
-    
-    
     public var failCallBack: (Fail) -> Void = {(message: Fail) -> Void in}
     public var startSuccessCallBack: () -> Void = {() -> Void in }
     public var goToLoginSuccessCallBack: (String?, String, String) -> Void = {(egId: String?, resultType:String, provider:String) -> Void in }
@@ -35,7 +31,6 @@ public class UserService {
     public var goToLoginFailCallBack: (Fail) -> Void = {(message: Fail) -> Void in }
     public var goToLoginConfirmCallBack: () -> Void = {() -> Void in }
     public var clearSuccessCallBack: () -> Void = {() -> Void in }
-    
     
     
     public init (pview: UIViewController, googleEmail: @escaping () -> String) {
@@ -56,8 +51,6 @@ public class UserService {
         return AWSIdentityManager.default().identityId
     }
     
-    
-    
     public func startGame() {
         // 게임클라이언트가 켜지면 첫째 egToken이 존재 하는지 체크
         if MpInfo.Account.isAuthedUser() == false {
@@ -76,12 +69,10 @@ public class UserService {
                 },
                     fail: { error in
                         self.failCallBack(Fail.TOKEN_CREATION)
-                        //self.startFailCallBack("TOKEN_EMPTY")
                 }
                 )
             } else {
                 self.failCallBack(Fail.API_ACCESS_DENIED)
-                //self.startFailCallBack("PRINCIPAL_APICALL")
             }
         } else {
             let egToken = MpInfo.Account.egToken
@@ -95,7 +86,6 @@ public class UserService {
             },
                 fail: { error in
                     self.failCallBack(Fail.TOKEN_CREATION)
-                    //self.startFailCallBack("TOKEN_CREATE")
             })
         }
     }
@@ -135,13 +125,11 @@ public class UserService {
     }
     public func goToLogin(config : AWSAuthUIConfiguration) {
         if MpInfo.Account.isAuthedUser() == false {
-            //self.failCallBack(Fail.TOKEN_EMPTY)
             goToLoginFailCallBack(Fail.TOKEN_EMPTY)
             return
         }
         
         if MpInfo.Account.provider != "guest" {
-            //self.failCallBack(Fail.ACCOUNT_ALREADY_EXIST)
             goToLoginFailCallBack(Fail.ACCOUNT_ALREADY_EXIST)
             return
         }
@@ -152,23 +140,10 @@ public class UserService {
             completionHandler: { (provider: AWSSignInProvider, error: Error?) in
                 if error != nil {
                     self.goToLoginFailCallBack(Fail.SIGN_AWS_LOGIN_VIEW)
-                    //self.failCallBack(Fail.SIGN_AWS_LOGIN_VIEW)
                 } else {
                     self.onSignIn(true, provider)
                 }
         })
-//        AWSAuthUIViewController.presentViewController(
-//            with: pView.navigationController!,
-//            configuration: config,
-//            completionHandler: { (provider: AWSSignInProvider, error: Error?) in
-//                if error != nil {
-//                    //self.goToLoginFailCallBack("AWS_LOGINVIEW")
-//                    self.failCallBack(Fail.SIGN_AWS_LOGIN_VIEW)
-//                } else {
-//                    self.onSignIn(true, provider)
-//                }
-//        })
-
     }
     
     func onSignIn (_ success: Bool, _ provider: AWSSignInProvider) {
@@ -194,7 +169,6 @@ public class UserService {
             } else if identityProviderName == "accounts.google.com" {
                 if getGoogleEmail == nil {
                     self.goToLoginFailCallBack(Fail.GOOGLE_CALLBACK_EMPTY)
-                    //self.failCallBack(Fail.GOOGLE_CALLBACK_EMPTY)
                 } else {
                     self.snsSyncProcess("google", getGoogleEmail!())
                 }
@@ -204,7 +178,6 @@ public class UserService {
     
     func snsSyncProcess(_ provider:String, _ email:String) {
         if MpInfo.Account.isAuthedUser() == false {
-            //self.failCallBack(Fail.TOKEN_EMPTY)
             goToLoginFailCallBack(Fail.TOKEN_EMPTY)
             return
         }
@@ -234,18 +207,15 @@ public class UserService {
                                 provider: provider,
                                 email: email)
                         } else {    //연동, 충돌 그외의 에러
-                            //self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
                             self.goToLoginFailCallBack(Fail.ACCOUNT_SYNC_FAIL)
                         }
                     }
             },
                 fail: {error in
                     self.goToLoginFailCallBack(Fail.ACCOUNT_SYNC_FAIL)
-                    //self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
             }
             )
         } else {
-            //self.failCallBack(Fail.API_ACCESS_DENIED)
             self.goToLoginFailCallBack(Fail.API_ACCESS_DENIED)
         }
     }
@@ -267,7 +237,6 @@ public class UserService {
         userDialog.userResultViewController.resultType = "LOGIN"
         userDialog.userLoadViewController.inputText.text = "";
         userDialog.setUserLinkProviderLabel(provider: self.crashSnsSyncIno.provider)
-        //characterInfo(MpInfo.Account.egId, userDialog.setUserLinkCharacterLabelGuest)
         characterInfo(self.crashSnsSyncIno.snsEgId, userDialog.setUserLinkCharacterLabelSNS)
         userDialog.setUserLinkAction(closeAction: closeAction, confirmAction: linkConfirmAction, cancelAction: linkCancelAction)
         userDialog.showUserLinkDialog()
@@ -314,24 +283,18 @@ public class UserService {
                     self.userDialog.userResultViewController.egId = self.crashSnsSyncIno.snsEgId
                     self.userDialog.userResultViewController.resultType = "SWITCH"
                     self.userDialog.userResultViewController.provider = self.crashSnsSyncIno.provider
-                    // sns 로 keychain이 모두 변경된 상태입니다.
-                    //self.visibleView(view: self.viewSnsSuccess)
-                    
             },
                 fail: { error in
-                    //self.failCallBack(Fail.ACCOUNT_NOT_EXIST)
                     self.goToLoginFailCallBack(Fail.ACCOUNT_NOT_EXIST)
             }
             )
         } else {
-            //self.failCallBack(Fail.API_ACCESS_DENIED)
             self.goToLoginFailCallBack(Fail.API_ACCESS_DENIED)
         }
     }
     
     private func userLoadShow() {
         userDialog.setUserLoadAction(closeAction: closeAction, confirmCheck: loadConfirmAction, confirmActionCallBack: LoadConfirmCallBack)
-        //userDialog.setUserLoadCharacterLabel()
         userDialog.showUserLoadDialog()
     }
     
@@ -351,7 +314,6 @@ public class UserService {
     private func userGuestLinkShow() {
         userDialog.setUserGuestLinkAction(closeAction: closeAction, loginAction: loginAction, beforeAction: beforeAction)
         userDialog.setUserGuestLinkCharacterLabel()
-        //userDialog.setUserGuestLinkCharacterLabel(guest: characterInfo(MpInfo.Account.egId), sns: characterInfo(self.crashSnsSyncIno.snsEgId))
         userDialog.showUserGuestLinkDialog()
     }
     
@@ -381,21 +343,16 @@ public class UserService {
                         MpInfo.Account.email = email
                         self.userDialog.userResultViewController.resultType = "SYNC"
                         self.userDialog.userResultViewController.provider = provider
-                        // 모달 화면을 닫고 -> guest게이데이터 그대로 이기 때문에 게임이어서 진행.
-                        //self.dismiss(animated: true, completion: nil)
                     } else if result == "FAILURE" {
                         // 알 수 없는 오류
-                        //self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
                         self.goToLoginFailCallBack(Fail.ACCOUNT_SYNC_FAIL)
                     } else {
-                        //self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
                         self.goToLoginFailCallBack(Fail.ACCOUNT_SYNC_FAIL)
                     }
                 }
         },
             fail: {
                 error in
-                //self.failCallBack(Fail.ACCOUNT_SYNC_FAIL)
                 self.goToLoginFailCallBack(Fail.ACCOUNT_SYNC_FAIL)
         }
         )
@@ -439,7 +396,6 @@ public class UserService {
                 characterInfo = data
         },
             fail: {(error: Error?) in
-                //self.failCallBack(Fail.API_CHARACTER_INFO)
                 self.goToLoginFailCallBack(Fail.API_CHARACTER_INFO)
         })
 
