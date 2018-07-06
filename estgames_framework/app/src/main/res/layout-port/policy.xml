@@ -7,13 +7,12 @@
 
     <ImageButton
         android:id="@+id/btn_term_close"
-        android:layout_width="17.5dp"
-        android:layout_height="17.5dp"
-        android:src="@drawable/btn_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
         android:background="@android:color/transparent"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10.5dp"
-        android:layout_marginTop="10.5dp" />
+        android:src="@drawable/btn_close" />
 
     <TextView
         android:id="@+id/txt_term_title"

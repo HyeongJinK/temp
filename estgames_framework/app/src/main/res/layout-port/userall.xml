@@ -23,14 +23,13 @@
             android:textColor="#000000"
             android:text="@string/estcommon_userLink_title"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_ready_close"
-            android:layout_width="13.5dp"
-            android:layout_height="13.5dp"
+            android:layout_width="44dp"
+            android:layout_height="37dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="11.5dp"
-            android:layout_marginRight="15.5dp"
-            android:background="@drawable/btn_close_user"/>
+            android:background="@android:color/background_light"
+            android:src="@drawable/btn_close_user" />
 
         <View
             android:layout_width="match_parent"
@@ -114,14 +113,13 @@
             android:textColor="#000000"
             android:text="@string/estcommon_userLoad_title"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_switch_close"
-            android:layout_width="13.5dp"
-            android:layout_height="13.5dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="11.5dp"
-            android:layout_marginRight="15.5dp"
-            android:background="@drawable/btn_close_user"/>
+            android:layout_width="44dp"
+            android:layout_height="37dp"
+            android:background="@android:color/background_light"
+            android:src="@drawable/btn_close_user"
+            android:layout_alignParentRight="true"/>
 
         <View
             android:layout_width="match_parent"
@@ -196,14 +194,13 @@
             android:textColor="#000000"
             android:text="@string/estcommon_userGuest_title"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_sync_close"
-            android:layout_width="13.5dp"
-            android:layout_height="13.5dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="11.5dp"
-            android:layout_marginRight="15.5dp"
-            android:background="@drawable/btn_close_user"/>
+            android:layout_width="44dp"
+            android:layout_height="37dp"
+            android:background="@android:color/background_light"
+            android:src="@drawable/btn_close_user"
+            android:layout_alignParentRight="true"/>
 
         <View
             android:layout_width="match_parent"
@@ -261,7 +258,8 @@
         android:id="@+id/v_complete_dialog"
         android:visibility="invisible"
         android:layout_width="313dp"
-        android:layout_height="258dp">
+        android:layout_height="258dp"
+        android:background="@drawable/img_popup_box_user">
 
         <TextView
             android:id="@+id/txt_complete_title"
@@ -273,14 +271,13 @@
             android:textColor="#000000"
             android:text="@string/estcommon_userResult_title"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_complete_close"
-            android:layout_width="13.5dp"
-            android:layout_height="13.5dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="11.5dp"
-            android:layout_marginRight="15.5dp"
-            android:background="@drawable/btn_close_user"/>
+            android:layout_width="44dp"
+            android:layout_height="37dp"
+            android:background="@android:color/background_light"
+            android:src="@drawable/btn_close_user"
+            android:layout_alignParentRight="true"/>
 
         <View
             android:layout_width="match_parent"
@@ -310,7 +307,6 @@
             android:textSize="10sp"
             android:textColor="#000000"
             android:text="@string/estcommon_userResult_titleMove"/>
-
 
         <Button
             android:id="@+id/btn_complete_confirm"

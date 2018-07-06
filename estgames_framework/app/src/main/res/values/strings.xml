@@ -12,6 +12,8 @@
     <string name="estcommon_userResult_titleMove">Move to the title page for restart</string>
     <string name="estcommon_userResult_confirm">Confirm</string>
 
+    <string name="estcommon_user_sync_progress">Linking account...</string>
+
     <string name="estcommon_userLoad_title">Load existing account</string>
     <string name="estcommon_userLoad_content">Please insert the words below if you would like to delete the current game data and load the previous game.</string>
     <string name="estcommon_userLoad_confirmText">Confirm Text: confirm</string>

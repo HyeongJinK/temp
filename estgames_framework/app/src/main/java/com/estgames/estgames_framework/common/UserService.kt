@@ -1,6 +1,7 @@
 package com.estgames.estgames_framework.common
 
 import android.app.Activity
+import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import com.amazonaws.mobile.auth.core.*
@@ -8,7 +9,9 @@ import com.amazonaws.mobile.auth.facebook.FacebookButton
 import com.amazonaws.mobile.auth.google.GoogleButton
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.estgames.aws.custom.EgAwsSignInActivity
+import com.estgames.estgames_framework.common.ui.CustomProgressDialog
 import com.estgames.estgames_framework.core.EGException
+import com.estgames.estgames_framework.core.Either
 import com.estgames.estgames_framework.core.Fail
 import com.estgames.estgames_framework.core.Result
 import com.estgames.estgames_framework.core.session.SessionManager
@@ -134,43 +137,7 @@ class UserService constructor(callingActivity: Activity) {
                             val data = hashMapOf("provider" to provider.displayName)
                             if (email != null) data.put("email", email)
 
-                            sessionManager
-                                    .sync(data, identityId)
-                                    .right {
-                                        loginResultHandler.onComplete(Result.Login("LOGIN", it.egId, provider.displayName))
-                                    }
-                                    .left { err ->
-                                        when(err) {
-                                            is Result.SyncFailure -> {
-                                                // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
-                                                callingActivity.runOnUiThread {
-                                                    userAllDialog = UserAllDialog(callingActivity, preferences).apply {
-                                                        setIdentityId(identityId!!)
-                                                        setProvider(provider.displayName)
-                                                        setEgId(err.egId)
-                                                        setData(data)
-                                                        setOnCompleted { loginResultHandler.onComplete(it) }
-                                                        setOnCancel {
-                                                            signout()
-                                                            loginResultHandler.onCancel()
-                                                        }
-                                                        setOnFail {
-                                                            signout()
-                                                            loginResultHandler.onFail(it.code)
-                                                        }
-                                                    }
-
-                                                    userAllDialog!!.show()
-                                                }
-                                            }
-                                            is Result.Failure -> {
-                                                if (identityManager.isUserSignedIn) {
-                                                    identityManager.signOut()
-                                                }
-                                                loginResultHandler.onFail(Fail.ACCOUNT_SYNC_FAIL)
-                                            }
-                                        }
-                                    }
+                            LoginSyncTask(callingActivity, identityId!!, data, provider).execute()
                         }
 
                         override fun handleError(exception: Exception?) {
@@ -186,6 +153,63 @@ class UserService constructor(callingActivity: Activity) {
                 return false
             }
         })
+    }
+
+    inner class LoginSyncTask(
+            activity: Activity,
+            private val identity: String,
+            private val data: Map<String, String>,
+            private val provider: IdentityProvider):AsyncTask<Void, Void, Either<Result, Result.SyncComplete>>() {
+
+        private val progress = CustomProgressDialog(activity, preferences)
+
+        override fun onPreExecute() {
+            progress.setMessage(com.estgames.estgames_framework.R.string.estcommon_user_sync_progress)
+            progress.show()
+        }
+
+        override fun doInBackground(vararg p0: Void?): Either<Result, Result.SyncComplete> {
+            return sessionManager.sync(data, identity)
+        }
+
+        override fun onPostExecute(result: Either<Result, Result.SyncComplete>?) {
+            progress.dismiss()
+
+            result!!.right {
+                loginResultHandler.onComplete(Result.Login("LOGIN", it.egId, provider.displayName))
+            }.left { err ->
+                when (err) {
+                    is Result.SyncFailure -> {
+                        // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
+                        callingActivity.runOnUiThread {
+                            userAllDialog = UserAllDialog(callingActivity, preferences).apply {
+                                setIdentityId(identity)
+                                setProvider(provider.displayName)
+                                setEgId(err.egId)
+                                setData(data)
+                                setOnCompleted { loginResultHandler.onComplete(it) }
+                                setOnCancel {
+                                    signout()
+                                    loginResultHandler.onCancel()
+                                }
+                                setOnFail {
+                                    signout()
+                                    loginResultHandler.onFail(it.code)
+                                }
+                            }
+
+                            userAllDialog!!.show()
+                        }
+                    }
+                    is Result.Failure -> {
+                        if (identityManager.isUserSignedIn) {
+                            identityManager.signOut()
+                        }
+                        loginResultHandler.onFail(Fail.ACCOUNT_SYNC_FAIL)
+                    }
+                }
+            }
+        }
     }
 
     fun signout() {
