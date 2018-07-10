@@ -27,8 +27,12 @@ class GameAgent(context: Context, configuration: Configuration) {
     }
 
     fun retrieveGameUser(egId: String): String {
-        val result = Api.GameUser(configuration.region, egId).json()
-        return result.getString("character")
+        try {
+            val result = Api.GameUser(configuration.region, egId).json()
+            return result.getString("character")
+        } catch (e: InternalException) {
+            throw Fail.API_CHARACTER_INFO.with(e.message, e.cause)
+        }
     }
 
     fun retrieveStatus(l: StatusReceiver) {
@@ -58,7 +62,7 @@ class GameAgent(context: Context, configuration: Configuration) {
                 return@use result.get()
             }
         } catch (e: InternalException) {
-            throw Fail.API_BAD_REQUEST.with(e.message)
+            throw Fail.API_BAD_REQUEST.with(e.message, e)
         }
     }
 
@@ -76,7 +80,7 @@ class GameAgent(context: Context, configuration: Configuration) {
                 throw InternalException(msg.getInt("code"), msg.getString("message"))
             }
         } catch (e: JSONException) {
-            throw Fail.API_UNKNOWN_RESPONSE.with("API Request Fail. - http response status : ${r.status}, message: ${r.message}")
+            throw InternalException(r.status, r.message, e);
         }
     }
 
@@ -106,5 +110,9 @@ class GameAgent(context: Context, configuration: Configuration) {
         }
     }
 
-    private class InternalException(val code: Int, override val message: String): Exception(message)
+    private class InternalException @JvmOverloads constructor(
+            val code: Int,
+            override val message: String,
+            override val cause: Throwable? = null
+    ): Exception(message, cause)
 }

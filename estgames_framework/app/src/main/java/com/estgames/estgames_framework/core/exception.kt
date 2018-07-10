@@ -1,11 +1,9 @@
 package com.estgames.estgames_framework.core
 
 
-open class EGException: Exception {
-    val code: Fail
-    constructor(code: Fail, message: String): super("CODE [$code] - $message") { this.code = code }
-    constructor(code: Fail, message: String, cause: Throwable): super("CODE [$code] - $message", cause) { this.code = code }
-}
+open class EGException @JvmOverloads constructor(
+        val code: Fail, message: String, cause: Throwable? = null
+): Exception("CODE [$code] - $message", cause)
 
 
 enum class Fail(private val serverCode: String? = null) {
@@ -68,11 +66,8 @@ enum class Fail(private val serverCode: String? = null) {
         }
     }
 
-    fun with(message: String): EGException {
-        return EGException(this, message)
-    }
-
-    fun with(message: String, cause: Throwable): EGException {
+    @JvmOverloads
+    fun with(message: String, cause: Throwable? = null): EGException {
         return EGException(this, message, cause)
     }
 }

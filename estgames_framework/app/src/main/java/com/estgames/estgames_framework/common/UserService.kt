@@ -10,10 +10,7 @@ import com.amazonaws.mobile.auth.google.GoogleButton
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.estgames.aws.custom.EgAwsSignInActivity
 import com.estgames.estgames_framework.common.ui.CustomProgressDialog
-import com.estgames.estgames_framework.core.EGException
-import com.estgames.estgames_framework.core.Either
-import com.estgames.estgames_framework.core.Fail
-import com.estgames.estgames_framework.core.Result
+import com.estgames.estgames_framework.core.*
 import com.estgames.estgames_framework.core.session.SessionManager
 import com.estgames.estgames_framework.user.*
 import com.facebook.AccessToken
@@ -155,11 +152,16 @@ class UserService constructor(callingActivity: Activity) {
         })
     }
 
+    sealed class SyncState() {
+        data class C(val egId: String, val userInfo: String): SyncState()
+        data class E(val cause: EGException): SyncState()
+    }
+
     inner class LoginSyncTask(
             activity: Activity,
             private val identity: String,
             private val data: Map<String, String>,
-            private val provider: IdentityProvider):AsyncTask<Void, Void, Either<Result, Result.SyncComplete>>() {
+            private val provider: IdentityProvider):AsyncTask<Void, Void, Either<SyncState, Result.SyncComplete>>() {
 
         private val progress = CustomProgressDialog(activity, preferences)
 
@@ -168,24 +170,42 @@ class UserService constructor(callingActivity: Activity) {
             progress.show()
         }
 
-        override fun doInBackground(vararg p0: Void?): Either<Result, Result.SyncComplete> {
-            return sessionManager.sync(data, identity)
+        override fun doInBackground(vararg p0: Void?): Either<SyncState, Result.SyncComplete> {
+            return sessionManager.sync(data, identity).leftTo { err ->
+                return@leftTo when (err) {
+                    is Result.SyncFailure -> {
+                        try {
+                            val userInfo = GameAgent(callingActivity).retrieveGameUser(err.egId);
+                            SyncState.C(err.egId, userInfo)
+                        } catch (e: EGException) {
+                            SyncState.E(e)
+                        }
+                    }
+                    else  -> {
+                        val e = err as Result.Failure
+                        if (e.cause is EGException) {
+                            SyncState.E(e.cause)
+                        } else {
+                            SyncState.E(Fail.ACCOUNT_SYNC_FAIL.with(e.message))
+                        }
+                    }
+                }
+            }
         }
 
-        override fun onPostExecute(result: Either<Result, Result.SyncComplete>?) {
-            progress.dismiss()
-
+        override fun onPostExecute(result: Either<SyncState, Result.SyncComplete>?) {
             result!!.right {
                 loginResultHandler.onComplete(Result.Login("LOGIN", it.egId, provider.displayName))
-            }.left { err ->
-                when (err) {
-                    is Result.SyncFailure -> {
+                progress.dismiss()
+            }.left { state ->
+                when (state) {
+                    is SyncState.C -> {
                         // 계정 충돌이 발생했을 경우 충돌 처리 Dialog 창 오픈
                         callingActivity.runOnUiThread {
                             userAllDialog = UserAllDialog(callingActivity, preferences).apply {
                                 setIdentityId(identity)
                                 setProvider(provider.displayName)
-                                setEgId(err.egId)
+                                setUserInfo(state.userInfo)
                                 setData(data)
                                 setOnCompleted { loginResultHandler.onComplete(it) }
                                 setOnCancel {
@@ -199,13 +219,15 @@ class UserService constructor(callingActivity: Activity) {
                             }
 
                             userAllDialog!!.show()
+                            progress.dismiss()
                         }
                     }
-                    is Result.Failure -> {
+                    is SyncState.E -> {
                         if (identityManager.isUserSignedIn) {
                             identityManager.signOut()
                         }
-                        loginResultHandler.onFail(Fail.ACCOUNT_SYNC_FAIL)
+                        loginResultHandler.onFail(state.cause.code)
+                        progress.dismiss()
                     }
                 }
             }

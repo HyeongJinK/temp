@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -13,19 +14,15 @@ import android.widget.TextView;
 
 import com.estgames.estgames_framework.R;
 import com.estgames.estgames_framework.common.ClientPreferences;
-import com.estgames.estgames_framework.common.GameAgent;
 import com.estgames.estgames_framework.core.AndroidUtils;
 import com.estgames.estgames_framework.core.EGException;
 import com.estgames.estgames_framework.core.Fail;
 import com.estgames.estgames_framework.core.Result;
 import com.estgames.estgames_framework.core.session.SessionManager;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -42,14 +39,14 @@ public class UserAllDialog extends Dialog{
 
     private String identityId;
     private String provider;
-    private String egId;
+    private String userInfo;
     private Map<String, String> syncData;
+
+    private DismissListenerWrapper dismissListener = new DismissListenerWrapper();
 
     private CompleteHandler completeHandler;
     private CancelHandler cancelHandler;
     private FailHandler failHandler;
-
-    private Future<String> gameuser;
 
     public UserAllDialog(@NonNull Context context,
                           @NonNull ClientPreferences pref) {
@@ -69,24 +66,17 @@ public class UserAllDialog extends Dialog{
         STATE_SYNC = new Sync(this);
         STATE_SWITCH = new Switch(this);
 
-        this.setOnDismissListener(new OnDismissListener() {
+        super.setOnDismissListener(dismissListener.add(new OnDismissListener() {
             @Override public void onDismiss(DialogInterface dialogInterface) {
                 state.dismiss();
             }
-        });
+        }));
 
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        this.gameuser = executor.submit(new Callable<String>() {
-            @Override
-            public String call() throws Exception {
-                return new GameAgent(UserAllDialog.this.getContext()).retrieveGameUser(egId);
-            }
-        });
-        executor.shutdown();
+        changeState(STATE_READY);
     }
 
-    public void setEgId(@NonNull String egId) {
-        this.egId = egId;
+    public void setUserInfo(@NonNull String userInfo) {
+        this.userInfo = userInfo;
     }
 
     public void setProvider(@NonNull String provider) {
@@ -117,9 +107,8 @@ public class UserAllDialog extends Dialog{
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        changeState(STATE_READY);
+    public void setOnDismissListener(OnDismissListener l) {
+        this.dismissListener.add(l);
     }
 
     private String getText(int resourceId) {
@@ -142,12 +131,19 @@ public class UserAllDialog extends Dialog{
         this.state.show();
     }
 
-    private String getGameuser() {
-        try {
-            return gameuser.get();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "Error!!";
+    private class DismissListenerWrapper implements OnDismissListener {
+        private List<OnDismissListener> listeners = new ArrayList<>();
+
+        @Override
+        public void onDismiss(DialogInterface dialogInterface) {
+            for (OnDismissListener l: listeners) {
+                l.onDismiss(dialogInterface);
+            }
+        }
+
+        private DismissListenerWrapper add(OnDismissListener l) {
+            listeners.add(l);
+            return this;
         }
     }
 
@@ -203,10 +199,10 @@ public class UserAllDialog extends Dialog{
 
         @Override public void show() {
             context.findViewById(R.id.v_ready_dialog).setVisibility(View.VISIBLE);
-            ((TextView)context.findViewById(R.id.txt_ready_target_data)).setText(
-                    String.format(context.getText(R.string.estcommon_userLink_middelLabel), context.provider, context.getGameuser())
+            ((TextView) context.findViewById(R.id.txt_ready_target_data)).setText(
+                    String.format(context.getText(R.string.estcommon_userLink_middelLabel), context.provider, context.userInfo)
             );
-            ((TextView)context.findViewById(R.id.txt_ready_current_data)).setText(
+            ((TextView) context.findViewById(R.id.txt_ready_current_data)).setText(
                     context.getText(R.string.estcommon_userLink_bottomLabel)
             );
         }
@@ -352,11 +348,11 @@ public class UserAllDialog extends Dialog{
 
         @Override public void show() {
             context.findViewById(R.id.v_sync_dialog).setVisibility(View.VISIBLE);
-            ((TextView)context.findViewById(R.id.txt_sync_title)).setText(
+            ((TextView) context.findViewById(R.id.txt_sync_title)).setText(
                     getText(R.string.estcommon_userGuest_title)
             );
-            ((TextView)context.findViewById(R.id.txt_sync_description)).setText(
-                    String.format(context.getText(R.string.estcommon_userGuest_middle), context.getGameuser())
+            ((TextView) context.findViewById(R.id.txt_sync_description)).setText(
+                    String.format(context.getText(R.string.estcommon_userGuest_middle), context.userInfo)
             );
         }
 
@@ -447,6 +443,8 @@ public class UserAllDialog extends Dialog{
 
         @Override
         public void dismiss() {
+            Log.e("USER SYNC", cause.getMessage(), cause);
+
             if (cause instanceof EGException) {
                 context.failHandler.fail((EGException) cause);
             } else {

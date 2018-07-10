@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -41,5 +42,11 @@ public class CustomProgressDialog extends Dialog {
 
         TextView txtMessage = findViewById(R.id.txt_progress_message);
         txtMessage.setText(this.message);
+    }
+
+    public void hideMessage() {
+        findViewById(R.id.lay_progress_dialog).setVisibility(View.INVISIBLE);
+        findViewById(R.id.prg_loading).setVisibility(View.INVISIBLE);
+        findViewById(R.id.txt_progress_message).setVisibility(View.INVISIBLE);
     }
 }
