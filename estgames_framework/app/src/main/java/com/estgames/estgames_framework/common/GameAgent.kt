@@ -26,9 +26,9 @@ class GameAgent(context: Context, configuration: Configuration) {
         fun onError(fail: Fail)
     }
 
-    fun retrieveGameUser(egId: String): String {
+    fun retrieveGameUser(egId: String, lang: String): String {
         try {
-            val result = Api.GameUser(configuration.region, egId).json()
+            val result = Api.GameUser(configuration.region, egId, lang).json()
             return result.getString("character")
         } catch (e: InternalException) {
             throw Fail.API_CHARACTER_INFO.with(e.message, e.cause)

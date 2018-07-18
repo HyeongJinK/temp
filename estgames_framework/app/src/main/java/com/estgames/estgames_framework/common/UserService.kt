@@ -20,6 +20,7 @@ import java.lang.Exception
 import java.util.concurrent.Callable
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import kotlin.math.sign
 
 /**
  * Created by mp on 2018. 5. 2..
@@ -124,6 +125,8 @@ class UserService constructor(callingActivity: Activity) {
     }
 
     private fun initLoginHandler() {
+        val notYetGoogleSignIn = GoogleSignIn.getLastSignedInAccount(callingActivity) == null
+
         // Cognito 의 SNS 로그인 결과 Handler 등록.
         identityManager.login(callingActivity, object: DefaultSignInResultHandler() {
             override fun onSuccess(activity: Activity?, provider: IdentityProvider?) {
@@ -134,7 +137,12 @@ class UserService constructor(callingActivity: Activity) {
                             val data = hashMapOf("provider" to provider.displayName)
                             if (email != null) data.put("email", email)
 
-                            LoginSyncTask(callingActivity, identityId!!, data, provider).execute()
+                            LoginSyncTask(
+                                    callingActivity, identityId!!, data, provider,
+                                    provider.run {
+                                        return@run !"GOOGLE".equals(displayName.toUpperCase()) || notYetGoogleSignIn
+                                    }
+                            ).execute()
                         }
 
                         override fun handleError(exception: Exception?) {
@@ -161,7 +169,8 @@ class UserService constructor(callingActivity: Activity) {
             activity: Activity,
             private val identity: String,
             private val data: Map<String, String>,
-            private val provider: IdentityProvider):AsyncTask<Void, Void, Either<SyncState, Result.SyncComplete>>() {
+            private val provider: IdentityProvider,
+            private val isNecessaryToLogout: Boolean):AsyncTask<Void, Void, Either<SyncState, Result.SyncComplete>>() {
 
         private val progress = CustomProgressDialog(activity, preferences)
 
@@ -175,7 +184,7 @@ class UserService constructor(callingActivity: Activity) {
                 return@leftTo when (err) {
                     is Result.SyncFailure -> {
                         try {
-                            val userInfo = GameAgent(callingActivity).retrieveGameUser(err.egId);
+                            val userInfo = GameAgent(callingActivity).retrieveGameUser(err.egId, preferences.locale.language);
                             SyncState.C(err.egId, userInfo)
                         } catch (e: EGException) {
                             SyncState.E(e)
@@ -209,11 +218,15 @@ class UserService constructor(callingActivity: Activity) {
                                 setData(data)
                                 setOnCompleted { loginResultHandler.onComplete(it) }
                                 setOnCancel {
-                                    signout()
+                                    if (isNecessaryToLogout) {
+                                        signout()
+                                    }
                                     loginResultHandler.onCancel()
                                 }
                                 setOnFail {
-                                    signout()
+                                    if (isNecessaryToLogout) {
+                                        signout()
+                                    }
                                     loginResultHandler.onFail(it.code)
                                 }
                             }
@@ -223,9 +236,7 @@ class UserService constructor(callingActivity: Activity) {
                         }
                     }
                     is SyncState.E -> {
-                        if (identityManager.isUserSignedIn) {
-                            identityManager.signOut()
-                        }
+                        signout()
                         loginResultHandler.onFail(state.cause.code)
                         progress.dismiss()
                     }
@@ -235,6 +246,7 @@ class UserService constructor(callingActivity: Activity) {
     }
 
     fun signout() {
+        System.out.println("===============>>> check sign out!!!");
         if (identityManager.isUserSignedIn) {
             identityManager.signOut()
         }
