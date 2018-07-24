@@ -246,7 +246,6 @@ class UserService constructor(callingActivity: Activity) {
     }
 
     fun signout() {
-        System.out.println("===============>>> check sign out!!!");
         if (identityManager.isUserSignedIn) {
             identityManager.signOut()
         }

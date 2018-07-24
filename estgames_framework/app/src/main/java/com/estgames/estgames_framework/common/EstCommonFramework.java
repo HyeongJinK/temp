@@ -1,5 +1,7 @@
 package com.estgames.estgames_framework.common;
 
+import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.util.Log;
 
@@ -15,6 +17,7 @@ import com.estgames.estgames_framework.core.PlatformContext;
 import com.estgames.estgames_framework.core.Token;
 import com.estgames.estgames_framework.core.session.SessionManager;
 import com.estgames.estgames_framework.policy.PolicyDialog;
+import com.estgames.estgames_framework.webview.WebViewActivity;
 import com.estgames.estgames_framework.webview.WebViewDialog;
 
 import java.util.ArrayList;
@@ -300,8 +303,10 @@ public class EstCommonFramework {
         } else if (pd == null){
             estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
         } else {
-            notice = new WebViewDialog(context, pd.getUrl().getNotice() + "?eg_token=" + token.getEgToken() + "&lang=" + getLanguage());
-            notice.show();
+            String url = String.format("%s?eg_token=%s&lang=%s", pd.getUrl().getNotice(), token.getEgToken(), getLanguage());
+            notice = WebViewDialog.createDialog(url);
+            FragmentManager fm = ((Activity)context).getFragmentManager();
+            notice.show(fm, "EG_WEB_VIEW_NOTICE");
         }
     }
 
@@ -312,8 +317,8 @@ public class EstCommonFramework {
         } else if(pd == null) {
             estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
         } else {
-            cscenter = new WebViewDialog(context, pd.getUrl().getCs() + "?eg_token=" + token.getEgToken() + "&lang=" + getLanguage());
-            cscenter.show();
+            String url = String.format("%s?eg_token=%s&lang=%s", pd.getUrl().getCs(), token.getEgToken(), getLanguage());
+            WebViewActivity.open((Activity) context, url);
         }
     }
 
@@ -325,8 +330,8 @@ public class EstCommonFramework {
             estCommonFailCallBack.accept(Fail.START_API_DATA_INIT);
         } else {
             String url = String.format("%s?eg_token=%s&lang=%s", pd.getUrl().getEvent(), token.getEgToken(), getLanguage());
-            WebViewDialog eventDialog = new WebViewDialog(context, url);
-            eventDialog.show();
+            WebViewDialog dialog = WebViewDialog.createDialog(url);
+            dialog.show(((Activity)context).getFragmentManager(), "EG_WEB_VIEW_EVENT");
         }
     }
 
