@@ -4,6 +4,12 @@
 [![License](https://img.shields.io/cocoapods/l/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
+:new: 업데이트 (1.3.0)
+---
+
+* SNS 계정연동 시 캐릭터 정보 가져오는 부분 에러 시 연동 종료, 콜백호출 : Fail 값에서 API_CHARACTER_INFO 리턴
+
+
 :new: 업데이트 (1.2.1)
 ---
 
@@ -121,7 +127,7 @@ Localizable.string 파일을 선택하시면 오른쪽 Localization 메뉴에 �
 
 * 로그인 화면 커스텀 예제입니다.
 
-![](https://gitlab.com/estmp/banner-ios-sdk/raw/master/estgames-common-framework-example/estgames-common-framework-example/IMG_3491.PNG =100100)
+![](https://gitlab.com/estmp/banner-ios-sdk/raw/master/estgames-common-framework-example/estgames-common-framework-example/IMG_3491.PNG)
 
 ```swift
 @objc func emp_goToLogin() {

@@ -108,6 +108,11 @@ public class UserDialog {
         pview.present(userLinkViewController, animated: false, completion: nil)
     }
     
+    public func dismissUserLinkDialog() {
+        self.userLinkViewController.close()
+        //self.userLinkViewController.dismiss(animated: false, completion: nil)
+    }
+    
     public func showUserLoadDialog() {
         pview.present(userLoadViewController, animated: false)
     }

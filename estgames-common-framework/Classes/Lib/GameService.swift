@@ -13,11 +13,12 @@ public class GameService {
     
     public func getCharacterInfo(
         region: String,egId: String
+        , lang: String
         , success: @escaping(_ data: String)-> Void
         , fail: @escaping(_ error: Error?)-> Void
         ) {
         
-        let url = "https://mp-pub.estgames.co.kr/live/game/"+MpInfo.App.region+"?eg_id="+egId
+        let url = "https://mp-pub.estgames.co.kr/live/game/"+MpInfo.App.region+"?eg_id="+egId+"&lang="+lang
         request(url)
             .validate(contentType: ["application/json"])
             .validate(statusCode: 200..<300)

@@ -53,6 +53,7 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        MpInfo.App.region = "mr.global.ls"
         super.viewDidLoad()
         
         //KeychainWrapper.standard.string(forKey: <#T##String#>)
@@ -72,21 +73,22 @@ class ViewController: UIViewController {
         estgamesCommon.estCommonFailCallBack = {(err) -> Void in    //EstgamesCommon 내에서 에러가 발생 했을 경우 호출되는 콜백함수
             switch (err) {
                 case .START_API_NOT_CALL :
-                    self.errorCode.text = "API 호출 시 네트워크 에러"
+                    self.callBack.text = "API 호출 시 네트워크 에러"
                     break
                 case .START_API_DATA_FAIL :
-                    self.errorCode.text = "내려 받은 값 오류"
+                    self.callBack.text = "내려 받은 값 오류"
                     break
                 case .START_API_DATA_INIT :
-                    self.errorCode.text = "값이 초기화 되지 않았습니다."
+                    self.callBack.text = "값이 초기화 되지 않았습니다."
                     break
                 case .PROCESS_DENIED_CONTRACT :
-                    self.errorCode.text = "이용약관을 동의해주세요"
+                    self.callBack.text = "이용약관을 동의해주세요"
                 break
                 default:
                 break
             }
         }
+        //estgamesCommon.setLanguage(lang: "ko")
         estgamesCommon.create();    //스타트 api 호출, 내려받은 값으로 설정
         //MpInfo.App.region = "test"
         estgamesCommon.processCallBack = {() -> Void in //processShow() 호출이 끝나고 호출하는 콜백함수
@@ -117,16 +119,13 @@ class ViewController: UIViewController {
             print("startGame() 함수 호출 성공 시 호출되는 콜백함수")
         }
         
-        vc.goToLoginSuccessCallBack = {(egId, resultType, pro) -> Void in
-            print(egId)
-            print(resultType)
-            print(pro)
+        vc.goToLoginSuccessCallBack = {(egId, resultType, pro) -> Void in            
             print("goToLogin() 함수 호출 성공 시 호출되는 콜백함수")
+            self.callBack.text = "goToLogin() 함수 호출 성공 시 호출되는 콜백함수"
         }
         
         vc.goToLoginFailCallBack = {(fail) -> Void in
-            print("adsfacvasdfsad")
-            print(fail.describe)
+            self.callBack.text = fail.describe
         }
         
         vc.goToLoginCloseCallBack = {() -> Void in
@@ -144,6 +143,7 @@ class ViewController: UIViewController {
             }
         }
         dataPrint()
+
     }
     
     func googleEmail() -> String {
@@ -190,7 +190,7 @@ class ViewController: UIViewController {
         config.canCancel = true     //취소 버튼
         config.isBackgroundColorFullScreen = true    //배경색을 로고부분에만 적용할 건지 전체화면에 적용할 건지 선택
         config.backgroundColor = UIColor.black   //배경색 설정
-        config.logoImage = UIImage(named: "logo-aws")      //로고 이미지 설정
+        //config.logoImage = UIImage(named: "logo-aws")      //로고 이미지 설정
         
         vc.goToLogin(config: config)
         //vc.goToLogin()
@@ -251,7 +251,7 @@ class ViewController: UIViewController {
          estgamesCommon.showEvent()
     }
     @IBAction func engTest(_ sender: Any) {
-        estgamesCommon.setLanguage(lang: "en")
+        estgamesCommon.setLanguage(lang: "fr")
     }
     @IBAction func korTest(_ sender: Any) {
         estgamesCommon.setLanguage(lang: "ko")

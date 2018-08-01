@@ -137,6 +137,10 @@ class UserLinkViewController: UIViewController {
 //        dismiss(animated: false, completion: closeActon)
 //    }
     
+    public func close() {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
     @objc func cancelBtAction(_ sender:UIButton) {
         self.dismiss(animated: false, completion: nil)
         cancelAction()

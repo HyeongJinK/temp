@@ -113,7 +113,7 @@ public class AccountApi {
         
         request(url, method: method, parameters:params, encoding:URLEncoding.httpBody, headers: postHeader)
             .validate(contentType: ["application/json"])
-            .validate(statusCode: 200..<300)
+            .validate(statusCode: 200..<404)
             .responseJSON { response in
                 if response.result.isSuccess {
                     success(response.result.value as! Dictionary)

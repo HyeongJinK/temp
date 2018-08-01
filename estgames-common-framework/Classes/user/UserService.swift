@@ -52,6 +52,17 @@ public class UserService {
     }
     
     public func startGame() {
+        // 첫 실행 시 키체인 삭제
+        let pList = UserDefaults.standard
+        if (pList.string(forKey: MpInfo.App.region+"_first") != nil) {
+            
+        } else {
+            clearKey();
+            pList.set("true", forKey: MpInfo.App.region+"_first")
+            pList.synchronize()
+        }
+        
+        
         // 게임클라이언트가 켜지면 첫째 egToken이 존재 하는지 체크
         if MpInfo.Account.isAuthedUser() == false {
             let principal = getPrincipal()
@@ -85,6 +96,7 @@ public class UserService {
                     self.startSuccessCallBack()
             },
                 fail: { error in
+                    //self.accountService.clearKeychain()
                     self.failCallBack(Fail.TOKEN_CREATION)
             })
         }
@@ -237,9 +249,8 @@ public class UserService {
         userDialog.userResultViewController.resultType = "LOGIN"
         userDialog.userLoadViewController.inputText.text = "";
         userDialog.setUserLinkProviderLabel(provider: self.crashSnsSyncIno.provider)
-        characterInfo(self.crashSnsSyncIno.snsEgId, userDialog.setUserLinkCharacterLabelSNS)
         userDialog.setUserLinkAction(closeAction: closeAction, confirmAction: linkConfirmAction, cancelAction: linkCancelAction)
-        userDialog.showUserLinkDialog()
+        characterInfo(self.crashSnsSyncIno.snsEgId, userDialog.setUserLinkCharacterLabelSNS)
     }
     
     
@@ -379,11 +390,13 @@ public class UserService {
     
     private func characterInfo(_ egId: String, _ f:@escaping (String) -> Void) {
         self.gameService.getCharacterInfo(
-            region: MpInfo.App.region, egId: egId,
+            region: MpInfo.App.region, egId: egId, lang : getLanguage(), 
             success: {(data: String) in
                 f(data)
+                self.userDialog.showUserLinkDialog()
         },
             fail: {(error: Error?) in
+                //userDialog.userLinkViewController.
                 self.goToLoginFailCallBack(Fail.API_CHARACTER_INFO)
         })
     }
@@ -391,9 +404,10 @@ public class UserService {
     private func characterInfo(_ egId: String) -> String {
         var characterInfo: String = ""
         self.gameService.getCharacterInfo(
-            region: MpInfo.App.region, egId: egId,
+            region: MpInfo.App.region, egId: egId, lang : getLanguage(),
             success: {(data: String) in
                 characterInfo = data
+                self.userDialog.showUserLinkDialog()
         },
             fail: {(error: Error?) in
                 self.goToLoginFailCallBack(Fail.API_CHARACTER_INFO)
@@ -426,5 +440,16 @@ public class UserService {
             profile = "{\"provider\": \"\(provider)\"}"
         }
         return profile
+    }
+    
+    private func getLanguage() -> String {
+        if let lang = UserDefaults.standard.string(forKey: "i18n_language") {
+            return lang
+        }
+        
+        if let lang = Locale.current.languageCode {
+            return lang
+        }
+        return "ko"
     }
 }

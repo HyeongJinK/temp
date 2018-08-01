@@ -97,6 +97,7 @@ extension String {
         }
         
         URLCache.shared.removeAllCachedResponses()
+        //let semaphore = DispatchSemaphore(value : 0)
         //queue.async {
             request(url)
                 .validate(contentType: ["application/json"])
@@ -117,6 +118,7 @@ extension String {
                                 self.initCallBack(self)
                             }
                             //myGroup.leave()
+                            //semaphore.signal()
                         } else {
                             self.estCommonFailCallBack(Fail.START_API_DATA_FAIL)
                         }
@@ -124,6 +126,8 @@ extension String {
                         self.estCommonFailCallBack(Fail.START_API_NOT_CALL)
                     }
             }
+        //semaphore.wait()
+        //semaphore.wait(timeout: DispatchTime.distantFuture)
     }
     
     private func checkEstgamesData() -> Bool{
