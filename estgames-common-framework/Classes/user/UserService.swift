@@ -54,7 +54,7 @@ public class UserService {
     public func startGame() {
         // 첫 실행 시 키체인 삭제
         let pList = UserDefaults.standard
-        if (pList.string(forKey: MpInfo.App.region+"_first") != nil) {
+        if (pList.string(forKey: MpInfo.App.region+"_first") != nil && pList.string(forKey: "estPolicy") != nil) {
             
         } else {
             clearKey();
