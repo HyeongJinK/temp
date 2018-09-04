@@ -1,0 +1,207 @@
+1. gradle build.gradle dependency 설정
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:animated-vector-drawable:26.1.0'
+
+    implementation 'com.google.android.gms:play-services-auth:15.0.1'
+    implementation 'com.facebook.android:facebook-login:[4, 5)'
+	
+2. res/raw/egconfiguration.json 파일 작성
+
+	{
+	  "Client" : {
+		"ClientId": "1cbfa4da-f456-36cd-95f7-c17938d1b1b5.mp.estgames.com",
+		"Secret": "435e1b2e970676e51826000ea3ef00fe0b43847866a7e95ff8903942f91a137c",
+		"Region": "mr.global.ls"
+	  }
+	}
+
+3. Application 클래스 작성
+
+	public class Application extends MultiDexApplication implements PlatformContext {
+		...
+		
+		@Override
+		public void onCreate() {
+			super.onCreate();
+			this.delegateContext = new GenericPlatformContext(getApplicationContext());
+		}
+	}
+
+4. AndroidManifest.xml 파일 작성 ->
+   4.1. package 설정
+   4.2. Application 클래스 설정
+   4.3. facebook meta-data 및 login activity 설정
+
+5. EgClient 객체 생성
+
+   EgClient client = EgClient.from(getApplication()) 
+   or 
+   EgClient client = EgClient.from(getApplicationContext())
+   
+6. 앱 시작시 기본 프로세스 진행하기
+
+   Action<String> starting = client.starting(activity);
+   starting.setListener(new ActionListener<String>() {
+       @Override
+	   public void onDone(String response) {
+	       // 프로세스 완료 핸들러 작성
+	   }
+	   
+	   /** 생략가능 **/
+	   @Override
+	   public void onCancel() {
+	       // 프로세스 취소 핸들러 작성
+	   }
+	   
+	   /** 생략가능 **/
+	   @Override
+	   public void onError(Throwable t) {
+	       // 프로세스 에러 핸들러 작성
+	   }
+   });
+   starting.go();
+   
+7. EG 세션 시작 및 SNS 로그인
+  7.1 세션 매니저 생성
+  
+      SessionManager sessionManager = client.getSessionManager()
+	  
+  7.2 세션 오픈하기 
+      sessionManager
+	      .open()
+	      .onError(new Task.Acceptor<Throwable>() {
+		      @Override
+			  public void accept(Throwable t) {
+			      // 세션 생성 실패 핸들러 작성
+			  }
+		  })
+		  .asyncAccept(new Task.Acceptor<String>() {
+		      @Override
+			  public void accept(String token) {
+			      // 세션 생성 완료 핸들러 작성
+			  }
+		  })
+
+  7.3 SNS 계정연동하기 (개별 버튼 구현)
+    - 세션 오픈 없이 SNS 로그인을 시도하는 경우 로그인후 SNS 계정으로 바로 세션을 시작함.
+	
+	step1. SNS 버튼작성
+	- activity_layout.xml
+	
+	<com.estgames.framework.ui.buttons.FacebookSignButton
+	    android:id="+@id/btn_facebook_login"
+		android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+		
+	<com.estgames.framework.ui.buttons.GooogleSignButton
+	    android:id="+@id/btn_google_login"
+		android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+	
+	step2. SignInControl 객체 생성
+	- LoginActivity.java
+	
+	SignInControl.Option option = new SignInControl.Option()
+	        .addSignButton(findViewById(R.layout.btn_facebook_login))
+			.addSignButton(findViewById(R.layout.btn_google_login))
+			.setSignInResultHandler(new SignInResultHandler() {
+			    @Override
+				public void onComplete(Result.Login result) {
+				    // 로그인 성공 핸들러 작성
+				}
+				
+				@Override
+				public void onError(Throwable t) {
+				    // 로그인 실패 핸들러 작성
+				}
+				
+				@Override
+				public void onCancel() {
+				    // 로그인 취소 핸들러 작성 
+				}
+			});
+			
+	SignInControl signInControl = SignInControl.createControl(activity, option);
+	
+
+		
+	step3. onActivityResult 등록
+	- LoginActivity.java
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	    signInControl.onActivityResult(requestCode, resultCode, data);
+	}
+	
+  7.3 SNS 계정연동하기 (SNS 로그인 대화팝업)
+    - 세션 오픈 없이 SNS 로그인을 시도하는 경우 로그인후 SNS 계정으로 바로 세션을 시작함.
+	step1. SNS 로그인 팝업 오픈 버튼작성
+	- activity_layout.xml
+	
+	<Button
+		android:id="@+id/btn_sign_in_view"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="5dp"
+		android:text="Sign In Dialog"/>
+		
+	step2. SignInControl 객체 생성
+	- LoginActivity.java
+	
+	SignInControl.Option option = new SignInControl.Option()
+	        .addSignButton(findViewById(R.layout.btn_facebook_login))
+			.addSignButton(findViewById(R.layout.btn_google_login))
+			.setSignInResultHandler(new SignInResultHandler() {
+			    @Override
+				public void onComplete(Result.Login result) {
+				    // 로그인 성공 핸들러 작성
+				}
+				
+				@Override
+				public void onError(Throwable t) {
+				    // 로그인 실패 핸들러 작성
+				}
+				
+				@Override
+				public void onCancel() {
+				    // 로그인 취소 핸들러 작성 
+				}
+			});
+			
+	SignInControl signInControl = SignInControl.createControl(activity, option);
+	
+	step3. 로그인 화면 호출
+	
+	findViewById(R.id.btn_sign_in_view).setOnClickListener(new View.OnClickListener() {
+	    @Override
+		public void onClick(View v) {
+		    signInControl.signIn(activity);
+		}
+	});
+	
+	step4. onActivityResult 등록
+	- LoginActivity.java
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	    signInControl.onActivityResult(requestCode, resultCode, data);
+	}
+  
+  7.4 세션정보 조회하기
+  
+    Token token = client.getSessionManager().getToken(); // 현재 세션의 토큰정보 조회
+	Profile profile = client.getSessionManager().getProfile(); // 현재 세션의 프로필정보 조회하기
+	
+  7.5 세션 종료하기
+   
+    SessionManager sessionManager = client.getSessionManager();
+    sessionManager.signOut().asyncAccept(new Task.Acceptor() {
+	    @Override public void accept(Object o) {
+		    // 세션 종료 핸들러 작성
+		}
+	})
+	
+	
