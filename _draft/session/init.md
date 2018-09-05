@@ -9,7 +9,7 @@ Sns 연동은 `SignInControl`에서 처리하며 라이브러리에서 제공하
 이 장은 아래내용으로 구성됩니다.
 
 * [세션 매니저 생성합니다.](/_draft/session/Create.md)
-* [세션 생성(게스트 로그인)](/_draft/session/Open.md)
+* [세션 생성(게스트 로그인) 및 세션 갱신](/_draft/session/Open.md)
 * [세션, 유저 정보 조회하기](/_draft/session/Select.md)
 * [로그아웃 하기](/_draft/session/Logout.md)
 * [SNS 계정연동 구현하기](/_draft/session/Sns.md)
