@@ -10,7 +10,7 @@
     - [EgClient 그외 함수](/_draft/egclient/Etc.md)
 - [유저연동](/_draft/session/init.md)
     - [세션 매니저 생성](/_draft/session/Create.md)
-    - [세션 생성(게스트 로그인)](/_draft/session/Open.md)
+    - [세션 생성(게스트 로그인) 및 세션 갱신](/_draft/session/Open.md)
     - [세션, 유저 정보 조회하기](/_draft/session/Select.md)
     - [로그아웃 하기](/_draft/session/Logout.md)
     - [SNS 계정연동 구현하기](/_draft/session/Sns.md)
