@@ -11,6 +11,18 @@ import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 
+data class ServiceStatus(
+        val isServiceOn: Boolean,
+        val remainSeconds: Int,
+        val noticeUrl: String
+) {
+    val remainMinutes: Int get() = if (remainSeconds > 0) {
+        remainSeconds / 60
+    } else {
+        0
+    }
+}
+
 class GameAgent(context: Context, configuration: Configuration) {
     companion object {
         private const val TAG = "GameAgent"
@@ -20,9 +32,10 @@ class GameAgent(context: Context, configuration: Configuration) {
 
     private val ctx: PlatformContext = context.applicationContext as PlatformContext
     private val configuration: Configuration = configuration
+    private val preferences: ClientPreferences = ClientPreferences(context)
 
     interface StatusReceiver {
-        fun onReceived(isServiceOn: Boolean)
+        fun onReceived(status: ServiceStatus)
         fun onError(fail: Fail)
     }
 
@@ -40,7 +53,11 @@ class GameAgent(context: Context, configuration: Configuration) {
             executor = {retrieveStatusAsJson()},
             listener = { result ->
                 result.right {
-                    l.onReceived(it.getString("status").equals("on"))
+                    l.onReceived(ServiceStatus(
+                            it.getString("status").equals("on"),
+                            it.getInt("time"),
+                            it.getString("url")
+                    ))
                 }.left { e ->
                     Log.e(TAG, e.message, e)
                     when (e) {
@@ -53,11 +70,17 @@ class GameAgent(context: Context, configuration: Configuration) {
         ).execute();
     }
 
-    fun retrieveStatus(): Boolean {
+    fun retrieveStatus(): ServiceStatus {
         try {
             return Executors.newSingleThreadExecutor().use { exe ->
                 val result = exe.submit(Callable {
-                    retrieveStatusAsJson().getString("status").equals("on")
+                    retrieveStatusAsJson().run {
+                        ServiceStatus(
+                                getString("status").equals("on"),
+                                getInt("time"),
+                                getString("url")
+                        )
+                    }
                 })
                 return@use result.get()
             }
@@ -67,7 +90,7 @@ class GameAgent(context: Context, configuration: Configuration) {
     }
 
     private fun retrieveStatusAsJson(): JSONObject {
-        return Api.GameServiceStatus(configuration.region).json()
+        return Api.GameServiceStatus(configuration.region, preferences.locale.language).json()
     }
 
     private fun Api.json(): JSONObject {

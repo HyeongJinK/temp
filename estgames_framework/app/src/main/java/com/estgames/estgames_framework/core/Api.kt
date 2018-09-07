@@ -77,7 +77,7 @@ sealed class Api(val url: String, val method: Method, val data: Map<String, Any>
             "$MP_GAME_API_HOST/live/game/$region", Method.GET, hashMapOf("eg_id" to egId, "lang" to lang)
     )
 
-    class GameServiceStatus(region: String): Api (
-            "$MP_GAME_API_HOST/live/game-open-status", Method.GET, hashMapOf("region" to region)
+    class GameServiceStatus(region: String, lang: String): Api (
+            "$MP_GAME_API_HOST/live/game-open-status", Method.GET, hashMapOf("region" to region, "lang" to lang)
     )
 }

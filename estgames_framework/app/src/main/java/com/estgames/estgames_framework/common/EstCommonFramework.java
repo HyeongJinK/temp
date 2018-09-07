@@ -335,6 +335,11 @@ public class EstCommonFramework {
         }
     }
 
+    public void showCommonWebView(String url) {
+        WebViewDialog dialog = WebViewDialog.createDialog(url);
+        dialog.show(((Activity)context).getFragmentManager(), "EG_WEB_VIEW");
+    }
+
     public String getNation() {
         return pd.getNation();
     }

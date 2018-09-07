@@ -2,6 +2,13 @@
 
 ## 업데이트 사항
 
+:new: 1.4.0 업데이트 사항
+* GameAgent 클래스의 retrieveStatus 메서드 변경
+  * 현재 게임서버의 오픈 상태를 조회하는 retrieveStatus 메서드의 리스너 값이 변경되었습니다.
+  * 이전 버전에서는 서버의 오픈 유무만 확인 할 수 있었지만 변경된 버전에서는 서버의 오픈 유무와 함께 오픈까지 남은 시간과 공지 주소를 확인 할 수 있습니다.
+* EstCommonFramework 클래스에 showCommonWebView 메서드 추가
+  * target 주소로 웹 뷰 다이얼 로그를 오픈 할 수 있습니다.
+
 :new: 1.3.2 업데이트 사항
 * 클라이언트 라이브러리 내부 Session Repository 에 현재 토큰을 중복 저장 하도록 변경.
   * 클라이언트 세션정보 불러오기 실패시 토큰정보를 잃어버리지 않도록 토큰 정보만 중복 저장합니다.
@@ -621,6 +628,12 @@ empFramework.showCSCenter();
 empFramework.showEvent();
 ```
 
+#### 8. 웹 대화창 화면
+```java
+
+empFramework.showCommonWebView("http://www.estgames.co.kr");
+```
+
 #### 8. 국가, 언어조회
 ```java
 
@@ -782,8 +795,10 @@ GameAgent 객체를 통해 현재 게임 서비스의 open / close 여부를 확
 
     ga.retrieveStatus(new GameAgent.StatusReceiver() {
         @Override
-        public void onReceived(boolean isServiceOn) {
-            // isServiceOn == true 이면 서비스가 오픈된 상태 아니면 닫힌 상태입니다.
+        public void onReceived(ServiceStatus status) {
+            // status.isServiceOn() == true 이면 서비스가 오픈된 상태 아니면 닫힌 상태입니다.
+            // status.getRemainSeconds() : 서버가 오픈된 상태가 아닐때 오픈까지 남은 시간입니다.
+            // status.getNoticeUrl() : 서비스 공지 페이지 주소입니다.
             // 클라이언트 코드 작성
         }
 
@@ -799,8 +814,9 @@ GameAgent 객체를 통해 현재 게임 서비스의 open / close 여부를 확
 
 게임 서비스 상태 요청에 대한 응답 받는 핸들러 인터페이스입니다. 메소드는 다음과 같습니다.
 
-* public void onReceived(boolean isServiceOn) : 서버로부터 확인 응답이 왔을 경우 호출됩니다.
-  * isServiceOn  이 `true` 인 경우 서비스가 오픈된 상태입니다.
+* public void onReceived(ServiceStatus status) : 서버로부터 확인 응답이 왔을 경우 호출됩니다.
+  * status 객체는 현재 서비스의 상태정보를 담고 있습니다.
+  * status.isServiceOn  이 `true` 인 경우 서비스가 오픈된 상태입니다.
 * public void onFail(Fail code) : 서버로부터 정상적인 응답을 받지 못 했을 경우 호출됩니다. 응답 코드는 다음과 같습니다.
 
 코드 | 설명
@@ -808,6 +824,18 @@ GameAgent 객체를 통해 현재 게임 서비스의 open / close 여부를 확
 API_BAD_REQUEST | 클라이언트가 잘못된 요청을 보낸경우. 예) 잘못된 region값으로 호출 등
 API_UNKNOWN_RESPONSE | 서버로부터 정상적인 응답값을 받지 못한 경우.
 API_REQUEST_FAIL | 서버 API 호출 실패
+
+##### `ServiceStatus` 클래스
+
+서비스 상태를 요청했을때 응답으로 받는 상태 정보를 저장하고 있는 객체입니다.
+
+확인 할 수 있는 값들은 다음과 같습니다.
+
+Field (Method) | Data Type | 설명
+---------------|---------|-------
+isServiceOn() | Boolean | 서비스 오픈 유무
+getRemainSeconds() | Integer | 서비스가 닫혀있는경우 오픈까지 남은 시간. 단위는 초
+getNoticeUrl() | String | 서비스 공지를 위한 페이지 주소
 
 
 
