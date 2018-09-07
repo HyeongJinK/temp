@@ -295,6 +295,16 @@ extension String {
         }
     }
     
+    public func showCommonWebView(url: String) {
+        webView = WebViewUIController()
+        webView.egToken = MpInfo.Account.egToken
+        webView.modalPresentationStyle = .overCurrentContext
+        webView.nation = getLanguage()!
+        webView.url = url
+        
+        pview.present(webView, animated: false)
+    }
+    
     public func getNation() -> String? {
         if (!checkEstgamesData()) {
             self.estCommonFailCallBack(Fail.START_API_DATA_INIT)

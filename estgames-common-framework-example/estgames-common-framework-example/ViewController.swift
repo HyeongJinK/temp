@@ -224,8 +224,9 @@ class ViewController: UIViewController {
         estgamesCommon.authorityShow()
     }
     
-    @IBAction func policyTest(_ sender: Any) {        
-        estgamesCommon.policyShow()
+    @IBAction func policyTest(_ sender: Any) {
+        estgamesCommon.showCommonWebView(url: "https://google.co.kr")
+        //estgamesCommon.policyShow()
     }
     
     @IBAction func policyDataTest(_ sender: Any) {
@@ -241,6 +242,7 @@ class ViewController: UIViewController {
     @IBAction func noticeTest(_ sender: Any) {
         print(Fail.START_API_NOT_CALL.describe)
         //estgamesCommon.showNotice()
+        estgamesCommon.showCommonWebView(url: "http://www.naver.com")
     }
     
     @IBAction func faqTest(_ sender: Any) {
@@ -258,7 +260,7 @@ class ViewController: UIViewController {
     }
     @IBAction func openTest(_ sender: Any) {
         gameAgent.retrieveStatus(onReceived: {(result) -> Void in
-            self.errorCode.text = result.description
+            self.errorCode.text = result.getIsServiceOn().description + " " + result.getRemainSeconds().description + " " + result.getNoticeUrl()
         }, onFail: {(fail) -> Void in
             self.errorCode.text = "점검API에러"
         })

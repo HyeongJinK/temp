@@ -4,6 +4,27 @@
 [![License](https://img.shields.io/cocoapods/l/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 [![Platform](https://img.shields.io/cocoapods/p/estgames-common-framework.svg?style=flat)](http://cocoapods.org/pods/estgames-common-framework)
 
+:new: 업데이트 (1.4)
+---
+
+* GameAgent 클래스에 retrieveStatus 메소드가 변경되었습니다.
+    * 기존 : retrieveStatus(onReceived : (_ result: Bool) -> Void , onFail : (_ fail: Fail) -> Void)
+    * 변경 : retrieveStatus(onReceived : (_ result: ServiceStatus) -> Void , onFail : (_ fail: Fail) -> Void)
+    * 기존의 성공 시 콜백함수인 onReceived의 결과 값이 Bool에서 ServiceStatus 클래스로 변경되었습니다.
+* ServiceStauts 객체는 3개의 매개변수를 갖고 있습니다.
+    * isServiceOn: Bool : 기존의 result값으로 나왔던 값입니다.
+    * remainSeconds: Int : 남은 점검시간
+    * noticeUrl: String : 공지사항 URL
+* URL값을 받아서 웹뷰를 띄우는 메소드가 추가 되었습니다. 우측상단에 X버튼이 있는 전체창 웹뷰입니다.
+    * showCommonWebView(url: String)
+
+:new: 업데이트 (1.3.1)
+---
+
+* 계정연동중(goToLogin) 캐릭터 관련 API 에러 시 연동 종료 후, goToLoginFailCallBack 호출
+* 들어오는 에러코드는 API_CHARACTER_INFO 입니다.
+
+
 :new: 업데이트 (1.3.0)
 ---
 
@@ -854,10 +875,13 @@ vc.goToLogin(config: config)
 
 |이름|타입|설명|
 |-|-|-|
-|retrieveStatus|retrieveStatus(onReceived :  (_ result: Bool) -> Void , onFail :  (_ fail: Fail) -> Void)|API를 호출해 점검 모드인지 확인|
+|retrieveStatus|retrieveStatus(onReceived :  (_ result: ServiceStauts) -> Void , onFail :  (_ fail: Fail) -> Void)|API를 호출해 점검 모드인지 확인|
 
 * 성공시 OnReceived 호출, 실패시 onFail 호출
-* OnReceived에 result값이 true면 오픈, false면 점검
+* ServiceStauts 객체는 3개의 매개변수를 갖고 있습니다.
+    * isServiceOn: Bool : 기존의 result값으로 나왔던 값입니다.
+    * remainSeconds: Int : 남은 점검시간
+    * noticeUrl: String : 공지사항 URL
 * onFail 결과값으로 오는 에러들
 * START_API_DATA_INIT : 스타트API에 오픈 유/무 URL를 받지 못함 
 * API_OMITTED_PARAMETER : 리젼값이 잘못설정됨
@@ -874,7 +898,7 @@ var gameAgent: GameAgent = GameAgent()
 
 ```swift
 gameAgent.retrieveStatus(onReceived: {(result) -> Void in
-    self.errorCode.text = result.description
+    self.errorCode.text = result.getIsServiceOn().description + " " + result.getRemainSeconds().description + " " + result.getNoticeUrl()
 }, onFail: {(fail) -> Void in
     print(fail)
 })
