@@ -1,0 +1,596 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>PlatformContext 구성 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../egclient/init.html" />
+    
+    
+    <link rel="prev" href="Client.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../tutorial/init.html">
+            
+                <a href="../tutorial/init.html">
+            
+                    
+                    빠르게 시작하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="init.html">
+            
+                <a href="init.html">
+            
+                    
+                    라이브러리 설정
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="gradle.html">
+            
+                <a href="gradle.html">
+            
+                    
+                    build.gradle 의존성 설정
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="AndroidManifest.html">
+            
+                <a href="AndroidManifest.html">
+            
+                    
+                    AndroidManifest.xml 작성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="Client.html">
+            
+                <a href="Client.html">
+            
+                    
+                    Client 설정
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="PlatformContext.html">
+            
+                <a href="PlatformContext.html">
+            
+                    
+                    PlatformContext 구성
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../egclient/init.html">
+            
+                <a href="../egclient/init.html">
+            
+                    
+                    EgClient 메뉴얼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../egclient/Create.html">
+            
+                <a href="../egclient/Create.html">
+            
+                    
+                    EgClient 생성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../egclient/Action.html">
+            
+                <a href="../egclient/Action.html">
+            
+                    
+                    Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../egclient/ActionListener.html">
+            
+                <a href="../egclient/ActionListener.html">
+            
+                    
+                    ActionListener 구현 및 등록
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../egclient/Etc.html">
+            
+                <a href="../egclient/Etc.html">
+            
+                    
+                    EgClient 그외 함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../session/init.html">
+            
+                <a href="../session/init.html">
+            
+                    
+                    유저연동
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../session/Create.html">
+            
+                <a href="../session/Create.html">
+            
+                    
+                    세션 매니저 생성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../session/Open.html">
+            
+                <a href="../session/Open.html">
+            
+                    
+                    세션 생성(게스트 로그인) 및 세션 갱신
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../session/Select.html">
+            
+                <a href="../session/Select.html">
+            
+                    
+                    세션, 유저 정보 조회하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../session/Logout.html">
+            
+                <a href="../session/Logout.html">
+            
+                    
+                    로그아웃 하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../session/Sns.html">
+            
+                <a href="../session/Sns.html">
+            
+                    
+                    SNS 계정연동 구현하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../core/init.html">
+            
+                <a href="../core/init.html">
+            
+                    
+                    Support
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >PlatformContext 구성</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="platformcontext-&#xAD6C;&#xC131;">PlatformContext &#xAD6C;&#xC131;</h1>
+<p>EGMP &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574; MP Configuration&#xC744; &#xCD08;&#xAE30;&#xD654; &#xD558;&#xACE0; Context&#xB97C; &#xAD6C;&#xC131;&#xD558;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.
+Application &#xD074;&#xB798;&#xC2A4;&#xB97C; MP Context&#xB85C; &#xC778;&#xC2DD; &#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; PlatformContext &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xAD6C;&#xD604;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="application-&#xD074;&#xB798;&#xC2A4;-&#xCD94;&#xAC00;">Application &#xD074;&#xB798;&#xC2A4; &#xCD94;&#xAC00;</h2>
+<h5 id="applicationjava">Application.java</h5>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">MultiDexApplication</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PlatformContext</span> </span>{
+    <span class="hljs-keyword">private</span> PlatformContext delegateContext;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Configuration <span class="hljs-title">getConfiguration</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> delegateContext.getConfiguration();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getDeviceId</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> delegateContext.getDeviceId();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> SessionRepository <span class="hljs-title">getSessionRepository</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> delegateContext.getSessionRepository();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate();
+        <span class="hljs-keyword">this</span>.delegateContext = <span class="hljs-keyword">new</span> GenericPlatformContext(getApplicationContext());
+    }
+}
+</code></pre>
+<h2 id="application-&#xD074;&#xB798;&#xC2A4;-&#xB4F1;&#xB85D;">Application &#xD074;&#xB798;&#xC2A4; &#xB4F1;&#xB85D;</h2>
+<p>&#xCD08;&#xAE30;&#xD654; &#xCF54;&#xB4DC;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; Appication &#xB97C; &#xC571;&#xC774; &#xC778;&#xC2DD; &#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; AndroidManifest.xml &#xD30C;&#xC77C;&#xC5D0; &#xB4F1;&#xB85D;&#xD574;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+<h5 id="androidmanifestxml">AndroidManifest.xml</h5>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">manifest</span> <span class="hljs-attr">...</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">application</span>
+        <span class="hljs-attr">android:name</span>=<span class="hljs-string">&apos;.Application&apos;</span>
+        <span class="hljs-attr">...</span> &gt;</span>
+    ...
+    <span class="hljs-tag">&lt;/<span class="hljs-name">application</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">manifest</span>&gt;</span>
+</code></pre>
+<h2 id="configuration-&#xC18D;&#xC131;-&#xAD00;&#xB9AC;">Configuration &#xC18D;&#xC131; &#xAD00;&#xB9AC;</h2>
+<p><code>Configuration.Option</code>  &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC124;&#xC815;&#xAC12;&#xC744; &#xB4F1;&#xB85D; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; <code>egconfiguration.json</code> &#xD30C;&#xC77C;&#xC5D0; &#xAE30;&#xC220;&#xB41C; &#xC18D;&#xC131;&#xACFC; &#xB2E4;&#xB978; &#xAC12;&#xC744; &#xC801;&#xC6A9;&#xD558;&#xC5EC; &#xC124;&#xC815;&#xC744; &#xAD6C;&#xC131; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-java">    Configuration.Option option = <span class="hljs-keyword">new</span> Configuration.Option()
+                                      .clientId(<span class="hljs-string">&quot;other-client-id&quot;</span>)
+                                      .secret(<span class="hljs-string">&quot;other-client-secret&quot;</span>)
+                                      .region(<span class="hljs-string">&quot;test.region&quot;</span>);
+
+    delegateContenxt = <span class="hljs-keyword">new</span> AwsPlatformContext(getApplicationContext(), option);
+</code></pre>
+<p><code>Configuration.Option</code> &#xD074;&#xB798;&#xC2A4; API</p>
+<ul>
+<li><code>Configuration.Option</code> &#xC758; &#xC18D;&#xC131;&#xC124;&#xC815; &#xBA54;&#xC18C;&#xB4DC;&#xB4E4;&#xC740; &#xBAA8;&#xB450; &#xBA54;&#xC18C;&#xB4DC; &#xCCB4;&#xC778;&#xC73C;&#xB85C; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#xBA54;&#xC18C;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;</th>
+<th>&#xC124;&#xBA85;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientId</td>
+<td>String or LazyOption\<string></string></td>
+<td>Client ID &#xC18D;&#xC131;&#xC744; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td>secret</td>
+<td>String or LazyOption\<string></string></td>
+<td>Secret &#xC18D;&#xC131;&#xC744; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td>region</td>
+<td>String or LazyOption\<string></string></td>
+<td>Region &#xC18D;&#xC131;&#xC744; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>LazyOption</code>&#xC73C;&#xB85C; &#xB4F1;&#xB85D;&#xB41C; &#xC18D;&#xC131;&#xAC12;&#xB4E4;&#xC740; &#xD574;&#xB2F9; &#xC18D;&#xC131;&#xAC12;&#xC774; &#xB85C;&#xB4DC; &#xB41C; &#xD6C4;&#xC5D0; &#xC18D;&#xC131;&#xAC12;&#xC5D0; &#xC811;&#xADFC; &#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD574;&#xC90D;&#xB2C8;&#xB2E4;. &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB4F1;&#xC744; &#xD1B5;&#xD558;&#xC5EC; &#xC18D;&#xC131;&#xAC12;&#xB4E4;&#xC744; &#xBD88;&#xB7EC;&#xC640; &#xC124;&#xC815;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0; &#xC720;&#xC6A9;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<pre><code class="lang-java">    Configuration.Option option =
+        <span class="hljs-keyword">new</span> Configuration.Option()
+            .region(<span class="hljs-keyword">new</span> LazyOption&lt;String&gt;() { 
+                <span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">value</span><span class="hljs-params">()</span> </span>{ 
+                    <span class="hljs-comment">// &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; region&#xAC12;&#xC744; &#xB85C;&#xB4DC;&#xD558;&#xB294; &#xCF54;&#xB4DC; </span>
+                    String region = ..... 
+                    <span class="hljs-keyword">return</span> region 
+                }
+            });
+</code></pre>
+<h2 id="configuration-lazyinitializer">Configuration LazyInitializer</h2>
+<p><code>Configuration.Option</code> &#xC774;&#xC678;&#xC5D0;&#xB3C4; <code>Initializer</code> &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC774;&#xC6A9;&#xD574; Client &#xC124;&#xC815;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD2B9;&#xD788; <code>LazyInitializer</code> &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xCD08;&#xAE30;&#xD654; &#xC2DC;&#xC810;&#xC744; &#xC9C0;&#xC5F0; &#xBC0F; &#xCEE8;&#xD2B8;&#xB864; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>Initializer</code> &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; API</p>
+<table>
+<thead>
+<tr>
+<th>&#xBA54;&#xC18C;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC124;&#xBA85;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public Configuration getConfiguration()</td>
+<td>&#xCD08;&#xAE30;&#xD654;&#xB41C; Configuration &#xAC1D;&#xCCB4;&#xB97C; &#xBC18;&#xD658;</td>
+</tr>
+<tr>
+<td>public void init(Configuration.Option option)</td>
+<td>Configuration.Option &#xAC1D;&#xCCB4;&#xB97C; &#xC774;&#xC6A9;&#xD574; Configuration &#xC744; &#xCD08;&#xAE30;&#xD654;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Client.html" class="navigation navigation-prev " aria-label="Previous page: Client 설정">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../egclient/init.html" class="navigation navigation-next " aria-label="Next page: EgClient 메뉴얼">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"PlatformContext 구성","level":"1.3.4","depth":2,"next":{"title":"EgClient 메뉴얼","level":"1.4","depth":1,"path":"_draft/egclient/init.md","ref":"_draft/egclient/init.md","articles":[{"title":"EgClient 생성","level":"1.4.1","depth":2,"path":"_draft/egclient/Create.md","ref":"_draft/egclient/Create.md","articles":[]},{"title":"Action","level":"1.4.2","depth":2,"path":"_draft/egclient/Action.md","ref":"_draft/egclient/Action.md","articles":[]},{"title":"ActionListener 구현 및 등록","level":"1.4.3","depth":2,"path":"_draft/egclient/ActionListener.md","ref":"_draft/egclient/ActionListener.md","articles":[]},{"title":"EgClient 그외 함수","level":"1.4.4","depth":2,"path":"_draft/egclient/Etc.md","ref":"_draft/egclient/Etc.md","articles":[]}]},"previous":{"title":"Client 설정","level":"1.3.3","depth":2,"path":"_draft/setting/Client.md","ref":"_draft/setting/Client.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"_draft/setting/PlatformContext.md","mtime":"2018-09-09T11:34:26.490Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-09T13:19:01.398Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

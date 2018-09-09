@@ -16,7 +16,7 @@ IDE 툴을 사용하여 프로젝트를 생성했을 경우 package name 을 수
 </manifest>
 ```
 
-## users-permission 설정
+## uses-permission 설정
 
 EGMP 서비스들은 모두 웹 기반의 API 입니다. 따라서 모바일 앱에서 인터넷 및 네트워크 관련 권한설정을 해야 합니다.
 

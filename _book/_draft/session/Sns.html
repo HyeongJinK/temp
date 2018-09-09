@@ -1,0 +1,617 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>SNS 계정연동 구현하기 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../core/init.html" />
+    
+    
+    <link rel="prev" href="Logout.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../tutorial/init.html">
+            
+                <a href="../tutorial/init.html">
+            
+                    
+                    빠르게 시작하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../setting/init.html">
+            
+                <a href="../setting/init.html">
+            
+                    
+                    라이브러리 설정
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../setting/gradle.html">
+            
+                <a href="../setting/gradle.html">
+            
+                    
+                    build.gradle 의존성 설정
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../setting/AndroidManifest.html">
+            
+                <a href="../setting/AndroidManifest.html">
+            
+                    
+                    AndroidManifest.xml 작성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../setting/Client.html">
+            
+                <a href="../setting/Client.html">
+            
+                    
+                    Client 설정
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../setting/PlatformContext.html">
+            
+                <a href="../setting/PlatformContext.html">
+            
+                    
+                    PlatformContext 구성
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../egclient/init.html">
+            
+                <a href="../egclient/init.html">
+            
+                    
+                    EgClient 메뉴얼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../egclient/Create.html">
+            
+                <a href="../egclient/Create.html">
+            
+                    
+                    EgClient 생성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../egclient/Action.html">
+            
+                <a href="../egclient/Action.html">
+            
+                    
+                    Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../egclient/ActionListener.html">
+            
+                <a href="../egclient/ActionListener.html">
+            
+                    
+                    ActionListener 구현 및 등록
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../egclient/Etc.html">
+            
+                <a href="../egclient/Etc.html">
+            
+                    
+                    EgClient 그외 함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="init.html">
+            
+                <a href="init.html">
+            
+                    
+                    유저연동
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Create.html">
+            
+                <a href="Create.html">
+            
+                    
+                    세션 매니저 생성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Open.html">
+            
+                <a href="Open.html">
+            
+                    
+                    세션 생성(게스트 로그인) 및 세션 갱신
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Select.html">
+            
+                <a href="Select.html">
+            
+                    
+                    세션, 유저 정보 조회하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="Logout.html">
+            
+                <a href="Logout.html">
+            
+                    
+                    로그아웃 하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.5" data-path="Sns.html">
+            
+                <a href="Sns.html">
+            
+                    
+                    SNS 계정연동 구현하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../core/init.html">
+            
+                <a href="../core/init.html">
+            
+                    
+                    Support
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >SNS 계정연동 구현하기</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="sns-&#xACC4;&#xC815;&#xC5F0;&#xB3D9;">SNS &#xACC4;&#xC815;&#xC5F0;&#xB3D9;</h1>
+<p>&#xD50C;&#xB7AB;&#xD3FC; SDK&#xB294; SNS &#xACC4;&#xC815;&#xC5D0; &#xB85C;&#xADF8;&#xC778; &#xD558;&#xACE0; &#xD50C;&#xB7AB;&#xD3FC; &#xACC4;&#xC815;&#xACFC; &#xC5F0;&#xB3D9;&#xD558;&#xB294; &#xC5ED;&#xD560;&#xC744; &#xD558;&#xB294; <code>SignInControl</code> &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD604;&#xC7AC; &#xD50C;&#xB7AB;&#xD3FC;&#xC774; &#xC81C;&#xACF5;&#xD558;&#xB294; SNS &#xACC4;&#xC815;&#xC5F0;&#xB3D9;&#xC740; Facebook &#xACFC; Google &#xC785;&#xB2C8;&#xB2E4;. SNS &#xACC4;&#xC815;&#xC5F0;&#xB3D9;&#xC740; Android Framework &#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC21C;&#xC218; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB9CC;&#xC744; &#xC774;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xACE0;, EG &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB85C;&#xADF8;&#xC778; &#xBC84;&#xD2BC; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB098; &#xB85C;&#xADF8;&#xC778; &#xB300;&#xD654;&#xCC3D; (Activity &#xAE30;&#xBC18;)&#xC744; &#xC774;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xACC4;&#xC815;&#xC5F0;&#xB3D9;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC21C;&#xC11C;&#xB85C; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xAE30;&#xBCF8;-&#xBC84;&#xD2BC;&#xC73C;&#xB85C;-&#xB85C;&#xADF8;&#xC778;">&#xAE30;&#xBCF8; &#xBC84;&#xD2BC;&#xC73C;&#xB85C; &#xB85C;&#xADF8;&#xC778;</h2>
+<h4 id="1-&#xB808;&#xC774;&#xC544;&#xC6C3;&#xC5D0;-&#xBC84;&#xD2BC;-&#xBC30;&#xCE58;">1. &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC5D0; &#xBC84;&#xD2BC; &#xBC30;&#xCE58;</h4>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> 
+    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/btn_facebook_login&quot;</span> 
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span> 
+    <span class="hljs-attr">android:layout_margin</span>=<span class="hljs-string">&quot;5dp&quot;</span> 
+    <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Facebook Login&quot;</span>/&gt;</span>
+</code></pre>
+<h4 id="2-signincontrol-&#xC124;&#xC815;-in-activity">2. SignInControl &#xC124;&#xC815; (in Activity)</h4>
+<p><code>SignInControl</code> &#xAC1D;&#xCCB4;&#xB294; <code>onActivityResult</code> &#xCF5C;&#xBC31;&#xC5D0; &#xB4F1;&#xB85D;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xBCC0;&#xC218;&#xB85C; &#xC0DD;&#xC131;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-java"><span class="hljs-comment">// Sign in option &#xC124;&#xC815;</span>
+SignInControl.Option option = <span class="hljs-keyword">new</span> SignInControl.Option()
+        .setSignInResultHandler(<span class="hljs-keyword">new</span> SignInResultHandler() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onComplete</span><span class="hljs-params">(Result.Login result)</span> </span>{
+                <span class="hljs-comment">// &#xB85C;&#xADF8;&#xC778; &#xC131;&#xACF5; &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131;</span>
+            }
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(Throwable t)</span> </span>{
+                <span class="hljs-comment">// &#xB85C;&#xADF8;&#xC778; &#xC2E4;&#xD328; &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131;</span>
+            }
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCancel</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-comment">// &#xB85C;&#xADF8;&#xC778; &#xCDE8;&#xC18C; &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131; </span>
+            }
+        });
+
+<span class="hljs-comment">// SignInControl &#xAC1D;&#xCCB4;&#xC0DD;&#xC131;</span>
+SignInControl signInControl = SignInControl.createControl(activity, option);
+</code></pre>
+<h4 id="3-button-&#xD578;&#xB4E4;&#xB7EC;&#xC5D0;-&#xC5F0;&#xACB0;">3. Button &#xD578;&#xB4E4;&#xB7EC;&#xC5D0; &#xC5F0;&#xACB0;</h4>
+<p>&#xB85C;&#xADF8;&#xC778; &#xBC84;&#xD2BC;&#xC744; &#xB20C;&#xB800;&#xC744;&#xB54C; &#xB85C;&#xADF8;&#xC778;&#xC744; &#xC2DC;&#xB3C4;&#xD558;&#xB3C4;&#xB85D; &#xD578;&#xB4E4;&#xB7EC;&#xC5D0; &#xB4F1;&#xB85D;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-java">Button facebookLogin = findViewById(R.id.btn_facebook_login);
+facebookLogin.setOnClickListener(<span class="hljs-keyword">new</span> View.OnClickListener() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{
+        signInControl.signIn(Provider.FACEBOOK, activity);
+    }
+});
+</code></pre>
+<h4 id="4-activityresult-&#xD578;&#xB4E4;&#xB7EC;-&#xC791;&#xC131;">4. ActivityResult &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131;</h4>
+<p>&#xB85C;&#xADF8;&#xC778; &#xACB0;&#xACFC;&#xB97C; &#xD578;&#xB4E4;&#xB7EC;&#xC5D0; &#xC804;&#xB2EC; &#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; Activity.onActivityResult &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onActivityResult</span><span class="hljs-params">(<span class="hljs-keyword">int</span> requestCode, <span class="hljs-keyword">int</span> resultCode, Intent data)</span> </span>{
+    signInControl.onActivityResult(requestCode, resultCode, data);
+}
+</code></pre>
+<h2 id="eg-sdk-&#xC81C;&#xACF5;-&#xBC84;&#xD2BC;&#xC73C;&#xB85C;-&#xB85C;&#xADF8;&#xC778;">EG SDK &#xC81C;&#xACF5; &#xBC84;&#xD2BC;&#xC73C;&#xB85C; &#xB85C;&#xADF8;&#xC778;</h2>
+<h4 id="1-&#xB808;&#xC774;&#xC544;&#xC6C3;&#xC5D0;-&#xBC84;&#xD2BC;-&#xBC30;&#xCE58;">1. &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC5D0; &#xBC84;&#xD2BC; &#xBC30;&#xCE58;</h4>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">com.estgames.framework.ui.buttons.FacebookSignButton</span> 
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;+@id/btn_facebook_login&quot;</span> 
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>/&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">com.estgames.framework.ui.buttons.GooogleSignButton</span> 
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;+@id/btn_google_login&quot;</span> 
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>/&gt;</span>
+</code></pre>
+<h4 id="2-signincontrol-&#xC124;&#xC815;-in-activity">2. SignInControl &#xC124;&#xC815; (in Activity)</h4>
+<p><code>SignInControl</code> &#xAC1D;&#xCCB4;&#xB294; <code>onActivityResult</code> &#xCF5C;&#xBC31;&#xC5D0; &#xB4F1;&#xB85D;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xBCC0;&#xC218;&#xB85C; &#xC0DD;&#xC131;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB808;&#xC774;&#xC544;&#xC6C3; xml &#xD30C;&#xC77C;&#xC5D0; &#xBA85;&#xC2DC;&#xD55C; <code>SignButton</code>&#xC744; Control &#xAC1D;&#xCCB4;&#xC640; &#xC5F0;&#xACB0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-java"><span class="hljs-comment">// Sign in option &#xC124;&#xC815;</span>
+SignInControl.Option option = <span class="hljs-keyword">new</span> SignInControl.Option() 
+        .addSignButton((SignButton) findViewById(R.layout.btn_facebook_login))
+        .addSignButton((SignButton) findViewById(R.layout.btn_google_login))
+        .setSignInResultHandler(<span class="hljs-keyword">new</span> SignInResultHandler() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onComplete</span><span class="hljs-params">(Result.Login result)</span> </span>{
+                <span class="hljs-comment">// &#xB85C;&#xADF8;&#xC778; &#xC131;&#xACF5; &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131;</span>
+            }
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(Throwable t)</span> </span>{
+                <span class="hljs-comment">// &#xB85C;&#xADF8;&#xC778; &#xC2E4;&#xD328; &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131;</span>
+            }
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCancel</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-comment">// &#xB85C;&#xADF8;&#xC778; &#xCDE8;&#xC18C; &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131; </span>
+            }
+        });
+
+<span class="hljs-comment">// SignInControl &#xAC1D;&#xCCB4;&#xC0DD;&#xC131;</span>
+SignInControl signInControl = SignInControl.createControl(activity, option);
+</code></pre>
+<h4 id="3-activityresult-&#xD578;&#xB4E4;&#xB7EC;-&#xC791;&#xC131;">3. ActivityResult &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131;</h4>
+<p>&#xB85C;&#xADF8;&#xC778; &#xACB0;&#xACFC;&#xB97C; &#xD578;&#xB4E4;&#xB7EC;&#xC5D0; &#xC804;&#xB2EC; &#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; Activity.onActivityResult &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onActivityResult</span><span class="hljs-params">(<span class="hljs-keyword">int</span> requestCode, <span class="hljs-keyword">int</span> resultCode, Intent data)</span> </span>{
+    signInControl.onActivityResult(requestCode, resultCode, data);
+}
+</code></pre>
+<h2 id="eg-sdk-&#xC81C;&#xACF5;-&#xB300;&#xD654;&#xCC3D;signinactivity&#xC73C;&#xB85C;-&#xB85C;&#xADF8;&#xC778;">EG SDK &#xC81C;&#xACF5; &#xB300;&#xD654;&#xCC3D;(SignInActivity)&#xC73C;&#xB85C; &#xB85C;&#xADF8;&#xC778;</h2>
+<h4 id="1-signincontrol-&#xC124;&#xC815;-in-activity">1. SignInControl &#xC124;&#xC815; (in Activity)</h4>
+<p><code>SignInControl</code> &#xAC1D;&#xCCB4;&#xB294; <code>onActivityResult</code> &#xCF5C;&#xBC31;&#xC5D0; &#xB4F1;&#xB85D;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC778;&#xC2A4;&#xD134;&#xC2A4; &#xBCC0;&#xC218;&#xB85C; &#xC0DD;&#xC131;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB808;&#xC774;&#xC544;&#xC6C3; xml &#xD30C;&#xC77C;&#xC5D0; &#xBA85;&#xC2DC;&#xD55C; <code>SignButton</code>&#xC744; Control &#xAC1D;&#xCCB4;&#xC640; &#xC5F0;&#xACB0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-java"><span class="hljs-comment">// Sign in option &#xC124;&#xC815;</span>
+SignInControl.Option option = <span class="hljs-keyword">new</span> SignInControl.Option() 
+        .setSignInResultHandler(<span class="hljs-keyword">new</span> SignInResultHandler() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onComplete</span><span class="hljs-params">(Result.Login result)</span> </span>{
+                <span class="hljs-comment">// &#xB85C;&#xADF8;&#xC778; &#xC131;&#xACF5; &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131;</span>
+            }
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(Throwable t)</span> </span>{
+                <span class="hljs-comment">// &#xB85C;&#xADF8;&#xC778; &#xC2E4;&#xD328; &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131;</span>
+            }
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCancel</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-comment">// &#xB85C;&#xADF8;&#xC778; &#xCDE8;&#xC18C; &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131; </span>
+            }
+        });
+
+<span class="hljs-comment">// SignInControl &#xAC1D;&#xCCB4;&#xC0DD;&#xC131;</span>
+SignInControl signInControl = SignInControl.createControl(activity, option);
+</code></pre>
+<h4 id="2-activityresult-&#xD578;&#xB4E4;&#xB7EC;-&#xC791;&#xC131;">2. ActivityResult &#xD578;&#xB4E4;&#xB7EC; &#xC791;&#xC131;</h4>
+<p>&#xB85C;&#xADF8;&#xC778; &#xACB0;&#xACFC;&#xB97C; &#xD578;&#xB4E4;&#xB7EC;&#xC5D0; &#xC804;&#xB2EC; &#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; Activity.onActivityResult &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onActivityResult</span><span class="hljs-params">(<span class="hljs-keyword">int</span> requestCode, <span class="hljs-keyword">int</span> resultCode, Intent data)</span> </span>{
+    signInControl.onActivityResult(requestCode, resultCode, data);
+}
+</code></pre>
+<h4 id="3-&#xB85C;&#xADF8;&#xC778;-&#xB300;&#xD654;&#xCC3D;-&#xD638;&#xCD9C;">3. &#xB85C;&#xADF8;&#xC778; &#xB300;&#xD654;&#xCC3D; &#xD638;&#xCD9C;</h4>
+<pre><code class="lang-java">signInControl.signIn(activity);
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Logout.html" class="navigation navigation-prev " aria-label="Previous page: 로그아웃 하기">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../core/init.html" class="navigation navigation-next " aria-label="Next page: Support">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SNS 계정연동 구현하기","level":"1.5.5","depth":2,"next":{"title":"Support","level":"1.6","depth":1,"path":"_draft/core/init.md","ref":"_draft/core/init.md","articles":[]},"previous":{"title":"로그아웃 하기","level":"1.5.4","depth":2,"path":"_draft/session/Logout.md","ref":"_draft/session/Logout.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"_draft/session/Sns.md","mtime":"2018-09-09T11:34:26.490Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-09T13:19:01.398Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
