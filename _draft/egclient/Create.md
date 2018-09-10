@@ -11,7 +11,7 @@
 ### 예)
 
 ```java
-EgClient client = EgClient.from(getApplication()) 
+EgClient client = EgClient.from(getApplication());
 //or 
-EgClient client = EgClient.from(getApplicationContext())
+EgClient client = EgClient.from(getApplicationContext();
 ```

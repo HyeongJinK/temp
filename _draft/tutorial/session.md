@@ -1,6 +1,6 @@
 # 플랫폼 세션 연동하기
 
-이 튜토리얼 문서는 EG 플랫폼을 빠르게 계정연동을 하기 위한 기본적인 설정 방법을 설명하고 있습니다. 좀 더 자세한 내용은 [플랫폼 계정 연동 문서](/_draft/session/init.md)를 참조하기 바랍니다. 
+이 튜토리얼 문서는 EG 플랫폼과 빠르게 계정연동을 하기 위한 기본적인 설정 방법을 설명하고 있습니다. 좀 더 자세한 내용은 [플랫폼 계정 연동 문서](/_draft/session/init.md)를 참조하기 바랍니다.
 이 튜토리얼 문서는 사용자의 명시적인 로그인을 통해 세션을 생성한다고 가정하고 진행합니다.
 
 ## 세션 매니저 생성
@@ -95,4 +95,47 @@ if (sessionManager.isSessionOpen) {
             })
 ```
 
-## 외부 프로바이더 사용자 연동하기
+## SNS(외부 프로바이더) 계정 연동하기
+
+EG 플랫폼 계정은 SNS(외부 프로바이더) 계정과 연동 및 인증이 가능합니다. SNS 계정을 연동하게 되면 Guest 계정과는 달리 로그인을 통하여 사용자의 계정정보를 유지 할 수 있습니다.
+
+이 문서는 플랫폼 SDK에서 제공하는 로그인 대화상자를 이용해 연동하는 방법을 안내합니다.   플랫폼 SDK는 로그인 대화상자를 비롯한 계정연동을 위한 댜른 여러 옵션들을 제공하고 있습니다. 더 자세한 정보는 [SNS 계정연동](/_draft/session/Sns.md) 문서를 참고하시기 바랍니다.
+
+1. `SignInControl` 객체생성
+
+```java
+    SignInControl.Option option = new SignInControl.Option()
+                .setSignInResultHandler(new SignInResultHandler() {
+                    @Override
+                    public void onComplete(Result.Login result) {
+                        // 로그인 성공 핸들러 작성
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        // 로그인 실패 핸들러 작성
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        // 로그인 취소 핸들러 작성 
+                    }
+                });
+
+    SignInControl signInControl = SignInControl.createControl(activity, option);
+```
+
+2. `onActivityResult` 메소드 작성
+ 
+```java
+@Override
+public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    signInControl.onActivityResult(requestCode, resultCode, data);
+}
+```
+
+3. 로그인 화면 호출
+
+```java
+signInControl.signIn(activity);
+```

@@ -1,4 +1,7 @@
 - [빠르게 시작하기](/_draft/tutorial/init.md)
+    - [App 설정하기](/_draft/tutorial/setting.md)
+    - [플랫폼 기본 스타트 액션 호출하기](/_draft/tutorial/starting.md)
+    - [플랫폼 세션 연동하기](/_draft/tutorial/session.md)
 - [라이브러리 설정](/_draft/setting/init.md)
     - [build.gradle 의존성 설정](/_draft/setting/gradle.md)
     - [AndroidManifest.xml 작성](/_draft/setting/AndroidManifest.md)
