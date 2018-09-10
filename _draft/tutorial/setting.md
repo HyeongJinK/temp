@@ -22,12 +22,12 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation 'org.jetbrains.kotlin-stdlib-jdk7:1.+'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.+'
     implementation 'com.android.support:multidex:1.0.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.google.android.gms:play-services-auth:15.0.1'
     implementation 'com.facebook.android:facebook-login:[4, 5)'
-    implementation 'com.estgame.framework:mp-aos-sdk-release:2.0@aar'
+    implementation 'com.estgames.framework:mp-aos-sdk-release:2.0@aar'
 }
 ```
 
