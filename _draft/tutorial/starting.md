@@ -16,7 +16,7 @@ EgClient client = EgClient.from(getApplicationContext();
 
 ## Starting Action
 
-EG 플랫폼을 연동하는 경우 플랫폼에서 제공하는 액션들을(약관, 배너, 공지사항 등) 사용할 수 있습니다. 시작 액션은 앱이 시작할때 동작해야 하는 액션 프로세스를 정의한 액션입니다. Starting Action을 호출하는 것으로 앱 시작과 동시에 진행 되어야 할 액션 프로세스를 진행 할 수 있습니다.
+EG 플랫폼을 연동하는 경우 플랫폼에서 제공하는 [액션](/_draft/egclient/Action.md)들을(약관, 배너, 공지사항 등) 사용할 수 있습니다. 시작 액션은 앱이 시작할때 동작해야 하는 액션 프로세스를 정의한 액션입니다. Starting Action을 호출하는 것으로 앱 시작과 동시에 진행 되어야 할 액션 프로세스를 진행 할 수 있습니다.
 
 ```java
     // Starting Action 객체 생성
