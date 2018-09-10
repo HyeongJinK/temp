@@ -15,7 +15,9 @@
 
 EG 플랫폼에서 Guest 사용자는 SNS 인증을 거치지 않은 비로그인 세션입니다. Guest 세션은 SNS 사용자와 연동을 거치지 않기 때문에 세션 만들기로 바로 생성할 수 있습니다. 
 
+<aside class="warning">
 ⚠ 주의 : 이전에 생성된 세션이 있는경우 호출하면 세션 중복생성 에러를 던지게 됩니다.
+</aside>
 
 ```java
 if (!sessionManager.isSessionOpen) {
@@ -126,7 +128,7 @@ EG 플랫폼 계정은 SNS(외부 프로바이더) 계정과 연동 및 인증�
 ```
 
 2. `onActivityResult` 메소드 작성
- 
+
 ```java
 @Override
 public void onActivityResult(int requestCode, int resultCode, Intent data) {
