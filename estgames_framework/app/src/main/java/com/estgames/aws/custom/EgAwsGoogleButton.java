@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 
 import com.amazonaws.mobile.auth.core.signin.SignInManager;
 import com.amazonaws.mobile.auth.core.signin.ui.buttons.SignInButton;
@@ -41,6 +42,9 @@ public class EgAwsGoogleButton extends SignInButton {
     /** Button bottom shadow thickness in pixels. */
     private static final int BUTTON_BOTTOM_SHADOW_THICKNESS = (int) dp(1);
 
+    /** Max text size in pixels for EG Framework. */
+    private static final int EG_TEXT_SIZE_MAX_PX = dp(20);
+
     /**
      * Constructor.
      * @param context The activity context
@@ -74,7 +78,8 @@ public class EgAwsGoogleButton extends SignInButton {
                         .withBackgroundColor(GOOGLE_BACKGROUND_COLOR)
                         .withBackgroundColorPressed(GOOGLE_BACKGROUND_COLOR_PRESSED)
                         .withTextColor(TEXT_COLOR)
-                        .withDefaultTextResourceId(com.amazonaws.mobile.auth.google.R.string.default_google_button_text)
+//                        .withDefaultTextResourceId(com.amazonaws.mobile.auth.google.R.string.default_google_button_text)
+                        .withDefaultTextResourceId(com.estgames.estgames_framework.R.string.aws_sign_button_google)
                         .withImageIconResourceId(com.amazonaws.mobile.auth.google.R.drawable.google_icon)
                         .withTopShadowColor(BUTTON_TOP_SHADOW_COLOR)
                         .withTopShadowThickness(BUTTON_TOP_SHADOW_THICKNESS)
@@ -93,5 +98,12 @@ public class EgAwsGoogleButton extends SignInButton {
             Log.e(LOG_TAG, "Cannot initialize the SignInButton. Please check if IdentityManager :"
                     + " startUpAuth and setUpToAuthenticate are invoked");
         }
+
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, EG_TEXT_SIZE_MAX_PX);
     }
 }

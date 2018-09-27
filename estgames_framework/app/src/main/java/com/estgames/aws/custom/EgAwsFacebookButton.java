@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 
 import com.amazonaws.mobile.auth.core.signin.SignInManager;
 import com.amazonaws.mobile.auth.core.signin.ui.buttons.SignInButton;
@@ -37,6 +38,9 @@ public class EgAwsFacebookButton extends SignInButton {
 
     /** Button bottom shadow thickness in pixels. */
     private static final int BUTTON_BOTTOM_SHADOW_THICKNESS = (int) dp(0);
+
+    /** Max text size in pixels for EG Framework. */
+    private static final int EG_TEXT_SIZE_MAX_PX = dp(20);
 
     /**
      * Constructor.
@@ -71,13 +75,13 @@ public class EgAwsFacebookButton extends SignInButton {
                         .withBackgroundColor(FB_BACKGROUND_COLOR)
                         .withBackgroundColorPressed(FB_BACKGROUND_COLOR_PRESSED)
                         .withTextColor(Color.WHITE)
-                        .withDefaultTextResourceId(com.amazonaws.mobile.auth.facebook.R.string.default_facebook_button_text)
+//                        .withDefaultTextResourceId(com.amazonaws.mobile.auth.facebook.R.string.default_facebook_button_text)
+                        .withDefaultTextResourceId(com.estgames.estgames_framework.R.string.aws_sign_button_facebook)
                         .withImageIconResourceId(com.amazonaws.mobile.auth.facebook.R.drawable.facebook_icon)
                         .withTopShadowColor(BUTTON_TOP_SHADOW_COLOR)
                         .withTopShadowThickness(BUTTON_TOP_SHADOW_THICKNESS)
                         .withBottomShadowThickness(BUTTON_BOTTOM_SHADOW_THICKNESS)
         );
-
 
         if (isInEditMode()) {
             return;
@@ -91,5 +95,11 @@ public class EgAwsFacebookButton extends SignInButton {
             Log.e(LOG_TAG, "Cannot initialize the SignInButton. Please check if IdentityManager : "
                     + " startUpAuth and setUpToAuthenticate are invoked");
         }
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, EG_TEXT_SIZE_MAX_PX);
     }
 }

@@ -58,7 +58,11 @@ public class UserAllDialog extends Dialog{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.userall);
+        setContentView(R.layout.account_sync_dialog_layout);
+
+        findViewById(R.id.v_sync_dialog).setVisibility(View.GONE);
+        findViewById(R.id.v_switch_dialog).setVisibility(View.GONE);
+        findViewById(R.id.v_complete_dialog).setVisibility(View.GONE);
 
         sessionManager = new SessionManager(this.getContext());
 
@@ -209,7 +213,7 @@ public class UserAllDialog extends Dialog{
 
         @Override
         public void hide() {
-            context.findViewById(R.id.v_ready_dialog).setVisibility(View.INVISIBLE);
+            context.findViewById(R.id.v_ready_dialog).setVisibility(View.GONE);
         }
 
         @Override public void dismiss() {
@@ -286,7 +290,7 @@ public class UserAllDialog extends Dialog{
         }
 
         @Override public void hide() {
-            context.findViewById(R.id.v_switch_dialog).setVisibility(View.INVISIBLE);
+            context.findViewById(R.id.v_switch_dialog).setVisibility(View.GONE);
         }
 
         @Override public void dismiss() {
@@ -357,7 +361,7 @@ public class UserAllDialog extends Dialog{
         }
 
         @Override public void hide() {
-            context.findViewById(R.id.v_sync_dialog).setVisibility(View.INVISIBLE);
+            context.findViewById(R.id.v_sync_dialog).setVisibility(View.GONE);
         }
 
         @Override public void dismiss() {
@@ -410,7 +414,7 @@ public class UserAllDialog extends Dialog{
         }
 
         @Override public void hide() {
-            context.findViewById(R.id.v_complete_dialog).setVisibility(View.INVISIBLE);
+            context.findViewById(R.id.v_complete_dialog).setVisibility(View.GONE);
         }
 
         @Override public void dismiss() {

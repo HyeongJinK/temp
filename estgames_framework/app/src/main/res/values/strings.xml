@@ -35,4 +35,8 @@
     <string name="estcommon_userGuest_middle">Delete the previous game data(%s) and interlink with the current game.</string>
     <string name="estcommon_userGuest_loginBt">Yes, I would like to login</string>
     <string name="estcommon_userGuest_beforeBt">Back to previous</string>
+
+    <string name="aws_sign_in_with">Sign in with</string>
+    <string name="aws_sign_button_facebook">Facebook</string>
+    <string name="aws_sign_button_google">Google</string>
 </resources>

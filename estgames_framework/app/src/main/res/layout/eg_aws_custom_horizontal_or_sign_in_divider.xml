@@ -12,8 +12,7 @@ android:gravity="center_horizontal">
     android:background="@color/sign_in_separator_color"
     android:padding="5dp"
     android:layout_gravity="start|center_vertical"
-    android:gravity="center_vertical"
-    />
+    android:gravity="center_vertical"/>
 
 <TextView
     android:layout_width="wrap_content"
@@ -23,8 +22,7 @@ android:gravity="center_horizontal">
     android:textColor="@color/sign_in_separator_color"
     android:padding="10dp"
     android:layout_gravity="center"
-    android:gravity="center"
-    />
+    android:gravity="center"/>
 
 <View
     android:layout_width="100dp"
@@ -32,6 +30,5 @@ android:gravity="center_horizontal">
     android:background="@color/sign_in_separator_color"
     android:padding="5dp"
     android:layout_gravity="end|center_vertical"
-    android:gravity="center_vertical"
-    />
+    android:gravity="center_vertical"/>
 </LinearLayout>
