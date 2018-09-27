@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/v_ready_dialog"
+    android:layout_width="@dimen/account_sync_dialog_width"
+    android:layout_height="@dimen/account_sync_dialog_height"
+    android:background="@drawable/img_popup_box_user"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/txt_ready_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/account_sync_dialog_left_margin"
+        android:layout_marginRight="@dimen/account_sync_dialog_right_margin"
+        android:layout_marginTop="@dimen/account_sync_dialog_title_top_margin"
+        android:text="@string/estcommon_userLink_title"
+        android:textColor="#000000"
+        android:textSize="@dimen/account_sync_dialog_title_font_size" />
+
+    <ImageButton
+        android:id="@+id/btn_ready_close"
+        android:layout_width="@dimen/account_sync_dialog_close_button_width"
+        android:layout_height="@dimen/account_sync_dialog_close_button_height"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/background_light"
+        android:src="@drawable/btn_close_user" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="37dp"
+        android:background="#898989" />
+
+    <TextView
+        android:id="@+id/txt_ready_target_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/account_sync_dialog_left_margin"
+        android:layout_marginRight="@dimen/account_sync_dialog_right_margin"
+        android:layout_marginTop="55.5dp"
+        android:lineSpacingExtra="18dp"
+        android:text="@string/estcommon_userLink_middelLabel"
+        android:textColor="#000000"
+        android:textSize="@dimen/account_sync_dialog_content_font_size" />
+
+    <TextView
+        android:id="@+id/txt_ready_current_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_ready_target_data"
+        android:layout_marginLeft="@dimen/account_sync_dialog_left_margin"
+        android:layout_marginRight="@dimen/account_sync_dialog_right_margin"
+        android:layout_marginTop="17dp"
+        android:text="@string/estcommon_userLink_bottomLabel"
+        android:textColor="#000000"
+        android:textSize="@dimen/account_sync_dialog_content_font_size" />
+
+    <View
+        android:id="@+id/LinkDivisionLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="53.5dp"
+        android:background="#E7E6E6" />
+
+    <Button
+        android:id="@+id/btn_switch"
+        android:layout_width="@dimen/account_sync_dialog_button_width"
+        android:layout_height="@dimen/account_sync_dialog_button_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="9.5dp"
+        android:background="@drawable/btn_confirm_user"
+        android:text="@string/estcommon_userLink_confirm"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/account_sync_dialog_button_font_size" />
+
+    <Button
+        android:id="@+id/btn_sync"
+        android:layout_width="@dimen/account_sync_dialog_button_width"
+        android:layout_height="@dimen/account_sync_dialog_button_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="9.5dp"
+        android:layout_toRightOf="@id/btn_switch"
+        android:background="@drawable/btn_cancel_user"
+        android:text="@string/estcommon_userLink_cancel"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/account_sync_dialog_button_font_size" />
+</RelativeLayout>

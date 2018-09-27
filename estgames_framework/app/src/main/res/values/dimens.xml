@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="aws_sign_in_separator_height">1dp</dimen>
+
+    <dimen name="account_sync_dialog_width">313dp</dimen>
+    <dimen name="account_sync_dialog_height">258dp</dimen>
+
+    <dimen name="account_sync_dialog_left_margin">21dp</dimen>
+    <dimen name="account_sync_dialog_right_margin">21dp</dimen>
+
+    <dimen name="account_sync_dialog_title_top_margin">10dp</dimen>
+
+    <dimen name="account_sync_dialog_close_button_width">44dp</dimen>
+    <dimen name="account_sync_dialog_close_button_height">37dp</dimen>
+
+    <dimen name="account_sync_dialog_button_width">136dp</dimen>
+    <dimen name="account_sync_dialog_button_height">35dp</dimen>
+
+    <dimen name="account_sync_dialog_title_font_size">14sp</dimen>
+    <dimen name="account_sync_dialog_button_font_size">13sp</dimen>
+    <dimen name="account_sync_dialog_content_font_size">12sp</dimen>
+</resources>
