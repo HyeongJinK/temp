@@ -8,7 +8,7 @@
 import Foundation
 
 class LinkerButton: UIButton {
-    let linkBtImage:UIImage
+    let linkBtImage:UIImage?
     let linkBtTitle:String = "estcommon_banner_linkButton".localized()
     
     required init?(coder aDecoder: NSCoder) {
@@ -17,7 +17,7 @@ class LinkerButton: UIButton {
     }
     
     init() {
-        linkBtImage = UIImage(named: "btn_detail_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)!
+        linkBtImage = UIImage(named: "btn_detail_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)
         
         super.init(frame:CGRect.zero)
         self.setBackgroundImage(linkBtImage, for: .normal)

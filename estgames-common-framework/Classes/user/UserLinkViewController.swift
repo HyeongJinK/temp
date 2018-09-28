@@ -24,14 +24,19 @@ class UserLinkViewController: UIViewController {
     var replaceStrSns: String = "[]"
     var replaceStrGuest: String = ""
     var replaceStrProvider: String = ""
+    var buttonSize:CGFloat = 13
+    var titleSize:CGFloat = 16
+    var contentSize:CGFloat = 14
     
     
     func dataSet(_ data:UserDataSet) {
+        buttonSize = data.buttonSize
+        titleSize = data.titleSize
+        contentSize = data.contentSize
         backgroudView = UIView(frame: data.userLinkBackgroudView!)
         userLinkTitle = UILabel(frame: data.titleLabel!)
-        closeButton = UserCloseButton(self, frame: data.userLinkCloseButton!)//x: backgroudView.frame.width - 16.5 - 14
-        //closeButton = UIButton(frame: data.userLinkCloseButton!)
-        lineView = UIView(frame: data.userLinkLineView!)  //width: backgroundView.frame.width
+        closeButton = UserCloseButton(self, frame: data.userLinkCloseButton!)
+        lineView = UIView(frame: data.userLinkLineView!)
         middleLabel = UILabel(frame: data.userLinkMiddleLabel!)
         bottomLabel = UILabel(frame: data.userLinkBottomLabel!)
         lineView2 = UIView(frame: data.userLinkLineView2!)
@@ -44,11 +49,21 @@ class UserLinkViewController: UIViewController {
         
         userLinkTitle.text = "estcommon_userLink_title".localized()
         
-        middleLabel.font = UIFont.systemFont(ofSize: 10)
+        middleLabel.font = UIFont.systemFont(ofSize: contentSize)
         middleLabel.numberOfLines = 0
-        let attrString = NSMutableAttributedString(string: "estcommon_userLink_middelLabel".localized().replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider))
+        let middleText = "estcommon_userLink_middelLabel".localized().replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider)
+        let attrString = NSMutableAttributedString(string: middleText)
+        
+        middleText.enumerateSubstrings(in: middleText.startIndex..<middleText.endIndex, options: .byWords) {
+            (substring, substringRange, _, _) in
+            if substring == "\(self.replaceStrProvider)Account" {
+                attrString.addAttribute(.foregroundColor, value: UIColor.blue,
+                                              range: NSRange(substringRange, in: middleText))
+            }
+        }
+        
         let style = NSMutableParagraphStyle()
-        style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
+        style.lineSpacing = 10 // 아래 위로 전부 되서 18/2로 적용함  29 -> 20
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
         middleLabel.attributedText = attrString
         
@@ -64,42 +79,19 @@ class UserLinkViewController: UIViewController {
         
 //        userLinkTitle.text = "estcommon_userLink_title".localized()
         userLinkTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        userLinkTitle.font = UIFont.systemFont(ofSize: 12)
+        userLinkTitle.font = UIFont.systemFont(ofSize: titleSize)
         //userLinkTitle.font = UIFont.init(name: "SqoqaHanSans", size: 12)
         
         
         closeButton.closeBtAction = closeActon
-//        let closeButtonImage = UIImage(named: "btn_close_img_user", in:Bundle(for: UserCloseButton.self), compatibleWith:nil)
-//        if let cimg = closeButtonImage {
-//            closeButton.setImage(cimg, for: .normal)
-//        } else {
-//            closeButton.setTitle("X", for: .normal)
-//        }
-//
-//        closeButton.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
-//        closeButton.backgroundImage(for: .normal)
-        
         
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
         
-        
-//        middleLabel.font = UIFont.systemFont(ofSize: 10)
-//        middleLabel.numberOfLines = 0
-//        let attrString = NSMutableAttributedString(string: "estcommon_userLink_middelLabel".localized().replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider))
-//        let style = NSMutableParagraphStyle()
-//        style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
-//        attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
-//        middleLabel.attributedText = attrString
-        
-        
-//        bottomLabel.text = "estcommon_userLink_bottomLabel".localized().replacingOccurrences(of: "([])", with: replaceStrGuest)
-        bottomLabel.font = UIFont.systemFont(ofSize: 10)
+        bottomLabel.font = UIFont.systemFont(ofSize: contentSize)
         
         
         lineView2.backgroundColor = UIColor(red: 231/255, green: 230/255, blue: 230/255, alpha: 1)
         
-        
-//        confirmButton.setTitle("estcommon_userLink_confirm".localized(), for: .normal)
         confirmButton.confirmBtAction = confirmAction
         
         
@@ -109,7 +101,7 @@ class UserLinkViewController: UIViewController {
         }
 //        cancelButton.setTitle("estcommon_userLink_cancel".localized(), for: .normal)
         cancelButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonSize)
         cancelButton.addTarget(self, action: #selector(cancelBtAction(_:)), for: .touchUpInside)
         
         
@@ -124,7 +116,8 @@ class UserLinkViewController: UIViewController {
         backgroudView.addSubview(cancelButton)
     }
     public func replaceStr() {
-        middleLabel.font = UIFont.systemFont(ofSize: 10)
+        
+        middleLabel.font = UIFont.systemFont(ofSize: contentSize)
         middleLabel.numberOfLines = 0
         let attrString = NSMutableAttributedString(string: "estcommon_userLink_middelLabel".localized().replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider))
         let style = NSMutableParagraphStyle()

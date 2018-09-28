@@ -56,6 +56,8 @@ class ViewController: UIViewController {
         MpInfo.App.region = "mr.global.ls"
         super.viewDidLoad()
         
+        userDialog = UserDialog(pview: self)
+        
         //KeychainWrapper.standard.string(forKey: <#T##String#>)
         
 //        let image:UIImage
@@ -225,8 +227,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func policyTest(_ sender: Any) {
-        estgamesCommon.showCommonWebView(url: "https://google.co.kr")
-        //estgamesCommon.policyShow()
+        //estgamesCommon.showCommonWebView(url: "https://google.co.kr")
+        estgamesCommon.policyShow()
     }
     
     @IBAction func policyDataTest(_ sender: Any) {
@@ -264,6 +266,18 @@ class ViewController: UIViewController {
         }, onFail: {(fail) -> Void in
             self.errorCode.text = "점검API에러"
         })
+    }
+    @IBAction func userpop1(_ sender: Any) {
+        userDialog.showUserLinkDialog()
+    }
+    @IBAction func userpop2(_ sender: Any) {
+        userDialog.showUserLoadDialog()
+    }
+    @IBAction func userpop3(_ sender: Any) {
+        userDialog.showUserGuestLinkDialog()
+    }
+    @IBAction func userpop4(_ sender: Any) {
+        userDialog.showUserResultDialog()
     }
 }
 

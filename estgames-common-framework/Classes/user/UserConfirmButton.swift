@@ -24,7 +24,7 @@ class UserConfirmButton : UIButton {
         }
         
         self.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         self.addTarget(self, action: #selector(confirmBtAction(_:)), for: .touchUpInside)
     }
     

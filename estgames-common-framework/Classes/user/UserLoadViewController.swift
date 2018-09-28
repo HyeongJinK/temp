@@ -20,8 +20,15 @@ class UserLoadViewController: UIViewController {
     var confirmCheck: () -> Bool = {() -> Bool in return true}
     var confirmActionCallBack: () -> Void = {() -> Void in}
     var replaceMiddleStr:String = ""
+    var titleSize:CGFloat = 16
+    var contentSize:CGFloat = 14
+    var buttonSize:CGFloat = 13
+    
     
     func dataSet(_ data:UserDataSet) {
+        buttonSize = data.buttonSize
+        titleSize = data.titleSize
+        contentSize = data.contentSize
         backgroundView = UIView(frame: data.userLoadbackgroundView!)
         userLoadTitle = UILabel(frame: data.titleLabel!)
         closeButton = UserCloseButton(self, frame: data.closeButton!)
@@ -37,7 +44,7 @@ class UserLoadViewController: UIViewController {
         
         userLoadTitle.text = "estcommon_userLoad_title".localized()
         
-        middleLabel.font = UIFont.systemFont(ofSize: 10)
+        middleLabel.font = UIFont.systemFont(ofSize: contentSize)
         middleLabel.numberOfLines = 0
         let attrString = NSMutableAttributedString(string:"estcommon_userLoad_content".localized().replacingOccurrences(of: "([])", with: replaceMiddleStr))
         let style = NSMutableParagraphStyle()
@@ -58,7 +65,7 @@ class UserLoadViewController: UIViewController {
         
 //        userLoadTitle.text = "estcommon_userLoad_title".localized()
         userLoadTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        userLoadTitle.font = UIFont.systemFont(ofSize: 12)
+        userLoadTitle.font = UIFont.systemFont(ofSize: titleSize)
         
         
         closeButton.closeBtAction = closeActon
@@ -76,7 +83,7 @@ class UserLoadViewController: UIViewController {
         
         
 //        confirmLabel.text = "estcommon_userLoad_confirmText".localized()
-        confirmLabel.font = UIFont.systemFont(ofSize: 10)
+        confirmLabel.font = UIFont.systemFont(ofSize: contentSize)
         confirmLabel.textColor = UIColor(red: 48/255, green: 127/255, blue: 1, alpha: 1)
         
         
@@ -95,7 +102,7 @@ class UserLoadViewController: UIViewController {
         }
 //        confirmButton.setTitle("estcommon_userLoad_confirmButton".localized(), for: .normal)
         confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonSize)
         confirmButton.addTarget(self, action: #selector(confirmBtAction(_:)), for: .touchUpInside)
         
         
@@ -110,7 +117,7 @@ class UserLoadViewController: UIViewController {
     }
     
     public func replaceStr() {
-        middleLabel.font = UIFont.systemFont(ofSize: 10)
+        middleLabel.font = UIFont.systemFont(ofSize: contentSize)
         middleLabel.numberOfLines = 0
         let attrString = NSMutableAttributedString(string:"estcommon_userLoad_content".localized().replacingOccurrences(of: "([])", with: replaceMiddleStr))
         let style = NSMutableParagraphStyle()

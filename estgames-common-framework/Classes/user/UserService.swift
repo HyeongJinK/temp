@@ -125,7 +125,9 @@ public class UserService {
     
     public func goToLogin() {
         let config = AWSAuthUIConfiguration()
-        
+//        var d:AWSGoogleSignInButton
+//        d.textLabel.text = "asdkfj"
+        //config.tex
         config.enableUserPoolsUI = false
         config.addSignInButtonView(class: AWSGoogleSignInButton.self)
         config.addSignInButtonView(class: AWSFacebookSignInButton.self)

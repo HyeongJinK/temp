@@ -24,6 +24,9 @@ class PolicyViewController: UIViewController {
     var dataSet: PolicyDataSet!
     var callbackFunc:() -> Void = {() -> Void in}
     
+    let titleFontSize:CGFloat = 15
+    let subTitleFontSize:CGFloat = 12
+    
     public func setWebUrl (webUrl1: String?, webUrl2: String?) {
         self.webUrl1 = webUrl1
         self.webUrl2 = webUrl2
@@ -61,12 +64,12 @@ class PolicyViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        labelSet(titleLabel1, "estcommon_policy_title".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+        labelSet(titleLabel1, "estcommon_policy_title".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), titleFontSize)
         
         
-        labelSet(subTitleLabel, "estcommon_policy_subTitle".localized(), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), 10)
+        labelSet(subTitleLabel, "estcommon_policy_subTitle".localized(), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), subTitleFontSize)
         
-        labelSet(titleLabel2, "estcommon_policy_privacy".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+        labelSet(titleLabel2, "estcommon_policy_privacy".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), titleFontSize)
         
         submitBt1.setTitle("estcommon_policy_buttonText".localized(), for: .normal)
         submitBt2.setTitle("estcommon_policy_buttonText".localized(), for: .normal)
@@ -96,10 +99,10 @@ class PolicyViewController: UIViewController {
         }
     
         
-//        labelSet(titleLabel1, "estcommon_policy_title".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+//        labelSet(titleLabel1, "estcommon_policy_title".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), titleFontSize)
 //
 //
-//        labelSet(subTitleLabel, "estcommon_policy_subTitle".localized(), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), 10)
+//        labelSet(subTitleLabel, "estcommon_policy_subTitle".localized(), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), titleFontSize)
         
         
         if let weburl = webUrl1 {
@@ -110,7 +113,7 @@ class PolicyViewController: UIViewController {
         submitBt1.checkBtCallBack = checkBoxTrueClose
 
         
-//        labelSet(titleLabel2, "estcommon_policy_privacy".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+//        labelSet(titleLabel2, "estcommon_policy_privacy".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), titleFontSize)
         
         
         if let weburl = webUrl2 {

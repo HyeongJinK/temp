@@ -21,8 +21,14 @@ class UserGuestLinkViewController: UIViewController {
     var beforeAction: () -> Void = {() -> Void in}
     var replaceStrSns: String = "[]"
     var replaceStrGuest: String = "[]"
+    var titleSize:CGFloat = 16
+    var contentSize:CGFloat = 14
+    var buttonSize:CGFloat = 13
     
     func dataSet(_ data:UserDataSet) {
+        buttonSize = data.buttonSize
+        titleSize = data.titleSize
+        contentSize = data.contentSize
         backgroudView = UIView(frame: data.userLinkBackgroudView!)
         gltitle = UILabel(frame: data.titleLabel!)
         closeButton = UserCloseButton(self, frame: data.userLinkCloseButton!)//x: backgroudView.frame.width - 16.5 - 14
@@ -37,7 +43,7 @@ class UserGuestLinkViewController: UIViewController {
         super.viewWillAppear(animated)
         gltitle.text = "estcommon_userGuest_title".localized()
         
-        middleLabel.font = UIFont.systemFont(ofSize: 10)
+        middleLabel.font = UIFont.systemFont(ofSize: contentSize)
         middleLabel.numberOfLines = 0
         let attrString = NSMutableAttributedString(string: "estcommon_userGuest_middle".localized().replacingOccurrences(of: "[]", with: replaceStrSns) + "estcommon_userGuest_bottom".localized().replacingOccurrences(of: "[]", with: replaceStrGuest))
         let style = NSMutableParagraphStyle()
@@ -56,7 +62,7 @@ class UserGuestLinkViewController: UIViewController {
         
 //        gltitle.text = "estcommon_userGuest_title".localized()
         gltitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        gltitle.font = UIFont.systemFont(ofSize: 12)
+        gltitle.font = UIFont.systemFont(ofSize: titleSize)
         
         
         closeButton.closeBtAction = closeActon
@@ -88,7 +94,7 @@ class UserGuestLinkViewController: UIViewController {
             beforeButton.backgroundColor = UIColor.gray
         }
         beforeButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        beforeButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        beforeButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonSize)
 //        beforeButton.setTitle("estcommon_userGuest_beforeBt".localized(), for: .normal)
         beforeButton.addTarget(self, action: #selector(beforeBtAction(_:)), for: .touchUpInside)
         
@@ -104,7 +110,7 @@ class UserGuestLinkViewController: UIViewController {
     }
     
     public func replaceStr () {
-        middleLabel.font = UIFont.systemFont(ofSize: 10)
+        middleLabel.font = UIFont.systemFont(ofSize: contentSize)
         middleLabel.numberOfLines = 0
         let attrString = NSMutableAttributedString(string: "estcommon_userGuest_middle".localized().replacingOccurrences(of: "[]", with: replaceStrSns) + "estcommon_userGuest_bottom".localized().replacingOccurrences(of: "[]", with: replaceStrGuest))
         let style = NSMutableParagraphStyle()

@@ -24,8 +24,14 @@ class UserResultViewController: UIViewController {
     var egId :String? = nil
     var resultType:String = "LOGIN"
     var provider:String = ""
+    var titleSize:CGFloat = 16
+    var contentSize:CGFloat = 14
+    var buttonSize:CGFloat = 13
     
     func dataSet(_ data:UserDataSet) {
+        buttonSize = data.buttonSize
+        titleSize = data.titleSize
+        contentSize = data.contentSize
         backgroundView = UIView(frame: data.userResultBackgroundView!)
         userResultTitle = UILabel(frame: data.titleLabel!)
         //closeButton = UserCloseButton(self, frame: data.closeButton!)
@@ -52,7 +58,7 @@ class UserResultViewController: UIViewController {
         
 //        userResultTitle.text = "estcommon_userResult_title".localized()
         userResultTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        userResultTitle.font = UIFont.systemFont(ofSize: 12)
+        userResultTitle.font = UIFont.systemFont(ofSize: titleSize)
         
         
         let closeButtonImage:UIImage? = UIImage(named: "btn_close_img_user", in:Bundle(for: UserCloseButton.self), compatibleWith:nil)
@@ -70,11 +76,11 @@ class UserResultViewController: UIViewController {
         
         
 //        subLabel.text = "estcommon_userResult_subTitle".localized()
-        subLabel.font = UIFont.systemFont(ofSize: 12)
+        subLabel.font = UIFont.systemFont(ofSize: titleSize)
         subLabel.textColor = UIColor(red: 48/255, green: 122/255, blue: 245/255, alpha: 1)
         
 //        contentLabel.text = "estcommon_userResult_titleMove".localized()
-        contentLabel.font = UIFont.systemFont(ofSize: 10)
+        contentLabel.font = UIFont.systemFont(ofSize: contentSize)
         contentLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         
         
@@ -87,7 +93,7 @@ class UserResultViewController: UIViewController {
         }
         
         self.confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        self.confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        self.confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonSize)
         self.confirmButton.addTarget(self, action: #selector(confirmBtAction(_:)), for: .touchUpInside)
 //        self.confirmButton.setTitle("estcommon_userResult_confirm".localized(), for: .normal)
         
