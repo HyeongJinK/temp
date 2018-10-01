@@ -102,4 +102,10 @@ public class EgAwsFacebookButton extends SignInButton {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, EG_TEXT_SIZE_MAX_PX);
     }
+
+    @Override
+    protected void onSizeChanged(final int width, final int height, final int oldwidth, final int oldheight) {
+        super.onSizeChanged(width, height, oldwidth, oldheight);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, EG_TEXT_SIZE_MAX_PX);
+    }
 }
