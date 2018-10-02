@@ -32,18 +32,7 @@ import Foundation
     }
 }
 
-@objc public class GameAgent  : NSObject{
-    private func getLanguage() -> String? {
-        if let lang = UserDefaults.standard.string(forKey: "i18n_language") {
-            return lang
-        }
-        
-        if let lang = Locale.current.languageCode {
-            return lang
-        }
-        return "ko"
-    }
-    
+@objc public class GameAgent  : NSObject{    
     public func retrieveStatus(onReceived : @escaping (_ result: ServiceStatus) -> Void , onFail : @escaping (_ fail: Fail) -> Void) {
         var status:String = "";
         var time:Int = 0;

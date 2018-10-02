@@ -54,7 +54,7 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
             completion(_data)
         })
     }
-    public func principal(clientId: String, secret: String, identity: String) {
+    public func principal(clientId: String, secret: String, identity: String) -> String {
         apiCall(url: URL(string: "\(MP_APP_SCRIPT_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/principal")
             , method: "post"
             , param: dictionaryToQueryString(["client_id":clientId, "secret":secret, "identity":identity])

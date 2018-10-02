@@ -11,7 +11,7 @@ import UIKit
 @objc class EgClient : NSObject{
     let api: Api = Api()
     private var pview: UIViewController?
-    var data: ResultDataJson?
+    static var data: ResultDataJson?
     private let auth: AuthorityViewController
     private let policy: PolicyViewController
     private let webView: WebViewUIController
@@ -25,6 +25,22 @@ import UIKit
         policy.modalPresentationStyle = .overCurrentContext
         webView = WebViewUIController()
         webView.modalPresentationStyle = .overCurrentContext
+    }
+    
+    func getOpenUrl() ->String? {
+        guard let data = EgClient.data else {
+            api.appScript(region: MpInfo.App.region, lang: EgClient.getLang(), completion: {(str: Data?) -> Void in
+                EgClient.data = ResultDataJson(str)
+            })
+            while (EgClient.data == nil) {}
+            
+            guard EgClient.data?.code == nil else {
+                return EgClient.data!.message
+            }
+            
+            return EgClient.data!.url?.game_open
+        }
+        return data.url?.game_open
     }
     
     public func from(pview : UIViewController) {
@@ -41,23 +57,23 @@ import UIKit
             return "fail"
         }
             
-        guard data != nil else {
+        guard EgClient.data != nil else {
             api.appScript(region: MpInfo.App.region, lang: EgClient.getLang(), completion: {(str: Data?) -> Void in
-                self.data = ResultDataJson(str)
+                EgClient.data = ResultDataJson(str)
             })
-            while (self.data == nil) {}
+            while (EgClient.data == nil) {}
             
-            guard self.data?.code == nil else {
-                return self.data!.message
+            guard EgClient.data?.code == nil else {
+                return EgClient.data!.message
             }
             self.auth.setAction(action: action)
-            self.auth.setWebUrl(url: self.data!.url?.system_contract)
+            self.auth.setWebUrl(url: EgClient.data!.url?.system_contract)
             view.present(self.auth, animated: false)
             return "sucess"
         }
         
-        guard self.data?.code == nil else {
-            return self.data!.message
+        guard EgClient.data?.code == nil else {
+            return EgClient.data!.message
         }
         
         view.present(self.auth, animated: false)
@@ -70,23 +86,23 @@ import UIKit
             return "fail"
         }
         
-        guard data != nil else {
+        guard EgClient.data != nil else {
             api.appScript(region: MpInfo.App.region, lang: EgClient.getLang(), completion: {(str: Data?) -> Void in
-                self.data = ResultDataJson(str)
+                EgClient.data = ResultDataJson(str)
             })
-            while (self.data == nil) {}
+            while (EgClient.data == nil) {}
             
-            guard self.data?.code == nil else {
-                return self.data!.message
+            guard EgClient.data?.code == nil else {
+                return EgClient.data!.message
             }
             self.policy.setAction(action: action)
-            self.policy.setWebUrl(webUrl1: self.data!.url?.contract_service, webUrl2: self.data!.url?.contract_private)
+            self.policy.setWebUrl(webUrl1: EgClient.data!.url?.contract_service, webUrl2: EgClient.data!.url?.contract_private)
             view.present(self.policy, animated: false)
             return "sucess"
         }
         
-        guard self.data?.code == nil else {
-            return self.data!.message
+        guard EgClient.data?.code == nil else {
+            return EgClient.data!.message
         }
         
         view.present(self.policy, animated: false)
@@ -99,28 +115,28 @@ import UIKit
             return "fail"
         }
         
-        guard data != nil else {
+        guard EgClient.data != nil else {
             api.appScript(region: MpInfo.App.region, lang: EgClient.getLang(), completion: {(str: Data?) -> Void in
-                self.data = ResultDataJson(str)
+                EgClient.data = ResultDataJson(str)
             })
-            while (self.data == nil) {}
+            while (EgClient.data == nil) {}
             
-            guard self.data?.code == nil else {
-                return self.data!.message
+            guard EgClient.data?.code == nil else {
+                return EgClient.data!.message
             }
-            self.bannerframework = BannerFramework(pview: view, result: self.data!)
+            self.bannerframework = BannerFramework(pview: view, result: EgClient.data!)
             self.bannerframework!.setAction(action: action)
             self.bannerframework!.show()
             
             return "sucess"
         }
         
-        guard self.data?.code == nil else {
-            return self.data!.message
+        guard EgClient.data?.code == nil else {
+            return EgClient.data!.message
         }
         
         guard let bannerframework = bannerframework else {
-            self.bannerframework = BannerFramework(pview: view, result: self.data!)
+            self.bannerframework = BannerFramework(pview: view, result: EgClient.data!)
             self.bannerframework!.setAction(action: action)
             self.bannerframework!.show()
             return nil
@@ -138,18 +154,18 @@ import UIKit
             return "fail"
         }
         
-        guard let data = data else {
+        guard let data = EgClient.data else {
             api.appScript(region: MpInfo.App.region, lang: EgClient.getLang(), completion: {(str: Data?) -> Void in
-                self.data = ResultDataJson(str)
+                EgClient.data = ResultDataJson(str)
             })
-            while (self.data == nil) {}
+            while (EgClient.data == nil) {}
             
-            guard self.data?.code == nil else {
-                return self.data!.message
+            guard EgClient.data?.code == nil else {
+                return EgClient.data!.message
             }
             webView.egToken = MpInfo.Account.egToken
             webView.nation = getNation()
-            webView.url = self.data!.url?.cscenter
+            webView.url = EgClient.data!.url?.cscenter
             view.present(webView, animated: false)
             
             return "sucess"
@@ -162,15 +178,65 @@ import UIKit
     }
 
     public func notice() -> String? {
+        guard let view = self.pview else {
+            print("view 설정이 안되어 있음")
+            return "fail"
+        }
+        
+        guard let data = EgClient.data else {
+            api.appScript(region: MpInfo.App.region, lang: EgClient.getLang(), completion: {(str: Data?) -> Void in
+                EgClient.data = ResultDataJson(str)
+            })
+            while (EgClient.data == nil) {}
+            
+            guard EgClient.data?.code == nil else {
+                return EgClient.data!.message
+            }
+            webView.egToken = MpInfo.Account.egToken
+            webView.nation = getNation()
+            webView.url = EgClient.data!.url?.notice
+            view.present(webView, animated: false)
+            
+            return "sucess"
+        }
+        webView.egToken = MpInfo.Account.egToken
+        webView.nation = getNation()
+        webView.url = data.url?.notice
+        view.present(webView, animated: false)
         return nil
     }
 
     public func event() -> String? {
+        guard let view = self.pview else {
+            print("view 설정이 안되어 있음")
+            return "fail"
+        }
+        
+        guard let data = EgClient.data else {
+            api.appScript(region: MpInfo.App.region, lang: EgClient.getLang(), completion: {(str: Data?) -> Void in
+                EgClient.data = ResultDataJson(str)
+            })
+            while (EgClient.data == nil) {}
+            
+            guard EgClient.data?.code == nil else {
+                return EgClient.data!.message
+            }
+            webView.egToken = MpInfo.Account.egToken
+            webView.nation = getNation()
+            webView.url = EgClient.data!.url?.cscenter
+            view.present(webView, animated: false)
+            
+            return "sucess"
+        }
+        webView.egToken = MpInfo.Account.egToken
+        webView.nation = getNation()
+        webView.url = data.url?.cscenter
+        view.present(webView, animated: false)
         return nil
     }
     
     public func getNation() -> String {
-        guard let data = data else {return ""}
+        guard let data = EgClient.data else {return ""}
         
         return data.nation
     }

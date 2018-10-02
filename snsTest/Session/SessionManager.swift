@@ -10,7 +10,37 @@ import Foundation
 
 class SessionManager {
     //세션생성
+    let api: Api = Api()
+    private func exchangePrincipal(identity: String) -> String {
+        /**
+         val result = Api.Principal(
+         _platform.configuration.clientId,
+         _platform.configuration.secret,
+         identity).json()
+         
+         return result.getString("principal")
+         */
+        api.principal(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, identity: identity)
+        
+        return ""
+    }
     func create(principal: String?) {
+        //
+        
+        
+        api.token(clientId: MpInfo.App.clientId, secret: <#T##String#>, region: <#T##String#>, device: <#T##String#>, principal: <#T##String#>)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         //TODO principal이 없거나 이니 세션이 있을 경우
         
         
@@ -24,6 +54,27 @@ class SessionManager {
          }.thenApply {s ->
          _sessionRepo.session = s
          return@thenApply s.egToken
+         }
+         
+         private fun publishToken(principal: String): Session.Complete {
+         val token = Api.Token(
+         _platform.configuration.clientId,
+         _platform.configuration.secret,
+         _platform.configuration.region,
+         _platform.deviceId,
+         principal).json()
+         val me = Api.Me(token.getString("eg_token")).json()
+         val profile = me.getJSONObject("profile")
+         
+         return Session.Complete(
+         egToken = token.getString("eg_token"),
+         refreshToken = token.getString("refresh_token"),
+         egId = me.getString("eg_id"),
+         principal = me.getString("principal_of_client"),
+         provider = profile.takeIf { !it.isNull("provider") }?.getString("provider"),
+         email = profile.takeIf { !it.isNull("email") }?.getString("email"),
+         userId = me.getString("user_id")
+         )
          }
          **/
     }
@@ -51,27 +102,6 @@ class SessionManager {
 
 
 /**
- package com.estgames.framework.session
- 
- import android.content.Context
- import android.os.SystemClock
- import android.util.Base64
- import com.estgames.framework.core.*
- import com.estgames.framework.providers.ProviderControl
- import com.estgames.framework.sign.Provider
- import org.json.JSONException
- import org.json.JSONObject
- import java.io.ByteArrayOutputStream
- import java.io.DataOutputStream
- import java.security.MessageDigest
- import java.util.*
- import java.util.concurrent.ExecutionException
- import java.util.concurrent.Executor
- import java.util.concurrent.Future
- import java.util.concurrent.FutureTask
- import kotlin.collections.HashMap
- 
- 
  class SessionManager private constructor(
  private val _platform: PlatformContext,
  private val _sessionRepo: SessionRepository
