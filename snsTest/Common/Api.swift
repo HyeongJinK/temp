@@ -47,61 +47,101 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
                 completion(nil)
                 return
             }
-            //guard let strData = NSString(data: _data, encoding: String.Encoding.utf8.rawValue) else {return}
-            
-//          //let str = String(strData)
-            
             completion(_data)
         })
     }
-    public func principal(clientId: String, secret: String, identity: String) -> String {
-        apiCall(url: URL(string: "\(MP_APP_SCRIPT_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/principal")
+    public func principal(clientId: String, secret: String, identity: String) -> String? {
+        var result:String? = nil
+        var check = true
+        apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/principal")
             , method: "post"
             , param: dictionaryToQueryString(["client_id":clientId, "secret":secret, "identity":identity])
             , callback: { (data: Data?, response: URLResponse?, error: Error?) in
             //error 일경우 종료
             guard let _data = data, error == nil else {
-                print("error = \(error)")
+                print("error = \(String(describing: error))")
+                check = false
                 return
             }
-            
-            guard let strData = NSString(data: _data, encoding: String.Encoding.utf8.rawValue) else {return}
-            
-            let str = String(strData)
-            
-            //TODO 문자열 파싱
-            print("str = \(str)")
+            do {
+                let json = try JSONSerialization.jsonObject(with: _data, options: []) as! [String: Any]
+                result = json["principal"] as? String
+                check = false
+            }
+            catch {
+                result = nil
+                check = false
+            }
         })
+        
+        while (result == nil && check) {}
+        
+        return result
     }
     
-    public func token(clientId: String, secret: String, region: String, device: String, principal: String) {
+    public func token(clientId: String, secret: String, region: String, device: String, principal: String) ->  [String: Any]? {
+        var result: [String: Any]?
+        var check = true
         apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/token")
             , method: "post"
-            , param: dictionaryToQueryString(["client_id":clientId, "secret":secret, "region":region, "device":device, "principal":principal])
+            , param: dictionaryToQueryString(["client_id":clientId, "secret":secret, "region":region, "device":device, "principal":principal, "approval_type":"principal"])
             , callback: { (data: Data?, response: URLResponse?, error: Error?) in
                 //error 일경우 종료
                 guard let _data = data, error == nil else {
-                    print("error = \(error)")
+                    print("error = \(String(describing: error))")
+                    check = false
                     return
                 }
-                
-                guard let strData = NSString(data: _data, encoding: String.Encoding.utf8.rawValue) else {return}
-                
-                let str = String(strData)
-                
-                //TODO 문자열 파싱
-                print("str = \(str)")
+                do {
+                    result = try JSONSerialization.jsonObject(with: _data, options: []) as? [String: Any]
+                    check = false
+                }
+                catch {
+                    result = nil
+                    check = false
+                }
         })
+        
+        while (result == nil && check) {}
+        
+        return result
+    }
+    
+    public func me(egToken: String) ->  [String: Any]? {
+        var result: [String: Any]?
+        var check = true
+        apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/me?eg_token=\(egToken)")
+            , method: "get"
+            , param: ""
+            , callback: {(data: Data?, response:URLResponse?, error: Error?) in
+            guard let _data = data, error == nil else {
+                print("error = \(String(describing: error))")
+                check = false
+                return
+            }
+            do {
+                result = try JSONSerialization.jsonObject(with: _data, options: []) as? [String: Any]
+                check = false
+            }
+            catch {
+                result = nil
+                check = false
+            }
+        })
+        
+        while (result == nil && check) {}
+        
+        return result
     }
     
     public func refresh(clientId: String, secret: String, region: String, device: String, refreshToken: String, egToken: String) {
         apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/token")
             , method: "post"
-            , param: dictionaryToQueryString(["client_id":clientId, "secret":secret, "region":region, "device":device, "refreshToken":refreshToken, "egToken":egToken])
+            , param: dictionaryToQueryString(["client_id":clientId, "secret":secret, "region":region, "device":device, "approval_type":"refresh_token",  "refresh_token":refreshToken, "eg_token":egToken])
             , callback: { (data: Data?, response: URLResponse?, error: Error?) in
                 //error 일경우 종료
                 guard let _data = data, error == nil else {
-                    print("error = \(error)")
+                    print("error = \(String(describing: error))")
                     return
                 }
                 
@@ -114,14 +154,7 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
         })
     }
     
-    public func me(egToken: String) {
-        apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/me")
-            , method: "post"
-            , param: dictionaryToQueryString(["egToken": egToken])
-            , callback: {(data: Data?, response:URLResponse?, error: Error?) in
-                
-        })
-    }
+    
     
 //    public func synchronize(egToken: String, principal: String, data: Hashable<String, Any>, force: Bool) {
 //        //\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/synchronize
@@ -134,20 +167,18 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
 //    }
     
     public func expire(egToken: String) {
-        //\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/signout
-        apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/me")
+        apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/signout")
             , method: "post"
-            , param: dictionaryToQueryString(["egToken": egToken])
+            , param: dictionaryToQueryString(["eg_token": egToken])
             , callback: {(data: Data?, response:URLResponse?, error: Error?) in
                 
         })
     }
     
     public func abandon(egToken: String, clientId: String, secret: String, region: String) {
-        //\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/abandon
         apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/abandon")
             , method: "post"
-            , param: dictionaryToQueryString(["egToken": egToken, "elientId" : clientId])
+            , param: dictionaryToQueryString(["eg_token": egToken, "client_id" : clientId, "secret":secret, "region":region])
             , callback: {(data: Data?, response:URLResponse?, error: Error?) in
                 
         })
@@ -155,9 +186,9 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
     
     public func gameUser(region: String, egId: String, lang: String) {
         //\(MP_GAME_API_HOST)/live/game/\(region
-        apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/me")
-            , method: "post"
-            , param: dictionaryToQueryString(["region": region, "egId" : egId, "lang": lang])
+        apiCall(url: URL(string: "\(MP_GAME_API_HOST)/live/game/\(region)")
+            , method: "get"
+            , param: dictionaryToQueryString(["eg_id" : egId, "lang": lang])
             , callback: {(data: Data?, response:URLResponse?, error: Error?) in
                 
         })
@@ -166,7 +197,7 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
     public func gameServiceStatus(region: String, lang: String) {
         //
         apiCall(url: URL(string: "\(MP_GAME_API_HOST)/live/game-open-status")
-            , method: "post"
+            , method: "get"
             , param: dictionaryToQueryString(["region": region, "lang": lang])
             , callback: {(data: Data?, response:URLResponse?, error: Error?) in
                 

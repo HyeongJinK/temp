@@ -14,7 +14,18 @@ import GoogleSignIn
 // [START viewcontroller_interfaces]
 class ViewController: UIViewController, GIDSignInUIDelegate {
     @IBAction func uuidAction(_ sender: Any) {
-        print(UUID().uuidString)
+        let api: Api = Api()
+        
+        var uid = UUID().uuidString
+        let p = api.principal(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, identity: uid)!
+        print(p)
+//        print("\(uid)@ios")
+//        let t = api.token(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, region: MpInfo.App.region, device: "\(uid)@ios", principal: p)
+//        print(t)
+//        let egToken = t!["eg_token"] as! String
+//        print(egToken)
+//        let m = api.me(egToken: egToken)
+//        print(m)
     }
     
     @IBAction func auth(_ sender: Any) {

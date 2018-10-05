@@ -28,7 +28,7 @@ class SessionManager {
         //
         
         
-        api.token(clientId: MpInfo.App.clientId, secret: <#T##String#>, region: <#T##String#>, device: <#T##String#>, principal: <#T##String#>)
+        //api.token(clientId: MpInfo.App.clientId, secret: <#T##String#>, region: <#T##String#>, device: <#T##String#>, principal: <#T##String#>)
         
         
         
