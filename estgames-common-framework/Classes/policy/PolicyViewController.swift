@@ -24,8 +24,9 @@ class PolicyViewController: UIViewController {
     var dataSet: PolicyDataSet!
     var callbackFunc:() -> Void = {() -> Void in}
     
-    let titleFontSize:CGFloat = 15
-    let subTitleFontSize:CGFloat = 12
+    var titleFontSize:CGFloat = 15
+    var subTitleFontSize:CGFloat = 12
+    var buttonFontSize:CGFloat = 16
     
     public func setWebUrl (webUrl1: String?, webUrl2: String?) {
         self.webUrl1 = webUrl1
@@ -76,7 +77,7 @@ class PolicyViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        dataSet = PolicyDataSet(deviceNum: DeviceClassification.deviceResolution(self.view.frame.width, self.view.frame.height))
+        dataSet = PolicyDataSet(self.view.frame.width, self.view.frame.height)
         
         backgroudView = UIView(frame: dataSet.backgroudViewFrame)
         backImageView = UIImageView(frame: dataSet.backgroudImageFrame)
@@ -88,7 +89,9 @@ class PolicyViewController: UIViewController {
         closeBt = PolicyCloseBt(self)
         webView1 = UIWebView(frame: dataSet.webView1Frame)
         webView2 = UIWebView(frame: dataSet.webView2Frame)
-        
+        titleFontSize = dataSet.titleFontSize
+        subTitleFontSize = dataSet.subTitleFontSize
+        buttonFontSize = dataSet.buttonFontSize
         
         self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
         
@@ -97,30 +100,18 @@ class PolicyViewController: UIViewController {
         if let bImg = backgroudImg {
             backImageView.image = bImg
         }
-    
-        
-//        labelSet(titleLabel1, "estcommon_policy_title".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), titleFontSize)
-//
-//
-//        labelSet(subTitleLabel, "estcommon_policy_subTitle".localized(), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), titleFontSize)
-        
         
         if let weburl = webUrl1 {
             webView1.loadRequest(URLRequest(url: URL(string: weburl)!))
         }
-        
-        
+        submitBt1.titleLabel?.font = UIFont.systemFont(ofSize: buttonFontSize)
         submitBt1.checkBtCallBack = checkBoxTrueClose
-
-        
-//        labelSet(titleLabel2, "estcommon_policy_privacy".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), titleFontSize)
-        
         
         if let weburl = webUrl2 {
             webView2.loadRequest(URLRequest(url: URL(string: weburl)!))
         }
         
-        
+        submitBt2.titleLabel?.font = UIFont.systemFont(ofSize: buttonFontSize)
         submitBt2.checkBtCallBack = checkBoxTrueClose
         
         

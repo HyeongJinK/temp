@@ -27,12 +27,14 @@ class UserLinkViewController: UIViewController {
     var buttonSize:CGFloat = 13
     var titleSize:CGFloat = 16
     var contentSize:CGFloat = 14
+    var textlineSpacing:CGFloat = 9
     
     
     func dataSet(_ data:UserDataSet) {
         buttonSize = data.buttonSize
         titleSize = data.titleSize
         contentSize = data.contentSize
+        textlineSpacing = data.textlineSpacing
         backgroudView = UIView(frame: data.userLinkBackgroudView!)
         userLinkTitle = UILabel(frame: data.titleLabel!)
         closeButton = UserCloseButton(self, frame: data.userLinkCloseButton!)
@@ -63,7 +65,7 @@ class UserLinkViewController: UIViewController {
         }
         
         let style = NSMutableParagraphStyle()
-        style.lineSpacing = 10 // 아래 위로 전부 되서 18/2로 적용함  29 -> 20
+        style.lineSpacing = textlineSpacing // 아래 위로 전부 되서 18/2로 적용함  29 -> 20
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
         middleLabel.attributedText = attrString
         
@@ -77,10 +79,8 @@ class UserLinkViewController: UIViewController {
         
         backgroudView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
-//        userLinkTitle.text = "estcommon_userLink_title".localized()
         userLinkTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         userLinkTitle.font = UIFont.systemFont(ofSize: titleSize)
-        //userLinkTitle.font = UIFont.init(name: "SqoqaHanSans", size: 12)
         
         
         closeButton.closeBtAction = closeActon
@@ -93,13 +93,13 @@ class UserLinkViewController: UIViewController {
         lineView2.backgroundColor = UIColor(red: 231/255, green: 230/255, blue: 230/255, alpha: 1)
         
         confirmButton.confirmBtAction = confirmAction
+        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonSize)
         
         
         let cancelButtonImg:UIImage? = UIImage(named: "btn_cancel_user", in: Bundle(for: UserLinkViewController.self), compatibleWith: nil)?.stretchableImage(withLeftCapWidth: 8, topCapHeight: 8)
         if let cbImg = cancelButtonImg {
             cancelButton.setBackgroundImage(cbImg, for: .normal)
         }
-//        cancelButton.setTitle("estcommon_userLink_cancel".localized(), for: .normal)
         cancelButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonSize)
         cancelButton.addTarget(self, action: #selector(cancelBtAction(_:)), for: .touchUpInside)

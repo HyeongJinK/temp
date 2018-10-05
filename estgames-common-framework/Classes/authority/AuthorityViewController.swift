@@ -28,7 +28,7 @@ class AuthorityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        authorityDataSet = AuthorityDataSet(deviceNum: DeviceClassification.deviceResolution(self.view.frame.width, self.view.frame.height))
+        authorityDataSet = AuthorityDataSet(self.view.frame.width, self.view.frame.height)
         
         backgroundView = UIView(frame: self.view.frame)
         titleLabel = UILabel(frame: authorityDataSet.titleLabel)
@@ -39,11 +39,10 @@ class AuthorityViewController: UIViewController {
         backgroundView.backgroundColor = UIColor(red: 53/255, green: 59/255, blue: 72/255, alpha: 1)
         
         
-//        titleLabel.text = "estcommon_authority_title".localized()
         titleLabel.center.x = backgroundView.center.x
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 19)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: authorityDataSet!.titleFontSize)
         titleLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
         if let weburl = self.webViewUrl {
@@ -61,7 +60,7 @@ class AuthorityViewController: UIViewController {
         }
 //        confirmButton.setTitle("estcommon_authority_confirm".localized(), for: .normal)
         confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: authorityDataSet!.buttonFontSize)
         confirmButton.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
         
         self.view.addSubview(backgroundView)

@@ -20,7 +20,7 @@ public class UserDialog {
     
     public init(pview: UIViewController) {
         self.pview = pview
-        userDataSet = UserDataSet(deviceNum: DeviceClassification.deviceResolution(pview.view.frame.width, pview.view.frame.height), view: pview.view.frame)
+        userDataSet = UserDataSet(pview.view.frame.width, pview.view.frame.height)
         userLinkViewController = UserLinkViewController()
         userLinkViewController.dataSet(userDataSet)
         userLinkViewController.modalPresentationStyle = .overCurrentContext

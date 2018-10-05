@@ -32,12 +32,13 @@ class UserDataSet {
     var userResultContentLabel: CGRect?
     var userResultConfirmButton: CGRect?
     
-    let buttonSize:CGFloat = 15
-    let titleSize:CGFloat = 16
-    let contentSize:CGFloat = 14
+    var buttonSize:CGFloat = 15
+    var titleSize:CGFloat = 16
+    var contentSize:CGFloat = 14
+    var textlineSpacing:CGFloat = 9
     init (_ width:CGFloat, _ height: CGFloat ) {
         switch(width, height) {
-        case (320, 568) :
+        case (320,568) :
             userLinkBackgroudView = CGRect(x: (width - 290) / 2, y: (height - 254) / 2, width: 290, height: 254)
             userLoadbackgroundView = CGRect(x: (width - 290) / 2, y: (height - 238) / 2, width: 290, height: 238)
             userResultBackgroundView = CGRect(x: (width - 290) / 2, y: (height - 198) / 2, width: 290, height: 198)
@@ -62,7 +63,7 @@ class UserDataSet {
             userResultContentLabel = CGRect(x: 22, y: 84, width: 270, height: 10)
             userResultConfirmButton = CGRect(x: 83.5, y: 151, width: 123.5, height: 37.5)
             break;
-        case (375, 667), (414,736), (375,812), (768,1024), (834,1112), (1024,1366):
+        case (375,667), (414,736), (375,812):
             userLinkBackgroudView = CGRect(x: (width - 328) / 2, y: (height - 250) / 2, width: 328, height: 250)
             userLoadbackgroundView = CGRect(x: (width - 328) / 2, y: (height - 240) / 2, width: 328, height: 240)
             userResultBackgroundView = CGRect(x: (width - 328) / 2, y: (height - 187) / 2, width: 328, height: 187)
@@ -87,7 +88,94 @@ class UserDataSet {
             userResultContentLabel = CGRect(x: 22, y: 84, width: 284, height: 10)
             userResultConfirmButton = CGRect(x: 102, y: 140, width: 123.5, height: 37.5)
             break;
-        case 568320, 667375, 736412, 812375 :
+        case (768,1024) :
+            titleSize = 30
+            contentSize = 23
+            buttonSize = 23
+            textlineSpacing = 20
+            userLinkBackgroudView = CGRect(x: (width - 635) / 2, y: (height - 424) / 2, width: 635, height: 424)
+            userLoadbackgroundView = CGRect(x: (width - 635) / 2, y: (height - 424) / 2, width: 635, height: 424)
+            userResultBackgroundView = CGRect(x: (width - 635) / 2, y: (height - 424) / 2, width: 635, height: 424)
+            titleLabel = CGRect(x: 34, y: 22, width: 400, height: 30)
+            closeButton = CGRect(x: 579, y: 24, width: 30, height: 30)
+            lineView = CGRect(x: 0, y: 65, width: 635, height: 1)
+            
+            userLinkCloseButton = CGRect(x: 579, y: 24, width: 30, height: 30)
+            userLinkLineView = CGRect(x: 0, y: 65, width: 635, height: 1)
+            userLinkMiddleLabel = CGRect(x: 34, y: 56, width: 567, height: 200)
+            userLinkBottomLabel = CGRect(x: 34, y: userLinkBackgroudView!.height - 175, width: 567, height: 100)
+            userLinkLineView2 = CGRect(x: 0, y: userLinkBackgroudView!.height - 93, width: 635, height: 1)
+            userLinkConfirmButton = CGRect(x: 32, y: userLinkBackgroudView!.height - 77, width: 279, height: 62)
+            userLinkCancelButton = CGRect(x: 324, y: userLinkBackgroudView!.height - 77, width: 279, height: 62)
+            
+            userLoadMiddleLabel = CGRect(x: 34, y: 56, width: 567, height: 200)
+            userLoadConfirmLabel = CGRect(x: 34, y: 244, width: 567, height: 10)
+            userLoadInputButton = CGRect(x: 31, y: 299, width: 401, height: 64)
+            userLoadConfirmButton = CGRect(x: 442, y: 299, width: 127, height: 64)
+            
+            userResultSubLabel = CGRect(x: 34, y: 96, width: 567, height: 25)
+            userResultContentLabel = CGRect(x: 34, y: 146, width: 567, height: 100)
+            userResultConfirmButton = CGRect(x: 178, y: 343, width: 279, height: 62)
+            break
+        case (834,1112) :
+            titleSize = 32
+            contentSize = 25
+            buttonSize = 25
+            textlineSpacing = 20
+            userLinkBackgroudView = CGRect(x: (width - 692) / 2, y: (height - 462) / 2, width: 692, height: 462)
+            userLoadbackgroundView = CGRect(x: (width - 692) / 2, y: (height - 462) / 2, width: 692, height: 462)
+            userResultBackgroundView = CGRect(x: (width - 692) / 2, y: (height - 462) / 2, width: 692, height: 462)
+            titleLabel = CGRect(x: 37, y: 23, width: 500, height: 30)
+            closeButton = CGRect(x: 636, y: 24, width: 30, height: 30)
+            lineView = CGRect(x: 0, y: 70, width: 692, height: 1)
+            
+            userLinkCloseButton = CGRect(x: 636, y: 24, width: 30, height: 30)
+            userLinkLineView = CGRect(x: 0, y: 70, width: 692, height: 1)
+            userLinkMiddleLabel = CGRect(x: 37, y: 77, width: 618, height: 200)
+            userLinkBottomLabel = CGRect(x: 37, y: userLinkBackgroudView!.height - 185, width: 618, height: 100)
+            userLinkLineView2 = CGRect(x: 0, y: userLinkBackgroudView!.height - 100, width: 692, height: 1)
+            userLinkConfirmButton = CGRect(x: 35, y: userLinkBackgroudView!.height - 84, width: 304, height: 68)
+            userLinkCancelButton = CGRect(x: 352, y: userLinkBackgroudView!.height - 84, width: 304, height: 68)
+            
+            userLoadMiddleLabel = CGRect(x: 37, y: 96, width: 567, height: 200)
+            userLoadConfirmLabel = CGRect(x: 37, y: 244, width: 567, height: 10)
+            userLoadInputButton = CGRect(x: 31, y: 299, width: 401, height: 64)
+            userLoadConfirmButton = CGRect(x: 442, y: 299, width: 127, height: 64)
+            
+            userResultSubLabel = CGRect(x: 34, y: 96, width: 567, height: 25)
+            userResultContentLabel = CGRect(x: 34, y: 146, width: 567, height: 100)
+            userResultConfirmButton = CGRect(x: 194, y: 374, width: 304, height: 68)
+            break
+        case (1024,1366) :
+            titleSize = 39
+            contentSize = 30
+            buttonSize = 30
+            textlineSpacing = 20
+            userLinkBackgroudView = CGRect(x: (width - 823) / 2, y: (height - 462) / 2, width: 823, height: 462)
+            userLoadbackgroundView = CGRect(x: (width - 823) / 2, y: (height - 462) / 2, width: 823, height: 462)
+            userResultBackgroundView = CGRect(x: (width - 823) / 2, y: (height - 462) / 2, width: 823, height: 462)
+            titleLabel = CGRect(x: 45, y: 23, width: 500, height: 30)
+            closeButton = CGRect(x: 762, y: 26, width: 31, height: 31)
+            lineView = CGRect(x: 0, y: 84, width: 823, height: 2)
+            
+            userLinkCloseButton = CGRect(x: 762, y: 26, width: 31, height: 31)
+            userLinkLineView = CGRect(x: 0, y: 84, width: 823, height: 2)
+            userLinkMiddleLabel = CGRect(x: 46, y: 77, width: 731, height: 200)
+            userLinkBottomLabel = CGRect(x: 46, y: userLinkBackgroudView!.height - 245, width: 731, height: 100)
+            userLinkLineView2 = CGRect(x: 0, y: userLinkBackgroudView!.height - 114, width: 823, height: 1)
+            userLinkConfirmButton = CGRect(x: 41, y: userLinkBackgroudView!.height - 97, width: 362, height: 80)
+            userLinkCancelButton = CGRect(x: 420, y: userLinkBackgroudView!.height - 97, width: 362, height: 80)
+            
+            userLoadMiddleLabel = CGRect(x: 37, y: 96, width: 567, height: 200)
+            userLoadConfirmLabel = CGRect(x: 37, y: 244, width: 567, height: 10)
+            userLoadInputButton = CGRect(x: 31, y: 299, width: 401, height: 64)
+            userLoadConfirmButton = CGRect(x: 442, y: 299, width: 127, height: 64)
+            
+            userResultSubLabel = CGRect(x: 34, y: 96, width: 567, height: 25)
+            userResultContentLabel = CGRect(x: 34, y: 146, width: 567, height: 100)
+            userResultConfirmButton = CGRect(x: 194, y: 374, width: 304, height: 68)
+            break
+        case (568,320), (667,375), (736,412), (812,375) :
             userLinkBackgroudView = CGRect(x: (width - 370) / 2, y: (height - 209.5) / 2, width: 370, height: 209.5)
             userLoadbackgroundView = CGRect(x: (width - 342) / 2, y: (height - 188.5) / 2, width: 342, height: 188.5)
             userResultBackgroundView = CGRect(x: (width - 342) / 2, y: (height - 188.5) / 2, width: 342, height: 188.5)
@@ -214,6 +302,9 @@ class UserDataSet {
             userResultConfirmButton = CGRect(x: 109, y: 143.5, width: 123.5, height: 37.5)
             break;
         default:
+            userLinkBackgroudView = CGRect(x: (view.width - 328) / 2, y: (view.height - 250) / 2, width: 328, height: 250)
+            userLoadbackgroundView = CGRect(x: (view.width - 328) / 2, y: (view.height - 240) / 2, width: 328, height: 240)
+            userResultBackgroundView = CGRect(x: (view.width - 328) / 2, y: (view.height - 187) / 2, width: 328, height: 187)
             titleLabel = CGRect(x: 21.5, y: 15, width: 150, height: 12)
             closeButton = CGRect(x: 297.5, y: 0, width: 30, height: 30)
             lineView = CGRect(x: 0, y: 39, width: 328, height: 0.5)
