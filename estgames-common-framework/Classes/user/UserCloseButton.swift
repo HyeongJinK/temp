@@ -18,14 +18,13 @@ class UserCloseButton : UIButton {
         super.init(frame: frame)
         
         self.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
-        self.backgroundImage(for: .normal)
         
         guard let closeButtonImage = closeButtonImage else {
             self.setTitle("X", for: .normal)
             return
         }
         
-        self.setImage(closeButtonImage, for: .normal)
+        self.setBackgroundImage(closeButtonImage, for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) {

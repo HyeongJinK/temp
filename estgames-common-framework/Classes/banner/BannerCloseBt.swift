@@ -21,14 +21,14 @@ class CloseBt: UIButton {
         super.init(coder: aDecoder)
     }
     
-    init(check: CheckBox, linkbt: LinkerButton) {
-        closeBtImage = UIImage(named: "btn_bottom_close_img", in:Bundle(for: CloseBt.self), compatibleWith:nil)
+    init(check: CheckBox, linkbt: LinkerButton, btimg:String = "btn_bottom_close_img") {
+        closeBtImage = UIImage(named: btimg, in:Bundle(for: CloseBt.self), compatibleWith:nil)
         
         super.init(frame: CGRect.zero)
         
         self.checkBt = check
         self.linkBt = linkbt
-        self.setImage(closeBtImage, for: .normal)
+        self.setBackgroundImage(closeBtImage, for: .normal)
         self.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
     }
     

@@ -50,7 +50,7 @@ class PolicyDataSet {
             break
         case (768,1024) :
             titleFontSize = 24
-            subTitleFontSize = 13
+            subTitleFontSize = 18
             buttonFontSize = 29
             backgroudViewFrame = CGRect(x: (width - 525.5) / 2, y: (height - 936.5) / 2, width: 525.5, height: 936.5);
             backgroudImageFrame = CGRect(x: 0, y: 0, width: 525.5, height: 936.5)
@@ -65,7 +65,7 @@ class PolicyDataSet {
             break
         case (834,1112):
             titleFontSize = 25
-            subTitleFontSize = 13
+            subTitleFontSize = 19
             buttonFontSize = 29
             backgroudViewFrame = CGRect(x: (width - 550) / 2, y: (height - 980) / 2, width: 550, height: 980);
             backgroudImageFrame = CGRect(x: 0, y: 0, width: 550, height: 980)
@@ -86,11 +86,11 @@ class PolicyDataSet {
             backgroudImageFrame = CGRect(x: 0, y: 0, width: 667, height: 1189)
             titleLabel1Frame = CGRect(x: 0 , y: 88, width: backgroudViewFrame.width, height: 30)
             subTitleLabelFrame = CGRect(x: 0, y: 130, width: backgroudViewFrame.width, height: 23)
-            webView1Frame = CGRect(x: 49, y: 176, width: 547, height: 308)
-            submitBt1Frame = CGRect(x: 49, y: 504, width: 547, height: 83)
+            webView1Frame = CGRect(x: 59, y: 176, width: 547, height: 308)
+            submitBt1Frame = CGRect(x: 59, y: 504, width: 547, height: 83)
             titleLabel2Frame = CGRect(x: 0, y: 652, width: backgroudViewFrame.width, height: 30)
-            webView2Frame = CGRect(x: 49, y: 707, width: 547, height: 308)
-            submitBt2Frame = CGRect(x: 49, y: 1035, width: 547 , height: 83)
+            webView2Frame = CGRect(x: 59, y: 707, width: 547, height: 308)
+            submitBt2Frame = CGRect(x: 59, y: 1035, width: 547 , height: 83)
             closeBtFrame = CGRect(x: backgroudViewFrame.width - 24 - 42, y: 24, width: 42, height: 42)
             break
         case (568,320), (667,375), (736,412), (812,375), (1024,768), (1112,834), (1366,1024) :

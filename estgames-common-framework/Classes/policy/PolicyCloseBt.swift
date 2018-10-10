@@ -24,7 +24,7 @@ class PolicyCloseBt : UIButton {
         super.init(frame: CGRect.zero)
         
         if let cImage = closeBtImage {
-            self.setImage(cImage, for: .normal)
+            self.setBackgroundImage(cImage, for: .normal)
         } else {
             self.setTitle("X", for: .normal)
         }

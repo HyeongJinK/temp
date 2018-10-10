@@ -29,10 +29,6 @@ public class bannerFramework {
         imageViewsTemps.removeAll()
         
         bannerView = BannerViewController()
-        
-        //bannerView = UIViewController(frame: CGRect(x: 0, y: 0, width: pview.view.frame.size.width, height: pview.view.frame.size.height))
-        //bannerView?.translatesAutoresizingMaskIntoConstraints = false
-        
         bottomView = bannerBottomView() //아래바 생성
         
         

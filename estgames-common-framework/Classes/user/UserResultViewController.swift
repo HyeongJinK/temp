@@ -62,7 +62,7 @@ class UserResultViewController: UIViewController {
         
         let closeButtonImage:UIImage? = UIImage(named: "btn_close_img_user", in:Bundle(for: UserCloseButton.self), compatibleWith:nil)
         if let cimg = closeButtonImage {
-            closeButton.setImage(cimg, for: .normal)
+            closeButton.setBackgroundImage(cimg, for: .normal)
         } else {
             closeButton.setTitle("X", for: .normal)
         }

@@ -27,21 +27,21 @@ class CheckBox: UIButton {
         
         super.init(frame: CGRect(x: leftMargin, y: topMargin, width: width, height: height))
     
-        self.setImage(uncheckImage, for: .normal)
+        self.setBackgroundImage(uncheckImage, for: .normal)
         self.addTarget(self, action: #selector(checkBoxClick), for: .touchUpInside)
     }
     
     @objc func checkBoxClick() {
         isChecked = !isChecked
         if isChecked {
-            self.setImage(checkImage, for: .normal)
+            self.setBackgroundImage(checkImage, for: .normal)
         } else {
-            self.setImage(uncheckImage, for: .normal)
+            self.setBackgroundImage(uncheckImage, for: .normal)
         }
     }
     
     public func unCheckInit() {
         isChecked = false
-        self.setImage(uncheckImage, for: .normal)
+        self.setBackgroundImage(uncheckImage, for: .normal)
     }
 }
