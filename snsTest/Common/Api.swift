@@ -173,16 +173,17 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
 //
 //        })
 //    }
-    private func clearKeychain() {
-        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.eg_id")
-        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.eg_token")
-        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.refresh_token")
-        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.principal")
-        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.provider")
-        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.email")
-        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.device")
-        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.user_id")
-    }
+    /**
+     class Synchronize(egToken: String, principal: String, data: Map<String, Any> = mapOf(), force: Boolean = false): Api(
+     "\(MP_BRIDGE_API_HOST/\(MP_BRIDGE_API_VERSION/account/synchronize", Method.POST,
+     hashMapOf(
+     "eg_token" to egToken,
+     "principal" to principal,
+     "data" to JSONObject(data).toString(),
+     "force" to force)
+     )
+     */
+    
     public func expire(egToken: String) {
         var result: [String: Any]?
         var check = true
@@ -195,7 +196,7 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
                     check = false
                     return
                 }
-                self.clearKeychain()
+                
                 do {
                     result = try JSONSerialization.jsonObject(with: _data, options: []) as? [String: Any]
                     check = false
@@ -236,76 +237,7 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
                 
         })
     }
-    func test() {
-        /**
-         { (data: Data?, response: URLResponse?, error: Error?) in
-         //error 일경우 종료
-         guard error == nil && data != nil else {
-         if let err = error {
-         print(err.localizedDescription)
-         }
-         return
-         }
-         
-         //data 가져오기
-         if let _data = data {
-         if let strData = NSString(data: _data, encoding: String.Encoding.utf8.rawValue) {
-         let str = String(strData)
-         return str
-         //메인쓰레드에서 출력하기 위해
-         //                        DispatchQueue.main.async {
-         //                            //self.txtResponse.text = str
-         //                        }
-         }
-         } else{
-         return "nil"
-         }
-         }
-         */
-        
-        
-        
-//        let userId = (self.userId.text)!
-//        let name = (self.name.text)!
-//        let param = ["userId": userId, "name": name] // JSON 객체로 변환할 딕셔너리 준비
-//        let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])
-//
-//        // 2. URL 객체 정의
-//        let url = URL(string: "http://~~~~");
-//
-//        // 3. URLRequest 객체 정의 및 요청 내용 담기
-//        var request = URLRequest(url: url!)
-//        request.httpMethod = "POST"
-//        request.httpBody = paramData
-//
-//        // 4. HTTP 메시지에 포함될 헤더 설정
-//        request.addValue("applicaion/json", forHTTPHeaderField: "Content-Type")
-//        request.setValue(String(paramData.count), forHTTPHeaderField: "Content-Length")
-//
-//        // 5. URLSession 객체를 통해 전송 및 응답값 처리 로직 작성
-//
-//        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
-//
-//            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-//                print("error=\(error)")
-//                return
-//            }
-//
-//            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-//                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-//                print("response = \(response)")
-//            }
-//
-//            let responseString = String(data: data, encoding: .utf8)
-//            print("responseString = \(responseString)")
-//
-//        }
-//
-//        // 6. POST 전송
-//
-//        task.resume()
-    }
-}
+
 /**
  class AppScript(region: String, lang: String):
  Api("\(MP_APP_SCRIPT_API_HOST", Method.GET,
@@ -349,14 +281,7 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
  hashMapOf("eg_token" to egToken)
  )
  
- class Synchronize(egToken: String, principal: String, data: Map<String, Any> = mapOf(), force: Boolean = false): Api(
- "\(MP_BRIDGE_API_HOST/\(MP_BRIDGE_API_VERSION/account/synchronize", Method.POST,
- hashMapOf(
- "eg_token" to egToken,
- "principal" to principal,
- "data" to JSONObject(data).toString(),
- "force" to force)
- )
+ 
  
  class Expire(egToken: String): Api(
  "\(MP_BRIDGE_API_HOST/\(MP_BRIDGE_API_VERSION/account/signout", Method.POST,

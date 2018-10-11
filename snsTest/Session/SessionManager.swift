@@ -80,9 +80,20 @@ class SessionManager {
         api.expire(egToken: MpInfo.Account.egToken)
     }
     
+    private func clearKeychain() {
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.eg_id")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.eg_token")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.refresh_token")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.principal")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.provider")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.email")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.device")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.user_id")
+    }
     
     func signOut() {
-        
+        api.expire(egToken: MpInfo.Account.egToken)
+        clearKeychain()
     }
 }
 
@@ -205,6 +216,28 @@ class SessionManager {
  }
  }
  
+ private fun synchronizeData(token: String, principal: String, data: Map<String, Any>, force: Boolean = false):Result {
+ val msg = Api.Synchronize(token, principal, data, force).json()
+ return when(msg.getString("status").toUpperCase()) {
+ "COMPLETE" -> {
+ Result.SyncComplete(
+ egId = msg.getString("eg_id"),
+ from = msg.getString("from"),
+ to = msg.getString("to"),
+ data = msg.getJSONObject("data").toMap(),
+ at = Date(System.currentTimeMillis())
+ )
+ }
+ else -> {
+ Result.SyncFailure(
+ principal = principal,
+ egId = msg.getString("duplicated"),
+ message = msg.getString("message")
+ )
+ }
+ }
+ }
+ 
  /**
  * 세션 만료
  */
@@ -300,27 +333,7 @@ class SessionManager {
  }
  }
  
- private fun synchronizeData(token: String, principal: String, data: Map<String, Any>, force: Boolean = false):Result {
- val msg = Api.Synchronize(token, principal, data, force).json()
- return when(msg.getString("status").toUpperCase()) {
- "COMPLETE" -> {
- Result.SyncComplete(
- egId = msg.getString("eg_id"),
- from = msg.getString("from"),
- to = msg.getString("to"),
- data = msg.getJSONObject("data").toMap(),
- at = Date(System.currentTimeMillis())
- )
- }
- else -> {
- Result.SyncFailure(
- principal = principal,
- egId = msg.getString("duplicated"),
- message = msg.getString("message")
- )
- }
- }
- }
+ 
  
  private fun expireToken() {
  val token = _sessionRepo.session
