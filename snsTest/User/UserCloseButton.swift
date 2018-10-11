@@ -18,16 +18,14 @@ class UserCloseButton : UIButton {
         view = pview
         super.init(frame: frame)
         
-        if let cimg = closeButtonImage {
-            self.setImage(cimg, for: .normal)
-        }
-        //        } else {
-        //            self.setTitle("X", for: .normal)
-        //        }
-        self.backgroundImage(for: .normal)
-        //self.backgroundColor = UIColor.blue
-        
         self.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
+        
+        guard let closeButtonImage = closeButtonImage else {
+            self.setTitle("X", for: .normal)
+            return
+        }
+        
+        self.setBackgroundImage(closeButtonImage, for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) {

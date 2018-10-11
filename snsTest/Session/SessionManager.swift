@@ -25,63 +25,49 @@ class SessionManager {
         return ""
     }
     func create(principal: String?) {
-        //
+        let uid = UUID().uuidString
+        let p = api.principal(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, identity: uid)
+        let token = api.token(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, region: MpInfo.App.region, device: "\(uid)@ios", principal: p!)
+        let egToken = token!["eg_token"] as! String
+        let me = api.me(egToken: egToken)
+        let profile = me!["profile"] as! [String:Any]
         
-        
-        //api.token(clientId: MpInfo.App.clientId, secret: <#T##String#>, region: <#T##String#>, device: <#T##String#>, principal: <#T##String#>)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        //TODO principal이 없거나 이니 세션이 있을 경우
-        
-        
-        /*
-         if (principal == null && _sessionRepo.hasSession) {
-         throw Fail.ACCOUNT_SESSION_DUPLICATED.with("Guest session can not be duplicated. There is already a opened session.")
-         }
-         
-         return Task(executor) {
-         publishToken(principal?: exchangePrincipal(deviceIdentity))
-         }.thenApply {s ->
-         _sessionRepo.session = s
-         return@thenApply s.egToken
-         }
-         
-         private fun publishToken(principal: String): Session.Complete {
-         val token = Api.Token(
-         _platform.configuration.clientId,
-         _platform.configuration.secret,
-         _platform.configuration.region,
-         _platform.deviceId,
-         principal).json()
-         val me = Api.Me(token.getString("eg_token")).json()
-         val profile = me.getJSONObject("profile")
-         
-         return Session.Complete(
-         egToken = token.getString("eg_token"),
-         refreshToken = token.getString("refresh_token"),
-         egId = me.getString("eg_id"),
-         principal = me.getString("principal_of_client"),
-         provider = profile.takeIf { !it.isNull("provider") }?.getString("provider"),
-         email = profile.takeIf { !it.isNull("email") }?.getString("email"),
-         userId = me.getString("user_id")
-         )
-         }
-         **/
+        MpInfo.Account.device = "\(uid)@ios"
+        MpInfo.Account.egToken = token!["eg_token"] as! String
+        MpInfo.Account.refreshToken = token!["refresh_token"] as! String
+        MpInfo.Account.egId = me!["eg_id"] as! String
+        MpInfo.Account.principal = me!["principal_of_client"] as! String
+        MpInfo.Account.userId = me!["user_id"] as! String
+        let _provider:String? = profile["provider"] as? String
+        if _provider != nil {
+            MpInfo.Account.provider = _provider!
+        }
+        let _email:String? = profile["email"] as? String
+        if _email != nil {
+            MpInfo.Account.email = _email!
+        }
     }
     
     //세션 재시작
     func resume() {
-        
+        let token = api.refresh(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, region: MpInfo.App.region, device: MpInfo.Account.device, refreshToken: MpInfo.Account.refreshToken, egToken: MpInfo.Account.egToken)
+        let egToken = token!["eg_token"] as! String
+        let me = api.me(egToken: egToken)
+        let profile = me!["profile"] as! [String:Any]
+
+        MpInfo.Account.egToken = token!["eg_token"] as! String
+        //MpInfo.Account.refreshToken = token!["refresh_token"] as! String
+        MpInfo.Account.egId = me!["eg_id"] as! String
+        MpInfo.Account.principal = me!["principal_of_client"] as! String
+        MpInfo.Account.userId = me!["user_id"] as! String
+        let _provider:String? = profile["provider"] as? String
+        if _provider != nil {
+            MpInfo.Account.provider = _provider!
+        }
+        let _email:String? = profile["email"] as? String
+        if _email != nil {
+            MpInfo.Account.email = _email!
+        }
     }
     
     //계정 동기화
@@ -91,7 +77,7 @@ class SessionManager {
     
     //세션만료
     func expire() {
-        
+        api.expire(egToken: MpInfo.Account.egToken)
     }
     
     

@@ -26,7 +26,7 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
     private func apiCall(url: URL?, method: String, param: String, callback: @escaping (Data?, URLResponse?, Error?) -> Void) {
         
         guard let _url = url else {return}
-        print(_url.absoluteString)
+        //print(_url.absoluteString)
         var request = URLRequest(url: _url)
         request.httpMethod = method
         request.httpBody = param.data(using: String.Encoding.utf8, allowLossyConversion: true)
@@ -134,7 +134,9 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
         return result
     }
     
-    public func refresh(clientId: String, secret: String, region: String, device: String, refreshToken: String, egToken: String) {
+    public func refresh(clientId: String, secret: String, region: String, device: String, refreshToken: String, egToken: String) ->  [String: Any]? {
+        var result: [String: Any]?
+        var check = true
         apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/token")
             , method: "post"
             , param: dictionaryToQueryString(["client_id":clientId, "secret":secret, "region":region, "device":device, "approval_type":"refresh_token",  "refresh_token":refreshToken, "eg_token":egToken])
@@ -142,16 +144,22 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
                 //error 일경우 종료
                 guard let _data = data, error == nil else {
                     print("error = \(String(describing: error))")
+                    check = false
                     return
                 }
-                
-                guard let strData = NSString(data: _data, encoding: String.Encoding.utf8.rawValue) else {return}
-                
-                let str = String(strData)
-                
-                //TODO 문자열 파싱
-                print("str = \(str)")
+                do {
+                    result = try JSONSerialization.jsonObject(with: _data, options: []) as? [String: Any]
+                    check = false
+                }
+                catch {
+                    result = nil
+                    check = false
+                }
         })
+        
+        while (result == nil && check) {}
+        
+        return result
     }
     
     
@@ -165,14 +173,39 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
 //
 //        })
 //    }
-    
+    private func clearKeychain() {
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.eg_id")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.eg_token")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.refresh_token")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.principal")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.provider")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.email")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.device")
+        KeychainWrapper.standard.removeObject(forKey: MpInfo.App.region+"_mp.user_id")
+    }
     public func expire(egToken: String) {
+        var result: [String: Any]?
+        var check = true
         apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/signout")
             , method: "post"
             , param: dictionaryToQueryString(["eg_token": egToken])
             , callback: {(data: Data?, response:URLResponse?, error: Error?) in
-                
+                guard let _data = data, error == nil else {
+                    print("error = \(String(describing: error))")
+                    check = false
+                    return
+                }
+                self.clearKeychain()
+                do {
+                    result = try JSONSerialization.jsonObject(with: _data, options: []) as? [String: Any]
+                    check = false
+                }
+                catch {
+                    result = nil
+                    check = false
+                }
         })
+        while (result == nil && check) {}
     }
     
     public func abandon(egToken: String, clientId: String, secret: String, region: String) {

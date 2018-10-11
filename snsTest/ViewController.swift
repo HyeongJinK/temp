@@ -19,13 +19,30 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         var uid = UUID().uuidString
         let p = api.principal(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, identity: uid)!
         print(p)
-//        print("\(uid)@ios")
-//        let t = api.token(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, region: MpInfo.App.region, device: "\(uid)@ios", principal: p)
-//        print(t)
-//        let egToken = t!["eg_token"] as! String
-//        print(egToken)
-//        let m = api.me(egToken: egToken)
-//        print(m)
+        print("\(uid)@ios")
+        
+        let t = api.token(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, region: MpInfo.App.region, device: "\(uid)@ios", principal: p)
+        print(t)
+        let egToken = t!["eg_token"] as! String
+        let refreshToken = t!["refresh_token"] as! String
+        print(egToken)
+        let r = api.refresh(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, region: MpInfo.App.region, device: "\(uid)@ios", refreshToken: refreshToken, egToken: egToken)
+        print(r)
+        let egTokenr = r!["eg_token"] as! String
+        print(egTokenr)
+        let m = api.me(egToken: egTokenr)
+        print(m)
+        
+        api.expire(egToken: egTokenr)
+//        print(m!["eg_app_id"])
+//        let pro = m!["profile"] as! [String: Any]
+//        let em = pro["email"] as? String
+//        print(em)
+//
+//        print(m!["principal_of_client"])
+//        print(m!["user_id"])
+//        print(m!["region"])
+//        print(m!["eg_id"])
     }
     
     @IBAction func auth(_ sender: Any) {
@@ -37,6 +54,30 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
             print(message);
         }
         eg.authority(action: action)
+    }
+    @IBAction func banner(_ sender: Any) {
+    }
+    @IBAction func policy(_ sender: Any) {
+    }
+    @IBAction func cs(_ sender: Any) {
+    }
+    @IBAction func notice(_ sender: Any) {
+    }
+    @IBAction func create(_ sender: Any) {
+    }
+    @IBAction func login(_ sender: Any) {
+    }
+    @IBAction func logout(_ sender: Any) {
+    }
+    @IBAction func status(_ sender: Any) {
+    }
+    @IBAction func user1(_ sender: Any) {
+    }
+    @IBAction func user2(_ sender: Any) {
+    }
+    @IBAction func user3(_ sender: Any) {
+    }
+    @IBAction func user4(_ sender: Any) {
     }
     @IBOutlet var signInButton: GIDLoginButton!
     

@@ -53,26 +53,22 @@ class UserResultViewController: UIViewController {
         
         backgroundView.backgroundColor = UIColor(red: 9, green: 9, blue: 9, alpha: 1)
         
-        //        userResultTitle.text = "estcommon_userResult_title".localized()
         userResultTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         userResultTitle.font = UIFont.systemFont(ofSize: titleSize)
         
         
         let closeButtonImage:UIImage? = UIImage(named: "btn_close_img_user", in:Bundle(for: UserCloseButton.self), compatibleWith:nil)
         if let cimg = closeButtonImage {
-            closeButton.setImage(cimg, for: .normal)
+            closeButton.setBackgroundImage(cimg, for: .normal)
         } else {
             closeButton.setTitle("X", for: .normal)
         }
         closeButton.addTarget(self, action: #selector(closeBtAction(_:)), for: .touchUpInside)
         
-        //closeButton.closeBtAction = closeActon
-        
         
         lineView.backgroundColor = UIColor(red: 137/255, green: 137/255, blue: 137/255, alpha: 1)
         
         
-        //        subLabel.text = "estcommon_userResult_subTitle".localized()
         subLabel.font = UIFont.systemFont(ofSize: titleSize)
         subLabel.textColor = UIColor(red: 48/255, green: 122/255, blue: 245/255, alpha: 1)
         
@@ -92,10 +88,6 @@ class UserResultViewController: UIViewController {
         self.confirmButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         self.confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonSize)
         self.confirmButton.addTarget(self, action: #selector(confirmBtAction(_:)), for: .touchUpInside)
-        //        self.confirmButton.setTitle("estcommon_userResult_confirm".localized(), for: .normal)
-        
-        //confirmButton.setTitle(NSLocalizedString("estcommon_userResult_confirm", comment: ""), for: .normal)
-        //confirmButton.confirmBtAction = confirmAction
         
         
         backgroundView.addSubview(userResultTitle)

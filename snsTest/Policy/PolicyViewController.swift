@@ -25,6 +25,10 @@ class PolicyViewController: UIViewController {
     var dataSet: PolicyDataSet!
     var action:Action<String>?
     
+    var titleFontSize:CGFloat = 15
+    var subTitleFontSize:CGFloat = 12
+    var buttonFontSize:CGFloat = 16
+    
     public func setAction(action: Action<String>) {
         self.action = action
     }
@@ -66,12 +70,12 @@ class PolicyViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        labelSet(titleLabel1, "estcommon_policy_title".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+        labelSet(titleLabel1, "estcommon_policy_title".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), titleFontSize)
         
         
-        labelSet(subTitleLabel, "estcommon_policy_subTitle".localized(), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), 10)
+        labelSet(subTitleLabel, "estcommon_policy_subTitle".localized(), UIColor(red: 1, green: 95/255, blue: 95/255, alpha: 1), subTitleFontSize)
         
-        labelSet(titleLabel2, "estcommon_policy_privacy".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), 13)
+        labelSet(titleLabel2, "estcommon_policy_privacy".localized(), UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1), titleFontSize)
         
         submitBt1.setTitle("estcommon_policy_buttonText".localized(), for: .normal)
         submitBt2.setTitle("estcommon_policy_buttonText".localized(), for: .normal)
@@ -90,6 +94,9 @@ class PolicyViewController: UIViewController {
         closeBt = PolicyCloseBt(self)
         webView1 = UIWebView(frame: dataSet.webView1Frame)
         webView2 = UIWebView(frame: dataSet.webView2Frame)
+        titleFontSize = dataSet.titleFontSize
+        subTitleFontSize = dataSet.subTitleFontSize
+        buttonFontSize = dataSet.buttonFontSize
         
         
         self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)

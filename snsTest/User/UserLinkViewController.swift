@@ -27,12 +27,13 @@ class UserLinkViewController: UIViewController {
     var buttonSize:CGFloat = 13
     var titleSize:CGFloat = 16
     var contentSize:CGFloat = 14
-    
+    var textlineSpacing:CGFloat = 9
     
     func dataSet(_ data:UserDataSet) {
         buttonSize = data.buttonSize
         titleSize = data.titleSize
         contentSize = data.contentSize
+        textlineSpacing = data.textlineSpacing
         backgroudView = UIView(frame: data.userLinkBackgroudView!)
         userLinkTitle = UILabel(frame: data.titleLabel!)
         closeButton = UserCloseButton(self, frame: data.userLinkCloseButton!)
@@ -63,7 +64,7 @@ class UserLinkViewController: UIViewController {
         }
         
         let style = NSMutableParagraphStyle()
-        style.lineSpacing = 10 // 아래 위로 전부 되서 18/2로 적용함  29 -> 20
+        style.lineSpacing = textlineSpacing // 아래 위로 전부 되서 18/2로 적용함  29 -> 20
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
         middleLabel.attributedText = attrString
         
@@ -97,7 +98,6 @@ class UserLinkViewController: UIViewController {
         if let cbImg = cancelButtonImg {
             cancelButton.setBackgroundImage(cbImg, for: .normal)
         }
-        //        cancelButton.setTitle("estcommon_userLink_cancel".localized(), for: .normal)
         cancelButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonSize)
         cancelButton.addTarget(self, action: #selector(cancelBtAction(_:)), for: .touchUpInside)
@@ -114,19 +114,14 @@ class UserLinkViewController: UIViewController {
         backgroudView.addSubview(cancelButton)
     }
     public func replaceStr() {
-        
         middleLabel.font = UIFont.systemFont(ofSize: contentSize)
         middleLabel.numberOfLines = 0
         let attrString = NSMutableAttributedString(string: "estcommon_userLink_middelLabel".localized().replacingOccurrences(of: "[]", with: replaceStrSns).replacingOccurrences(of: "Facebook", with: replaceStrProvider))
         let style = NSMutableParagraphStyle()
-        style.lineSpacing = 9 // 아래 위로 전부 되서 18/2로 적용함
+        style.lineSpacing = textlineSpacing // 아래 위로 전부 되서 18/2로 적용함
         attrString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attrString.length)) ////NSParagraphStyleAttributeName
         middleLabel.attributedText = attrString
     }
-    //
-    //    @objc func closeBtAction(_ sender:UIButton) {
-    //        dismiss(animated: false, completion: closeActon)
-    //    }
     
     public func close() {
         self.dismiss(animated: false, completion: nil)
