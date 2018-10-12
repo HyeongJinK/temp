@@ -24,9 +24,24 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.567949206320-ak7je1tvvsgci3d5ppv16hnu7033gh36</string>
+                <string>fb334877457088909</string>
 			</array>
 		</dict>
 	</array>
+    
+<!--    <key>CFBundleURLTypes</key>-->
+<!--    <array>-->
+<!--        <dict>-->
+<!--            <key>CFBundleURLSchemes</key>-->
+<!--            <array>-->
+<!--                <string>fb334877457088909</string>-->
+<!--            </array>-->
+<!--        </dict>-->
+<!--    </array>-->
+<!--    <key>FacebookAppID</key>-->
+<!--    <string>334877457088909</string>-->
+<!--    <key>FacebookDisplayName</key>-->
+<!--    <string>IosTest</string>-->
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>

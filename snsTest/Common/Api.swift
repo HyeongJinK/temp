@@ -164,25 +164,39 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
     
     
     
-//    public func synchronize(egToken: String, principal: String, data: Hashable<String, Any>, force: Bool) {
-//        //\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/synchronize
-//        apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/me")
-//            , method: "post"
-//            , param: dictionaryToQueryString(["egToken": egToken])
-//            , callback: {(data: Data?, response:URLResponse?, error: Error?) in
-//
-//        })
-//    }
-    /**
-     class Synchronize(egToken: String, principal: String, data: Map<String, Any> = mapOf(), force: Boolean = false): Api(
-     "\(MP_BRIDGE_API_HOST/\(MP_BRIDGE_API_VERSION/account/synchronize", Method.POST,
-     hashMapOf(
-     "eg_token" to egToken,
-     "principal" to principal,
-     "data" to JSONObject(data).toString(),
-     "force" to force)
-     )
-     */
+    public func synchronize(egToken: String, principal: String, data: [String: String], force: Bool = false) ->  [String: Any]? {
+        var result: [String: Any]?
+        var check = true
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            apiCall(url: URL(string: "\(MP_BRIDGE_API_HOST)/\(MP_BRIDGE_API_VERSION)/account/synchronize")
+                , method: "post"
+                , param: dictionaryToQueryString(["eg_token": egToken, "principal" : principal, "data" : jsonString!, "force" : force.description])
+                , callback: {(data: Data?, response:URLResponse?, error: Error?) in
+                    //var e = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!
+                    guard let _data = data, error == nil else {
+                        print("error = \(String(describing: error))")
+                        check = false
+                        return
+                    }
+                    do {
+                        result = try JSONSerialization.jsonObject(with: _data, options: []) as? [String: Any]
+                        check = false
+                    }
+                    catch {
+                        result = nil
+                        check = false
+                    }
+            })
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        while (result == nil && check) {}
+        
+        return result
+    }
     
     public func expire(egToken: String) {
         var result: [String: Any]?
@@ -237,7 +251,7 @@ public class Api {//https://m-linker.estgames.co.kr/sd_v_1_live
                 
         })
     }
-
+}
 /**
  class AppScript(region: String, lang: String):
  Api("\(MP_APP_SCRIPT_API_HOST", Method.GET,

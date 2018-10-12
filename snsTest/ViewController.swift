@@ -18,22 +18,31 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         
         var uid = UUID().uuidString
         let p = api.principal(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, identity: uid)!
-        print(p)
-        print("\(uid)@ios")
+        //print(p)
+        //print("\(uid)@ios")
         
         let t = api.token(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, region: MpInfo.App.region, device: "\(uid)@ios", principal: p)
-        print(t)
+        //print(t)
         let egToken = t!["eg_token"] as! String
         let refreshToken = t!["refresh_token"] as! String
-        print(egToken)
-        let r = api.refresh(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, region: MpInfo.App.region, device: "\(uid)@ios", refreshToken: refreshToken, egToken: egToken)
-        print(r)
-        let egTokenr = r!["eg_token"] as! String
-        print(egTokenr)
-        let m = api.me(egToken: egTokenr)
-        print(m)
         
-        api.expire(egToken: egTokenr)
+        var data : [String:String]
+        data = [String:String]()
+        data["email"] = "test@naver.com"
+        data["provider"] = "facebook"
+        
+        
+        print(api.synchronize(egToken: egToken, principal: "facebook:49892847", data: data))
+        
+//        print(egToken)
+//        let r = api.refresh(clientId: MpInfo.App.clientId, secret: MpInfo.App.secret, region: MpInfo.App.region, device: "\(uid)@ios", refreshToken: refreshToken, egToken: egToken)
+//        print(r)
+//        let egTokenr = r!["eg_token"] as! String
+//        print(egTokenr)
+//        let m = api.me(egToken: egTokenr)
+//        print(m)
+//
+//        api.expire(egToken: egTokenr)
 //        print(m!["eg_app_id"])
 //        let pro = m!["profile"] as! [String: Any]
 //        let em = pro["email"] as? String
@@ -112,7 +121,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         
         //FBSDKLoginManager.
         let gloginButton = GIDLoginButton()
-        let loginButton = FBLoginButton()
+        let loginButton = FBLoginButton(view: self)
         print("dsfkjsdf = " + loginButton.currentTitle!)
         
         //중앙으로 배치
