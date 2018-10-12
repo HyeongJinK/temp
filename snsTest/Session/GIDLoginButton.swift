@@ -32,9 +32,9 @@ class GIDLoginButton: GIDSignInButton, GIDSignInDelegate {
         } else {
             var data:[String:String] = [String:String]()
             data["email"] = user.profile.email
-            data["provider"] = "facebook"
+            data["provider"] = "google"
             
-            manager.sync(principal: "facebook:\(user.userID)", data: data)
+            manager.sync(principal: "google:\(user.userID)", data: data)
         }
     }
     @objc func signInAction(_ sender:UIButton) -> String{
