@@ -45,7 +45,7 @@ EG 플랫폼 연동을 위해 등록한 Application 연동 설정 파일을(`egc
     "Region": "cm.global.stage"
   },
 
-  "AccountProviders": {
+  "Account": {
     "Google": {
       "Permissions": "email, profile, openid"
     },
@@ -61,22 +61,12 @@ EG 플랫폼 연동을 위해 등록한 Application 연동 설정 파일을(`egc
 App 전역에서 플랫폼 Context 참조를 위한 Application 클래스를 작성합니다. 작성 위치는 App의 root package 입니다.
 
 ```java
-public class Application extends MultiDexApplication implements PlatformContext {
+public class Application extends MultiDexApplication implements PlatformContextContainer {
     private PlatformContext delegateContext;
 
     @Override
-    public Configuration getConfiguration() {
-        return delegateContext.getConfiguration();
-    }
-
-    @Override
-    public String getDeviceId() {
-        return delegateContext.getDeviceId();
-    }
-
-    @Override
-    public SessionRepository getSessionRepository() {
-        return delegateContext.getSessionRepository();
+    public PlatformContext getContext() {
+        return delegateContext;
     }
 
     @Override

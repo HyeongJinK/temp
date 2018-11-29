@@ -11,12 +11,15 @@ EGMP SDK 는 res/raw 디렉토리에 위치한 설정 파일을 읽어 framework
 ```json
 {
   "Client" : {
-    "ClientId": "0eae170b-ec59-3f85-bfda-a8c80fc1a3fe.mp.estgames.com",
-    "Secret": "13949b24f1fd9d3c81aabd11295c28507ee0a977e9dc5dc93a3bea86f8243b46",
-    "Region": "cm.global.stage"
+    "ClientId": "sample-client-id.sample.estgames.com",
+    "Secret": "sample-app-secret-code",
+    "Region": "sample.global.stage"
   },
 
-  "AccountProviders": {
+  "Account": {
+    "Guest": {
+      "Identity": "Device"
+    },
     "Google": {
       "Permissions": "email, profile, openid"
     },
@@ -26,3 +29,21 @@ EGMP SDK 는 res/raw 디렉토리에 위치한 설정 파일을 읽어 framework
   }
 }
 ```
+
+## Client
+
+앱의 인증 및 기본 설정 정보를 지정합니다. 클라이언트 아이디, 앱 시크릿, Region 정보를 설정합니다.
+
+* ClientId : 클라이언트 아이디
+* Secret : 앱 시크릿
+* Region : 서비스 Region 코드
+
+## Account
+
+앱의 사용자 계정에 대한 설정 정보를 지정합니다. 게스트의 식별자 생성방법, SNS 프로바이더등을 설정합니다.
+
+* Guest : 게스트 계정에 대한 설정을 합니다.
+  * Identity - 게스트 계정 식별자 생성 방법을 설정합니다. 설정값은 device, app, instant 중 하나를 설정하면 됩니다.
+
+* Google, Facebook : 구글, 페이스북 연동 설정을 합니다.
+  * permissions - SNS 계정 연동시 요청할 퍼미션 정보를 설정합니다.
