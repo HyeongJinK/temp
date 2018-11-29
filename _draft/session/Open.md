@@ -6,14 +6,12 @@
 
 Task에서 제공하는 메소드에서는 하나의 함수를 구현하는 인터페이스인 Acceptor를 매개변수로 받습니다.
 
-
 ## Task에서 제공하는 메소드
 
 |함수명|설명|리턴값|매개변수|
 |-|-|-|-|
 |asyncAccept|정상종료 이후 처리|com.estgames.framework.core.Task|Acceptor&lt;T>|
 |onError|에러시 처리 구현|com.estgames.framework.session.Token|Acceptor&lt;T>|
-
 
 ##### 예) 게스트 세션생성 및 생성 이후, 실패 시 처리
 
