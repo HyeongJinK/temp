@@ -13,6 +13,7 @@
   - [ActionListener 구현 및 등록](/_draft/egclient/ActionListener.md)
   - [EgClient 그외 함수](/_draft/egclient/Etc.md)
 - [유저연동](/_draft/session/init.md)
+  - [게스트 식별자 생성](/_draft/session/Guest.md)
   - [세션 매니저 생성](/_draft/session/Create.md)
   - [세션 생성(게스트 로그인) 및 세션 갱신](/_draft/session/Open.md)
   - [세션, 유저 정보 조회하기](/_draft/session/Select.md)
