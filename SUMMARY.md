@@ -19,4 +19,6 @@
     - [로그아웃 하기](/_draft/session/Logout.md)
     - [SNS 계정연동 구현하기](/_draft/session/Sns.md)
     - [SignInControl 클래스](/_draft/session/Control.md)
+- [상품결제](/_draft/payment/init.md)
+    - [상품 구매 및 결제하기](/_draft/payment/Payment.md)
 - [Support](/_draft/core/init.md)
