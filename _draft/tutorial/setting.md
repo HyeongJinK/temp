@@ -47,10 +47,10 @@ EG 플랫폼 연동을 위해 등록한 Application 연동 설정 파일을(`egc
 
   "Account": {
     "Google": {
-      "Permissions": "email, profile, openid"
+      "Scopes": "email, profile, openid"
     },
     "Facebook": {
-      "Permissions": "public_profile, email"
+      "Scopes": "public_profile, email"
     }
   }
 }
