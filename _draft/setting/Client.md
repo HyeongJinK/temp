@@ -21,10 +21,10 @@ EGMP SDK 는 res/raw 디렉토리에 위치한 설정 파일을 읽어 framework
       "Identity": "Device"
     },
     "Google": {
-      "Permissions": "email, profile, openid"
+      "Scopes": "email, profile, openid"
     },
     "Facebook": {
-      "Permissions": "public_profile, email"
+      "Scopes": "public_profile, email"
     }
   }
 }
@@ -46,4 +46,4 @@ EGMP SDK 는 res/raw 디렉토리에 위치한 설정 파일을 읽어 framework
   * Identity - 게스트 계정 식별자 생성 방법을 설정합니다. 설정값은 device, app, instant 중 하나를 설정하면 됩니다.
 
 * Google, Facebook : 구글, 페이스북 연동 설정을 합니다.
-  * permissions - SNS 계정 연동시 요청할 퍼미션 정보를 설정합니다.
+  * Scopes - SNS 계정 연동시 요청할 퍼미션 정보를 설정합니다.

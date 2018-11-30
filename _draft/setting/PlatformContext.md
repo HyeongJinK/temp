@@ -56,7 +56,7 @@ public class Application extends MultiDexApplication implements PlatformContextC
                     .end()
                 .account()
                     .guest().identityGenerator(DeviceUserIdentityGenerator.class)
-                    .facebook().permissions("public_profile, email");
+                    .facebook().scopes("public_profile, email");
         }
     }
 ```
@@ -86,8 +86,8 @@ public void script(Configuration config) {
     config
         .account()
             .guest().identityGenerator(InstantUserIdentityGenerator.class)
-            .google().permissions("email, profile, openid")
-            .facebook().permissions("public_profile", "email");
+            .google().scopes("email, profile, openid")
+            .facebook().scopes("public_profile", "email");
 }
 ```
 
@@ -95,7 +95,7 @@ public void script(Configuration config) {
   * identityGenerator : 게스트 계정 식별자 생성기를 설정합니다. 기본값은 DeviceUserIdentityGenerator.class 입니다.
 
 * `google()`, `facebook()` - SNS 계정 프로바이더 설정을 작성합니다.
-  * pemissions : SNS 계정 연동시 요청할 퍼미션 정보를 설정합니다.
+  * scopes : SNS 계정 연동시 요청할 퍼미션 정보를 설정합니다.
 
 ## Java Code Configuration 예제
 
@@ -133,8 +133,8 @@ class Application extends MultiDexApplication implements PlatformContextContaine
                 .end()
             .account()
                 .guest().identityGenerator(DeviceUserIdentityGenerator.class)
-                .facebook().permissions("public_profile, email")
-                .google().permissions("email", "profile", "openid");
+                .facebook).scopes("public_profile, email")
+                .google().scopes("email", "profile", "openid");
 
     }
 }
