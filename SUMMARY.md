@@ -23,3 +23,4 @@
 - [상품결제](/_draft/payment/init.md)
   - [상품 구매 및 결제하기](/_draft/payment/Payment.md)
 - [Support](/_draft/core/init.md)
+  - [API 예외 정의](/_draft/core/Exceptions.md)
