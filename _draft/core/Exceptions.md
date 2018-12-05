@@ -88,7 +88,7 @@ EG 플랫폼의 결제와 관련된 예외코드를 정의합니다. 이 유형�
 |예외코드| API Code | 설명 |
 |-|-|-|
 |BILL_FORBIDDEN_USER|user.forbidden|결제 금지된 사용자.|
-|BILL_INVALID_PRODUCT|product.forbidden")|판매가 허가 되지 않거나 등록되지 않은 상품.|
+|BILL_INVALID_PRODUCT|product.forbidden|판매가 허가 되지 않거나 등록되지 않은 상품.|
 |BILL_PAYLOAD_MISMATCH|payload.mismatch|결제 서버에서 발급한 페이로드가 일치하지 않음.|
 |BILL_SIGNATURE_MISMATCH||결제 API 인증키가 일치하지 않음.|
 |BILL_ERROR||기타 이유로 결제가 실패함.|
