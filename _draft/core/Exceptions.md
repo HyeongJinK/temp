@@ -99,7 +99,4 @@ EG 플랫폼의 결제와 관련된 예외코드를 정의합니다. 이 유형�
 
 |예외코드|설명 |
 |-|-|
-|START_API_NOT_CALL|EG 플랫폼 start api 호출 실패.|
-|START_API_DATA_FAIL|client process description data 오류.|
-|START_API_DATA_INIT|client process description 초기화 실패.|
 |PROCESS_CONTRACT_DENIED|약관 동의 거부.|
