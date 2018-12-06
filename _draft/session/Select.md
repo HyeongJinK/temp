@@ -2,7 +2,6 @@
 
 SessionManager에서 getToken() 메소드로 현재 세션의 토큰 정보를 조회할 수 있으며 getProfile() 메소드로 프로필 정보를 조회할 수 있습니다.
 
-
 ### SessionManager 세션정보 조회관련 메소드
 
 |함수명|리턴타입|설명|

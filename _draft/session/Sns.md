@@ -31,12 +31,12 @@ SignInControl.Option option = new SignInControl.Option()
             public void onComplete(Result.Login result) {
                 // 로그인 성공 핸들러 작성
             }
-            
+
             @Override
             public void onError(Throwable t) {
                 // 로그인 실패 핸들러 작성
             }
-            
+
             @Override
             public void onCancel() {
                 // 로그인 취소 핸들러 작성 
@@ -103,12 +103,12 @@ SignInControl.Option option = new SignInControl.Option()
             public void onComplete(Result.Login result) {
                 // 로그인 성공 핸들러 작성
             }
-            
+
             @Override
             public void onError(Throwable t) {
                 // 로그인 실패 핸들러 작성
             }
-            
+
             @Override
             public void onCancel() {
                 // 로그인 취소 핸들러 작성 
@@ -132,7 +132,6 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 ## EG SDK 제공 대화창(SignInActivity)으로 로그인
 
-
 #### 1. SignInControl 설정 (in Activity)
 
 `SignInControl` 객체는 `onActivityResult` 콜백에 등록해야 합니다. 따라서 인스턴스 변수로 생성해야합니다.
@@ -141,18 +140,18 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 ```java
 // Sign in option 설정
-SignInControl.Option option = new SignInControl.Option() 
+SignInControl.Option option = new SignInControl.Option()
         .setSignInResultHandler(new SignInResultHandler() {
             @Override
             public void onComplete(Result.Login result) {
                 // 로그인 성공 핸들러 작성
             }
-            
+
             @Override
             public void onError(Throwable t) {
                 // 로그인 실패 핸들러 작성
             }
-            
+
             @Override
             public void onCancel() {
                 // 로그인 취소 핸들러 작성 

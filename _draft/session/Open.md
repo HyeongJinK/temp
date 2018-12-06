@@ -1,26 +1,47 @@
 # 세션 생성(게스트 로그인) 및 세션 갱신
 
-세션 생성은 <span style="color:red">create()</span> 메소드로 만드며 해당 메소드는 Task 클래스를 리턴합니다. Task는 빌더 패턴을 이용하여 로그인이 끝난 이후 혹은 에러 시 처리를 구현합니다.
+## 세션의 시작
 
-앱을 시작했을 때 세션이 없을 경우에는 create() 메소드를 사용하여 게스트 계정을 만들 수 있고 현재 세션이 있는 상태라면(SNS계정 포함) 세션을 다시 사용하기 위해 갱신을 해주어야 합니다. 갱신은 <span style="color:red">resume()</span> 메소드를 호출하여 토큰을 갱신할 수 있습니다.
+앱의 사용자 세션의 시작은 이전 세션의 존재 여부를 판단하는 것으로부터 시작할 수 있습니다.
+앱을 시작했을 때 세션이 없을 경우에는 create() 메소드를 사용하여 게스트 계정을 만들 수 있고 기존 세션이 있는 상태라면(SNS계정 포함) 세션을 다시 사용하기 위해 갱신할 수 있습니다.
 
-Task에서 제공하는 메소드에서는 하나의 함수를 구현하는 인터페이스인 Acceptor를 매개변수로 받습니다.
+```java
+    // 앱 클라이언트에 생성된 세션이 있는지 여부를 확인합니다.
+    // isSessionOpen()의 반환값은 세션의 유효성 여부와는 상관 없습니다.
+    if(sessionManager.isSessionOpen()) {
+        // 이전 세션 갱신
+        resumeSession();
+    } else {
+        // 게스트 세션 생성
+        createGuestSession();
+    }
+```
 
-## Task에서 제공하는 메소드
+앱의 시작과 동시에 세션을 생성할 것인지 아니면 사용자가 의사를 확인 후 세션을 생성할 것인지는 앱 서비스의 정책에 따르면됩니다.
 
-|함수명|설명|리턴값|매개변수|
-|-|-|-|-|
-|asyncAccept|정상종료 이후 처리|com.estgames.framework.core.Task|Acceptor&lt;T>|
-|onError|에러시 처리 구현|com.estgames.framework.session.Token|Acceptor&lt;T>|
+> 주의할점은 앱에 생성된 세션이 있는 경우 기존 세션을 사용하기 위해서는 세션을 사용하기 전에 ___세션 갱신___(`resume()`)을 꼭 해야 합니다.
 
-##### 예) 게스트 세션생성 및 생성 이후, 실패 시 처리
+## 새로운 세션의 생성
+
+EG 플랫폼은 게스트 계정의 세션 생성을 지원합니다. 게스트 계정은 인증되지 않은 사용자 계정을 의미합니다.
+게스트 계정은 플랫폼 SDK의 옵션에 따라 [휘발성 계정으로 생성](/_draft/session/Guest.md)할지 [기기 또는 앱별 고유 계정으로 생성](/_draft/session/Guest.md)할지 선택 할 수 있습니다.
+
+> 이 단락은 게스트 세션의 생성만을 다루고 있습니다. SNS계정 로그인 및 연동은 [SNS 계정연동](/_draft/session/Sns.md) 부분을 참고하세요.
+
+### _SessionManager.create()_
+
+`SessionManager` 객체의 `create()` 메소드로 새로운 게스트 세션을 생성할 수 있습니다. 이 메소드는 [Task](/_draft/core/Task.md) 객체를 리턴합니다. [Task](/_draft/core/Task.md)는 메소드 체인을 이용한 Fluent 인터페이스를 제공합니다.
+
+* Parameter : 없음
+* Return : Task&lt;String>
+  * Task 객체가 콜백에 전달하는 값은 새로 생성된 세션의 EG_TOKEN 값입니다.
 
 ```java
 sessionManager
     .create()
-    .onError(new Task.Acceptor<Throwable>() {
+    .onError(new Task.Acceptor<EGException>() {
         @Override
-        public void accept(Throwable t) {
+        public void accept(EGException e) {
             // 세션 생성 실패 핸들러 작성
         }
     })
@@ -32,21 +53,35 @@ sessionManager
     });
 ```
 
-##### 예) 세션 갱신
+## 이전 세션의 재시작
+
+EG 플랫폼의 앱 세션은 종류에 상관 없이 유효기간을 가지고 있습니다.
+앱이 유효기간이 지난 세션으로 플랫폼 서비스에 접근할 경우 플랫폼은 서비스의 접근을 제한합니다.
+따라서 앱이 정상적으로 플랫폼 서비스를 사용하기 위해서는 세션정보를 항상 유효하게 유지 시켜야 합니다.
+
+EG 플랫폼에서는 세션을 유효하게 유지 하기 위해 새로운 세션을 항상 만들 필요는 없습니다. 만약 이전에 사용자가 로그인 한 적이 있다면 앱은 그 사용자의 세션을 갱신하여 활성화 시킬 수 있습니다.
+
+### _SessionManager.resume()_
+
+`SessionManager`객체의 `resume()` 메소드로 이미 존재하는 세션을 갱신 할 수 있습니다.
+
+* Parameter : 없음
+* Return : Task&lt;String>
+  * Task 객체가 콜백에 전달하는 값은 갱신된 세션의 EG_TOKEN 값입니다.
 
 ```java
 sessionManager
     .resume()
-    .onError(new Task.Acceptor<Throwable>() {
+    .onError(new Task.Acceptor<EGException>() {
         @Override
-        public void accept(Throwable throwable) {
-            currentTitle.setText("세션 resume 실패 = " + throwable.getMessage());
+        public void accept(EGException e) {
+            currentTitle.setText("세션 갱신 실패 = " + e.getMessage());
         }
     })
     .asyncAccept(new Task.Acceptor<String>() {
         @Override
-        public void accept(String s) {
-            currentTitle.setText("세션 resume 성공 = " + s);
+        public void accept(String token) {
+            currentTitle.setText("세션 갱신 성공 = " + token);
         }
     });
 ```

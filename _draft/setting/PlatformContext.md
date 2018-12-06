@@ -92,7 +92,7 @@ public void script(Configuration config) {
 ```
 
 * `guest()` - 게스트 계정관련 설정을 작성합니다.
-  * identityGenerator : 게스트 계정 식별자 생성기를 설정합니다. 기본값은 DeviceUserIdentityGenerator.class 입니다.
+  * identityGenerator : [게스트 계정 식별자 생성기](_draft/session/Guest.md)를 설정합니다. 기본값은 DeviceUserIdentityGenerator.class 입니다.
 
 * `google()`, `facebook()` - SNS 계정 프로바이더 설정을 작성합니다.
   * scopes : SNS 계정 연동시 요청할 퍼미션 정보를 설정합니다.

@@ -43,7 +43,7 @@ EGMP SDK 는 res/raw 디렉토리에 위치한 설정 파일을 읽어 framework
 앱의 사용자 계정에 대한 설정 정보를 지정합니다. 게스트의 식별자 생성방법, SNS 프로바이더등을 설정합니다.
 
 * Guest : 게스트 계정에 대한 설정을 합니다.
-  * Identity - 게스트 계정 식별자 생성 방법을 설정합니다. 설정값은 device, app, instant 중 하나를 설정하면 됩니다.
+  * Identity - [게스트 계정 식별자 생성](_draft/session/Guest.md) 방법을 설정합니다. 설정값은 device, app, instant 중 하나를 설정하면 됩니다.
 
 * Google, Facebook : 구글, 페이스북 연동 설정을 합니다.
   * Scopes - SNS 계정 연동시 요청할 퍼미션 정보를 설정합니다.
