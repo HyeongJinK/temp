@@ -13,7 +13,7 @@ final SessionManager sessionManager = client.getSessionManager();
 ## 세션 확인 메소드
 
 |함수명|리턴값|설명|
-|-|-|-|-|
+|-|-|-|
 |isSessionOpen|boolean|세션의 만료 여부와는 상관없이 생성된 세션 (발급된 토큰)이 있으면 True를 반환합니다.|
 |getToken|Token|토큰정보를 반환합니다.|
 |getProfile|Profile|사용자 프로필 정보를 반환합니다.|

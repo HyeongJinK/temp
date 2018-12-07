@@ -8,18 +8,18 @@
 
 ## 기본 버튼으로 로그인
 
-#### 1. 레이아웃에 버튼 배치
+### 1. 레이아웃에 버튼 배치
 
 ```xml
-<Button 
-    android:id="@+id/btn_facebook_login" 
+<Button
+    android:id="@+id/btn_facebook_login"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" 
-    android:layout_margin="5dp" 
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
     android:text="Facebook Login"/>
 ```
 
-#### 2. SignInControl 설정 (in Activity)
+### 2. SignInControl 설정 (in Activity)
 
 `SignInControl` 객체는 `onActivityResult` 콜백에 등록해야 합니다. 따라서 인스턴스 변수로 생성해야합니다.
 
@@ -47,7 +47,8 @@ SignInControl.Option option = new SignInControl.Option()
 SignInControl signInControl = SignInControl.createControl(activity, option);
 ```
 
-#### 3. Button 핸들러에 연결
+### 3. Button 핸들러에 연결
+
 로그인 버튼을 눌렀을때 로그인을 시도하도록 핸들러에 등록합니다.
 
 ```java
@@ -60,7 +61,7 @@ facebookLogin.setOnClickListener(new View.OnClickListener() {
 });
 ```
 
-#### 4. ActivityResult 핸들러 작성
+### 4. ActivityResult 핸들러 작성
 
 로그인 결과를 핸들러에 전달 할 수 있도록 Activity.onActivityResult 메소드를 작성합니다.
 
@@ -73,7 +74,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 ## EG SDK 제공 버튼으로 로그인
 
-#### 1. 레이아웃에 버튼 배치
+### 1. 레이아웃에 버튼 배치
 
 ```xml
 <com.estgames.framework.ui.buttons.FacebookSignButton 
@@ -87,7 +88,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
         android:layout_height="wrap_content"/>
 ```
 
-#### 2. SignInControl 설정 (in Activity)
+### 2. SignInControl 설정 (in Activity)
 
 `SignInControl` 객체는 `onActivityResult` 콜백에 등록해야 합니다. 따라서 인스턴스 변수로 생성해야합니다.
 
@@ -119,7 +120,7 @@ SignInControl.Option option = new SignInControl.Option()
 SignInControl signInControl = SignInControl.createControl(activity, option);
 ```
 
-#### 3. ActivityResult 핸들러 작성
+### 3. ActivityResult 핸들러 작성
 
 로그인 결과를 핸들러에 전달 할 수 있도록 Activity.onActivityResult 메소드를 작성합니다.
 
@@ -132,7 +133,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 ## EG SDK 제공 대화창(SignInActivity)으로 로그인
 
-#### 1. SignInControl 설정 (in Activity)
+### 1. SignInControl 설정 (in Activity)
 
 `SignInControl` 객체는 `onActivityResult` 콜백에 등록해야 합니다. 따라서 인스턴스 변수로 생성해야합니다.
 
@@ -162,7 +163,7 @@ SignInControl.Option option = new SignInControl.Option()
 SignInControl signInControl = SignInControl.createControl(activity, option);
 ```
 
-#### 2. ActivityResult 핸들러 작성
+### 2. ActivityResult 핸들러 작성
 
 로그인 결과를 핸들러에 전달 할 수 있도록 Activity.onActivityResult 메소드를 작성합니다.
 
@@ -173,7 +174,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
-#### 3. 로그인 대화창 호출
+### 3. 로그인 대화창 호출
 
 ```java
 signInControl.signIn(activity);

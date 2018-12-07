@@ -33,8 +33,7 @@ EG 플랫폼은 게스트 계정의 세션 생성을 지원합니다. 게스트 
 `SessionManager` 객체의 `create()` 메소드로 새로운 게스트 세션을 생성할 수 있습니다. 이 메소드는 [Task](/_draft/core/Task.md) 객체를 리턴합니다. [Task](/_draft/core/Task.md)는 메소드 체인을 이용한 Fluent 인터페이스를 제공합니다.
 
 * Parameter : 없음
-* Return : Task&lt;String>
-  * Task 객체가 콜백에 전달하는 값은 새로 생성된 세션의 EG_TOKEN 값입니다.
+* Return _`Task<String>`_ : Task 객체가 콜백에 전달하는 값은 새로 생성된 세션의 EG_TOKEN 값입니다.
 
 ```java
 sessionManager
@@ -66,8 +65,7 @@ EG 플랫폼에서는 세션을 유효하게 유지 하기 위해 새로운 세�
 `SessionManager`객체의 `resume()` 메소드로 이미 존재하는 세션을 갱신 할 수 있습니다.
 
 * Parameter : 없음
-* Return : Task&lt;String>
-  * Task 객체가 콜백에 전달하는 값은 갱신된 세션의 EG_TOKEN 값입니다.
+* Return _`Task<String>`_ : Task 객체가 콜백에 전달하는 값은 갱신된 세션의 EG_TOKEN 값입니다.
 
 ```java
 sessionManager
