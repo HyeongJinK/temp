@@ -17,6 +17,7 @@ enum class Fail(private val serverCode: String? = null) {
     TOKEN_CREATION,                                            // 토큰 생성 실패
     TOKEN_INVALID("session.invalid"),           // 유효하지 않은 토큰
     TOKEN_EXPIRED("session.expired"),           // 만료된 토큰
+    TOKEN_REVOKED("session.revoked"),           // 폐기된 토큰
 
     CLIENT_NOT_INITIALIZED,    // 클라이언트 정보가 초기화 되지 않음.
     CLIENT_UNKNOWN_PROVIDER("api.provider"),    // 연계할 수 없는 프로바이더

@@ -61,7 +61,12 @@ class UserService constructor(callingActivity: Activity) {
                     if (sessionManager.hasSession) {
                         sessionManager.open()
                                 .right { startSuccessCallBack.run() }
-                                .left { failCallBack.accept(it.code) }
+                                .left {
+                                    if (it.code == Fail.TOKEN_INVALID || it.code == Fail.API_ACCESS_DENIED) {
+                                        signout()
+                                    }
+                                    failCallBack.accept(it.code)
+                                }
                     } else {
                         result.identityManager.getUserID(object : IdentityHandler {
                             override fun handleError(e: Exception?) {

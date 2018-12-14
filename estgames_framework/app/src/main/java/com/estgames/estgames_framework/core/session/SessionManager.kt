@@ -96,6 +96,9 @@ class SessionManager(context:Context) {
                                 userId = me.getString("user_id")
                         ))
                     } catch (e: EGException) {
+                        if (e.code == Fail.TOKEN_INVALID || e.code == Fail.API_ACCESS_DENIED) {
+                            _sessionRepo.revoke()
+                        }
                         return@Callable Left(e)
                     }
                 }).get()
@@ -184,7 +187,7 @@ class SessionManager(context:Context) {
             else -> Right("expired")
         }
     }
-    //로그아웃 정보는 남는 다.
+    //로그아웃 정보는 남는다.
     fun signOut(): Either<EGException, String> {
         return expire().rightTo {
             _sessionRepo.revoke()

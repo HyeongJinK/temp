@@ -104,7 +104,7 @@ public class EstCommonFramework {
                         pd = ProcessDescriptionParser.parse(new String(result.getContent(), "utf-8"));
                         initCallBack.accept(temp);
                     } catch (Exception e) {
-                        Log.e(TAG, "Fail to initialize process...", e);
+                        Log.e(TAG, "Fail to initialize process..." + e.getMessage(), e);
                         if (e instanceof EGException) {
                             estCommonFailCallBack.accept(((EGException) e).getCode());
                         } else {
@@ -116,7 +116,7 @@ public class EstCommonFramework {
 
             startApi.start();
         } catch (Exception e) {
-            Log.e(TAG, "Fail to initialize process...", e);
+            Log.e(TAG, "Fail to initialize process..." + e.getMessage(), e);
             if (e instanceof EGException) {
                 estCommonFailCallBack.accept(((EGException) e).getCode());
             } else {

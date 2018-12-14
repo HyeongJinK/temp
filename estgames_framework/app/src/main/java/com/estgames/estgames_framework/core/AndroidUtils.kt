@@ -4,12 +4,11 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.provider.Settings
-import android.telephony.TelephonyManager
 import java.io.ByteArrayInputStream
 import java.security.MessageDigest
 import java.security.cert.CertificateFactory
-import java.util.*
 import java.security.cert.X509Certificate
+import java.util.*
 
 object AndroidUtils {
     private const val GENERAL_ID = "9774d56d682e549c"
@@ -29,12 +28,7 @@ object AndroidUtils {
         val uuid = if (androidId != GENERAL_ID) {
             UUID.nameUUIDFromBytes(androidId.toByteArray(Charsets.UTF_8))
         } else {
-            val tm = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
-            if (tm.deviceId != null) {
-                UUID.nameUUIDFromBytes(tm.deviceId.toByteArray(Charsets.UTF_8))
-            } else {
-                UUID.randomUUID()
-            }
+            UUID.randomUUID()
         }
 
         prefs.edit().putString(PREFS_FILE_DEVICE, uuid.toString()).commit()
