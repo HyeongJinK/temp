@@ -49,7 +49,6 @@ class bannerBottomView: UIView {
             closebtWidth = 101; closebtHeight = 75
             closebtTopMargin = 15; closebtRightMargin = 23; closebtLiftMargin = 13
             linkbtWidth = 275; linkbtHeight = 75
-            
             break
         default :
             break;

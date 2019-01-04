@@ -128,6 +128,7 @@ class ViewController: UIViewController {
         
         vc.goToLoginFailCallBack = {(fail) -> Void in
             self.callBack.text = fail.describe
+            print(fail.describe)
         }
         
         vc.goToLoginCloseCallBack = {() -> Void in
@@ -135,7 +136,9 @@ class ViewController: UIViewController {
         }
         
         vc.failCallBack = {(err) -> Void in     //유저 서비스 부분 에러 콜백 함수
+            print("===============================")
             print(err.describe)
+            print("===============================")
             switch (err) {
                 case .TOKEN_EMPTY :
                     self.errorCode.text = "토큰이 없음"

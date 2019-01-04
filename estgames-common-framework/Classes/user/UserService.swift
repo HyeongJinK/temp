@@ -37,6 +37,15 @@ public class UserService {
         self.pView = pview
         userDialog = UserDialog(pview: pView)
         self.getGoogleEmail = googleEmail
+        // 첫 실행 시 키체인 삭제
+        let pList = UserDefaults.standard
+        if (pList.string(forKey: MpInfo.App.region+"_first") != nil && pList.string(forKey: "estPolicy") != nil) {
+            
+        } else {
+            clearKey();
+            pList.set("true", forKey: MpInfo.App.region+"_first")
+            pList.synchronize()
+        }
     }
     
     func isCognitoSnsLoggedIn() -> Bool {
@@ -52,17 +61,6 @@ public class UserService {
     }
     
     public func startGame() {
-        // 첫 실행 시 키체인 삭제
-        let pList = UserDefaults.standard
-        if (pList.string(forKey: MpInfo.App.region+"_first") != nil && pList.string(forKey: "estPolicy") != nil) {
-            
-        } else {
-            clearKey();
-            pList.set("true", forKey: MpInfo.App.region+"_first")
-            pList.synchronize()
-        }
-        
-        
         // 게임클라이언트가 켜지면 첫째 egToken이 존재 하는지 체크
         if MpInfo.Account.isAuthedUser() == false {
             let principal = getPrincipal()
