@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="282dp"
+    android:layout_height="501dp"
+    android:background="#353B48">
+
+    <ImageButton
+        android:id="@+id/btn_term_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/btn_close" />
+
+    <TextView
+        android:id="@+id/txt_term_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35.5dp"
+        android:textSize="13sp"
+        android:textColor="#D6D6D6"
+        android:text="@string/estcommon_policy_title"/>
+
+    <TextView
+        android:id="@+id/txt_title_for_term_of_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54.5dp"
+        android:textSize="9sp"
+        android:textColor="#FF5F5F"
+        android:text="@string/estcommon_policy_subTitle"/>
+
+    <WebView
+        android:id="@+id/web_term_of_service"
+        android:layout_width="231dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="26.5dp"
+        android:layout_marginTop="74dp">
+    </WebView>
+
+    <CheckBox
+        android:id="@+id/chk_agreement_of_service"
+        android:button="@null"
+        android:layout_width="232dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/policybutton"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:text="@string/estcommon_policy_buttonText"
+        android:layout_below="@id/web_term_of_service"/>
+
+    <TextView
+        android:id="@+id/txt_title_for_term_of_privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26.5dp"
+        android:textSize="13sp"
+        android:textColor="#D6D6D6"
+        android:text="@string/estcommon_policy_privacy"
+        android:layout_below="@id/chk_agreement_of_service"/>
+
+    <WebView
+        android:id="@+id/web_term_of_privacy"
+        android:layout_width="231dp"
+        android:layout_height="129.5dp"
+        android:layout_marginLeft="25.5dp"
+        android:layout_marginTop="49.5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@id/chk_agreement_of_service">
+    </WebView>
+
+    <CheckBox
+        android:id="@+id/chk_agreement_of_privacy"
+        android:button="@null"
+        android:layout_width="232dp"
+        android:layout_height="36dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/policybutton"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:text="@string/estcommon_policy_buttonText"
+        android:layout_below="@id/web_term_of_privacy"/>
+</RelativeLayout>

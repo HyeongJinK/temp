@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#353B48"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:text="@string/estcommon_authority_title"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <WebView
+        android:id="@+id/web_permissions"
+        android:layout_width="436dp"
+        android:layout_height="225dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15.5dp">
+    </WebView>
+
+    <Button
+        android:id="@+id/btn_close"
+        android:layout_width="161dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16.5dp"
+        android:background="@drawable/btn_confirm"
+        android:text="@string/estcommon_authority_confirm"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+</LinearLayout>

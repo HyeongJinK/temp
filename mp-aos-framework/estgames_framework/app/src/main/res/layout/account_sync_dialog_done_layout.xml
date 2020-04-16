@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/v_complete_dialog"
+    android:layout_width="@dimen/account_sync_dialog_width"
+    android:layout_height="@dimen/account_sync_dialog_height"
+    android:background="@drawable/img_popup_box_user">
+
+    <TextView
+        android:id="@+id/txt_complete_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/account_sync_dialog_left_margin"
+        android:layout_marginTop="@dimen/account_sync_dialog_title_top_margin"
+        android:text="@string/estcommon_userResult_title"
+        android:textColor="#000000"
+        android:textSize="@dimen/account_sync_dialog_title_font_size" />
+
+    <ImageButton
+        android:id="@+id/btn_complete_close"
+        android:layout_width="@dimen/account_sync_dialog_close_button_width"
+        android:layout_height="@dimen/account_sync_dialog_close_button_height"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/background_light"
+        android:src="@drawable/btn_close_user" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="37dp"
+        android:background="#898989" />
+
+    <TextView
+        android:id="@+id/txt_complete_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/account_sync_dialog_left_margin"
+        android:layout_marginRight="@dimen/account_sync_dialog_right_margin"
+        android:layout_marginTop="56.5dp"
+        android:lineSpacingExtra="7.5dp"
+        android:text="@string/estcommon_userResult_subTitle"
+        android:textColor="#307AF5"
+        android:textSize="@dimen/account_sync_dialog_title_font_size" />
+
+    <TextView
+        android:id="@+id/txt_complete_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_complete_subtitle"
+        android:layout_marginLeft="@dimen/account_sync_dialog_left_margin"
+        android:layout_marginRight="@dimen/account_sync_dialog_right_margin"
+        android:layout_marginTop="7.5dp"
+        android:text="@string/estcommon_userResult_titleMove"
+        android:textColor="#000000"
+        android:textSize="@dimen/account_sync_dialog_content_font_size" />
+
+    <Button
+        android:id="@+id/btn_complete_confirm"
+        android:layout_width="117dp"
+        android:layout_height="@dimen/account_sync_dialog_button_height"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/btn_confirm_user"
+        android:text="@string/estcommon_userResult_confirm"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/account_sync_dialog_button_font_size" />
+</RelativeLayout>

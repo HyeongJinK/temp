@@ -1,0 +1,42 @@
+<resources>
+    <string name="estcommon_policy_title">Terms &amp; Agreement</string>
+    <string name="estcommon_policy_subTitle">Including the agreement for receiving advertisement</string>
+    <string name="estcommon_policy_privacy">Privacy Policy</string>
+    <string name="estcommon_policy_buttonText">Agree</string>
+
+    <string name="estcommon_authority_title">Following <font color="#5C9AFF">permissions</font> are needed for <font color="#5C9AFF">the smooth game play.</font></string>
+    <string name="estcommon_authority_confirm">Confirm</string>
+
+    <string name="estcommon_userResult_title">Notification</string>
+    <string name="estcommon_userResult_subTitle">Successfully Loaded</string>
+    <string name="estcommon_userResult_titleMove">Move to the title page for restart</string>
+    <string name="estcommon_userResult_confirm">Confirm</string>
+
+    <string name="estcommon_user_sync_progress">Linking account...</string>
+
+    <string name="estcommon_userLoad_title">Load existing account</string>
+    <string name="estcommon_userLoad_content">Please insert the words below if you would like to delete the current game data and load the previous game.</string>
+    <string name="estcommon_userLoad_confirmText">Confirm Text: confirm</string>
+    <string name="estcommon_userLoad_input">Insert</string>
+    <string name="estcommon_userLoad_confirmButton">Confirm</string>
+    <string name="estcommon_userLoad_input_wrong">Please insert correct words</string>
+
+    <string name="estcommon_userLink_title">Account Interlink</string>
+    <string name="estcommon_userLink_middelLabel">Previous game data exists in the account..\n%s : %s\nWould you like to load the data?</string>
+    <string name="estcommon_userLink_bottomLabel">Current playing game data will be deleted</string>
+    <string name="estcommon_userLink_confirm">Yes, I would like to load the previous game</string>
+    <string name="estcommon_userLink_cancel">No, I would like to play the new game</string>
+
+    <string name="estcommon_banner_closeButton">Close</string>
+    <string name="estcommon_banner_linkButton">Detail view</string>
+    <string name="estcommon_banner_oneDay">Don\'t show again today</string>
+
+    <string name="estcommon_userGuest_title">Interlink Current Account</string>
+    <string name="estcommon_userGuest_middle">Delete the previous game data(%s) and interlink with the current game.</string>
+    <string name="estcommon_userGuest_loginBt">Yes, I would like to login</string>
+    <string name="estcommon_userGuest_beforeBt">Back to previous</string>
+
+    <string name="aws_sign_in_with">Sign in with</string>
+    <string name="aws_sign_button_facebook">Facebook</string>
+    <string name="aws_sign_button_google">Google</string>
+</resources>

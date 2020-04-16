@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="comaf.estgames.ttestasdf.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/test0bt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="순서대로"/>
+
+    <Button
+        android:id="@+id/test1bt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="권한"
+
+        />
+    <Button
+        android:id="@+id/test2bt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="이용약관"/>
+    <Button
+        android:id="@+id/test3bt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="배너"/>
+
+    <Button
+        android:id="@+id/startGame"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="게임시작"/>
+
+    <Button
+        android:id="@+id/snsBt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="계정연동"/>
+
+    <Button
+        android:id="@+id/clearBt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="로그아웃"/>
+
+    <Button
+        android:id="@+id/statusBt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="상태출력"/>
+
+    <TextView
+        android:id="@+id/txt-status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/txt_user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User ID"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/txt_principal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Principal"
+        />
+
+    <TextView
+        android:id="@+id/txt_eg_token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EG Token"
+        />
+
+    <TextView
+        android:id="@+id/txt_refresh_token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh Token"
+        />
+
+    <TextView
+        android:id="@+id/txt_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="error"
+        />
+
+    <TextView
+        android:id="@+id/callBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="callBack"
+        />
+</LinearLayout>
