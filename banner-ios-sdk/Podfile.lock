@@ -1,0 +1,72 @@
+PODS:
+  - Alamofire (4.7.2)
+  - AWSAuthCore (2.6.21):
+    - AWSCore (= 2.6.21)
+  - AWSAuthUI (2.6.21):
+    - AWSAuthCore (= 2.6.21)
+    - AWSCore (= 2.6.21)
+  - AWSCognito (2.6.21):
+    - AWSCore (= 2.6.21)
+  - AWSCore (2.6.21)
+  - AWSFacebookSignIn (2.6.21):
+    - AWSAuthCore (= 2.6.21)
+    - FBSDKCoreKit (~> 4.0)
+    - FBSDKLoginKit (~> 4.0)
+  - AWSGoogleSignIn (2.6.21):
+    - AWSAuthCore (= 2.6.21)
+  - AWSPinpoint (2.6.21):
+    - AWSCore (= 2.6.21)
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - FBSDKCoreKit (4.33.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.33.0):
+    - FBSDKCoreKit
+  - SwiftKeychainWrapper (3.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - AWSAuthCore (~> 2.6.1)
+  - AWSAuthUI (~> 2.6.1)
+  - AWSCognito (~> 2.6.1)
+  - AWSFacebookSignIn (~> 2.6.1)
+  - AWSGoogleSignIn (~> 2.6.1)
+  - AWSPinpoint (~> 2.6.1)
+  - SwiftKeychainWrapper
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AWSAuthCore
+    - AWSAuthUI
+    - AWSCognito
+    - AWSCore
+    - AWSFacebookSignIn
+    - AWSGoogleSignIn
+    - AWSPinpoint
+    - Bolts
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - SwiftKeychainWrapper
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AWSAuthCore: f912e4f032092818ee21860a44386c485329a92b
+  AWSAuthUI: 8549f06975c03b653e45623f19d4cb34f16f2e8f
+  AWSCognito: ddd3d4cb90dc0adb47acd199ca9bbe48ea1d18a7
+  AWSCore: a1ff1d32ea7af235fe64be301c204b34cb1f9f83
+  AWSFacebookSignIn: b18b9e83eb6b117f94c11c4a4e014bbb58b07bfa
+  AWSGoogleSignIn: bf452f135c5fc8fedb93fb75f10bd0ddb75add38
+  AWSPinpoint: 6621f9c3de81f0fa4e7560c57b4fcc8eaeba43f0
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  FBSDKCoreKit: 572b047a7e029bc44542bcf8a59414e7ff2b543e
+  FBSDKLoginKit: 88cb456349cfb3b554427ce4f8b43729d85dfb40
+  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
+
+PODFILE CHECKSUM: 49fb29cfcfeb1614b6530a84176c204ade5ee227
+
+COCOAPODS: 1.5.0
